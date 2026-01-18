@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
     <title>OpenMag</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
@@ -128,7 +129,7 @@
         allArticles.forEach(item => {
             const img = extractImg(item);
             const imageClass = img ? "" : "no-image";
-            const imageHtml = img ? `<img src="${img}" loading="lazy" onerror="this.parentElement.classList.add('no-image'); this.remove();">` : "";
+            const imageHtml = img ? `<img src="${img}" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('no-image'); this.remove();">` : "";
 
             const cardHtml = `
                 <a href="${item.link}" target="_blank" class="grid-item ${imageClass}">
@@ -155,20 +156,29 @@
         });
     }
 
-    function extractImg(item) {
-        if (item.enclosure && item.enclosure.link) return item.enclosure.link;
-        if (item.thumbnail) return item.thumbnail;
-        
+function extractImg(item) {
+    let src = null;
+    if (item.enclosure && item.enclosure.link) src = item.enclosure.link;
+    else if (item.thumbnail) src = item.thumbnail;
+    
+    if (!src) {
         const searchString = (item.content || "") + (item.description || "");
         const div = document.createElement('div');
         div.innerHTML = searchString;
         const img = div.querySelector('img');
-        
         if (img) {
-            return img.getAttribute('data-orig-file') || img.getAttribute('src');
+            src = img.getAttribute('data-orig-file') || img.getAttribute('src');
         }
-        return null;
     }
+
+    // BYPASS HOTLINKING: Use a WSrv.nl proxy (Free & Fast)
+    // This reformats the image so it works anywhere
+    if (src && src.startsWith('http')) {
+        return `https://wsrv.nl/?url=${encodeURIComponent(src)}&w=600&af`;
+    }
+    
+    return src;
+}
 
     buildMagazine();
 </script>
