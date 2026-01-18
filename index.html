@@ -66,7 +66,7 @@
                         data.items.forEach(item => {
                             // Find a lavish image
                             const img = item.enclosure.link || item.thumbnail || extractImg(item.description);
-                            if (!img) return; // Only show articles with visuals
+                            /*if (!img) return; // Only show articles with visuals*/
 
                             const card = document.createElement('div');
                             card.className = 'grid-item';
