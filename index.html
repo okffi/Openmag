@@ -49,28 +49,28 @@
             'http://omeka.org/feed/',
        ];
 
-        async function init() {
+        async function loadFeeds() {
     const container = document.getElementById('magazine');
     
     for (const url of MANUAL_FEEDS) {
         try {
-            // This is the "Magic Wrapper" that prevents the white screen/CORS error
-            const proxyUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`;
+            console.log("Fetching:", url);
+            const proxyUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url.trim())}`;
             
             const response = await fetch(proxyUrl);
             const data = await response.json();
             
-            if (data.status === 'ok') {
+            // SAFETY CHECK: Ensure data and data.items exist before looping
+            if (data && data.status === 'ok' && data.items) {
                 data.items.forEach(item => {
-                    // Look for the "Lavish" image
                     const image = item.enclosure.link || item.thumbnail || extractImg(item.description);
                     
-                    if (image) { // Only show if we have a visual
+                    if (image) {
                         const card = `
                             <div class="grid-item">
-                                <img src="${image}" loading="lazy">
+                                <img src="${image}" onerror="this.parentElement.style.display='none'">
                                 <div class="content">
-                                    <span class="category">${data.feed.title}</span>
+                                    <span class="category">${data.feed.title || 'News'}</span>
                                     <h2>${item.title}</h2>
                                     <p>${item.description.replace(/<[^>]*>/g, '').substring(0, 100)}...</p>
                                 </div>
@@ -78,20 +78,24 @@
                         container.insertAdjacentHTML('beforeend', card);
                     }
                 });
+            } else {
+                console.warn("Feed returned no items or error:", url, data ? data.message : "No response");
             }
         } catch (e) {
-            console.error("Failed to load:", url);
+            console.error("Critical fetch error for:", url, e);
         }
     }
 
-    // Layout the fluid grid once images start appearing
-    imagesLoaded(container, () => {
-        new Masonry(container, {
-            itemSelector: '.grid-item',
-            percentPosition: true,
-            gutter: 20
+    // Refresh layout once images load
+    if (typeof imagesLoaded !== 'undefined') {
+        imagesLoaded(container, () => {
+            new Masonry(container, {
+                itemSelector: '.grid-item',
+                percentPosition: true,
+                gutter: 20
+            });
         });
-    });
+    }
 }
     </script>
 </body>
