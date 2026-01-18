@@ -53,68 +53,42 @@
     </div>
 
     <script>
-    const FEEDS = [
-        'https://www.accessnow.org/feed/',
-        'https://bellingcat.com/feed/',
-        'https://openfuture.eu/blog/feed/',
-        'http://www.create.ac.uk/feed/',
-        'http://creativecommons.org/weblog/rss',
-        'http://www.demoshelsinki.fi/feed/',
-        'http://blog.wikimedia.org/feed/',
-        'https://www.digime.fi/feed/',
-        'http://www.effi.org/xml/uutiset.rss',
-        'http://edri.org/feed/',
-        'https://heritagetribune.eu/feed/',
-        'http://blog.euscreen.eu/?feed=rss2',
-        'https://euvsdisinfo.eu/feed/',
-        'http://sparcopen.org/feed/',
-        'http://librarylab.law.harvard.edu/blog/feed/',
-        'http://publicdomainreview.org/feed/',
-        'http://glamwiki.wordpress.com/feed/',
-        'http://www.epressi.com/tiedotteet/tiede-ja-tutkimus.rss',
-        'https://www.unglobalpulse.org/feed/',
-        'http://xkcd.com/rss.xml',
-        'http://www.communia-association.org/feed/',
-        'http://blog.archive.org/feed/',
-        'http://www.kirjastokaista.fi/feed/',
-        'https://www.knowledgerights21.org/feed/',
-        'https://kuvasto.fi/feed/',
-        'http://mondediplo.com/backend',
-        'https://localcontexts.org/feed/',
-        'https://www.sttinfo.fi/rss/releases/latest?publisherId=69817951',
-        'http://nakokulmiaarkistosta.blogspot.com/feeds/posts/default',
-        'https://fcai.fi/news?format=rss',
-        'https://wikimediafoundation.org/news/feed/',
-        'https://okm.fi/ajankohtaista/-/asset_publisher/HplCdJTXh1mx/rss',
-        'http://hacks.mozilla.org/feed/',
-        'https://mydata.org/feed/',
-        'http://www.mysociety.org/feed/',
-        'http://blog.okfn.org/feed/'
-    ];
+    // Replace your old FEEDS array with your actual CSV link
+const SHEET_CSV_URL = 'PASTE_YOUR_LINK_HERE';
 
-    async function buildMagazine() {
-        const container = document.querySelector('#magazine-grid');
-        
-        // INITIALIZE MASONRY IMMEDIATELY
-        const msnry = new Masonry(container, {
-            itemSelector: '.grid-item',
-            columnWidth: '.grid-sizer',
-            percentPosition: true,
-            gutter: 25
-        });
+async function buildMagazine() {
+    const container = document.querySelector('#magazine-grid');
+    
+    // 1. FETCH THE SHEET DATA FIRST
+    const sheetResponse = await fetch(SHEET_CSV_URL);
+    const csvText = await sheetResponse.text();
+    
+    // Parse CSV to get URLs from Column C (index 2)
+    // and Categories from Column A (index 0)
+    const rows = csvText.split('\n').slice(1); // Skip header row
+    const feedData = rows.map(row => {
+        const cols = row.split(',');
+        return { 
+            url: cols[2] ? cols[2].trim() : null, 
+            category: cols[0] ? cols[0].trim() : "General"
+        };
+    }).filter(f => f.url && f.url.startsWith('http'));
 
-        let allArticles = [];
-        const feedPromises = FEEDS.map(async (url) => {
-            try {
-                const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
-                const data = await response.json();
-                if (data.status === 'ok') {
-                    return data.items.map(item => ({ ...item, sourceTitle: data.feed.title }));
-                }
-            } catch (e) { console.error("Failed:", url); }
-            return [];
-        });
-
+    // 2. FETCH ALL RSS FEEDS
+    const feedPromises = feedData.map(async (feed) => {
+        try {
+            const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`);
+            const data = await response.json();
+            if (data.status === 'ok') {
+                return data.items.map(item => ({ 
+                    ...item, 
+                    sourceTitle: data.feed.title,
+                    sheetCategory: feed.category // Carry the category over for later filtering
+                }));
+            }
+        } catch (e) { console.error("Failed:", feed.url); }
+        return [];
+    });
         const results = await Promise.all(feedPromises);
         allArticles = results.flat().sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
 
