@@ -13,29 +13,33 @@
     h1 { font-family: 'Playfair Display', serif; text-align: center; font-size: 3.5rem; margin-bottom: 5px; color: #1a1a1a; }
     .subline { text-align: center; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 50px; color: #888; }
     
-    .grid { width: 100%; max-width: 1400px; margin: 0 auto; }
-
-    .grid-item { 
+/* CSS FIXES */
+    .grid { 
+        width: 100%; 
+        max-width: 1400px; 
+        margin: 0 auto; 
+    }
+    
+    /* The sizer element tells Masonry the exact column width */
+    .grid-sizer, .grid-item { 
         width: calc(33.333% - 20px); 
-        margin-bottom: 30px; 
-        background: #fff; 
-        border-radius: 4px; 
-        overflow: hidden; 
-        transition: all 0.3s ease;
-        text-decoration: none; 
-        color: inherit;
-        display: block; 
+    }
+
+    @media (max-width: 900px) { 
+        .grid-sizer, .grid-item { width: calc(50% - 20px); } 
+    }
+    @media (max-width: 600px) { 
+        .grid-sizer, .grid-item { width: 100%; } 
+    }
+
+    .grid-item {
+        margin-bottom: 20px;
+        float: left; /* Helps Masonry align things during load */
+        background: #fff;
+        border-radius: 4px;
+        overflow: hidden;
         box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
-
-    .grid-item:hover { 
-        transform: translateY(-8px); 
-        box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
-    }
-
-    .grid-item img { width: 100%; height: auto; display: block; }
-    
-    .grid-item.no-image { border-top: 5px solid #b58d67; }
 
     .content { padding: 25px; }
     .category { text-transform: uppercase; font-size: 0.65rem; letter-spacing: 2px; color: #b58d67; font-weight: 600; margin-bottom: 12px; display: block; }
@@ -51,7 +55,9 @@
     <h1>OpenMag</h1>
     <div class="subline">Hyviä uutisia</div>
     
-    <div class="grid" id="magazine-grid"></div>
+<div class="grid" id="magazine-grid">
+    <div class="grid-sizer"></div>
+</div>
 
     <script>
     const FEEDS = [
@@ -97,7 +103,7 @@
         const container = document.querySelector('#magazine-grid');
         let allArticles = [];
 
-        // 1. COLLECT ALL DATA
+        // 1. Fetch all feeds simultaneously
         const feedPromises = FEEDS.map(async (url) => {
             try {
                 const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
@@ -115,15 +121,13 @@
         const results = await Promise.all(feedPromises);
         allArticles = results.flat();
 
-        // 2. SORT BY DATE (Newest First)
+        // 2. Sort by date
         allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
 
-        // 3. RENDER (With Lazy Loading)
+        // 3. Render items
         allArticles.forEach(item => {
-            const img = item.enclosure.link || item.thumbnail || extractImg(item.description);
+            const img = extractImg(item);
             const imageClass = img ? "" : "no-image";
-            
-            // Added loading="lazy" and fixed height/width placeholders for Masonry stability
             const imageHtml = img ? `<img src="${img}" loading="lazy" onerror="this.parentElement.classList.add('no-image'); this.remove();">` : "";
 
             const cardHtml = `
@@ -138,43 +142,33 @@
             container.insertAdjacentHTML('beforeend', cardHtml);
         });
 
-        // 4. TRIGGER MASONRY
-        imagesLoaded(container, () => {
+        // 4. THE CRITICAL FIX: Initialize Masonry only after images are ready
+        imagesLoaded(container, function() {
             new Masonry(container, {
                 itemSelector: '.grid-item',
+                columnWidth: '.grid-sizer', // Use the sizer element
                 percentPosition: true,
                 gutter: 20
             });
+            // Re-layout one more time for good measure
+            msnry.layout();
         });
     }
 
-function extractImg(item) {
-    // 1. Check the standard enclosure/thumbnail first (already handled in loop, but here for safety)
-    if (item.enclosure && item.enclosure.link) return item.enclosure.link;
-    if (item.thumbnail) return item.thumbnail;
-
-    // 2. Create a temporary element to parse the description AND the content
-    const searchString = (item.content || "") + (item.description || "");
-    if (!searchString) return null;
-
-    const div = document.createElement('div');
-    div.innerHTML = searchString;
-
-    // 3. Look for the first image
-    const img = div.querySelector('img');
-    if (img) {
-        // Many WordPress sites (like Diff) use data attributes for high-res versions
-        const src = img.getAttribute('data-orig-file') || 
-                    img.getAttribute('data-permalink') || 
-                    img.getAttribute('src');
+    function extractImg(item) {
+        if (item.enclosure && item.enclosure.link) return item.enclosure.link;
+        if (item.thumbnail) return item.thumbnail;
         
-        // Filter out tiny icons or tracking pixels
-        if (src && !src.includes('pixel') && !src.includes('hit.x')) {
-            return src;
+        const searchString = (item.content || "") + (item.description || "");
+        const div = document.createElement('div');
+        div.innerHTML = searchString;
+        const img = div.querySelector('img');
+        
+        if (img) {
+            return img.getAttribute('data-orig-file') || img.getAttribute('src');
         }
+        return null;
     }
-    return null;
-}
 
     buildMagazine();
 </script>
