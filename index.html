@@ -10,20 +10,21 @@
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     
 <style>
+    * { box-sizing: border-box; } /* Essential for grid math */
     body { background-color: #fdfaf6; font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 40px 20px; }
     h1 { font-family: 'Playfair Display', serif; text-align: center; font-size: 3.5rem; margin-bottom: 5px; color: #1a1a1a; }
     .subline { text-align: center; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 50px; color: #888; }
     
     .grid { width: 100%; max-width: 1400px; margin: 0 auto; }
     
-    /* These ensure the grid columns are calculated correctly */
-    .grid-sizer, .grid-item { width: calc(33.333% - 20px); }
+    /* Force column widths */
+    .grid-sizer, .grid-item { width: 31%; } /* Fixed percentage for stability */
 
-    @media (max-width: 900px) { .grid-sizer, .grid-item { width: calc(50% - 20px); } }
+    @media (max-width: 1000px) { .grid-sizer, .grid-item { width: 48%; } }
     @media (max-width: 600px) { .grid-sizer, .grid-item { width: 100%; } }
 
     .grid-item {
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         background: #fff;
         border-radius: 4px;
         overflow: hidden;
@@ -31,14 +32,9 @@
         text-decoration: none;
         color: inherit;
         display: block;
-        transition: transform 0.3s ease;
     }
 
-    .grid-item:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-
-    /* The Fix for "Bursting" Images */
-    .grid-item img { width: 100%; height: auto; display: block; }
-    
+    .grid-item img { width: 100%; height: auto; display: block; min-height: 50px; background: #eee; }
     .grid-item.no-image { border-top: 5px solid #b58d67; }
 
     .content { padding: 25px; }
@@ -98,30 +94,34 @@
 
     async function buildMagazine() {
         const container = document.querySelector('#magazine-grid');
-        let allArticles = [];
+        
+        // INITIALIZE MASONRY IMMEDIATELY
+        const msnry = new Masonry(container, {
+            itemSelector: '.grid-item',
+            columnWidth: '.grid-sizer',
+            percentPosition: true,
+            gutter: 25
+        });
 
+        let allArticles = [];
         const feedPromises = FEEDS.map(async (url) => {
             try {
                 const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
                 const data = await response.json();
                 if (data.status === 'ok') {
-                    return data.items.map(item => ({
-                        ...item,
-                        sourceTitle: data.feed.title
-                    }));
+                    return data.items.map(item => ({ ...item, sourceTitle: data.feed.title }));
                 }
             } catch (e) { console.error("Failed:", url); }
             return [];
         });
 
         const results = await Promise.all(feedPromises);
-        allArticles = results.flat();
-        allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+        allArticles = results.flat().sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
 
         allArticles.forEach(item => {
             const img = extractImg(item);
             const imageClass = img ? "" : "no-image";
-            const imageHtml = img ? `<img src="${img}" loading="lazy" referrerpolicy="no-referrer" onerror="this.parentElement.classList.add('no-image'); this.remove();">` : "";
+            const imageHtml = img ? `<img src="${img}" referrerpolicy="no-referrer" onload="refreshGrid()" onerror="this.parentElement.classList.add('no-image'); this.remove(); refreshGrid();">` : "";
 
             const cardHtml = `
                 <a href="${item.link}" target="_blank" class="grid-item ${imageClass}">
@@ -132,19 +132,22 @@
                         <p>${item.description.replace(/<[^>]*>/g, '').substring(0, 150)}...</p>
                     </div>
                 </a>`;
-            container.insertAdjacentHTML('beforeend', cardHtml);
+            
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = cardHtml;
+            const cardElement = tempDiv.firstElementChild;
+            
+            container.appendChild(cardElement);
+            msnry.appended(cardElement);
         });
 
-        imagesLoaded(container, function() {
-            // Fix: Actually define the variable 'msnry' so the layout command works
-            const msnry = new Masonry(container, {
-                itemSelector: '.grid-item',
-                columnWidth: '.grid-sizer',
-                percentPosition: true,
-                gutter: 20
-            });
+        // Global function to trigger layout refresh
+        window.refreshGrid = function() {
             msnry.layout();
-        });
+        };
+        
+        // Final catch-all refresh
+        imagesLoaded(container).on('progress', () => msnry.layout());
     }
 
     function extractImg(item) {
@@ -152,17 +155,14 @@
         if (item.enclosure && item.enclosure.link) src = item.enclosure.link;
         else if (item.thumbnail) src = item.thumbnail;
         
-        if (!src) {
+        if (!src || src.includes('gravatar')) {
             const searchString = (item.content || "") + (item.description || "");
             const div = document.createElement('div');
             div.innerHTML = searchString;
             const img = div.querySelector('img');
-            if (img) {
-                src = img.getAttribute('data-orig-file') || img.getAttribute('src');
-            }
+            if (img) src = img.getAttribute('src');
         }
 
-        // Bypassing hotlink blocks using the wsrv proxy
         if (src && src.startsWith('http')) {
             return `https://wsrv.nl/?url=${encodeURIComponent(src)}&w=600&af`;
         }
