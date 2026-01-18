@@ -148,12 +148,33 @@
         });
     }
 
-    function extractImg(html) {
-        const div = document.createElement('div');
-        div.innerHTML = html;
-        const img = div.querySelector('img');
-        return img ? img.src : null;
+function extractImg(item) {
+    // 1. Check the standard enclosure/thumbnail first (already handled in loop, but here for safety)
+    if (item.enclosure && item.enclosure.link) return item.enclosure.link;
+    if (item.thumbnail) return item.thumbnail;
+
+    // 2. Create a temporary element to parse the description AND the content
+    const searchString = (item.content || "") + (item.description || "");
+    if (!searchString) return null;
+
+    const div = document.createElement('div');
+    div.innerHTML = searchString;
+
+    // 3. Look for the first image
+    const img = div.querySelector('img');
+    if (img) {
+        // Many WordPress sites (like Diff) use data attributes for high-res versions
+        const src = img.getAttribute('data-orig-file') || 
+                    img.getAttribute('data-permalink') || 
+                    img.getAttribute('src');
+        
+        // Filter out tiny icons or tracking pixels
+        if (src && !src.includes('pixel') && !src.includes('hit.x')) {
+            return src;
+        }
     }
+    return null;
+}
 
     buildMagazine();
 </script>
