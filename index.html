@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lavish Magazine</title>
+    <title>OpenMag</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     
 <style>
-    /* New Clickable Card Styles */
+    body { background-color: #fdfaf6; font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 40px 20px; }
+    h1 { font-family: 'Playfair Display', serif; text-align: center; font-size: 3.5rem; margin-bottom: 5px; color: #1a1a1a; }
+    .subline { text-align: center; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 50px; color: #888; }
+    
+    .grid { width: 100%; max-width: 1400px; margin: 0 auto; }
+
     .grid-item { 
         width: calc(33.333% - 20px); 
         margin-bottom: 30px; 
@@ -17,9 +22,9 @@
         border-radius: 4px; 
         overflow: hidden; 
         transition: all 0.3s ease;
-        text-decoration: none; /* Remove underline from links */
+        text-decoration: none; 
         color: inherit;
-        display: block; /* Make the whole area clickable */
+        display: block; 
         box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
@@ -28,10 +33,17 @@
         box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
     }
 
-    /* If there's no image, maybe add a top border for flair */
-    .grid-item.no-image {
-        border-top: 5px solid #b58d67;
-    }
+    .grid-item img { width: 100%; height: auto; display: block; }
+    
+    .grid-item.no-image { border-top: 5px solid #b58d67; }
+
+    .content { padding: 25px; }
+    .category { text-transform: uppercase; font-size: 0.65rem; letter-spacing: 2px; color: #b58d67; font-weight: 600; margin-bottom: 12px; display: block; }
+    h2 { font-family: 'Playfair Display', serif; margin: 0 0 15px; font-size: 1.4rem; line-height: 1.2; color: #1a1a1a; }
+    p { color: #555; line-height: 1.7; font-size: 0.95rem; margin-bottom: 0; }
+
+    @media (max-width: 900px) { .grid-item { width: calc(50% - 20px); } }
+    @media (max-width: 600px) { .grid-item { width: 100%; } }
 </style>
 </head>
 <body>
@@ -39,8 +51,7 @@
     <h1>OpenMag</h1>
     <div class="subline">Hyviä uutisia</div>
     
-    <div class="grid" id="magazine-grid">
-        </div>
+    <div class="grid" id="magazine-grid"></div>
 
     <script>
         const FEEDS = [
@@ -82,46 +93,57 @@
             'http://blog.okfn.org/feed/'
         ];
 
-      async function buildMagazine() {
-        const container = document.querySelector('#magazine-grid');
+        async function buildMagazine() {
+            const container = document.querySelector('#magazine-grid');
 
-        for (const url of FEEDS) {
-            try {
-                const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
-                const data = await response.json();
+            for (const url of FEEDS) {
+                try {
+                    const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
+                    const data = await response.json();
 
-                if (data.status === 'ok') {
-                    data.items.forEach(item => {
-                        const img = item.enclosure.link || item.thumbnail || extractImg(item.description);
-                        
-                        // Decide if we use the 'no-image' class for styling
-                        const imageClass = img ? "" : "no-image";
-                        const imageHtml = img ? `<img src="${img}" onerror="this.style.display='none'">` : "";
+                    if (data.status === 'ok') {
+                        data.items.forEach(item => {
+                            const img = item.enclosure.link || item.thumbnail || extractImg(item.description);
+                            
+                            const imageClass = img ? "" : "no-image";
+                            const imageHtml = img ? `<img src="${img}" onerror="this.parentElement.classList.add('no-image'); this.remove();">` : "";
 
-                        const cardHtml = `
-                            <a href="${item.link}" target="_blank" class="grid-item ${imageClass}">
-                                ${imageHtml}
-                                <div class="content">
-                                    <span class="category">${data.feed.title}</span>
-                                    <h2>${item.title}</h2>
-                                    <p>${item.description.replace(/<[^>]*>/g, '').substring(0, 150)}...</p>
-                                </div>
-                            </a>`;
-                        container.insertAdjacentHTML('beforeend', cardHtml);
-                    });
-                }
-            } catch (e) { console.error("Skipped:", url); }
+                            const cardHtml = `
+                                <a href="${item.link}" target="_blank" class="grid-item ${imageClass}">
+                                    ${imageHtml}
+                                    <div class="content">
+                                        <span class="category">${data.feed.title}</span>
+                                        <h2>${item.title}</h2>
+                                        <p>${item.description.replace(/<[^>]*>/g, '').substring(0, 150)}...</p>
+                                    </div>
+                                </a>`;
+                            container.insertAdjacentHTML('beforeend', cardHtml);
+                        });
+                    }
+                } catch (e) { console.error("Skipped:", url); }
+            }
+
+            // TRIGGER MASONRY after images load
+            imagesLoaded(container, () => {
+                new Masonry(container, {
+                    itemSelector: '.grid-item',
+                    percentPosition: true,
+                    gutter: 20
+                });
+            });
         }
 
-        // Re-layout Masonry
-        imagesLoaded(container, () => {
-            new Masonry(container, {
-                itemSelector: '.grid-item',
-                percentPosition: true,
-                gutter: 20
-            });
-        });
-    }
+        // HELPER TO FIND IMAGES IN DESCRIPTION
+        function extractImg(html) {
+            const div = document.createElement('div');
+            div.innerHTML = html;
+            const img = div.querySelector('img');
+            return img ? img.src : null;
+        }
+
+        // START THE SCRIPT
+        buildMagazine();
+
     </script>
 </body>
 </html>
