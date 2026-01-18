@@ -54,96 +54,108 @@
     <div class="grid" id="magazine-grid"></div>
 
     <script>
-        const FEEDS = [
-            'https://www.accessnow.org/feed/',
-            'https://bellingcat.com/feed/',
-            'https://openfuture.eu/blog/feed/',
-            'http://www.create.ac.uk/feed/',
-            'http://creativecommons.org/weblog/rss',
-            'http://www.demoshelsinki.fi/feed/',
-            'http://blog.wikimedia.org/feed/',
-            'https://www.digime.fi/feed/',
-            'http://www.effi.org/xml/uutiset.rss',
-            'http://edri.org/feed/',
-            'https://heritagetribune.eu/feed/',
-            'http://blog.euscreen.eu/?feed=rss2',
-            'https://euvsdisinfo.eu/feed/',
-            'http://sparcopen.org/feed/',
-            'http://librarylab.law.harvard.edu/blog/feed/',
-            'http://publicdomainreview.org/feed/',
-            'http://glamwiki.wordpress.com/feed/',
-            'http://www.epressi.com/tiedotteet/tiede-ja-tutkimus.rss',
-            'https://www.unglobalpulse.org/feed/',
-            'http://xkcd.com/rss.xml',
-            'http://www.communia-association.org/feed/',
-            'http://blog.archive.org/feed/',
-            'http://www.kirjastokaista.fi/feed/',
-            'https://www.knowledgerights21.org/feed/',
-            'https://kuvasto.fi/feed/',
-            'http://mondediplo.com/backend',
-            'https://localcontexts.org/feed/',
-            'https://www.sttinfo.fi/rss/releases/latest?publisherId=69817951',
-            'http://nakokulmiaarkistosta.blogspot.com/feeds/posts/default',
-            'https://fcai.fi/news?format=rss',
-            'https://wikimediafoundation.org/news/feed/',
-            'https://okm.fi/ajankohtaista/-/asset_publisher/HplCdJTXh1mx/rss',
-            'http://hacks.mozilla.org/feed/',
-            'https://mydata.org/feed/',
-            'http://www.mysociety.org/feed/',
-            'http://blog.okfn.org/feed/'
-        ];
+    const FEEDS = [
+        'https://www.accessnow.org/feed/',
+        'https://bellingcat.com/feed/',
+        'https://openfuture.eu/blog/feed/',
+        'http://www.create.ac.uk/feed/',
+        'http://creativecommons.org/weblog/rss',
+        'http://www.demoshelsinki.fi/feed/',
+        'http://blog.wikimedia.org/feed/',
+        'https://www.digime.fi/feed/',
+        'http://www.effi.org/xml/uutiset.rss',
+        'http://edri.org/feed/',
+        'https://heritagetribune.eu/feed/',
+        'http://blog.euscreen.eu/?feed=rss2',
+        'https://euvsdisinfo.eu/feed/',
+        'http://sparcopen.org/feed/',
+        'http://librarylab.law.harvard.edu/blog/feed/',
+        'http://publicdomainreview.org/feed/',
+        'http://glamwiki.wordpress.com/feed/',
+        'http://www.epressi.com/tiedotteet/tiede-ja-tutkimus.rss',
+        'https://www.unglobalpulse.org/feed/',
+        'http://xkcd.com/rss.xml',
+        'http://www.communia-association.org/feed/',
+        'http://blog.archive.org/feed/',
+        'http://www.kirjastokaista.fi/feed/',
+        'https://www.knowledgerights21.org/feed/',
+        'https://kuvasto.fi/feed/',
+        'http://mondediplo.com/backend',
+        'https://localcontexts.org/feed/',
+        'https://www.sttinfo.fi/rss/releases/latest?publisherId=69817951',
+        'http://nakokulmiaarkistosta.blogspot.com/feeds/posts/default',
+        'https://fcai.fi/news?format=rss',
+        'https://wikimediafoundation.org/news/feed/',
+        'https://okm.fi/ajankohtaista/-/asset_publisher/HplCdJTXh1mx/rss',
+        'http://hacks.mozilla.org/feed/',
+        'https://mydata.org/feed/',
+        'http://www.mysociety.org/feed/',
+        'http://blog.okfn.org/feed/'
+    ];
 
-        async function buildMagazine() {
-            const container = document.querySelector('#magazine-grid');
+    async function buildMagazine() {
+        const container = document.querySelector('#magazine-grid');
+        let allArticles = [];
 
-            for (const url of FEEDS) {
-                try {
-                    const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
-                    const data = await response.json();
+        // 1. COLLECT ALL DATA
+        const feedPromises = FEEDS.map(async (url) => {
+            try {
+                const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(url)}`);
+                const data = await response.json();
+                if (data.status === 'ok') {
+                    return data.items.map(item => ({
+                        ...item,
+                        sourceTitle: data.feed.title
+                    }));
+                }
+            } catch (e) { console.error("Failed:", url); }
+            return [];
+        });
 
-                    if (data.status === 'ok') {
-                        data.items.forEach(item => {
-                            const img = item.enclosure.link || item.thumbnail || extractImg(item.description);
-                            
-                            const imageClass = img ? "" : "no-image";
-                            const imageHtml = img ? `<img src="${img}" onerror="this.parentElement.classList.add('no-image'); this.remove();">` : "";
+        const results = await Promise.all(feedPromises);
+        allArticles = results.flat();
 
-                            const cardHtml = `
-                                <a href="${item.link}" target="_blank" class="grid-item ${imageClass}">
-                                    ${imageHtml}
-                                    <div class="content">
-                                        <span class="category">${data.feed.title}</span>
-                                        <h2>${item.title}</h2>
-                                        <p>${item.description.replace(/<[^>]*>/g, '').substring(0, 150)}...</p>
-                                    </div>
-                                </a>`;
-                            container.insertAdjacentHTML('beforeend', cardHtml);
-                        });
-                    }
-                } catch (e) { console.error("Skipped:", url); }
-            }
+        // 2. SORT BY DATE (Newest First)
+        allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
 
-            // TRIGGER MASONRY after images load
-            imagesLoaded(container, () => {
-                new Masonry(container, {
-                    itemSelector: '.grid-item',
-                    percentPosition: true,
-                    gutter: 20
-                });
+        // 3. RENDER (With Lazy Loading)
+        allArticles.forEach(item => {
+            const img = item.enclosure.link || item.thumbnail || extractImg(item.description);
+            const imageClass = img ? "" : "no-image";
+            
+            // Added loading="lazy" and fixed height/width placeholders for Masonry stability
+            const imageHtml = img ? `<img src="${img}" loading="lazy" onerror="this.parentElement.classList.add('no-image'); this.remove();">` : "";
+
+            const cardHtml = `
+                <a href="${item.link}" target="_blank" class="grid-item ${imageClass}">
+                    ${imageHtml}
+                    <div class="content">
+                        <span class="category">${item.sourceTitle}</span>
+                        <h2>${item.title}</h2>
+                        <p>${item.description.replace(/<[^>]*>/g, '').substring(0, 150)}...</p>
+                    </div>
+                </a>`;
+            container.insertAdjacentHTML('beforeend', cardHtml);
+        });
+
+        // 4. TRIGGER MASONRY
+        imagesLoaded(container, () => {
+            new Masonry(container, {
+                itemSelector: '.grid-item',
+                percentPosition: true,
+                gutter: 20
             });
-        }
+        });
+    }
 
-        // HELPER TO FIND IMAGES IN DESCRIPTION
-        function extractImg(html) {
-            const div = document.createElement('div');
-            div.innerHTML = html;
-            const img = div.querySelector('img');
-            return img ? img.src : null;
-        }
+    function extractImg(html) {
+        const div = document.createElement('div');
+        div.innerHTML = html;
+        const img = div.querySelector('img');
+        return img ? img.src : null;
+    }
 
-        // START THE SCRIPT
-        buildMagazine();
-
-    </script>
+    buildMagazine();
+</script>
 </body>
 </html>
