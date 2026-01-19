@@ -59,6 +59,14 @@
         box-shadow: 0 4px 12px rgba(181, 141, 103, 0.4);
         font-weight: bold;
     }
+    #scroll-sentinel {
+    text-align: center;
+    padding: 40px;
+    font-size: 0.8rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 </style>
 </head>
 <body>
@@ -70,6 +78,7 @@
     <div class="grid" id="magazine-grid">
         <div class="grid-sizer"></div>
     </div>
+    <div id="scroll-sentinel">Ladataan lisää artikkeleita...</div>
 
 <script>
 let allArticles = []; 
@@ -77,6 +86,8 @@ let displayedCount = 0;
 const PAGE_SIZE = 15;
 let currentFilter = 'All';
 let msnry;
+
+let isLoading = false; // Estää useat päällekkäiset lataukset
 
 async function buildMagazine() {
     const container = document.querySelector('#magazine-grid');
@@ -95,14 +106,33 @@ async function buildMagazine() {
         allArticles = await response.json(); 
         
         if (allArticles && allArticles.length > 0) {
-            // Use 'sheetCategory' because that is what the Robot saves
             const categories = [...new Set(allArticles.map(a => a.sheetCategory))].filter(Boolean);
             createFilterUI(categories);
+            
+            // Ensimmäinen lataus
             displayArticles();
+
+            // Asetetaan Infinite Scroll -seuranta
+            setupInfiniteScroll();
         }
     } catch (e) {
         console.error("Fetch failed", e);
     }
+}
+
+function setupInfiniteScroll() {
+    const sentinel = document.querySelector('#scroll-sentinel');
+    
+    const observer = new IntersectionObserver((entries) => {
+        // Jos sentinel-div tulee näkyviin ja emme jo lataa jotain
+        if (entries[0].isIntersecting && !isLoading) {
+            displayArticles();
+        }
+    }, {
+        rootMargin: '200px' // Aloittaa lataamisen jo 200px ennen loppua
+    });
+
+    observer.observe(sentinel);
 }
 
 function displayArticles() {
@@ -110,11 +140,18 @@ function displayArticles() {
     const filtered = allArticles.filter(a => currentFilter === 'All' || a.sheetCategory === currentFilter);
     const slice = filtered.slice(displayedCount, displayedCount + PAGE_SIZE);
 
+    if (slice.length === 0) {
+        document.querySelector('#scroll-sentinel').innerText = "Kaikki uutiset ladattu.";
+        return;
+    }
+
+    isLoading = true; // Lukitaan lataus
+
     slice.forEach(item => {
         const img = item.enforcedImage || extractImg(item);
         const imageHtml = img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" referrerpolicy="no-referrer" onload="refreshGrid()" onerror="this.parentElement.classList.add('no-image'); this.remove(); refreshGrid();">` : "";
         
-        const rawSnippet = item.content || item.description || "";
+        const rawSnippet = item.description || item.content || "";
         const cleanSnippet = rawSnippet.replace(/<[^>]*>/g, '').trim().substring(0, 200);
         
         const cardHtml = `
@@ -137,7 +174,12 @@ function displayArticles() {
     });
 
     displayedCount += PAGE_SIZE;
-    imagesLoaded(container).on('always', () => msnry.layout());
+    
+    // Kun kuvat on ladattu, päivitetään layout ja vapautetaan lukko
+    imagesLoaded(container).on('always', () => {
+        msnry.layout();
+        isLoading = false; 
+    });
 }
 
 function createFilterUI(categories) {
