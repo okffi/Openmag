@@ -33,8 +33,16 @@ jobs:
           git config --global user.name 'NewsRobot'
           git config --global user.email 'robot@openmag.com'
           
-          # Haetaan uusimmat muutokset ennen tallennusta (estää "rejected" virheen)
-          git pull --rebase origin main
+          # Pakotetaan haku: nollataan paikallinen tila ja haetaan tuorein koodi
+          git fetch origin main
+          git reset --hard origin main
+          
+          # Ajetaan skripti uudestaan, jotta saadaan tuore data puhtaaseen pohjaan
+          node fetch_news.js
+          
+          git add data.json
+          git commit -m "Automated News Update" || echo "No changes to commit"
+          git push origin main --force
           
           git add data.json
           git commit -m "Automated News Update" || echo "No changes to commit"
