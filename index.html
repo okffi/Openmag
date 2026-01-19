@@ -55,10 +55,13 @@
     <script>
 const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=0&single=true&output=csv';
 
+let allArticles = []; // Global pool
+let displayedCount = 0;
+const PAGE_SIZE = 15;
+let currentFilter = 'All';
+
 async function buildMagazine() {
     const container = document.querySelector('#magazine-grid');
-    
-    // CRITICAL: Initialize Masonry FIRST so msnry.appended works later
     const msnry = new Masonry(container, {
         itemSelector: '.grid-item',
         columnWidth: '.grid-sizer',
@@ -66,23 +69,23 @@ async function buildMagazine() {
         gutter: 25
     });
 
-    // Global function for the images to call
     window.refreshGrid = () => msnry.layout();
 
     try {
         const sheetResponse = await fetch(SHEET_CSV_URL);
         const csvText = await sheetResponse.text();
-        
-        // Better CSV parsing to handle titles with commas
         const rows = csvText.split('\n').slice(1); 
+        
         const feedData = rows.map(row => {
-            // This regex handles commas inside quotes correctly
             const cols = row.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g) || [];
             return { 
                 url: cols[2] ? cols[2].replace(/"/g, '').trim() : null, 
                 category: cols[0] ? cols[0].replace(/"/g, '').trim() : "General"
             };
         }).filter(f => f.url && f.url.startsWith('http'));
+
+        // Build Filter Buttons
+        createFilterUI([...new Set(feedData.map(f => f.category))]);
 
         const feedPromises = feedData.map(async (feed) => {
             try {
@@ -100,41 +103,71 @@ async function buildMagazine() {
         });
 
         const results = await Promise.all(feedPromises);
-        const allArticles = results.flat().sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+        allArticles = results.flat().sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
 
-        allArticles.forEach(item => {
-            const img = extractImg(item);
-            const imageClass = img ? "" : "no-image";
-            const imageHtml = img ? `<img src="${img}" referrerpolicy="no-referrer" onload="refreshGrid()" onerror="this.parentElement.classList.add('no-image'); this.remove(); refreshGrid();">` : "";
+        // Initial Load
+        displayArticles(msnry);
 
-            const fullText = item.content || item.description || "";
-            const cleanSnippet = fullText.replace(/<[^>]*>/g, '').trim().substring(0, 400);
-            
-            const cardHtml = `
-                <a href="${item.link}" target="_blank" class="grid-item ${imageClass}">
-                    ${imageHtml}
-                    <div class="content">
-                        <span class="category">${item.sourceTitle}</span>
-                        <h2>${item.title}</h2>
-                        <p>${cleanSnippet}...</p>
-                    </div>
-                </a>`;
-            
-            const tempDiv = document.createElement('div');
-            tempDiv.innerHTML = cardHtml;
-            const cardElement = tempDiv.firstElementChild;
-            
-            container.appendChild(cardElement);
-            msnry.appended(cardElement);
-        });
+        // Infinite Scroll Listener
+        window.onscroll = () => {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
+                displayArticles(msnry);
+            }
+        };
 
-        // Ensure everything is aligned after all items are added
-        imagesLoaded(container).on('always', () => msnry.layout());
-
-    } catch (err) {
-        console.error("Magazine build error:", err);
-    }
+    } catch (err) { console.error("Magazine build error:", err); }
 }
+
+function displayArticles(msnry) {
+    const container = document.querySelector('#magazine-grid');
+    const filtered = allArticles.filter(a => currentFilter === 'All' || a.sheetCategory === currentFilter);
+    const slice = filtered.slice(displayedCount, displayedCount + PAGE_SIZE);
+
+    slice.forEach(item => {
+        const img = extractImg(item);
+        const imageClass = img ? "" : "no-image";
+        const imageHtml = img ? `<img src="${img}" referrerpolicy="no-referrer" onload="refreshGrid()" onerror="this.parentElement.classList.add('no-image'); this.remove(); refreshGrid();">` : "";
+        const cleanSnippet = (item.content || item.description || "").replace(/<[^>]*>/g, '').trim().substring(0, 300);
+        
+        const cardHtml = `
+            <a href="${item.link}" target="_blank" class="grid-item">
+                ${imageHtml}
+                <div class="content">
+                    <span class="category" style="color: var(--cat-color, #b58d67)">${item.sheetCategory}</span>
+                    <h2>${item.title}</h2>
+                    <p>${cleanSnippet}...</p>
+                    <small>${item.sourceTitle}</small>
+                </div>
+            </a>`;
+        
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = cardHtml;
+        const cardElement = tempDiv.firstElementChild;
+        container.appendChild(cardElement);
+        msnry.appended(cardElement);
+    });
+
+    displayedCount += PAGE_SIZE;
+    imagesLoaded(container).on('always', () => msnry.layout());
+}
+
+function createFilterUI(categories) {
+    // You can add a <div id="filters"></div> to your HTML
+    const filterContainer = document.getElementById('filters');
+    if (!filterContainer) return;
+
+    const allBtn = `<button onclick="setFilter('All')">All</button>`;
+    const catBtns = categories.map(cat => `<button onclick="setFilter('${cat}')">${cat}</button>`).join('');
+    filterContainer.innerHTML = allBtn + catBtns;
+}
+
+window.setFilter = (cat) => {
+    currentFilter = cat;
+    displayedCount = 0;
+    document.querySelector('#magazine-grid').querySelectorAll('.grid-item').forEach(el => el.remove());
+    // We would need to pass msnry here or make it global
+    location.reload(); // Simple way to reset for now
+};
 
 function extractImg(item) {
     let src = null;
