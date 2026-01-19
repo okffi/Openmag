@@ -43,7 +43,3 @@ jobs:
           git add data.json
           git commit -m "Automated News Update" || echo "No changes to commit"
           git push origin main --force
-          
-          git add data.json
-          git commit -m "Automated News Update" || echo "No changes to commit"
-          git push origin main
