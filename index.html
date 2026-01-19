@@ -44,15 +44,13 @@
 
     /* Base button style */
 .filter-btn {
-    padding: 8px 18px;
+    transition: all 0.3s ease; /* Smooth transition when clicking */
+    padding: 8px 16px;
+    margin: 5px;
     border: 1px solid #ddd;
+    border-radius: 20px;
     background: white;
     cursor: pointer;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-family: 'Source Sans Pro', sans-serif;
-    transition: all 0.3s ease;
-    color: #666;
 }
 
 /* Hover state */
@@ -63,11 +61,12 @@
 
 /* THE INDICATOR STATE (Active) */
 .filter-btn.active {
-    background: #b58d67;
-    color: white;
-    border-color: #b58d67;
-    box-shadow: 0 4px 12px rgba(181, 141, 103, 0.3);
-    font-weight: 600;
+    background: #b58d67 !important; /* Your theme brown */
+    color: white !important;
+    border-color: #b58d67 !important;
+    box-shadow: 0 4px 12px rgba(181, 141, 103, 0.4);
+    font-weight: bold;
+    transform: scale(1.05); /* Slight pop out effect */
 }
 </style>
 </head>
