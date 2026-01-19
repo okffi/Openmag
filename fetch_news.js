@@ -1,62 +1,85 @@
 const axios = require('axios');
-const Parser = require('rss-parser');
 const fs = require('fs');
 
-const parser = new Parser();
-const SHEET_CSV_URL = process.env.SHEET_CSV_URL;
+// Use the Secret if available, otherwise fallback to the hardcoded link for testing
+const SHEET_CSV_URL = process.env.SHEET_CSV_URL || 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=0&single=true&output=csv';
 
 async function run() {
     try {
-        // 1. Get Spreadsheet Data
+        console.log("Starting Robot: Fetching Spreadsheet...");
         const response = await axios.get(SHEET_CSV_URL);
         const rows = response.data.split('\n').slice(1);
-        const feeds = rows.map(row => {
+        
+        const feedData = rows.map(row => {
             const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
             return { 
-                category: cols[0]?.replace(/^"|"$/g, '').trim(), 
-                url: cols[2]?.replace(/^"|"$/g, '').trim() 
+                category: cols[0] ? cols[0].replace(/^"|"$/g, '').trim() : "General",
+                url: cols[2] ? cols[2].replace(/^"|"$/g, '').trim() : null
             };
         }).filter(f => f.url && f.url.startsWith('http'));
 
+        console.log(`Found ${feedData.length} feeds. Starting throttled fetch...`);
+
         let allArticles = [];
 
-        // 2. Fetch Feeds (Sequentially to avoid rate limits)
-        for (const feed of feeds) {
-            try {
-                console.log(`Fetching: ${feed.url}`);
-                const feedContent = await parser.parseURL(feed.url);
-                const items = feedContent.items.map(item => ({
-                    title: item.title,
-                    link: item.link,
-                    pubDate: item.pubDate,
-                    content: item.contentSnippet || item.content,
-                    source: feedContent.title,
-                    category: feed.category,
-                    // Basic image extraction from content
-                    image: extractImage(item)
-                }));
-                allArticles.push(...items);
-            } catch (e) {
-                console.error(`Skipped ${feed.url}: ${e.message}`);
+        // THE SEQUENTIAL FETCH LOOP (The part you were looking for)
+        for (let i = 0; i < feedData.length; i += 2) { 
+            const batch = feedData.slice(i, i + 2);
+            
+            await Promise.all(batch.map(async (feed) => {
+                try {
+                    console.log(`Processing: ${feed.url}`);
+                    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`;
+                    
+                    const res = await axios.get(apiUrl, {
+                        headers: { 'User-Agent': 'OpenMag-Robot-v1' }
+                    });
+                    
+                    if (res.data.status === 'ok') {
+                        const items = res.data.items.map(item => ({
+                            ...item,
+                            sourceTitle: res.data.feed.title,
+                            sheetCategory: feed.category,
+                            // Enhance image extraction for the Robot
+                            enforcedImage: extractImage(item)
+                        }));
+                        allArticles.push(...items);
+                    }
+                } catch (e) {
+                    console.error(`Skipped ${feed.url}: ${e.response?.status || e.message}`);
+                }
+            }));
+
+            // Wait 3 seconds between batches to avoid 429 errors
+            if (i + 2 < feedData.length) {
+                await new Promise(r => setTimeout(r, 3000));
             }
         }
 
-        // 3. Sort and Save
+        // Sort by date (newest first)
         allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-        fs.writeFileSync('data.json', JSON.stringify(allArticles.slice(0, 500), null, 2));
-        console.log("Successfully saved 500 articles to data.json");
+
+        // Limit to 500 articles to keep the file size reasonable
+        const finalData = allArticles.slice(0, 500);
+
+        fs.writeFileSync('data.json', JSON.stringify(finalData, null, 2));
+        console.log(`Success! data.json created with ${finalData.length} articles.`);
 
     } catch (error) {
-        console.error("Critical Failure:", error);
+        console.error("Critical Robot Failure:", error);
         process.exit(1);
     }
 }
 
+// Helper to find the best image for the magazine
 function extractImage(item) {
-    // Simple regex to find the first img tag src in content
-    const imgRegex = /<img[^>]+src="([^">]+)"/;
-    const match = (item.content || "").match(imgRegex);
-    return match ? match[1] : null;
+    let src = null;
+    if (item.enclosures && item.enclosures.length > 0) {
+        const images = item.enclosures.filter(e => e.type && e.type.includes('image'));
+        if (images.length > 0) src = images[images.length - 1].url;
+    }
+    if (!src) src = item.thumbnail || item.enclosure?.link;
+    return src;
 }
 
 run();
