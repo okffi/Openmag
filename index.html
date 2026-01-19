@@ -86,15 +86,35 @@ let allArticles = [];
 let displayedCount = 0;
 const PAGE_SIZE = 15;
 let currentFilter = 'All';
-let msnry; // Make masonry global so filters can access it
+let msnry;
 
 async function buildMagazine() {
-    // Just fetch the ONE file the robot created
-    const response = await fetch('data.json');
-    const allArticles = await response.json();
+    const container = document.querySelector('#magazine-grid');
     
-    // Now just run your existing displayArticles() logic
-    displayArticles(allArticles);
+    // 1. Initialize Masonry immediately so the grid exists
+    msnry = new Masonry(container, {
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true,
+        gutter: 25
+    });
+
+    window.refreshGrid = () => msnry.layout();
+
+    try {
+        // 2. Fetch the JSON created by the Robot
+        const response = await fetch('data.json');
+        allArticles = await response.json(); // Remove 'const' here to use global variable
+        
+        // 3. Setup Filters
+        const categories = [...new Set(allArticles.map(a => a.sheetCategory))];
+        createFilterUI(categories);
+
+        // 4. Initial Display
+        displayArticles();
+    } catch (e) {
+        console.error("Magazine load failed. data.json might be missing or empty.", e);
+    }
 }
 
 function displayArticles() {
@@ -104,29 +124,29 @@ function displayArticles() {
 
     if (slice.length === 0) return;
 
-    const newElements = slice.map(item => {
-        const img = extractImg(item);
-        const imageClass = img ? "" : "no-image";
-        const imageHtml = img ? `<img src="${img}" referrerpolicy="no-referrer" onload="refreshGrid()" onerror="this.parentElement.classList.add('no-image'); this.remove(); refreshGrid();">` : "";
-        const cleanSnippet = (item.content || item.description || "").replace(/<[^>]*>/g, '').trim().substring(0, 300);
+    slice.forEach(item => {
+        // Use Robot's found image first, then fallback
+        const img = item.enforcedImage || extractImg(item);
+        const imageHtml = img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" referrerpolicy="no-referrer" onload="refreshGrid()" onerror="this.parentElement.classList.add('no-image'); this.remove(); refreshGrid();">` : "";
+        
+        const rawSnippet = item.description || item.content || "";
+        const cleanSnippet = rawSnippet.replace(/<[^>]*>/g, '').trim().substring(0, 200);
         
         const cardHtml = `
             <a href="${item.link}" target="_blank" class="grid-item">
                 ${imageHtml}
                 <div class="content">
-                    <span class="category">${item.sheetCategory}</span>
+                    <span class="category">${item.sheetCategory || 'News'}</span>
                     <h2>${item.title}</h2>
                     <p>${cleanSnippet}...</p>
-                    <small style="color:#aaa; display:block; margin-top:10px;">${item.sourceTitle}</small>
+                    <small style="color:#aaa; display:block; margin-top:10px;">${item.sourceTitle || ''}</small>
                 </div>
             </a>`;
         
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = cardHtml;
-        return tempDiv.firstElementChild;
-    });
-
-    newElements.forEach(el => {
+        const el = tempDiv.firstElementChild;
+        
         container.appendChild(el);
         msnry.appended(el);
     });
@@ -135,78 +155,7 @@ function displayArticles() {
     imagesLoaded(container).on('always', () => msnry.layout());
 }
 
-function createFilterUI(categories) {
-    const filterContainer = document.getElementById('filters');
-    if (!filterContainer) return;
-
-    // Create the "All" button first with the 'active' class
-    let html = `<button class="filter-btn active" onclick="setFilter('All', this)">All</button>`;
-    
-    // Create the rest of the buttons
-    categories.sort().forEach(cat => {
-        html += `<button class="filter-btn" onclick="setFilter('${cat}', this)">${cat}</button>`;
-    });
-
-    filterContainer.innerHTML = html;
-}
-
-window.setFilter = (cat, clickedBtn) => {
-    currentFilter = cat;
-    displayedCount = 0;
-
-    // 1. Remove 'active' from all buttons
-    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-    
-    // 2. Add 'active' to the one just clicked
-    if (clickedBtn) {
-        clickedBtn.classList.add('active');
-    } else {
-        // Fallback for initial load
-        document.querySelector('.filter-btn').classList.add('active');
-    }
-
-    // 3. Clear and Re-render
-    const container = document.querySelector('#magazine-grid');
-    const items = container.querySelectorAll('.grid-item');
-    msnry.remove(items);
-    displayArticles();
-    msnry.layout();
-};
-
-function extractImg(item) {
-    let src = null;
-
-    // 1. Look for MediaRSS tags (like Guardian uses)
-    // rss2json usually puts these in an enclosures array
-    if (item.enclosures && item.enclosures.length > 0) {
-        // Try to find the largest image by looking for the last one in the list
-        // (Publishers usually put the highest res last)
-        const media = item.enclosures.filter(e => e.type && e.type.includes('image'));
-        if (media.length > 0) {
-            src = media[media.length - 1].url || media[media.length - 1].link;
-        }
-    }
-
-    // 2. Fallback to standard thumbnail or single enclosure
-    if (!src) src = (item.enclosure && item.enclosure.link) ? item.enclosure.link : item.thumbnail;
-    
-    // 3. Last resort: Scrape the HTML content
-    if (!src || src.includes('gravatar')) {
-        const searchString = (item.content || "") + (item.description || "");
-        const div = document.createElement('div');
-        div.innerHTML = searchString;
-        const img = div.querySelector('img');
-        if (img) src = img.getAttribute('src');
-    }
-
-    // 4. Apply the Lavish Proxy
-    if (src && src.startsWith('http')) {
-        // We remove the width=140 parameters etc. from Guardian URLs to get the master image
-        const cleanSrc = src.split('?')[0]; 
-        return `https://wsrv.nl/?url=${encodeURIComponent(cleanSrc)}&w=800&af`;
-    }
-    return src;
-}
+// ... Keep your existing setFilter, createFilterUI, and extractImg functions exactly as they are ...
 
 buildMagazine();
 </script>
