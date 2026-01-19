@@ -164,7 +164,7 @@ function displayArticles() {
     const slice = filtered.slice(displayedCount, displayedCount + PAGE_SIZE);
 
     if (slice.length === 0) {
-        document.querySelector('#scroll-sentinel').innerText = "Kaikki uutiset ladattu.";
+        document.querySelector('#scroll-sentinel').innerText = "— Kaikki uutiset ladattu —";
         return;
     }
 
@@ -177,23 +177,23 @@ function displayArticles() {
         const rawSnippet = item.content || item.description || "";
         const cleanSnippet = rawSnippet.replace(/<[^>]*>/g, '').trim().substring(0, 180);
         
-        // Päivämäärän muotoilu
+        // Päivämäärän muotoilu suomeksi
         const dateObj = new Date(item.pubDate);
         const formattedDate = dateObj.toLocaleDateString('fi-FI');
         
-        // Kirjoittajan haku (Robot tallentaa tämän usein 'creator' tai 'author' kenttään)
-        const author = item.creator || item.author || "";
+        // Kirjoittaja (tai lähteen nimi jos kirjoittajaa ei ole)
+        const authorName = item.creator || item.author || item.sourceTitle || "News";
 
         const cardHtml = `
             <a href="${item.link}" target="_blank" class="grid-item">
                 ${imageHtml}
                 <div class="content">
-                    <span class="category-label">${item.sheetCategory || 'General'}</span>
+                    <span class="category-label">${item.sheetCategory || 'News'}</span>
                     <h2>${item.title}</h2>
                     <p>${cleanSnippet}...</p>
                     
                     <div class="meta-info">
-                        <span class="author">${author ? 'By ' + author : (item.sourceTitle || '')}</span>
+                        <span class="author">By ${authorName}</span>
                         <span class="date">${formattedDate}</span>
                     </div>
                 </div>
@@ -209,15 +209,6 @@ function displayArticles() {
 
     displayedCount += PAGE_SIZE;
     
-    imagesLoaded(container).on('always', () => {
-        msnry.layout();
-        isLoading = false; 
-    });
-}
-
-    displayedCount += PAGE_SIZE;
-    
-    // Kun kuvat on ladattu, päivitetään layout ja vapautetaan lukko
     imagesLoaded(container).on('always', () => {
         msnry.layout();
         isLoading = false; 
