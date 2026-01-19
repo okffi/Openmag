@@ -32,6 +32,10 @@ jobs:
         run: |
           git config --global user.name 'NewsRobot'
           git config --global user.email 'robot@openmag.com'
+          
+          # Haetaan uusimmat muutokset ennen tallennusta (estää "rejected" virheen)
+          git pull --rebase origin main
+          
           git add data.json
           git commit -m "Automated News Update" || echo "No changes to commit"
-          git push
+          git push origin main
