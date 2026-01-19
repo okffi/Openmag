@@ -66,6 +66,20 @@
     color: #888;
     text-transform: uppercase;
     letter-spacing: 2px;
+    }
+    .meta-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid #eee;
+    font-size: 0.75rem;
+    color: #999;
+}
+.author {
+    font-weight: 600;
+    color: #666;
 }
 </style>
 </head>
@@ -145,15 +159,22 @@ function displayArticles() {
         return;
     }
 
-    isLoading = true; // Lukitaan lataus
+    isLoading = true;
 
     slice.forEach(item => {
         const img = item.enforcedImage || extractImg(item);
         const imageHtml = img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" referrerpolicy="no-referrer" onload="refreshGrid()" onerror="this.parentElement.classList.add('no-image'); this.remove(); refreshGrid();">` : "";
         
-        const rawSnippet = item.description || item.content || "";
-        const cleanSnippet = rawSnippet.replace(/<[^>]*>/g, '').trim().substring(0, 200);
+        const rawSnippet = item.content || item.description || "";
+        const cleanSnippet = rawSnippet.replace(/<[^>]*>/g, '').trim().substring(0, 180);
         
+        // Päivämäärän muotoilu
+        const dateObj = new Date(item.pubDate);
+        const formattedDate = dateObj.toLocaleDateString('fi-FI');
+        
+        // Kirjoittajan haku (Robot tallentaa tämän usein 'creator' tai 'author' kenttään)
+        const author = item.creator || item.author || "";
+
         const cardHtml = `
             <a href="${item.link}" target="_blank" class="grid-item">
                 ${imageHtml}
@@ -161,7 +182,11 @@ function displayArticles() {
                     <span class="category-label">${item.sheetCategory || 'General'}</span>
                     <h2>${item.title}</h2>
                     <p>${cleanSnippet}...</p>
-                    <small style="color:#aaa; display:block; margin-top:10px;">${item.sourceTitle || ''}</small>
+                    
+                    <div class="meta-info">
+                        <span class="author">${author ? 'By ' + author : (item.sourceTitle || '')}</span>
+                        <span class="date">${formattedDate}</span>
+                    </div>
                 </div>
             </a>`;
         
@@ -172,6 +197,14 @@ function displayArticles() {
         container.appendChild(el);
         msnry.appended(el);
     });
+
+    displayedCount += PAGE_SIZE;
+    
+    imagesLoaded(container).on('always', () => {
+        msnry.layout();
+        isLoading = false; 
+    });
+}
 
     displayedCount += PAGE_SIZE;
     
