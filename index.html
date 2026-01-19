@@ -204,9 +204,22 @@ window.setFilter = (cat) => {
 
 function extractImg(item) {
     let src = null;
-    if (item.enclosure && item.enclosure.link) src = item.enclosure.link;
-    else if (item.thumbnail) src = item.thumbnail;
+
+    // 1. Look for MediaRSS tags (like Guardian uses)
+    // rss2json usually puts these in an enclosures array
+    if (item.enclosures && item.enclosures.length > 0) {
+        // Try to find the largest image by looking for the last one in the list
+        // (Publishers usually put the highest res last)
+        const media = item.enclosures.filter(e => e.type && e.type.includes('image'));
+        if (media.length > 0) {
+            src = media[media.length - 1].url || media[media.length - 1].link;
+        }
+    }
+
+    // 2. Fallback to standard thumbnail or single enclosure
+    if (!src) src = (item.enclosure && item.enclosure.link) ? item.enclosure.link : item.thumbnail;
     
+    // 3. Last resort: Scrape the HTML content
     if (!src || src.includes('gravatar')) {
         const searchString = (item.content || "") + (item.description || "");
         const div = document.createElement('div');
@@ -215,8 +228,11 @@ function extractImg(item) {
         if (img) src = img.getAttribute('src');
     }
 
+    // 4. Apply the Lavish Proxy
     if (src && src.startsWith('http')) {
-        return `https://wsrv.nl/?url=${encodeURIComponent(src)}&w=600&af`;
+        // We remove the width=140 parameters etc. from Guardian URLs to get the master image
+        const cleanSrc = src.split('?')[0]; 
+        return `https://wsrv.nl/?url=${encodeURIComponent(cleanSrc)}&w=800&af`;
     }
     return src;
 }
