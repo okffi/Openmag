@@ -1,0 +1,31 @@
+name: Update Magazine News
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs every hour
+  workflow_dispatch: # Allows you to run it manually for testing
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install axios rss-parser
+
+      - name: Run Fetch Script
+        run: node fetch_news.js
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name 'NewsRobot'
+          git config --global user.email 'robot@openmag.com'
+          git add data.json
+          git commit -m "Automated News Update" || echo "No changes to commit"
+          git push
