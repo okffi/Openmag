@@ -28,6 +28,7 @@ async function run() {
                     link: item.link,
                     pubDate: item.pubDate,
                     content: item.contentSnippet || item.content || "",
+                    creator: item.creator || item.author || "", // <--- Lisää tämä rivi
                     sourceTitle: feedContent.title,
                     sheetCategory: feed.category,
                     enforcedImage: item.enclosure?.url || null 
