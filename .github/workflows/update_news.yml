@@ -20,6 +20,8 @@ jobs:
         run: npm install axios rss-parser
 
       - name: Run Fetch Script
+        env:
+          SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
         run: node fetch_news.js
 
       - name: Commit and Push changes
