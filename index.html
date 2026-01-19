@@ -47,22 +47,23 @@
 
     <h1>OpenMag</h1>
     <div class="subline">Hyviä uutisia</div>
-    
+    <div id="filters" style="text-align: center; margin-bottom: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;"></div>
     <div class="grid" id="magazine-grid">
         <div class="grid-sizer"></div>
     </div>
 
-    <script>
+   <script>
 const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=0&single=true&output=csv';
 
-let allArticles = []; // Global pool
+let allArticles = []; 
 let displayedCount = 0;
 const PAGE_SIZE = 15;
 let currentFilter = 'All';
+let msnry; // Make masonry global so filters can access it
 
 async function buildMagazine() {
     const container = document.querySelector('#magazine-grid');
-    const msnry = new Masonry(container, {
+    msnry = new Masonry(container, {
         itemSelector: '.grid-item',
         columnWidth: '.grid-sizer',
         percentPosition: true,
@@ -84,46 +85,67 @@ async function buildMagazine() {
             };
         }).filter(f => f.url && f.url.startsWith('http'));
 
-        // Build Filter Buttons
         createFilterUI([...new Set(feedData.map(f => f.category))]);
 
-        const feedPromises = feedData.map(async (feed) => {
-            try {
-                const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`);
-                const data = await response.json();
-                if (data.status === 'ok') {
-                    return data.items.map(item => ({ 
-                        ...item, 
-                        sourceTitle: data.feed.title,
-                        sheetCategory: feed.category 
-                    }));
-                }
-            } catch (e) { console.error("Failed:", feed.url); }
-            return [];
-        });
+        // FETCH IN BATCHES TO AVOID 429 ERRORS
+        const BATCH_SIZE = 5;
+        for (let i = 0; i < feedData.length; i += BATCH_SIZE) {
+            const batch = feedData.slice(i, i + BATCH_SIZE);
+            
+            const batchResults = await Promise.all(batch.map(async (feed) => {
+                try {
+                    // Slight jitter to prevent simultaneous firing
+                    await new Promise(r => setTimeout(r, Math.random() * 500));
+                    
+                    const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`);
+                    
+                    if (response.status === 429) {
+                        console.error("Rate limited on: " + feed.url);
+                        return [];
+                    }
 
-        const results = await Promise.all(feedPromises);
-        allArticles = results.flat().sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+                    const data = await response.json();
+                    if (data.status === 'ok') {
+                        return data.items.map(item => ({ 
+                            ...item, 
+                            sourceTitle: data.feed.title,
+                            sheetCategory: feed.category 
+                        }));
+                    }
+                } catch (e) { console.error("Failed:", feed.url); }
+                return [];
+            }));
 
-        // Initial Load
-        displayArticles(msnry);
+            allArticles.push(...batchResults.flat());
+            
+            // Sort as we go to keep initial view fresh
+            allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+            
+            // Show first batch immediately, then layout
+            if (i === 0) displayArticles();
+            
+            // Wait 1.2 seconds between batches to respect API limits
+            await new Promise(r => setTimeout(r, 1200));
+        }
 
-        // Infinite Scroll Listener
+        // Infinite Scroll
         window.onscroll = () => {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
-                displayArticles(msnry);
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 800) {
+                displayArticles();
             }
         };
 
     } catch (err) { console.error("Magazine build error:", err); }
 }
 
-function displayArticles(msnry) {
+function displayArticles() {
     const container = document.querySelector('#magazine-grid');
     const filtered = allArticles.filter(a => currentFilter === 'All' || a.sheetCategory === currentFilter);
     const slice = filtered.slice(displayedCount, displayedCount + PAGE_SIZE);
 
-    slice.forEach(item => {
+    if (slice.length === 0) return;
+
+    const newElements = slice.map(item => {
         const img = extractImg(item);
         const imageClass = img ? "" : "no-image";
         const imageHtml = img ? `<img src="${img}" referrerpolicy="no-referrer" onload="refreshGrid()" onerror="this.parentElement.classList.add('no-image'); this.remove(); refreshGrid();">` : "";
@@ -133,18 +155,21 @@ function displayArticles(msnry) {
             <a href="${item.link}" target="_blank" class="grid-item">
                 ${imageHtml}
                 <div class="content">
-                    <span class="category" style="color: var(--cat-color, #b58d67)">${item.sheetCategory}</span>
+                    <span class="category">${item.sheetCategory}</span>
                     <h2>${item.title}</h2>
                     <p>${cleanSnippet}...</p>
-                    <small>${item.sourceTitle}</small>
+                    <small style="color:#aaa; display:block; margin-top:10px;">${item.sourceTitle}</small>
                 </div>
             </a>`;
         
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = cardHtml;
-        const cardElement = tempDiv.firstElementChild;
-        container.appendChild(cardElement);
-        msnry.appended(cardElement);
+        return tempDiv.firstElementChild;
+    });
+
+    newElements.forEach(el => {
+        container.appendChild(el);
+        msnry.appended(el);
     });
 
     displayedCount += PAGE_SIZE;
@@ -152,21 +177,26 @@ function displayArticles(msnry) {
 }
 
 function createFilterUI(categories) {
-    // You can add a <div id="filters"></div> to your HTML
     const filterContainer = document.getElementById('filters');
     if (!filterContainer) return;
 
-    const allBtn = `<button onclick="setFilter('All')">All</button>`;
-    const catBtns = categories.map(cat => `<button onclick="setFilter('${cat}')">${cat}</button>`).join('');
-    filterContainer.innerHTML = allBtn + catBtns;
+    const btnStyle = "padding: 8px 16px; border: 1px solid #ddd; background: white; cursor: pointer; border-radius: 20px; font-size: 0.8rem;";
+    
+    filterContainer.innerHTML = `<button style="${btnStyle}" onclick="setFilter('All')">All</button>` + 
+        categories.sort().map(cat => `<button style="${btnStyle}" onclick="setFilter('${cat}')">${cat}</button>`).join('');
 }
 
 window.setFilter = (cat) => {
     currentFilter = cat;
     displayedCount = 0;
-    document.querySelector('#magazine-grid').querySelectorAll('.grid-item').forEach(el => el.remove());
-    // We would need to pass msnry here or make it global
-    location.reload(); // Simple way to reset for now
+    
+    // Clear current items from grid
+    const items = document.querySelectorAll('.grid-item');
+    msnry.remove(items);
+    
+    // Reset layout and display fresh slice
+    displayArticles();
+    msnry.layout();
 };
 
 function extractImg(item) {
