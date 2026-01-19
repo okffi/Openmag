@@ -62,83 +62,12 @@ let currentFilter = 'All';
 let msnry; // Make masonry global so filters can access it
 
 async function buildMagazine() {
-    const container = document.querySelector('#magazine-grid');
-    msnry = new Masonry(container, {
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-sizer',
-        percentPosition: true,
-        gutter: 25
-    });
-
-    window.refreshGrid = () => msnry.layout();
-
-    try {
-        const sheetResponse = await fetch(SHEET_CSV_URL);
-        const csvText = await sheetResponse.text();
-        const rows = csvText.split('\n').slice(1); 
-        
-        const feedData = rows.map(row => {
-            // This splits by comma BUT ignores commas inside double quotes
-            const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-            
-            return { 
-                // Remove quotes if they exist around the string
-                category: cols[0] ? cols[0].replace(/^"|"$/g, '').trim() : "General",
-                url: cols[2] ? cols[2].replace(/^"|"$/g, '').trim() : null
-            };
-        }).filter(f => f.url && f.url.startsWith('http'));
-
-        createFilterUI([...new Set(feedData.map(f => f.category))]);
-
-        // FETCH IN BATCHES TO AVOID 429 ERRORS
-        const BATCH_SIZE = 5;
-        for (let i = 0; i < feedData.length; i += BATCH_SIZE) {
-            const batch = feedData.slice(i, i + BATCH_SIZE);
-            
-            const batchResults = await Promise.all(batch.map(async (feed) => {
-                try {
-                    // Slight jitter to prevent simultaneous firing
-                    await new Promise(r => setTimeout(r, Math.random() * 500));
-                    
-                    const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`);
-                    
-                    if (response.status === 429) {
-                        console.error("Rate limited on: " + feed.url);
-                        return [];
-                    }
-
-                    const data = await response.json();
-                    if (data.status === 'ok') {
-                        return data.items.map(item => ({ 
-                            ...item, 
-                            sourceTitle: data.feed.title,
-                            sheetCategory: feed.category 
-                        }));
-                    }
-                } catch (e) { console.error("Failed:", feed.url); }
-                return [];
-            }));
-
-            allArticles.push(...batchResults.flat());
-            
-            // Sort as we go to keep initial view fresh
-            allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-            
-            // Show first batch immediately, then layout
-            if (i === 0) displayArticles();
-            
-            // Wait 1.2 seconds between batches to respect API limits
-            await new Promise(r => setTimeout(r, 1200));
-        }
-
-        // Infinite Scroll
-        window.onscroll = () => {
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 800) {
-                displayArticles();
-            }
-        };
-
-    } catch (err) { console.error("Magazine build error:", err); }
+    // Just fetch the ONE file the robot created
+    const response = await fetch('data.json');
+    const allArticles = await response.json();
+    
+    // Now just run your existing displayArticles() logic
+    displayArticles(allArticles);
 }
 
 function displayArticles() {
