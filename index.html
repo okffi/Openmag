@@ -41,6 +41,34 @@
     .category { text-transform: uppercase; font-size: 0.65rem; letter-spacing: 2px; color: #b58d67; font-weight: 600; margin-bottom: 12px; display: block; }
     h2 { font-family: 'Playfair Display', serif; margin: 0 0 15px; font-size: 1.4rem; line-height: 1.2; color: #1a1a1a; }
     p { color: #555; line-height: 1.7; font-size: 0.95rem; margin-bottom: 0; }
+
+    /* Base button style */
+.filter-btn {
+    padding: 8px 18px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: 'Source Sans Pro', sans-serif;
+    transition: all 0.3s ease;
+    color: #666;
+}
+
+/* Hover state */
+.filter-btn:hover {
+    border-color: #b58d67;
+    color: #b58d67;
+}
+
+/* THE INDICATOR STATE (Active) */
+.filter-btn.active {
+    background: #b58d67;
+    color: white;
+    border-color: #b58d67;
+    box-shadow: 0 4px 12px rgba(181, 141, 103, 0.3);
+    font-weight: 600;
+}
 </style>
 </head>
 <body>
@@ -112,23 +140,39 @@ function createFilterUI(categories) {
     const filterContainer = document.getElementById('filters');
     if (!filterContainer) return;
 
-    const btnStyle = "padding: 8px 16px; border: 1px solid #ddd; background: white; cursor: pointer; border-radius: 20px; font-size: 0.8rem;";
+    // Create the "All" button first with the 'active' class
+    let html = `<button class="filter-btn active" onclick="setFilter('All', this)">All</button>`;
     
-    filterContainer.innerHTML = `<button style="${btnStyle}" onclick="setFilter('All')">All</button>` + 
-        categories.sort().map(cat => `<button style="${btnStyle}" onclick="setFilter('${cat}')">${cat}</button>`).join('');
+    // Create the rest of the buttons
+    categories.sort().forEach(cat => {
+        html += `<button class="filter-btn" onclick="setFilter('${cat}', this)">${cat}</button>`;
+    });
+
+    filterContainer.innerHTML = html;
 }
 
-window.setFilter = (cat) => {
+window.setFilter = (cat, clickedElement) => {
+    // 1. Update the logical state
     currentFilter = cat;
     displayedCount = 0;
+
+    // 2. VISUAL INDICATOR: Move the 'active' class
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    clickedElement.classList.add('active');
+
+    // 3. Clear and Re-render (using the logic we built previously)
+    const container = document.querySelector('#magazine-grid');
+    const items = container.querySelectorAll('.grid-item');
     
-    // Clear current items from grid
-    const items = document.querySelectorAll('.grid-item');
-    msnry.remove(items);
-    
-    // Reset layout and display fresh slice
-    displayArticles();
-    msnry.layout();
+    // Instead of a reload, we just clear the items
+    // If you are using Masonry, we use its built-in removal
+    if (window.msnry) {
+        msnry.remove(items);
+        displayArticles(); // This calls your existing function to show the filtered batch
+        msnry.layout();
+    }
 };
 
 function extractImg(item) {
