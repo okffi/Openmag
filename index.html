@@ -150,28 +150,27 @@ function createFilterUI(categories) {
     filterContainer.innerHTML = html;
 }
 
-window.setFilter = (cat, clickedElement) => {
-    // 1. Update the logical state
+window.setFilter = (cat, clickedBtn) => {
     currentFilter = cat;
     displayedCount = 0;
 
-    // 2. VISUAL INDICATOR: Move the 'active' class
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    clickedElement.classList.add('active');
+    // 1. Remove 'active' from all buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+    
+    // 2. Add 'active' to the one just clicked
+    if (clickedBtn) {
+        clickedBtn.classList.add('active');
+    } else {
+        // Fallback for initial load
+        document.querySelector('.filter-btn').classList.add('active');
+    }
 
-    // 3. Clear and Re-render (using the logic we built previously)
+    // 3. Clear and Re-render
     const container = document.querySelector('#magazine-grid');
     const items = container.querySelectorAll('.grid-item');
-    
-    // Instead of a reload, we just clear the items
-    // If you are using Masonry, we use its built-in removal
-    if (window.msnry) {
-        msnry.remove(items);
-        displayArticles(); // This calls your existing function to show the filtered batch
-        msnry.layout();
-    }
+    msnry.remove(items);
+    displayArticles();
+    msnry.layout();
 };
 
 function extractImg(item) {
