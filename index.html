@@ -59,23 +59,32 @@
         box-shadow: 0 4px 12px rgba(181, 141, 103, 0.4);
         font-weight: bold;
     }
-    #scroll-sentinel {
-    text-align: center;
-    padding: 40px;
-    font-size: 0.8rem;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    }
-    .meta-info {
+.meta-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 15px;
     padding-top: 12px;
-    border-top: 1px solid #eee;
+    border-top: 1px dotted #ddd;
     font-size: 0.75rem;
-    color: #999;
+    color: #888;
+}
+.author {
+    font-weight: 600;
+    color: #555;
+    max-width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#scroll-sentinel {
+    text-align: center;
+    padding: 60px;
+    font-size: 0.8rem;
+    color: #bbb;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 }
 .author {
     font-weight: 600;
