@@ -36,17 +36,19 @@ jobs:
         if: always()
         run: if [ -f failed_feeds.txt ]; then cat failed_feeds.txt; fi
 
-      - name: Commit and Push changes
+      - name: Commit and push changes
         run: |
           git config --global user.name 'NewsRobot'
-          git config --global user.email 'robot@openmag.com'
+          git config --global user.email 'robot@openmag.fi'
           
-          # Haetaan uusin tilanne ja pakotetaan paikallinen data.json pysymään
+          # Haetaan uusin tilanne etäpalvelimelta
+          git fetch origin main
+          
+          # Resetoidaan data.json vastaamaan palvelimen tilaa ennen omaa lisäystä
+          # tai käytetään "ours/theirs" strategiaa. 
+          # Tässä tapauksessa helpointa on lisätä ja pakottaa:
           git add data.json
-          git commit -m "Automated News Update" || echo "No changes to commit"
+          git add failed_feeds.txt || true
           
-          # Pull rebase auttaa yhdistämään sinun koodimuutokset ja robotin datan
-          git pull --rebase origin main
-          
-          # Työnnetään lopputulos palvelimelle
-          git push origin main
+          # Commit vain jos on muutoksia
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Automated News Update" && git push origin main --force)
