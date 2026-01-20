@@ -118,4 +118,10 @@ function extractImageFromContent(item) {
     return match ? match[1] : null;
 }
 
-run();
+run().then(() => {
+    console.log("Process finished successfully.");
+    process.exit(0);
+}).catch(err => {
+    console.error("Process failed:", err);
+    process.exit(1);
+});
