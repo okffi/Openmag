@@ -37,9 +37,10 @@ async function run() {
                     return {
                         title: item.title,
                         link: item.link,
-                        pubDate: itemDate.toISOString(), // Standardi muoto lajittelua varten
+                        pubDate: itemDate.toISOString(),
                         content: item.contentSnippet || item.content || "",
-                        creator: item.creator || item.author || "",
+                        // TÄMÄ RIVI: hakee kirjoittajan dc:creator tai author -kentästä
+                        creator: item.creator || item['dc:creator'] || item.author || "",
                         sourceTitle: feedContent.title,
                         sheetCategory: feed.category,
                         enforcedImage: item.enclosure?.url || extractImageFromContent(item)
