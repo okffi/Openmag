@@ -1,5 +1,35 @@
 [
   {
+    "title": "Lyyti myytiin Norjaan: Hurjat kasvutavoitteet",
+    "link": "https://www.tivi.fi/uutiset/a/6df361c0-cd94-45f2-a108-59da0a8a1daf",
+    "pubDate": "2026-01-20T04:00:00.000Z",
+    "content": "Petri Hollménin turhautumisesta syntynyt Lyyti jatkaa kasvuaan norjalaisomistuksessa. ”Paras partneri meille”, Hollmén sanoo.",
+    "creator": "Katja Boxberg",
+    "sourceTitle": "Tivi",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://images.almatalent.fi/cx165,cy0,cw2670,ch2002,570x/https:%2F%2Fassets.almatalent.fi%2Fimage%2F36219884-7dbe-5a50-9a6d-a9227357f62d"
+  },
+  {
+    "title": "Ignacy Kuchciński: Digital Wellbeing Contract: Conclusion",
+    "link": "https://blogs.gnome.org/ignapk/2026/01/20/digital-wellbeing-contract-conclusion/",
+    "pubDate": "2026-01-20T03:00:52.000Z",
+    "content": "A lot of progress has been made since my last Digital Wellbeing update two months ago. That post covered the initial screen time limits feature, which was implemented in the Parental Controls app, Settings and GNOME Shell. There’s a screen recording in the post, created with the help of a custom GNOME OS image, in case you’re interested.\nFinishing Screen Time Limits\nAfter implementing the major framework for the rest of the code in GNOME Shell, we added the mechanism in the lock screen to prevent children from unlocking when the screen time limit is up. Parents are now also able to extend the session limit temporarily, so that the child can use the computer until the rest of the day.\nParental Controls Shield\nScreen time limits can be set as either a daily limit or a bedtime. With the work that has recently landed, when the screen time limit has been exceeded, the session locks and the authentication action is hidden on the lock screen. Instead, a message is displayed explaining that the current session is limited and the child cannot login. An “Ignore” button is presented to allow the parents to temporarily lift the restrictions when needed.\nParental Controls shield on the lock screen, preventing the children from unlocking\nExtending Screen Time\nClicking the “Ignore” button prompts the user for authentication from a user with administrative privileges. This allows parents to temporarily lift the screen time limit, so that the children may log in as normal until the rest of the day.\nAuthentication dialog allowing the parents to temporarily override the Screen Time restrictions\nShowcase\nContinuing the screen cast of the Shell functionality from the previous update, I’ve recorded the parental controls shield together, and showed the extending screen time functionality:\nhttps://blogs.gnome.org/ignapk/files/2026/01/parental-controls-shield.webm\nGNOME OS Image\nYou can also try the feature out for yourself, with the very same GNOME OS live image I’ve used in the recording, that you can either run in GNOME Boxes, or try on your hardware if you know what you’re doing \nConclusion\nNow that the full Screen Time Limits functionality has been merged in GNOME Shell, this concludes my part in the Digital Wellbeing Contract. Here’s the summary of the work:\nWe’ve redesigned the Parental Controls app and updated it to use modern GNOME technologies\nNew features was added, such as Screen Time monitoring and setting limits: daily limit and bedtime schedule\nGNOME Settings gained Parental Controls integration, to helpfully inform the user about the existence of the limits\nWe introduced the screen time limits in GNOME Shell, locking childrens’ sessions once they reach their limit. Children are then prevented from unlocking until the next day, unless parents extend their screen time\nIn the initial plan, we also covered web filtering, and the foundation of the feature has been introduced as well. However, integrating the functionality in the Parental Controls application has been postponed to a future endeavour.\nI’d like to thank GNOME Foundation for giving me this opportunity, and Endless for sponsoring the work. Also kudos to my colleagues, Philip Withnall and Sam Hewitt, it’s been great to work with you and I’ve learned a lot (like the importance of wearing Christmas sweaters in work meetings!), and to Florian Müllner, Matthijs Velsink and Felipe Borges for very helpful reviews. I also want to thank Allan Day for organizing the work hours and meetings, and helping with my blog posts as well  Until next project!",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://blogs.gnome.org/ignapk/files/2026/01/shell-final-locked.png"
+  },
+  {
+    "title": "Pääkirjoitus: Valokuidusta voi tulla kallis lasku tavalliselle suomalaiselle",
+    "link": "https://www.tekniikkatalous.fi/uutiset/a/1d8011f8-5229-41d9-abb8-f34170fc8924",
+    "pubDate": "2026-01-20T02:30:00.000Z",
+    "content": "Halpa hinta houkuttaa monia hankkimaan valokuidun. Siinä kannattaa olla tarkkana, sillä verkon investointikustannukset tulevat lopulta kuluttajan maksettavaksi, kirjoittaa päätoimittaja Mikko Virta.",
+    "creator": "Mikko Virta",
+    "sourceTitle": "Tekniikkatalous",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://images.almatalent.fi/570x/https:%2F%2Fassets.almatalent.fi%2Fimage%2F37e4a24b-b605-5ea0-845f-6f89edc7f8cb"
+  },
+  {
     "title": "Micron finds a way to make more DRAM with $1.8bn chip plant purchase",
     "link": "https://go.theregister.com/feed/www.theregister.com/2026/01/20/micron_powerchip_fab_acquisition/",
     "pubDate": "2026-01-20T00:55:52.000Z",
@@ -590,6 +620,16 @@
     "enforcedImage": null
   },
   {
+    "title": "Brussels plans to force governments to block Huawei from 5G",
+    "link": "https://www.politico.eu/article/brussels-plans-force-governments-block-huawei-zte-5g/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
+    "pubDate": "2026-01-19T13:59:34.000Z",
+    "content": "New EU cyber bill looks to root out risky Chinese technology vendors from tech supply chains across Europe.",
+    "creator": "Sam Clark",
+    "sourceTitle": "Technology – POLITICO",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
     "title": "‘Disgustingly educated’: will this trend make you cleverer?",
     "link": "https://www.theguardian.com/media/2026/jan/19/disgustingly-educated-will-this-trend-make-you-cleverer",
     "pubDate": "2026-01-19T13:56:54.000Z",
@@ -848,16 +888,6 @@
     "sourceTitle": "Tekniikkatalous",
     "sheetCategory": "Data + teknologia",
     "enforcedImage": "https://images.almatalent.fi/570x/https:%2F%2Fassets.almatalent.fi%2Fimage%2F93161fc8-4b0b-5159-8822-64ab269d833b"
-  },
-  {
-    "title": "Miljoonien huippuhuvilahanke pohjoisessa – Asuntosijoittajalle lupaillaan jopa 40 % tuottoja",
-    "link": "https://www.tekniikkatalous.fi/uutiset/a/de6259c1-c441-44a7-94b6-2d0f8439384e",
-    "pubDate": "2026-01-19T12:18:49.000Z",
-    "content": "Asuntosijoittajalle pohjoisen arvovilla tuottaa parhaimmillaan parissa viikossa sen, mitä kaupunkikohde vuodessa, rakennuttaja ja vuokraoperaattori sanovat.",
-    "creator": "Kati Munkki",
-    "sourceTitle": "Tekniikkatalous",
-    "sheetCategory": "Data + teknologia",
-    "enforcedImage": "https://images.almatalent.fi/cx382,cy0,cw2235,ch1674,570x/https:%2F%2Fassets.almatalent.fi%2Fimage%2F129ea353-84ea-54bb-8054-38398cd0dec9"
   },
   {
     "title": "The Philippines Are in for a Turbulent 2026",
@@ -1500,16 +1530,6 @@
     "enforcedImage": "https://www.epressi.com/media/logo/5802-180x180.jpg"
   },
   {
-    "title": "Intialainen it-jätti vahvistaa otettaan Euroopassa – Uusi toimipiste",
-    "link": "https://www.tivi.fi/uutiset/a/6efbc06a-73a8-4378-838d-f259eaaca0c9",
-    "pubDate": "2026-01-19T07:51:00.000Z",
-    "content": "TCS:n Itä-Euroopan toimituskeskuksen johtaja Prabal Datta kertoo tiedotteessa, että Romania on tärkeä sijainti yhtiölle sen vahvan insinööriosaamisen vuoksi.",
-    "creator": "Anna Helakallio",
-    "sourceTitle": "Tivi",
-    "sheetCategory": "Data + teknologia",
-    "enforcedImage": "https://images.almatalent.fi/570x/https:%2F%2Fassets.almatalent.fi%2Fimage%2F5c09fd4f-74ec-5bac-9793-845d45908f0e"
-  },
-  {
     "title": "Oulu2026 Euroopan kulttuuripääkaupunki tarjoaa monipuolista kuvataideohjelmaa",
     "link": "https://frame-finland.fi/oulu2026-euroopan-kulttuuripaakaupunki-kuvataideohjelma/",
     "pubDate": "2026-01-19T07:49:10.000Z",
@@ -1578,6 +1598,16 @@
     "sourceTitle": "Technology | The Guardian",
     "sheetCategory": "Data + teknologia",
     "enforcedImage": null
+  },
+  {
+    "title": "Aurora Coolness",
+    "link": "https://xkcd.com/3196/",
+    "pubDate": "2026-01-19T05:00:00.000Z",
+    "content": "<img src=\"https://imgs.xkcd.com/comics/aurora_coolness.png\" title=\"I've had countless nights where the line never left the bottom zone of the graph, but the few moments where it's climbed all the way to the top have made up for them all.\" alt=\"I've had countless nights where the line never left the bottom zone of the graph, but the few moments where it's climbed all the way to the top have made up for them all.\" />",
+    "creator": "",
+    "sourceTitle": "xkcd.com",
+    "sheetCategory": "Kulttuuri + taide",
+    "enforcedImage": "https://imgs.xkcd.com/comics/aurora_coolness.png"
   },
   {
     "title": "A new UNESCO podcast tells stories of World Heritage sites of Latin America and the Caribbean ",
@@ -4967,36 +4997,6 @@
     "creator": "Caralee Adams",
     "sourceTitle": "Internet Archive Blogs",
     "sheetCategory": "Kulttuuri + taide",
-    "enforcedImage": null
-  },
-  {
-    "title": "Shein to appear before EU Parliament",
-    "link": "https://www.politico.eu/article/shein-to-appear-before-eu-parliament/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-    "pubDate": "2026-01-14T11:59:17.000Z",
-    "content": "Senior executive from fast-fashion giant will appear before the internal market committee.",
-    "creator": "Eliza Gkritsi, Max Griera, Mathieu Pollet",
-    "sourceTitle": "Technology – POLITICO",
-    "sheetCategory": "Data + teknologia",
-    "enforcedImage": null
-  },
-  {
-    "title": "Mettre un patch sur ses boutons, une mode qui date de plusieurs siècles",
-    "link": "https://theconversation.com/mettre-un-patch-sur-ses-boutons-une-mode-qui-date-de-plusieurs-siecles-272561",
-    "pubDate": "2026-01-14T11:28:39.000Z",
-    "content": "Des smileys sur les joues des adolescents d’aujourd’hui aux élégantes mouches noires des salons de la Restauration Stuart (ici sur un tableau de 1650), le visage humain a toujours été un terrain de créativité esthétique… Compton Verney Art Gallery/Canva\nAujourd’hui populaires sur les réseaux sociaux, les patchs anti-boutons ne sont pas une invention moderne : leur ancêtre, la « mouche », décorait déjà le visage des élégantes et des coquettes du XVIIe siècle.\nVous avez sans doute déjà croisé des personnes qui se promènent avec de petits stickers sur le visage. Peut-être avez-vous vu des lunes, des étoiles, des nuages ou même des visages souriants orner les joues et le menton des gens que vous rencontrez. Peut-être en portez-vous vous-même. Si certaines personnes les utilisent comme des accessoires de mode, ces autocollants colorés sont en réalité des « patchs anti-imperfections » médicamenteux, conçus pour traiter les boutons ou l’acné.\nCertains de ces patchs contiennent un gel qui s’attaque à l’imperfection en cours d’apparition en la maintenant humide afin de favoriser la cicatrisation. D’aucuns préfèrent des patchs en film quasi transparent afin d’en tirer les mêmes bénéfices, mais de manière plus discrète.\nLoin d’être une mode récente, les patchs de beauté ont une longue histoire sous leur précédent nom de « mouche ». La tendance a pris son essor une première fois dans l’Europe du XVIIe siècle, avec des patchs fabriqués en papier, en soie ou en velours, voire en cuir fin, découpés en formes de losanges, d’étoiles ou de croissants de lune.\nIls pouvaient être fabriqués dans de nombreuses couleurs, mais on privilégiait généralement le noir, parce qu’il offrait un contraste parfait avec le teint pâle idéalisé des hommes et des femmes de la haute société occidentale, teint qu’ils envisageaient comme un marqueur de statut social, indiquant qu’ils ne travaillaient pas en plein air. La pièce Blurt, Master-Constable (1602) explique un autre attrait des mouches : lorsqu’elles étaient bien disposées, elles pouvaient « attirer les yeux des hommes et provoquer leurs regards ».\nLe signe de Caïn\nLes mouches sont fréquemment mentionnées dans les textes, de la fin du XVIe et du début du XVIIe siècle. Tout comme aujourd’hui, ces patchs avaient une double fonction. Dans sa pièce de 1601 Jack Drum’s Entertainment, John Marston explique ainsi : « Les mouches sont portées, certaines par fierté, certaines pour retenir l’écoulement, et certaines pour cacher une croûte. »\nAinsi coexistaient des pièces portées par coquetterie, et d’autres – parfois thérapeutiques – destinées à assécher des plaies. Elles servaient également à dissimuler les cicatrices laissées alors par des maladies, comme la variole ou la syphilis.\nC’est ce dernier usage qui a conduit les moralistes à s’opposer aux mouches. Un livre anonyme de 1665 affirmait qu’un aumônier du roi d’Angleterre Charles Ier avait prononcé un sermon les comparant à la marque de Caïn. Il allait jusqu’à laisser entendre que le port de ces accessoires favorisait les épidémies de peste : \n« Les mouches et les grains de beauté artificiels […] étaient les précurseurs d’autres taches et marques de la peste. »\nD’autres moralistes semblaient davantage préoccupés encore par le fait que, tout comme le maquillage, leur fonction était de présenter une fausse apparence, susceptible de tromper son monde. Cette critique s’est généralisée au XVIIIe siècle, lorsque l’usage des mouches s’est retrouvé associé à une conduite sexuelle jugée légère.\nLa Carrière d’une prostituée, de William Hogarth (1731), est une série de tableaux représentant la chute d’une jeune fille de la campagne, Moll Hackabout. Nouvellement arrivée à Londres, elle est trompée par la tenancière de maison close Elizabeth Needham. Le visage de Needham est couvert de ces mouches.\nSa majesté et les mouches\nLe diariste anglais Samuel Pepys mentionne ces patchs à plus d’une douzaine de reprises dans son journal, entre 1660 et 1669. Il les rencontre pour la première fois au printemps  660, lors d’un voyage d’affaires à La Haye, où il croise « deux très jolies dames, très à la mode et portant des mouches noires, qui chantaient joyeusement tout le long du trajet ».\nLe lendemain, au cours d’une promenade en ville, il note :\n« Tout le monde à la mode parle français ou latin, ou les deux. Les femmes, pour beaucoup d’entre elles, sont très jolies, bien vêtues, élégantes et portent des mouches noires. »\nIl précise également que ces dernières étaient souvent humidifiées avec de la salive afin de les faire tenir. En mai 1668, il se souvient avoir vu Lady Castlemaine – maîtresse de Charles II – réclamer une mouche que portait sa servante, la mouiller dans sa bouche puis l’appliquer sur son propre visage. Nous savons aussi, grâce à Pepys, que Jacques, duc d’York, appréciait lui aussi de porter une ou deux mouches.\nDès le mois d’août de la même année, Pepys note dans son journal que son épouse Elizabeth portait des patchs lors d’un baptême. Il semble toutefois l’avoir oublié lorsqu’il écrit en novembre : \n« Ma femme m’a paru très jolie aujourd’hui, car c’était la première fois que je lui avais donné la permission de porter une mouche noire. » \nLui-même arbora une mouche en septembre 1664, lorsqu’il se réveilla avec la bouche couverte de croûtes.\nLa French Touch\nLa mode des mouches connut son apogée durant la Restauration Stuart (1660-1700), lorsque les royalistes revenus d’exil rapportèrent des modes françaises qu’ils jugeaient le summum du raffinement.\nL’écrivaine anglaise Mary Evelyn expliquait ainsi que « mouches » était le terme français en vogue pour désigner les « patchs noirs », un terme parfois utilisé également en anglais. Son poème Mundus Muliebris : Or The Ladies Dressing-Room Unlock’d, and Her Toilets Spread, publié à titre posthume en 1690, constitue une satire mordante des modes francophiles du Londres de la Restauration, auxquelles Evelyn estimait que seules les personnes vulgaires pouvaient céder.\nS’il est difficile d’imaginer que les personnes qui portent aujourd’hui des patchs anti-boutons puissent faire l’objet du même type de critiques moralisatrices qu’autrefois, il existe néanmoins certains recoins d’internet où l’on se moque de celles et ceux qui sortent en public avec ces stickers.\nQu’ils soient efficaces ou non, les patchs anti-boutons restent un accessoire inoffensif. À partir de la fin du XVIIe siècle, les ouvrages commencent à mentionner les boîtes à mouches, de petits écrins ouvragés spécialement conçus pour les ranger.\nLes personnes à la mode aimaient se montrer avec une petite boîte en argent, destinée à contenir leurs mouches en velours ou en soie. Peut-être faut-il y voir la prochaine étape du retour à la mode de ces patchs anti-boutons.\n\nSara Read ne travaille pas, ne conseille pas, ne possède pas de parts, ne reçoit pas de fonds d'une organisation qui pourrait tirer profit de cet article, et n'a déclaré aucune autre affiliation que son organisme de recherche.",
-    "creator": "Sara Read, Lecturer in English, Loughborough University",
-    "sourceTitle": "Culture – The Conversation",
-    "sheetCategory": "Kulttuuri + taide",
-    "enforcedImage": "https://images.theconversation.com/files/710205/original/file-20251201-56-lha5s2.jpg"
-  },
-  {
-    "title": "UK nudification app ban won’t apply to Elon Musk’s Grok",
-    "link": "https://www.politico.eu/article/uk-nudification-app-ban-wont-apply-to-elon-musks-grok/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication",
-    "pubDate": "2026-01-14T11:25:44.000Z",
-    "content": "U.K.’s tech secretary says ban will apply to apps whose sole purpose is to generate nude deepfakes. That rules out Grok.",
-    "creator": "Mizy Clifton",
-    "sourceTitle": "Technology – POLITICO",
-    "sheetCategory": "Data + teknologia",
     "enforcedImage": null
   }
 ]
