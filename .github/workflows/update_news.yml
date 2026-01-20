@@ -21,7 +21,7 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: npm install axios rss-parser
+        run: npm install axios rss-parser cheerio
 
       - name: Run Fetch Script
         env:
