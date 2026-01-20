@@ -51,31 +51,38 @@
     margin-bottom: 12px;
 }
 
-/* Bottom Meta Info Group */
 .meta-info {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end; /* Keeps date at the bottom even if text is 3 lines */
     margin-top: 15px;
     padding-top: 12px;
     border-top: 1px dotted #ddd;
-    font-size: 0.7rem;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
 .source-author {
-    font-weight: 600;
+    font-size: 0.7rem;
     color: #666;
-    max-width: 70%;
-    white-space: nowrap;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    padding-right: 10px;
+
+    /* THE TRUNCATION FIX */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limits to 3 lines */
+    -webkit-box-orient: vertical;  
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 .date-label {
+    font-size: 0.7rem;
     color: #aaa;
+    text-transform: uppercase;
+    white-space: nowrap; /* Prevents date from breaking */
+    flex-shrink: 0;      /* Prevents date from being squeezed */
 }
 
     .filter-btn {
@@ -181,7 +188,6 @@ function displayArticles() {
         const dateObj = new Date(item.pubDate);
         const formattedDate = dateObj.toLocaleDateString('fi-FI');
         
-        // Semantic Grouping: Source + Author
         const source = item.sourceTitle || "Uutiset";
         const author = item.creator ? ` | ${item.creator}` : "";
         const sourceAuthorStr = `${source}${author}`;
@@ -195,7 +201,7 @@ function displayArticles() {
                     <p>${cleanSnippet}...</p>
                     
                     <div class="meta-info">
-                        <span class="source-author">${sourceAuthorStr}</span>
+                        <span class="source-author" title="${sourceAuthorStr}">${sourceAuthorStr}</span>
                         <span class="date-label">${formattedDate}</span>
                     </div>
                 </div>
