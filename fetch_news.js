@@ -66,34 +66,56 @@ async function processRSS(feed, allArticles, now) {
     allArticles.push(...items);
 }
 
-// FUNKTIO B: Sivun "kaapiminen" (Esim. Europeana Pro)
 async function processScraper(feed, allArticles, now) {
     console.log(`Scraping HTML: ${feed.url}`);
-    const { data } = await axios.get(feed.url, { headers: { 'User-Agent': 'Mozilla/5.0' } });
-    const $ = cheerio.load(data);
-    
-    // TÄSSÄ määritellään mistä uutiset löytyvät (yleiset CSS-valitsimet)
-    // Voit muokata näitä sivun rakenteen mukaan
-    $('article, .news-item, .post').each((i, el) => {
-        if (i > 10) return; // Otetaan vain 10 uusinta per sivu
+    try {
+        const { data } = await axios.get(feed.url, { 
+            headers: { 
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+            } 
+        });
+        const $ = cheerio.load(data);
         
-        const title = $(el).find('h1, h2, h3, .title').first().text().trim();
-        const link = $(el).find('a').first().attr('href');
-        const img = $(el).find('img').first().attr('src');
+        // Luodaan lista mahdollisista "uutislaatikoista" eri sivustoilla
+        // Europeana käyttää: .item-card tai .news-item
+        const selectors = '.item-card, .news-item, article, .post, .teaser';
         
-        if (title && link) {
-            allArticles.push({
-                title: title,
-                link: link.startsWith('http') ? link : new URL(link, feed.url).href,
-                pubDate: now.toISOString(),
-                content: "",
-                creator: "",
-                sourceTitle: new URL(feed.url).hostname,
-                sheetCategory: feed.category,
-                enforcedImage: img ? (img.startsWith('http') ? img : new URL(img, feed.url).href) : null
-            });
-        }
-    });
+        $(selectors).each((i, el) => {
+            if (i > 15) return; // Rajoitetaan määrää
+
+            // Europeana Pro spesifit haut
+            const title = $(el).find('h2, h3, .title, .item-card__title').first().text().trim();
+            const link = $(el).find('a').first().attr('href');
+            
+            // Kuvan haku: etsitään src tai data-src (lazy loading)
+            let img = $(el).find('img').first().attr('src') || $(el).find('img').first().attr('data-src');
+
+            if (title && link) {
+                // Siivotaan linkki (muutetaan suhteellinen linkki täydeksi osoitteeksi)
+                const fullLink = link.startsWith('http') ? link : new URL(link, feed.url).href;
+                
+                // Siivotaan kuva
+                let fullImg = null;
+                if (img && !img.includes('data:image')) {
+                    fullImg = img.startsWith('http') ? img : new URL(img, feed.url).href;
+                }
+
+                allArticles.push({
+                    title: title,
+                    link: fullLink,
+                    pubDate: now.toISOString(),
+                    content: "Lue lisää alkuperäisestä lähteestä.",
+                    creator: "",
+                    sourceTitle: new URL(feed.url).hostname.replace('www.', ''),
+                    sheetCategory: feed.category,
+                    enforcedImage: fullImg
+                });
+            }
+        });
+    } catch (err) {
+        console.error(`Scraper failed for ${feed.url}: ${err.message}`);
+    }
 }
 
 function extractImageFromContent(item) {
