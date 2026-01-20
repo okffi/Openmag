@@ -19,7 +19,7 @@ async function run() {
         }).filter(f => f.url && f.url.startsWith('http'));
 
         let allArticles = [];
-        const now = new Date(); // Nykyhetki vertailua varten
+        const now = new Date(); 
 
         for (const feed of feeds) {
             try {
@@ -29,32 +29,34 @@ async function run() {
                 const items = feedContent.items.map(item => {
                     let itemDate = new Date(item.pubDate);
                     
-                    // Jos päivämäärä on viallinen tai tulevaisuudessa, käytetään tätä hetkeä
                     if (isNaN(itemDate.getTime()) || itemDate > now) {
                         itemDate = now;
                     }
+
+                    // Aggressiivinen kuvanhaku: enclosure -> thumbnail -> tekstin sisältä
+                    const foundImage = item.enclosure?.url || 
+                                       item.thumbnail || 
+                                       extractImageFromContent(item);
 
                     return {
                         title: item.title,
                         link: item.link,
                         pubDate: itemDate.toISOString(),
                         content: item.contentSnippet || item.content || "",
-                        // TÄMÄ RIVI: hakee kirjoittajan dc:creator tai author -kentästä
                         creator: item.creator || item['dc:creator'] || item.author || "",
                         sourceTitle: feedContent.title,
                         sheetCategory: feed.category,
-                        enforcedImage: item.enclosure?.url || extractImageFromContent(item)
+                        enforcedImage: foundImage
                     };
                 });
 
                 allArticles.push(...items);
-                await new Promise(r => setTimeout(r, 1000)); // Be polite
+                await new Promise(r => setTimeout(r, 1000)); 
             } catch (e) {
                 console.error(`Skipped ${feed.url}: ${e.message}`);
             }
         }
 
-        // Lajittelu: Uusimmat (nyt myös "tulevaisuudesta korjatut") ensin
         allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
         
         fs.writeFileSync('data.json', JSON.stringify(allArticles.slice(0, 500), null, 2));
@@ -65,12 +67,28 @@ async function run() {
     }
 }
 
-// Apufunktio kuvan etsimiseen sisällöstä jos enclosure puuttuu
+// Parannettu apufunktio kuvan etsimiseen
 function extractImageFromContent(item) {
-    const searchString = (item.content || "") + (item.contentSnippet || "");
-    const imgRegex = /<img[^>]+src="([^">?]+)/i;
+    // Etsitään kaikista mahdollisista tekstikentistä
+    const searchString = (item.content || "") + 
+                         (item.contentSnippet || "") + 
+                         (item['content:encoded'] || "");
+    
+    // Etsitään ensimmäinen img-tägin src
+    const imgRegex = /<img[^>]+src=["']([^"'>?]+)/i;
     const match = searchString.match(imgRegex);
-    return match ? match[1] : null;
+    
+    if (match && match[1]) {
+        const src = match[1];
+        
+        // Suodatetaan pois pikkukuvakkeet, seuranta-pikselit ja mainoslogit
+        const isTracker = /pixel|analytics|doubleclick|tracker|logo|icon|spacer/i.test(src);
+        
+        if (!isTracker) {
+            return src;
+        }
+    }
+    return null;
 }
 
 run();
