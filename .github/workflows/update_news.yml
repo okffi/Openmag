@@ -16,9 +16,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4  # Voit päivittää myös v3 -> v4
         with:
-          node-version: '20'
+          node-version: 'lts/*'      # Tämä asentaa aina uusimman vakaan version (tällä hetkellä v22)
 
       - name: Install dependencies
         run: npm install axios rss-parser cheerio
