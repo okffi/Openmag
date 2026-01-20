@@ -33,13 +33,32 @@
         transition: transform 0.2s ease;
     }
     .grid-item:hover { transform: translateY(-5px); }
-
     .grid-item img { width: 100%; height: auto; display: block; background: #eee; }
     .grid-item.no-image { border-top: 5px solid #b58d67; }
 
     .content { padding: 25px; }
     h2 { font-family: 'Playfair Display', serif; margin: 0 0 15px; font-size: 1.4rem; line-height: 1.2; color: #1a1a1a; }
     p { color: #555; line-height: 1.7; font-size: 0.95rem; margin-bottom: 0; }
+
+    .source-label, .category-label { 
+        text-transform: uppercase; 
+        font-size: 0.65rem; 
+        letter-spacing: 2px; 
+        color: #b58d67; 
+        font-weight: 600; 
+        display: block; 
+    }
+    .source-label { margin-bottom: 12px; }
+
+    .meta-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 15px;
+        padding-top: 12px;
+        border-top: 1px dotted #ddd;
+    }
+    .date-label { font-size: 0.75rem; color: #999; }
 
     .filter-btn {
         transition: all 0.3s ease;
@@ -58,47 +77,15 @@
         box-shadow: 0 4px 12px rgba(181, 141, 103, 0.4);
         font-weight: bold;
     }
-    /* Molemmat metatiedot käyttävät nyt tätä tyyliä */
-.source-label, .category-label { 
-    text-transform: uppercase; 
-    font-size: 0.65rem; 
-    letter-spacing: 2px; 
-    color: #b58d67; 
-    font-weight: 600; 
-    display: block; 
-}
-.source-label { margin-bottom: 12px; }
 
-.meta-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 15px;
-    padding-top: 12px;
-    border-top: 1px dotted #ddd;
-}
-.date-label { font-size: 0.75rem; color: #999; }
-.author {
-    font-weight: 600;
-    color: #555;
-    max-width: 60%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-#scroll-sentinel {
-    text-align: center;
-    padding: 60px;
-    font-size: 0.8rem;
-    color: #bbb;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-}
-.author {
-    font-weight: 600;
-    color: #666;
-}
+    #scroll-sentinel {
+        text-align: center;
+        padding: 60px;
+        font-size: 0.8rem;
+        color: #bbb;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
 </style>
 </head>
 <body>
@@ -118,33 +105,25 @@ let displayedCount = 0;
 const PAGE_SIZE = 15;
 let currentFilter = 'All';
 let msnry;
-
-let isLoading = false; // Estää useat päällekkäiset lataukset
+let isLoading = false;
 
 async function buildMagazine() {
     const container = document.querySelector('#magazine-grid');
-    
     msnry = new Masonry(container, {
         itemSelector: '.grid-item',
         columnWidth: '.grid-sizer',
         percentPosition: true,
         gutter: 25
     });
-
     window.refreshGrid = () => msnry.layout();
 
     try {
         const response = await fetch('data.json');
         allArticles = await response.json(); 
-        
         if (allArticles && allArticles.length > 0) {
             const categories = [...new Set(allArticles.map(a => a.sheetCategory))].filter(Boolean);
             createFilterUI(categories);
-            
-            // Ensimmäinen lataus
             displayArticles();
-
-            // Asetetaan Infinite Scroll -seuranta
             setupInfiniteScroll();
         }
     } catch (e) {
@@ -154,16 +133,11 @@ async function buildMagazine() {
 
 function setupInfiniteScroll() {
     const sentinel = document.querySelector('#scroll-sentinel');
-    
     const observer = new IntersectionObserver((entries) => {
-        // Jos sentinel-div tulee näkyviin ja emme jo lataa jotain
         if (entries[0].isIntersecting && !isLoading) {
             displayArticles();
         }
-    }, {
-        rootMargin: '200px' // Aloittaa lataamisen jo 200px ennen loppua
-    });
-
+    }, { rootMargin: '200px' });
     observer.observe(sentinel);
 }
 
@@ -189,6 +163,9 @@ function displayArticles() {
         const dateObj = new Date(item.pubDate);
         const formattedDate = dateObj.toLocaleDateString('fi-FI');
         
+        // KORJAUS: Näytetään kategoria ja kirjoittaja (jos löytyy) samalla rivillä
+        const authorSuffix = item.creator ? ` | ${item.creator}` : "";
+
         const cardHtml = `
             <a href="${item.link}" target="_blank" class="grid-item">
                 ${imageHtml}
@@ -196,9 +173,8 @@ function displayArticles() {
                     <span class="source-label">${item.sourceTitle || 'Uutiset'}</span>
                     <h2>${item.title}</h2>
                     <p>${cleanSnippet}...</p>
-                    
                     <div class="meta-info">
-                        <span class="category-label">${item.sheetCategory || 'General'}</span>
+                        <span class="category-label">${item.sheetCategory || 'General'}${authorSuffix}</span>
                         <span class="date-label">${formattedDate}</span>
                     </div>
                 </div>
@@ -207,13 +183,11 @@ function displayArticles() {
         const tempDiv = document.createElement('div');
         tempDiv.innerHTML = cardHtml;
         const el = tempDiv.firstElementChild;
-        
         container.appendChild(el);
         msnry.appended(el);
     });
 
     displayedCount += PAGE_SIZE;
-    
     imagesLoaded(container).on('always', () => {
         msnry.layout();
         isLoading = false; 
@@ -234,7 +208,6 @@ window.setFilter = (cat, clickedBtn) => {
     displayedCount = 0;
     document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
     if (clickedBtn) clickedBtn.classList.add('active');
-
     const container = document.querySelector('#magazine-grid');
     const items = container.querySelectorAll('.grid-item');
     msnry.remove(items);
