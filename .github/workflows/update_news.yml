@@ -28,6 +28,10 @@ jobs:
           SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
         run: node fetch_news.js
 
+      - name: Show failed feeds
+        if: always()
+        run: if [ -f failed_feeds.txt ]; then cat failed_feeds.txt; fi
+
       - name: Commit and Push changes
         run: |
           git config --global user.name 'NewsRobot'
