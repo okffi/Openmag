@@ -40,25 +40,43 @@
     h2 { font-family: 'Playfair Display', serif; margin: 0 0 15px; font-size: 1.4rem; line-height: 1.2; color: #1a1a1a; }
     p { color: #555; line-height: 1.7; font-size: 0.95rem; margin-bottom: 0; }
 
-    .source-label, .category-label { 
-        text-transform: uppercase; 
-        font-size: 0.65rem; 
-        letter-spacing: 2px; 
-        color: #b58d67; 
-        font-weight: 600; 
-        display: block; 
-    }
-    .source-label { margin-bottom: 12px; }
+/* Top Category Label */
+.category-label { 
+    text-transform: uppercase; 
+    font-size: 0.65rem; 
+    letter-spacing: 2px; 
+    color: #b58d67; 
+    font-weight: 600; 
+    display: block;
+    margin-bottom: 12px;
+}
 
-    .meta-info {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 15px;
-        padding-top: 12px;
-        border-top: 1px dotted #ddd;
-    }
-    .date-label { font-size: 0.75rem; color: #999; }
+/* Bottom Meta Info Group */
+.meta-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px dotted #ddd;
+    font-size: 0.7rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.source-author {
+    font-weight: 600;
+    color: #666;
+    max-width: 70%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.date-label {
+    color: #aaa;
+}
 
     .filter-btn {
         transition: all 0.3s ease;
@@ -163,18 +181,21 @@ function displayArticles() {
         const dateObj = new Date(item.pubDate);
         const formattedDate = dateObj.toLocaleDateString('fi-FI');
         
-        // KORJAUS: Näytetään kategoria ja kirjoittaja (jos löytyy) samalla rivillä
-        const authorSuffix = item.creator ? ` | ${item.creator}` : "";
+        // Semantic Grouping: Source + Author
+        const source = item.sourceTitle || "Uutiset";
+        const author = item.creator ? ` | ${item.creator}` : "";
+        const sourceAuthorStr = `${source}${author}`;
 
         const cardHtml = `
             <a href="${item.link}" target="_blank" class="grid-item">
                 ${imageHtml}
                 <div class="content">
-                    <span class="source-label">${item.sourceTitle || 'Uutiset'}</span>
+                    <span class="category-label">${item.sheetCategory || 'General'}</span>
                     <h2>${item.title}</h2>
                     <p>${cleanSnippet}...</p>
+                    
                     <div class="meta-info">
-                        <span class="category-label">${item.sheetCategory || 'General'}${authorSuffix}</span>
+                        <span class="source-author">${sourceAuthorStr}</span>
                         <span class="date-label">${formattedDate}</span>
                     </div>
                 </div>
