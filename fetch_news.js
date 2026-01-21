@@ -91,36 +91,68 @@ async function processRSS(feed, allArticles, now) {
     allArticles.push(...items);
 }
 
+const path = require('path');
+
 async function processScraper(feed, allArticles, now) {
-    const { data } = await axios.get(feed.scrapeUrl, { 
-        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' } 
-    });
-    const $ = cheerio.load(data);
-    // Lisätty .item-card__title ja laajennettu valitsimia
-    const selectors = '.item-card, .news-item, article, .post, .teaser, .entry';
+    const urlObj = new URL(feed.scrapeUrl);
+    const domain = urlObj.hostname.replace('www.', '');
     
-    $(selectors).each((i, el) => {
-        if (i > 10) return;
-        const title = $(el).find('h1, h2, h3, .title, .entry-title, .item-card__title').first().text().trim();
-        const link = $(el).find('a').first().attr('href');
-        let img = $(el).find('img').first().attr('src') || $(el).find('img').first().attr('data-src');
+    console.log(`Scraping HTML: ${domain}`);
 
-        if (title && link) {
-            const fullLink = link.startsWith('http') ? link : new URL(link, feed.scrapeUrl).href;
-            let fullImg = (img && !img.includes('data:image')) ? (img.startsWith('http') ? img : new URL(img, feed.scrapeUrl).href) : null;
-
-            allArticles.push({
-                title: title,
-                link: fullLink,
-                pubDate: now.toISOString(),
-                content: "Uutinen skreipattu sivustolta.",
-                creator: "",
-                sourceTitle: new URL(feed.scrapeUrl).hostname.replace('www.', ''),
-                sheetCategory: feed.category,
-                enforcedImage: fullImg
-            });
+    try {
+        const { data } = await axios.get(feed.scrapeUrl, { 
+            headers: { 'User-Agent': 'Mozilla/5.0' } 
+        });
+        const $ = cheerio.load(data);
+        
+        // Yritetään ladata sivustokohtainen sääntö
+        let scraperRule;
+        try {
+            const rulePath = path.join(__dirname, 'scrapers', `${domain}.js`);
+            if (fs.existsSync(rulePath)) {
+                scraperRule = require(rulePath);
+            }
+        } catch (e) {
+            console.log(`No specific scraper for ${domain}, using generic.`);
         }
-    });
+
+        const selector = scraperRule ? scraperRule.listSelector : '.item-card, .news-item, article, .post';
+        
+        $(selector).each((i, el) => {
+            if (i > 15) return;
+
+            let item;
+            if (scraperRule) {
+                // Käytetään sivuston omaa logiikkaa
+                item = scraperRule.parse($, el);
+            } else {
+                // Geneerinen logiikka (vanha toteutus)
+                item = {
+                    title: $(el).find('h2, h3, .title').first().text().trim(),
+                    link: $(el).find('a').first().attr('href'),
+                    enforcedImage: $(el).find('img').first().attr('src'),
+                    content: "Lue lisää sivustolta."
+                };
+            }
+
+            if (item.title && item.link) {
+                const fullLink = item.link.startsWith('http') ? item.link : new URL(item.link, feed.scrapeUrl).href;
+                
+                allArticles.push({
+                    title: item.title,
+                    link: fullLink,
+                    pubDate: now.toISOString(), // Päivämäärän parsiminen vaatii kirjaston kuten 'dayjs'
+                    content: item.content || "",
+                    creator: "",
+                    sourceTitle: domain,
+                    sheetCategory: feed.category,
+                    enforcedImage: item.enforcedImage ? (item.enforcedImage.startsWith('http') ? item.enforcedImage : new URL(item.enforcedImage, feed.scrapeUrl).href) : null
+                });
+            }
+        });
+    } catch (err) {
+        console.error(`Scraper failed for ${domain}: ${err.message}`);
+    }
 }
 
 function extractImageFromContent(item) {
