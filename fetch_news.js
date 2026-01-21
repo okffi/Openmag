@@ -58,15 +58,48 @@ async function run() {
             }
         }
 
+        // 1. Lajittelu ajan mukaan
         allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+
+        // 2. TILASTOJEN LASKENTA
+        const stats = {};
+        allArticles.forEach(art => {
+            const src = art.sourceTitle;
+            if (!stats[src]) {
+                stats[src] = { 
+                    articleCount: 0, 
+                    latestPost: art.pubDate,
+                    oldestPost: art.pubDate,
+                    category: art.sheetCategory
+                };
+            }
+            stats[src].articleCount++;
+            
+            const artDate = new Date(art.pubDate);
+            if (artDate > new Date(stats[src].latestPost)) stats[src].latestPost = art.pubDate;
+            if (artDate < new Date(stats[src].oldestPost)) stats[src].oldestPost = art.pubDate;
+        });
+
+        // Lasketaan analyyttiset arvot
+        Object.keys(stats).forEach(src => {
+            const s = stats[src];
+            const diffMs = Math.max(1000, new Date(s.latestPost) - new Date(s.oldestPost));
+            const diffDays = diffMs / (1000 * 60 * 60 * 24);
+            
+            s.postsPerDay = diffDays > 0 ? (s.articleCount / diffDays).toFixed(2) : s.articleCount.toFixed(2);
+            s.hoursSinceLastPost = Math.floor((new Date() - new Date(s.latestPost)) / (1000 * 60 * 60));
+        });
+
+        // 3. TALLENNUS
         fs.writeFileSync('data.json', JSON.stringify(allArticles.slice(0, 500), null, 2));
+        fs.writeFileSync('stats.json', JSON.stringify(stats, null, 2));
         
         if (failedFeeds.length > 0) {
             fs.writeFileSync('failed_feeds.txt', failedFeeds.join('\n'));
             console.log(`Huom! ${failedFeeds.length} feediä epäonnistui.`);
         }
 
-        console.log("Success! data.json päivitetty.");
+        console.log("Success! data.json ja stats.json päivitetty.");
     } catch (error) {
         console.error("Kriittinen virhe:", error);
         process.exit(1);
@@ -79,7 +112,6 @@ async function processRSS(feed, allArticles, now) {
         let itemDate = new Date(item.pubDate);
         if (isNaN(itemDate.getTime()) || itemDate > now) itemDate = now;
 
-        // SMART CONTENT SELECTION
         const candidates = [
             item['content:encoded'],
             item.content,
@@ -97,7 +129,6 @@ async function processRSS(feed, allArticles, now) {
             }
         });
 
-        // IMAGE LOGIC (Filter out logos for ePressi and others)
         let img = null;
         const logoRegex = /logo|icon|thumb/i;
 
@@ -171,7 +202,6 @@ async function processScraper(feed, allArticles, now) {
 }
 
 function extractImageFromContent(item) {
-    // Etsitään kaikista tekstikentistä
     const searchString = (item['content:encoded'] || "") + (item.content || "") + (item.description || "") + (item.summary || "");
     const imgRegex = /<img[^>]+src=["']([^"'>?]+)/gi;
     let match;
