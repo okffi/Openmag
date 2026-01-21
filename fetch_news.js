@@ -77,11 +77,23 @@ async function processRSS(feed, allArticles, now) {
     const items = feedContent.items.map(item => {
         let itemDate = new Date(item.pubDate);
         if (isNaN(itemDate.getTime()) || itemDate > now) itemDate = now;
+
+        // VALINTA: Käytetään mieluiten content:encoded -kenttää (täysi teksti),
+        // koska 'description' on usein Sitran kaltaisilla sivuilla rikki tai huono.
+        const rawContent = item['content:encoded'] || item.content || item.contentSnippet || "";
+        
+        // PUHDISTUS: Poistetaan HTML-tagit ja turhat välilyönnit/rivinvaihdot
+        const cleanContent = rawContent
+            .replace(/<[^>]*>/g, ' ') // Poista HTML
+            .replace(/\s+/g, ' ')    // Tiivistä välit
+            .trim()
+            .substring(0, 400);      // Otetaan tarpeeksi pitkä pätkä
+
         return {
             title: item.title,
             link: item.link,
             pubDate: itemDate.toISOString(),
-            content: item.contentSnippet || item.content || "",
+            content: cleanContent,
             creator: item.creator || item['dc:creator'] || item.author || "",
             sourceTitle: feedContent.title || new URL(feed.rssUrl).hostname,
             sheetCategory: feed.category,
