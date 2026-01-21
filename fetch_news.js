@@ -78,36 +78,46 @@ async function processRSS(feed, allArticles, now) {
         let itemDate = new Date(item.pubDate);
         if (isNaN(itemDate.getTime()) || itemDate > now) itemDate = now;
 
-        // SMART CONTENT SELECTION:
-        // We look at all potential text fields provided by rss-parser
+        // EPRESSI-KORJAUS TEKSTILLE:
+        // ePressi laittaa usein parhaan tekstin 'contentSnippet' tai 'content' kenttään.
+        // description-kentässä on usein vain metadataa.
         const candidates = [
             item['content:encoded'],
             item.content,
             item.contentSnippet,
-            item.summary,
             item.description
         ];
 
-        // Filter out empty values and HTML tags, then find the longest string
         let bestContent = "";
         candidates.forEach(c => {
             if (!c) return;
+            // Puhdistetaan ja tarkistetaan pituus
             const clean = c.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-            // If this candidate is longer than what we have, and it's not just the title...
-            if (clean.length > bestContent.length && clean !== item.title) {
+            if (clean.length > bestContent.length) {
                 bestContent = clean;
             }
         });
+
+        // EPRESSI-KORJAUS KUVILLE:
+        // Tarkistetaan ensin enclosure (jos se ei ole logo), sitten media:content, sitten haku tekstistä
+        let img = null;
+        if (item.enclosure && item.enclosure.url && !item.enclosure.url.includes('logo')) {
+            img = item.enclosure.url;
+        } else if (item['media:content'] && item['media:content'].$.url) {
+            img = item['media:content'].$.url;
+        }
+        
+        if (!img) img = extractImageFromContent(item);
 
         return {
             title: item.title,
             link: item.link,
             pubDate: itemDate.toISOString(),
             content: bestContent.substring(0, 400),
-            creator: item.creator || item['dc:creator'] || item.author || "",
+            creator: item.creator || item['dc:creator'] || item.author || "ePressi",
             sourceTitle: feedContent.title || new URL(feed.rssUrl).hostname,
             sheetCategory: feed.category,
-            enforcedImage: item.enclosure?.url || extractImageFromContent(item)
+            enforcedImage: img
         };
     });
     allArticles.push(...items);
@@ -177,11 +187,29 @@ async function processScraper(feed, allArticles, now) {
     }
 }
 
+// Päivitetty kuvan poiminta
 function extractImageFromContent(item) {
-    const searchString = (item.content || "") + (item['content:encoded'] || "");
-    const imgRegex = /<img[^>]+src=["']([^"'>?]+)/i;
-    const match = searchString.match(imgRegex);
-    return match ? match[1] : null;
+    // Etsitään kaikista mahdollisista kentistä
+    const searchString = (item['content:encoded'] || "") + (item.content || "") + (item.description || "");
+    
+    // Etsitään kaikki img-tagit
+    const imgRegex = /<img[^>]+src=["']([^"'>?]+)/gi;
+    let match;
+    let images = [];
+    
+    while ((match = imgRegex.exec(searchString)) !== null) {
+        const url = match[1];
+        // SUODATUS: Ohitetaan kuvat, joiden nimessä on "logo", "icon" tai "thumb"
+        // ePressi käyttää näitä pienille kuville.
+        if (!url.toLowerCase().includes('logo') && 
+            !url.toLowerCase().includes('icon') && 
+            !url.toLowerCase().includes('thumb')) {
+            images.push(url);
+        }
+    }
+    
+    // Palautetaan ensimmäinen "oikea" kuva, tai jos niitä ei ole, ePressin logo hätävarana
+    return images.length > 0 ? images[0] : null;
 }
 
 // Suoritus ja prosessin varma sulkeminen
