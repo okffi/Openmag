@@ -78,22 +78,32 @@ async function processRSS(feed, allArticles, now) {
         let itemDate = new Date(item.pubDate);
         if (isNaN(itemDate.getTime()) || itemDate > now) itemDate = now;
 
-        // VALINTA: Käytetään mieluiten content:encoded -kenttää (täysi teksti),
-        // koska 'description' on usein Sitran kaltaisilla sivuilla rikki tai huono.
-        const rawContent = item['content:encoded'] || item.content || item.contentSnippet || "";
-        
-        // PUHDISTUS: Poistetaan HTML-tagit ja turhat välilyönnit/rivinvaihdot
-        const cleanContent = rawContent
-            .replace(/<[^>]*>/g, ' ') // Poista HTML
-            .replace(/\s+/g, ' ')    // Tiivistä välit
-            .trim()
-            .substring(0, 400);      // Otetaan tarpeeksi pitkä pätkä
+        // SMART CONTENT SELECTION:
+        // We look at all potential text fields provided by rss-parser
+        const candidates = [
+            item['content:encoded'],
+            item.content,
+            item.contentSnippet,
+            item.summary,
+            item.description
+        ];
+
+        // Filter out empty values and HTML tags, then find the longest string
+        let bestContent = "";
+        candidates.forEach(c => {
+            if (!c) return;
+            const clean = c.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+            // If this candidate is longer than what we have, and it's not just the title...
+            if (clean.length > bestContent.length && clean !== item.title) {
+                bestContent = clean;
+            }
+        });
 
         return {
             title: item.title,
             link: item.link,
             pubDate: itemDate.toISOString(),
-            content: cleanContent,
+            content: bestContent.substring(0, 400),
             creator: item.creator || item['dc:creator'] || item.author || "",
             sourceTitle: feedContent.title || new URL(feed.rssUrl).hostname,
             sheetCategory: feed.category,
