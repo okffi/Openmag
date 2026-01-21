@@ -61,7 +61,22 @@ async function run() {
         // 1. Lajittelu ajan mukaan
         allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
 
-        // 2. TILASTOJEN LASKENTA
+        // 2. DUPLIKAATTIEN POISTO (URL-perusteella)
+        const uniqueArticles = [];
+        const seenPostUrls = new Set();
+
+        allArticles.forEach(art => {
+            // Puhdistetaan URL poistamalla query-parametrit (kuten ?utm_source) ja hashit
+            const cleanUrl = art.link.split('?')[0].split('#')[0].trim().toLowerCase();
+            
+            if (!seenPostUrls.has(cleanUrl)) {
+                seenPostUrls.add(cleanUrl);
+                uniqueArticles.push(art);
+            }
+        });
+        allArticles = uniqueArticles;
+
+        // 3. TILASTOJEN LASKENTA
         const stats = {};
         allArticles.forEach(art => {
             const src = art.sourceTitle;
@@ -80,7 +95,6 @@ async function run() {
             if (artDate < new Date(stats[src].oldestPost)) stats[src].oldestPost = art.pubDate;
         });
 
-        // Lasketaan analyyttiset arvot
         Object.keys(stats).forEach(src => {
             const s = stats[src];
             const diffMs = Math.max(1000, new Date(s.latestPost) - new Date(s.oldestPost));
@@ -90,7 +104,7 @@ async function run() {
             s.hoursSinceLastPost = Math.floor((new Date() - new Date(s.latestPost)) / (1000 * 60 * 60));
         });
 
-        // 3. TALLENNUS
+        // 4. TALLENNUS
         fs.writeFileSync('data.json', JSON.stringify(allArticles.slice(0, 500), null, 2));
         fs.writeFileSync('stats.json', JSON.stringify(stats, null, 2));
         
@@ -99,7 +113,7 @@ async function run() {
             console.log(`Huom! ${failedFeeds.length} feediä epäonnistui.`);
         }
 
-        console.log("Success! data.json ja stats.json päivitetty.");
+        console.log(`Success! data.json (${allArticles.length} articles) ja stats.json päivitetty.`);
     } catch (error) {
         console.error("Kriittinen virhe:", error);
         process.exit(1);
