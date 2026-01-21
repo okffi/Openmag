@@ -1,8 +1,14 @@
 const axios = require('axios');
 const fs = require('fs');
+const path = require('path');
 const Parser = require('rss-parser');
 const cheerio = require('cheerio');
-const parser = new Parser({ headers: { 'User-Agent': 'OpenMag-Robot-v1' } });
+const parser = new Parser({ 
+    headers: { 'User-Agent': 'OpenMag-Robot-v1' },
+    customFields: {
+        item: [['media:content', 'mediaContent']] // Mahdollistaa media-tagien lukemisen
+    }
+});
 
 const SHEET_CSV_URL = process.env.SHEET_CSV_URL || 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=0&single=true&output=csv';
 
@@ -13,7 +19,6 @@ async function run() {
         const response = await axios.get(SHEET_CSV_URL);
         const rows = response.data.split('\n').slice(1);
         
-        // 1. Luetaan raakadata
         const rawFeeds = rows.map(row => {
             const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
             return { 
@@ -23,7 +28,6 @@ async function run() {
             };
         });
 
-        // 2. Poistetaan duplikaatit URL-osoitteen perusteella (Estää looppeja)
         const seenUrls = new Set();
         const feeds = rawFeeds.filter(f => {
             const url = (f.rssUrl && f.rssUrl.length > 5) ? f.rssUrl : f.scrapeUrl;
@@ -39,7 +43,6 @@ async function run() {
 
         for (const feed of feeds) {
             try {
-                // LOGIIKKA: Jos RSS (C) on tyhjä, käytetään Scrapea (D)
                 if (feed.rssUrl && feed.rssUrl.length > 5) {
                     console.log(`Processing RSS: ${feed.rssUrl}`);
                     await processRSS(feed, allArticles, now);
@@ -47,8 +50,7 @@ async function run() {
                     console.log(`Processing Scrape: ${feed.scrapeUrl}`);
                     await processScraper(feed, allArticles, now);
                 }
-                
-                await new Promise(r => setTimeout(r, 1000)); // Be polite
+                await new Promise(r => setTimeout(r, 1000));
             } catch (e) {
                 const errorMsg = `${feed.category}: ${feed.rssUrl || feed.scrapeUrl} - Virhe: ${e.message}`;
                 console.error(errorMsg);
@@ -56,7 +58,6 @@ async function run() {
             }
         }
 
-        // Lajittelu ja tallennus
         allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
         fs.writeFileSync('data.json', JSON.stringify(allArticles.slice(0, 500), null, 2));
         
@@ -68,7 +69,7 @@ async function run() {
         console.log("Success! data.json päivitetty.");
     } catch (error) {
         console.error("Kriittinen virhe:", error);
-        throw error; // Heitetään virhe eteenpäin .catch-lohkoon
+        process.exit(1);
     }
 }
 
@@ -78,33 +79,32 @@ async function processRSS(feed, allArticles, now) {
         let itemDate = new Date(item.pubDate);
         if (isNaN(itemDate.getTime()) || itemDate > now) itemDate = now;
 
-        // EPRESSI-KORJAUS TEKSTILLE:
-        // ePressi laittaa usein parhaan tekstin 'contentSnippet' tai 'content' kenttään.
-        // description-kentässä on usein vain metadataa.
+        // SMART CONTENT SELECTION
         const candidates = [
             item['content:encoded'],
             item.content,
             item.contentSnippet,
+            item.summary,
             item.description
         ];
 
         let bestContent = "";
         candidates.forEach(c => {
             if (!c) return;
-            // Puhdistetaan ja tarkistetaan pituus
             const clean = c.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-            if (clean.length > bestContent.length) {
+            if (clean.length > bestContent.length && clean !== item.title) {
                 bestContent = clean;
             }
         });
 
-        // EPRESSI-KORJAUS KUVILLE:
-        // Tarkistetaan ensin enclosure (jos se ei ole logo), sitten media:content, sitten haku tekstistä
+        // IMAGE LOGIC (Filter out logos for ePressi and others)
         let img = null;
-        if (item.enclosure && item.enclosure.url && !item.enclosure.url.includes('logo')) {
+        const logoRegex = /logo|icon|thumb/i;
+
+        if (item.enclosure && item.enclosure.url && !logoRegex.test(item.enclosure.url)) {
             img = item.enclosure.url;
-        } else if (item['media:content'] && item['media:content'].$.url) {
-            img = item['media:content'].$.url;
+        } else if (item.mediaContent && item.mediaContent.$ && item.mediaContent.$.url) {
+            img = item.mediaContent.$.url;
         }
         
         if (!img) img = extractImageFromContent(item);
@@ -114,7 +114,7 @@ async function processRSS(feed, allArticles, now) {
             link: item.link,
             pubDate: itemDate.toISOString(),
             content: bestContent.substring(0, 400),
-            creator: item.creator || item['dc:creator'] || item.author || "ePressi",
+            creator: item.creator || item['dc:creator'] || item.author || "",
             sourceTitle: feedContent.title || new URL(feed.rssUrl).hostname,
             sheetCategory: feed.category,
             enforcedImage: img
@@ -123,27 +123,19 @@ async function processRSS(feed, allArticles, now) {
     allArticles.push(...items);
 }
 
-const path = require('path');
-
 async function processScraper(feed, allArticles, now) {
     const urlObj = new URL(feed.scrapeUrl);
     const domain = urlObj.hostname.replace('www.', '');
-    
     console.log(`Scraping HTML: ${domain}`);
 
     try {
-        const { data } = await axios.get(feed.scrapeUrl, { 
-            headers: { 'User-Agent': 'Mozilla/5.0' } 
-        });
+        const { data } = await axios.get(feed.scrapeUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } });
         const $ = cheerio.load(data);
         
-        // Yritetään ladata sivustokohtainen sääntö
         let scraperRule;
         try {
             const rulePath = path.join(__dirname, 'scrapers', `${domain}.js`);
-            if (fs.existsSync(rulePath)) {
-                scraperRule = require(rulePath);
-            }
+            if (fs.existsSync(rulePath)) scraperRule = require(rulePath);
         } catch (e) {
             console.log(`No specific scraper for ${domain}, using generic.`);
         }
@@ -152,28 +144,19 @@ async function processScraper(feed, allArticles, now) {
         
         $(selector).each((i, el) => {
             if (i > 15) return;
-
-            let item;
-            if (scraperRule) {
-                // Käytetään sivuston omaa logiikkaa
-                item = scraperRule.parse($, el);
-            } else {
-                // Geneerinen logiikka (vanha toteutus)
-                item = {
-                    title: $(el).find('h2, h3, .title').first().text().trim(),
-                    link: $(el).find('a').first().attr('href'),
-                    enforcedImage: $(el).find('img').first().attr('src'),
-                    content: "Lue lisää sivustolta."
-                };
-            }
+            let item = scraperRule ? scraperRule.parse($, el) : {
+                title: $(el).find('h2, h3, .title').first().text().trim(),
+                link: $(el).find('a').first().attr('href'),
+                enforcedImage: $(el).find('img').first().attr('src'),
+                content: "Lue lisää sivustolta."
+            };
 
             if (item.title && item.link) {
                 const fullLink = item.link.startsWith('http') ? item.link : new URL(item.link, feed.scrapeUrl).href;
-                
                 allArticles.push({
                     title: item.title,
                     link: fullLink,
-                    pubDate: now.toISOString(), // Päivämäärän parsiminen vaatii kirjaston kuten 'dayjs'
+                    pubDate: item.pubDate || now.toISOString(),
                     content: item.content || "",
                     creator: "",
                     sourceTitle: domain,
@@ -187,36 +170,23 @@ async function processScraper(feed, allArticles, now) {
     }
 }
 
-// Päivitetty kuvan poiminta
 function extractImageFromContent(item) {
-    // Etsitään kaikista mahdollisista kentistä
-    const searchString = (item['content:encoded'] || "") + (item.content || "") + (item.description || "");
-    
-    // Etsitään kaikki img-tagit
+    // Etsitään kaikista tekstikentistä
+    const searchString = (item['content:encoded'] || "") + (item.content || "") + (item.description || "") + (item.summary || "");
     const imgRegex = /<img[^>]+src=["']([^"'>?]+)/gi;
     let match;
     let images = [];
     
     while ((match = imgRegex.exec(searchString)) !== null) {
         const url = match[1];
-        // SUODATUS: Ohitetaan kuvat, joiden nimessä on "logo", "icon" tai "thumb"
-        // ePressi käyttää näitä pienille kuville.
-        if (!url.toLowerCase().includes('logo') && 
-            !url.toLowerCase().includes('icon') && 
-            !url.toLowerCase().includes('thumb')) {
+        if (!/logo|icon|thumb/i.test(url)) {
             images.push(url);
         }
     }
-    
-    // Palautetaan ensimmäinen "oikea" kuva, tai jos niitä ei ole, ePressin logo hätävarana
     return images.length > 0 ? images[0] : null;
 }
 
-// Suoritus ja prosessin varma sulkeminen
 run().then(() => {
     console.log("Process finished successfully.");
     process.exit(0);
-}).catch(err => {
-    console.error("Process failed:", err);
-    process.exit(1);
 });
