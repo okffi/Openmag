@@ -22,19 +22,25 @@
     @media (max-width: 600px) { .grid-sizer, .grid-item { width: 100%; } }
 
     .grid-item {
-        margin-bottom: 25px;
-        background: #fff;
-        border-radius: 4px;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        text-decoration: none;
-        color: inherit;
-        display: block;
-        transition: transform 0.2s ease;
-    }
+    margin-bottom: 25px;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s ease, border-color 0.3s ease;
+    
+    /* Pre-allocate space for the stripe */
+    border-top: 5px solid transparent; 
+}
+
+.grid-item.no-image { 
+    border-top: 5px solid #b58d67 !important; 
+}
     .grid-item:hover { transform: translateY(-5px); }
     .grid-item img { width: 100%; height: auto; display: block; background: #eee; }
-    .grid-item.no-image { border-top: 5px solid #b58d67; }
 
     .content { padding: 25px; }
     h2 { font-family: 'Playfair Display', serif; margin: 0 0 15px; font-size: 1.4rem; line-height: 1.2; color: #1a1a1a; }
@@ -180,6 +186,10 @@ function displayArticles() {
 
     slice.forEach(item => {
         const img = item.enforcedImage || extractImg(item);
+        
+        // FIX: Determine the class immediately based on data
+        const noImageClass = !img ? "no-image" : "";
+        
         const imageHtml = img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" referrerpolicy="no-referrer" onload="refreshGrid()" onerror="this.parentElement.classList.add('no-image'); this.remove(); refreshGrid();">` : "";
         
         const rawSnippet = item.content || item.description || "";
@@ -193,7 +203,7 @@ function displayArticles() {
         const sourceAuthorStr = `${source}${author}`;
 
         const cardHtml = `
-            <a href="${item.link}" target="_blank" class="grid-item">
+            <a href="${item.link}" target="_blank" class="grid-item ${noImageClass}">
                 ${imageHtml}
                 <div class="content">
                     <span class="category-label">${item.sheetCategory || 'General'}</span>
