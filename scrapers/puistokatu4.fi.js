@@ -1,24 +1,30 @@
 module.exports = {
     domain: "puistokatu4.fi",
-    // Sivusto käyttää tyypillisesti "post-item" tai "card" -tyyppisiä rakenteita
-    listSelector: ".post-item, .card, article", 
+    // Käytetään JSON-datasi tarkempaa valitsinta
+    listSelector: ".posts-small-list div.post, article.post", 
     
     parse: ($, el) => {
-        const title = $(el).find('h2, h3, .title').first().text().trim();
-        const link = $(el).find('a').first().attr('href');
+        const titleAnchor = $(el).find('.title a, h2 a, h3 a').first();
+        const title = titleAnchor.text().trim();
+        const link = titleAnchor.attr('href');
         
-        // Kuvat: Puistokatu käyttää usein kuvaa taustana tai img-tagissa
-        let img = $(el).find('img').first().attr('src');
+        // Kuva kortista
+        const img = $(el).find('img').first().attr('src');
         
-        // Tekstikuvaus (excerpt)
-        const description = $(el).find('.excerpt, p, .description').first().text().trim();
+        // Päivämäärä (JSON: div.date)
+        const dateRaw = $(el).find('div.date, .date').first().text().trim();
         
-        // Päivämäärä (jos saatavilla kortissa)
-        const dateRaw = $(el).find('.date, .published, time').first().text().trim();
-        let isoDate = new Date().toISOString();
+        // Kirjoittaja (JSON: .post-author__info span)
+        // POISTETAAN "Kirjoittanut: " teksti
+        let author = $(el).find('.post-author__info span, .author').first().text().trim();
+        author = author.replace(/Kirjoittanut:\s*/i, ''); 
 
+        // Kuvaus
+        const description = $(el).find('.excerpt p, p').first().text().trim();
+        
+        let isoDate = new Date().toISOString();
         if (dateRaw) {
-            // Suomalainen päivämäärämuoto "20.1.2026" muunnetaan ISO-muotoon
+            // Suomalainen muoto (esim 21.1.2026) -> ISO
             const parts = dateRaw.split('.');
             if (parts.length === 3) {
                 const d = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
@@ -31,6 +37,7 @@ module.exports = {
             link,
             enforcedImage: img,
             content: description,
+            creator: author, // Nyt ilman "Kirjoittanut:" -etuliitettä
             pubDate: isoDate
         };
     }
