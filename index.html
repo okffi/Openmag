@@ -117,9 +117,51 @@
         text-transform: uppercase;
         letter-spacing: 2px;
     }
+    .sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: -250px; /* Hidden by default */
+  background-color: #f8f9fa;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.sidebar.open {
+  left: 0; /* Slide in */
+}
+
+.source-item {
+  padding: 8px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+}
+
+.source-item:hover {
+  background-color: #e9ecef;
+}
+
+.source-item.active {
+  background-color: #007bff;
+  color: white;
+}
 </style>
 </head>
 <body>
+    <button id="sidebar-toggle" onclick="toggleSidebar()">☰ Sources</button>
+    <aside id="source-sidebar" class="sidebar">
+      <div class="sidebar-header">
+          <h3>Sources</h3>
+          <button onclick="toggleSidebar()" class="close-btn">×</button>
+      </div>
+      <div id="source-list">
+          </div>
+    </aside>
+    <div id="sidebar-overlay" onclick="toggleSidebar()"></div>
 
     <h1>OpenMag</h1>
     <div class="subline">Hyviä uutisia</div>
@@ -261,6 +303,46 @@ function extractImg(item) {
         if (img) src = img.getAttribute('src');
     }
     return src;
+}
+
+    function toggleSidebar() {
+    const sidebar = document.getElementById('source-sidebar');
+    sidebar.classList.toggle('open');
+}
+
+async function initSidebar() {
+    // 1. Fetch the stats to get the unique sources
+    const response = await fetch('stats.json');
+    const stats = await response.json();
+    const sourceList = document.getElementById('source-list');
+
+    // 2. Clear existing and add "Show All"
+    sourceList.innerHTML = '<div class="source-item active" onclick="filterBySource(\'all\')">All Sources</div>';
+
+    // 3. Add each source from stats
+    Object.keys(stats).sort().forEach(sourceName => {
+        const div = document.createElement('div');
+        div.className = 'source-item';
+        div.innerText = `${sourceName} (${stats[sourceName].articleCount})`;
+        div.onclick = () => filterBySource(sourceName, div);
+        sourceList.appendChild(div);
+    });
+}
+
+function filterBySource(sourceName, element) {
+    // Update active class in sidebar
+    document.querySelectorAll('.source-item').forEach(el => el.classList.remove('active'));
+    if (element) element.classList.add('active');
+
+    // Filter the actual news cards
+    const cards = document.querySelectorAll('.news-card'); // Assuming your cards have this class
+    cards.forEach(card => {
+        if (sourceName === 'all' || card.getAttribute('data-source') === sourceName) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
+    });
 }
 
 buildMagazine();
