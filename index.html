@@ -149,6 +149,38 @@
   background-color: #007bff;
   color: white;
 }
+    /* Lisää tämä, jotta taustasuoja toimii */
+#sidebar-overlay.visible {
+    display: block !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.3);
+    z-index: 900;
+}
+
+/* Tyyli sulkemispainikkeelle */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px 10px 15px;
+    border-bottom: 2px solid #eee;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Masonry-korjaus: kun filtteri on päällä, Masonry tarvitsee apua */
+.grid-item.hidden {
+    display: none !important;
+}
 </style>
 </head>
 <body>
