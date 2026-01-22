@@ -41,14 +41,15 @@ jobs:
           git config --global user.name 'NewsRobot'
           git config --global user.email 'robot@openmag.fi'
           
-          # Haetaan uusin tilanne etäpalvelimelta
-          git fetch origin main
-          
-          # Resetoidaan data.json vastaamaan palvelimen tilaa ennen omaa lisäystä
-          # tai käytetään "ours/theirs" strategiaa. 
-          # Tässä tapauksessa helpointa on lisätä ja pakottaa:
+          # Lisätään kaikki robotin luomat tiedostot
           git add data.json
+          git add stats.json
           git add failed_feeds.txt || true
           
           # Commit vain jos on muutoksia
-          git diff --quiet && git diff --staged --quiet || (git commit -m "Automated News Update" && git push origin main --force)
+          if ! git diff --cached --quiet; then
+            git commit -m "Automated News and Stats Update"
+            git push origin main
+          else
+            echo "No changes to commit"
+          fi
