@@ -328,16 +328,19 @@ function filterBySource(sourceName, element) {
             card.classList.add('hidden');
         }
     });
+    
+    // 1. Pakota Masonry laskemaan paikat uudelleen
+    if (msnry) {
+        msnry.layout();
+    }
 
-    // Pakota Masonry laskemaan paikat uudelleen
-    msnry.layout();
-
-    // Jos tuloksia on vähän, ladataan lisää dataa jotta Infinite Scroll jatkuu
+    // 2. TÄRKEÄ: Jos tuloksia on vähän, ladataan lisää uutisia taustalla
     const visibleCards = document.querySelectorAll('.grid-item:not(.hidden)').length;
     if (sourceName !== 'all' && visibleCards < 10) {
         displayArticles();
     }
 
+    // 3. Sulje paneeli mobiilissa
     if (window.innerWidth < 768) toggleSidebar();
 }
 
