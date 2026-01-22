@@ -279,6 +279,7 @@ function displayArticles() {
         const sourceAuthorStr = `${source}${author}`;
 
         // Lisätään data-source attribuutti suodatusta varten
+        // Etsi tämä rivi displayArticles-funktiosta:
         const cardHtml = `
             <a href="${item.link}" 
                target="_blank" 
@@ -348,34 +349,52 @@ function toggleSidebar() {
 }
 
 async function initSidebar() {
+    const sourceList = document.getElementById('source-list');
     try {
-        // Lisätään aikaleima URL-osoitteen perään, jotta selain hakee aina tuoreen version
-        const response = await fetch('./stats.json?t=' + new Date().getTime());
+        // Lisätään aikaleima, jotta GitHub Pages ei tarjoile vanhaa versiota
+        const response = await fetch('./stats.json?v=' + new Date().getTime());
+        if (!response.ok) throw new Error("Stats.json missing");
+        
         const stats = await response.json();
         
-        const sourceList = document.getElementById('source-list');
-        // ... loput koodista ennallaan
+        let html = '<div class="source-item active" onclick="filterBySource(\'all\', this)">Kaikki lähteet</div>';
+        
+        Object.keys(stats).sort().forEach(source => {
+            html += `<div class="source-item" onclick="filterBySource('${source}', this)">
+                        ${source} <span>(${stats[source].articleCount})</span>
+                     </div>`;
+        });
+        
+        sourceList.innerHTML = html;
+        console.log("Sidebar populated with sources:", Object.keys(stats));
     } catch (e) {
-        console.error("Sivupalkin lataus epäonnistui:", e);
+        console.error("Sidebar error:", e);
+        sourceList.innerHTML = '<div style="padding:10px; color:red;">Ei lähteitä saatavilla</div>';
     }
 }
 
 function filterBySource(sourceName, element) {
-    // Päivitä valittu tyyli sivupaneelissa
+    // 1. Päivitä aktiivinen tila sivupalkissa
     document.querySelectorAll('.source-item').forEach(el => el.classList.remove('active'));
     element.classList.add('active');
 
-    // Suodata kortit
+    // 2. Piilota/Näytä kortit käyttämällä luokkaa
     const cards = document.querySelectorAll('.grid-item');
     cards.forEach(card => {
-        if (sourceName === 'all' || card.getAttribute('data-source') === sourceName) {
-            card.style.display = 'flex'; // Tai 'block' riippuen tyylistäsi
+        const cardSource = card.getAttribute('data-source');
+        if (sourceName === 'all' || cardSource === sourceName) {
+            card.classList.remove('hidden');
         } else {
-            card.style.display = 'none';
+            card.classList.add('hidden');
         }
     });
 
-    // Sulje paneeli mobiilissa valinnan jälkeen
+    // 3. Pakota Masonry laskemaan paikat uudelleen (ilman tätä layout hajoaa)
+    if (msnry) {
+        msnry.layout();
+    }
+    
+    // Sulje paneeli mobiilissa
     if (window.innerWidth < 768) toggleSidebar();
 }
 
