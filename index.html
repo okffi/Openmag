@@ -398,28 +398,6 @@ async function initSidebar() {
     }
 }
 
-function filterBySource(sourceName, element) {
-    // Aktiivinen luokka sivupalkkiin
-    document.querySelectorAll('.source-item').forEach(el => el.classList.remove('active'));
-    element.classList.add('active');
-
-    const cards = document.querySelectorAll('.grid-item');
-    cards.forEach(card => {
-        const cardSource = card.getAttribute('data-source');
-        // Käytetään 'hidden' luokkaa, joka on määritelty CSS:ssä {display: none !important}
-        if (sourceName === 'all' || cardSource === sourceName) {
-            card.classList.remove('hidden');
-        } else {
-            card.classList.add('hidden');
-        }
-    });
-
-    // Pakotetaan Masonry järjestämään kortit uudelleen piilotuksen jälkeen
-    if (msnry) {
-        msnry.layout();
-    }
-}
-
 // Käynnistä sivupaneelin lataus
 initSidebar();
 
