@@ -244,9 +244,12 @@ function displayArticles() {
         const author = item.creator ? ` | ${item.creator}` : "";
         const sourceAuthorStr = `${source}${author}`;
 
+        // Lisätään data-source attribuutti suodatusta varten
         const cardHtml = `
-            <a href="${item.link}" target="_blank" class="grid-item ${noImageClass}">
-                ${imageHtml}
+            <a href="${item.link}" 
+               target="_blank" 
+               class="grid-item ${noImageClass}" 
+               data-source="${item.sourceTitle}">  ${imageHtml}
                 <div class="content">
                     <span class="category-label">${item.sheetCategory || 'General'}</span>
                     <h2>${item.title}</h2>
