@@ -41,15 +41,11 @@ jobs:
           git config --global user.name 'NewsRobot'
           git config --global user.email 'robot@openmag.fi'
           
-          # Lisätään kaikki robotin luomat tiedostot
+          # Lisätään molemmat tiedostot seurantaan
           git add data.json
           git add stats.json
           git add failed_feeds.txt || true
           
-          # Commit vain jos on muutoksia
-          if ! git diff --cached --quiet; then
-            git commit -m "Automated News and Stats Update"
-            git push origin main
-          else
-            echo "No changes to commit"
-          fi
+          # Tehdään commit ja push
+          git commit -m "Update news and stats" || echo "No changes to commit"
+          git push origin main
