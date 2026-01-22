@@ -6,7 +6,10 @@ const cheerio = require('cheerio');
 const parser = new Parser({ 
     headers: { 'User-Agent': 'OpenMag-Robot-v1' },
     customFields: {
-        item: [['media:content', 'mediaContent']] 
+        item: [
+            ['media:content', 'mediaContent'],
+            ['enclosure', 'enclosure'] // Lisätty Atom/RSS enclosure tuki
+        ] 
     }
 });
 
@@ -117,7 +120,7 @@ async function run() {
 async function processRSS(feed, allArticles, now) {
     const feedContent = await parser.parseURL(feed.rssUrl);
     const items = feedContent.items.map(item => {
-        let itemDate = new Date(item.pubDate);
+        let itemDate = new Date(item.pubDate || item.isoDate);
         if (isNaN(itemDate.getTime()) || itemDate > now) itemDate = now;
 
         const candidates = [item['content:encoded'], item.content, item.contentSnippet, item.summary, item.description];
@@ -129,11 +132,16 @@ async function processRSS(feed, allArticles, now) {
         });
 
         let img = null;
-        if (item.enclosure && item.enclosure.url && !/logo|icon|thumb/i.test(item.enclosure.url)) {
+        // 1. Tuki Atom-enclosureille (The Conversation)
+        if (item.enclosure && item.enclosure.url) {
             img = item.enclosure.url;
-        } else if (item.mediaContent && item.mediaContent.$ && item.mediaContent.$.url) {
+        } 
+        // 2. Tuki media-tageille
+        else if (item.mediaContent && item.mediaContent.$ && item.mediaContent.$.url) {
             img = item.mediaContent.$.url;
         }
+        
+        // 3. Fallback: Poiminta tekstistä
         if (!img) img = extractImageFromContent(item);
 
         return {
@@ -158,20 +166,28 @@ async function processScraper(feed, allArticles, now) {
         const { data } = await axios.get(feed.scrapeUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } });
         const $ = cheerio.load(data);
         
-        let scraperRule;
+        let scraperRule = null;
         const rulePath = path.join(__dirname, 'scrapers', `${domain}.js`);
         if (fs.existsSync(rulePath)) {
             scraperRule = require(rulePath);
         }
 
         const selector = scraperRule ? scraperRule.listSelector : 'article';
-        
-        // Haetaan elementit ja rajoitetaan 5 uusimpaan syvää hakua varten
         const elements = $(selector).get().slice(0, 5);
 
         for (const el of elements) {
-            // Huom: parse on nyt asynkroninen, jos skreippari niin vaatii
-            let item = await scraperRule.parse($, el, axios, cheerio);
+            // Jos sääntöä ei ole, käytetään geneeristä parsijaa
+            let item;
+            if (scraperRule) {
+                item = await scraperRule.parse($, el, axios, cheerio);
+            } else {
+                item = {
+                    title: $(el).find('h2, h3, .title').first().text().trim(),
+                    link: $(el).find('a').first().attr('href'),
+                    enforcedImage: $(el).find('img').first().attr('src'),
+                    content: ""
+                };
+            }
 
             if (item && item.title && item.link) {
                 const fullLink = item.link.startsWith('http') ? item.link : new URL(item.link, feed.scrapeUrl).href;
@@ -194,10 +210,13 @@ async function processScraper(feed, allArticles, now) {
 
 function extractImageFromContent(item) {
     const searchString = (item['content:encoded'] || "") + (item.content || "") + (item.description || "") + (item.summary || "");
+    // Parannettu regex huomioimaan eri lainausmerkit
     const imgRegex = /<img[^>]+src=["']([^"'>?]+)/gi;
     let match;
     while ((match = imgRegex.exec(searchString)) !== null) {
-        if (!/logo|icon|thumb/i.test(match[1])) return match[1];
+        const url = match[1];
+        // Skipataan seurantapikselit ja pienet ikonit
+        if (!/logo|icon|thumb|pixel|stat|avatar/i.test(url)) return url;
     }
     return null;
 }
