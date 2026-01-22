@@ -214,21 +214,24 @@ let isLoading = false;
 
 async function buildMagazine() {
     const container = document.querySelector('#magazine-grid');
+    
+    // Alustetaan Masonry
     msnry = new Masonry(container, {
         itemSelector: '.grid-item',
         columnWidth: '.grid-sizer',
         percentPosition: true,
         gutter: 25
     });
-    
-    window.refreshGrid = () => { if(msnry) msnry.layout(); };
 
     try {
         const response = await fetch('data.json');
         allArticles = await response.json(); 
+        
         if (allArticles && allArticles.length > 0) {
             const categories = [...new Set(allArticles.map(a => a.sheetCategory))].filter(Boolean);
             createFilterUI(categories);
+            
+            // Aloitetaan täyttö
             displayArticles();
             setupInfiniteScroll();
         }
@@ -251,86 +254,82 @@ function displayArticles() {
     if (isLoading) return;
     const container = document.querySelector('#magazine-grid');
     
-    const filteredByCategory = allArticles.filter(a => currentFilter === 'All' || a.sheetCategory === currentFilter);
-    const slice = filteredByCategory.slice(displayedCount, displayedCount + PAGE_SIZE);
+    // Valitaan uutiset suodattimien mukaan
+    let filtered = allArticles.filter(a => {
+        const catMatch = (currentFilter === 'All' || a.sheetCategory === currentFilter);
+        const srcMatch = (activeSourceFilter === 'all' || a.sourceTitle === activeSourceFilter);
+        return catMatch && srcMatch;
+    });
 
-    if (slice.length === 0) {
-        document.querySelector('#scroll-sentinel').innerText = "— Kaikki uutiset ladattu —";
+    const slice = filtered.slice(displayedCount, displayedCount + PAGE_SIZE);
+
+    if (slice.length === 0 && displayedCount > 0) {
+        document.querySelector('#scroll-sentinel').innerText = "— Kaikki suodatetut uutiset ladattu —";
         return;
     }
 
     isLoading = true;
+    const fragment = document.createDocumentFragment();
     const newElements = [];
 
     slice.forEach(item => {
         const img = item.enforcedImage || extractImg(item);
-        const noImageClass = !img ? "no-image" : "";
         const source = item.sourceTitle || "Uutiset";
-        const author = item.creator ? ` | ${item.creator}` : "";
-        const sourceAuthorStr = `${source}${author}`;
         const dateObj = new Date(item.pubDate);
-        const formattedDate = dateObj.toLocaleDateString('fi-FI');
-
-        const tempDiv = document.createElement('div');
-        const isHidden = (activeSourceFilter !== 'all' && source !== activeSourceFilter) ? 'hidden' : '';
-
-        tempDiv.innerHTML = `
-            <a href="${item.link}" target="_blank" class="grid-item ${noImageClass} ${isHidden}" data-source="${source}">
-                ${img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" referrerpolicy="no-referrer" onload="refreshGrid()" onerror="this.parentElement.classList.add('no-image'); this.remove(); refreshGrid();">` : ""}
-                <div class="content">
-                    <span class="category-label">${item.sheetCategory || 'General'}</span>
-                    <h2>${item.title}</h2>
-                    <p>${(item.content || "").substring(0, 160)}...</p>
-                    <div class="meta-info">
-                        <span class="source-author" title="${sourceAuthorStr}">${sourceAuthorStr}</span>
-                        <span class="date-label">${formattedDate}</span>
-                    </div>
-                </div>
-            </a>`;
         
-        const el = tempDiv.firstElementChild;
-        container.appendChild(el);
-        newElements.push(el);
+        const card = document.createElement('a');
+        card.href = item.link;
+        card.target = "_blank";
+        card.className = `grid-item ${!img ? 'no-image' : ''}`;
+        card.setAttribute('data-source', source);
+
+        card.innerHTML = `
+            ${img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" onload="imageLoaded()" onerror="this.parentElement.classList.add('no-image'); this.remove(); imageLoaded();">` : ""}
+            <div class="content">
+                <span class="category-label">${item.sheetCategory || 'General'}</span>
+                <h2>${item.title}</h2>
+                <p>${(item.content || "").substring(0, 160)}...</p>
+                <div class="meta-info">
+                    <span class="source-author">${source}</span>
+                    <span class="date-label">${dateObj.toLocaleDateString('fi-FI')}</span>
+                </div>
+            </div>`;
+        
+        fragment.appendChild(card);
+        newElements.push(card);
     });
 
+    container.appendChild(fragment);
     displayedCount += PAGE_SIZE;
 
+    // Pakotetaan asettelu kun elementit on lisätty
     imagesLoaded(container, () => {
         msnry.appended(newElements);
         msnry.layout();
         isLoading = false;
-        
-        // Automaattinen lisälataus jos suodatetussa näkymässä on liian vähän kortteja
-        const visibleCards = container.querySelectorAll('.grid-item:not(.hidden)').length;
-        if (activeSourceFilter !== 'all' && visibleCards < 10 && displayedCount < filteredByCategory.length) {
-            displayArticles();
-        }
     });
+}
+
+// TÄRKEÄ: Tämä korjaa päällekkäiset kuvat
+function imageLoaded() {
+    if (msnry) msnry.layout();
 }
 
 function filterBySource(sourceName, element) {
     activeSourceFilter = sourceName;
+    displayedCount = 0; // Nollataan jotta haku alkaa alusta tälle lähteelle
     
     document.querySelectorAll('.source-item').forEach(el => el.classList.remove('active'));
     if (element) element.classList.add('active');
 
-    const cards = document.querySelectorAll('.grid-item');
-    cards.forEach(card => {
-        const cardSource = card.getAttribute('data-source');
-        if (sourceName === 'all' || cardSource === sourceName) {
-            card.classList.remove('hidden');
-        } else {
-            card.classList.add('hidden');
-        }
-    });
-
-    if (msnry) msnry.layout();
-
-    const visibleCards = document.querySelectorAll('.grid-item:not(.hidden)').length;
-    if (sourceName !== 'all' && visibleCards < 10 && displayedCount < allArticles.length) {
-        displayArticles();
-    }
-
+    // Tyhjennetään nykyinen näkymä kokonaan
+    const container = document.querySelector('#magazine-grid');
+    const items = container.querySelectorAll('.grid-item');
+    msnry.remove(items);
+    
+    // Ladataan uudet uutiset (etsii nyt koko data.jsonista)
+    displayArticles();
+    
     if (window.innerWidth < 768) toggleSidebar();
 }
 
