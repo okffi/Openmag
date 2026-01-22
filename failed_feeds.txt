@@ -2,7 +2,6 @@ Eurooppa: https://www.ceps.eu/ - Virhe: Attribute without value
 Line: 20
 Column: 61
 Char: s
-Journalismi + faktantarkistus: https://www.nordishub.eu/feed/ - Virhe: 
 Journalismi + faktantarkistus: https://news.google.com/search?q=rsf.org&hl=en-US&gl=US&ceid=US%3Aen - Virhe: Invalid character in entity name
 Line: 0
 Column: 16863
@@ -16,9 +15,16 @@ Kulttuuri + taide: https://www.epressi.com/tiedotteet/historia.html - Virhe: Att
 Line: 44
 Column: 15
 Char: s
+Maailmanpolitiikka: https://publicadministration.desa.un.org/rss.xml - Virhe: getaddrinfo EAI_AGAIN publicadministration.desa.un.org
+Maailmanpolitiikka: https://news.un.org/feed/subscribe/en/news/topic/sdgs/feed/rss.xml - Virhe: Non-whitespace before first tag.
+Line: 0
+Column: 1
+Char: 
 Pohjois-Eurooppa: https://www.norden.org/sv/rss.xml - Virhe: Status code 403
 Talous: https://news.google.com/publications/CAAqJQgKIh9DQklTRVFnTWFnMEtDM2RsWm05eWRXMHViM0puS0FBUAE?hl=en-US&gl=US&ceid=US%3Aen - Virhe: Invalid character in entity name
 Line: 0
-Column: 17700
+Column: 17768
 Char: &
+Tiede + tutkimus: https://journal.fi/tiedepolitiikka/gateway/plugin/WebFeedGatewayPlugin/atom - Virhe: Request timed out after 60000ms
+Tiede + tutkimus: https://www.avointiede.fi/fi/rss.xml - Virhe: Request timed out after 60000ms
 Maailmanpolitiikka: https://www.unwomen.org/en/rss.xml - Virhe: Status code 403
