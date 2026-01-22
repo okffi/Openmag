@@ -374,14 +374,14 @@ async function initSidebar() {
 }
 
 function filterBySource(sourceName, element) {
-    // 1. Päivitä aktiivinen tila sivupalkissa
+    // Aktiivinen luokka sivupalkkiin
     document.querySelectorAll('.source-item').forEach(el => el.classList.remove('active'));
     element.classList.add('active');
 
-    // 2. Piilota/Näytä kortit käyttämällä luokkaa
     const cards = document.querySelectorAll('.grid-item');
     cards.forEach(card => {
         const cardSource = card.getAttribute('data-source');
+        // Käytetään 'hidden' luokkaa, joka on määritelty CSS:ssä {display: none !important}
         if (sourceName === 'all' || cardSource === sourceName) {
             card.classList.remove('hidden');
         } else {
@@ -389,13 +389,10 @@ function filterBySource(sourceName, element) {
         }
     });
 
-    // 3. Pakota Masonry laskemaan paikat uudelleen (ilman tätä layout hajoaa)
+    // Pakotetaan Masonry järjestämään kortit uudelleen piilotuksen jälkeen
     if (msnry) {
         msnry.layout();
     }
-    
-    // Sulje paneeli mobiilissa
-    if (window.innerWidth < 768) toggleSidebar();
 }
 
 // Käynnistä sivupaneelin lataus
