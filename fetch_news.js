@@ -76,10 +76,12 @@ async function run() {
         });
         allArticles = uniqueArticles;
 
-        // 3. TILASTOJEN LASKENTA
+// 3. TILASTOJEN LASKENTA
         const stats = {};
         allArticles.forEach(art => {
-            const src = art.sourceTitle;
+            // Varmistetaan, että lähde on olemassa, muuten käytetään domainia tai "Tuntematon"
+            const src = art.sourceTitle || "Muu lähde"; 
+            
             if (!stats[src]) {
                 stats[src] = { 
                     articleCount: 0, 
