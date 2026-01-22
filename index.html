@@ -152,15 +152,17 @@
 </style>
 </head>
 <body>
-    <button id="sidebar-toggle" onclick="toggleSidebar()">☰ Sources</button>
+    <button id="sidebar-toggle" onclick="toggleSidebar()">☰ Suodata lähteitä</button>
+    
     <aside id="source-sidebar" class="sidebar">
-      <div class="sidebar-header">
-          <h3>Sources</h3>
-          <button onclick="toggleSidebar()" class="close-btn">×</button>
-      </div>
-      <div id="source-list">
-          </div>
+        <div class="sidebar-header">
+            <h3>Julkaisijat</h3>
+            <button onclick="toggleSidebar()" class="close-btn">×</button>
+        </div>
+        <div id="source-list">
+            </div>
     </aside>
+    
     <div id="sidebar-overlay" onclick="toggleSidebar()"></div>
 
     <h1>OpenMag</h1>
@@ -308,45 +310,50 @@ function extractImg(item) {
     return src;
 }
 
-    function toggleSidebar() {
-    const sidebar = document.getElementById('source-sidebar');
-    sidebar.classList.toggle('open');
+function toggleSidebar() {
+    document.getElementById('source-sidebar').classList.toggle('open');
+    document.getElementById('sidebar-overlay').classList.toggle('visible');
 }
 
 async function initSidebar() {
-    // 1. Fetch the stats to get the unique sources
     const response = await fetch('stats.json');
     const stats = await response.json();
     const sourceList = document.getElementById('source-list');
 
-    // 2. Clear existing and add "Show All"
-    sourceList.innerHTML = '<div class="source-item active" onclick="filterBySource(\'all\')">All Sources</div>';
+    // "Kaikki" -vaihtoehto
+    sourceList.innerHTML = '<div class="source-item active" onclick="filterBySource(\'all\', this)">Kaikki lähteet</div>';
 
-    // 3. Add each source from stats
-    Object.keys(stats).sort().forEach(sourceName => {
+    // Luodaan painike jokaiselle lähteelle
+    Object.keys(stats).sort().forEach(source => {
         const div = document.createElement('div');
         div.className = 'source-item';
-        div.innerText = `${sourceName} (${stats[sourceName].articleCount})`;
-        div.onclick = () => filterBySource(sourceName, div);
+        div.innerHTML = `${source} <span>(${stats[source].articleCount})</span>`;
+        div.onclick = () => filterBySource(source, div);
         sourceList.appendChild(div);
     });
 }
 
 function filterBySource(sourceName, element) {
-    // Update active class in sidebar
+    // Päivitä valittu tyyli sivupaneelissa
     document.querySelectorAll('.source-item').forEach(el => el.classList.remove('active'));
-    if (element) element.classList.add('active');
+    element.classList.add('active');
 
-    // Filter the actual news cards
-    const cards = document.querySelectorAll('.news-card'); // Assuming your cards have this class
+    // Suodata kortit
+    const cards = document.querySelectorAll('.grid-item');
     cards.forEach(card => {
         if (sourceName === 'all' || card.getAttribute('data-source') === sourceName) {
-            card.style.display = 'block';
+            card.style.display = 'flex'; // Tai 'block' riippuen tyylistäsi
         } else {
             card.style.display = 'none';
         }
     });
+
+    // Sulje paneeli mobiilissa valinnan jälkeen
+    if (window.innerWidth < 768) toggleSidebar();
 }
+
+// Käynnistä sivupaneelin lataus
+initSidebar();
 
 buildMagazine();
 </script>
