@@ -209,8 +209,9 @@
 <script>
 let allArticles = []; 
 let displayedCount = 0;
-const PAGE_SIZE = 15;
-let currentFilter = 'All';
+const PAGE_SIZE = 40; // Kasvatettu, jotta suodattimelle riittää näytettävää
+let currentFilter = 'All'; // Kategoria-suodatin
+let activeSourceFilter = 'all'; // Lähde-suodatin (sivupalkki)
 let msnry;
 let isLoading = false;
 
@@ -244,14 +245,17 @@ function setupInfiniteScroll() {
         if (entries[0].isIntersecting && !isLoading) {
             displayArticles();
         }
-    }, { rootMargin: '200px' });
+    }, { rootMargin: '400px' });
     observer.observe(sentinel);
 }
 
 function displayArticles() {
+    if (isLoading) return;
     const container = document.querySelector('#magazine-grid');
-    const filtered = allArticles.filter(a => currentFilter === 'All' || a.sheetCategory === currentFilter);
-    const slice = filtered.slice(displayedCount, displayedCount + PAGE_SIZE);
+    
+    // Suodatetaan kategoria-suodattimella (yläpalkki)
+    const filteredByCategory = allArticles.filter(a => currentFilter === 'All' || a.sheetCategory === currentFilter);
+    const slice = filteredByCategory.slice(displayedCount, displayedCount + PAGE_SIZE);
 
     if (slice.length === 0) {
         document.querySelector('#scroll-sentinel').innerText = "— Kaikki uutiset ladattu —";
@@ -259,37 +263,28 @@ function displayArticles() {
     }
 
     isLoading = true;
+    const newElements = [];
 
     slice.forEach(item => {
         const img = item.enforcedImage || extractImg(item);
-        
-        // FIX: Determine the class immediately based on data
         const noImageClass = !img ? "no-image" : "";
-        
-        const imageHtml = img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" referrerpolicy="no-referrer" onload="refreshGrid()" onerror="this.parentElement.classList.add('no-image'); this.remove(); refreshGrid();">` : "";
-        
-        const rawSnippet = item.content || item.description || "";
-        const cleanSnippet = rawSnippet.replace(/<[^>]*>/g, '').trim().substring(0, 180);
-        
-        const dateObj = new Date(item.pubDate);
-        const formattedDate = dateObj.toLocaleDateString('fi-FI');
-        
         const source = item.sourceTitle || "Uutiset";
         const author = item.creator ? ` | ${item.creator}` : "";
         const sourceAuthorStr = `${source}${author}`;
+        const dateObj = new Date(item.pubDate);
+        const formattedDate = dateObj.toLocaleDateString('fi-FI');
 
-        // Lisätään data-source attribuutti suodatusta varten
-        // Etsi tämä rivi displayArticles-funktiosta:
-        const cardHtml = `
-            <a href="${item.link}" 
-               target="_blank" 
-               class="grid-item ${noImageClass}" 
-               data-source="${item.sourceTitle}">  ${imageHtml}
+        const tempDiv = document.createElement('div');
+        // Lisätään heti 'hidden' luokka, jos se ei täsmää aktiiviseen lähdesuodattimeen
+        const isHidden = (activeSourceFilter !== 'all' && source !== activeSourceFilter) ? 'hidden' : '';
+
+        tempDiv.innerHTML = `
+            <a href="${item.link}" target="_blank" class="grid-item ${noImageClass} ${isHidden}" data-source="${source}">
+                ${img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" referrerpolicy="no-referrer" onload="refreshGrid()" onerror="this.parentElement.classList.add('no-image'); this.remove(); refreshGrid();">` : ""}
                 <div class="content">
                     <span class="category-label">${item.sheetCategory || 'General'}</span>
                     <h2>${item.title}</h2>
-                    <p>${cleanSnippet}...</p>
-                    
+                    <p>${(item.content || "").substring(0, 160)}...</p>
                     <div class="meta-info">
                         <span class="source-author" title="${sourceAuthorStr}">${sourceAuthorStr}</span>
                         <span class="date-label">${formattedDate}</span>
@@ -297,40 +292,70 @@ function displayArticles() {
                 </div>
             </a>`;
         
-        const tempDiv = document.createElement('div');
-        tempDiv.innerHTML = cardHtml;
         const el = tempDiv.firstElementChild;
         container.appendChild(el);
-        msnry.appended(el);
+        newElements.push(el);
     });
 
     displayedCount += PAGE_SIZE;
-    imagesLoaded(container).on('always', () => {
+
+    imagesLoaded(container, () => {
+        msnry.appended(newElements);
         msnry.layout();
-        isLoading = false; 
+        isLoading = false;
+        
+        // Jos suodatin on päällä ja tuloksia tuli vähän, ladataan heti lisää
+        const visibleCards = container.querySelectorAll('.grid-item:not(.hidden)').length;
+        if (activeSourceFilter !== 'all' && visibleCards < 10 && displayedCount < filteredByCategory.length) {
+            displayArticles();
+        }
     });
 }
 
-function createFilterUI(categories) {
-    const filterContainer = document.getElementById('filters');
-    let html = `<button class="filter-btn active" onclick="setFilter('All', this)">All</button>`;
-    categories.sort().forEach(cat => {
-        html += `<button class="filter-btn" onclick="setFilter('${cat}', this)">${cat}</button>`;
+function filterBySource(sourceName, element) {
+    activeSourceFilter = sourceName;
+    
+    // Päivitä UI
+    document.querySelectorAll('.source-item').forEach(el => el.classList.remove('active'));
+    element.classList.add('active');
+
+    const cards = document.querySelectorAll('.grid-item');
+    cards.forEach(card => {
+        const cardSource = card.getAttribute('data-source');
+        if (sourceName === 'all' || cardSource === sourceName) {
+            card.classList.remove('hidden');
+        } else {
+            card.classList.add('hidden');
+        }
     });
-    filterContainer.innerHTML = html;
+
+    // Pakota Masonry laskemaan paikat uudelleen
+    msnry.layout();
+
+    // Jos tuloksia on vähän, ladataan lisää dataa jotta Infinite Scroll jatkuu
+    const visibleCards = document.querySelectorAll('.grid-item:not(.hidden)').length;
+    if (sourceName !== 'all' && visibleCards < 10) {
+        displayArticles();
+    }
+
+    if (window.innerWidth < 768) toggleSidebar();
 }
 
-window.setFilter = (cat, clickedBtn) => {
+function setFilter(cat, clickedBtn) {
     currentFilter = cat;
     displayedCount = 0;
+    activeSourceFilter = 'all'; // Resetoidaan lähdesuodatin kun kategoria vaihtuu
+    
     document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
     if (clickedBtn) clickedBtn.classList.add('active');
+    
+    // Tyhjennetään gridi
     const container = document.querySelector('#magazine-grid');
     const items = container.querySelectorAll('.grid-item');
     msnry.remove(items);
+    
     displayArticles();
-    msnry.layout();
-};
+}
 
 function extractImg(item) {
     let src = (item.enclosure && item.enclosure.link) ? item.enclosure.link : item.thumbnail;
