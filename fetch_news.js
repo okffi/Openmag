@@ -185,6 +185,13 @@ async function processScraper(feed, allArticles, now) {
 
             if (item && item.title && item.link) {
                 const fullLink = item.link.startsWith('http') ? item.link : new URL(item.link, feed.scrapeUrl).href;
+                
+                // Varmistetaan, että kuva on täysi URL
+                let finalImg = item.enforcedImage;
+                if (finalImg && !finalImg.startsWith('http')) {
+                    finalImg = new URL(finalImg, fullLink).href;
+                }
+            
                 allArticles.push({
                     title: item.title,
                     link: fullLink,
@@ -193,7 +200,7 @@ async function processScraper(feed, allArticles, now) {
                     creator: item.creator || "",
                     sourceTitle: domain,
                     sheetCategory: feed.category,
-                    enforcedImage: item.enforcedImage
+                    enforcedImage: finalImg // Käytetään puhdistettua URL-osoitetta
                 });
             }
         }
