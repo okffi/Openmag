@@ -213,4 +213,10 @@ function extractImageFromContent(item) {
     return null;
 }
 
-run();
+run().then(() => {
+    console.log("Ajo suoritettu loppuun.");
+    process.exit(0); // Pakottaa Node.js:n lopettamaan
+}).catch(err => {
+    console.error("Ajo epäonnistui:", err);
+    process.exit(1);
+});
