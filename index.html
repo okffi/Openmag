@@ -106,6 +106,27 @@
         }
         .grid-item.no-image { border-top-color: var(--primary-color); }
         .grid-item img { width: 100%; height: auto; display: block; background: #f0f0f0; }
+        /* Poistaa alleviivauksen ja korjaa värit koko kortin alueelta */
+.grid-item, .grid-item:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Varmistaa, että otsikot ja tekstit pysyvät tummina linkistä huolimatta */
+.grid-item h2 {
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+.grid-item p {
+    text-decoration: none;
+}
+
+/* Poistaa alleviivauksen kaikilta linkeiltä kortin sisällä */
+.grid-item a {
+    text-decoration: none;
+    color: inherit;
+}
 
         .content { padding: 25px; }
         h2 { 
