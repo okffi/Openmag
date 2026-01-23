@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
@@ -7,242 +8,273 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-    <style>
-    * { box-sizing: border-box; }
-    body { background-color: #fdfaf6; font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 40px 20px; }
-    h1 { font-family: 'Playfair Display', serif; text-align: center; font-size: 3.5rem; margin-bottom: 5px; color: #1a1a1a; }
-    .subline { text-align: center; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 50px; color: #888; }
     
-    .grid { width: 100%; max-width: 1400px; margin: 0 auto; transition: height 0.4s ease-out; }
-    .grid-sizer, .grid-item { width: 31%; }
+    <style>
+        * { box-sizing: border-box; }
+        body { background-color: #fdfaf6; font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 40px 20px; }
+        
+        /* Otsikko ja tyyli */
+        header { text-align: center; margin-bottom: 50px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin: 0; color: #1a1a1a; }
+        .subline { text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: #888; margin-top: 5px; }
 
-    @media (max-width: 1000px) { .grid-sizer, .grid-item { width: 48%; } }
-    @media (max-width: 600px) { .grid-sizer, .grid-item { width: 100%; } }
+        /* Grid-asettelu */
+        .grid { width: 100%; max-width: 1400px; margin: 0 auto; }
+        .grid-sizer, .grid-item { width: 31%; }
+        @media (max-width: 1000px) { .grid-sizer, .grid-item { width: 48%; } }
+        @media (max-width: 600px) { .grid-sizer, .grid-item { width: 100%; } }
 
-    .grid-item {
-        margin-bottom: 25px;
-        background: #fff;
-        border-radius: 4px;
-        overflow: hidden;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        text-decoration: none;
-        color: inherit;
-        display: block;
-        transition: transform 0.2s ease, opacity 0.3s ease;
-        border-top: 5px solid transparent; 
-    }
+        .grid-item {
+            margin-bottom: 25px;
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: transform 0.2s ease;
+            border-top: 5px solid transparent;
+        }
+        .grid-item.no-image { border-top: 5px solid #b58d67; }
+        .grid-item:hover { transform: translateY(-5px); }
+        .grid-item img { width: 100%; height: auto; display: block; background: #eee; }
 
-    .grid-item.hidden { display: none !important; }
+        .content { padding: 20px; }
+        h2 { font-family: 'Playfair Display', serif; margin: 0 0 10px; font-size: 1.3rem; line-height: 1.2; color: #1a1a1a; }
+        p { color: #555; line-height: 1.6; font-size: 0.9rem; margin-bottom: 0; }
+        
+        .meta-info { 
+            display: flex; 
+            justify-content: space-between; 
+            margin-top: 15px; 
+            padding-top: 10px; 
+            border-top: 1px dotted #ddd; 
+            font-size: 0.75rem; 
+            color: #888; 
+            text-transform: uppercase; 
+        }
 
-    .grid-item.no-image { 
-        border-top: 5px solid #b58d67 !important; 
-    }
-    .grid-item:hover { transform: translateY(-5px); }
-    .grid-item img { width: 100%; height: auto; display: block; background: #eee; }
-
-    .content { padding: 25px; }
-    h2 { font-family: 'Playfair Display', serif; margin: 0 0 15px; font-size: 1.4rem; line-height: 1.2; color: #1a1a1a; }
-    p { color: #555; line-height: 1.7; font-size: 0.95rem; margin-bottom: 0; }
-
-    .category-label { 
-        text-transform: uppercase; 
-        font-size: 0.65rem; 
-        letter-spacing: 2px; 
-        color: #b58d67; 
-        font-weight: 600; 
-        display: block;
-        margin-bottom: 12px;
-    }
-
-    .meta-info {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        margin-top: 15px;
-        padding-top: 12px;
-        border-top: 1px dotted #ddd;
-    }
-
-    .source-author {
-        font-size: 0.7rem;
-        color: #666;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        line-height: 1.3;
-        padding-right: 10px;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;  
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .date-label {
-        font-size: 0.7rem;
-        color: #aaa;
-        text-transform: uppercase;
-        white-space: nowrap;
-        flex-shrink: 0;
-    }
-
-    .filter-btn {
-        transition: all 0.3s ease;
-        padding: 8px 18px;
-        margin: 5px;
-        border: 1px solid #ddd;
-        border-radius: 20px;
-        background: white;
-        cursor: pointer;
-        font-family: inherit;
-    }
-    .filter-btn.active {
-        background: #b58d67 !important;
-        color: white !important;
-        border-color: #b58d67 !important;
-        box-shadow: 0 4px 12px rgba(181, 141, 103, 0.4);
-        font-weight: bold;
-    }
-
-    #scroll-sentinel {
-        text-align: center;
-        padding: 60px;
-        font-size: 0.8rem;
-        color: #bbb;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-    }
-
-/* Käytä aiempaa tyyliäsi tässä, lisättynä nämä: */
-        .sidebar { height: 100%; width: 250px; position: fixed; z-index: 1000; top: 0; left: -250px; background: #fff; transition: 0.3s; padding: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.1); overflow-y: auto; }
+        /* Sivupalkki */
+        .sidebar {
+            height: 100%;
+            width: 280px;
+            position: fixed;
+            z-index: 1200;
+            top: 0;
+            left: -280px;
+            background-color: #fff;
+            overflow-y: auto;
+            transition: 0.3s;
+            padding: 20px;
+            box-shadow: 2px 0 15px rgba(0,0,0,0.1);
+        }
         .sidebar.open { left: 0; }
-        .source-item { padding: 10px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.9rem; display: flex; justify-content: space-between; }
-        .source-item:hover { background: #f9f9f9; }
-        .source-item.active { font-weight: bold; color: #b58d67; }
-        #sidebar-toggle { position: fixed; top: 10px; left: 10px; z-index: 1100; cursor: pointer; background: #1a1a1a; color: #fff; border: none; padding: 8px 12px; border-radius: 4px; }
+        .sidebar h3 { font-family: 'Playfair Display', serif; border-bottom: 2px solid #f5f5f5; padding-bottom: 10px; }
 
-    #sidebar-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0,0,0,0.3);
-        z-index: 1150;
-    }
+        .source-item {
+            padding: 12px 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #f9f9f9;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+        .source-item:hover { background: #fdfaf6; }
+        .source-item.active { font-weight: 600; color: #b58d67; background: #fdfaf6; }
+        .source-item span { color: #ccc; font-size: 0.8rem; }
 
-    #sidebar-overlay.visible { display: block; }
+        #sidebar-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1100;
+            background: #1a1a1a;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.7rem;
+        }
 
-    .sidebar-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 20px 20px;
-        border-bottom: 1px solid #eee;
-    }
+        #sidebar-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.2);
+            z-index: 1150;
+        }
+        #sidebar-overlay.visible { display: block; }
 
-    .source-item span { font-size: 0.75rem; color: #aaa; }
-
-    .close-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
-</style>
+        #scroll-sentinel { text-align: center; padding: 50px; color: #bbb; text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; }
+    </style>
 </head>
 <body>
-    <button id="sidebar-toggle" onclick="toggleSidebar()">☰ Lähteet</button>
-    <aside id="source-sidebar" class="sidebar"><div id="source-list"></div></aside>
 
-    <h1>OpenMag</h1>
-    <div class="subline">Hyviä uutisia</div>
-    <div id="filters" style="text-align: center; margin-bottom: 30px;"></div>
-    
-    <div class="grid" id="magazine-grid"><div class="grid-sizer"></div></div>
-    <div id="scroll-sentinel">Ladataan...</div>
+    <button id="sidebar-toggle" onclick="toggleSidebar()">☰ Lähteet</button>
+    <div id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+    <aside id="source-sidebar" class="sidebar">
+        <h3>Julkaisijat</h3>
+        <div id="source-list">
+            </div>
+    </aside>
+
+    <header>
+        <h1>OpenMag</h1>
+        <div class="subline">Hyviä uutisia</div>
+    </header>
+
+    <div class="grid" id="magazine-grid">
+        <div class="grid-sizer"></div>
+        </div>
+
+    <div id="scroll-sentinel">Ladataan uutisia...</div>
 
 <script>
-let allArticles = [];
+let allArticles = []; 
 let displayedCount = 0;
 const PAGE_SIZE = 15;
-let currentSourceFile = 'data.json';
 let msnry;
 let isLoading = false;
 
 async function init() {
     const container = document.querySelector('#magazine-grid');
-    msnry = new Masonry(container, { itemSelector: '.grid-item', columnWidth: '.grid-sizer', percentPosition: true, gutter: 25 });
     
-    await loadData();
+    // Alustetaan Masonry
+    msnry = new Masonry(container, {
+        itemSelector: '.grid-item',
+        columnWidth: '.grid-sizer',
+        percentPosition: true,
+        gutter: 25
+    });
+
+    // Ladataan oletusdata (kaikki uutiset)
+    await loadSource('data.json');
+    
+    // Alustetaan sivupalkki
     initSidebar();
 
+    // Infinite Scroll
     const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && !isLoading) displayArticles();
+        if (entries[0].isIntersecting && !isLoading) {
+            displayArticles();
+        }
     }, { rootMargin: '200px' });
     observer.observe(document.querySelector('#scroll-sentinel'));
 }
 
-async function loadData(file = 'data.json') {
+async function loadSource(filePath, element = null) {
     isLoading = true;
     displayedCount = 0;
+    
+    // Tyhjennetään gridi uutta lähdettä varten
     const container = document.querySelector('#magazine-grid');
-    const items = container.querySelectorAll('.grid-item');
-    if (items.length) msnry.remove(items);
+    const existingItems = container.querySelectorAll('.grid-item');
+    if (existingItems.length > 0) {
+        msnry.remove(existingItems);
+        msnry.layout();
+    }
+
+    // Päivitetään aktiivinen tyyli sivupalkissa
+    if (element) {
+        document.querySelectorAll('.source-item').forEach(item => item.classList.remove('active'));
+        element.classList.add('active');
+    }
 
     try {
-        const res = await fetch(file + '?t=' + Date.now());
-        allArticles = await res.json();
+        const response = await fetch(filePath + '?v=' + Date.now());
+        allArticles = await response.json();
         displayArticles();
-    } catch (e) { console.error(e); }
+    } catch (e) {
+        console.error("Datan lataus epäonnistui:", e);
+    }
 }
 
 function displayArticles() {
-    const slice = allArticles.slice(displayedCount, displayedCount + PAGE_SIZE);
-    if (!slice.length) return;
+    if (displayedCount >= allArticles.length) {
+        document.querySelector('#scroll-sentinel').innerText = "— Kaikki uutiset ladattu —";
+        return;
+    }
 
     const container = document.querySelector('#magazine-grid');
+    const slice = allArticles.slice(displayedCount, displayedCount + PAGE_SIZE);
+    const newElements = [];
+
     slice.forEach(item => {
         const img = item.enforcedImage;
+        const dateStr = new Date(item.pubDate).toLocaleDateString('fi-FI');
+        
         const card = document.createElement('div');
         card.className = `grid-item ${!img ? 'no-image' : ''}`;
+        
         card.innerHTML = `
             <a href="${item.link}" target="_blank">
-                ${img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" onload="window.msnry.layout()">` : ''}
+                ${img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" referrerpolicy="no-referrer" onload="window.msnry.layout()">` : ''}
                 <div class="content">
                     <h2>${item.title}</h2>
-                    <p>${item.content.substring(0, 150)}...</p>
-                    <div class="meta-info"><span>${item.sourceTitle}</span></div>
+                    <p>${(item.content || "").substring(0, 150)}...</p>
+                    <div class="meta-info">
+                        <span>${item.sourceTitle || 'Uutiset'}</span>
+                        <span>${dateStr}</span>
+                    </div>
                 </div>
             </a>`;
+        
         container.appendChild(card);
-        msnry.appended(card);
+        newElements.push(card);
     });
 
     displayedCount += PAGE_SIZE;
-    imagesLoaded(container, () => { msnry.layout(); isLoading = false; });
-}
 
-async function initSidebar() {
-    const res = await fetch('stats.json');
-    const stats = await res.json();
-    const list = document.getElementById('source-list');
-    list.innerHTML = '<div class="source-item active" onclick="changeSource(\'data.json\', this)">Kaikki uutiset</div>';
-    
-    Object.keys(stats).sort().forEach(name => {
-        const item = document.createElement('div');
-        item.className = 'source-item';
-        item.innerHTML = `${name} <span>(${stats[name].count})</span>`;
-        item.onclick = () => changeSource(`sources/${stats[name].file}`, item);
-        list.appendChild(item);
+    // Kerrotaan Masonrylle uusista palikoista
+    imagesLoaded(container, () => {
+        msnry.appended(newElements);
+        msnry.layout();
+        isLoading = false;
     });
 }
 
-function changeSource(file, el) {
-    document.querySelectorAll('.source-item').forEach(i => i.classList.remove('active'));
-    el.classList.add('active');
-    loadData(file);
-    toggleSidebar();
+async function initSidebar() {
+    try {
+        const response = await fetch('stats.json?v=' + Date.now());
+        const stats = await response.json();
+        const list = document.getElementById('source-list');
+
+        // "Kaikki" -valinta
+        const allItem = document.createElement('div');
+        allItem.className = 'source-item active';
+        allItem.innerHTML = `Kaikki uutiset <span>(500)</span>`;
+        allItem.onclick = () => { loadSource('data.json', allItem); toggleSidebar(); };
+        list.appendChild(allItem);
+
+        // Yksittäiset lähteet
+        Object.keys(stats).sort().forEach(name => {
+            const item = document.createElement('div');
+            item.className = 'source-item';
+            item.innerHTML = `${name} <span>(${stats[name].count})</span>`;
+            item.onclick = () => { loadSource(`sources/${stats[name].file}`, item); toggleSidebar(); };
+            list.appendChild(item);
+        });
+    } catch (e) {
+        console.error("Sivupalkin lataus epäonnistui", e);
+    }
 }
 
-function toggleSidebar() { document.getElementById('source-sidebar').classList.toggle('open'); }
+function toggleSidebar() {
+    document.getElementById('source-sidebar').classList.toggle('open');
+    document.getElementById('sidebar-overlay').classList.toggle('visible');
+}
 
+// Käynnistys
 init();
 </script>
 </body>
