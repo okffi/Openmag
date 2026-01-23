@@ -1,17 +1,23 @@
 name: Update Magazine News
+
 on:
   schedule:
-    - cron: '0 * * * *'  # Kerran tunnissa
-  workflow_dispatch:      # Manuaalinen ajo
+    - cron: '0 * * * *'  # Suoritetaan kerran tunnissa
+  workflow_dispatch:      # Mahdollistaa manuaalisen käynnistyksen GitHubin kautta
   push:
+    branches:
+      - main
     paths-ignore:
       - 'data.json'
+      - 'stats.json'
+      - 'sources/**'
       - 'failed_feeds.txt'
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    # THIS BLOCK IS CRITICAL FOR THE PUSH TO WORK
+    
+    # Tarvitaan oikeudet kirjoittaa tiedostoja takaisin arkistoon
     permissions:
       contents: write
     
@@ -20,9 +26,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4  # Voit päivittää myös v3 -> v4
+        uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'      # Tämä asentaa aina uusimman vakaan version (tällä hetkellä v22)
+          node-version: 'lts/*'
 
       - name: Install dependencies
         run: npm install axios rss-parser cheerio
@@ -40,6 +46,17 @@ jobs:
         run: |
           git config --global user.name 'NewsRobot'
           git config --global user.email 'robot@openmag.fi'
-          git add data.json stats.json sources/*.json
-          git commit -m "Automated News Update" || echo "No changes to commit"
-          git push origin main --force
+          
+          # Lisätään kaikki robotin päivittämät tiedostot seurantaan
+          git add data.json
+          git add stats.json
+          git add sources/*.json || true
+          git add failed_feeds.txt || true
+          
+          # Tehdään commit ja push vain jos tiedostot ovat muuttuneet
+          if ! git diff --cached --quiet; then
+            git commit -m "Automated News and Source Files Update"
+            git push origin main
+          else
+            echo "Ei muutoksia tallennettavaksi."
+          fi
