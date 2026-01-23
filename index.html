@@ -13,108 +13,49 @@
         * { box-sizing: border-box; }
         body { background-color: #fdfaf6; font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 40px 20px; }
         
-        /* Otsikko ja tyyli */
-        header { text-align: center; margin-bottom: 50px; }
+        header { text-align: center; margin-bottom: 40px; }
         h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; margin: 0; color: #1a1a1a; }
         .subline { text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; color: #888; margin-top: 5px; }
 
-        /* Grid-asettelu */
-        .grid { width: 100%; max-width: 1400px; margin: 0 auto; }
+        /* Yläpalkin kategoriat */
+        #filters { text-align: center; margin-bottom: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+        .filter-btn { 
+            transition: all 0.3s ease; padding: 8px 18px; border: 1px solid #ddd; 
+            border-radius: 20px; background: white; cursor: pointer; font-family: inherit; 
+        }
+        .filter-btn.active { background: #b58d67 !important; color: white !important; border-color: #b58d67 !important; font-weight: bold; }
+
+        /* Grid ja Masonry */
+        .grid { width: 100%; max-width: 1400px; margin: 0 auto; opacity: 0; transition: opacity 0.3s ease; }
+        .grid.loaded { opacity: 1; } /* Estää "hyppimisen" ennen latausta */
         .grid-sizer, .grid-item { width: 31%; }
         @media (max-width: 1000px) { .grid-sizer, .grid-item { width: 48%; } }
         @media (max-width: 600px) { .grid-sizer, .grid-item { width: 100%; } }
 
         .grid-item {
-            margin-bottom: 25px;
-            background: #fff;
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            text-decoration: none;
-            color: inherit;
-            display: block;
-            transition: transform 0.2s ease;
-            border-top: 5px solid transparent;
+            margin-bottom: 25px; background: #fff; border-radius: 4px; overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-decoration: none; color: inherit;
+            display: block; transition: transform 0.2s ease; border-top: 5px solid transparent;
         }
         .grid-item.no-image { border-top: 5px solid #b58d67; }
         .grid-item:hover { transform: translateY(-5px); }
-        .grid-item img { width: 100%; height: auto; display: block; background: #eee; }
+        .grid-item img { width: 100%; height: auto; display: block; background: #eee; min-height: 150px; }
 
         .content { padding: 20px; }
-        h2 { font-family: 'Playfair Display', serif; margin: 0 0 10px; font-size: 1.3rem; line-height: 1.2; color: #1a1a1a; }
+        h2 { font-family: 'Playfair Display', serif; margin: 0 0 10px; font-size: 1.3rem; line-height: 1.2; }
         p { color: #555; line-height: 1.6; font-size: 0.9rem; margin-bottom: 0; }
         
-        .meta-info { 
-            display: flex; 
-            justify-content: space-between; 
-            margin-top: 15px; 
-            padding-top: 10px; 
-            border-top: 1px dotted #ddd; 
-            font-size: 0.75rem; 
-            color: #888; 
-            text-transform: uppercase; 
-        }
+        .category-label { text-transform: uppercase; font-size: 0.65rem; letter-spacing: 2px; color: #b58d67; font-weight: 600; display: block; margin-bottom: 10px; }
+        .meta-info { display: flex; justify-content: space-between; margin-top: 15px; padding-top: 10px; border-top: 1px dotted #ddd; font-size: 0.75rem; color: #888; }
 
         /* Sivupalkki */
-        .sidebar {
-            height: 100%;
-            width: 280px;
-            position: fixed;
-            z-index: 1200;
-            top: 0;
-            left: -280px;
-            background-color: #fff;
-            overflow-y: auto;
-            transition: 0.3s;
-            padding: 20px;
-            box-shadow: 2px 0 15px rgba(0,0,0,0.1);
-        }
+        .sidebar { height: 100%; width: 280px; position: fixed; z-index: 1200; top: 0; left: -280px; background-color: #fff; overflow-y: auto; transition: 0.3s; padding: 20px; box-shadow: 2px 0 15px rgba(0,0,0,0.1); }
         .sidebar.open { left: 0; }
-        .sidebar h3 { font-family: 'Playfair Display', serif; border-bottom: 2px solid #f5f5f5; padding-bottom: 10px; }
-
-        .source-item {
-            padding: 12px 10px;
-            cursor: pointer;
-            border-bottom: 1px solid #f9f9f9;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            transition: background 0.2s;
-        }
-        .source-item:hover { background: #fdfaf6; }
-        .source-item.active { font-weight: 600; color: #b58d67; background: #fdfaf6; }
-        .source-item span { color: #ccc; font-size: 0.8rem; }
-
-        #sidebar-toggle {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1100;
-            background: #1a1a1a;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: inherit;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.7rem;
-        }
-
-        #sidebar-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0,0,0,0.2);
-            z-index: 1150;
-        }
+        .source-item { padding: 12px 10px; cursor: pointer; border-bottom: 1px solid #f9f9f9; display: flex; justify-content: space-between; font-size: 0.9rem; }
+        .source-item.active { font-weight: 600; color: #b58d67; }
+        #sidebar-toggle { position: fixed; top: 20px; left: 20px; z-index: 1100; background: #1a1a1a; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; font-size: 0.7rem; }
+        #sidebar-overlay { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.2); z-index: 1150; }
         #sidebar-overlay.visible { display: block; }
-
-        #scroll-sentinel { text-align: center; padding: 50px; color: #bbb; text-transform: uppercase; letter-spacing: 2px; font-size: 0.7rem; }
     </style>
 </head>
 <body>
@@ -124,8 +65,7 @@
 
     <aside id="source-sidebar" class="sidebar">
         <h3>Julkaisijat</h3>
-        <div id="source-list">
-            </div>
+        <div id="source-list"></div>
     </aside>
 
     <header>
@@ -133,9 +73,11 @@
         <div class="subline">Hyviä uutisia</div>
     </header>
 
+    <div id="filters"></div>
+
     <div class="grid" id="magazine-grid">
         <div class="grid-sizer"></div>
-        </div>
+    </div>
 
     <div id="scroll-sentinel">Ladataan uutisia...</div>
 
@@ -145,128 +87,124 @@ let displayedCount = 0;
 const PAGE_SIZE = 15;
 let msnry;
 let isLoading = false;
+let currentCategory = 'All';
 
 async function init() {
     const container = document.querySelector('#magazine-grid');
-    
-    // Alustetaan Masonry
-    msnry = new Masonry(container, {
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-sizer',
-        percentPosition: true,
-        gutter: 25
-    });
+    msnry = new Masonry(container, { itemSelector: '.grid-item', columnWidth: '.grid-sizer', percentPosition: true, gutter: 25 });
 
-    // Ladataan oletusdata (kaikki uutiset)
-    await loadSource('data.json');
-    
-    // Alustetaan sivupalkki
+    await loadData('data.json', true); // Lataa päädata ja luo kategoriat
     initSidebar();
 
-    // Infinite Scroll
     const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && !isLoading) {
-            displayArticles();
-        }
+        if (entries[0].isIntersecting && !isLoading) displayArticles();
     }, { rootMargin: '200px' });
     observer.observe(document.querySelector('#scroll-sentinel'));
 }
 
-async function loadSource(filePath, element = null) {
+async function loadData(filePath, isInitial = false) {
     isLoading = true;
     displayedCount = 0;
-    
-    // Tyhjennetään gridi uutta lähdettä varten
     const container = document.querySelector('#magazine-grid');
+    container.classList.remove('loaded');
+    
     const existingItems = container.querySelectorAll('.grid-item');
-    if (existingItems.length > 0) {
+    if (existingItems.length) {
         msnry.remove(existingItems);
         msnry.layout();
-    }
-
-    // Päivitetään aktiivinen tyyli sivupalkissa
-    if (element) {
-        document.querySelectorAll('.source-item').forEach(item => item.classList.remove('active'));
-        element.classList.add('active');
     }
 
     try {
         const response = await fetch(filePath + '?v=' + Date.now());
         allArticles = await response.json();
+        
+        if (isInitial) {
+            const categories = ['All', ...new Set(allArticles.map(a => a.sheetCategory))].filter(Boolean);
+            createFilterUI(categories);
+        }
+        
         displayArticles();
-    } catch (e) {
-        console.error("Datan lataus epäonnistui:", e);
-    }
+    } catch (e) { console.error(e); }
 }
 
 function displayArticles() {
-    if (displayedCount >= allArticles.length) {
-        document.querySelector('#scroll-sentinel').innerText = "— Kaikki uutiset ladattu —";
+    const filtered = currentCategory === 'All' ? allArticles : allArticles.filter(a => a.sheetCategory === currentCategory);
+    const slice = filtered.slice(displayedCount, displayedCount + PAGE_SIZE);
+    
+    if (slice.length === 0) {
+        document.querySelector('#scroll-sentinel').innerText = "— Loppu —";
         return;
     }
 
     const container = document.querySelector('#magazine-grid');
-    const slice = allArticles.slice(displayedCount, displayedCount + PAGE_SIZE);
     const newElements = [];
 
     slice.forEach(item => {
         const img = item.enforcedImage;
-        const dateStr = new Date(item.pubDate).toLocaleDateString('fi-FI');
-        
         const card = document.createElement('div');
         card.className = `grid-item ${!img ? 'no-image' : ''}`;
-        
         card.innerHTML = `
             <a href="${item.link}" target="_blank">
-                ${img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" referrerpolicy="no-referrer" onload="window.msnry.layout()">` : ''}
+                ${img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" onload="window.msnry.layout()">` : ''}
                 <div class="content">
+                    <span class="category-label">${item.sheetCategory || 'Yleinen'}</span>
                     <h2>${item.title}</h2>
                     <p>${(item.content || "").substring(0, 150)}...</p>
-                    <div class="meta-info">
-                        <span>${item.sourceTitle || 'Uutiset'}</span>
-                        <span>${dateStr}</span>
-                    </div>
+                    <div class="meta-info"><span>${item.sourceTitle}</span><span>${new Date(item.pubDate).toLocaleDateString('fi-FI')}</span></div>
                 </div>
             </a>`;
-        
         container.appendChild(card);
         newElements.push(card);
     });
 
     displayedCount += PAGE_SIZE;
-
-    // Kerrotaan Masonrylle uusista palikoista
     imagesLoaded(container, () => {
         msnry.appended(newElements);
         msnry.layout();
+        container.classList.add('loaded');
         isLoading = false;
     });
 }
 
+function createFilterUI(categories) {
+    const filterContainer = document.getElementById('filters');
+    filterContainer.innerHTML = categories.map(cat => 
+        `<button class="filter-btn ${cat === 'All' ? 'active' : ''}" onclick="setCategory('${cat}', this)">${cat}</button>`
+    ).join('');
+}
+
+function setCategory(cat, btn) {
+    currentCategory = cat;
+    displayedCount = 0;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    const container = document.querySelector('#magazine-grid');
+    const items = container.querySelectorAll('.grid-item');
+    msnry.remove(items);
+    msnry.layout();
+    displayArticles();
+}
+
 async function initSidebar() {
-    try {
-        const response = await fetch('stats.json?v=' + Date.now());
-        const stats = await response.json();
-        const list = document.getElementById('source-list');
+    const response = await fetch('stats.json?v=' + Date.now());
+    const stats = await response.json();
+    const list = document.getElementById('source-list');
+    list.innerHTML = '<div class="source-item active" onclick="changeSource(\'data.json\', this)">Kaikki uutiset</div>';
+    Object.keys(stats).sort().forEach(name => {
+        const item = document.createElement('div');
+        item.className = 'source-item';
+        item.innerHTML = `${name} <span>(${stats[name].count})</span>`;
+        item.onclick = () => changeSource(`sources/${stats[name].file}`, item);
+        list.appendChild(item);
+    });
+}
 
-        // "Kaikki" -valinta
-        const allItem = document.createElement('div');
-        allItem.className = 'source-item active';
-        allItem.innerHTML = `Kaikki uutiset <span>(500)</span>`;
-        allItem.onclick = () => { loadSource('data.json', allItem); toggleSidebar(); };
-        list.appendChild(allItem);
-
-        // Yksittäiset lähteet
-        Object.keys(stats).sort().forEach(name => {
-            const item = document.createElement('div');
-            item.className = 'source-item';
-            item.innerHTML = `${name} <span>(${stats[name].count})</span>`;
-            item.onclick = () => { loadSource(`sources/${stats[name].file}`, item); toggleSidebar(); };
-            list.appendChild(item);
-        });
-    } catch (e) {
-        console.error("Sivupalkin lataus epäonnistui", e);
-    }
+function changeSource(file, el) {
+    document.querySelectorAll('.source-item').forEach(i => i.classList.remove('active'));
+    el.classList.add('active');
+    loadData(file);
+    toggleSidebar();
 }
 
 function toggleSidebar() {
@@ -274,7 +212,6 @@ function toggleSidebar() {
     document.getElementById('sidebar-overlay').classList.toggle('visible');
 }
 
-// Käynnistys
 init();
 </script>
 </body>
