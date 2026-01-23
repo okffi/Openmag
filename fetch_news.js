@@ -158,7 +158,10 @@ async function processScraper(feed, allArticles, now) {
     const domain = urlObj.hostname.replace('www.', '');
 
     try {
-        const { data } = await axios.get(feed.scrapeUrl, { headers: { 'User-Agent': 'Mozilla/5.0' } });
+        const { data } = await axios.get(feed.scrapeUrl, { 
+            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
+            timeout: 15000 // 15 sekuntia on turvallinen yläraja
+        });
         const $ = cheerio.load(data);
         
         let scraperRule = null;
