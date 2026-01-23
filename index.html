@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     
-<style>
+    <style>
         :root {
             --primary-color: #b58d67;
             --bg-color: #fdfaf6;
@@ -20,6 +20,7 @@
         }
 
         * { box-sizing: border-box; }
+        
         body { 
             background-color: var(--bg-color); 
             font-family: 'Source Sans Pro', sans-serif; 
@@ -30,12 +31,14 @@
         }
         
         header { text-align: center; margin: 60px 0 40px; }
+        
         h1 { 
             font-family: 'Playfair Display', serif; 
             font-size: clamp(2.5rem, 8vw, 4rem); 
             margin: 0; 
             letter-spacing: -1px;
         }
+        
         .subline { 
             text-transform: uppercase; 
             letter-spacing: 4px; 
@@ -54,6 +57,7 @@
             justify-content: center; 
             gap: 12px; 
         }
+        
         .filter-btn { 
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
             padding: 10px 22px; 
@@ -66,7 +70,9 @@
             font-weight: 600;
             color: var(--text-muted);
         }
+        
         .filter-btn:hover { border-color: var(--primary-color); color: var(--primary-color); }
+        
         .filter-btn.active { 
             background: var(--primary-color) !important; 
             color: white !important; 
@@ -82,6 +88,7 @@
             opacity: 0; 
             transition: opacity 0.5s ease; 
         }
+        
         .grid.loaded { opacity: 1; }
         .grid-sizer, .grid-item { width: 31%; }
         
@@ -98,20 +105,24 @@
             display: block; 
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border-top: 4px solid transparent;
-            text-decoration: none !important;
-            color: var(--text-dark) !important;
+            text-decoration: none !important; /* Poistaa kaikki alleviivaukset */
+            color: inherit !important;
         }
         
         .grid-item:hover { 
             transform: translateY(-8px); 
             box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-            text-decoration: none !important;
         }
 
         .grid-item.no-image { border-top-color: var(--primary-color); }
-        .grid-item img { width: 100%; height: auto; display: block; background: #f0f0f0; }
+        
+        .grid-item img { 
+            width: 100%; 
+            height: auto; 
+            display: block; 
+            background: #f0f0f0; 
+        }
 
-        /* Kortin sisältö */
         .content { padding: 25px; }
         
         .grid-item h2 { 
@@ -169,8 +180,16 @@
             padding: 30px 0; 
             box-shadow: 15px 0 50px rgba(0,0,0,0.1); 
         }
+        
         .sidebar.open { transform: translateX(var(--sidebar-width)); }
-        .sidebar h3 { padding: 0 30px 20px; margin: 0; font-family: 'Playfair Display', serif; font-size: 1.8rem; border-bottom: 1px solid #f0f0f0; }
+        
+        .sidebar h3 { 
+            padding: 0 30px 20px; 
+            margin: 0; 
+            font-family: 'Playfair Display', serif; 
+            font-size: 1.8rem; 
+            border-bottom: 1px solid #f0f0f0; 
+        }
         
         .source-item { 
             padding: 15px 30px; 
@@ -182,252 +201,22 @@
             font-size: 0.95rem; 
             transition: background 0.2s;
         }
+        
         .source-item:hover { background-color: #fcfcfc; color: var(--primary-color); }
-        .source-item.active { background-color: #fffaf5; color: var(--primary-color); font-weight: 600; border-left: 4px solid var(--primary-color); }
-        .source-item span { font-size: 0.75rem; background: #f0f0f0; padding: 2px 8px; border-radius: 10px; color: #888; }
-
-        /* Hallintapainikkeet ja Overlay */
-        #sidebar-toggle { 
-            position: fixed; 
-            top: 25px; 
-            left: 25px; 
-            z-index: 1500; 
-            background: var(--text-dark); 
-            color: white; 
-            border: none; 
-            padding: 12px 18px; 
-            border-radius: 50px; 
-            cursor: pointer; 
+        
+        .source-item.active { 
+            background-color: #fffaf5; 
+            color: var(--primary-color); 
+            font-weight: 600; 
+            border-left: 4px solid var(--primary-color); 
+        }
+        
+        .source-item span { 
             font-size: 0.75rem; 
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: transform 0.2s;
+            background: #f0f0f0; 
+            padding: 2px 8px; 
+            border-radius: 10px; 
+            color: #888; 
         }
-        #sidebar-toggle:hover { transform: scale(1.05); }
-        
-        #sidebar-overlay { 
-            display: none; 
-            position: fixed; 
-            top: 0; 
-            left: 0; 
-            width: 100vw; 
-            height: 100vh; 
-            background: rgba(0,0,0,0.4); 
-            z-index: 1900; 
-            backdrop-filter: blur(2px);
-        }
-        #sidebar-overlay.visible { display: block; }
 
-        #scroll-sentinel { 
-            text-align: center; 
-            padding: 80px 0; 
-            font-size: 0.8rem; 
-            color: #bbb; 
-            text-transform: uppercase; 
-            letter-spacing: 3px; 
-        }
-    </style>
-</head>
-<body>
-
-    <button id="sidebar-toggle" onclick="toggleSidebar()">☰ Lähteet</button>
-    <div id="sidebar-overlay" onclick="toggleSidebar()"></div>
-
-    <aside id="source-sidebar" class="sidebar">
-        <h3>Julkaisijat</h3>
-        <div id="source-list"></div>
-    </aside>
-
-    <header>
-        <h1>OpenMag</h1>
-        <div class="subline">Päivittäinen kuratoitu lukemisto</div>
-    </header>
-
-    <div id="filters"></div>
-
-    <div class="grid" id="magazine-grid">
-        <div class="grid-sizer"></div>
-    </div>
-
-    <div id="scroll-sentinel">Ladataan uusia tarinoita...</div>
-
-<script>
-let allArticles = []; 
-let displayedCount = 0;
-const PAGE_SIZE = 15;
-let msnry;
-let isLoading = false;
-let currentCategory = 'All';
-
-async function init() {
-    const container = document.querySelector('#magazine-grid');
-    msnry = new Masonry(container, { 
-        itemSelector: '.grid-item', 
-        columnWidth: '.grid-sizer', 
-        percentPosition: true, 
-        gutter: 25,
-        transitionDuration: '0.4s'
-    });
-
-    await loadData('data.json', true);
-    initSidebar();
-
-    const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && !isLoading) displayArticles();
-    }, { rootMargin: '400px' });
-    observer.observe(document.querySelector('#scroll-sentinel'));
-}
-
-async function loadData(filePath, isInitial = false) {
-    isLoading = true;
-    displayedCount = 0;
-    const container = document.querySelector('#magazine-grid');
-    container.classList.remove('loaded');
-    
-    const existingItems = container.querySelectorAll('.grid-item');
-    if (existingItems.length) {
-        msnry.remove(existingItems);
-        msnry.layout();
-    }
-
-    try {
-        const response = await fetch(filePath + '?v=' + Date.now());
-        allArticles = await response.json();
-        
-        if (isInitial) {
-            const categories = ['All', ...new Set(allArticles.map(a => a.sheetCategory))].filter(Boolean);
-            createFilterUI(categories);
-        }
-        
-        displayArticles();
-    } catch (e) { 
-        console.error(e); 
-        document.querySelector('#scroll-sentinel').innerText = "Virhe ladattaessa uutisia.";
-    }
-}
-
-function displayArticles() {
-    const filtered = currentCategory === 'All' ? allArticles : allArticles.filter(a => a.sheetCategory === currentCategory);
-    const slice = filtered.slice(displayedCount, displayedCount + PAGE_SIZE);
-    
-    if (slice.length === 0) {
-        document.querySelector('#scroll-sentinel').innerText = "— Olet ajan tasalla —";
-        return;
-    }
-
-    const container = document.querySelector('#magazine-grid');
-    const newElements = [];
-
-    slice.forEach(item => {
-        const img = item.enforcedImage;
-        const card = document.createElement('div');
-        card.className = `grid-item ${!img ? 'no-image' : ''}`;
-        
-        const dateStr = item.pubDate ? new Date(item.pubDate).toLocaleDateString('fi-FI') : '';
-        const cleanContent = (item.content || "").replace(/<[^>]*>/g, '').substring(0, 150);
-
-        card.innerHTML = `
-            <a href="${item.link}" target="_blank">
-                ${img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" onload="window.msnry.layout()">` : ''}
-                <div class="content">
-                    <span class="category-label">${item.sheetCategory || 'Yleinen'}</span>
-                    <h2>${item.title}</h2>
-                    <p>${cleanContent}...</p>
-                    <div class="meta-info">
-                        <span>${item.sourceTitle || 'Lähde'}</span>
-                        <span>${dateStr}</span>
-                    </div>
-                </div>
-            </a>`;
-        container.appendChild(card);
-        newElements.push(card);
-    });
-
-    displayedCount += PAGE_SIZE;
-    
-    imagesLoaded(container, () => {
-        msnry.appended(newElements);
-        msnry.layout();
-        container.classList.add('loaded');
-        isLoading = false;
-    });
-}
-
-function createFilterUI(categories) {
-    const filterContainer = document.getElementById('filters');
-    filterContainer.innerHTML = categories.map(cat => 
-        `<button class="filter-btn ${cat === 'All' ? 'active' : ''}" onclick="setCategory('${cat}', this)">${cat}</button>`
-    ).join('');
-}
-
-// 1. Kategoriavaihto (Yläpalkki)
-function setCategory(cat, btn) {
-    if (isLoading) return;
-    
-    // NOLLAUS: Kun vaihdetaan kategoriaa, palataan aina päädataan (data.json)
-    // ja nollataan sivupalkin aktiivinen korostus
-    currentCategory = cat;
-    displayedCount = 0;
-    
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    // Nollataan sivupalkin valinnat "Kaikki uutiset" -tilaan
-    document.querySelectorAll('.source-item').forEach(i => i.classList.remove('active'));
-    const allSourcesBtn = document.querySelector('.source-item'); // Ensimmäinen on "Kaikki uutiset"
-    if (allSourcesBtn) allSourcesBtn.classList.add('active');
-
-    // Pakotetaan lataamaan data.json, jotta lähdekohtaiset suodattimet pyyhkiytyvät pois
-    loadData('data.json');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// 2. Lähdevaihto (Sivupalkki)
-async function changeSource(file, el) {
-    // NOLLAUS: Kun vaihdetaan lähteeseen, nollataan yläpalkin kategoriat "All"-tilaan
-    currentCategory = 'All';
-    displayedCount = 0;
-
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    const allCatsBtn = document.querySelector('.filter-btn'); // Ensimmäinen on "All"
-    if (allCatsBtn) allCatsBtn.classList.add('active');
-
-    document.querySelectorAll('.source-item').forEach(i => i.classList.remove('active'));
-    el.classList.add('active');
-
-    // Ladataan uusi lähdekohtainen JSON
-    loadData(file);
-    toggleSidebar();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-async function initSidebar() {
-    try {
-        const response = await fetch('stats.json?v=' + Date.now());
-        const stats = await response.json();
-        const list = document.getElementById('source-list');
-        list.innerHTML = '<div class="source-item active" onclick="changeSource(\'data.json\', this)">Kaikki lähteet <span>' + allArticles.length + '</span></div>';
-        
-        Object.keys(stats).sort().forEach(name => {
-            const item = document.createElement('div');
-            item.className = 'source-item';
-            item.innerHTML = `${name} <span>${stats[name].count}</span>`;
-            item.onclick = () => changeSource(`sources/${stats[name].file}`, item);
-            list.appendChild(item);
-        });
-    } catch (e) { console.error("Sidebar stats load failed"); }
-}
-
-function toggleSidebar() {
-    const sidebar = document.getElementById('source-sidebar');
-    const overlay = document.getElementById('sidebar-overlay');
-    sidebar.classList.toggle('open');
-    overlay.classList.toggle('visible');
-}
-
-init();
-</script>
-</body>
-</html>
+        #sidebar-toggle {
