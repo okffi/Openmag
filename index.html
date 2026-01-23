@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,8 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-    
-<style>
+    <style>
     * { box-sizing: border-box; }
     body { background-color: #fdfaf6; font-family: 'Source Sans Pro', sans-serif; margin: 0; padding: 40px 20px; }
     h1 { font-family: 'Playfair Display', serif; text-align: center; font-size: 3.5rem; margin-bottom: 5px; color: #1a1a1a; }
@@ -115,34 +113,13 @@
         letter-spacing: 2px;
     }
 
-    #sidebar-toggle {
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        z-index: 1100;
-        padding: 10px 15px;
-        background: #1a1a1a;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    .sidebar {
-        height: 100%;
-        width: 280px;
-        position: fixed;
-        z-index: 1200;
-        top: 0;
-        left: -280px;
-        background-color: #fff;
-        overflow-x: hidden;
-        transition: 0.3s;
-        padding-top: 20px;
-        box-shadow: 2px 0 15px rgba(0,0,0,0.1);
-    }
-
-    .sidebar.open { left: 0; }
+/* Käytä aiempaa tyyliäsi tässä, lisättynä nämä: */
+        .sidebar { height: 100%; width: 250px; position: fixed; z-index: 1000; top: 0; left: -250px; background: #fff; transition: 0.3s; padding: 20px; box-shadow: 2px 0 5px rgba(0,0,0,0.1); overflow-y: auto; }
+        .sidebar.open { left: 0; }
+        .source-item { padding: 10px; cursor: pointer; border-bottom: 1px solid #eee; font-size: 0.9rem; display: flex; justify-content: space-between; }
+        .source-item:hover { background: #f9f9f9; }
+        .source-item.active { font-weight: bold; color: #b58d67; }
+        #sidebar-toggle { position: fixed; top: 10px; left: 10px; z-index: 1100; cursor: pointer; background: #1a1a1a; color: #fff; border: none; padding: 8px 12px; border-radius: 4px; }
 
     #sidebar-overlay {
         display: none;
@@ -165,17 +142,6 @@
         border-bottom: 1px solid #eee;
     }
 
-    .source-item {
-        padding: 12px 20px;
-        cursor: pointer;
-        border-bottom: 1px solid #f5f5f5;
-        display: flex;
-        justify-content: space-between;
-        font-size: 0.9rem;
-    }
-
-    .source-item:hover { background-color: #f9f9f9; }
-    .source-item.active { background-color: #f0f7ff; color: #007bff; font-weight: 600; }
     .source-item span { font-size: 0.75rem; color: #aaa; }
 
     .close-btn { background: none; border: none; font-size: 1.5rem; cursor: pointer; }
@@ -183,222 +149,101 @@
 </head>
 <body>
     <button id="sidebar-toggle" onclick="toggleSidebar()">☰ Lähteet</button>
-    
-    <aside id="source-sidebar" class="sidebar">
-        <div class="sidebar-header">
-            <h3>Julkaisijat</h3>
-            <button onclick="toggleSidebar()" class="close-btn">×</button>
-        </div>
-        <div id="source-list"></div>
-    </aside>
-    
-    <div id="sidebar-overlay" onclick="toggleSidebar()"></div>
+    <aside id="source-sidebar" class="sidebar"><div id="source-list"></div></aside>
 
     <h1>OpenMag</h1>
     <div class="subline">Hyviä uutisia</div>
-    <div id="filters" style="text-align: center; margin-bottom: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;"></div>
+    <div id="filters" style="text-align: center; margin-bottom: 30px;"></div>
     
-    <div class="grid" id="magazine-grid">
-        <div class="grid-sizer"></div>
-    </div>
-    <div id="scroll-sentinel">Ladataan uutisia...</div>
+    <div class="grid" id="magazine-grid"><div class="grid-sizer"></div></div>
+    <div id="scroll-sentinel">Ladataan...</div>
 
 <script>
-let allArticles = []; 
+let allArticles = [];
 let displayedCount = 0;
-const PAGE_SIZE = 40; 
-let currentFilter = 'All'; 
-let activeSourceFilter = 'all'; 
+const PAGE_SIZE = 15;
+let currentSourceFile = 'data.json';
 let msnry;
 let isLoading = false;
 
-async function buildMagazine() {
+async function init() {
     const container = document.querySelector('#magazine-grid');
+    msnry = new Masonry(container, { itemSelector: '.grid-item', columnWidth: '.grid-sizer', percentPosition: true, gutter: 25 });
     
-    // Alustetaan Masonry
-    msnry = new Masonry(container, {
-        itemSelector: '.grid-item',
-        columnWidth: '.grid-sizer',
-        percentPosition: true,
-        gutter: 25
-    });
+    await loadData();
+    initSidebar();
 
-    try {
-        const response = await fetch('data.json');
-        allArticles = await response.json(); 
-        
-        if (allArticles && allArticles.length > 0) {
-            const categories = [...new Set(allArticles.map(a => a.sheetCategory))].filter(Boolean);
-            createFilterUI(categories);
-            
-            // Aloitetaan täyttö
-            displayArticles();
-            setupInfiniteScroll();
-        }
-    } catch (e) {
-        console.error("Fetch failed", e);
-    }
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !isLoading) displayArticles();
+    }, { rootMargin: '200px' });
+    observer.observe(document.querySelector('#scroll-sentinel'));
 }
 
-function setupInfiniteScroll() {
-    const sentinel = document.querySelector('#scroll-sentinel');
-    const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && !isLoading) {
-            displayArticles();
-        }
-    }, { rootMargin: '400px' });
-    observer.observe(sentinel);
+async function loadData(file = 'data.json') {
+    isLoading = true;
+    displayedCount = 0;
+    const container = document.querySelector('#magazine-grid');
+    const items = container.querySelectorAll('.grid-item');
+    if (items.length) msnry.remove(items);
+
+    try {
+        const res = await fetch(file + '?t=' + Date.now());
+        allArticles = await res.json();
+        displayArticles();
+    } catch (e) { console.error(e); }
 }
 
 function displayArticles() {
-    if (isLoading) return;
+    const slice = allArticles.slice(displayedCount, displayedCount + PAGE_SIZE);
+    if (!slice.length) return;
+
     const container = document.querySelector('#magazine-grid');
-    
-    // Valitaan uutiset suodattimien mukaan
-    let filtered = allArticles.filter(a => {
-        const catMatch = (currentFilter === 'All' || a.sheetCategory === currentFilter);
-        const srcMatch = (activeSourceFilter === 'all' || a.sourceTitle === activeSourceFilter);
-        return catMatch && srcMatch;
-    });
-
-    const slice = filtered.slice(displayedCount, displayedCount + PAGE_SIZE);
-
-    if (slice.length === 0 && displayedCount > 0) {
-        document.querySelector('#scroll-sentinel').innerText = "— Kaikki suodatetut uutiset ladattu —";
-        return;
-    }
-
-    isLoading = true;
-    const fragment = document.createDocumentFragment();
-    const newElements = [];
-
     slice.forEach(item => {
-        const img = item.enforcedImage || extractImg(item);
-        const source = item.sourceTitle || "Uutiset";
-        const dateObj = new Date(item.pubDate);
-        
-        const card = document.createElement('a');
-        card.href = item.link;
-        card.target = "_blank";
+        const img = item.enforcedImage;
+        const card = document.createElement('div');
         card.className = `grid-item ${!img ? 'no-image' : ''}`;
-        card.setAttribute('data-source', source);
-
         card.innerHTML = `
-            ${img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" onload="imageLoaded()" onerror="this.parentElement.classList.add('no-image'); this.remove(); imageLoaded();">` : ""}
-            <div class="content">
-                <span class="category-label">${item.sheetCategory || 'General'}</span>
-                <h2>${item.title}</h2>
-                <p>${(item.content || "").substring(0, 160)}...</p>
-                <div class="meta-info">
-                    <span class="source-author">${source}</span>
-                    <span class="date-label">${dateObj.toLocaleDateString('fi-FI')}</span>
+            <a href="${item.link}" target="_blank">
+                ${img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" onload="window.msnry.layout()">` : ''}
+                <div class="content">
+                    <h2>${item.title}</h2>
+                    <p>${item.content.substring(0, 150)}...</p>
+                    <div class="meta-info"><span>${item.sourceTitle}</span></div>
                 </div>
-            </div>`;
-        
-        fragment.appendChild(card);
-        newElements.push(card);
+            </a>`;
+        container.appendChild(card);
+        msnry.appended(card);
     });
 
-    container.appendChild(fragment);
     displayedCount += PAGE_SIZE;
-
-    // Pakotetaan asettelu kun elementit on lisätty
-    imagesLoaded(container, () => {
-        msnry.appended(newElements);
-        msnry.layout();
-        isLoading = false;
-    });
-}
-
-// TÄRKEÄ: Tämä korjaa päällekkäiset kuvat
-function imageLoaded() {
-    if (msnry) msnry.layout();
-}
-
-function filterBySource(sourceName, element) {
-    activeSourceFilter = sourceName;
-    displayedCount = 0; // Nollataan jotta haku alkaa alusta tälle lähteelle
-    
-    document.querySelectorAll('.source-item').forEach(el => el.classList.remove('active'));
-    if (element) element.classList.add('active');
-
-    // Tyhjennetään nykyinen näkymä kokonaan
-    const container = document.querySelector('#magazine-grid');
-    const items = container.querySelectorAll('.grid-item');
-    msnry.remove(items);
-    
-    // Ladataan uudet uutiset (etsii nyt koko data.jsonista)
-    displayArticles();
-    
-    if (window.innerWidth < 768) toggleSidebar();
-}
-
-function createFilterUI(categories) {
-    const filterContainer = document.getElementById('filters');
-    let html = `<button class="filter-btn active" onclick="setFilter('All', this)">Kaikki</button>`;
-    categories.sort().forEach(cat => {
-        html += `<button class="filter-btn" onclick="setFilter('${cat}', this)">${cat}</button>`;
-    });
-    filterContainer.innerHTML = html;
-}
-
-function setFilter(cat, clickedBtn) {
-    currentFilter = cat;
-    displayedCount = 0;
-    activeSourceFilter = 'all'; 
-    
-    document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-    if (clickedBtn) clickedBtn.classList.add('active');
-    
-    const container = document.querySelector('#magazine-grid');
-    const items = container.querySelectorAll('.grid-item');
-    
-    msnry.remove(items);
-    msnry.layout();
-    
-    displayArticles();
-}
-
-function extractImg(item) {
-    let src = (item.enclosure && item.enclosure.link) ? item.enclosure.link : item.thumbnail;
-    if (!src) {
-        const div = document.createElement('div');
-        div.innerHTML = item.content || "";
-        const img = div.querySelector('img');
-        if (img) src = img.getAttribute('src');
-    }
-    return src;
-}
-
-function toggleSidebar() {
-    document.getElementById('source-sidebar').classList.toggle('open');
-    document.getElementById('sidebar-overlay').classList.toggle('visible');
+    imagesLoaded(container, () => { msnry.layout(); isLoading = false; });
 }
 
 async function initSidebar() {
-    const sourceList = document.getElementById('source-list');
-    try {
-        const response = await fetch('./stats.json?v=' + new Date().getTime());
-        if (!response.ok) throw new Error("Stats.json missing");
-        const stats = await response.json();
-        
-        let html = '<div class="source-item active" onclick="filterBySource(\'all\', this)">Kaikki lähteet</div>';
-        Object.keys(stats).sort().forEach(source => {
-            html += `<div class="source-item" onclick="filterBySource('${source}', this)">
-                        ${source} <span>(${stats[source].articleCount})</span>
-                     </div>`;
-        });
-        sourceList.innerHTML = html;
-    } catch (e) {
-        console.error("Sidebar error:", e);
-        sourceList.innerHTML = '<div style="padding:20px; color:red;">Lähteitä ei voitu ladata</div>';
-    }
+    const res = await fetch('stats.json');
+    const stats = await res.json();
+    const list = document.getElementById('source-list');
+    list.innerHTML = '<div class="source-item active" onclick="changeSource(\'data.json\', this)">Kaikki uutiset</div>';
+    
+    Object.keys(stats).sort().forEach(name => {
+        const item = document.createElement('div');
+        item.className = 'source-item';
+        item.innerHTML = `${name} <span>(${stats[name].count})</span>`;
+        item.onclick = () => changeSource(`sources/${stats[name].file}`, item);
+        list.appendChild(item);
+    });
 }
 
-// Käynnistys
-initSidebar();
-buildMagazine();
+function changeSource(file, el) {
+    document.querySelectorAll('.source-item').forEach(i => i.classList.remove('active'));
+    el.classList.add('active');
+    loadData(file);
+    toggleSidebar();
+}
 
+function toggleSidebar() { document.getElementById('source-sidebar').classList.toggle('open'); }
+
+init();
 </script>
 </body>
 </html>
