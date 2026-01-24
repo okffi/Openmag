@@ -190,8 +190,17 @@ async function processRSS(feed, allArticles, now) {
         }
         if (!img && item.enclosure && item.enclosure.url) img = item.enclosure.url;
         
-        // VIIMEINEN OLKIKORSI: Etsitään tekstistä (Access Now jne)
-        if (!img) img = extractImageFromContent(item);
+        // Viimeinen olkikorsi: Etsitään tekstistä ja korjataan suhteelliset polut
+        if (!img) {
+            img = extractImageFromContent(item, feed.rssUrl);
+        }
+
+        // Varmistetaan vielä kerran, että myös tageista (enclosure/media) 
+        // tulleet kuvat ovat absoluuttisia
+        if (img && img.startsWith('/')) {
+            const urlObj = new URL(feed.rssUrl);
+            img = `${urlObj.protocol}//${urlObj.hostname}${img}`;
+        }
 
         // Varmistetaan että kuva on täysi URL (jos se on suhteellinen polku)
         if (img && !img.startsWith('http')) {
@@ -202,9 +211,19 @@ async function processRSS(feed, allArticles, now) {
             }
         }
 
+        // Korjataan myös artikkelin linkki, jos se on suhteellinen (kuten Doughnut Economics)
+        let articleLink = item.link;
+        if (articleLink && !articleLink.startsWith('http')) {
+            try {
+                articleLink = new URL(articleLink, feed.rssUrl).href;
+            } catch (e) {
+                // pidetään alkuperäinen jos URL-muunnos epäonnistuu
+            }
+        }
+
         return {
             title: item.title,
-            link: item.link,
+            link: articleLink,
             pubDate: itemDate.toISOString(),
             content: (item.contentSnippet || item.summary || "").replace(/<[^>]*>/g, '').trim().substring(0, 400),
             creator: item.creator || item.author || "",
@@ -273,7 +292,7 @@ async function processScraper(feed, allArticles, now) {
     }
 }
 
-function extractImageFromContent(item) {
+function extractImageFromContent(item, baseUrl) {
     const searchString = (item['content:encoded'] || "") + 
                          (item.content || "") + 
                          (item.description || "") +
@@ -281,22 +300,32 @@ function extractImageFromContent(item) {
     
     if (!searchString) return null;
 
-    // Käytetään Cheeriota Regexin sijaan: se löytää srcset ja data-src kuvat
     const $ = cheerio.load(searchString);
     let foundImg = null;
 
     $('img').each((i, el) => {
         if (foundImg) return;
         
-        // Kokeillaan järjestyksessä: src, data-src tai srcset:n ensimmäinen osa
         let src = $(el).attr('src') || $(el).attr('data-src');
         if (!src && $(el).attr('srcset')) {
             src = $(el).attr('srcset').split(',')[0].trim().split(' ')[0];
         }
 
-        if (src && src.startsWith('http')) {
-            if (!/analytics|doubleclick|pixel|stat|share|icon|avatar|wp-emoji/i.test(src)) {
-                foundImg = src;
+        if (src) {
+            // KORJAUS: Jos linkki alkaa "/", lisätään baseUrl eteen
+            if (src.startsWith('/')) {
+                try {
+                    const urlObj = new URL(baseUrl);
+                    src = `${urlObj.protocol}//${urlObj.hostname}${src}`;
+                } catch (e) {
+                    console.error("URL korjaus epäonnistui", e);
+                }
+            }
+            
+            if (src.startsWith('http')) {
+                if (!/analytics|doubleclick|pixel|stat|share|icon|avatar|wp-emoji/i.test(src)) {
+                    foundImg = src;
+                }
             }
         }
     });
