@@ -33,16 +33,25 @@ async function run() {
             lastCleanDate = fs.readFileSync(cleanLogFile, 'utf8').trim();
         }
 
-        if (lastCleanDate !== today) {
-            console.log(`--- PÄIVÄN ENSIMMÄINEN AJO: Puhdistetaan arkistot (${today}) ---`);
-            if (fs.existsSync(sourcesDir)) {
-                fs.readdirSync(sourcesDir).forEach(file => fs.unlinkSync(path.join(sourcesDir, file)));
+            if (lastCleanDate !== today) {
+                console.log(`--- PÄIVÄN ENSIMMÄINEN AJO: Puhdistetaan arkistot (${today}) ---`);
+                
+                // 1. Tyhjennetään arkistokansio
+                if (fs.existsSync(sourcesDir)) {
+                    fs.readdirSync(sourcesDir).forEach(file => fs.unlinkSync(path.join(sourcesDir, file)));
+                } else {
+                    fs.mkdirSync(sourcesDir);
+                }
+    
+                // 2. NOLLATAAN MUISTI JA POISTETAAN VANHA DATA-TIEDOSTO
+                allArticles = []; 
+                if (fs.existsSync('data.json')) {
+                    fs.unlinkSync('data.json');
+                    console.log("Vanha data.json poistettu.");
+                }
+    
+                fs.writeFileSync(cleanLogFile, today);
             } else {
-                fs.mkdirSync(sourcesDir);
-            }
-            allArticles = [];
-            fs.writeFileSync(cleanLogFile, today);
-        } else {
             console.log(`--- Jatketaan päivää: ladataan olemassa oleva data ---`);
             if (fs.existsSync('data.json')) {
                 allArticles = JSON.parse(fs.readFileSync('data.json', 'utf8'));
