@@ -236,12 +236,25 @@ async function processScraper(feed, allArticles, now) {
 }
 
 function extractImageFromContent(item) {
-    const searchString = (item['content:encoded'] || "") + (item.content || "") + (item.description || "");
+    // Yhdistetään kaikki mahdolliset sisältökentät hakuun
+    const searchString = (item['content:encoded'] || "") + 
+                         (item.content || "") + 
+                         (item.description || "") +
+                         (item.summary || "");
+    
+    // Etsitään kaikki img-tagit
     const imgRegex = /<img[^>]+src=["']([^"'>?]+)/gi;
     let match;
+    
+    // Tehdään lista kaikista löytyneistä kuvista
     while ((match = imgRegex.exec(searchString)) !== null) {
         const url = match[1];
-        if (!/logo|icon|thumb|pixel|stat|avatar/i.test(url)) return url;
+        
+        // Jätetään väliin vain selkeät tracker-pikselit tai pikkukuvakkeet
+        // Access Now käyttää usein suuria jpg/png-kuvia
+        if (!/analytics|doubleclick|pixel|stat|share|icon|avatar/i.test(url)) {
+            return url; // Palautetaan ensimmäinen "oikea" kuva
+        }
     }
     return null;
 }
