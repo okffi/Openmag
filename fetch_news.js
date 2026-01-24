@@ -106,11 +106,50 @@ async function run() {
                 uniqueArticles.push(art);
             }
         });
-        allArticles = uniqueArticles;
+        allArticles = uniqueArticles;// --- ÄLYKÄS JÄRJESTELY (ROUND ROBIN PÄIVÄN SISÄLLÄ) ---
         
+        // 1. Ryhmitellään uutiset päivittäin (YYYY-MM-DD)
+        const days = {};
+        allArticles.forEach(art => {
+            const d = art.pubDate.split('T')[0];
+            if (!days[d]) days[d] = [];
+            days[d].push(art);
+        });
+
+        let finalSorted = [];
+        // Käydään päivät läpi uusimmasta vanhimpaan
+        Object.keys(days).sort().reverse().forEach(day => {
+            const dayArticles = days[day];
+            
+            // Ryhmitellään päivän sisällä uutiset lähteittäin
+            const bySource = {};
+            dayArticles.forEach(art => {
+                const src = art.sourceTitle || "Muu";
+                if (!bySource[src]) bySource[src] = [];
+                bySource[src].push(art);
+            });
+
+            // Round Robin: Poimitaan vuorotellen yksi uutinen jokaisesta lähteestä
+            const sources = Object.keys(bySource);
+            let hasItems = true;
+            let i = 0;
+            while (hasItems) {
+                hasItems = false;
+                sources.forEach(src => {
+                    if (bySource[src][i]) {
+                        finalSorted.push(bySource[src][i]);
+                        hasItems = true;
+                    }
+                });
+                i++;
+            }
+        });
+
+        // Päivitetään allArticles ja rajoitetaan 500 uusimpaan
+        allArticles = finalSorted.slice(0, 500);
+
         // 1. TALLENNUS: Päävirta
-        allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-        fs.writeFileSync('data.json', JSON.stringify(allArticles.slice(0, 500), null, 2));
+        fs.writeFileSync('data.json', JSON.stringify(allArticles, null, 2));
 
         // 2. TALLENNUS: Lähteet
         const sourceStats = {};
