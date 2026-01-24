@@ -49,6 +49,9 @@ async function run() {
         });
 
         console.log(`Löydetty ${feeds.length} uniikkia syötettä.`);
+        if (response.data.includes('<!DOCTYPE html>')) {
+            throw new Error("VIRHE: SHEET_CSV_URL palauttaa HTML-sivun CSV-tiedoston sijaan! Tarkista Sheets-julkaisun asetukset.");
+        }
 
         let allArticles = [];
         const now = new Date();
@@ -72,13 +75,16 @@ async function run() {
             }
         }
 
-        // Lajittelu ajan mukaan (uusimmat ensin)
-        allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-
-        // Duplikaattien poisto URL-osoitteen perusteella
+        // 2. DUPLIKAATTIEN POISTO JA VALIDINTI
         const uniqueArticles = [];
         const seenPostUrls = new Set();
+        
         allArticles.forEach(art => {
+            // TARKISTUS: Jos linkki puuttuu, hypätään yli eikä kaadeta robottia
+            if (!art || !art.link || typeof art.link !== 'string') {
+                return; 
+            }
+        
             const cleanUrl = art.link.split('?')[0].split('#')[0].trim().toLowerCase();
             if (!seenPostUrls.has(cleanUrl)) {
                 seenPostUrls.add(cleanUrl);
