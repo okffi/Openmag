@@ -5,11 +5,12 @@ const Parser = require('rss-parser');
 const cheerio = require('cheerio');
 
 const parser = new Parser({ 
-    headers: { 'User-Agent': 'OpenMag-Robot-v1' },
+    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) OpenMag-Robot-v1' },
     customFields: {
         item: [
-            ['media:content', 'mediaContent'],
-            ['enclosure', 'enclosure']
+            ['media:content', 'mediaContent', {keepArray: true}], // Tärkeä: keepArray
+            ['enclosure', 'enclosure'],
+            ['content:encoded', 'contentEncoded']
         ] 
     }
 });
@@ -164,28 +165,42 @@ async function processRSS(feed, allArticles, now) {
             itemDate.setMinutes(itemDate.getMinutes() - randomMinutes);
         }
 
+        // --- PARANNETTU KUVAN VALINTA (Amnesty, Guardian, EIT) ---
         let img = null;
+        let mContent = item.mediaContent || item['media:content'];
 
-        // GUARDIAN & MUUT: PARANNETTU RESOLUUTIO-LOGIIKKA
-        const mContent = item.mediaContent || item['media:content'];
         if (mContent) {
+            // Varmistetaan että käsitellään taulukkona
             const mediaArray = Array.isArray(mContent) ? mContent : [mContent];
-            let bestWidth = 0;
+            let maxW = 0;
+
             mediaArray.forEach(m => {
-                // Guardian käyttää attribuutteja ($) tai suoria kenttiä
-                const width = parseInt(m.$?.width || m.width || 0);
-                const url = m.$?.url || m.url;
-                if (url && width >= bestWidth) {
-                    bestWidth = width;
-                    img = url;
+                // Haetaan URL ja leveys (voi olla suoraan m.url tai m.$.url)
+                const currentUrl = m.url || m.$?.url;
+                const currentWidth = parseInt(m.width || m.$?.width || 0);
+
+                if (currentUrl) {
+                    // Jos kuva on suurempi kuin aiempi TAI jos emme ole vielä löytäneet mitään
+                    if (currentWidth >= maxW || !img) {
+                        maxW = currentWidth;
+                        img = currentUrl;
+                    }
                 }
             });
         }
-
         if (!img && item.enclosure && item.enclosure.url) img = item.enclosure.url;
         
         // VIIMEINEN OLKIKORSI: Etsitään tekstistä (Access Now jne)
         if (!img) img = extractImageFromContent(item);
+
+        // Varmistetaan että kuva on täysi URL (jos se on suhteellinen polku)
+        if (img && !img.startsWith('http')) {
+            try {
+                img = new URL(img, feed.rssUrl).href;
+            } catch (e) {
+                img = null;
+            }
+        }
 
         return {
             title: item.title,
