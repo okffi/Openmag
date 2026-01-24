@@ -117,7 +117,7 @@ async function run() {
             days[d].push(art);
         });
 
-        let finalSorted = []; // TÄMÄ OLI AIEMMIN PUUTTUVA MÄÄRITTELY
+        let finalSorted = []; 
         Object.keys(days).sort().reverse().forEach(day => {
             const dayArticles = days[day];
             const bySource = {};
@@ -155,7 +155,6 @@ async function run() {
 
 async function processRSS(feed, allArticles, now) {
     const feedContent = await parser.parseURL(feed.rssUrl);
-    // POISTETTU .slice(0, 15) jotta arkistot ovat täydellisiä
     const items = feedContent.items.map(item => {
         let itemDate = new Date(item.pubDate || item.isoDate);
         if (isNaN(itemDate.getTime()) || itemDate > now) itemDate = now;
@@ -167,22 +166,25 @@ async function processRSS(feed, allArticles, now) {
 
         let img = null;
 
-        // GUARDIAN RESOLUUTIO KORJAUS
+        // GUARDIAN & MUUT: PARANNETTU RESOLUUTIO-LOGIIKKA
         const mContent = item.mediaContent || item['media:content'];
         if (mContent) {
             const mediaArray = Array.isArray(mContent) ? mContent : [mContent];
             let bestWidth = 0;
             mediaArray.forEach(m => {
-                // Tarkistetaan leveys eri mahdollisista paikoista
-                const w = parseInt(m.$?.width || m.width || 0);
-                if (w > bestWidth) {
-                    bestWidth = w;
-                    img = m.$?.url || m.url;
+                // Guardian käyttää attribuutteja ($) tai suoria kenttiä
+                const width = parseInt(m.$?.width || m.width || 0);
+                const url = m.$?.url || m.url;
+                if (url && width >= bestWidth) {
+                    bestWidth = width;
+                    img = url;
                 }
             });
         }
 
         if (!img && item.enclosure && item.enclosure.url) img = item.enclosure.url;
+        
+        // VIIMEINEN OLKIKORSI: Etsitään tekstistä (Access Now jne)
         if (!img) img = extractImageFromContent(item);
 
         return {
@@ -206,7 +208,7 @@ async function processScraper(feed, allArticles, now) {
     try {
         const { data } = await axios.get(feed.scrapeUrl, { 
             headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
-            timeout: 15000 // 15 sekuntia on turvallinen yläraja
+            timeout: 15000 
         });
         const $ = cheerio.load(data);
         
@@ -234,8 +236,6 @@ async function processScraper(feed, allArticles, now) {
 
             if (item && item.title && item.link) {
                 const fullLink = item.link.startsWith('http') ? item.link : new URL(item.link, feed.scrapeUrl).href;
-                
-                // Varmistetaan, että kuva on täysi URL
                 let finalImg = item.enforcedImage;
                 if (finalImg && !finalImg.startsWith('http')) {
                     finalImg = new URL(finalImg, fullLink).href;
@@ -249,7 +249,7 @@ async function processScraper(feed, allArticles, now) {
                     creator: item.creator || "",
                     sourceTitle: domain,
                     sheetCategory: feed.category,
-                    enforcedImage: finalImg // Käytetään puhdistettua URL-osoitetta
+                    enforcedImage: finalImg 
                 });
             }
         }
@@ -259,28 +259,39 @@ async function processScraper(feed, allArticles, now) {
 }
 
 function extractImageFromContent(item) {
-    // Access Now ja muut "vaikeat" syötteet upottavat kuvat näihin
     const searchString = (item['content:encoded'] || "") + 
                          (item.content || "") + 
                          (item.description || "") +
                          (item.summary || "");
     
-    const imgRegex = /<img[^>]+src=["']([^"'>?]+)/gi;
-    let match;
-    
-    while ((match = imgRegex.exec(searchString)) !== null) {
-        const url = match[1];
-        // Ohitetaan seuranta- ja pikkukuvakkeet
-        if (!/analytics|doubleclick|pixel|stat|share|icon|avatar/i.test(url)) {
-            return url; 
+    if (!searchString) return null;
+
+    // Käytetään Cheeriota Regexin sijaan: se löytää srcset ja data-src kuvat
+    const $ = cheerio.load(searchString);
+    let foundImg = null;
+
+    $('img').each((i, el) => {
+        if (foundImg) return;
+        
+        // Kokeillaan järjestyksessä: src, data-src tai srcset:n ensimmäinen osa
+        let src = $(el).attr('src') || $(el).attr('data-src');
+        if (!src && $(el).attr('srcset')) {
+            src = $(el).attr('srcset').split(',')[0].trim().split(' ')[0];
         }
-    }
-    return null;
+
+        if (src && src.startsWith('http')) {
+            if (!/analytics|doubleclick|pixel|stat|share|icon|avatar|wp-emoji/i.test(src)) {
+                foundImg = src;
+            }
+        }
+    });
+    
+    return foundImg;
 }
 
 run().then(() => {
     console.log("Ajo suoritettu loppuun.");
-    process.exit(0); // Pakottaa Node.js:n lopettamaan
+    process.exit(0);
 }).catch(err => {
     console.error("Ajo epäonnistui:", err);
     process.exit(1);
