@@ -191,14 +191,40 @@ async function processRSS(feed, allArticles, now) {
         let itemDate = new Date(item.pubDate || item.isoDate);
         if (isNaN(itemDate.getTime()) || itemDate > now) itemDate = now;
 
-        // Parannettu kuvan haku (Atom ja RSS)
+        // --- AIKALEIMAN HIENOSÄÄTÖ ---
+        // Jos uutisella on vain päivämäärä (kellonaika 00:00), lisätään pieni satunnainen 
+        // hajonta, jotta saman päivän uutiset eivät kasaudu lähteittäin.
+        if (itemDate.getHours() === 0 && itemDate.getMinutes() === 0) {
+            const randomMinutes = Math.floor(Math.random() * 720); // 12h hajonta taaksepäin
+            itemDate.setMinutes(itemDate.getMinutes() - randomMinutes);
+        }
+
+        // --- PARANNETTU KUVAN HAKU (Guardian, Access Now & RSS) ---
         let img = null;
-        if (item.enclosure && item.enclosure.url) {
+
+        // 1. Tarkistetaan media:content (Guardian ja monet muut)
+        if (item.mediaContent) {
+            if (Array.isArray(item.mediaContent)) {
+                // Etsitään levein kuva suttuisuuden välttämiseksi
+                let bestWidth = 0;
+                item.mediaContent.forEach(media => {
+                    const width = parseInt(media.$?.width) || 0;
+                    if (width > bestWidth) {
+                        bestWidth = width;
+                        img = media.$?.url;
+                    }
+                });
+            } else if (item.mediaContent.$) {
+                img = item.mediaContent.$.url;
+            }
+        }
+
+        // 2. Jos ei löytynyt, tarkistetaan standardi enclosure
+        if (!img && item.enclosure && item.enclosure.url) {
             img = item.enclosure.url;
-        } else if (item.mediaContent && item.mediaContent.$) {
-            img = item.mediaContent.$.url;
         }
         
+        // 3. Viimeinen olkikorsi: Etsitään tekstin seasta (Access Now jne.)
         if (!img) img = extractImageFromContent(item);
 
         return {
@@ -275,24 +301,20 @@ async function processScraper(feed, allArticles, now) {
 }
 
 function extractImageFromContent(item) {
-    // Yhdistetään kaikki mahdolliset sisältökentät hakuun
+    // Access Now ja muut "vaikeat" syötteet upottavat kuvat näihin
     const searchString = (item['content:encoded'] || "") + 
                          (item.content || "") + 
                          (item.description || "") +
                          (item.summary || "");
     
-    // Etsitään kaikki img-tagit
     const imgRegex = /<img[^>]+src=["']([^"'>?]+)/gi;
     let match;
     
-    // Tehdään lista kaikista löytyneistä kuvista
     while ((match = imgRegex.exec(searchString)) !== null) {
         const url = match[1];
-        
-        // Jätetään väliin vain selkeät tracker-pikselit tai pikkukuvakkeet
-        // Access Now käyttää usein suuria jpg/png-kuvia
+        // Ohitetaan seuranta- ja pikkukuvakkeet
         if (!/analytics|doubleclick|pixel|stat|share|icon|avatar/i.test(url)) {
-            return url; // Palautetaan ensimmäinen "oikea" kuva
+            return url; 
         }
     }
     return null;
