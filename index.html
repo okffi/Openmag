@@ -64,7 +64,6 @@
 
         .content { padding: 25px; }
 
-        /* KATEGORIA-LABEL - Hierarkian korjaus */
         .content .category-label { 
             text-transform: uppercase; 
             font-size: 0.65rem; 
@@ -73,6 +72,12 @@
             font-weight: 700; 
             display: block; 
             margin-bottom: 12px; 
+        }
+
+        .category-label:hover {
+            text-decoration: underline !important;
+            opacity: 0.8;
+            filter: brightness(1.2); /* Kirkastaa väriä hieman */
         }
         
         .grid-item h2 { font-family: 'Playfair Display', serif; margin: 0 0 15px; font-size: 1.4rem; line-height: 1.3; color: var(--text-dark); transition: color 0.2s ease; }
@@ -218,7 +223,11 @@ function displayArticles() {
             <a href="${item.link}" target="_blank">
                 ${img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" onload="window.msnry.layout()">` : ''}
                 <div class="content">
-                    <span class="category-label">${item.sheetCategory || 'Yleinen'}</span>
+                    <span class="category-label" 
+                          onclick="handleCategoryClick(event, '${item.sheetCategory || 'Yleinen'}')" 
+                          style="cursor: pointer;">
+                        ${item.sheetCategory || 'Yleinen'}
+                    </span>
                     <h2>${item.title}</h2>
                     <p>${cleanContent}...</p>
                     <div class="meta-info">
@@ -297,6 +306,29 @@ async function handleSourceClick(event, sourceName) {
         }
     } catch (e) {
         console.error("Lähdelinkki epäonnistui", e);
+    }
+}
+
+function handleCategoryClick(event, catName) {
+    // Estetään uutisen aukeaminen
+    event.preventDefault();
+    event.stopPropagation();
+
+    // Etsitään yläpalkista vastaava kategoria-nappi
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    let targetBtn = null;
+
+    filterButtons.forEach(btn => {
+        if (btn.innerText.trim() === catName) targetBtn = btn;
+    });
+
+    // Jos nappi löytyi, aktivoidaan se
+    if (targetBtn) {
+        setCategory(catName, targetBtn);
+    } else {
+        // Jos tarkkaa nappia ei löydy (esim. 'Yleinen'), palataan 'All'-näkymään
+        const allBtn = document.querySelector('.filter-btn');
+        setCategory('All', allBtn);
     }
 }
 
