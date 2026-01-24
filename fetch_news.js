@@ -293,7 +293,9 @@ async function processScraper(feed, allArticles, now) {
 }
 
 function extractImageFromContent(item, baseUrl) {
-    const searchString = (item['content:encoded'] || "") + 
+    // Etsitään kuvaa kaikista mahdollisista kentistä, erityisesti contentEncoded
+    const searchString = (item.contentEncoded || "") + 
+                         (item['content:encoded'] || "") + 
                          (item.content || "") + 
                          (item.description || "") +
                          (item.summary || "");
@@ -303,27 +305,32 @@ function extractImageFromContent(item, baseUrl) {
     const $ = cheerio.load(searchString);
     let foundImg = null;
 
+    // Etsitään kuvat
     $('img').each((i, el) => {
         if (foundImg) return;
         
+        // 1. Kokeillaan src
+        // 2. Kokeillaan data-src (lazy load)
+        // 3. Kokeillaan srcset (otetaan ensimmäinen vaihtoehto)
         let src = $(el).attr('src') || $(el).attr('data-src');
         if (!src && $(el).attr('srcset')) {
             src = $(el).attr('srcset').split(',')[0].trim().split(' ')[0];
         }
 
         if (src) {
-            // KORJAUS: Jos linkki alkaa "/", lisätään baseUrl eteen
-            if (src.startsWith('/')) {
+            // Korjataan suhteelliset polut (kuten Doughnut Economics -esimerkissä)
+            if (src.startsWith('/') && !src.startsWith('//')) {
                 try {
                     const urlObj = new URL(baseUrl);
                     src = `${urlObj.protocol}//${urlObj.hostname}${src}`;
-                } catch (e) {
-                    console.error("URL korjaus epäonnistui", e);
-                }
+                } catch (e) {}
+            } else if (src.startsWith('//')) {
+                src = 'https:' + src;
             }
             
             if (src.startsWith('http')) {
-                if (!/analytics|doubleclick|pixel|stat|share|icon|avatar|wp-emoji/i.test(src)) {
+                // Suodatetaan pois hymiöt ja seurantapikselit
+                if (!/analytics|doubleclick|pixel|stat|share|icon|avatar|wp-emoji|1x1/i.test(src)) {
                     foundImg = src;
                 }
             }
