@@ -32,23 +32,20 @@ async function run() {
         }
 
         if (lastCleanDate !== today) {
-            console.log(`--- PÄIVÄN ENSIMMÄINEN AJO: Suoritetaan puhdistus (${today}) ---`);
+            console.log(`--- PÄIVÄN ENSIMMÄINEN AJO: Puhdistus ---`);
             if (fs.existsSync(sourcesDir)) {
                 fs.readdirSync(sourcesDir).forEach(file => fs.unlinkSync(path.join(sourcesDir, file)));
             } else {
                 fs.mkdirSync(sourcesDir);
             }
-            // Tyhjennetään muuttuja ja kirjoitetaan puhdistuspäivä
             allArticles = [];
             fs.writeFileSync(cleanLogFile, today);
         } else {
-            console.log(`--- Jatketaan päivää: ladataan olemassa oleva data pohjalle ---`);
             if (fs.existsSync('data.json')) {
                 allArticles = JSON.parse(fs.readFileSync('data.json', 'utf8'));
             }
         }
 
-        console.log("Haetaan syötelistaa...");
         const response = await axios.get(SHEET_CSV_URL);
         const rows = response.data.split('\n').slice(1);
 
@@ -56,7 +53,6 @@ async function run() {
             if (!row || row.trim() === '') return null;
             const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
             if (cols.length < 3) return null; 
-        
             return { 
                 category: cols[0]?.replace(/^"|"$/g, '').trim() || "General",
                 rssUrl: cols[2]?.replace(/^"|"$/g, '').trim(), 
@@ -72,19 +68,11 @@ async function run() {
             return true;
         });
 
-        console.log(`Löydetty ${feeds.length} uniikkia syötettä.`);
-        if (response.data.includes('<!DOCTYPE html>')) {
-            throw new Error("VIRHE: SHEET_CSV_URL palauttaa HTML-sivun CSV-tiedoston sijaan!");
-        }
-
-        // Käydään syötteet läpi
         for (const feed of feeds) {
             try {
                 if (feed.rssUrl && feed.rssUrl.length > 5) {
-                    console.log(`Käsitellään RSS: ${feed.rssUrl}`);
                     await processRSS(feed, allArticles, now);
                 } else if (feed.scrapeUrl) {
-                    console.log(`Käsitellään Scrape: ${feed.scrapeUrl}`);
                     await processScraper(feed, allArticles, now);
                 }
                 await new Promise(r => setTimeout(r, 500));
@@ -93,22 +81,40 @@ async function run() {
             }
         }
 
-        // 2. DUPLIKAATTIEN POISTO JA VALIDINTI (varmistetaan ettei vanha ja uusi sekoitu)
+        // --- DUPLIKAATTIEN POISTO ---
         const uniqueArticles = [];
         const seenPostUrls = new Set();
-        
         allArticles.forEach(art => {
-            if (!art || !art.link || typeof art.link !== 'string') return; 
-        
+            if (!art || !art.link) return;
             const cleanUrl = art.link.split('?')[0].split('#')[0].trim().toLowerCase();
             if (!seenPostUrls.has(cleanUrl)) {
                 seenPostUrls.add(cleanUrl);
                 uniqueArticles.push(art);
             }
         });
-        allArticles = uniqueArticles;// --- ÄLYKÄS JÄRJESTELY (ROUND ROBIN PÄIVÄN SISÄLLÄ) ---
-        
-        // 1. Ryhmitellään uutiset päivittäin (YYYY-MM-DD)
+        allArticles = uniqueArticles;
+
+        // --- 1. TALLENNUS: TÄYDET ARKISTOT ---
+        if (!fs.existsSync(sourcesDir)) fs.mkdirSync(sourcesDir);
+        const sourceStats = {};
+        const articlesBySource = {};
+
+        allArticles.forEach(art => {
+            const src = art.sourceTitle || "Muu";
+            const fileKey = src.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+            if (!articlesBySource[fileKey]) articlesBySource[fileKey] = [];
+            articlesBySource[fileKey].push(art);
+            if (!sourceStats[src]) {
+                sourceStats[src] = { file: `${fileKey}.json`, count: 0 };
+            }
+            sourceStats[src].count++;
+        });
+
+        Object.keys(articlesBySource).forEach(key => {
+            fs.writeFileSync(path.join(sourcesDir, `${key}.json`), JSON.stringify(articlesBySource[key], null, 2));
+        });
+
+        // --- 2. TALLENNUS: ETUSIVU (ROUND ROBIN & 500) ---
         const days = {};
         allArticles.forEach(art => {
             const d = art.pubDate.split('T')[0];
@@ -117,25 +123,20 @@ async function run() {
         });
 
         let finalSorted = [];
-        // Käydään päivät läpi uusimmasta vanhimpaan
         Object.keys(days).sort().reverse().forEach(day => {
             const dayArticles = days[day];
-            
-            // Ryhmitellään päivän sisällä uutiset lähteittäin
             const bySource = {};
             dayArticles.forEach(art => {
                 const src = art.sourceTitle || "Muu";
                 if (!bySource[src]) bySource[src] = [];
                 bySource[src].push(art);
             });
-
-            // Round Robin: Poimitaan vuorotellen yksi uutinen jokaisesta lähteestä
-            const sources = Object.keys(bySource);
+            const daySources = Object.keys(bySource);
             let hasItems = true;
             let i = 0;
             while (hasItems) {
                 hasItems = false;
-                sources.forEach(src => {
+                daySources.forEach(src => {
                     if (bySource[src][i]) {
                         finalSorted.push(bySource[src][i]);
                         hasItems = true;
@@ -145,86 +146,47 @@ async function run() {
             }
         });
 
-        // Päivitetään allArticles ja rajoitetaan 500 uusimpaan
-        allArticles = finalSorted.slice(0, 500);
-
-        // 1. TALLENNUS: Päävirta
-        fs.writeFileSync('data.json', JSON.stringify(allArticles, null, 2));
-
-        // 2. TALLENNUS: Lähteet
-        const sourceStats = {};
-        const articlesBySource = {};
-
-        allArticles.forEach(art => {
-            const src = art.sourceTitle || "Muu lähde";
-            const fileKey = src.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-            
-            if (!articlesBySource[fileKey]) articlesBySource[fileKey] = [];
-            articlesBySource[fileKey].push(art);
-            
-            if (!sourceStats[src]) {
-                sourceStats[src] = { file: `${fileKey}.json`, count: 0 };
-            }
-            sourceStats[src].count++;
-        });
-
-        Object.keys(articlesBySource).forEach(key => {
-            fs.writeFileSync(path.join(sourcesDir, `${key}.json`), JSON.stringify(articlesBySource[key].slice(0, 100), null, 2));
-        });
-
+        fs.writeFileSync('data.json', JSON.stringify(finalSorted.slice(0, 500), null, 2));
         fs.writeFileSync('stats.json', JSON.stringify(sourceStats, null, 2));
 
-        if (failedFeeds.length > 0) {
-            fs.writeFileSync('failed_feeds.txt', failedFeeds.join('\n'));
-        }
-
-        console.log(`Success! data.json ja sources/ päivitetty.`);
+        if (failedFeeds.length > 0) fs.writeFileSync('failed_feeds.txt', failedFeeds.join('\n'));
+        console.log(`Success!`);
     } catch (error) {
-        console.error("Kriittinen virhe:", error);
+        console.error(error);
         process.exit(1);
     }
 }
 
 async function processRSS(feed, allArticles, now) {
     const feedContent = await parser.parseURL(feed.rssUrl);
-    const items = feedContent.items.slice(0, 15).map(item => {
+    // POISTETTU .slice(0, 15) jotta arkistot ovat täydellisiä
+    const items = feedContent.items.map(item => {
         let itemDate = new Date(item.pubDate || item.isoDate);
         if (isNaN(itemDate.getTime()) || itemDate > now) itemDate = now;
 
-        // --- AIKALEIMAN HIENOSÄÄTÖ ---
-        // Jos uutisella on vain päivämäärä (kellonaika 00:00), lisätään pieni satunnainen 
-        // hajonta, jotta saman päivän uutiset eivät kasaudu lähteittäin.
         if (itemDate.getHours() === 0 && itemDate.getMinutes() === 0) {
-            const randomMinutes = Math.floor(Math.random() * 720); // 12h hajonta taaksepäin
+            const randomMinutes = Math.floor(Math.random() * 720);
             itemDate.setMinutes(itemDate.getMinutes() - randomMinutes);
         }
 
-        // --- PARANNETTU KUVAN HAKU (Guardian, Access Now & RSS) ---
         let img = null;
 
-        // 1. Tarkistetaan media:content (Guardian ja monet muut)
-        if (item.mediaContent) {
-            if (Array.isArray(item.mediaContent)) {
-                // Etsitään levein kuva suttuisuuden välttämiseksi
-                let bestWidth = 0;
-                item.mediaContent.forEach(media => {
-                    const width = parseInt(media.$?.width) || 0;
-                    if (width > bestWidth) {
-                        bestWidth = width;
-                        img = media.$?.url;
-                    }
-                });
-            } else if (item.mediaContent.$) {
-                img = item.mediaContent.$.url;
-            }
+        // GUARDIAN RESOLUUTIO KORJAUS
+        const mContent = item.mediaContent || item['media:content'];
+        if (mContent) {
+            const mediaArray = Array.isArray(mContent) ? mContent : [mContent];
+            let bestWidth = 0;
+            mediaArray.forEach(m => {
+                // Tarkistetaan leveys eri mahdollisista paikoista
+                const w = parseInt(m.$?.width || m.width || 0);
+                if (w > bestWidth) {
+                    bestWidth = w;
+                    img = m.$?.url || m.url;
+                }
+            });
         }
 
-        // 2. Jos ei löytynyt, tarkistetaan standardi enclosure
-        if (!img && item.enclosure && item.enclosure.url) {
-            img = item.enclosure.url;
-        }
-        
-        // 3. Viimeinen olkikorsi: Etsitään tekstin seasta (Access Now jne.)
+        if (!img && item.enclosure && item.enclosure.url) img = item.enclosure.url;
         if (!img) img = extractImageFromContent(item);
 
         return {
