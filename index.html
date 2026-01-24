@@ -100,6 +100,10 @@
         .source-item:hover { background-color: #fcfcfc; color: var(--primary-color); }
         .source-item.active { background-color: #fffaf5; color: var(--primary-color); font-weight: 600; border-left: 4px solid var(--primary-color); }
         .source-item span { font-size: 0.75rem; background: #f0f0f0; padding: 2px 8px; border-radius: 10px; color: #888; }
+        .source-trigger:hover {
+            text-decoration: underline !important;
+            opacity: 0.8;
+        }
 
         #sidebar-toggle { 
             position: fixed; top: 25px; left: 25px; z-index: 1500; background: var(--text-dark); 
@@ -217,8 +221,13 @@ function displayArticles() {
                     <span class="category-label">${item.sheetCategory || 'Yleinen'}</span>
                     <h2>${item.title}</h2>
                     <p>${cleanContent}...</p>
+                    /* Korvaa vanha meta-info tällä osiolla displayArticles-funktiossa */
                     <div class="meta-info">
-                        <span>${item.sourceTitle || 'Lähde'}</span>
+                        <span class="source-trigger" 
+                              onclick="handleSourceClick(event, '${item.sourceTitle}')" 
+                              style="cursor: pointer; color: var(--primary-color) !important;">
+                            ${item.sourceTitle || 'Lähde'}
+                        </span>
                         <span>${dateStr}</span>
                     </div>
                 </div>
@@ -261,6 +270,35 @@ function setCategory(cat, btn) {
     msnry.layout();
     window.scrollTo({ top: 0, behavior: 'smooth' });
     loadData('data.json');
+}
+
+async function handleSourceClick(event, sourceName) {
+    // Estetään uutisen aukeaminen, kun klikataan lähdettä
+    event.preventDefault();
+    event.stopPropagation();
+
+    try {
+        // Haetaan stats.json, jotta tiedetään mikä tiedosto vastaa lähdettä
+        const response = await fetch('stats.json');
+        const stats = await response.json();
+        
+        if (stats[sourceName]) {
+            const fileName = `sources/${stats[sourceName].file}`;
+            
+            // Etsitään sidebarista vastaava elementti, jotta se korostuu (active-luokka)
+            const sidebarItems = document.querySelectorAll('.source-item');
+            let targetEl = sidebarItems[0]; // Oletus: kaikki lähteet
+            
+            sidebarItems.forEach(item => {
+                if (item.innerText.includes(sourceName)) targetEl = item;
+            });
+
+            // Kutsutaan olemassa olevaa funktiota
+            changeSource(fileName, targetEl);
+        }
+    } catch (e) {
+        console.error("Lähdelinkki epäonnistui", e);
+    }
 }
 
 async function changeSource(file, el) {
