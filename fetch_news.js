@@ -8,7 +8,8 @@ const parser = new Parser({
     headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) OpenMag-Robot-v1' },
     customFields: {
         item: [
-            ['media:content', 'mediaContent', {keepArray: true}], // Tärkeä: keepArray
+            ['media:content', 'mediaContent', {keepArray: true}],
+            ['media:thumbnail', 'mediaThumbnail'], // LISÄÄ TÄMÄ
             ['enclosure', 'enclosure'],
             ['content:encoded', 'contentEncoded']
         ] 
@@ -164,37 +165,40 @@ async function processRSS(feed, allArticles, now) {
             const randomMinutes = Math.floor(Math.random() * 720);
             itemDate.setMinutes(itemDate.getMinutes() - randomMinutes);
         }
-
-        // --- PARANNETTU KUVAN VALINTA (Amnesty, Guardian, EIT) ---
+        
+        // --- AMNESTY-YHTEENSOPIVA KUVANHAKU ---
         let img = null;
-        let mContent = item.mediaContent || item['media:content'];
 
+        // 1. Kokeillaan media:content (Amnestyn pääkuvat)
+        let mContent = item.mediaContent || item['media:content'];
         if (mContent) {
-            // Varmistetaan että käsitellään taulukkona
             const mediaArray = Array.isArray(mContent) ? mContent : [mContent];
             let maxW = 0;
-
             mediaArray.forEach(m => {
-                // Haetaan URL ja leveys (voi olla suoraan m.url tai m.$.url)
                 const currentUrl = m.url || m.$?.url;
                 const currentWidth = parseInt(m.width || m.$?.width || 0);
-
-                if (currentUrl) {
-                    // Jos kuva on suurempi kuin aiempi TAI jos emme ole vielä löytäneet mitään
-                    if (currentWidth >= maxW || !img) {
-                        maxW = currentWidth;
-                        img = currentUrl;
-                    }
+                if (currentUrl && (currentWidth >= maxW || !img)) {
+                    maxW = currentWidth;
+                    img = currentUrl;
                 }
             });
         }
-        if (!img && item.enclosure && item.enclosure.url) img = item.enclosure.url;
-        
-        // Viimeinen olkikorsi: Etsitään tekstistä ja korjataan suhteelliset polut
+
+        // 2. Kokeillaan media:thumbnail (Amnestyn vaihtoehto)
+        if (!img && item.mediaThumbnail) {
+            img = item.mediaThumbnail.$?.url || item.mediaThumbnail.url;
+        }
+
+        // 3. Kokeillaan enclosure
+        if (!img && item.enclosure && item.enclosure.url) {
+            img = item.enclosure.url;
+        }
+
+        // 4. Viimeinen olkikorsi: Tekstin seasta (Access Now)
         if (!img) {
             img = extractImageFromContent(item, feed.rssUrl);
         }
-
+        
         // Varmistetaan vielä kerran, että myös tageista (enclosure/media) 
         // tulleet kuvat ovat absoluuttisia
         if (img && img.startsWith('/')) {
