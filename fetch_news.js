@@ -144,7 +144,7 @@ async function run() {
         });
 
         // 6. TALLENNUS DATA JA STATS
-        fs.writeFileSync('data.json', JSON.stringify(finalSorted.slice(0, 500), null, 2));
+        fs.writeFileSync('data.json', JSON.stringify(finalSorted.slice(0, 1000), null, 2));
         fs.writeFileSync('stats.json', JSON.stringify(sourceStats, null, 2));
 
         if (failedFeeds.length > 0) fs.writeFileSync('failed_feeds.txt', failedFeeds.join('\n'));
