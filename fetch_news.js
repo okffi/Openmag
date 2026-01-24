@@ -18,40 +18,41 @@ const SHEET_CSV_URL = process.env.SHEET_CSV_URL || 'https://docs.google.com/spre
 
 async function run() {
     let failedFeeds = []; 
-    let allArticles = []; // Tämä pidetään tyhjänä uutta hakua varten
+    let allArticles = [];
     const now = new Date();
     const today = now.toISOString().split('T')[0];
     const cleanLogFile = path.join(__dirname, 'last_clean.txt');
     const sourcesDir = path.join(__dirname, 'sources');
 
     try {
-        // 1. PÄIVITTÄINEN PUHDISTUS (Vain kerran päivässä)
+        // 1. PÄIVITTÄINEN PUHDISTUSLOGIIKKA
         let lastCleanDate = "";
         if (fs.existsSync(cleanLogFile)) {
             lastCleanDate = fs.readFileSync(cleanLogFile, 'utf8').trim();
         }
 
         if (lastCleanDate !== today) {
-            console.log(`--- PÄIVÄN ENSIMMÄINEN AJO: Tyhjennetään vanhat arkistot ---`);
+            console.log(`--- PÄIVÄN ENSIMMÄINEN AJO: Puhdistetaan arkistot (${today}) ---`);
             if (fs.existsSync(sourcesDir)) {
                 fs.readdirSync(sourcesDir).forEach(file => fs.unlinkSync(path.join(sourcesDir, file)));
             } else {
                 fs.mkdirSync(sourcesDir);
             }
+            allArticles = [];
             fs.writeFileSync(cleanLogFile, today);
         } else {
-            console.log(`--- Päivittäinen puhdistus jo tehty. Lisätään uudet uutiset olemassa olevaan kantaan. ---`);
+            console.log(`--- Jatketaan päivää: ladataan olemassa oleva data ---`);
             if (fs.existsSync('data.json')) {
                 allArticles = JSON.parse(fs.readFileSync('data.json', 'utf8'));
             }
         }
 
-        // 2. HAETAAN SYÖTELISTA (AINA)
+        // 2. HAETAAN SYÖTTEET
         console.log("Haetaan syötelistaa Google Sheetsistä...");
         const response = await axios.get(SHEET_CSV_URL);
         const rows = response.data.split('\n').slice(1);
 
-        const rawFeeds = rows.map(row => {
+        const feeds = rows.map(row => {
             if (!row || row.trim() === '') return null;
             const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
             if (cols.length < 3) return null; 
@@ -62,29 +63,25 @@ async function run() {
             };
         }).filter(f => f !== null);
 
-        console.log(`Löydetty ${rawFeeds.length} syötettä taulukosta.`);
+        console.log(`Käsitellään ${feeds.length} lähdettä...`);
 
-        // 3. KÄYDÄÄN SYÖTTEET LÄPI (AINA)
-        for (const feed of rawFeeds) {
-            const targetUrl = feed.rssUrl || feed.scrapeUrl;
-            if (!targetUrl) continue;
-
+        for (const feed of feeds) {
             try {
                 if (feed.rssUrl && feed.rssUrl.length > 10) {
-                    console.log(`[RSS] Noudetaan: ${feed.rssUrl}`); // PALAUTETTU LOKI
+                    console.log(`[RSS] ${feed.rssUrl}`);
                     await processRSS(feed, allArticles, now);
                 } else if (feed.scrapeUrl) {
-                    console.log(`[SCRAPE] Noudetaan: ${feed.scrapeUrl}`); // PALAUTETTU LOKI
+                    console.log(`[SCRAPE] ${feed.scrapeUrl}`);
                     await processScraper(feed, allArticles, now);
                 }
-                await new Promise(r => setTimeout(r, 800)); // Hieman pidempi tauko vakauden vuoksi
+                await new Promise(r => setTimeout(r, 600));
             } catch (e) {
-                console.error(`Virhe lähteessä ${targetUrl}: ${e.message}`);
-                failedFeeds.push(`${feed.category}: ${targetUrl} - ${e.message}`);
+                console.error(`Virhe: ${e.message}`);
+                failedFeeds.push(`${feed.category}: ${e.message}`);
             }
         }
 
-        // 4. DUPLIKAATTIEN POISTO
+        // 3. DUPLIKAATTIEN POISTO
         const seenPostUrls = new Set();
         allArticles = allArticles.filter(art => {
             if (!art || !art.link) return false;
@@ -94,10 +91,9 @@ async function run() {
             return true;
         });
 
-        // 5. TALLENNUS ARKISTOIHIN (Koko allArticles)
+        // 4. TALLENNUS ARKISTOIHIN (Täydelliset tiedostot)
         const sourceStats = {};
         const articlesBySource = {};
-
         allArticles.forEach(art => {
             const src = art.sourceTitle || "Muu";
             const fileKey = src.replace(/[^a-z0-9]/gi, '_').toLowerCase();
@@ -113,16 +109,46 @@ async function run() {
             fs.writeFileSync(path.join(sourcesDir, `${key}.json`), JSON.stringify(articlesBySource[key], null, 2));
         });
 
-        // 6. ETUSIVUN JÄRJESTELY (Round Robin)
-        // ... (Käytä aiempaa Round Robin -koodia tässä) ...
-        
-        // Tallennus data.json ja stats.json
+        // 5. ETUSIVUN JÄRJESTELY (ROUND ROBIN)
+        const days = {};
+        allArticles.forEach(art => {
+            const d = art.pubDate.split('T')[0];
+            if (!days[d]) days[d] = [];
+            days[d].push(art);
+        });
+
+        let finalSorted = []; // TÄMÄ OLI AIEMMIN PUUTTUVA MÄÄRITTELY
+        Object.keys(days).sort().reverse().forEach(day => {
+            const dayArticles = days[day];
+            const bySource = {};
+            dayArticles.forEach(art => {
+                const src = art.sourceTitle || "Muu";
+                if (!bySource[src]) bySource[src] = [];
+                bySource[src].push(art);
+            });
+            const daySources = Object.keys(bySource);
+            let hasItems = true;
+            let i = 0;
+            while (hasItems) {
+                hasItems = false;
+                daySources.forEach(src => {
+                    if (bySource[src][i]) {
+                        finalSorted.push(bySource[src][i]);
+                        hasItems = true;
+                    }
+                });
+                i++;
+            }
+        });
+
+        // 6. TALLENNUS DATA JA STATS
         fs.writeFileSync('data.json', JSON.stringify(finalSorted.slice(0, 500), null, 2));
         fs.writeFileSync('stats.json', JSON.stringify(sourceStats, null, 2));
 
-        console.log(`Ajo valmis. Arkistoitu ${Object.keys(articlesBySource).length} lähdettä.`);
-    } catch (err) {
-        console.error("Kriittinen virhe ajon aikana:", err);
+        if (failedFeeds.length > 0) fs.writeFileSync('failed_feeds.txt', failedFeeds.join('\n'));
+        console.log(`Success! data.json ja ${Object.keys(articlesBySource).length} arkistoa päivitetty.`);
+    } catch (error) {
+        console.error("Kriittinen virhe:", error);
         process.exit(1);
     }
 }
