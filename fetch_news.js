@@ -23,15 +23,21 @@ async function run() {
         console.log("Haetaan syötelistaa...");
         const response = await axios.get(SHEET_CSV_URL);
         const rows = response.data.split('\n').slice(1);
-        
+
+        // fetch_news.js (rivit n. 25-35)
         const rawFeeds = rows.map(row => {
+            if (!row || row.trim() === '') return null; // Ohita tyhjät rivit
             const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
+            
+            // Tarkistetaan, että rivillä on vähintään tarvittavat sarakkeet
+            if (cols.length < 3) return null; 
+        
             return { 
                 category: cols[0]?.replace(/^"|"$/g, '').trim() || "General",
                 rssUrl: cols[2]?.replace(/^"|"$/g, '').trim(), 
                 scrapeUrl: cols[3]?.replace(/^"|"$/g, '').trim() 
             };
-        });
+        }).filter(f => f !== null); // Poistetaan epäonnistuneet rivit
 
         // Suodatetaan duplikaattisyötteet ja tyhjät rivit
         const seenUrls = new Set();
