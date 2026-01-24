@@ -92,8 +92,9 @@ async function run() {
             }
         });
         allArticles = uniqueArticles;
-
+        
         // 1. TALLENNUS: Päävirta (data.json)
+        allArticles.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
         fs.writeFileSync('data.json', JSON.stringify(allArticles.slice(0, 500), null, 2));
 
         // 2. TALLENNUS: Lähteet omiin tiedostoihinsa
@@ -137,7 +138,7 @@ async function run() {
 
 async function processRSS(feed, allArticles, now) {
     const feedContent = await parser.parseURL(feed.rssUrl);
-    const items = feedContent.items.map(item => {
+    const items = feedContent.items.slice(0, 15).map(item => {
         let itemDate = new Date(item.pubDate || item.isoDate);
         if (isNaN(itemDate.getTime()) || itemDate > now) itemDate = now;
 
