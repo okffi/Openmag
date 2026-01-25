@@ -53,21 +53,11 @@
         }
 
         .sidebar h3 { padding: 30px 30px 20px; margin: 0; font-family: 'Playfair Display', serif; font-size: 1.5rem; }
-        
-        .category-header {
-            padding: 20px 30px 5px;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.7rem;
-            color: var(--primary-color);
-            letter-spacing: 1.5px;
-            cursor: pointer;
-        }
 
-        .source-item { padding: 10px 30px 10px 45px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: var(--text-muted); }
+        .source-item { cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: var(--text-muted); }
         .source-item:hover { background-color: #fcfcfc; color: var(--primary-color); }
         .source-item.active { background-color: #fffaf5; color: var(--primary-color); font-weight: 600; border-left: 4px solid var(--primary-color); }
-        .source-item span { font-size: 0.7rem; background: #f0f0f0; padding: 2px 8px; border-radius: 10px; color: #888; }
+        .source-item span { font-size: 0.7rem; color: #b7b7b7; }
 
         /* SISÄLTÖALUE */
         main {
@@ -200,6 +190,13 @@
             justify-content: space-between;
             align-items: center;
             transition: background 0.2s;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            color: var(--primary-color);
+            letter-spacing: 1.5px;
+            cursor: pointer;
+            padding: 5px 15px 5px 20px
         }
         
         .category-header::after {
@@ -230,7 +227,7 @@
         
         /* Sisennys alavalikon kohteille */
         .source-submenu .source-item {
-            padding-left: 50px;
+            padding: 2px 15px 1px 20px;
             border-left: none;
         }
     </style>
