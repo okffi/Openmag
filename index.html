@@ -100,8 +100,21 @@
         .view-title {
             font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
-            margin: 40px 40px 20px;
             color: var(--text-dark);
+        }
+
+        #current-view-description {
+            padding-bottom: 0.5rem;
+        }
+
+        #feed-header-area {
+            display: flex;
+            margin: 20px;
+            align-items: center;
+        }
+        
+        #feed-logo-container {
+            margin: 0 20px 0 0;
         }
 
         /* GRID */
@@ -159,8 +172,8 @@
         <div id="feed-header-area">
             <div id="feed-logo-container"></div>
             <div id="feed-info-container">
-                <h2 id="current-view-title" class="view-title">Tuoreimmat uutiset</h2>
-                <p id="current-view-description"></p>
+                <div id="current-view-title" class="view-title">Tuoreimmat uutiset</div>
+                <div id="current-view-description"></div>
             </div>
         </div>
             
