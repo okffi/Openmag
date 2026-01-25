@@ -183,6 +183,23 @@ async function run() {
 
 async function processRSS(feed, allArticles, now) {
     const feedContent = await parser.parseURL(feed.rssUrl);
+    
+    // 1. Poimitaan syötteen kuvaus
+    const sourceDescription = feedContent.description ? feedContent.description.trim() : "";
+    
+    // 2. Poimitaan logo (ensisijaisesti syötteen oma image, toissijaisesti favicon)
+    let sourceLogo = feedContent.image ? feedContent.image.url : null;
+    
+    // Jos logoa ei löydy, yritetään napata sivuston ikoni URL-osoitteen perusteella
+    if (!sourceLogo && feedContent.link) {
+        try {
+            const domain = new URL(feedContent.link).hostname;
+            sourceLogo = `https://www.google.com/s2/favicons?sz=64&domain=${domain}`;
+        } catch (e) {
+            console.log("Ei voitu luoda favicon-linkkiä");
+        }
+    }
+
     const items = feedContent.items.map(item => {
         let itemDate = new Date(item.pubDate || item.isoDate);
         if (isNaN(itemDate.getTime()) || itemDate > now) itemDate = now;
@@ -226,35 +243,27 @@ async function processRSS(feed, allArticles, now) {
             } catch (e) { img = null; }
         }
 
-        // 1. KORJATAAN ARTIKKELIN LINKKI (Tärkeä vakauden kannalta)
         let articleLink = item.link;
         if (articleLink && !articleLink.startsWith('http')) {
             try {
-                // Rakennetaan täysi URL käyttäen feedin osoitetta pohjana
                 articleLink = new URL(articleLink, feed.rssUrl).href;
             } catch (e) {
                 console.error("Linkin korjaus epäonnistui:", articleLink);
             }
         }
 
-        // 2. KORJATAAN KUVAN LINKKI (Jos se on jäänyt suhteelliseksi)
-        if (img && !img.startsWith('http')) {
-            try {
-                img = new URL(img, feed.rssUrl).href;
-            } catch (e) {
-                img = null;
-            }
-        }
-
         return {
             title: item.title,
-            link: articleLink, // Käytetään korjattua linkkiä
+            link: articleLink,
             pubDate: itemDate.toISOString(),
             content: (item.contentSnippet || item.summary || "").replace(/<[^>]*>/g, '').trim().substring(0, 400),
             creator: item.creator || item.author || "",
             sourceTitle: feedContent.title || new URL(feed.rssUrl).hostname,
             sheetCategory: feed.category,
-            enforcedImage: img
+            enforcedImage: img,
+            // --- LISÄTTY TÄMÄ ---
+            sourceDescription: sourceDescription,
+            sourceLogo: sourceLogo
         };
     });
     allArticles.push(...items);
