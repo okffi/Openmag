@@ -1,0 +1,14 @@
+{
+  "name": "openmag-robot",
+  "version": "1.0.0",
+  "description": "Uutisrobotti",
+  "main": "fetch_news.js",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "rss-parser": "^3.13.0"
+  },
+  "scripts": {
+    "start": "node fetch_news.js"
+  }
+}
