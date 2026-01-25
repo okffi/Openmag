@@ -261,9 +261,10 @@ async function processRSS(feed, allArticles, now) {
             sourceTitle: feedContent.title || new URL(feed.rssUrl).hostname,
             sheetCategory: feed.category,
             enforcedImage: img,
-            // --- LISÄTTY TÄMÄ ---
             sourceDescription: sourceDescription,
-            sourceLogo: sourceLogo
+            sourceLogo: sourceLogo,
+            // --- LISÄTTY TÄMÄ ---
+            originalRssUrl: feed.rssUrl
         };
     });
     allArticles.push(...items);
