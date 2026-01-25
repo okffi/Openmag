@@ -1,0 +1,502 @@
+[
+  {
+    "title": "Philip Withnall: Parental controls screen time limits backend",
+    "link": "https://tecnocode.co.uk/2025/11/19/parental-controls-screen-time-limits-backend/",
+    "pubDate": "2025-11-19T23:39:19.000Z",
+    "content": "Ignacy blogged recently about all the parts of the user interface for screen time limits in parental controls in GNOME. He’s been doing great work pulling that all together, while I have been working on the backend side of things. We’re aiming for this screen time limits feature to appear in GNOME 50.\nHigh level design\nThere’s a design document which is the canonical reference for the design of th",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://tecnocode.co.uk/wp-content/uploads/2025/11/screen-time-ipc.svg"
+  },
+  {
+    "title": "Jakub Steiner: 12 months instead of 12 minutes",
+    "link": "https://blog.jimmac.eu/2025/3D-Website/",
+    "pubDate": "2025-11-21T06:44:00.000Z",
+    "content": "Hey Kids! Other than raving about GNOME.org being a static HTML, there’s one more aspect I’d like to get back to in this writing exercise called a blog post.\n\nI’ve recently come across an apalling genAI website for a project I hold deerly so I thought I’d give a glimpse on how we used to do things in the olden days. It is probably not going to be done this way anymore in the enshittified timeline ",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://blog.jimmac.eu/2025/3D-Website/light.webp"
+  },
+  {
+    "title": "Arun Raghavan: Rusty Pipes and Oxidized Wires",
+    "link": "https://arunraghavan.net/2025/11/rusty-pipes-and-oxidized-wires/",
+    "pubDate": "2025-11-24T01:12:31.000Z",
+    "content": "In case you missed it, the GStreamer Conference 2025 videos are up!\nThis includes my talk on the new PipeWire native Rust bindings. You’ll want to skip the first 1:20 to get to the start.\nI talk a little bit about the motivation and structure of the project, and discuss my experience writing this low-level library in Rust.\nThere are a lot of great talks, so it’s worth catching up if you weren’t th",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Philip Withnall: Parental controls web filtering backend",
+    "link": "https://tecnocode.co.uk/2025/11/27/parental-controls-web-filtering-backend/",
+    "pubDate": "2025-11-27T13:25:50.000Z",
+    "content": "In my previous post I gave an overview of the backend for the screen time limits feature of parental controls in GNOME. In this post, I’ll try and do the same for the web filtering feature.\nWe haven’t said much about web filtering so far, because the user interface for it isn’t finished yet. The backend is, though, and it will get plumbed up eventually. Currently we don’t have a GNOME release targ",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://tecnocode.co.uk/wp-content/uploads/2025/11/web-filtering-ipc.svg"
+  },
+  {
+    "title": "Sophie Herold: Weekly report #75",
+    "link": "https://blogs.gnome.org/sophieh/2025/11/30/weekly-report-75/",
+    "pubDate": "2025-11-30T21:03:24.000Z",
+    "content": "Hello world! Last week, I asked the people that financially support me, if I should post my updates publicly. A majority voted to release my future weekly reports to the public, some voted to make them public every other week. So I will try to post some of them publicly in the future.\nThese updates are made possible by the amazing people that support me on Ko-fi, Patreon, Open Collective, and GitH",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "GNOME Foundation News: Join Friends of GNOME",
+    "link": "https://blogs.gnome.org/foundation/2025/12/01/join-friends-of-gnome/",
+    "pubDate": "2025-12-01T18:05:03.000Z",
+    "content": "This post was contributed by the Fundraising Committee from the GNOME Foundation.\nThis week we are launching an end-of-year fundraising campaign with a simple goal: to reach 1,500 Friends of GNOME by the end of the year. We need your help: become a Friend of GNOME today at donate.gnome.org!\nWhy give?\nWe are a nearly 30-year-old Free Software project whose contributors believe in building something",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Federico Mena-Quintero: Mutation testing for librsvg",
+    "link": "https://viruta.org/mutation-testing-librsvg.html",
+    "pubDate": "2025-12-01T19:06:14.000Z",
+    "content": "I was reading a blog post about the testing strategy for the Wild\nlinker, when I came upon a link to cargo-mutants, a\nmutation testing tool for Rust.  The tool promised to be easy to set\nup, so I gave it a try.  I'm happy to find that it totally delivers!\nBriefly: mutation testing catches cases where bugs are\ndeliberately inserted in the source code, but the test suite fails to\ncatch them: after m",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://viruta.org/images/cargo-mutants-running.png"
+  },
+  {
+    "title": "Cassidy James Blaede: Looking back on GNOME in 2025—and looking forward to 2026",
+    "link": "https://cassidyjames.com/blog/looking-back-gnome-2025-looking-forward-2026/",
+    "pubDate": "2025-12-01T19:10:00.000Z",
+    "content": "This past year has been an exceptional one for GNOME. The project released two excellent releases on schedule with GNOME 48 in March and GNOME 49 in September. Contributors have been relentless in delivering a set of new and improved default apps, constant performance improvements across the board benefitting everyone (but especially lower-specced hardware), a better experience on high end hardwar",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://cassidyjames.com/images/blog/gnome-foot-logo-rebrand/foot-dark.png"
+  },
+  {
+    "title": "Felipe Borges: One Project Selected for the December 2025 Outreachy Cohort with GNOME!",
+    "link": "https://blogs.gnome.org/feborges/outreachy-dec2025-announcement/",
+    "pubDate": "2025-12-03T11:03:51.000Z",
+    "content": "We are happy to announce that the GNOME Foundation is sponsoring an Outreachy project for the December 2025 Outreachy cohort.\nOutreachy provides internships to people subject to systemic bias and impacted by underrepresentation in the tech industry where they are living.\nLet’s welcome Malika Asman! Malika will be working with Lucas Baudin on improving document signing in Papers, our document viewe",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Javad Rahmatzadeh: AI and GNOME Shell Extensions",
+    "link": "https://blogs.gnome.org/jrahmatzadeh/2025/12/06/ai-and-gnome-shell-extensions/",
+    "pubDate": "2025-12-06T16:48:01.000Z",
+    "content": "Since I joined the extensions team, I’ve only had one goal in mind. Making the extension developers’ job easier by providing them documentation and help.\n\n\nI started with the port guide and then I became involved in the reviews by providing developers code samples, mentioning best practices, even fixing the issue myself and sending them merge requests. Andy Holmes and I spent a lot of time writing",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Jakub Steiner: Dithering",
+    "link": "https://blog.jimmac.eu/2025/dithering/",
+    "pubDate": "2025-12-08T13:35:00.000Z",
+    "content": "One of the new additions to the GNOME 49 wallpaper set is Dithered Sun by Tobias. It uses dithering not as a technical workaround for color banding, but as an artistic device.\n\nTobias initially planned to use Halftone — a great example of a GNOME app with a focused scope and a pleasantly streamlined experience. However, I suggested that a custom dithering method and finer control over color depth ",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://blog.jimmac.eu/2025/dithering/halftone.webp"
+  },
+  {
+    "title": "Laura Kramolis: Rewriting Cartridges",
+    "link": "https://kramo.page/cartridges-rewrite",
+    "pubDate": "2025-12-08T14:34:00.000Z",
+    "content": "Gamepad support, collections, instant imports, and more!\nCartridges is, in my biased opinion, the best game launcher out there. To use it, you do not need to wait 2 minutes for a memory-hungry Electron app to start up before you can start looking for what you want to play. You don’t need to sign into anything. You don’t need to spend 20 minutes configuring it. You don’t need to sacrifice your app ",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://kramo.page/images/screenshots/cartridges-collections.webp"
+  },
+  {
+    "title": "Michael Catanzaro: Significant Drag and Drop Vulnerability in WebKitGTK",
+    "link": "https://blogs.gnome.org/mcatanzaro/2025/12/09/significant-drag-and-drop-vulnerability-in-webkitgtk/",
+    "pubDate": "2025-12-09T15:29:11.000Z",
+    "content": "WebKitGTK 2.50.3 contains a workaround for CVE-2025-13947, an issue that allows websites to exfiltrate files from your filesystem. If you’re using Epiphany or any other web browser based on WebKitGTK, then you should immediately update to 2.50.3.\nWebsites may attach file URLs to drag sources. When the drag source is dropped onto a drop target, the website can read the file data for its chosen file",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Hari Rana: Please Fund My Continued Accessibility Work on GNOME!",
+    "link": "https://tesk.page/2025/12/16/please-fund-my-continued-accessibility-work-on-gnome/",
+    "pubDate": "2025-12-15T12:41:00.000Z",
+    "content": "Hey, I have been under distress lately due to personal circumstances that are outside my control. I cannot find a permanent job that allows me to function, I am not eligible for government benefits, my grant proposals to work on free and open-source projects got rejected, paid internships are quite difficult to find, especially when many of them prioritize new contributors. Essentially, I have no ",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Bradley M. Kuhn: I Lived a Similar Trauma Rob Reiner's Family Faces & Shame on Trump",
+    "link": "http://ebb.org/bkuhn/blog/2025/12/16/rob-reiner-trump-my-brother-also-murdered-my-mother.html",
+    "pubDate": "2025-12-16T10:01:00.000Z",
+    "content": "I posted the following on my Fediverse (via Mastodon) account.\n        I'm reposting the whole seven posts here as written there, but I hope folks\n          will take a\n            look at that thread as folks are engaging in conversation over there\n          that might be worth reading if what I have to say interests you.\n          (The remainder of the post is the same that can be found in the F",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Gedit Technology blog: Mid-December News",
+    "link": "https://gedit-text-editor.org/blog/2025-12-17-mid-december-news.html",
+    "pubDate": "2025-12-17T10:00:00.000Z",
+    "content": "Misc news for the past month about the\n  gedit text editor,\n  mid-December edition!\n  (Some sections are a bit technical).\n\n\n  (By the way, the \"mid-month\" news is especially useful for December/January,\n  when one thinks about it ;-) ).\n\ngedit now refuses to load very large files\ncommon-bugs,\n  and it is now fixed! New versions of gedit will refuse to load very large\n  files or content read from ",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Andy Wingo: in which our protagonist dreams of laurels",
+    "link": "https://wingolog.org/archives/2025/12/17/in-which-our-protagonist-dreams-of-laurels",
+    "pubDate": "2025-12-17T22:42:40.000Z",
+    "content": "I had a dream the other evening, in which I was at a large event full of\nhackers—funny, that this is the extent of my dreams at the moment; as a\nparent of three young kids, I don’t get out much—and, there, I was to\nreceive an award and give a speech.  (I know, I am a ridiculous man,\neven when sleeping.)  The award was something about free software; it\nhad the trappings of victory, but the vibe amo",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Engagement Blog: GUADEC 2026 will be held in A Coruña, Spain",
+    "link": "https://blogs.gnome.org/engagement/2025/12/20/guadec-2026-will-be-held-in-a-coruna-spain/",
+    "pubDate": "2025-12-20T16:09:02.000Z",
+    "content": "We are happy to announce that GUADEC 2026 will take place in A Coruña, Spain, from July 16th to 21st, 2026.\nThe first three days, July 16th–18th, will be dedicated to talks, followed by BoF and workshop sessions on July 19th and 20th. The final day, July 21st, will be a self-organized free exploration day.\nWhile the GUADEC team will share ideas and suggestions for this day, there will be no offici",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Aryan Kaushik: Introducing Open Forms",
+    "link": "https://www.aryank.in/posts/2025-12-21-introducing-open-forms/",
+    "pubDate": "2025-12-20T22:23:51.000Z",
+    "content": "Introducing Open Forms!\nThe problem\nEver been to a conference where you set up a booth or attempt to get quick feedback by running around the ground and felt the awesome feeling of -\nCaptive portal logout\nTimeouts\nFlaky Wi-Fi drivers on Linux devices\nPoor bandwidth or dead zones\nDo I need to continue?\n\nWhile setting up the Ubuntu booth, we saw an issue: The Wifi on the Linux tablet was not working",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://www.aryank.in/images/uploads/wifi_form_meme.png"
+  },
+  {
+    "title": "Marcus Lundblad: Xmas & New Year's Maps",
+    "link": "https://ml4711.blogspot.com/2025/12/xmas-new-years-maps.html",
+    "pubDate": "2025-12-21T21:56:00.000Z",
+    "content": "It's that time of year again in (Norther Hemisphere) winter when year's drawing to an end. Which means it's time for the traditional Christmas Maps blogpost.\n \nSometimes you hear claims about Santa Claus living at the North Pole (though in Rovaniemi, Finland, I bet they would disagree…). Turns out there's a North Pole near Fairbanks, Alaska as well:\n\n\n  😄\n\nOK, enough smalltalk… now on to what's h",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhanNbx5cUntAA379j_kxi4_ELFuUoVbr7uExhezuqLIeO39heEfy8rTSY6QhLGkt1l264ctSrQKewcJblVhNMafgC0H7DVQPBFN0XhGOi7fr9uwhazW601Eo0EgJzF2xP1Y2nQ2qgnefEcME5bdL7G-0SSpY0dewcViAbsYGI4Inyu7O_rQrlD1Y61/s16000/about-50-alpha.png"
+  },
+  {
+    "title": "Asman Malika: Everybody Struggles",
+    "link": "https://blogs.gnome.org/malika/2025/12/22/165/",
+    "pubDate": "2025-12-22T20:48:11.000Z",
+    "content": "There’s a quiet assumption that once you’re accepted into a program, an internship, or a new opportunity, things are supposed to click. That confidence should come automatically. That the struggle somehow ends at the door.\nIt doesn’t.\nLately, my struggle has been feeling like I should already know more than I do.\nI’m an intern working with a large codebase that was unfamiliar at first. On the surf",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://blogs.gnome.org/malika/files/2025/12/emoji1-removebg-preview.png"
+  },
+  {
+    "title": "Joan Torres López: Remote Login Design",
+    "link": "https://blogs.gnome.org/joantolo/2025/12/23/remote-login-design/",
+    "pubDate": "2025-12-23T12:26:20.000Z",
+    "content": "GNOME 46 introduced remote login. This post explores the architecture primarily through diagrams and tables for a clearer understanding.\nComponents overview\nThere are 4 components involved: the remote client, the GRD dispatcher daemon, the GRD handover daemon and the GDM daemon:\nComponent\nType\nResponsibility\n\n\n\n\nRemote Client\nRemote User\nConnects remotely via RDP. Supports RDP Server Redirection m",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://blogs.gnome.org/joantolo/files/2025/12/output-scaled-e1766492203696.png"
+  },
+  {
+    "title": "Sophie Herold: GNOME in 2025: Some Numbers",
+    "link": "https://blogs.gnome.org/sophieh/2025/12/27/gnome-in-2025-some-numbers/",
+    "pubDate": "2025-12-27T13:10:41.000Z",
+    "content": "As some of you know, I like aggregating data. So here are some random numbers about GNOME in 2025. This post is not about making any point with the numbers I’m sharing. It’s just for fun.\nSo, what is GNOME? In total, 6 692 516 lines of code. Of that, 1 611 526 are from apps. The remaining 5 080 990 are in libraries and other components, like the GNOME Shell. These numbers cover “the GNOME ecosyste",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://blogs.gnome.org/sophieh/files/2025/12/gnome-core-n-apps.png"
+  },
+  {
+    "title": "Christian Hergert: Experimenting with S3 APIs",
+    "link": "https://blogs.gnome.org/chergert/2025/12/29/experimenting-with-s3-apis/",
+    "pubDate": "2025-12-29T00:22:46.000Z",
+    "content": "My Red Hat colleague Jan Wildeboer made some posts recently playing around with Garage for S3 compatible storage. Intrigued by the prospect, I was curious what a nice libdex-based API would look like.\nMany years ago I put together a scrappy aws-glib library to do something similar but after changing jobs I failed to find any free time to finish it. S3-GLib is an opportunity to do it better thanks ",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Lennart Poettering: Mastodon Stories for systemd v259",
+    "link": "https://0pointer.net/blog/mastodon-stories-for-systemd-v259.html",
+    "pubDate": "2025-12-30T23:00:00.000Z",
+    "content": "On Dec 17 we released systemd v259 into the wild.\nIn the weeks leading up to that release (and since then) I have posted\na series of serieses of posts to Mastodon about key new features in\nthis release, under the\n#systemd259\nhash tag. In case you aren't using Mastodon, but would like to\nread up, here's a list of all 25 posts:\nPost #1: systemd-resolved Hooks\nPost #2: dlopen() everything\nPost #3: sy",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Felipe Borges: Looking for Mentors for Google Summer of Code 2026",
+    "link": "https://blogs.gnome.org/feborges/cfp-gsoc-2026-with-gnome/",
+    "pubDate": "2026-01-02T12:39:47.000Z",
+    "content": "It is once again that pre-GSoC time of year where I go around asking GNOME developers for project ideas they are willing to mentor during Google Summer of Code. GSoC is approaching fast, and we should aim to get a preliminary list of project ideas by the end of January.\nInternships offer an opportunity for new contributors to join our community and help us build the software we love.\n@Mentors, ple",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Christian Hergert: pgsql-glib",
+    "link": "https://blogs.gnome.org/chergert/2026/01/02/pgsql-glib/",
+    "pubDate": "2026-01-02T20:54:40.000Z",
+    "content": "Much like the s3-glib library I put together recently, I had another itch to scratch. What would it look like to have a PostgreSQL driver that used futures and fibers with libdex? This was something I wondered about more than a decade ago when writing the libmongoc network driver for 10gen (later MongoDB).\npgsql-glib is such a library which I made to wrap the venerable libpq PostgreSQL state-machi",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Matthew Garrett: What is a PC compatible?",
+    "link": "https://codon.org.uk/~mjg59/blog/p/what-is-a-pc-compatible/",
+    "pubDate": "2026-01-04T03:11:36.000Z",
+    "content": "Wikipedia says “An IBM PC compatible is any personal computer that is hardware- and software-compatible with the IBM Personal Computer (IBM PC) and its subsequent models”. But what does this actually mean? The obvious literal interpretation is for a device to be PC compatible, all software originally written for the IBM 5150 must run on it. Is this a reasonable definition? Is it one that any moder",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Andy Wingo: pre-tenuring in v8",
+    "link": "https://wingolog.org/archives/2026/01/05/pre-tenuring-in-v8",
+    "pubDate": "2026-01-05T15:38:38.000Z",
+    "content": "Hey hey happy new year, friends!  Today I was going over some V8 code\nthat touched pre-tenuring: allocating objects directly in the old\nspace instead of the nursery.  I knew the theory here but I had never\nlooked into the mechanism.  Today’s post is a quick overview of how it’s\ndone.\nallocation sites\nIn a JavaScript program, there are a number of source code locations\nthat allocate.  Statistically",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://wingolog.org/pub/v8-allocation-sites.png"
+  },
+  {
+    "title": "Sebastian Wick: Improving the Flatpak Graphics Drivers Situation",
+    "link": "https://blog.sebastianwick.net/posts/flatpak-graphics-drivers/",
+    "pubDate": "2026-01-05T23:30:46.000Z",
+    "content": "Graphics drivers in Flatpak have been a bit of a pain point. The drivers have to be built against the runtime to work in the runtime. This usually isn’t much of an issue but it breaks down in two cases:\nIf the driver depends on a specific kernel version\nIf the runtime is end-of-life (EOL)\nThe first issue is what the proprietary Nvidia drivers exhibit. A specific user space driver requires a specif",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Daiki Ueno: GNOME.Asia Summit 2025",
+    "link": "https://blogs.gnome.org/dueno/gnome-asia-summit-2025/",
+    "pubDate": "2026-01-07T08:36:32.000Z",
+    "content": "Last month, I attended the GNOME.Asia Summit 2025 held at the IIJ office in Tokyo. This was my fourth time attending the summit, following previous events in Taipei (2010), Beijing (2015), and Delhi (2016).\nAs I live near Tokyo, this year’s conference was a unique experience for me: an opportunity to welcome the international GNOME community to my home city rather than traveling abroad. Reconnecti",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://blogs.gnome.org/dueno/files/2026/01/screenshot1.png"
+  },
+  {
+    "title": "Engagement Blog: GNOME ASIA 2025-Event Report",
+    "link": "https://blogs.gnome.org/engagement/2026/01/09/gnome-asia-2025-event-report/",
+    "pubDate": "2026-01-09T11:35:13.000Z",
+    "content": "GNOME ASIA 2025 took place in Tokyo, Japan, from 13–14 December 2025, bringing together the GNOME community for the featured annual GNOME conference in Asia.\n\nGNOME ASIA 2025 was co-hosted with the LibreOffice Asia Conference community event, creating a shared space for collaboration and discussion between open-source communities.\nPhoto by Tetsuji Koyama, licensed under CC BY 4.0\nAbout GNOME.Asia ",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://blogs.gnome.org/engagement/files/2026/01/GNOME-keynote-speaker-1.jpg"
+  },
+  {
+    "title": "Jussi Pakkanen: AI and money",
+    "link": "https://nibblestew.blogspot.com/2026/01/ai-and-money.html",
+    "pubDate": "2026-01-09T13:56:00.000Z",
+    "content": "If you ask people why they are using AI (or want other people to use it) you get a ton of different answers. Typically none of them contain the real reason, which is that using AI is dirt cheap. Between paying a fair amount to get something done and paying very little to give off an impression that the work has been done, the latter tends to win.\nThe reason AI is so cheap is that it is being paid ",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiGGaysadvw7_bWWfLf8Mfo_12CJ8pUEmHxzeYSbExgqJaYyyUvMpYShYcEz7plnl127v8d9n1-skbZIctrybWQp7dj3SuW-ysPmJ7yKXZuUAHTxUfVNkWP-p560OM5_0Sc52I5qhOYE8inWVNdo3D1pi-RY4na4sxiYtRc_rjJSDIlNcnVjTHNiauQTdc/s320/Screenshot%20From%202026-01-09%2014-43-01.png"
+  },
+  {
+    "title": "Arun Raghavan: Accessibility Update: Enabling Mono Audio",
+    "link": "https://arunraghavan.net/2026/01/accessibility-update-enabling-mono-audio/",
+    "pubDate": "2026-01-13T00:09:58.000Z",
+    "content": "If you maintain a Linux audio settings component, we now have a way to globally enable/disable mono audio for users who do not want stereo separation of their audio (for example, due to hearing loss in one ear). Read on for the details on how to do this.\nBackground\nMost systems support stereo audio via their default speaker output or 3.5mm analog connector. These devices are exposed as stereo devi",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Jussi Pakkanen: How to get banned from Facebook in one simple step",
+    "link": "https://nibblestew.blogspot.com/2026/01/how-to-get-banned-from-facebook-in-one.html",
+    "pubDate": "2026-01-13T18:06:00.000Z",
+    "content": "I, too, have (or as you can probably guess from the title of this post, had) a Facebook account. I only ever used it for two purposes.\n\n\nFinding out what friends I rarely see are doing\nGetting invites to events\nFacebook has over the years made usage #1 pretty much impossible. My feed contains approximately 1% posts by my friends and 99% ads for image meme \"humor\" groups whose expected amusement va",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjrT85dK08XQW3FRGgDePiwwM_R1YBol5-3sDl_U6VQcHjk2NAoLYzC7leRVAdQee5tLXzXkerSqqvEwBrGsRG1m2CzBkbg3lOXrqcGyroem5WszOZ0iboFckWAyvXpEH5ZeqkV7UMydOCMknfZkC29kl9YJy22xZfS1VVA0QFLCHR6U2MEPD1Rb5msdug/s16000/terms.png"
+  },
+  {
+    "title": "Flathub Blog: What's new in Vorarbeiter",
+    "link": "https://docs.flathub.org/blog/vorarbeiter-2026",
+    "pubDate": "2026-01-13T20:51:00.000Z",
+    "content": "It is almost a year since the switch to Vorarbeiter for building and publishing\napps. We've made several improvements since then, and it's time to brag about\nthem.\nRunsOn​\nIn the initial announcement, I mentioned we were using RunsOn, a\njust-in-time runner provisioning system, to build large apps such as Chromium.\nSince then, we have fully switched to RunsOn for all builds. Free GitHub runners\nava",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://docs.flathub.org/assets/images/aws_costs-171537d5e92952b23b5f5fb3b603ce9f.png"
+  },
+  {
+    "title": "Asman Malika: Think About Your Audience",
+    "link": "https://blogs.gnome.org/malika/2026/01/14/think-about-your-audience/",
+    "pubDate": "2026-01-14T12:07:04.000Z",
+    "content": "When I started writing this blog, I didn’t fully understand what “think about your audience” really meant. At first, it sounded like advice meant for marketers or professional writers. But over time, I’ve realized it’s one of the most important lessons I’m learning, not just for writing, but for building software and contributing to open source.\nWho I’m Writing (and Building) For\nWhen I sit down t",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Ignacio Casal Quinteiro: Mecalin",
+    "link": "https://blogs.gnome.org/nacho/2026/01/15/mecalin/",
+    "pubDate": "2026-01-15T19:13:22.000Z",
+    "content": "Many years ago when I was a kid, I took typing lessons where they introduced me to a program called Mecawin. With it, I learned how to type, and it became a program I always appreciated not because it was fancy, but because it showed step by step how to work with a keyboard.\nNow the circle of life is coming back: my kid will turn 10 this year. So I started searching for a good typing tutor for Lin",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://blogs.gnome.org/nacho/files/2026/01/2-lesson-view-1024x768.png"
+  },
+  {
+    "title": "This Week in GNOME: #232 Upcoming Deadlines",
+    "link": "https://thisweek.gnome.org/posts/2026/01/twig-232/",
+    "pubDate": "2026-01-15T22:47:00.000Z",
+    "content": "Update on what happened across the GNOME project in the week from January 09 to January 16.\nGNOME Releases\nSophie (she/her) reports\nThe API, UI, and feature freeze for GNOME 50 is closing in. The deadline is in about two weeks from now on Jan 31 at 23:59 UTC. After that, the focus will be on bug fixes, polishing, and translations for GNOME 50.\nSophie (she/her) announces\nGNOME 50 alpha has been rel",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://thisweek.gnome.org/_astro/Rewaita.tRcOS04J_ZhWcTi.webp"
+  },
+  {
+    "title": "Gedit Technology blog: gedit 49.0 released",
+    "link": "https://gedit-text-editor.org/blog/2026-01-16-gedit-49-0.html",
+    "pubDate": "2026-01-16T10:00:00.000Z",
+    "content": "gedit 49.0 has\n  been released! Here are the highlights since version 48.0 which dates back\n  from September 2024. (Some sections are a bit technical).\n\nFile loading and saving enhancements\nLoading a big file is now much faster.\nmore details).\n  \nImproved preferences\n\n\n\n\n\n\n  There is now a \"Reset All...\" button in the Preferences dialog. And it is now\n  possible to configure the default language u",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://gedit-text-editor.org/blog/images/2025-07-14/prefs-reset.png"
+  },
+  {
+    "title": "Allan Day: GNOME Foundation Update, 2026-01-16",
+    "link": "https://blogs.gnome.org/aday/2026/01/16/gnome-foundation-update-2026-01-16/",
+    "pubDate": "2026-01-16T17:48:30.000Z",
+    "content": "Welcome to my regular weekly update on what’s been happening at the GNOME Foundation. As usual, this post just covers highlights, and there are plenty of smaller and in progress items that haven’t been included.\nBoard meeting\nThe Board of Directors had a regular meeting this week. Topics on the agenda included:\nswitching to a monthly rather than bi-monthly meeting schedule, which will give more ti",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Sriram Ramkrishna: GNOME OS Hackfest During FOSDEM week",
+    "link": "https://blogs.gnome.org/sri/2026/01/17/gnome-os-hackfest-during-fosdem-week/",
+    "pubDate": "2026-01-17T23:17:46.000Z",
+    "content": "For those of you who are attending FOSDEM, we’re doing a GNOME OS hackfest and invite those of you who might be interested on our experiments on concepts as the ‘anti-distro’, eg an OS with no distro packaging that integrates GNOME desktop patterns directly.\nThe hackfest is from January 28th – January 29th. If you’re interested, feel free to respond on the comments. I don’t have an exact location ",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Ignacy Kuchciński: Digital Wellbeing Contract: Conclusion",
+    "link": "https://blogs.gnome.org/ignapk/2026/01/20/digital-wellbeing-contract-conclusion/",
+    "pubDate": "2026-01-20T03:00:52.000Z",
+    "content": "A lot of progress has been made since my last Digital Wellbeing update two months ago. That post covered the initial screen time limits feature, which was implemented in the Parental Controls app, Settings and GNOME Shell. There’s a screen recording in the post, created with the help of a custom GNOME OS image, in case you’re interested.\nFinishing Screen Time Limits\nAfter implementing the major fr",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://blogs.gnome.org/ignapk/files/2026/01/shell-final-locked.png"
+  },
+  {
+    "title": "Sam Thursfield: Status update, 21st January 2026",
+    "link": "https://samthursfield.wordpress.com/2026/01/21/status-update-21st-january-2026/",
+    "pubDate": "2026-01-21T13:00:22.000Z",
+    "content": "Happy new year, ye bunch of good folks who follow my blog.\nI ain’t got a huge bag of stuff to announce. It’s raining like January. I’ve been pretty busy with work amongst other things, doing stuff with operating systems but mostly internal work, and mostly management and planning at that.\nWe did make an actual OS last year though, here’s a nice blog post from Endless and a video interview about so",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Sebastian Wick: Best Practices for Ownership in GLib",
+    "link": "https://blog.sebastianwick.net/posts/glib-ownership-best-practices/",
+    "pubDate": "2026-01-21T15:31:23.000Z",
+    "content": "For all the rightful criticisms that C gets, GLib does manage to alleviate at least some of it. If we can’t use a better language, we should at least make use of all the tools we have in C with GLib.\nThis post looks at the topic of ownership, and also how it applies to libdex fibers.\nOwnership\nIn normal C usage, it is often not obvious at all if an object that gets returned from a function (either",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Christian Schaller: Can AI help ‘fix’ the patent system?",
+    "link": "https://blogs.gnome.org/uraeus/2026/01/21/can-ai-help-fix-the-patent-system/",
+    "pubDate": "2026-01-21T18:35:18.000Z",
+    "content": "So one thing I think anyone involved with software development for the last decades can see is the problem of “forest of bogus patents”. I have recently been trying to use AI to look at patents in various ways. So one idea I had was “could AI help improve the quality of patents and free us from obvious ones?”\nLets start with the justification for patents existing at all. The most common argument f",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "This Week in GNOME: #233 Editing Events",
+    "link": "https://thisweek.gnome.org/posts/2026/01/twig-233/",
+    "pubDate": "2026-01-22T16:17:00.000Z",
+    "content": "Update on what happened across the GNOME project in the week from January 16 to January 23.\nGNOME Core Apps and Libraries\nCalendar ↗\nA simple calendar application.\nmindonwarp says\nNew\nThe event editor dialog now shows organizer and participant information. A new section displays the organizer’s name and email, along with summary rows for participants (individuals and groups) and resources/rooms.\nS",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://thisweek.gnome.org/_astro/participant_details_light.j_4GXIUb_Z2deReX.webp"
+  },
+  {
+    "title": "Luis Villa: two questions on software “sovereignty”",
+    "link": "https://lu.is/2026/01/two-questions-on-software-sovereignty/",
+    "pubDate": "2026-01-23T01:46:18.000Z",
+    "content": "The EU looks to be getting more serious about software independence, often under the branding of “sovereignty”. India has been taking this path for a while. (A Wikipedia article on that needs a lot of love.) I don’t have coherent thoughts on this yet, but prompted by some recent discussions, two big questions:\nFirst: does software sovereignty for a geopolitical entity mean:\nwe wrote the software f",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Allan Day: GNOME Foundation Update, 2026-01-23",
+    "link": "https://blogs.gnome.org/aday/2026/01/23/gnome-foundation-update-2026-01-23/",
+    "pubDate": "2026-01-23T17:07:22.000Z",
+    "content": "It’s Friday so it’s time for another GNOME Foundation update. Much of this week has been a continuation of items from last week’s update, so I’m going to keep it fairly short and sweet.\nWith FOSDEM happening next week (31st January to 1st February), preparation for the conference was the main standout item this week. There’s a lot happening around the conference for GNOME, including:\nThree hackfes",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": null
+  },
+  {
+    "title": "Sam Thursfield: AI predictions for 2026",
+    "link": "https://samthursfield.wordpress.com/2026/01/24/ai-predictions-for-2026/",
+    "pubDate": "2026-01-24T20:32:53.000Z",
+    "content": "Its a crazy time to be part of the tech world. I’m happy to be sat on the fringes here but I want to try and capture a bit of the madness, so in a few years we can look back on this blogpost and think “Oh yes, shit was wild in 2026”.\n(insert some AI slop image here of a raccoon driving a racing car or something)\nI have read the blog of Geoffrey Huntley for about 5 years since he famously right-cli",
+    "creator": "",
+    "sourceTitle": "Planet GNOME",
+    "sheetCategory": "Data + teknologia",
+    "enforcedImage": "https://s0.wp.com/wp-content/mu-plugins/wpcom-smileys/twemoji/2/72x72/1f642.png"
+  }
+]
