@@ -47,16 +47,22 @@ jobs:
           git config --global user.name 'NewsRobot'
           git config --global user.email 'robot@openmag.fi'
           
-          # Lisätään kaikki muuttuneet tiedostot
+          # 1. Lisätään kaikki muutokset heti (staging)
           git add data.json stats.json last_clean.txt
           if [ -d "sources" ]; then git add sources/*.json; fi
           
-          # Tehdään commit vain jos muutoksia on
+          # 2. Tarkistetaan onko oikeasti mitään tallennettavaa
           if git diff --cached --quiet; then
-            echo "Ei muutoksia tallennettavaksi."
-          else
-            git commit -m "Automated news update: Added feed metadata and categories [skip ci]"
-            # Pull ja Rebase varmistavat, ettei tule konflikteja
-            git pull --rebase origin main
-            git push origin main
+            echo "Ei muutoksia."
+            exit 0
           fi
+
+          # 3. Tehdään commit paikallisesti
+          git commit -m "Automated news update [skip ci]"
+
+          # 4. Haetaan muutokset ja sovitetaan ne yhteen
+          # Käytetään --autostash, joka siirtää mahdolliset kesken jääneet tiedostot sivuun pullin ajaksi
+          git pull --rebase --autostash origin main
+          
+          # 5. Työnnetään takaisin GitHubiin
+          git push origin main
