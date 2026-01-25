@@ -111,11 +111,11 @@
             display: flex;
             margin: 20px;
             align-items: center;
-            gap: 0.5em;
+            gap: 1em;
         }
 
         #feed-logo-container > img {
-            height: 50px;
+            height: 60px;
         }
 
         /* GRID */
@@ -336,9 +336,24 @@ async function initSidebar() {
 
 function filterByCategory(catName) {
     currentCategory = catName;
+    
+    // 1. Päivitetään otsikko
     document.getElementById('current-view-title').innerText = catName;
+    
+    // 2. NOLLATAAN LOGO JA KUVAUS
+    // Tämä poistaa edellisen yksittäisen lähteen ikonit, kun siirrytään yleisempään kategoriaan
+    const viewDesc = document.getElementById('current-view-description');
+    const logoCont = document.getElementById('feed-logo-container');
+    
+    if (viewDesc) viewDesc.innerText = `Kaikki uutiset kategoriasta: ${catName}`;
+    if (logoCont) logoCont.innerHTML = ""; 
+
     displayedCount = 0;
+    
+    // Poistetaan aktiivisuus muilta sivupalkin kohteilta
     document.querySelectorAll('.source-item').forEach(i => i.classList.remove('active'));
+    
+    // Ladataan koko päivän data, josta displayArticles suodattaa kategorian
     loadData('data.json');
 }
 
