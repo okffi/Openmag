@@ -95,7 +95,6 @@ async function run() {
             seenPostUrls.add(cleanUrl);
             return true;
         });
-        --
 
         // 4. TALLENNUS ARKISTOIHIN
         const sourceStats = {};
