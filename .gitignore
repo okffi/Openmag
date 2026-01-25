@@ -1,7 +1,10 @@
 node_modules/
-stats.json
-data.json
-failed_feeds.txt
 .DS_Store
-node_modules/whatwg-encoding/LICENSE.txt
-node_modules/whatwg-mimetype/LICENSE.txt
+last_clean.txt
+failed_feeds.txt
+
+# Pakotetaan nämä pysymään mukana, vaikka olisivat listalla
+!data.json
+!stats.json
+!sources/
+!sources/*.json
