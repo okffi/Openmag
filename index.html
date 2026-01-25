@@ -189,47 +189,50 @@
         }
         #scroll-sentinel { text-align: center; padding: 80px 0; font-size: 0.8rem; color: #bbb; text-transform: uppercase; letter-spacing: 3px; }
 
-        /* Kategorian säiliö */
-    .category-group {
-        border-bottom: 1px solid #f9f9f9;
-    }
-    
-    /* Nuoli-indikaattori otsikkoon */
-    .category-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: background 0.2s;
-    }
-    
-    .category-header:hover {
-        background-color: #fcfcfc;
-    }
-    
-    .category-header::after {
-        content: '›';
-        font-size: 1.2rem;
-        transition: transform 0.3s;
-        color: #ccc;
-    }
-    
-    /* Kun kategoria on auki */
-    .category-group.open .category-header::after {
-        transform: rotate(90-deg);
-        color: var(--primary-color);
-    }
-    
-    /* Lähteiden lista */
-    .source-submenu {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-out;
-        background: #fff;
-    }
-    
-    .category-group.open .source-submenu {
-        max-height: 1000px; /* Tarpeeksi suuri arvo, jotta kaikki mahtuu */
-    }
+       /* Säiliö kategorialle ja sen lähteille */
+        .category-group {
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+        
+        /* Tyylitellään kategoriaotsikko nuolella */
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+        }
+        
+        .category-header::after {
+            content: '›';
+            font-size: 1.2rem;
+            color: #ccc;
+            transition: transform 0.3s;
+        }
+        
+        /* Kun ryhmä on auki, käännetään nuoli */
+        .category-group.open .category-header::after {
+            transform: rotate(90deg);
+            color: var(--primary-color);
+        }
+        
+        /* Alavalikon piilotus ja animaatio */
+        .source-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+            background-color: #fafafa;
+        }
+        
+        .category-group.open .source-submenu {
+            max-height: 2000px; /* Tarpeeksi suuri arvo */
+            transition: max-height 0.4s ease-in;
+        }
+        
+        /* Sisennys alavalikon kohteille */
+        .source-submenu .source-item {
+            padding-left: 50px;
+            border-left: none;
+        }
     </style>
 </head>
 <body>
@@ -374,7 +377,6 @@ function displayArticles() {
     });
 }
 
-// Sidebarin ryhmittely
 async function initSidebar() {
     try {
         const response = await fetch('stats.json?v=' + Date.now());
@@ -388,22 +390,53 @@ async function initSidebar() {
             cats[cat].push({ name, ...stats[name] });
         });
 
+        // "Kaikki uutiset" pysyy omana irrallisena kohteenaan ylhäällä
         list.innerHTML = `<div class="source-item active" onclick="changeSource('data.json', 'Tuoreimmat uutiset', this)">Kaikki uutiset</div>`;
 
         Object.keys(cats).sort().forEach(catName => {
-            const catHeader = document.createElement('div');
-            catHeader.className = 'category-header';
-            catHeader.innerText = catName;
-            catHeader.onclick = () => filterByCategory(catName);
-            list.appendChild(catHeader);
+            // Luodaan säiliöryhmä
+            const group = document.createElement('div');
+            group.className = 'category-group';
+            
+            // Otsikko
+            const header = document.createElement('div');
+            header.className = 'category-header';
+            header.innerText = catName;
+            
+            // Alavalikko
+            const submenu = document.createElement('div');
+            submenu.className = 'source-submenu';
 
+            header.onclick = () => {
+                const wasOpen = group.classList.contains('open');
+                
+                // Suljetaan muut ryhmät (valinnainen, poista jos haluat pitää monta auki)
+                document.querySelectorAll('.category-group').forEach(g => g.classList.remove('open'));
+                
+                // Jos ei ollut auki, avataan nyt
+                if (!wasOpen) {
+                    group.classList.add('open');
+                }
+                
+                // Suodatetaan uutiset kategorialla
+                filterByCategory(catName);
+            };
+
+            // Lisätään lähteet alavalikkoon
             cats[catName].sort((a,b) => a.name.localeCompare(b.name)).forEach(src => {
                 const item = document.createElement('div');
                 item.className = 'source-item';
                 item.innerHTML = `${src.name} <span>${src.count}</span>`;
-                item.onclick = () => changeSource(`sources/${src.file}`, src.name, item);
-                list.appendChild(item);
+                item.onclick = (e) => {
+                    e.stopPropagation(); // Estää kategorian sulkeutumisen klikatessa lähdettä
+                    changeSource(`sources/${src.file}`, src.name, item);
+                };
+                submenu.appendChild(item);
             });
+
+            group.appendChild(header);
+            group.appendChild(submenu);
+            list.appendChild(group);
         });
     } catch (e) { console.error("Sidebar failed", e); }
 }
