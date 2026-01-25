@@ -55,18 +55,28 @@ async function run() {
         }
 
         // 2. HAETAAN SYÖTTEET
+// 2. HAETAAN SYÖTTEET (Cache Buster lisätty)
         console.log("Haetaan syötelistaa Google Sheetsistä...");
-        const response = await axios.get(SHEET_CSV_URL);
+        const cacheBuster = `&cb=${Date.now()}`;
+        const response = await axios.get(SHEET_CSV_URL + cacheBuster);
         const rows = response.data.split('\n').slice(1);
 
         const feeds = rows.map(row => {
             if (!row || row.trim() === '') return null;
+            // Pilkotaan rivi huomioiden lainausmerkit sarakkeiden sisällä
             const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
             if (cols.length < 3) return null; 
+            
             return { 
                 category: cols[0]?.replace(/^"|"$/g, '').trim() || "General",
+                // Tässä vaiheessa pidetään haku samana, mutta varaudutaan uusiin sarakkeisiin
                 rssUrl: cols[2]?.replace(/^"|"$/g, '').trim(), 
-                scrapeUrl: cols[3]?.replace(/^"|"$/g, '').trim() 
+                scrapeUrl: cols[3]?.replace(/^"|"$/g, '').trim(),
+                // Tulevaisuuden varalle: nappaamme nimet sarakkeista 4, 5 ja kielen sarakkeesta 6
+                // jos ne joskus ilmestyvät sinne.
+                nameFI: cols[4]?.replace(/^"|"$/g, '').trim(),
+                nameEN: cols[5]?.replace(/^"|"$/g, '').trim(),
+                lang: cols[6]?.replace(/^"|"$/g, '').trim() || "FI"
             };
         }).filter(f => f !== null);
 
@@ -79,13 +89,13 @@ async function run() {
                     console.log(`[SCRAPE] ${feed.scrapeUrl}`);
                     await processScraper(feed, allArticles, now);
                 }
+                // Pieni viive estää robotin leimaamisen hyökkäykseksi
                 await new Promise(r => setTimeout(r, 600));
             } catch (e) {
-                console.error(`Virhe: ${e.message}`);
+                console.error(`Virhe kohteessa ${feed.rssUrl || feed.scrapeUrl}: ${e.message}`);
                 failedFeeds.push(`${feed.category}: ${e.message}`);
             }
         }
-
         // 3. DUPLIKAATTIEN POISTO
         const seenPostUrls = new Set();
         allArticles = allArticles.filter(art => {
