@@ -343,12 +343,22 @@ function extractImageFromContent(item, baseUrl) {
     $('img').each((i, el) => {
         if (foundImg) return;
         
-        let src = $(el).attr('src') || $(el).attr('data-src');
+        let src = $(el).attr('src') || $(el).attr('data-src') || $(el).attr('data-lazy-src');
+        
+        // 1. ÄLYKKÄÄMPI SRCSET: Otetaan listan viimeinen (yleensä suurin), ei ensimmäinen
         if (!src && $(el).attr('srcset')) {
-            src = $(el).attr('srcset').split(',')[0].trim().split(' ')[0];
+            const sets = $(el).attr('srcset').split(',');
+            src = sets[sets.length - 1].trim().split(' ')[0];
         }
 
         if (src) {
+            // 2. SIIVOUS: Poistetaan WordPress/Jetpack-parametrit (?resize..., ?ssl=1 jne.)
+            // Tämä korjaa "rikkinäiset" i0.wp.com-linkit alkuperäisiksi kuvaosoitteiksi
+            if (src.includes('?')) {
+                src = src.split('?')[0];
+            }
+
+            // 3. ABSOLUUTTINEN POLKU: Varmistetaan, että domain on mukana
             if (src.startsWith('/') && !src.startsWith('//')) {
                 try {
                     const urlObj = new URL(baseUrl);
@@ -358,8 +368,14 @@ function extractImageFromContent(item, baseUrl) {
                 src = 'https:' + src;
             }
             
+            // 4. SUODATUS: Ohitetaan roska, mutta hyväksytään validit kuvat
             if (src.startsWith('http')) {
-                if (!/analytics|doubleclick|pixel|1x1|wp-emoji|avatar/i.test(src)) {
+                const isUseless = /analytics|doubleclick|pixel|1x1|wp-emoji|avatar|count/i.test(src);
+                // Varmistetaan vielä, ettei kyseessä ole jokin hyvin pieni tracking-kuva HTML-attribuuttien perusteella
+                const width = $(el).attr('width');
+                const isTooSmall = width && parseInt(width) < 50;
+
+                if (!isUseless && !isTooSmall) {
                     foundImg = src;
                 }
             }
