@@ -315,7 +315,10 @@ async function processScraper(feed, allArticles, now) {
                     creator: item.creator || "",
                     sourceTitle: domain,
                     sheetCategory: feed.category,
-                    enforcedImage: finalImg 
+                    enforcedImage: finalImg,
+                    // LISÄÄ NÄMÄ MYÖS SCRAPERIIN:
+                    sourceDescription: "Verkkosivulta poimittu uutinen.",
+                    sourceLogo: `https://www.google.com/s2/favicons?sz=64&domain=${domain}`
                 });
             }
         }
