@@ -47,23 +47,20 @@ jobs:
           git config --global user.name 'NewsRobot'
           git config --global user.email 'robot@openmag.fi'
           
-          # 1. Lisätään tiedostot seurantaan (myös ne .gitignoren kieltämät)
+          # Haetaan tuorein tilanne
+          git pull origin main --rebase
+
+          # Pakotetaan uusi data ja stats seurantaan
           git add -f data.json stats.json
           git add -f last_clean.txt || true
+          
+          # Sources-kansio: lisätään uudet, poistetaan ne joita ei enää ole
           if [ -d "sources" ]; then
-            git add -f sources/*.json || true
+            git add -A sources/*.json || true
           fi
-          git add failed_feeds.txt || true
-
-          # 2. Laitetaan muutokset hetkeksi talteen ja haetaan tuorein koodi
-          # Tämä estää "unstaged changes" -virheen rebasen aikana
-          git stash
-          git pull origin main --rebase
-          git stash pop || echo "Ei palautettavaa stashia"
-
-          # 3. Tehdään commit ja push vain jos on oikeasti uutta dataa
+          
           if ! git diff --cached --quiet; then
-            git commit -m "Automated update: data sync [skip ci]"
+            git commit -m "Cleanup: removed problem source and updated news [skip ci]"
             git push origin main
           else
             echo "Ei uutta tallennettavaa."
