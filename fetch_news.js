@@ -38,7 +38,7 @@ async function run() {
             if (fs.existsSync(sourcesDir)) {
                 fs.readdirSync(sourcesDir).forEach(file => fs.unlinkSync(path.join(sourcesDir, file)));
             } else {
-                fs.mkdirSync(sourcesDir);
+                fs.writeFileSync(cleanLogFile, today); // Tämä luo tiedoston
             }
             
             // Fyysinen nollaus
