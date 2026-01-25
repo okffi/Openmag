@@ -231,22 +231,19 @@ async function processRSS(feed, allArticles, now) {
             img = item.enclosure.url;
         }
 
-        // B) Jos ei vieläkään löydy (esim. OKFN), kaivetaan sisällön seasta
+        // B) Jos ei vieläkään löydy (esim. OKFN/ePressi), kaivetaan sisällön seasta
         if (!img) {
             img = extractImageFromContent(item, feed.rssUrl);
         }
 
         // C) ÄLYKÄS PUHDISTUS
         if (img) {
-            // Poistetaan parametrit VAIN WordPress-tyyppisiltä kuvilta (COAR, OKFN jne.)
-            // Guardianin (guim.co.uk) ja muiden isojen medioiden parametrit pidetään
             if (img.includes('i0.wp.com') || img.includes('wp-content')) {
                 if (img.includes('?')) {
                     img = img.split('?')[0];
                 }
             }
             
-            // Pakotetaan absoluuttinen polku, jos jäi suhteelliseksi
             if (img.startsWith('/') && !img.startsWith('http')) {
                 try {
                     const urlObj = new URL(feed.rssUrl);
@@ -254,12 +251,31 @@ async function processRSS(feed, allArticles, now) {
                 } catch (e) { img = null; }
             }
             
-            // Jos kyseessä on Guardianin master-kuva, varmistetaan että se on https
             if (img && img.includes('guim.co.uk')) {
                 img = img.replace('http://', 'https://');
             }
         }
         // --- KUVAN POIMINTA PÄÄTTYY ---
+
+        // --- TEKSTIN POIMINTA ALKAA ---
+        // Haetaan raakateksti useasta mahdollisesta kentästä (ePressi käyttää content:encoded)
+        const rawContent = item['content:encoded'] || item.contentEncoded || item.content || item.description || "";
+        
+        // Poistetaan HTML ja ylimääräiset tyhjät
+        let cleanText = rawContent
+            .replace(/<[^>]*>/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+
+        // Jos teksti jäi tyhjäksi tai on vain pisteitä, käytetään otsikkoa varalla
+        if (cleanText.length < 10 || cleanText === "...") {
+            cleanText = item.title || "";
+        }
+
+        const finalSnippet = cleanText.length > 500 
+            ? cleanText.substring(0, 500) + "..." 
+            : cleanText;
+        // --- TEKSTIN POIMINTA PÄÄTTYY ---
 
         let articleLink = item.link;
         if (articleLink && !articleLink.startsWith('http')) {
@@ -274,7 +290,7 @@ async function processRSS(feed, allArticles, now) {
             title: item.title,
             link: articleLink,
             pubDate: itemDate.toISOString(),
-            content: (item.contentSnippet || item.summary || "").replace(/<[^>]*>/g, '').trim().substring(0, 400),
+            content: finalSnippet,
             creator: item.creator || item.author || "",
             sourceTitle: feedContent.title || new URL(feed.rssUrl).hostname,
             sheetCategory: feed.category,
