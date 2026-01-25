@@ -414,7 +414,9 @@ async function changeSource(file, title, el) {
     
     // 3. Rakennetaan linkitetty otsikko ja metadata
     if (allArticles.length > 0) {
+        // index.html:n changeSource-funktiossa
         const first = allArticles[0];
+        const rssLink = first.originalRssUrl || file; // Käyttää alkuperäistä, jos löytyy, muuten JSONia
         
         // Selvitetään sivuston pääosoite uutisen linkistä
         let siteUrl = "#";
@@ -425,7 +427,7 @@ async function changeSource(file, title, el) {
         // Päivitetään otsikko linkillä ja RSS-ikonilla
         viewTitle.innerHTML = `
             <a href="${siteUrl}" target="_blank" class="title-link">${title}</a>
-            <a href="${file}" target="_blank" class="rss-link" title="RSS-lähde">
+            <a href="${rssLink}" target="_blank" class="rss-link" title="Alkuperäinen RSS-lähde">
                 <svg viewBox="0 0 24 24" fill="currentColor">
                     <path d="M6.18,15.64A2.18,2.18,0,0,1,8.36,17.82c0,1.21-.98,2.18-2.18,2.18A2.18,2.18,0,0,1,4,17.82,2.18,2.18,0,0,1,6.18,15.64M4,4.44A15.56,15.56,0,0,1,19.56,20h-2.83A12.73,12.73,0,0,0,4,7.27Zm0,5.66a9.9,9.9,0,0,1,9.9,9.9H11.07A7.07,7.07,0,0,0,4,12.93Z"/>
                 </svg>
