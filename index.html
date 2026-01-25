@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     
-    <style>
+<style>
         :root {
             --primary-color: #b58d67;
             --bg-color: #fdfaf6;
@@ -19,7 +19,7 @@
             --sidebar-width: 300px;
         }
 
-        /* Globaali nollaus linkeille ja perusasetukset */
+        /* Globaali nollaus ja perusasetukset */
         * { box-sizing: border-box; }
         a { text-decoration: none !important; color: inherit; }
         
@@ -27,26 +27,65 @@
             background-color: var(--bg-color); 
             font-family: 'Source Sans Pro', sans-serif; 
             margin: 0; 
-            padding: 20px; 
+            padding: 0; /* Muutettu 0:ksi, jotta yläpalkki on reunoissa kiinni */
             color: var(--text-dark);
             line-height: 1.6;
         }
         
-        header { text-align: center; margin: 60px 0 40px; }
-        h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 8vw, 4rem); margin: 0; letter-spacing: -1px; }
-        .subline { text-transform: uppercase; letter-spacing: 4px; font-size: 0.75rem; color: var(--text-muted); margin-top: 10px; font-weight: 600; }
+        /* 1. HUOMAAMATON YLÄPALKKI (LOGO) */
+        header { 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            background: rgba(253, 250, 246, 0.95);
+            backdrop-filter: blur(5px);
+            margin: 0; 
+            padding: 10px 20px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-        /* Yläpalkin suodatus */
-        #filters { text-align: center; margin-bottom: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+        /* Saitin nimi ylhäällä pienellä */
+        header h1 { 
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem; 
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* 2. DYYNAAMINEN NÄKYMÄN OTSIKKO (Kategoria/Lähde) */
+        .view-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem); /* Skaalautuva koko */
+            margin: 60px auto 20px;
+            max-width: 1400px;
+            padding: 0 20px;
+            letter-spacing: -1px;
+            text-align: left; /* Feedly-tyylinen vasen tasaus */
+        }
+
+        /* Yläpalkin suodatus (Pillerit) */
+        #filters { 
+            max-width: 1400px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 12px; 
+        }
+
         .filter-btn { 
-            transition: all 0.3s ease; padding: 10px 22px; border: 1px solid #e0e0e0; 
+            transition: all 0.3s ease; padding: 8px 18px; border: 1px solid #e0e0e0; 
             border-radius: 25px; background: var(--card-bg); cursor: pointer; 
             font-family: inherit; font-size: 0.85rem; font-weight: 600; color: var(--text-muted);
         }
         .filter-btn.active { background: var(--primary-color) !important; color: white !important; border-color: var(--primary-color) !important; box-shadow: 0 4px 12px rgba(181, 141, 103, 0.3); }
 
         /* Grid asettelu */
-        .grid { width: 100%; max-width: 1400px; margin: 0 auto; opacity: 0; transition: opacity 0.5s ease; }
+        .grid { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 20px; opacity: 0; transition: opacity 0.5s ease; }
         .grid.loaded { opacity: 1; }
         .grid-sizer, .grid-item { width: 31%; }
         @media (max-width: 1100px) { .grid-sizer, .grid-item { width: 48%; } }
@@ -74,24 +113,19 @@
             margin-bottom: 12px; 
         }
 
-        .category-label:hover {
-            text-decoration: underline !important;
-            opacity: 0.8;
-            filter: brightness(1.2); /* Kirkastaa väriä hieman */
-        }
+        .category-label:hover { text-decoration: underline !important; opacity: 0.8; filter: brightness(1.2); }
         
         .grid-item h2 { font-family: 'Playfair Display', serif; margin: 0 0 15px; font-size: 1.4rem; line-height: 1.3; color: var(--text-dark); transition: color 0.2s ease; }
         .grid-item:hover h2 { color: var(--primary-color); }
         .grid-item p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0; }
         
-        /* META-INFO - Eristetty hierarkia span-elementeille */
         .meta-info { 
             display: flex; justify-content: space-between; align-items: center;
             margin-top: 20px; padding-top: 15px; border-top: 1px solid #f0f0f0; 
         }
         .meta-info span { font-size: 0.7rem; color: #999 !important; font-weight: 600; text-transform: uppercase; }
 
-        /* Sivupalkki */
+        /* SIVUPALKKI (FEEDLY-TYYLI) */
         .sidebar { 
             height: 100%; width: var(--sidebar-width); position: fixed; z-index: 2000; 
             top: 0; left: calc(-1 * var(--sidebar-width)); background-color: #fff; 
@@ -101,19 +135,15 @@
         .sidebar.open { transform: translateX(var(--sidebar-width)); }
         .sidebar h3 { padding: 0 30px 20px; margin: 0; font-family: 'Playfair Display', serif; font-size: 1.8rem; border-bottom: 1px solid #f0f0f0; }
         
-        .source-item { padding: 15px 30px; cursor: pointer; border-bottom: 1px solid #f9f9f9; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; }
+        .source-item { padding: 12px 30px; cursor: pointer; border-bottom: 1px solid #f9f9f9; display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; color: var(--text-muted); }
         .source-item:hover { background-color: #fcfcfc; color: var(--primary-color); }
         .source-item.active { background-color: #fffaf5; color: var(--primary-color); font-weight: 600; border-left: 4px solid var(--primary-color); }
-        .source-item span { font-size: 0.75rem; background: #f0f0f0; padding: 2px 8px; border-radius: 10px; color: #888; }
-        .source-trigger:hover {
-            text-decoration: underline !important;
-            opacity: 0.8;
-        }
+        .source-item span { font-size: 0.7rem; background: #f0f0f0; padding: 2px 8px; border-radius: 10px; color: #888; }
 
         #sidebar-toggle { 
-            position: fixed; top: 25px; left: 25px; z-index: 1500; background: var(--text-dark); 
-            color: white; border: none; padding: 12px 18px; border-radius: 50px; cursor: pointer; 
-            font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+            position: fixed; top: 12px; left: 20px; z-index: 1500; background: var(--text-dark); 
+            color: white; border: none; padding: 8px 15px; border-radius: 50px; cursor: pointer; 
+            font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.2s;
         }
         #sidebar-overlay { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.4); z-index: 1900; backdrop-filter: blur(2px); }
@@ -281,6 +311,7 @@ function createFilterUI(categories) {
 
 function setCategory(cat, btn) {
     if (isLoading) return;
+    document.querySelector('h1').innerText = (cat === 'All') ? 'Tuoreimmat tarinat' : cat;
     currentCategory = cat;
     displayedCount = 0;
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -350,7 +381,8 @@ function handleCategoryClick(event, catName) {
     }
 }
 
-async function changeSource(file, el) {
+async function changeSource(file, title, el) {
+    document.querySelector('h1').innerText = title;
     currentCategory = 'All';
     displayedCount = 0;
 
@@ -367,20 +399,40 @@ async function changeSource(file, el) {
 }
 
 async function initSidebar() {
-    try {
-        const response = await fetch('stats.json?v=' + Date.now());
-        const stats = await response.json();
-        const list = document.getElementById('source-list');
-        list.innerHTML = '<div class="source-item active" onclick="changeSource(\'data.json\', this)">Kaikki lähteet <span>' + allArticles.length + '</span></div>';
+    const response = await fetch('stats.json?v=' + Date.now());
+    const stats = await response.json();
+    const list = document.getElementById('source-list');
+    
+    // Ryhmitellään lähteet kategorioittain
+    const categories = {};
+    Object.keys(stats).forEach(name => {
+        const cat = stats[name].category || "Muut";
+        if (!categories[cat]) categories[cat] = [];
+        categories[cat].push({ name, ...stats[name] });
+    });
+
+    list.innerHTML = `<div class="source-item active" onclick="changeSource('data.json', 'Tuoreimmat tarinat', this)">Kaikki lähteet</div>`;
+
+    Object.keys(categories).sort().forEach(catName => {
+        // Luodaan kategorian otsikko/haitari
+        const catEl = document.createElement('div');
+        catEl.className = 'category-group';
+        catEl.innerHTML = `<div class="category-header" onclick="toggleCategory(this)">${catName}</div>`;
         
-        Object.keys(stats).sort().forEach(name => {
+        const subList = document.createElement('div');
+        subList.className = 'sub-source-list';
+        
+        categories[catName].sort((a,b) => a.name.localeCompare(b.name)).forEach(src => {
             const item = document.createElement('div');
-            item.className = 'source-item';
-            item.innerHTML = `${name} <span>${stats[name].count}</span>`;
-            item.onclick = () => changeSource(`sources/${stats[name].file}`, item);
-            list.appendChild(item);
+            item.className = 'source-item sub-item';
+            item.innerHTML = `${src.name} <span>${src.count}</span>`;
+            item.onclick = () => changeSource(`sources/${src.file}`, src.name, item);
+            subList.appendChild(item);
         });
-    } catch (e) { console.error("Sidebar stats load failed"); }
+        
+        catEl.appendChild(subList);
+        list.appendChild(catEl);
+    });
 }
 
 function toggleSidebar() {
