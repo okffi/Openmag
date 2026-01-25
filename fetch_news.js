@@ -345,20 +345,22 @@ function extractImageFromContent(item, baseUrl) {
         
         let src = $(el).attr('src') || $(el).attr('data-src') || $(el).attr('data-lazy-src');
         
-        // 1. ÄLYKKÄÄMPI SRCSET: Otetaan listan viimeinen (yleensä suurin), ei ensimmäinen
         if (!src && $(el).attr('srcset')) {
             const sets = $(el).attr('srcset').split(',');
             src = sets[sets.length - 1].trim().split(' ')[0];
         }
 
         if (src) {
-            // 2. SIIVOUS: Poistetaan WordPress/Jetpack-parametrit (?resize..., ?ssl=1 jne.)
-            // Tämä korjaa "rikkinäiset" i0.wp.com-linkit alkuperäisiksi kuvaosoitteiksi
+            // --- TÄRKEIN KORJAUS COARILLE JA WP-KUVILLE ---
+            // Poistetaan kaikki parametrit, jotta wsrv.nl ei saa tuplakoodattuja merkkejä
+            // Esim: image.png?resize=1024%2C768 -> image.png
             if (src.includes('?')) {
                 src = src.split('?')[0];
             }
+            
+            // Jos kyseessä on i0.wp.com -linkki, se toimii usein paremmin ilman i0-alkua
+            // mutta usein parametrien poisto riittää jo sellaisenaan.
 
-            // 3. ABSOLUUTTINEN POLKU: Varmistetaan, että domain on mukana
             if (src.startsWith('/') && !src.startsWith('//')) {
                 try {
                     const urlObj = new URL(baseUrl);
@@ -368,14 +370,9 @@ function extractImageFromContent(item, baseUrl) {
                 src = 'https:' + src;
             }
             
-            // 4. SUODATUS: Ohitetaan roska, mutta hyväksytään validit kuvat
             if (src.startsWith('http')) {
                 const isUseless = /analytics|doubleclick|pixel|1x1|wp-emoji|avatar|count/i.test(src);
-                // Varmistetaan vielä, ettei kyseessä ole jokin hyvin pieni tracking-kuva HTML-attribuuttien perusteella
-                const width = $(el).attr('width');
-                const isTooSmall = width && parseInt(width) < 50;
-
-                if (!isUseless && !isTooSmall) {
+                if (!isUseless) {
                     foundImg = src;
                 }
             }
