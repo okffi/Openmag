@@ -47,24 +47,16 @@ jobs:
           git config --global user.name 'NewsRobot'
           git config --global user.email 'robot@openmag.fi'
           
-          # 1. Haetaan GitHubin nykytilanne ja pakotetaan paikallinen tila vastaamaan sitä
-          git fetch origin main
-          git reset --mixed origin/main
-
-          # 2. Lisätään robotin luoma uusi data
-          git add -f data.json stats.json last_clean.txt
+          # Lisätään kaikki muuttuneet tiedostot
+          git add data.json stats.json last_clean.txt
+          if [ -d "sources" ]; then git add sources/*.json; fi
           
-          # Lisätään sources ja poistetaan sieltä ne, jotka robotti deletoi (kuten se ongelmalähde)
-          if [ -d "sources" ]; then
-            git add -A sources/*.json || true
-          fi
-          
-          git add failed_feeds.txt || true
-          
-          # 3. Tehdään commit ja pakotetaan push (force)
-          if ! git diff --cached --quiet; then
-            git commit -m "Automated news update [skip ci]"
-            git push origin main --force
+          # Tehdään commit vain jos muutoksia on
+          if git diff --cached --quiet; then
+            echo "Ei muutoksia tallennettavaksi."
           else
-            echo "Ei uutta tallennettavaa."
+            git commit -m "Automated news update: Added feed metadata and categories [skip ci]"
+            # Pull ja Rebase varmistavat, ettei tule konflikteja
+            git pull --rebase origin main
+            git push origin main
           fi
