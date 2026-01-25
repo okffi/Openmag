@@ -329,7 +329,7 @@ function extractImageFromContent(item, baseUrl) {
             }
             
             if (src.startsWith('http')) {
-                if (!/analytics|doubleclick|pixel|stat|share|icon|avatar|wp-emoji|1x1/i.test(src)) {
+                if (!/analytics|doubleclick|pixel|1x1|wp-emoji|avatar/i.test(src)) {
                     foundImg = src;
                 }
             }
