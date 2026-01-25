@@ -325,13 +325,39 @@ function filterByCategory(catName) {
 }
 
 async function changeSource(file, title, el) {
-    document.getElementById('current-view-title').innerText = title;
+    // 1. Päivitetään otsikko ja nollataan vanhat tiedot heti
+    const viewTitle = document.getElementById('current-view-title');
+    const viewDesc = document.getElementById('current-view-description');
+    const logoCont = document.getElementById('feed-logo-container');
+
+    viewTitle.innerText = title;
+    if (viewDesc) viewDesc.innerText = "Ladataan...";
+    if (logoCont) logoCont.innerHTML = "";
+    
     currentCategory = 'All';
     displayedCount = 0;
+
+    // Päivitetään sivupalkin aktiivisuus
     document.querySelectorAll('.source-item').forEach(i => i.classList.remove('active'));
     if (el) el.classList.add('active');
-    loadData(file);
+
+    // 2. Ladataan uusi data
+    await loadData(file);
+    
+    // 3. Poimitaan uudet tiedot ensimmäisestä uutisesta (jonne robotti ne tallensi)
+    if (allArticles.length > 0) {
+        const first = allArticles[0];
+        if (viewDesc) viewDesc.innerText = first.sourceDescription || "";
+        if (logoCont && first.sourceLogo) {
+            logoCont.innerHTML = `<img src="${first.sourceLogo}" style="height: 50px; border-radius: 8px; margin-bottom: 10px; display: block;">`;
+        }
+    } else {
+        if (viewDesc) viewDesc.innerText = "";
+    }
+
+    // Mobiilivalikon sulkeminen ja vieritys ylös
     if (window.innerWidth < 1000) toggleSidebar();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function handleCategoryClick(event, catName) {
