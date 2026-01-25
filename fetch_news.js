@@ -112,10 +112,17 @@ async function run() {
         allArticles.forEach(art => {
             const src = art.sourceTitle || "Muu";
             const fileKey = src.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+            
             if (!articlesBySource[fileKey]) articlesBySource[fileKey] = [];
             articlesBySource[fileKey].push(art);
+            
             if (!sourceStats[src]) {
-                sourceStats[src] = { file: `${fileKey}.json`, count: 0 };
+                sourceStats[src] = { 
+                    file: `${fileKey}.json`, 
+                    count: 0,
+                    // TÄMÄ RIVI PUUTTUI: Tallennetaan kategoria uutisesta tilastoihin
+                    category: art.sheetCategory || "Yleinen" 
+                };
             }
             sourceStats[src].count++;
         });
