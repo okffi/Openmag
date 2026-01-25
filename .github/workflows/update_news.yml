@@ -47,18 +47,24 @@ jobs:
           git config --global user.name 'NewsRobot'
           git config --global user.email 'robot@openmag.fi'
           
-          # TÄRKEÄÄ: Lisätään myös last_clean.txt seurantaan
-          git add data.json stats.json last_clean.txt
+          # Haetaan tuorein tilanne, jotta ei tule konflikteja
+          git pull origin main --rebase
           
+          # Pakotetaan tiedostot seurantaan -f lipulla
+          git add -f data.json stats.json
+          git add -f last_clean.txt || true
+          
+          # Jos sources-kansio on olemassa, pakotetaan sen sisältö mukaan
           if [ -d "sources" ]; then
             git add -f sources/*.json || true
           fi
           
           git add failed_feeds.txt || true
           
+          # Tallennetaan muutokset vain jos niitä on
           if ! git diff --cached --quiet; then
-            git commit -m "Automated News and Source Files Update [skip ci]"
+            git commit -m "Automated update: forcing data sync [skip ci]"
             git push origin main
           else
-            echo "Ei muutoksia tallennettavaksi."
+            echo "Ei uutta tallennettavaa."
           fi
