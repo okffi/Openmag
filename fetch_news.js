@@ -203,17 +203,29 @@ async function processRSS(feed, allArticles, now) {
             } catch (e) { img = null; }
         }
 
-        // Korjataan artikkelin linkki
+        // 1. KORJATAAN ARTIKKELIN LINKKI (Tärkeä vakauden kannalta)
         let articleLink = item.link;
         if (articleLink && !articleLink.startsWith('http')) {
             try {
+                // Rakennetaan täysi URL käyttäen feedin osoitetta pohjana
                 articleLink = new URL(articleLink, feed.rssUrl).href;
-            } catch (e) {}
+            } catch (e) {
+                console.error("Linkin korjaus epäonnistui:", articleLink);
+            }
+        }
+
+        // 2. KORJATAAN KUVAN LINKKI (Jos se on jäänyt suhteelliseksi)
+        if (img && !img.startsWith('http')) {
+            try {
+                img = new URL(img, feed.rssUrl).href;
+            } catch (e) {
+                img = null;
+            }
         }
 
         return {
             title: item.title,
-            link: articleLink,
+            link: articleLink, // Käytetään korjattua linkkiä
             pubDate: itemDate.toISOString(),
             content: (item.contentSnippet || item.summary || "").replace(/<[^>]*>/g, '').trim().substring(0, 400),
             creator: item.creator || item.author || "",
