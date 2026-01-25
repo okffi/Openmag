@@ -142,7 +142,7 @@
         <div class="grid-sizer"></div>
     </div>
 
-    <div id="scroll-sentinel">Ladataan uusia tarinoita...</div>
+    <div id="scroll-sentinel">Haetaan tuoreimpia uutisia...</div>
 
 <script>
 let allArticles = []; 
@@ -175,6 +175,10 @@ async function loadData(filePath, isInitial = false) {
     isLoading = true;
     displayedCount = 0;
     const container = document.querySelector('#magazine-grid');
+    const sentinel = document.querySelector('#scroll-sentinel');
+    
+    // Asetetaan latausviesti näkyviin heti kun haku alkaa
+    sentinel.innerText = "Ladataan sisältöä...";
     container.classList.remove('loaded');
     
     const existingItems = container.querySelectorAll('.grid-item');
@@ -192,22 +196,36 @@ async function loadData(filePath, isInitial = false) {
             createFilterUI(categories);
         }
         
+        // Tyhjennetään sentinel-teksti hetkeksi, displayArticles hoitaa lopun
+        sentinel.innerText = "";
         displayArticles();
     } catch (e) { 
         console.error(e); 
-        document.querySelector('#scroll-sentinel').innerText = "Virhe ladattaessa uutisia.";
+        sentinel.innerText = "Virhe ladattaessa uutisia.";
     }
 }
-
 function displayArticles() {
     const filtered = currentCategory === 'All' ? allArticles : allArticles.filter(a => a.sheetCategory === currentCategory);
     const slice = filtered.slice(displayedCount, displayedCount + PAGE_SIZE);
+    const sentinel = document.querySelector('#scroll-sentinel');
     
-    if (slice.length === 0) {
-        document.querySelector('#scroll-sentinel').innerText = "— Olet ajan tasalla —";
+    // Jos uutisia ei ole yhtään (edes suodatuksen jälkeen)
+    if (slice.length === 0 && displayedCount === 0) {
+        sentinel.innerText = "— Täällä ei ole juuri nyt uutta —";
+        isLoading = false;
         return;
     }
 
+    // Jos uutisia on jo näytetty, mutta uusia ei enää löydy (loppu saavutettu)
+    if (slice.length === 0) {
+        sentinel.innerText = "— Olet ajan tasalla —";
+        isLoading = false;
+        return;
+    }
+
+    // Muutoin pidetään teksti tyhjänä tai "Lataa lisää" -tyylisenä
+    sentinel.innerText = "Ladataan lisää...";
+    
     const container = document.querySelector('#magazine-grid');
     const newElements = [];
 
