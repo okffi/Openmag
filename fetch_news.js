@@ -236,11 +236,14 @@ async function processRSS(feed, allArticles, now) {
             img = extractImageFromContent(item, feed.rssUrl);
         }
 
-        // C) TIUKKA PUHDISTUS (Korjaa COARin rikkinäiset linkit ja WP-parametrit)
+        // C) ÄLYKÄS PUHDISTUS
         if (img) {
-            // Poistetaan kaikki ?resize=... ja muut dynaamiset parametrit
-            if (img.includes('?')) {
-                img = img.split('?')[0];
+            // Poistetaan parametrit VAIN WordPress-tyyppisiltä kuvilta (COAR, OKFN jne.)
+            // Guardianin (guim.co.uk) ja muiden isojen medioiden parametrit pidetään
+            if (img.includes('i0.wp.com') || img.includes('wp-content')) {
+                if (img.includes('?')) {
+                    img = img.split('?')[0];
+                }
             }
             
             // Pakotetaan absoluuttinen polku, jos jäi suhteelliseksi
@@ -249,6 +252,11 @@ async function processRSS(feed, allArticles, now) {
                     const urlObj = new URL(feed.rssUrl);
                     img = `${urlObj.protocol}//${urlObj.hostname}${img}`;
                 } catch (e) { img = null; }
+            }
+            
+            // Jos kyseessä on Guardianin master-kuva, varmistetaan että se on https
+            if (img && img.includes('guim.co.uk')) {
+                img = img.replace('http://', 'https://');
             }
         }
         // --- KUVAN POIMINTA PÄÄTTYY ---
