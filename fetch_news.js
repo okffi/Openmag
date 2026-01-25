@@ -187,17 +187,13 @@ async function processRSS(feed, allArticles, now) {
     // 1. Poimitaan syötteen kuvaus
     const sourceDescription = feedContent.description ? feedContent.description.trim() : "";
     
-    // 2. Poimitaan logo (ensisijaisesti syötteen oma image, toissijaisesti favicon)
+    // 2. Poimitaan logo
     let sourceLogo = feedContent.image ? feedContent.image.url : null;
-    
-    // Jos logoa ei löydy, yritetään napata sivuston ikoni URL-osoitteen perusteella
     if (!sourceLogo && feedContent.link) {
         try {
             const domain = new URL(feedContent.link).hostname;
             sourceLogo = `https://www.google.com/s2/favicons?sz=64&domain=${domain}`;
-        } catch (e) {
-            console.log("Ei voitu luoda favicon-linkkiä");
-        }
+        } catch (e) {}
     }
 
     const items = feedContent.items.map(item => {
@@ -209,7 +205,10 @@ async function processRSS(feed, allArticles, now) {
             itemDate.setMinutes(itemDate.getMinutes() - randomMinutes);
         }
         
+        // --- KUVAN POIMINTA ALKAA ---
         let img = null;
+
+        // A) Kokeillaan standardeja mediakenttiä
         let mContent = item.mediaContent || item['media:content'];
         if (mContent) {
             const mediaArray = Array.isArray(mContent) ? mContent : [mContent];
@@ -232,16 +231,27 @@ async function processRSS(feed, allArticles, now) {
             img = item.enclosure.url;
         }
 
+        // B) Jos ei vieläkään löydy (esim. OKFN), kaivetaan sisällön seasta
         if (!img) {
             img = extractImageFromContent(item, feed.rssUrl);
         }
-        
-        // Pakotetaan absoluuttinen polku kuvalle
-        if (img && (img.startsWith('/') || !img.startsWith('http'))) {
-            try {
-                img = new URL(img, feed.rssUrl).href;
-            } catch (e) { img = null; }
+
+        // C) TIUKKA PUHDISTUS (Korjaa COARin rikkinäiset linkit ja WP-parametrit)
+        if (img) {
+            // Poistetaan kaikki ?resize=... ja muut dynaamiset parametrit
+            if (img.includes('?')) {
+                img = img.split('?')[0];
+            }
+            
+            // Pakotetaan absoluuttinen polku, jos jäi suhteelliseksi
+            if (img.startsWith('/') && !img.startsWith('http')) {
+                try {
+                    const urlObj = new URL(feed.rssUrl);
+                    img = `${urlObj.protocol}//${urlObj.hostname}${img}`;
+                } catch (e) { img = null; }
+            }
         }
+        // --- KUVAN POIMINTA PÄÄTTYY ---
 
         let articleLink = item.link;
         if (articleLink && !articleLink.startsWith('http')) {
@@ -263,7 +273,6 @@ async function processRSS(feed, allArticles, now) {
             enforcedImage: img,
             sourceDescription: sourceDescription,
             sourceLogo: sourceLogo,
-            // --- LISÄTTY TÄMÄ ---
             originalRssUrl: feed.rssUrl
         };
     });
