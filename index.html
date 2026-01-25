@@ -111,10 +111,11 @@
             display: flex;
             margin: 20px;
             align-items: center;
+            gap: 0.5em;
         }
-        
-        #feed-logo-container {
-            margin: 0 20px 0 0;
+
+        #feed-logo-container > img {
+            height: 50px;
         }
 
         /* GRID */
@@ -366,7 +367,7 @@ async function changeSource(file, title, el) {
         const first = allArticles[0];
         if (viewDesc) viewDesc.innerText = first.sourceDescription || "";
         if (logoCont && first.sourceLogo) {
-            logoCont.innerHTML = `<img src="${first.sourceLogo}" style="height: 50px; border-radius: 8px; margin-bottom: 10px; display: block;">`;
+            logoCont.innerHTML = `<img src="${first.sourceLogo}">`;
         }
     } else {
         if (viewDesc) viewDesc.innerText = "";
