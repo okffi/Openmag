@@ -9,7 +9,7 @@ const parser = new Parser({
     customFields: {
         item: [
             ['media:content', 'mediaContent', {keepArray: true}],
-            ['media:thumbnail', 'mediaThumbnail'], // LISÄÄ TÄMÄ
+            ['media:thumbnail', 'mediaThumbnail'],
             ['enclosure', 'enclosure'],
             ['content:encoded', 'contentEncoded']
         ] 
@@ -27,31 +27,27 @@ async function run() {
     const sourcesDir = path.join(__dirname, 'sources');
 
     try {
-        // 1. PÄIVITTÄINEN PUHDISTUSLOGIIKKA
+        // 1. PÄIVITTÄINEN PUHDISTUSLOGIIKKA - Korjattu Digitoday-ongelma
         let lastCleanDate = "";
         if (fs.existsSync(cleanLogFile)) {
             lastCleanDate = fs.readFileSync(cleanLogFile, 'utf8').trim();
         }
 
-            if (lastCleanDate !== today) {
-                console.log(`--- PÄIVÄN ENSIMMÄINEN AJO: Puhdistetaan arkistot (${today}) ---`);
-                
-                // 1. Tyhjennetään arkistokansio
-                if (fs.existsSync(sourcesDir)) {
-                    fs.readdirSync(sourcesDir).forEach(file => fs.unlinkSync(path.join(sourcesDir, file)));
-                } else {
-                    fs.mkdirSync(sourcesDir);
-                }
-    
-                // 2. NOLLATAAN MUISTI JA POISTETAAN VANHA DATA-TIEDOSTO
-                allArticles = []; 
-                if (fs.existsSync('data.json')) {
-                    fs.unlinkSync('data.json');
-                    console.log("Vanha data.json poistettu.");
-                }
-    
-                fs.writeFileSync(cleanLogFile, today);
+        if (lastCleanDate !== today) {
+            console.log(`--- PÄIVÄN ENSIMMÄINEN AJO: Puhdistetaan arkistot ja data.json (${today}) ---`);
+            if (fs.existsSync(sourcesDir)) {
+                fs.readdirSync(sourcesDir).forEach(file => fs.unlinkSync(path.join(sourcesDir, file)));
             } else {
+                fs.mkdirSync(sourcesDir);
+            }
+            
+            // Fyysinen nollaus
+            allArticles = []; 
+            if (fs.existsSync('data.json')) {
+                fs.unlinkSync('data.json');
+            }
+            fs.writeFileSync(cleanLogFile, today);
+        } else {
             console.log(`--- Jatketaan päivää: ladataan olemassa oleva data ---`);
             if (fs.existsSync('data.json')) {
                 allArticles = JSON.parse(fs.readFileSync('data.json', 'utf8'));
@@ -73,8 +69,6 @@ async function run() {
                 scrapeUrl: cols[3]?.replace(/^"|"$/g, '').trim() 
             };
         }).filter(f => f !== null);
-
-        console.log(`Käsitellään ${feeds.length} lähdettä...`);
 
         for (const feed of feeds) {
             try {
@@ -102,7 +96,7 @@ async function run() {
             return true;
         });
 
-        // 4. TALLENNUS ARKISTOIHIN (Täydelliset tiedostot)
+        // 4. TALLENNUS ARKISTOIHIN
         const sourceStats = {};
         const articlesBySource = {};
         allArticles.forEach(art => {
@@ -152,12 +146,12 @@ async function run() {
             }
         });
 
-        // 6. TALLENNUS DATA JA STATS
+        // 6. TALLENNUS - Nostettu 1000 artikkeliin
         fs.writeFileSync('data.json', JSON.stringify(finalSorted.slice(0, 1000), null, 2));
         fs.writeFileSync('stats.json', JSON.stringify(sourceStats, null, 2));
 
         if (failedFeeds.length > 0) fs.writeFileSync('failed_feeds.txt', failedFeeds.join('\n'));
-        console.log(`Success! data.json ja ${Object.keys(articlesBySource).length} arkistoa päivitetty.`);
+        console.log(`Success! data.json päivitetty.`);
     } catch (error) {
         console.error("Kriittinen virhe:", error);
         process.exit(1);
@@ -175,10 +169,7 @@ async function processRSS(feed, allArticles, now) {
             itemDate.setMinutes(itemDate.getMinutes() - randomMinutes);
         }
         
-        // --- AMNESTY-YHTEENSOPIVA KUVANHAKU ---
         let img = null;
-
-        // 1. Kokeillaan media:content (Amnestyn pääkuvat)
         let mContent = item.mediaContent || item['media:content'];
         if (mContent) {
             const mediaArray = Array.isArray(mContent) ? mContent : [mContent];
@@ -193,45 +184,31 @@ async function processRSS(feed, allArticles, now) {
             });
         }
 
-        // 2. Kokeillaan media:thumbnail (Amnestyn vaihtoehto)
         if (!img && item.mediaThumbnail) {
             img = item.mediaThumbnail.$?.url || item.mediaThumbnail.url;
         }
 
-        // 3. Kokeillaan enclosure
         if (!img && item.enclosure && item.enclosure.url) {
             img = item.enclosure.url;
         }
 
-        // 4. Viimeinen olkikorsi: Tekstin seasta (Access Now)
         if (!img) {
             img = extractImageFromContent(item, feed.rssUrl);
         }
         
-        // Varmistetaan vielä kerran, että myös tageista (enclosure/media) 
-        // tulleet kuvat ovat absoluuttisia
-        if (img && img.startsWith('/')) {
-            const urlObj = new URL(feed.rssUrl);
-            img = `${urlObj.protocol}//${urlObj.hostname}${img}`;
-        }
-
-        // Varmistetaan että kuva on täysi URL (jos se on suhteellinen polku)
-        if (img && !img.startsWith('http')) {
+        // Pakotetaan absoluuttinen polku kuvalle
+        if (img && (img.startsWith('/') || !img.startsWith('http'))) {
             try {
                 img = new URL(img, feed.rssUrl).href;
-            } catch (e) {
-                img = null;
-            }
+            } catch (e) { img = null; }
         }
 
-        // Korjataan myös artikkelin linkki, jos se on suhteellinen (kuten Doughnut Economics)
+        // Korjataan artikkelin linkki
         let articleLink = item.link;
         if (articleLink && !articleLink.startsWith('http')) {
             try {
                 articleLink = new URL(articleLink, feed.rssUrl).href;
-            } catch (e) {
-                // pidetään alkuperäinen jos URL-muunnos epäonnistuu
-            }
+            } catch (e) {}
         }
 
         return {
@@ -261,9 +238,7 @@ async function processScraper(feed, allArticles, now) {
         
         let scraperRule = null;
         const rulePath = path.join(__dirname, 'scrapers', `${domain}.js`);
-        if (fs.existsSync(rulePath)) {
-            scraperRule = require(rulePath);
-        }
+        if (fs.existsSync(rulePath)) scraperRule = require(rulePath);
 
         const selector = scraperRule ? scraperRule.listSelector : 'article';
         const elements = $(selector).get().slice(0, 10);
@@ -306,7 +281,6 @@ async function processScraper(feed, allArticles, now) {
 }
 
 function extractImageFromContent(item, baseUrl) {
-    // Etsitään kuvaa kaikista mahdollisista kentistä, erityisesti contentEncoded
     const searchString = (item.contentEncoded || "") + 
                          (item['content:encoded'] || "") + 
                          (item.content || "") + 
@@ -318,20 +292,15 @@ function extractImageFromContent(item, baseUrl) {
     const $ = cheerio.load(searchString);
     let foundImg = null;
 
-    // Etsitään kuvat
     $('img').each((i, el) => {
         if (foundImg) return;
         
-        // 1. Kokeillaan src
-        // 2. Kokeillaan data-src (lazy load)
-        // 3. Kokeillaan srcset (otetaan ensimmäinen vaihtoehto)
         let src = $(el).attr('src') || $(el).attr('data-src');
         if (!src && $(el).attr('srcset')) {
             src = $(el).attr('srcset').split(',')[0].trim().split(' ')[0];
         }
 
         if (src) {
-            // Korjataan suhteelliset polut (kuten Doughnut Economics -esimerkissä)
             if (src.startsWith('/') && !src.startsWith('//')) {
                 try {
                     const urlObj = new URL(baseUrl);
@@ -342,14 +311,12 @@ function extractImageFromContent(item, baseUrl) {
             }
             
             if (src.startsWith('http')) {
-                // Suodatetaan pois hymiöt ja seurantapikselit
                 if (!/analytics|doubleclick|pixel|stat|share|icon|avatar|wp-emoji|1x1/i.test(src)) {
                     foundImg = src;
                 }
             }
         }
     });
-    
     return foundImg;
 }
 
