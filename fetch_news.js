@@ -95,6 +95,7 @@ async function run() {
             seenPostUrls.add(cleanUrl);
             return true;
         });
+        --
 
         // 4. TALLENNUS ARKISTOIHIN
         const sourceStats = {};
@@ -109,6 +110,12 @@ async function run() {
             }
             sourceStats[src].count++;
         });
+
+        // Jos kansiota ei ole, luodaan se ennen kirjoittamista
+        if (!fs.existsSync(sourcesDir)) {
+            fs.mkdirSync(sourcesDir, { recursive: true });
+            console.log("Sources-kansiota ei ollut – luotiin uusi.");
+        }
 
         Object.keys(articlesBySource).forEach(key => {
             fs.writeFileSync(path.join(sourcesDir, `${key}.json`), JSON.stringify(articlesBySource[key], null, 2));
