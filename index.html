@@ -188,9 +188,48 @@
             font-size: 0.7rem; font-weight: 600;
         }
         #scroll-sentinel { text-align: center; padding: 80px 0; font-size: 0.8rem; color: #bbb; text-transform: uppercase; letter-spacing: 3px; }
-        
-        /* Piilotetaan vanha filtteri-palkki kokonaan */
-        #filters { display: none; }
+
+        /* Kategorian säiliö */
+    .category-group {
+        border-bottom: 1px solid #f9f9f9;
+    }
+    
+    /* Nuoli-indikaattori otsikkoon */
+    .category-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.2s;
+    }
+    
+    .category-header:hover {
+        background-color: #fcfcfc;
+    }
+    
+    .category-header::after {
+        content: '›';
+        font-size: 1.2rem;
+        transition: transform 0.3s;
+        color: #ccc;
+    }
+    
+    /* Kun kategoria on auki */
+    .category-group.open .category-header::after {
+        transform: rotate(90-deg);
+        color: var(--primary-color);
+    }
+    
+    /* Lähteiden lista */
+    .source-submenu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        background: #fff;
+    }
+    
+    .category-group.open .source-submenu {
+        max-height: 1000px; /* Tarpeeksi suuri arvo, jotta kaikki mahtuu */
+    }
     </style>
 </head>
 <body>
