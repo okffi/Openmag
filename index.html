@@ -251,6 +251,67 @@
             .sidebar { position: fixed; transform: translateX(-100%); }
             .sidebar.open { transform: translateX(0); }
         }
+
+        /* Säiliö kategorialle */
+        .category-group {
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        /* Kategoriaotsikko uudessa tyylissä */
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.65rem;
+            color: var(--text-dark);
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: background 0.2s;
+            border-bottom: none; /* Poistetaan aiempi border tästä */
+        }
+        
+        .category-header:hover {
+            background-color: #fff;
+            color: var(--primary-color);
+        }
+        
+        /* Uusi minimalistinen nuoli */
+        .category-header::after {
+            content: '+'; /* Käytetään plussaa, joka muuttuu miinukseksi */
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #ccc;
+            transition: transform 0.3s ease;
+        }
+        
+        .category-group.open .category-header::after {
+            content: '−'; /* En dash */
+            color: var(--primary-color);
+        }
+        
+        /* Alavalikon animaatio */
+        .source-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+            background-color: #fff; /* Pidetään puhtaan valkoisena */
+        }
+        
+        .category-group.open .source-submenu {
+            max-height: 2000px;
+            transition: max-height 0.4s ease-in;
+        }
+        
+        /* Sisennys ja tyyli lähteille */
+        .source-submenu .source-item {
+            padding-left: 35px;
+            font-size: 0.8rem;
+            border-left: none;
+        }
     </style>
 </head>
 <body>
@@ -432,7 +493,7 @@ async function initSidebar() {
             header.onclick = () => {
                 const wasOpen = group.classList.contains('open');
                 
-                // Suljetaan muut ryhmät (valinnainen, poista jos haluat pitää monta auki)
+                // Suljetaan muut ryhmät (Hienostunut minimalistinen valinta)
                 document.querySelectorAll('.category-group').forEach(g => g.classList.remove('open'));
                 
                 // Jos ei ollut auki, avataan nyt
