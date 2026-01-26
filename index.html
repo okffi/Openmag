@@ -9,9 +9,8 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     
-    <style>
+<style>
         :root {
-            /* Raikkaampi väripaletti */
             --primary-color: #007AFF; /* Kirkas asurin sininen */
             --bg-color: #ffffff;    /* Puhdas valkoinen tausta */
             --sidebar-bg: #f8f9fa;  /* Erittäin vaaleanharmaa sivupalkki */
@@ -63,6 +62,56 @@
             color: var(--text-dark);
         }
 
+        /* SIVUPALKKI - HAITARI JA KOHTEET */
+        .category-group {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.65rem;
+            color: var(--text-dark);
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .category-header:hover {
+            background-color: #fff;
+            color: var(--primary-color);
+        }
+
+        .category-header::after {
+            content: '+';
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #ccc;
+            transition: transform 0.3s ease;
+        }
+
+        .category-group.open .category-header::after {
+            content: '−';
+            color: var(--primary-color);
+        }
+
+        .source-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+            background-color: #ffffff;
+        }
+
+        .category-group.open .source-submenu {
+            max-height: 2000px;
+            transition: max-height 0.4s ease-in;
+        }
+
         .source-item { 
             cursor: pointer; 
             display: flex; 
@@ -72,6 +121,11 @@
             color: var(--text-muted); 
             padding: 10px 20px;
             transition: all 0.2s ease;
+        }
+
+        .source-submenu .source-item {
+            padding-left: 35px;
+            font-size: 0.8rem;
         }
         
         .source-item:hover { 
@@ -88,7 +142,7 @@
         
         .source-item span { font-size: 0.7rem; color: #b7b7b7; font-weight: 400; }
 
-        /* SISÄLTÖALUE */
+        /* SISÄLTÖALUE JA HEADER */
         main {
             flex-grow: 1;
             min-width: 0;
@@ -116,43 +170,61 @@
             text-transform: uppercase;
         }
 
+        /* FEED HEADER AREA - Korjattu layout logoa ja tekstiä varten */
+        #feed-header-area {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin: 40px 20px;
+        }
+
+        #feed-logo-container {
+            flex-shrink: 0;
+        }
+
+        #feed-logo-container img {
+            height: 75px;
+            width: auto;
+            display: block;
+            border-radius: 0;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        #feed-logo-container:hover img { filter: grayscale(0%); }
+
+        #feed-info-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
         .view-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             color: var(--text-dark);
-            margin-bottom: 5px;
+            margin: 0;
+            line-height: 1.1;
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
         #current-view-description {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
-            padding-bottom: 1rem;
+            margin-top: 8px;
+            max-width: 600px;
         }
-
-        #feed-header-area {
-            display: flex;
-            margin: 40px 20px 20px;
-            align-items: center;
-            gap: 1.5em;
-        }
-
-        #feed-logo-container > img {
-            height: 70px;
-            filter: grayscale(100%); /* Minimalistinen tyyli: logot harmaasävyisinä oletuksena */
-            transition: filter 0.3s ease;
-        }
-        #feed-logo-container:hover > img { filter: grayscale(0%); }
 
         .title-link:hover {
             color: var(--primary-color);
-            text-decoration: none !important;
         }
 
         .rss-link {
-            margin-left: 12px;
             color: var(--primary-color);
-            opacity: 0.5;
-            transition: opacity 0.2s ease;
+            opacity: 0.4;
+            transition: opacity 0.2s;
         }
         .rss-link:hover { opacity: 1; }
 
@@ -164,23 +236,21 @@
         .grid-item {
             margin-bottom: 40px; 
             background: var(--card-bg); 
-            border-radius: 0; /* POISTETTU PYÖRISTYS */
+            border-radius: 0; 
             overflow: hidden;
-            box-shadow: none; /* Minimalistisempi: ei varjoa oletuksena */
+            box-shadow: none; 
             border: 1px solid var(--border-color);
             display: block; 
             transition: border-color 0.3s ease;
         }
-        .grid-item:hover { 
-            border-color: var(--primary-color);
-        }
+        .grid-item:hover { border-color: var(--primary-color); }
         
         .grid-item img { 
             width: 100%; 
             height: auto; 
             display: block; 
             background: #f8f9fa;
-            border-radius: 0; /* POISTETTU PYÖRISTYS */
+            border-radius: 0; 
         }
 
         .content { padding: 20px; }
@@ -218,31 +288,20 @@
             border-top: 1px solid #f8f9fa;
             font-size: 0.6rem; 
             letter-spacing: 1px;
+            color: #999;
+            text-transform: uppercase;
         }
 
         #sidebar-toggle { 
             position: fixed; top: 15px; left: 20px; z-index: 1500; 
             background: var(--text-dark); 
             color: white; border: none; padding: 10px 18px; 
-            border-radius: 0; /* POISTETTU PYÖRISTYS */
+            border-radius: 0; 
             cursor: pointer; 
             font-size: 0.7rem; font-weight: 700;
         }
 
-        .category-header {
-            padding: 15px 20px;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.65rem;
-            color: var(--text-dark);
-            letter-spacing: 2px;
-            cursor: pointer;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .source-submenu {
-            background-color: #ffffff;
-        }
+        #scroll-sentinel { text-align: center; padding: 80px 0; font-size: 0.8rem; color: #bbb; text-transform: uppercase; letter-spacing: 3px; }
 
         /* Responsive */
         @media (max-width: 1100px) { .grid-sizer, .grid-item { width: 48%; } }
@@ -250,67 +309,8 @@
             .grid-sizer, .grid-item { width: 100%; } 
             .sidebar { position: fixed; transform: translateX(-100%); }
             .sidebar.open { transform: translateX(0); }
-        }
-
-        /* Säiliö kategorialle */
-        .category-group {
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        /* Kategoriaotsikko uudessa tyylissä */
-        .category-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-size: 0.65rem;
-            color: var(--text-dark);
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: background 0.2s;
-            border-bottom: none; /* Poistetaan aiempi border tästä */
-        }
-        
-        .category-header:hover {
-            background-color: #fff;
-            color: var(--primary-color);
-        }
-        
-        /* Uusi minimalistinen nuoli */
-        .category-header::after {
-            content: '+'; /* Käytetään plussaa, joka muuttuu miinukseksi */
-            font-family: 'DM Sans', sans-serif;
-            font-size: 1rem;
-            font-weight: 400;
-            color: #ccc;
-            transition: transform 0.3s ease;
-        }
-        
-        .category-group.open .category-header::after {
-            content: '−'; /* En dash */
-            color: var(--primary-color);
-        }
-        
-        /* Alavalikon animaatio */
-        .source-submenu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
-            background-color: #fff; /* Pidetään puhtaan valkoisena */
-        }
-        
-        .category-group.open .source-submenu {
-            max-height: 2000px;
-            transition: max-height 0.4s ease-in;
-        }
-        
-        /* Sisennys ja tyyli lähteille */
-        .source-submenu .source-item {
-            padding-left: 35px;
-            font-size: 0.8rem;
-            border-left: none;
+            .sidebar.closed { margin-left: 0; }
+            #feed-header-area { flex-direction: column; align-items: flex-start; gap: 15px; }
         }
     </style>
 </head>
