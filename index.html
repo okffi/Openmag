@@ -575,11 +575,7 @@ async function changeSource(file, title, el) {
     // --- LOGON NÄKYVYYDEN HALLINTA ---
     // Jos ladataan pääsyöte (data.json), piilotetaan logokontti kokonaan
     if (logoCont) {
-        if (file === 'data.json') {
-            logoCont.style.display = 'none';
-        } else {
-            logoCont.style.display = 'flex';
-        }
+        logoCont.style.display = (file === 'data.json') ? 'none' : 'flex';
         logoCont.innerHTML = "";
         logoCont.classList.remove('dark-bg');
     }
@@ -594,7 +590,7 @@ async function changeSource(file, title, el) {
     // 2. Ladataan uusi data
     await loadData(file);
     
-// 3. Rakennetaan linkitetty otsikko ja metadata
+    // 3. Rakennetaan linkitetty otsikko ja metadata
     if (allArticles.length > 0) {
         const first = allArticles[0];
         const isMainFeed = (file === 'data.json');
