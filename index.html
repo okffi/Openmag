@@ -343,7 +343,12 @@ function displayArticles() {
         
         const dateStr = item.pubDate ? new Date(item.pubDate).toLocaleDateString('fi-FI') : '';
         const cleanContent = (item.content || "").replace(/<[^>]*>/g, '').substring(0, 150);
-
+    
+        // Muodostetaan teksti: Lähde | Kirjoittaja (jos kirjoittaja löytyy)
+        // CSS hoitaa ison kirjaimet, joten pidetään JS-merkkijono puhtaana.
+        const sourceLabel = item.sourceTitle || 'Lähde';
+        const creatorLabel = item.creator ? ` | ${item.creator}` : '';
+    
         card.innerHTML = `
             <a href="${item.link}" target="_blank">
                 ${img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" onload="window.msnry.layout()">` : ''}
@@ -355,7 +360,7 @@ function displayArticles() {
                     <p>${cleanContent}...</p>
                     <div class="meta-info">
                         <span class="source-trigger" onclick="handleSourceClick(event, '${item.sourceTitle}')">
-                            ${item.sourceTitle || 'Lähde'}
+                            ${sourceLabel}${creatorLabel}
                         </span>
                         <span>${dateStr}</span>
                     </div>
@@ -364,7 +369,6 @@ function displayArticles() {
         container.appendChild(card);
         newElements.push(card);
     });
-
     displayedCount += PAGE_SIZE;
     
     imagesLoaded(container, () => {
