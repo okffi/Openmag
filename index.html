@@ -170,12 +170,27 @@
             text-transform: uppercase;
         }
 
-        /* FEED HEADER AREA */
         #feed-header-area {
             display: flex;
             align-items: center;
             gap: 25px;
             margin: 40px 20px;
+            min-height: 80px; /* Pitää korkeuden samana, jotta sisältö ei "hypi" liikaa */
+        }
+        
+        /* Jos säiliötä ei näytetä, info-container saa täyden tilan */
+        #feed-info-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
+        }
+            
+        @media (max-width: 650px) {
+            #feed-header-area {
+                flex-direction: row; /* Pidetään ne vierekkäin mobiilissakin, jos logo on pieni */
+                align-items: flex-start;
+            }
         }
         
         /* LOGO-SÄILIÖ - Pidetään logo siistinä neliön sisällä */
@@ -200,12 +215,6 @@
         /* Kevyt korostus hiirellä, mutta ei värimuutosta */
         #feed-logo-container:hover img {
             transform: scale(1.1);
-        }
-        
-        #feed-info-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
         
         .view-title {
@@ -481,8 +490,7 @@ async function initSidebar() {
             cats[cat].push({ name, ...stats[name] });
         });
 
-        // "Kaikki uutiset" pysyy omana irrallisena kohteenaan ylhäällä
-        list.innerHTML = `<div class="source-item active" onclick="changeSource('data.json', 'Tuoreimmat uutiset', this)">Kaikki uutiset</div>`;
+        list.innerHTML = `<div class="source-item active" onclick="changeSource('data.json', 'Tuoreimmat uutiset', this)">Tuoreimmat uutiset</div>`;
 
         Object.keys(cats).sort().forEach(catName => {
             // Luodaan säiliöryhmä
@@ -564,8 +572,14 @@ async function changeSource(file, title, el) {
     viewTitle.innerText = title;
     if (viewDesc) viewDesc.innerText = "Ladataan...";
     
-    // NOLLATAAN LOGO JA SEN TAUSTALUOKKA
+    // --- LOGON NÄKYVYYDEN HALLINTA ---
+    // Jos ladataan pääsyöte (data.json), piilotetaan logokontti kokonaan
     if (logoCont) {
+        if (file === 'data.json') {
+            logoCont.style.display = 'none';
+        } else {
+            logoCont.style.display = 'flex';
+        }
         logoCont.innerHTML = "";
         logoCont.classList.remove('dark-bg');
     }
@@ -585,9 +599,15 @@ async function changeSource(file, title, el) {
         const first = allArticles[0];
         const rssLink = first.originalRssUrl || file;
         
-        // TARKISTETAAN SHEETSISTÄ TULLUT TUMMA LOGO -FLAGI
-        if (first.isDarkLogo && logoCont) {
-            logoCont.classList.add('dark-bg');
+        // Näytetään logo vain yksittäisille lähteille (ei data.json)
+        if (file !== 'data.json' && logoCont) {
+            // TARKISTETAAN SHEETSISTÄ TULLUT TUMMA LOGO -FLAGI
+            if (first.isDarkLogo) {
+                logoCont.classList.add('dark-bg');
+            }
+            if (first.sourceLogo) {
+                logoCont.innerHTML = `<img src="${first.sourceLogo}" alt="${title}">`;
+            }
         }
         
         // Selvitetään sivuston pääosoite uutisen linkistä
@@ -607,9 +627,6 @@ async function changeSource(file, title, el) {
         `;
 
         if (viewDesc) viewDesc.innerText = first.sourceDescription || "";
-        if (logoCont && first.sourceLogo) {
-            logoCont.innerHTML = `<img src="${first.sourceLogo}" alt="${title}">`;
-        }
     } else {
         if (viewDesc) viewDesc.innerText = "";
     }
