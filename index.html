@@ -401,7 +401,7 @@ async function loadData(filePath, isInitial = false) {
     }
 
     try {
-        const response = await fetch(filePath + '?v=' + Date.now());
+        const response = await fetch(filePath + '?nocache=' + new Date().getTime());
         allArticles = await response.json();
         
         sentinel.innerText = "";
