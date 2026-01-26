@@ -401,7 +401,10 @@ async function loadData(filePath, isInitial = false) {
     }
 
     try {
-        const response = await fetch(filePath + '?nocache=' + new Date().getTime());
+        // Käytetään v-parametrin lisäksi cache: 'no-store' -asetusta
+        const response = await fetch(filePath + '?v=' + Date.now(), {
+            cache: 'no-store'
+        });
         allArticles = await response.json();
         
         sentinel.innerText = "";
@@ -409,6 +412,17 @@ async function loadData(filePath, isInitial = false) {
     } catch (e) { 
         console.error(e); 
         sentinel.innerText = "Virhe ladattaessa uutisia.";
+    }
+    if (allArticles.length > 0) {
+        const latestDate = new Date(allArticles[0].pubDate);
+        const timeStr = latestDate.toLocaleString('fi-FI', { 
+            hour: '2-digit', 
+            minute: '2-digit',
+            day: '2-digit',
+            month: '2-digit'
+        });
+        document.getElementById('current-view-description').innerHTML += 
+            `<br><small style="opacity: 0.5">Uusin artikkeli päivitetty: ${timeStr}</small>`;
     }
 }
 
