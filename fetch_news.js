@@ -68,17 +68,18 @@ async function run() {
             if (cols.length < 3) return null; 
             
             return { 
-                category: cols[0]?.replace(/^"|"$/g, '').trim() || "General",
-                // Tässä vaiheessa pidetään haku samana, mutta varaudutaan uusiin sarakkeisiin
-                rssUrl: cols[2]?.replace(/^"|"$/g, '').trim(), 
-                scrapeUrl: cols[3]?.replace(/^"|"$/g, '').trim(),
-                // Tulevaisuuden varalle: nappaamme nimet sarakkeista 4, 5 ja kielen sarakkeesta 6
-                // jos ne joskus ilmestyvät sinne.
-                nameFI: cols[4]?.replace(/^"|"$/g, '').trim(),
-                nameEN: cols[5]?.replace(/^"|"$/g, '').trim(),
-                lang: cols[6]?.replace(/^"|"$/g, '').trim() || "FI"
-            };
-        }).filter(f => f !== null);
+                return {
+                    category: cols[0]?.replace(/^"|"$/g, '').trim() || "Yleinen",
+                    rssUrl: cols[2]?.replace(/^"|"$/g, '').trim(), 
+                    scrapeUrl: cols[3]?.replace(/^"|"$/g, '').trim(),
+                    nameFI: cols[4]?.replace(/^"|"$/g, '').trim(),
+                    nameEN: cols[5]?.replace(/^"|"$/g, '').trim(),
+                    lang: cols[6]?.replace(/^"|"$/g, '').trim() || "FI",
+                    // UUSI SARAKE: Dark Logo (Sarake 7 / Indeksi 7)
+                    // Hyväksyy arvot "TRUE", "1" tai "X"
+                    isDarkLogo: (cols[7] || "").toUpperCase().trim() === "TRUE" || cols[7] === "1"
+                };
+            }).filter(f => f.rssUrl);
 
         for (const feed of feeds) {
             try {
@@ -304,7 +305,8 @@ async function processRSS(feed, allArticles, now) {
             enforcedImage: img,
             sourceDescription: sourceDescription,
             sourceLogo: sourceLogo,
-            originalRssUrl: feed.rssUrl
+            originalRssUrl: feed.rssUrl,
+            isDarkLogo: feed.isDarkLogo
         };
     });
     allArticles.push(...items);
