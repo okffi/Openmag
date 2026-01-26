@@ -563,7 +563,12 @@ async function changeSource(file, title, el) {
 
     viewTitle.innerText = title;
     if (viewDesc) viewDesc.innerText = "Ladataan...";
-    if (logoCont) logoCont.innerHTML = "";
+    
+    // NOLLATAAN LOGO JA SEN TAUSTALUOKKA
+    if (logoCont) {
+        logoCont.innerHTML = "";
+        logoCont.classList.remove('dark-bg');
+    }
     
     currentCategory = 'All';
     displayedCount = 0;
@@ -577,9 +582,13 @@ async function changeSource(file, title, el) {
     
     // 3. Rakennetaan linkitetty otsikko ja metadata
     if (allArticles.length > 0) {
-        // index.html:n changeSource-funktiossa
         const first = allArticles[0];
-        const rssLink = first.originalRssUrl || file; // Käyttää alkuperäistä, jos löytyy, muuten JSONia
+        const rssLink = first.originalRssUrl || file;
+        
+        // TARKISTETAAN SHEETSISTÄ TULLUT TUMMA LOGO -FLAGI
+        if (first.isDarkLogo && logoCont) {
+            logoCont.classList.add('dark-bg');
+        }
         
         // Selvitetään sivuston pääosoite uutisen linkistä
         let siteUrl = "#";
