@@ -170,35 +170,48 @@
             text-transform: uppercase;
         }
 
-        /* FEED HEADER AREA - Korjattu layout logoa ja tekstiä varten */
+        /* FEED HEADER AREA */
         #feed-header-area {
             display: flex;
             align-items: center;
             gap: 25px;
             margin: 40px 20px;
         }
-
+        
+        /* LOGO-SÄILIÖ - Pidetään logo siistinä neliön sisällä */
         #feed-logo-container {
             flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff; 
+            border: 1px solid var(--border-color);
         }
-
+        
         #feed-logo-container img {
-            height: 75px;
+            /* Pidetään kuva hieman säiliötä pienempänä (max 48px), 
+               jotta pienet favon-ikonit eivät sumennu liikaa */
+            max-width: 48px;
+            max-height: 48px;
             width: auto;
+            height: auto;
             display: block;
-            border-radius: 0;
-            filter: grayscale(100%);
-            transition: filter 0.3s ease;
+            transition: transform 0.3s ease;
         }
-
-        #feed-logo-container:hover img { filter: grayscale(0%); }
-
+        
+        /* Kevyt korostus hiirellä, mutta ei värimuutosta */
+        #feed-logo-container:hover img {
+            transform: scale(1.1);
+        }
+        
         #feed-info-container {
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-
+        
         .view-title {
             font-family: 'Playfair Display', serif;
             font-size: 2.4rem;
