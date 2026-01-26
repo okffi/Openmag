@@ -68,18 +68,17 @@ async function run() {
             if (cols.length < 3) return null; 
             
             return { 
-                return {
-                    category: cols[0]?.replace(/^"|"$/g, '').trim() || "Yleinen",
-                    rssUrl: cols[2]?.replace(/^"|"$/g, '').trim(), 
-                    scrapeUrl: cols[3]?.replace(/^"|"$/g, '').trim(),
-                    nameFI: cols[4]?.replace(/^"|"$/g, '').trim(),
-                    nameEN: cols[5]?.replace(/^"|"$/g, '').trim(),
-                    lang: cols[6]?.replace(/^"|"$/g, '').trim() || "FI",
-                    // UUSI SARAKE: Dark Logo (Sarake 7 / Indeksi 7)
-                    // Hyväksyy arvot "TRUE", "1" tai "X"
-                    isDarkLogo: (cols[7] || "").toUpperCase().trim() === "TRUE" || cols[7] === "1"
-                };
-            }).filter(f => f.rssUrl);
+                category: cols[0]?.replace(/^"|"$/g, '').trim() || "Yleinen",
+                rssUrl: cols[2]?.replace(/^"|"$/g, '').trim(), 
+                scrapeUrl: cols[3]?.replace(/^"|"$/g, '').trim(),
+                nameFI: cols[4]?.replace(/^"|"$/g, '').trim(),
+                nameEN: cols[5]?.replace(/^"|"$/g, '').trim(),
+                lang: cols[6]?.replace(/^"|"$/g, '').trim() || "FI",
+                // UUSI SARAKE: Dark Logo (Sarake 7 / Indeksi 7)
+                // Hyväksyy arvot "TRUE", "1" tai "X"
+                isDarkLogo: (cols[7] || "").toUpperCase().trim() === "TRUE" || cols[7] === "1"
+            };
+        }).filter(f => f && f.rssUrl); // Lisätty tarkistus f, jotta null-arvot eivät kaada filteriä
 
         for (const feed of feeds) {
             try {
