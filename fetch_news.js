@@ -187,13 +187,20 @@ async function processRSS(feed, allArticles, now) {
     // 1. Poimitaan syötteen kuvaus
     const sourceDescription = feedContent.description ? feedContent.description.trim() : "";
     
-    // 2. Poimitaan logo
+// 2. Poimitaan logo
     let sourceLogo = feedContent.image ? feedContent.image.url : null;
+    
     if (!sourceLogo && feedContent.link) {
         try {
             const domain = new URL(feedContent.link).hostname;
-            sourceLogo = `https://www.google.com/s2/favicons?sz=64&domain=${domain}`;
-        } catch (e) {}
+            // Pyydetään 128px kokoa 64px sijaan
+            sourceLogo = `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
+            
+            // Vaihtoehtoisesti DuckDuckGo, joka on usein laadukkaampi:
+            // sourceLogo = `https://icons.duckduckgo.com/ip3/${domain}.ico`;
+        } catch (e) {
+            console.log("Ei voitu luoda favicon-linkkiä");
+        }
     }
 
     const items = feedContent.items.map(item => {
