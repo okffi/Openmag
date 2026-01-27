@@ -1,7 +1,42 @@
 {
   "__meta": {
-    "last_run": "2026-01-27T17:34:52.292Z",
-    "article_count": 8620
+    "last_run": "2026-01-27T18:50:40.648Z",
+    "article_count": 8705
+  },
+  "Foreign Policy": {
+    "file": "foreign_policy.json",
+    "count": 31,
+    "category": "Maailmanpolitiikka"
+  },
+  "NOEMA": {
+    "file": "noema.json",
+    "count": 10,
+    "category": "Kestävyys + ennakointi"
+  },
+  "Technology – POLITICO": {
+    "file": "technology___politico.json",
+    "count": 31,
+    "category": "Digipolitiikka + digitaaliset oikeudet"
+  },
+  "Technology | The Guardian": {
+    "file": "technology___the_guardian.json",
+    "count": 40,
+    "category": "(Avoin) data + teknologia"
+  },
+  "Digitoday - Ilta-Sanomat": {
+    "file": "digitoday___ilta_sanomat.json",
+    "count": 100,
+    "category": "(Avoin) data + teknologia"
+  },
+  "My-europe | Euronews RSS": {
+    "file": "my_europe___euronews_rss.json",
+    "count": 67,
+    "category": "Suomi + EU"
+  },
+  "The Conversation – Articles (EUROPE)": {
+    "file": "the_conversation___articles__europe_.json",
+    "count": 52,
+    "category": "Näkökulmat"
   },
   "Data Rescue Project": {
     "file": "data_rescue_project.json",
@@ -18,10 +53,10 @@
     "count": 26,
     "category": "Näkökulmat"
   },
-  "Foreign Policy": {
-    "file": "foreign_policy.json",
-    "count": 30,
-    "category": "Maailmanpolitiikka"
+  "The Conversation – Articles (GLOBAL)": {
+    "file": "the_conversation___articles__global_.json",
+    "count": 50,
+    "category": "Näkökulmat"
   },
   "Luovat ry": {
     "file": "luovat_ry.json",
@@ -33,14 +68,9 @@
     "count": 20,
     "category": "Maailmanpolitiikka"
   },
-  "My-europe | Euronews RSS": {
-    "file": "my_europe___euronews_rss.json",
-    "count": 64,
-    "category": "Suomi + EU"
-  },
   "The Public Domain Review": {
     "file": "the_public_domain_review.json",
-    "count": 4,
+    "count": 100,
     "category": "Digitaalinen kulttuuriperintö"
   },
   "Guides - bellingcat": {
@@ -58,11 +88,6 @@
     "count": 10,
     "category": "Kulttuuri"
   },
-  "The Conversation – Articles (EUROPE)": {
-    "file": "the_conversation___articles__europe_.json",
-    "count": 52,
-    "category": "Näkökulmat"
-  },
   "News – Culture Action Europe": {
     "file": "news___culture_action_europe.json",
     "count": 10,
@@ -77,11 +102,6 @@
     "file": "tiedotteet_ja_uutiset.json",
     "count": 20,
     "category": "Suomi + EU"
-  },
-  "Technology | The Guardian": {
-    "file": "technology___the_guardian.json",
-    "count": 39,
-    "category": "(Avoin) data + teknologia"
   },
   "Latest articles | smithsonianmag.com": {
     "file": "latest_articles___smithsonianmag_com.json",
@@ -110,18 +130,13 @@
   },
   "Ajankohtaista": {
     "file": "ajankohtaista.json",
-    "count": 60,
+    "count": 62,
     "category": "Suomi + EU"
   },
   "European Commission | News": {
     "file": "european_commission___news.json",
     "count": 46,
     "category": "Suomi + EU"
-  },
-  "Technology – POLITICO": {
-    "file": "technology___politico.json",
-    "count": 31,
-    "category": "Digipolitiikka + digitaaliset oikeudet"
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
@@ -150,7 +165,7 @@
   },
   "Longreads": {
     "file": "longreads.json",
-    "count": 16,
+    "count": 15,
     "category": "Näkökulmat"
   },
   "Sitra": {
@@ -162,11 +177,6 @@
     "file": "tiede_ja_tutkimus___epressi.json",
     "count": 22,
     "category": "(Avoin) tiede + tutkimus"
-  },
-  "Digitoday - Ilta-Sanomat": {
-    "file": "digitoday___ilta_sanomat.json",
-    "count": 100,
-    "category": "(Avoin) data + teknologia"
   },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
@@ -313,11 +323,6 @@
     "count": 10,
     "category": "Kulttuuri"
   },
-  "The Conversation – Articles (GLOBAL)": {
-    "file": "the_conversation___articles__global_.json",
-    "count": 48,
-    "category": "Näkökulmat"
-  },
   "United Nations | The Guardian": {
     "file": "united_nations___the_guardian.json",
     "count": 20,
@@ -462,11 +467,6 @@
     "file": "hacks_hackers.json",
     "count": 15,
     "category": "Journalismi + tutkiva"
-  },
-  "NOEMA": {
-    "file": "noema.json",
-    "count": 10,
-    "category": "Kestävyys + ennakointi"
   },
   "Access Now": {
     "file": "access_now.json",
@@ -748,10 +748,10 @@
     "count": 10,
     "category": "Ihmisoikeudet + demokratia"
   },
-  "Open Knowledge Foundation DE": {
-    "file": "open_knowledge_foundation_de.json",
-    "count": 710,
-    "category": "Digipolitiikka + digitaaliset oikeudet"
+  "Wikimédia France": {
+    "file": "wikim_dia_france.json",
+    "count": 10,
+    "category": "Digitaidot + kansalaistiede"
   },
   "The Signal": {
     "file": "the_signal.json",
@@ -766,6 +766,11 @@
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
     "count": 6,
+    "category": "Digipolitiikka + digitaaliset oikeudet"
+  },
+  "Open Knowledge Foundation DE": {
+    "file": "open_knowledge_foundation_de.json",
+    "count": 710,
     "category": "Digipolitiikka + digitaaliset oikeudet"
   },
   "Oikeusblogi": {
@@ -785,11 +790,6 @@
   },
   "News – Wikimedia Foundation": {
     "file": "news___wikimedia_foundation.json",
-    "count": 10,
-    "category": "Digitaidot + kansalaistiede"
-  },
-  "Wikimédia France": {
-    "file": "wikim_dia_france.json",
     "count": 10,
     "category": "Digitaidot + kansalaistiede"
   },
@@ -868,6 +868,11 @@
     "count": 10,
     "category": "Digipolitiikka + digitaaliset oikeudet"
   },
+  "Taide- ja kulttuurivirasto": {
+    "file": "taide__ja_kulttuurivirasto.json",
+    "count": 6,
+    "category": "Kulttuuri"
+  },
   "Project Syndicate economists | The Guardian": {
     "file": "project_syndicate_economists___the_guardian.json",
     "count": 20,
@@ -897,11 +902,6 @@
     "file": "k_blogg___riksantikvarie_mbetets_blogg.json",
     "count": 100,
     "category": "Kulttuuri"
-  },
-  "The Unicode Blog": {
-    "file": "the_unicode_blog.json",
-    "count": 25,
-    "category": "(Avoin) data + teknologia"
   },
   "Open Policy & Advocacy": {
     "file": "open_policy___advocacy.json",
@@ -968,6 +968,11 @@
     "count": 419,
     "category": "Digitaalinen kulttuuriperintö"
   },
+  "Follow the News published by UNESCO on Intangible Cultural Heritage": {
+    "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
+    "count": 602,
+    "category": "Kulttuuri"
+  },
   "Centre for Investigative Journalism": {
     "file": "centre_for_investigative_journalism.json",
     "count": 1,
@@ -977,11 +982,6 @@
     "file": "eduskunnan_kirjaston_tiedotteet___rss.json",
     "count": 15,
     "category": "Suomi + EU"
-  },
-  "Follow the News published by UNESCO on Intangible Cultural Heritage": {
-    "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
-    "count": 602,
-    "category": "Kulttuuri"
   },
   "SPARC": {
     "file": "sparc.json",
