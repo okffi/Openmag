@@ -96,14 +96,13 @@ async function run() {
             .filter(art => {
                 if (!art) return false;
                 
-                // Puhdistetaan otsikko
                 const cleanTitle = String(art.title || "").trim().toLowerCase();
-                
-                // Käytetään tunnistimena otsikkoa ja julkaisupäivää (ilman kellonaikaa).
-                // Jos samalla otsikolla tulee uutinen samana päivänä, se on duplikaatti.
-                // Muuten se on uusi uutinen, vaikka linkki olisi sama.
+                const source = String(art.sourceTitle || "").toLowerCase();
                 const datePart = art.pubDate ? art.pubDate.split('T')[0] : "";
-                const uniqueId = `${cleanTitle}|${datePart}`;
+                
+                // Tunniste: Otsikko + Lähde + Päivä
+                // Tämä sallii saman linkin eri uutisille, mutta estää oikeat tuplat
+                const uniqueId = `${cleanTitle}|${source}|${datePart}`;
 
                 if (seenIds.has(uniqueId)) return false;
                 seenIds.add(uniqueId);
