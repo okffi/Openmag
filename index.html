@@ -610,44 +610,57 @@ function filterByCategory(catName) {
     loadData('data.json');
 }
 
-function showSidebarView(view) {
-    const catList = document.getElementById('category-list'); // Nykyinen kategorialistasi
-    const azList = document.getElementById('az-list');       // Uusi tyhjä div
+// Oletetaan, että statsData on ladattu globaaliin muuttujaan
+let statsData = null; 
+
+async function showSidebarView(view) {
+    const sourceList = document.getElementById('source-list');
     const btnCat = document.getElementById('btn-categories');
     const btnAz = document.getElementById('btn-az');
 
     if (view === 'az') {
-        catList.style.display = 'none';
-        azList.style.display = 'block';
+        // Päivitetään napit
         btnAz.classList.add('active');
         btnCat.classList.remove('active');
-        renderAZList();
+        
+        // Piirretään A-Ö näkymä
+        renderAZView(sourceList);
     } else {
-        catList.style.display = 'block';
-        azList.style.display = 'none';
+        // Päivitetään napit
         btnCat.classList.add('active');
         btnAz.classList.remove('active');
+        
+        // Piirretään kategoriat (alkuperäinen funktiosi)
+        // Huom: varmista että initSidebar tyhjentää sourceListin aluksi!
+        initSidebar(); 
     }
 }
 
-function renderAZList() {
-    const azList = document.getElementById('az-list');
-    // StatsData sisältää lähteet (stats.json ladattuna)
-    if (!statsData) return;
+function renderAZView(container) {
+    if (!statsData) {
+        container.innerHTML = '<div class="source-item">Ladataan hakemistoa...</div>';
+        return;
+    }
 
-    // Järjestetään lähteet aakkosjärjestykseen nimen mukaan
+    // Tyhjennetään nykyinen kategorialista
+    container.innerHTML = "";
+
+    // Järjestetään lähteet aakkosjärjestykseen
     const sortedSources = Object.keys(statsData)
         .filter(key => key !== "__meta")
         .sort((a, b) => a.localeCompare(b, 'fi'));
 
-    azList.innerHTML = sortedSources.map(sourceName => {
+    // Luodaan aakkosellinen lista
+    const html = sortedSources.map(sourceName => {
         const info = statsData[sourceName];
         return `
             <div class="source-item" onclick="changeSource('sources/${info.file}', '${sourceName}', this)">
-                ${sourceName} <span>${info.count}</span>
+                ${sourceName} <span class="count-badge">${info.count}</span>
             </div>
         `;
     }).join('');
+
+    container.innerHTML = `<div class="az-wrapper">${html}</div>`;
 }
 
 async function changeSource(file, title, el) {
