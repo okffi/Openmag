@@ -82,13 +82,18 @@ async function run() {
         }
 
         // 3. DUPLIKAATTIEN POISTO JA LAJITTELU (Uusin ensin)
-        const seenPostUrls = new Set();
+        const seenIds = new Set();
         allArticles = allArticles
             .filter(art => {
-                if (!art || !art.link) return false;
-                const cleanUrl = art.link.split('?')[0].split('#')[0].trim().toLowerCase();
-                if (seenPostUrls.has(cleanUrl)) return false;
-                seenPostUrls.add(cleanUrl);
+                if (!art) return false;
+                
+                // Luodaan uniikki tunniste linkin ja otsikon yhdistelmästä
+                const cleanUrl = (art.link || "").split('?')[0].split('#')[0].trim().toLowerCase();
+                const cleanTitle = (art.title || "").trim().toLowerCase();
+                const uniqueId = cleanUrl + "|" + cleanTitle;
+
+                if (seenIds.has(uniqueId)) return false;
+                seenIds.add(uniqueId);
                 return true;
             })
             .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
