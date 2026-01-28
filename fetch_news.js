@@ -95,9 +95,15 @@ async function run() {
         allArticles = allArticles
             .filter(art => {
                 if (!art) return false;
-                const cleanUrl = String(art.link || "").split('?')[0].split('#')[0].trim().toLowerCase();
+                
+                // Puhdistetaan otsikko
                 const cleanTitle = String(art.title || "").trim().toLowerCase();
-                const uniqueId = cleanUrl + "|" + cleanTitle;
+                
+                // Käytetään tunnistimena otsikkoa ja julkaisupäivää (ilman kellonaikaa).
+                // Jos samalla otsikolla tulee uutinen samana päivänä, se on duplikaatti.
+                // Muuten se on uusi uutinen, vaikka linkki olisi sama.
+                const datePart = art.pubDate ? art.pubDate.split('T')[0] : "";
+                const uniqueId = `${cleanTitle}|${datePart}`;
 
                 if (seenIds.has(uniqueId)) return false;
                 seenIds.add(uniqueId);
