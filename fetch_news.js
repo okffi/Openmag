@@ -95,8 +95,6 @@ async function run() {
         allArticles = allArticles
             .filter(art => {
                 if (!art) return false;
-                
-                // PÄIVITYS: Käytetään String() ja trim() varmistusta tyyppivirheiden välttämiseksi
                 const cleanUrl = String(art.link || "").split('?')[0].split('#')[0].trim().toLowerCase();
                 const cleanTitle = String(art.title || "").trim().toLowerCase();
                 const uniqueId = cleanUrl + "|" + cleanTitle;
@@ -119,7 +117,6 @@ async function run() {
         allArticles.forEach(art => {
             const src = art.sourceTitle || "Muu";
             const fileKey = src.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-            
             if (!articlesBySource[fileKey]) articlesBySource[fileKey] = [];
             articlesBySource[fileKey].push(art);
             
@@ -183,11 +180,7 @@ async function run() {
 
 async function processRSS(feed, allArticles, now) {
     const feedContent = await parser.parseURL(feed.rssUrl);
-    
-    // 1. Poimitaan syötteen kuvaus
     const sourceDescription = feedContent.description ? String(feedContent.description).trim() : "";
-    
-    // 2. Poimitaan logo
     let sourceLogo = feedContent.image ? feedContent.image.url : null;
     
     if (!sourceLogo && feedContent.link) {
@@ -208,10 +201,9 @@ async function processRSS(feed, allArticles, now) {
             itemDate.setMinutes(itemDate.getMinutes() - randomMinutes);
         }
         
-        // --- KUVAN POIMINTA (Päivitetty Access Now / WP tuki) ---
         let img = null;
 
-        // A) Kokeillaan mediakenttiä
+        // A) Kokeillaan mediakenttiä (Priorisoidaan leveys)
         let mContent = item.mediaContent || item['media:content'];
         if (mContent) {
             const mediaArray = Array.isArray(mContent) ? mContent : [mContent];
@@ -234,53 +226,36 @@ async function processRSS(feed, allArticles, now) {
             img = item.enclosure.url;
         }
 
-        // B) Jos ei mediakentissä, kaivetaan tekstin seasta (Sisältää content:encoded)
+        // B) Jos ei mediakentissä, kaivetaan tekstin seasta (Access Now vahvistus)
         if (!img) {
             img = extractImageFromContent(item, feed.rssUrl);
         }
 
-        // C) ÄLYKÄS PUHDISTUS (WordPress / Jetpack vakaus)
+        // C) ÄLYKÄS PUHDISTUS
         if (img) {
-            if (img.includes('?')) {
-                img = img.split('?')[0];
-            }
-            
+            if (img.includes('?')) img = img.split('?')[0];
             if (img.startsWith('/') && !img.startsWith('http')) {
                 try {
                     const urlObj = new URL(feed.rssUrl);
                     img = `${urlObj.protocol}//${urlObj.hostname}${img}`;
                 } catch (e) { img = null; }
             }
-            
-            if (img && img.includes('guim.co.uk')) {
-                img = img.replace('http://', 'https://');
-            }
             if (img && img.startsWith('//')) img = 'https:' + img;
         }
 
         // --- TEKSTIN POIMINTA ---
         const rawContent = item['content:encoded'] || item.contentEncoded || item.content || item.description || "";
-        
-        let cleanText = rawContent
-            .replace(/<[^>]*>/g, ' ')
-            .replace(/\s+/g, ' ')
-            .trim();
+        let cleanText = rawContent.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
 
         if (cleanText.length < 10 || cleanText === "...") {
             cleanText = item.title || "";
         }
 
-        const finalSnippet = cleanText.length > 500 
-            ? cleanText.substring(0, 500) + "..." 
-            : cleanText;
+        const finalSnippet = cleanText.length > 500 ? cleanText.substring(0, 500) + "..." : cleanText;
 
         let articleLink = item.link;
         if (articleLink && !articleLink.startsWith('http')) {
-            try {
-                articleLink = new URL(articleLink, feed.rssUrl).href;
-            } catch (e) {
-                console.error("Linkin korjaus epäonnistui:", articleLink);
-            }
+            try { articleLink = new URL(articleLink, feed.rssUrl).href; } catch (e) {}
         }
 
         return {
@@ -289,7 +264,7 @@ async function processRSS(feed, allArticles, now) {
             pubDate: itemDate.toISOString(),
             content: finalSnippet,
             creator: item.creator || item.author || "",
-            sourceTitle: feedContent.title || new URL(feed.rssUrl).hostname,
+            sourceTitle: feed.nameFI || feedContent.title || new URL(feed.rssUrl).hostname,
             sheetCategory: feed.category,
             enforcedImage: img,
             sourceDescription: sourceDescription,
@@ -309,7 +284,7 @@ async function processScraper(feed, allArticles, now) {
         const { data } = await axios.get(feed.scrapeUrl, { 
             headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) OpenMag-Robot-v1' },
             timeout: 15000,
-            httpsAgent: agent // Käytetään SSL-agenttia myös scraperissa
+            httpsAgent: agent 
         });
         const $ = cheerio.load(data);
         
@@ -336,9 +311,7 @@ async function processScraper(feed, allArticles, now) {
             if (item && item.title && item.link) {
                 const fullLink = item.link.startsWith('http') ? item.link : new URL(item.link, feed.scrapeUrl).href;
                 let finalImg = item.enforcedImage;
-                if (finalImg && !finalImg.startsWith('http')) {
-                    finalImg = new URL(finalImg, fullLink).href;
-                }
+                if (finalImg && !finalImg.startsWith('http')) finalImg = new URL(finalImg, fullLink).href;
             
                 allArticles.push({
                     title: item.title,
@@ -376,7 +349,12 @@ function extractImageFromContent(item, baseUrl) {
     $('img').each((i, el) => {
         if (foundImg) return;
         
-        let src = $(el).attr('src') || $(el).attr('data-src') || $(el).attr('data-lazy-src') || $(el).attr('data-orig-file');
+        // WordPress / Jetpack / Access Now tuki:
+        // Priorisoidaan data-orig-file (alkuperäinen täysikokoinen kuva)
+        let src = $(el).attr('data-orig-file') || 
+                  $(el).attr('src') || 
+                  $(el).attr('data-src') || 
+                  $(el).attr('data-lazy-src');
         
         if (!src && $(el).attr('srcset')) {
             const sets = $(el).attr('srcset').split(',');
@@ -384,24 +362,18 @@ function extractImageFromContent(item, baseUrl) {
         }
 
         if (src) {
-            if (src.includes('?')) {
-                src = src.split('?')[0];
-            }
-            
-            if (src.startsWith('/') && !src.startsWith('//')) {
+            if (src.includes('?')) src = src.split('?')[0];
+            if (src.startsWith('//')) src = 'https:' + src;
+            if (src.startsWith('/') && !src.startsWith('http')) {
                 try {
                     const urlObj = new URL(baseUrl);
                     src = `${urlObj.protocol}//${urlObj.hostname}${src}`;
                 } catch (e) {}
-            } else if (src.startsWith('//')) {
-                src = 'https:' + src;
             }
             
             if (src.startsWith('http')) {
                 const isUseless = /analytics|doubleclick|pixel|1x1|wp-emoji|avatar|count|loading|tracker/i.test(src);
-                if (!isUseless) {
-                    foundImg = src;
-                }
+                if (!isUseless) foundImg = src;
             }
         }
     });
