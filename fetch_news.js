@@ -58,37 +58,33 @@ async function run() {
         // 2. HAETAAN SYÖTTEET
         console.log("Haetaan syötelistaa Google Sheetsistä...");
         const response = await axios.get(SHEET_CSV_URL + `&cb=${Date.now()}`);
-        const rows = response.data.split('\n').slice(1);
+        
+        // Parempi tapa jakaa rivit: huomioidaan mahdolliset rivinvaihdot solujen sisällä
+        const rows = response.data.replace(/\r/g, '').split('\n').slice(1);
 
         const feeds = rows.map(row => {
             if (!row || row.trim() === '') return null;
+            
+            // Parempi Regex pilkulle, joka huomioi lainausmerkit oikein
             const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-            if (cols.length < 3) return null; 
+            
+            // Varmistetaan, että rivillä on tarpeeksi dataa JA nimi/osoite ei ole pelkkä viiva
+            const rss = (cols[2] || "").replace(/^"|"$/g, '').trim();
+            const scrape = (cols[3] || "").replace(/^"|"$/g, '').trim();
+            const name = (cols[4] || "").replace(/^"|"$/g, '').trim();
+
+            if ((!rss && !scrape) || name === "-" || name === "") return null;
             
             return { 
                 category: cols[0]?.replace(/^"|"$/g, '').trim() || "Yleinen",
-                rssUrl: cols[2]?.replace(/^"|"$/g, '').trim(), 
-                scrapeUrl: cols[3]?.replace(/^"|"$/g, '').trim(),
-                nameFI: cols[4]?.replace(/^"|"$/g, '').trim(),
+                rssUrl: rss, 
+                scrapeUrl: scrape,
+                nameFI: name,
                 nameEN: cols[5]?.replace(/^"|"$/g, '').trim(),
                 lang: cols[6]?.replace(/^"|"$/g, '').trim() || "FI",
                 isDarkLogo: (cols[7] || "").toUpperCase().trim() === "TRUE" || cols[7] === "1"
             };
-        }).filter(f => f && (f.rssUrl || f.scrapeUrl));
-
-        for (const feed of feeds) {
-            try {
-                if (feed.rssUrl && feed.rssUrl.length > 10) {
-                    await processRSS(feed, allArticles, now);
-                } else if (feed.scrapeUrl) {
-                    await processScraper(feed, allArticles, now);
-                }
-                await new Promise(r => setTimeout(r, 600));
-            } catch (e) {
-                console.error(`Virhe kohteessa ${feed.rssUrl || feed.scrapeUrl}: ${e.message}`);
-                failedFeeds.push(`${feed.category}: ${e.message}`);
-            }
-        }
+        }).filter(f => f !== null);
 
         // 3. DUPLIKAATTIEN POISTO JA LAJITTELU (Uusin ensin)
         const seenIds = new Set();
@@ -270,6 +266,7 @@ async function processRSS(feed, allArticles, now) {
             content: finalSnippet,
             creator: item.creator || item.author || "",
             sourceTitle: feed.nameFI || feedContent.title || new URL(feed.rssUrl).hostname,
+            sourceTitle: feed.nameFI || domain || "Muu",
             sheetCategory: feed.category,
             enforcedImage: img,
             sourceDescription: sourceDescription,
