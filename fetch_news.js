@@ -302,67 +302,116 @@ async function processRSS(feed, allArticles, now) {
     allArticles.push(...items);
 }
 
-async function processScraper(feed, allArticles, now) {
-    const urlObj = new URL(feed.scrapeUrl);
-    const domain = urlObj.hostname.replace('www.', '');
-
-    try {
-        const { data } = await axios.get(feed.scrapeUrl, { 
-            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
-            timeout: 15000 
-        });
-        const $ = cheerio.load(data);
-        
-        let scraperRule = null;
-        const rulePath = path.join(__dirname, 'scrapers', `${domain}.js`);
-        if (fs.existsSync(rulePath)) scraperRule = require(rulePath);
-
-        const selector = scraperRule ? scraperRule.listSelector : 'article';
-        const elements = $(selector).get().slice(0, 10);
-
-        for (const el of elements) {
-            let item;
-            if (scraperRule) {
-                item = await scraperRule.parse($, el, axios, cheerio);
-            } else {
-                item = {
-                    title: $(el).find('h2, h3, .title').first().text().trim(),
-                    link: $(el).find('a').first().attr('href'),
-                    enforcedImage: $(el).find('img').first().attr('src'),
-                    content: ""
-                };
-            }
-
-            if (item && item.title && item.link) {
-                const fullLink = item.link.startsWith('http') ? item.link : new URL(item.link, feed.scrapeUrl).href;
-                let finalImg = item.enforcedImage;
-                if (finalImg && !finalImg.startsWith('http')) {
-                    finalImg = new URL(finalImg, fullLink).href;
-                }
-            
-                allArticles.push({
-                    title: item.title,
-                    link: fullLink,
-                    pubDate: item.pubDate || now.toISOString(),
-                    content: item.content || "Lue lisää sivustolta.",
-                    creator: item.creator || "",
-                    sourceTitle: domain,
-                    sheetCategory: feed.category,
-                    enforcedImage: finalImg,
-                    // LISÄÄ NÄMÄ MYÖS SCRAPERIIN:
-                    sourceDescription: "Verkkosivulta poimittu uutinen.",
-                    sourceLogo: `https://www.google.com/s2/favicons?sz=64&domain=${domain}`
-                });
-            }
+async function processRSS(feed, allArticles, now) {
+    const feedContent = await parser.parseURL(feed.rssUrl);
+    const sourceDescription = feedContent.description ? feedContent.description.trim() : "";
+    
+    let sourceLogo = feedContent.image ? feedContent.image.url : null;
+    if (!sourceLogo && feedContent.link) {
+        try {
+            const domain = new URL(feedContent.link).hostname;
+            sourceLogo = `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
+        } catch (e) {
+            console.log("Ei voitu luoda favicon-linkkiä");
         }
-    } catch (err) {
-        console.error(`Scraper epäonnistui kohteelle ${domain}: ${err.message}`);
     }
+
+    const items = feedContent.items.map(item => {
+        let itemDate = new Date(item.pubDate || item.isoDate);
+        if (isNaN(itemDate.getTime()) || itemDate > now) itemDate = now;
+
+        if (itemDate.getHours() === 0 && itemDate.getMinutes() === 0) {
+            const randomMinutes = Math.floor(Math.random() * 720);
+            itemDate.setMinutes(itemDate.getMinutes() - randomMinutes);
+        }
+        
+        // --- KUVAN POIMINTA (Päivitetty Access Now / WP tuki) ---
+        let img = null;
+
+        // A) Kokeillaan mediakenttiä (Priorisoidaan suurin tai ensimmäinen löytyvä URL)
+        let mContent = item.mediaContent || item['media:content'];
+        if (mContent) {
+            const mediaArray = Array.isArray(mContent) ? mContent : [mContent];
+            let maxW = 0;
+            mediaArray.forEach(m => {
+                const currentUrl = m.url || m.$?.url;
+                const currentWidth = parseInt(m.width || m.$?.width || 0);
+                // Access Now: Jos URL löytyy, otetaan se. Jos löytyy leveys, suositaan leveintä.
+                if (currentUrl) {
+                    if (currentWidth >= maxW || !img) {
+                        maxW = currentWidth;
+                        img = currentUrl;
+                    }
+                }
+            });
+        }
+
+        if (!img && item.mediaThumbnail) {
+            img = item.mediaThumbnail.$?.url || item.mediaThumbnail.url;
+        }
+
+        if (!img && item.enclosure && item.enclosure.url) {
+            img = item.enclosure.url;
+        }
+
+        // B) Jos ei mediakentissä, kaivetaan tekstin seasta (Sisältää content:encoded)
+        if (!img) {
+            img = extractImageFromContent(item, feed.rssUrl);
+        }
+
+        // C) ÄLYKÄS PUHDISTUS (Vakauttaa Jetpack/WordPress linkit)
+        if (img) {
+            // Poistetaan WP-parametrit (resize, fit, w, h)
+            if (img.includes('?')) {
+                img = img.split('?')[0];
+            }
+            
+            // Korjataan suhteelliset polut
+            if (img.startsWith('/') && !img.startsWith('http')) {
+                try {
+                    const urlObj = new URL(feed.rssUrl);
+                    img = `${urlObj.protocol}//${urlObj.hostname}${img}`;
+                } catch (e) { img = null; }
+            }
+            
+            // Varmistetaan https
+            if (img && img.startsWith('//')) img = 'https:' + img;
+        }
+
+        // --- TEKSTIN POIMINTA ---
+        const rawContent = item['content:encoded'] || item.contentEncoded || item.content || item.description || "";
+        let cleanText = rawContent.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+
+        if (cleanText.length < 10) cleanText = item.title || "";
+        const finalSnippet = cleanText.length > 500 ? cleanText.substring(0, 500) + "..." : cleanText;
+
+        let articleLink = item.link;
+        if (articleLink && !articleLink.startsWith('http')) {
+            try { articleLink = new URL(articleLink, feed.rssUrl).href; } catch (e) {}
+        }
+
+        return {
+            title: item.title,
+            link: articleLink,
+            pubDate: itemDate.toISOString(),
+            content: finalSnippet,
+            creator: item.creator || item.author || "",
+            sourceTitle: feedContent.title || new URL(feed.rssUrl).hostname,
+            sheetCategory: feed.category,
+            enforcedImage: img,
+            sourceDescription: sourceDescription,
+            sourceLogo: sourceLogo,
+            originalRssUrl: feed.rssUrl,
+            isDarkLogo: feed.isDarkLogo
+        };
+    });
+    allArticles.push(...items);
 }
 
 function extractImageFromContent(item, baseUrl) {
-    const searchString = (item.contentEncoded || "") + 
-                         (item['content:encoded'] || "") + 
+    // Access Now ja muut WP-sivut piilottavat kuvat usein content:encoded -kenttään
+    const searchString = (item['content:encoded'] || "") + 
+                         (item.contentEncoded || "") + 
                          (item.content || "") + 
                          (item.description || "") +
                          (item.summary || "");
@@ -375,35 +424,37 @@ function extractImageFromContent(item, baseUrl) {
     $('img').each((i, el) => {
         if (foundImg) return;
         
-        let src = $(el).attr('src') || $(el).attr('data-src') || $(el).attr('data-lazy-src');
+        // WP-sivut käyttävät laajasti data-määritteitä lazy loadingiin
+        let src = $(el).attr('src') || 
+                  $(el).attr('data-src') || 
+                  $(el).attr('data-lazy-src') || 
+                  $(el).attr('data-orig-file');
         
+        // Jos srcset on tarjolla, otetaan sieltä suurin kuva
         if (!src && $(el).attr('srcset')) {
             const sets = $(el).attr('srcset').split(',');
             src = sets[sets.length - 1].trim().split(' ')[0];
         }
 
         if (src) {
-            // --- TÄRKEIN KORJAUS COARILLE JA WP-KUVILLE ---
-            // Poistetaan kaikki parametrit, jotta wsrv.nl ei saa tuplakoodattuja merkkejä
-            // Esim: image.png?resize=1024%2C768 -> image.png
+            // Puhdistetaan parametrit heti (esim. ?w=640)
             if (src.includes('?')) {
                 src = src.split('?')[0];
             }
             
-            // Jos kyseessä on i0.wp.com -linkki, se toimii usein paremmin ilman i0-alkua
-            // mutta usein parametrien poisto riittää jo sellaisenaan.
-
-            if (src.startsWith('/') && !src.startsWith('//')) {
+            // Protokollan korjaus
+            if (src.startsWith('//')) {
+                src = 'https:' + src;
+            } else if (src.startsWith('/') && !src.startsWith('http')) {
                 try {
                     const urlObj = new URL(baseUrl);
                     src = `${urlObj.protocol}//${urlObj.hostname}${src}`;
                 } catch (e) {}
-            } else if (src.startsWith('//')) {
-                src = 'https:' + src;
             }
             
             if (src.startsWith('http')) {
-                const isUseless = /analytics|doubleclick|pixel|1x1|wp-emoji|avatar|count/i.test(src);
+                // Suodatetaan turhat pikselit, hymiöt ja seurantakuvat
+                const isUseless = /analytics|doubleclick|pixel|1x1|wp-emoji|avatar|count|sharedaddy|loading|tracker/i.test(src);
                 if (!isUseless) {
                     foundImg = src;
                 }
