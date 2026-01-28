@@ -62,27 +62,35 @@ async function run() {
         // Parempi tapa jakaa rivit: huomioidaan mahdolliset rivinvaihdot solujen sisällä
         const rows = response.data.replace(/\r/g, '').split('\n').slice(1);
 
-        const feeds = rows.map(row => {
+const feeds = rows.map(row => {
             if (!row || row.trim() === '') return null;
-            
-            // Parempi Regex pilkulle, joka huomioi lainausmerkit oikein
             const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
             
-            // Varmistetaan, että rivillä on tarpeeksi dataa JA nimi/osoite ei ole pelkkä viiva
-            const rss = (cols[2] || "").replace(/^"|"$/g, '').trim();
-            const scrape = (cols[3] || "").replace(/^"|"$/g, '').trim();
-            const name = (cols[4] || "").replace(/^"|"$/g, '').trim();
+            // Siivotaan sarakkeet lainausmerkeistä
+            const c = cols.map(val => (val || "").replace(/^"|"$/g, '').trim());
 
-            if ((!rss && !scrape) || name === "-" || name === "") return null;
-            
+            // 1. Määritetään nimi (Priorisoidaan Name_FI [7], fallback Feed name [1])
+            const nameFI = c[7]; 
+            const feedName = c[1];
+            const finalName = (nameFI && nameFI !== "-" && nameFI !== "") ? nameFI : feedName;
+
+            // 2. Määritetään RSS (Käytetään saraketta 2)
+            const rssUrl = c[2]; 
+            const scrapeUrl = c[3];
+
+            // 3. Negative logo logiikka (sarake 11)
+            const negativeLogoVal = (c[11] || "").toUpperCase();
+            const isDarkLogo = negativeLogoVal === "TRUE" || negativeLogoVal === "1";
+
+            // Hylätään jos ei nimeä tai osoitteita
+            if (!finalName || finalName === "-" || (!rssUrl && !scrapeUrl)) return null;
+
             return { 
-                category: cols[0]?.replace(/^"|"$/g, '').trim() || "Yleinen",
-                rssUrl: rss, 
-                scrapeUrl: scrape,
-                nameFI: name,
-                nameEN: cols[5]?.replace(/^"|"$/g, '').trim(),
-                lang: cols[6]?.replace(/^"|"$/g, '').trim() || "FI",
-                isDarkLogo: (cols[7] || "").toUpperCase().trim() === "TRUE" || cols[7] === "1"
+                category: c[0] || "Yleinen",
+                rssUrl: rssUrl, 
+                scrapeUrl: scrapeUrl,
+                nameFI: finalName,
+                isDarkLogo: isDarkLogo
             };
         }).filter(f => f !== null);
 
