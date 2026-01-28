@@ -263,11 +263,19 @@
         .title-link:hover { color: var(--primary-color); }
 
         .rss-link {
+            display: inline-flex; /* Tämä on kriittinen */
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle; /* Auttaa tekstin seassa */
             color: var(--primary-color);
             opacity: 0.4;
             transition: opacity 0.2s;
+        }
+        
+        .rss-link svg {
             width: 20px;
             height: 20px;
+            display: block; /* Poistaa SVG:n oletusarvoisen pienen tyhjän tilan alla */
         }
         .rss-link:hover { opacity: 1; }
 
