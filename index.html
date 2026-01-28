@@ -62,6 +62,44 @@
             color: var(--text-dark);
         }
 
+        #sidebar-toggle { 
+            position: fixed; top: 15px; left: 20px; z-index: 1500; 
+            background: var(--text-dark); 
+            color: white; border: none; padding: 10px 18px; 
+            border-radius: 0; 
+            cursor: pointer; 
+            font-size: 0.7rem; font-weight: 700;
+        }
+
+        .sidebar-view-toggle {
+            display: flex;
+            padding: 0 20px 15px;
+            gap: 10px;
+        }
+        
+        .sidebar-view-toggle button {
+            flex: 1;
+            background: none;
+            border: 1px solid var(--border-color);
+            padding: 5px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: all 0.2s;
+        }
+        
+        .sidebar-view-toggle button.active {
+            background: var(--text-dark);
+            color: white;
+            border-color: var(--text-dark);
+        }
+        
+        /* Piilotetaan A-Ö lista oletuksena */
+        #az-list { display: none; }
+
         /* SIVUPALKKI - HAITARI JA KOHTEET */
         .category-group {
             border-bottom: 1px solid var(--border-color);
@@ -309,15 +347,6 @@
             text-transform: uppercase;
         }
 
-        #sidebar-toggle { 
-            position: fixed; top: 15px; left: 20px; z-index: 1500; 
-            background: var(--text-dark); 
-            color: white; border: none; padding: 10px 18px; 
-            border-radius: 0; 
-            cursor: pointer; 
-            font-size: 0.7rem; font-weight: 700;
-        }
-
         #scroll-sentinel { text-align: center; padding: 80px 0; font-size: 0.8rem; color: #bbb; text-transform: uppercase; letter-spacing: 3px; }
 
         /* Responsive */
@@ -337,6 +366,10 @@
 
     <aside id="source-sidebar" class="sidebar">
         <h3>Julkaisijat</h3>
+        <div class="sidebar-view-toggle">
+            <button id="btn-categories" class="active" onclick="showSidebarView('categories')">Kategoriat</button>
+            <button id="btn-az" onclick="showSidebarView('az')">A–Ö</button>
+        </div>
         <div id="source-list"></div>
     </aside>
     <main>
@@ -575,6 +608,46 @@ function filterByCategory(catName) {
     
     // Ladataan koko päivän data, josta displayArticles suodattaa kategorian
     loadData('data.json');
+}
+
+function showSidebarView(view) {
+    const catList = document.getElementById('category-list'); // Nykyinen kategorialistasi
+    const azList = document.getElementById('az-list');       // Uusi tyhjä div
+    const btnCat = document.getElementById('btn-categories');
+    const btnAz = document.getElementById('btn-az');
+
+    if (view === 'az') {
+        catList.style.display = 'none';
+        azList.style.display = 'block';
+        btnAz.classList.add('active');
+        btnCat.classList.remove('active');
+        renderAZList();
+    } else {
+        catList.style.display = 'block';
+        azList.style.display = 'none';
+        btnCat.classList.add('active');
+        btnAz.classList.remove('active');
+    }
+}
+
+function renderAZList() {
+    const azList = document.getElementById('az-list');
+    // StatsData sisältää lähteet (stats.json ladattuna)
+    if (!statsData) return;
+
+    // Järjestetään lähteet aakkosjärjestykseen nimen mukaan
+    const sortedSources = Object.keys(statsData)
+        .filter(key => key !== "__meta")
+        .sort((a, b) => a.localeCompare(b, 'fi'));
+
+    azList.innerHTML = sortedSources.map(sourceName => {
+        const info = statsData[sourceName];
+        return `
+            <div class="source-item" onclick="changeSource('sources/${info.file}', '${sourceName}', this)">
+                ${sourceName} <span>${info.count}</span>
+            </div>
+        `;
+    }).join('');
 }
 
 async function changeSource(file, title, el) {
