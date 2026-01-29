@@ -68,8 +68,8 @@ async function run() {
             if (cols.length < 3) return null; 
             
             return { 
-                category: cols[0]?.replace(/^"|"$/g, '').trim() || "General",
-                // Tässä vaiheessa pidetään haku samana, mutta varaudutaan uusiin sarakkeisiin
+                category: cols[0]?.replace(/^"|"$/g, '').trim() || "Muut",
+                feedName: cols[1]?.replace(/^"|"$/g, '').trim(),
                 rssUrl: cols[2]?.replace(/^"|"$/g, '').trim(), 
                 scrapeUrl: cols[3]?.replace(/^"|"$/g, '').trim(),
                 // Tulevaisuuden varalle: nappaamme nimet sarakkeista 4, 5 ja kielen sarakkeesta 6
@@ -298,7 +298,7 @@ async function processRSS(feed, allArticles, now) {
             pubDate: itemDate.toISOString(),
             content: finalSnippet,
             creator: item.creator || item.author || "",
-            sourceTitle: feed.nameFI || feedContent.title || "Lähde",
+            sourceTitle: feed.nameFI || feed.feedName || feedContent.title || "Lähde",
             sheetCategory: feed.category,
             enforcedImage: img,
             sourceDescription: sourceDescription,
