@@ -62,21 +62,20 @@ async function run() {
         const rows = response.data.split('\n').slice(1);
 
         const feeds = rows.map(row => {
-            if (!row || row.trim() === '') return null;
-            // Pilkotaan rivi huomioiden lainausmerkit sarakkeiden sisällä
+            if (!row || row.trim() === '' || row.split(',').length < 3) return null; // Lisää pituustarkistus
             const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-            if (cols.length < 3) return null; 
-            
+            const c = cols.map(v => (v || "").replace(/^"|"$/g, '').trim());
+        
+            // Varmista että URL (sarake 2) on olemassa
+            if (!c[2] || c[2].length < 10) return null; 
+        
             return { 
-                category: cols[0]?.replace(/^"|"$/g, '').trim() || "Muut",
-                feedName: cols[1]?.replace(/^"|"$/g, '').trim(),
-                rssUrl: cols[2]?.replace(/^"|"$/g, '').trim(), 
-                scrapeUrl: cols[3]?.replace(/^"|"$/g, '').trim(),
-                // Tulevaisuuden varalle: nappaamme nimet sarakkeista 4, 5 ja kielen sarakkeesta 6
-                // jos ne joskus ilmestyvät sinne.
-                nameFI: cols[7]?.replace(/^"|"$/g, '').trim(),
-                nameEN: cols[6]?.replace(/^"|"$/g, '').trim(),
-                isDarkLogo: (cols[11] || "").toUpperCase().trim() === "TRUE" || cols[11] === "1"
+                category: c[0] || "Yleinen",
+                feedName: c[1],
+                rssUrl: c[2], 
+                scrapeUrl: c[3],
+                nameFI: c[7],
+                isDarkLogo: (c[11] || "").toUpperCase() === "TRUE" || c[11] === "1"
             };
         }).filter(f => f !== null);
 
