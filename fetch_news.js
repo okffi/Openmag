@@ -170,7 +170,7 @@ async function processRSS(feed, allArticles, now) {
             mArr.forEach(m => {
                 const u = m.url || m.$?.url;
                 const w = parseInt(m.width || m.$?.width || 0);
-                if (url && (w >= maxW || !img)) { maxW = w; img = u; }
+                if (u && (w >= maxW || !img)) { maxW = w; img = u; }
             });
         }
         if (!img) img = extractImageFromContent(item, feed.rssUrl);
