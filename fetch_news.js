@@ -298,7 +298,7 @@ async function processRSS(feed, allArticles, now) {
             pubDate: itemDate.toISOString(),
             content: finalSnippet,
             creator: item.creator || item.author || "",
-            sourceTitle: feedContent.title || new URL(feed.rssUrl).hostname,
+            sourceTitle: feed.nameFI || feedContent.title || "Lähde",
             sheetCategory: feed.category,
             enforcedImage: img,
             sourceDescription: sourceDescription,
