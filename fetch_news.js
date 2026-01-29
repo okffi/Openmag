@@ -231,10 +231,23 @@ function extractImageFromContent(item, baseUrl) {
     const html = (item['content:encoded'] || "") + (item.description || "") + (item.content || "");
     if (!html) return null;
     const $ = cheerio.load(html);
-    const img = $('img').first();
-    let src = img.attr('data-orig-file') || img.attr('src') || img.attr('data-src');
-    if (src && src.startsWith('/')) { try { src = new URL(src, baseUrl).href; } catch(e){} }
-    return src;
+    let foundSrc = null;
+
+    $('img').each((i, el) => {
+        if (foundSrc) return;
+        let src = $(el).attr('data-orig-file') || $(el).attr('src') || $(el).attr('data-src');
+        
+        if (src) {
+            // Ohitetaan tunnetut seurantapikselit ja turhat kuvat
+            if (src.includes('pixel') || src.includes('1x1') || src.includes('doubleclick')) return;
+            
+            if (src.startsWith('/')) {
+                try { src = new URL(src, baseUrl).href; } catch(e) {}
+            }
+            foundSrc = src;
+        }
+    });
+    return foundSrc;
 }
 
 run();
