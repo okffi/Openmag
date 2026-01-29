@@ -3,6 +3,8 @@ const fs = require('fs');
 const path = require('path');
 const Parser = require('rss-parser');
 const cheerio = require('cheerio');
+const httpsAgent = new https.Agent({ rejectUnauthorized: false });
+const httpAgent = new http.Agent();
 
 const parser = new Parser({ 
     headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) OpenMag-Robot-v1' },
@@ -181,22 +183,45 @@ async function run() {
 }
 
 async function processRSS(feed, allArticles, now) {
-    const feedContent = await parser.parseURL(feed.rssUrl);
+    let feedContent;
+
+    try {
+        // Yritetään ensin normaalisti
+        feedContent = await parser.parseURL(feed.rssUrl);
+    } catch (err) {
+        // Poikkeuslogiikka XML-virheille (Line/Column) ja sertifikaattivioille (certificate)
+        if (err.message.includes('Line:') || err.message.includes('Column:') || err.message.includes('certificate')) {
+            console.log(`[POIKKEUS] Vikasietoinen haku: ${feed.nameFI}`);
+            try {
+                // Käytetään axiosia ja aiemmin määritettyä httpsAgentia ohittamaan sertifikaattiviat
+                const response = await axios.get(feed.rssUrl, { 
+                    timeout: 15000, 
+                    httpsAgent: typeof httpsAgent !== 'undefined' ? httpsAgent : undefined 
+                });
+                
+                let xmlData = response.data;
+                // Puhdistetaan rikkonaiset XML-merkit (kuten & ilman koodia)
+                xmlData = xmlData.replace(/&(?!(amp|lt|gt|quot|apos|#\d+|#x[a-f\d]+);)/gi, '&amp;');
+                
+                feedContent = await parser.parseString(xmlData);
+            } catch (retryErr) {
+                throw new Error(`Vikasietoinen haku epäonnistui: ${retryErr.message}`);
+            }
+        } else {
+            throw err;
+        }
+    }
     
     // 1. Poimitaan syötteen kuvaus
     const sourceDescription = feedContent.description ? feedContent.description.trim() : "";
     
-// 2. Poimitaan logo
+    // 2. Poimitaan logo
     let sourceLogo = feedContent.image ? feedContent.image.url : null;
     
     if (!sourceLogo && feedContent.link) {
         try {
             const domain = new URL(feedContent.link).hostname;
-            // Pyydetään 128px kokoa 64px sijaan
             sourceLogo = `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
-            
-            // Vaihtoehtoisesti DuckDuckGo, joka on usein laadukkaampi:
-            // sourceLogo = `https://icons.duckduckgo.com/ip3/${domain}.ico`;
         } catch (e) {
             console.log("Ei voitu luoda favicon-linkkiä");
         }
