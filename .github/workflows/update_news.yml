@@ -47,26 +47,17 @@ jobs:
           git config --global user.name 'NewsRobot'
           git config --global user.email 'robot@openmag.fi'
           
-          # 1. Tallennetaan robotin juuri hakemat uudet uutiset väliaikaisesti sivuun (stash)
-          # jotta ne eivät katoa resetin yhteydessä
-          git add data.json stats.json last_clean.txt sources/*.json || echo "Ei tiedostoja vielä"
-          git stash
-          
-          # 2. Pakotetaan Git-tila puhtaaksi ja haetaan tuorein tilanne GitHubista
+          # Pakotetaan haku ja nollaus
           git fetch origin main
           git reset --hard origin/main
           
-          # 3. Tuodaan uudet uutiset takaisin (pop) resetin yli
-          git stash pop || echo "Ei palautettavaa"
-          
-          # 4. Lisätään kaikki muutokset uudelleen
+          # Lisätään tiedostot uudelleen (ne ovat tallessa levyllä)
           git add data.json stats.json last_clean.txt
           if [ -d "sources" ]; then git add sources/*.json; fi
           
-          # 5. Tallennetaan ja lähetetään
           if ! git diff --cached --quiet; then
             git commit -m "Automated news update [skip ci]"
-            git push origin main
+            git push origin main --force
           fi
 
       - name: Purge Cache (Optional)
