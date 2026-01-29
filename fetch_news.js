@@ -6,12 +6,7 @@ const cheerio = require('cheerio');
 const https = require('https');
 const http = require('http');
 
-/**
- * CONFIGURATION & AGENTS
- */
-const FORCE_CLEAN = true; // Pidä true kerran, jotta saat täyden listan takaisin
-const SHEET_CSV_URL = process.env.SHEET_CSV_URL || 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=0&single=true&output=csv';
-
+// Agentit SSL-ongelmien ja protokollavirheiden välttämiseksi
 const httpsAgent = new https.Agent({ rejectUnauthorized: false });
 const httpAgent = new http.Agent();
 
@@ -30,6 +25,8 @@ const parser = new Parser({
     }
 });
 
+const SHEET_CSV_URL = process.env.SHEET_CSV_URL || 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=0&single=true&output=csv';
+
 async function run() {
     let allArticles = [];
     const now = new Date();
@@ -38,19 +35,15 @@ async function run() {
     const sourcesDir = path.join(__dirname, 'sources');
 
     try {
-        let lastCleanDate = "";
-        if (fs.existsSync(cleanLogFile)) lastCleanDate = fs.readFileSync(cleanLogFile, 'utf8').trim();
-
-        if (FORCE_CLEAN || lastCleanDate !== today) {
-            console.log(`--- PUHDISTUS JA TÄYSI HAKU (${today}) ---`);
-            if (fs.existsSync(sourcesDir)) {
-                fs.readdirSync(sourcesDir).forEach(file => fs.unlinkSync(path.join(sourcesDir, file)));
-            }
-            fs.writeFileSync(cleanLogFile, today);
-        } else if (fs.existsSync('data.json')) {
-            allArticles = JSON.parse(fs.readFileSync('data.json', 'utf8'));
+        // 1. PUHDISTUSLOGIIKKA (Pakotetaan puhdistus konfliktiarvojen vuoksi)
+        console.log(`--- Puhdistetaan ja aloitetaan haku (${today}) ---`);
+        if (fs.existsSync(sourcesDir)) {
+            fs.readdirSync(sourcesDir).forEach(file => fs.unlinkSync(path.join(sourcesDir, file)));
         }
+        allArticles = []; 
 
+        // 2. HAETAAN SYÖTTEET (Päivitetty sarakkeilla 7 ja 11)
+        console.log("Haetaan syötelistaa Google Sheetsistä...");
         const response = await axios.get(SHEET_CSV_URL + `&cb=${Date.now()}`);
         const rows = response.data.replace(/\r/g, '').split('\n').slice(1);
 
@@ -59,12 +52,12 @@ async function run() {
             const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
             const c = cols.map(v => (v || "").replace(/^"|"$/g, '').trim());
 
-            // Nimen prioriteetti: Name_FI [7], fallback Feed name [1]
+            // Name_FI [7] ensisijainen, Feed name [1] vara
             const finalName = (c[7] && c[7] !== "-") ? c[7] : c[1];
             if (!finalName || (!c[2] && !c[3])) return null;
 
             return { 
-                category: c[0] || "Yleinen", 
+                category: c[0] || "Yleinen",
                 rssUrl: c[2], 
                 scrapeUrl: c[3], 
                 nameFI: finalName, 
@@ -72,20 +65,20 @@ async function run() {
             };
         }).filter(f => f !== null);
 
-        console.log(`Aloitetaan ${feeds.length} syötteen haku...`);
-
         for (const feed of feeds) {
             try {
-                console.log(`Noudetaan: ${feed.nameFI}`);
-                if (feed.rssUrl) await processRSS(feed, allArticles, now);
-                else if (feed.scrapeUrl) await processScraper(feed, allArticles, now);
+                if (feed.rssUrl && feed.rssUrl.length > 10) {
+                    await processRSS(feed, allArticles, now);
+                } else if (feed.scrapeUrl) {
+                    await processScraper(feed, allArticles, now);
+                }
                 await new Promise(r => setTimeout(r, 400));
             } catch (e) {
                 console.error(`Virhe: ${feed.nameFI}: ${e.message}`);
             }
         }
 
-        // DUPLIKAATTIEN POISTO (Otsikko + Lähde + Päivä)
+        // 3. DUPLIKAATTIEN POISTO (Salliva: Otsikko + Lähde + Päivä)
         const seenIds = new Set();
         allArticles = allArticles.filter(art => {
             if (!art) return false;
@@ -99,24 +92,28 @@ async function run() {
             return true;
         }).sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
 
-        console.log(`Haku valmis. Artikkeleita yhteensä: ${allArticles.length}`);
-
-        // TALLENNUS JA TILASTOT
-        const stats = { "__meta": { "last_run": now.toISOString(), "article_count": allArticles.length } };
-        const bySource = {};
+        // 4. TALLENNUS JA ARKISTOINTI
+        const sourceStats = { "__meta": { "last_run": now.toISOString(), "article_count": allArticles.length } };
+        const articlesBySource = {};
 
         allArticles.forEach(art => {
-            const key = art.sourceTitle.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-            if (!bySource[key]) bySource[key] = [];
-            bySource[key].push(art);
-            if (!stats[art.sourceTitle]) stats[art.sourceTitle] = { file: `${key}.json`, count: 0, category: art.sheetCategory };
-            stats[art.sourceTitle].count++;
+            const src = art.sourceTitle || "Muu";
+            const fileKey = src.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+            if (!articlesBySource[fileKey]) articlesBySource[fileKey] = [];
+            articlesBySource[fileKey].push(art);
+            
+            if (!sourceStats[src]) {
+                sourceStats[src] = { file: `${fileKey}.json`, count: 0, category: art.sheetCategory || "Yleinen" };
+            }
+            sourceStats[src].count++;
         });
 
-        if (!fs.existsSync(sourcesDir)) fs.mkdirSync(sourcesDir);
-        Object.keys(bySource).forEach(k => fs.writeFileSync(path.join(sourcesDir, `${k}.json`), JSON.stringify(bySource[k], null, 2)));
-        
-        // JÄRJESTELY: Round Robin päivän sisällä
+        if (!fs.existsSync(sourcesDir)) fs.mkdirSync(sourcesDir, { recursive: true });
+        Object.keys(articlesBySource).forEach(key => {
+            fs.writeFileSync(path.join(sourcesDir, `${key}.json`), JSON.stringify(articlesBySource[key], null, 2));
+        });
+
+        // 5. ETUSIVUN JÄRJESTELY (Round Robin)
         const days = {};
         allArticles.forEach(art => {
             const d = art.pubDate.split('T')[0];
@@ -124,28 +121,30 @@ async function run() {
             days[d].push(art);
         });
 
-        let final = []; 
-        Object.keys(days).sort().reverse().forEach(d => {
-            const srcMap = {};
-            days[d].forEach(art => {
+        let finalSorted = []; 
+        Object.keys(days).sort().reverse().forEach(day => {
+            const bySource = {};
+            days[day].forEach(art => {
                 const s = art.sourceTitle || "Muu";
-                if (!srcMap[s]) srcMap[s] = [];
-                srcMap[s].push(art);
+                if (!bySource[s]) bySource[s] = [];
+                bySource[s].push(art);
             });
-            const sList = Object.keys(srcMap);
-            let more = true; let i = 0;
+            const dList = Object.keys(bySource);
+            let more = true; let idx = 0;
             while (more) {
                 more = false;
-                sList.forEach(s => { if (srcMap[s][i]) { final.push(srcMap[s][i]); more = true; } });
-                i++;
+                dList.forEach(s => { if (bySource[s][idx]) { finalSorted.push(bySource[s][idx]); more = true; } });
+                idx++;
             }
         });
 
-        fs.writeFileSync('data.json', JSON.stringify(final.slice(0, 1000), null, 2));
-        fs.writeFileSync('stats.json', JSON.stringify(stats, null, 2));
+        fs.writeFileSync('data.json', JSON.stringify(finalSorted.slice(0, 1000), null, 2));
+        fs.writeFileSync('stats.json', JSON.stringify(sourceStats, null, 2));
+        fs.writeFileSync(cleanLogFile, today);
+        console.log(`Valmis! Haettu ${allArticles.length} artikkelia.`);
 
-    } catch (e) {
-        console.error("Kriittinen virhe:", e);
+    } catch (error) {
+        console.error("Kriittinen virhe:", error);
         process.exit(1);
     }
 }
@@ -161,7 +160,7 @@ async function processRSS(feed, allArticles, now) {
         let itemDate = new Date(item.pubDate || item.isoDate);
         if (isNaN(itemDate.getTime()) || itemDate > now) itemDate = now;
         
-        // KUVAN POIMINTA (Access Now + WordPress erikoistuki)
+        // KUVAN POIMINTA
         let img = null;
         let mContent = item.mediaContent || item['media:content'];
         if (mContent) {
@@ -170,12 +169,10 @@ async function processRSS(feed, allArticles, now) {
             mArr.forEach(m => {
                 const u = m.url || m.$?.url;
                 const w = parseInt(m.width || m.$?.width || 0);
-                if (u && (w >= maxW || !img)) { maxW = w; img = u; }
+                if (url && (w >= maxW || !img)) { maxW = w; img = u; }
             });
         }
-        
         if (!img) img = extractImageFromContent(item, feed.rssUrl);
-        
         if (img) {
             if (img.includes('?')) img = img.split('?')[0];
             if (img.startsWith('//')) img = 'https:' + img;
@@ -183,7 +180,6 @@ async function processRSS(feed, allArticles, now) {
 
         const raw = item['content:encoded'] || item.contentEncoded || item.content || item.description || "";
         let clean = raw.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-        if (clean.length < 10) clean = item.title || "";
 
         return {
             title: item.title,
@@ -235,8 +231,7 @@ function extractImageFromContent(item, baseUrl) {
     if (!html) return null;
     const $ = cheerio.load(html);
     const img = $('img').first();
-    // Priorisoidaan WordPressin alkuperäinen kuva
-    let src = img.attr('data-orig-file') || img.attr('src') || img.attr('data-src') || img.attr('data-lazy-src');
+    let src = img.attr('data-orig-file') || img.attr('src') || img.attr('data-src');
     if (src && src.startsWith('/')) { try { src = new URL(src, baseUrl).href; } catch(e){} }
     return src;
 }
