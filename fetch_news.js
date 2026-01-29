@@ -75,7 +75,8 @@ async function run() {
                 // Tulevaisuuden varalle: nappaamme nimet sarakkeista 4, 5 ja kielen sarakkeesta 6
                 // jos ne joskus ilmestyvät sinne.
                 nameFI: cols[7]?.replace(/^"|"$/g, '').trim(),
-                nameEN: cols[6]?.replace(/^"|"$/g, '').trim()
+                nameEN: cols[6]?.replace(/^"|"$/g, '').trim(),
+                isDarkLogo: (cols[11] || "").toUpperCase().trim() === "TRUE" || cols[11] === "1"
             };
         }).filter(f => f !== null);
 
@@ -358,7 +359,8 @@ async function processScraper(feed, allArticles, now) {
                     enforcedImage: finalImg,
                     // LISÄÄ NÄMÄ MYÖS SCRAPERIIN:
                     sourceDescription: "Verkkosivulta poimittu uutinen.",
-                    sourceLogo: `https://www.google.com/s2/favicons?sz=64&domain=${domain}`
+                    sourceLogo: `https://www.google.com/s2/favicons?sz=64&domain=${domain}`,
+                    isDarkLogo: feed.isDarkLogo
                 });
             }
         }
