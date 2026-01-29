@@ -47,17 +47,20 @@ jobs:
           git config --global user.name 'NewsRobot'
           git config --global user.email 'robot@openmag.fi'
           
-          # Pakotetaan haku ja nollaus
+          # 1. Haetaan uusin tilanne ja nollataan Git-lukot
           git fetch origin main
-          git reset --hard origin/main
+          git reset --soft origin/main
           
-          # Lisätään tiedostot uudelleen (ne ovat tallessa levyllä)
+          # 2. Lisätään tiedostot (jotka fetch_news.js juuri loi)
           git add data.json stats.json last_clean.txt
           if [ -d "sources" ]; then git add sources/*.json; fi
           
+          # 3. Tehdään commit vain jos on oikeasti jotain uutta
           if ! git diff --cached --quiet; then
             git commit -m "Automated news update [skip ci]"
             git push origin main --force
+          else
+            echo "Ei uusia uutisia tallennettavaksi."
           fi
 
       - name: Purge Cache (Optional)
