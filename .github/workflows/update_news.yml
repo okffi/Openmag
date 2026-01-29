@@ -47,23 +47,21 @@ jobs:
           git config --global user.name 'NewsRobot'
           git config --global user.email 'robot@openmag.fi'
           
-          # Haetaan uusin tila, jotta emme yritä commitata vanhan päälle
-          git pull origin main --rebase --autostash
-
-          # Lisätään tiedostot
+          # 1. Nollataan mahdolliset aiemmat jumiutuneet muutokset
+          git reset --hard origin/main
+          
+          # 2. Haetaan tuorein tila
+          git pull --rebase --autostash origin main
+          
+          # 3. Lisätään uudet uutisdata-muutokset
           git add data.json stats.json last_clean.txt
           if [ -d "sources" ]; then git add sources/*.json; fi
           
-          # Tarkistetaan muutokset
-          if git diff --cached --quiet; then
-            echo "Ei muutoksia."
-            exit 0
+          # 4. Tallennetaan ja lähetetään vain jos on muutoksia
+          if ! git diff --cached --quiet; then
+            git commit -m "Automated news update [skip ci]"
+            git push origin main
           fi
-
-          git commit -m "Automated news update [skip ci]"
-          
-          # Pakotetaan push, jos rebase epäonnistuu (koska data on robotin luomaa)
-          git push origin main || (git pull --rebase origin main && git push origin main)
 
       - name: Purge Cache (Optional)
         run: |
