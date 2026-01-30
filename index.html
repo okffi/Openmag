@@ -397,6 +397,9 @@ async function init() {
         transitionDuration: '0.4s'
     });
 
+    // Make msnry available on window so inline image onload handlers can call it reliably
+    window.msnry = msnry;
+
     await loadData('data.json', true);
     initSidebar(); // Tämä lataa myös statsData:n
 
@@ -457,7 +460,7 @@ async function loadData(filePath, isInitial = false, forceRefresh = false) { // 
 
 function displayArticles() {
     const filtered = currentCategory === 'All' ? allArticles : allArticles.filter(a => a.sheetCategory === currentCategory);
-    const slice = filtered.slice(displayedCount, displayedCount + PAGE_SIZE);
+    const slice = filtered.slice(displayedCount, displayedCount += slice.length);
     const sentinel = document.querySelector('#scroll-sentinel');
     
     if (slice.length === 0 && displayedCount === 0) {
@@ -531,8 +534,7 @@ async function initSidebar() {
         }
     }
     // Käytetään globaalia statsDataa (jonka fetch juuri täytti tai joka oli jo olemassa)
-    renderCategoryView(document.getElementById('category-list')); 
-    renderSourceView(list); 
+    renderCategoryView(list);
 }
 
 function renderCategoryView(list) {
