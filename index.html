@@ -406,7 +406,7 @@ async function init() {
     observer.observe(document.querySelector('#scroll-sentinel'));
 }
 
-async function loadData(filePath, isInitial = false) {
+async function loadData(filePath, isInitial = false, forceRefresh = false) { // Lisätty forceRefresh
     isLoading = true;
     displayedCount = 0;
     const container = document.querySelector('#magazine-grid');
@@ -422,8 +422,8 @@ async function loadData(filePath, isInitial = false) {
     }
 
     try {
-        // RATIONALISOINTI: Jos on pääsyöte ja se löytyy jo muistista (eikä ole ensilataus), käytetään sitä
-        if (filePath === 'data.json' && mainFeedCache && !isInitial) {
+        // MUUTOS TÄSSÄ: Jos forceRefresh on true, skipataan mainFeedCache
+        if (filePath === 'data.json' && mainFeedCache && !isInitial && !forceRefresh) {
             allArticles = mainFeedCache;
         } else {
             // Muussa tapauksessa ladataan verkosta
