@@ -458,11 +458,72 @@ async function loadData(filePath, isInitial = false, forceRefresh = false) { // 
     }
 }
 
+/* --- Add this helper function near the other functions in the <script> --- */
+function createArticleCard(item) {
+  const img = item.enforcedImage;
+  const card = document.createElement('div');
+  card.className = `grid-item ${!img ? 'no-image' : ''}`;
+
+  const link = document.createElement('a');
+  link.href = item.link || '#';
+  link.target = '_blank';
+  link.rel = 'noopener';
+
+  if (img) {
+    const image = document.createElement('img');
+    image.src = `https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af`;
+    // use the global msnry reference; we make sure to set window.msnry in init()
+    image.onload = () => { if (window.msnry && typeof window.msnry.layout === 'function') window.msnry.layout(); };
+    link.appendChild(image);
+  }
+
+  const content = document.createElement('div');
+  content.className = 'content';
+
+  const category = document.createElement('span');
+  category.className = 'category-label';
+  category.textContent = item.sheetCategory || 'Yleinen';
+  category.onclick = (e) => handleCategoryClick(e, item.sheetCategory || 'Yleinen');
+
+  const h2 = document.createElement('h2');
+  h2.textContent = item.title || '';
+
+  const p = document.createElement('p');
+  // strip HTML, limit length, and use textContent (safe)
+  const clean = (item.content || "").replace(/<[^>]*>/g, '').substring(0, 150);
+  p.textContent = clean + (clean.length ? '...' : '');
+
+  const meta = document.createElement('div');
+  meta.className = 'meta-info';
+
+  const src = document.createElement('span');
+  src.className = 'source-trigger';
+  src.textContent = `${item.sourceTitle || 'Lähde'}${item.creator ? ' | ' + item.creator : ''}`;
+  src.onclick = (e) => { e.stopPropagation(); handleSourceClick(e, item.sourceTitle); };
+
+  const dateSpan = document.createElement('span');
+  dateSpan.textContent = item.pubDate ? new Date(item.pubDate).toLocaleDateString('fi-FI') : '';
+
+  meta.appendChild(src);
+  meta.appendChild(dateSpan);
+
+  content.appendChild(category);
+  content.appendChild(h2);
+  content.appendChild(p);
+  content.appendChild(meta);
+
+  link.appendChild(content);
+  card.appendChild(link);
+
+  return card;
+}
+
+/* --- Replace the existing displayArticles() with this safer implementation --- */
 function displayArticles() {
     const filtered = currentCategory === 'All' ? allArticles : allArticles.filter(a => a.sheetCategory === currentCategory);
-    const slice = filtered.slice(displayedCount, displayedCount += slice.length);
+    const slice = filtered.slice(displayedCount, displayedCount + PAGE_SIZE);
     const sentinel = document.querySelector('#scroll-sentinel');
-    
+
     if (slice.length === 0 && displayedCount === 0) {
         sentinel.innerText = "— Täällä ei ole juuri nyt uutta —";
         isLoading = false;
@@ -480,43 +541,26 @@ function displayArticles() {
     const newElements = [];
 
     slice.forEach(item => {
-        const img = item.enforcedImage;
-        const card = document.createElement('div');
-        card.className = `grid-item ${!img ? 'no-image' : ''}`;
-        const dateStr = item.pubDate ? new Date(item.pubDate).toLocaleDateString('fi-FI') : '';
-        const cleanContent = (item.content || "").replace(/<[^>]*>/g, '').substring(0, 150);
-        const sourceLabel = item.sourceTitle || 'Lähde';
-        const creatorLabel = item.creator ? ` | ${item.creator}` : '';
-    
-        card.innerHTML = `
-            <a href="${item.link}" target="_blank">
-                ${img ? `<img src="https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af" onload="window.msnry.layout()">` : ''}
-                <div class="content">
-                    <span class="category-label" onclick="handleCategoryClick(event, '${item.sheetCategory || 'Yleinen'}')">
-                        ${item.sheetCategory || 'Yleinen'}
-                    </span>
-                    <h2>${item.title}</h2>
-                    <p>${cleanContent}...</p>
-                    <div class="meta-info">
-                        <span class="source-trigger" onclick="handleSourceClick(event, '${item.sourceTitle}')">
-                            ${sourceLabel}${creatorLabel}
-                        </span>
-                        <span>${dateStr}</span>
-                    </div>
-                </div>
-            </a>`;
+        const card = createArticleCard(item);
         container.appendChild(card);
         newElements.push(card);
     });
-    displayedCount += PAGE_SIZE;
-    
+
+    // increment by actual number of appended items (fix for overshoot)
+    displayedCount += slice.length;
+
     imagesLoaded(container, () => {
-        msnry.appended(newElements);
-        msnry.layout();
+        if (msnry && typeof msnry.appended === 'function') {
+            msnry.appended(newElements);
+        }
+        if (msnry && typeof msnry.layout === 'function') {
+            msnry.layout();
+        }
         container.classList.add('loaded');
         isLoading = false;
     });
 }
+
 
 // SIVUPALKKI-LOGIIKKA
 async function initSidebar() {
@@ -612,6 +656,68 @@ function showSidebarView(view) {
         btnAz.classList.remove('active');
         renderCategoryView(list);
     }
+}
+
+async function changeSource(file, title, el) {
+    const viewTitle = document.getElementById('current-view-title');
+    const viewDesc = document.getElementById('current-view-description');
+    const logoCont = document.getElementById('feed-logo-container');
+
+    // keep user feedback
+    if (viewTitle) viewTitle.textContent = title;
+    if (viewDesc) viewDesc.innerText = "Ladataan...";
+
+    if (logoCont) {
+        logoCont.style.display = (file === 'data.json') ? 'none' : 'flex';
+        logoCont.innerHTML = ""; // we'll populate safely below if needed
+        logoCont.classList.remove('dark-bg');
+    }
+
+    currentCategory = 'All';
+    displayedCount = 0;
+
+    document.querySelectorAll('.source-item').forEach(i => i.classList.remove('active'));
+    if (el) el.classList.add('active');
+
+    await loadData(file);
+
+    if (allArticles.length > 0) {
+        const first = allArticles[0];
+        const isMainFeed = (file === 'data.json');
+        const rssLink = first.originalRssUrl || (isMainFeed ? 'data.json' : file);
+
+        if (!isMainFeed && logoCont) {
+            if (first.isDarkLogo) logoCont.classList.add('dark-bg');
+
+            // safe logo insertion (avoid innerHTML)
+            logoCont.innerHTML = ''; // clear
+            if (first.sourceLogo) {
+                const img = document.createElement('img');
+                img.src = first.sourceLogo;
+                img.alt = title;
+                // optional: set width/height or classes if needed
+                logoCont.appendChild(img);
+            }
+        }
+
+        let siteUrl = "#";
+        if (!isMainFeed) {
+            try { siteUrl = new URL(first.link).origin; } catch(e) {}
+        }
+
+        // Use the helper to safely set the title and RSS link (no raw innerHTML)
+        setViewTitleAndRss(viewTitle, title, rssLink, isMainFeed, siteUrl);
+
+        if (viewDesc) {
+            viewDesc.innerText = isMainFeed ? "Kokoelma seurattujen lähteiden tuoreimpia uutisia." : (first.sourceDescription || "");
+        }
+    }
+
+    if (window.innerWidth < 1000) {
+        const sidebar = document.getElementById('source-sidebar');
+        sidebar.classList.remove('open');
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 async function changeSource(file, title, el) {
