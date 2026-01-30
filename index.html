@@ -763,6 +763,7 @@ function filterByCategory(catName) {
 
     displayedCount = 0;
     document.querySelectorAll('.source-item').forEach(i => i.classList.remove('active'));
+    mainFeedCache = null;
     loadData('data.json');
 }
 
