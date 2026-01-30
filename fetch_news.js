@@ -58,45 +58,47 @@ async function run() {
             }
         }
 
-        // 2. HAETAAN SYÖTTEET
-// 2. HAETAAN SYÖTTEET (Cache Buster lisätty)
+        // 2. HAETAAN SYÖTTEET (Cache Buster ja parannettu validointi)
         console.log("Haetaan syötelistaa Google Sheetsistä...");
         const cacheBuster = `&cb=${Date.now()}`;
         const response = await axios.get(SHEET_CSV_URL + cacheBuster);
         const rows = response.data.split('\n').slice(1);
-
-        const feeds = rows.map(row => {
-            if (!row || row.trim() === '' || row.split(',').length < 3) return null; // Lisää pituustarkistus
+        
+        const feeds = rows.map((row, index) => {
+            if (!row || row.trim() === '' || row.split(',').length < 3) return null; 
+        
             const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
             const c = cols.map(v => (v || "").replace(/^"|"$/g, '').trim());
         
-            // Varmista että URL (sarake 2) on olemassa
-            if (!c[2] || c[2].length < 10) return null; 
+            if (!c[2] || c[2].length < 10) {
+                if (c[0] || c[1]) console.warn(`[VAROITUS] Ohitetaan rivi ${index + 2}: URL puuttuu.`);
+                return null;
+            }
         
             return { 
                 category: c[0] || "Yleinen",
-                feedName: c[1],
+                feedName: c[1] || "Nimetön lähde", 
                 rssUrl: c[2], 
                 scrapeUrl: c[3],
-                nameFI: c[7],
+                nameFI: c[7] || c[1] || "Nimetön", 
                 isDarkLogo: (c[11] || "").toUpperCase() === "TRUE" || c[11] === "1"
             };
         }).filter(f => f !== null);
-
+        
         for (const feed of feeds) {
             try {
                 if (feed.rssUrl && feed.rssUrl.length > 10) {
-                    console.log(`[RSS] ${feed.rssUrl}`);
+                    console.log(`[RSS] ${feed.nameFI}: ${feed.rssUrl}`);
                     await processRSS(feed, allArticles, now);
                 } else if (feed.scrapeUrl) {
-                    console.log(`[SCRAPE] ${feed.scrapeUrl}`);
+                    console.log(`[SCRAPE] ${feed.nameFI}: ${feed.scrapeUrl}`);
                     await processScraper(feed, allArticles, now);
                 }
                 // Pieni viive estää robotin leimaamisen hyökkäykseksi
                 await new Promise(r => setTimeout(r, 600));
             } catch (e) {
-                console.error(`Virhe kohteessa ${feed.rssUrl || feed.scrapeUrl}: ${e.message}`);
-                failedFeeds.push(`${feed.category}: ${e.message}`);
+                console.error(`Virhe kohteessa ${feed.nameFI || 'Tuntematon'}: ${e.message}`);
+                failedFeeds.push(`${feed.nameFI || feed.category}: ${e.message}`);
             }
         }
         // 3. DUPLIKAATTIEN POISTO
