@@ -522,14 +522,17 @@ async function initSidebar() {
 
     if (!statsData) {
         try {
-            const response = await fetch('stats.json?v=' + Date.now());
+            // Lisätään cache: 'no-store' varmuuden vuoksi fetch-asetuksiin
+            const response = await fetch('stats.json?v=' + Date.now(), { cache: 'no-store' });
             statsData = await response.json();
         } catch (e) { 
             console.error("Sidebar failed", e); 
             return;
         }
     }
-    renderCategoryView(list);
+    // Käytetään globaalia statsDataa (jonka fetch juuri täytti tai joka oli jo olemassa)
+    renderCategoryView(document.getElementById('category-list')); 
+    renderSourceView(list); 
 }
 
 function renderCategoryView(list) {
