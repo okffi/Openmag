@@ -88,7 +88,7 @@ async function run() {
                 rssUrl: c[2], 
                 scrapeUrl: c[3],
                 nameFI: c[7] || c[1],
-                isDarkLogo: (c[11] || "").toUpperCase() === "TRUE" || c[11] === "1")
+                isDarkLogo: (c[11] || "").toUpperCase() === "TRUE" || c[11] === "1"
             };
         }).filter(f => f !== null);
         
