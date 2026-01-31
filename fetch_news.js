@@ -21,7 +21,7 @@ const parser = new Parser({
 });
 
 const SHEET_TSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=0&single=true&output=tsv";
-
+    
 async function run() {
     let failedFeeds = []; 
     let allArticles = [];
@@ -63,13 +63,21 @@ async function run() {
         const cacheBuster = `&cb=${Date.now()}`;
         const response = await axios.get(SHEET_TSV_URL + cacheBuster);
         const rows = response.data.split('\n').slice(1);
+        // ... response = await axios.get(SHEET_TSV_URL + cacheBuster); ...
+
+        console.log(`--- DEBUG: Sheets-data haettu ---`);
+        console.log(`Rivejä yhteensä: ${rows.length}`);
+        console.log(`Esimerkki ensimmäisestä raakarivistä:\n"${rows[0]}"`);
         
         const feeds = rows.map(row => {
-            // Suodatetaan tyhjät rivit
             if (!row || row.trim() === '') return null;
-            
-            // VAIHDETTU: split(',') -> split('\t')
             const c = row.split('\t').map(v => v.trim());
+            
+            // Logataan vain ensimmäinen onnistunut rivi testiksi
+            if (c.length > 0 && c[1] === "Open Knowledge Foundation DE") {
+                 console.log(`--- DEBUG: Esimerkkirivi parsittu ---`);
+                 console.log(`Kategoria: ${c[0]}, Nimi: ${c[1]}, RSS: ${c[2]}`);
+            }
         
             // Validointi: vähintään URL (sarake 2) on löydyttävä
             if (c.length < 3 || !c[2] || c[2].length < 10) return null; 
