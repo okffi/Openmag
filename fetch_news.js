@@ -20,7 +20,7 @@ const parser = new Parser({
     }
 });
 
-const SHEET_CSV_URL = process.env.SHEET_CSV_URL || 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=0&single=true&output=csv';
+const SHEET_TSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=0&single=true&output=tsv";
 
 async function run() {
     let failedFeeds = []; 
@@ -59,29 +59,28 @@ async function run() {
         }
 
         // 2. HAETAAN SYÖTTEET (Cache Buster ja parannettu validointi)
-        console.log("Haetaan syötelistaa Google Sheetsistä...");
+        console.log("Haetaan syötelistaa Google Sheetsistä (TSV)...");
         const cacheBuster = `&cb=${Date.now()}`;
-        const response = await axios.get(SHEET_CSV_URL + cacheBuster);
+        const response = await axios.get(SHEET_TSV_URL + cacheBuster);
         const rows = response.data.split('\n').slice(1);
         
-        const feeds = rows.map((row, index) => {
-            if (!row || row.trim() === '' || row.split(',').length < 3) return null; 
+        const feeds = rows.map(row => {
+            // Suodatetaan tyhjät rivit
+            if (!row || row.trim() === '') return null;
+            
+            // VAIHDETTU: split(',') -> split('\t')
+            const c = row.split('\t').map(v => v.trim());
         
-            const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
-            const c = cols.map(v => (v || "").replace(/^"|"$/g, '').trim());
-        
-            if (!c[2] || c[2].length < 10) {
-                if (c[0] || c[1]) console.warn(`[VAROITUS] Ohitetaan rivi ${index + 2}: URL puuttuu.`);
-                return null;
-            }
+            // Validointi: vähintään URL (sarake 2) on löydyttävä
+            if (c.length < 3 || !c[2] || c[2].length < 10) return null; 
         
             return { 
                 category: c[0] || "Yleinen",
-                feedName: c[1] || "Nimetön lähde", 
+                feedName: c[1],
                 rssUrl: c[2], 
                 scrapeUrl: c[3],
-                nameFI: c[7] || c[1] || "Nimetön", 
-                isDarkLogo: (c[11] || "").toUpperCase() === "TRUE" || c[11] === "1"
+                nameFI: c[7] || c[1],
+                isDarkLogo: c[11] && (c[11].toUpperCase() === "TRUE" || c[11] === "1")
             };
         }).filter(f => f !== null);
         
