@@ -56,12 +56,8 @@ jobs:
           if [ -d "sources" ]; then git add sources/*.json; fi
           
           # 3. Tehdään commit vain jos on oikeasti jotain uutta
-          if ! git diff --cached --quiet; then
-            git commit -m "Automated news update [skip ci]"
-            git push origin main --force
-          else
-            echo "Ei uusia uutisia tallennettavaksi."
-          fi
+          git commit -m "Automated news update $(date +'%Y-%m-%d %H:%M') [skip ci]" || echo "No changes"
+          git push origin main
 
       - name: Purge Cache (Optional)
         run: |
