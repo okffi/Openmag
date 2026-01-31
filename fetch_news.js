@@ -188,30 +188,36 @@ async function run() {
 async function processRSS(feed, allArticles, now) {
     let feedContent;
 
+    // Määritetään yhteiset asetukset axios-pyyntöjä varten
+    const axiosConfig = {
+        timeout: 15000,
+        headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+        },
+        httpsAgent: typeof httpsAgent !== 'undefined' ? httpsAgent : undefined
+    };
+
     try {
-        // Yritetään ensin normaalisti
+        // Yritetään ensin normaalisti rss-parserilla
+        // Huom: rss-parser ei tue suoraan axios-headersseja, joten jos tämä epäonnistuu,
+        // mennään automaattisesti catch-lohkoon, jossa axios käyttää User-Agentia.
         feedContent = await parser.parseURL(feed.rssUrl);
     } catch (err) {
-        // Poikkeuslogiikka XML-virheille (Line/Column) ja sertifikaattivioille (certificate)
-        if (err.message.includes('Line:') || err.message.includes('Column:') || err.message.includes('certificate')) {
-            console.log(`[POIKKEUS] Vikasietoinen haku: ${feed.nameFI}`);
-            try {
-                // Käytetään axiosia ja aiemmin määritettyä httpsAgentia ohittamaan sertifikaattiviat
-                const response = await axios.get(feed.rssUrl, { 
-                    timeout: 15000, 
-                    httpsAgent: typeof httpsAgent !== 'undefined' ? httpsAgent : undefined 
-                });
-                
-                let xmlData = response.data;
-                // Puhdistetaan rikkonaiset XML-merkit (kuten & ilman koodia)
-                xmlData = xmlData.replace(/&(?!(amp|lt|gt|quot|apos|#\d+|#x[a-f\d]+);)/gi, '&amp;');
-                
-                feedContent = await parser.parseString(xmlData);
-            } catch (retryErr) {
-                throw new Error(`Vikasietoinen haku epäonnistui: ${retryErr.message}`);
-            }
-        } else {
-            throw err;
+        // Poikkeuslogiikka XML-virheille, sertifikaattivioille tai jos palvelin hylkää peruspyynnön
+        console.log(`[POIKKEUS] Vikasietoinen haku: ${feed.nameFI}`);
+        
+        try {
+            // Käytetään axiosia yllä määritellyllä configilla (sisältää User-Agentin)
+            const response = await axios.get(feed.rssUrl, axiosConfig);
+            
+            let xmlData = response.data;
+            // Puhdistetaan rikkonaiset XML-merkit
+            xmlData = xmlData.replace(/&(?!(amp|lt|gt|quot|apos|#\d+|#x[a-f\d]+);)/gi, '&amp;');
+            
+            feedContent = await parser.parseString(xmlData);
+        } catch (retryErr) {
+            throw new Error(`Vikasietoinen haku epäonnistui: ${retryErr.message}`);
         }
     }
     
