@@ -232,21 +232,15 @@ async function processRSS(feed, allArticles, now) {
     // 1. Poimitaan syötteen kuvaus
     const sourceDescription = feedContent.description ? feedContent.description.trim() : "";
     
-// 2. Poimitaan logo
+    // 2. Poimitaan logo
     let sourceLogo = feedContent.image ? feedContent.image.url : null;
     
-    if (!sourceLogo) {
+    if (!sourceLogo && feedContent.link) {
         try {
-            // Yritetään ensin syötteen ilmoittamaa linkkiä, sitten uutislinkkiä, ja lopuksi RSS-osoitetta
-            const linkToParse = feedContent.link || (feedContent.items[0] && feedContent.items[0].link) || feed.rssUrl;
-            
-            if (linkToParse) {
-                const domain = new URL(linkToParse).hostname;
-                sourceLogo = `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
-            }
+            const domain = new URL(feedContent.link).hostname;
+            sourceLogo = `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
         } catch (e) {
-            // Jos URL on edelleen viallinen (esim. pelkkä polku), ei kaadeta ajoa
-            console.log(`[VAROITUS] Faviconin luonti epäonnistui kohteelle ${feed.nameFI}: ${e.message}`);
+            console.log("Ei voitu luoda favicon-linkkiä");
         }
     }
 
@@ -384,7 +378,6 @@ async function processRSS(feed, allArticles, now) {
             enforcedImage: finalImg,
             sourceDescription: sourceDescription,
             sourceLogo: sourceLogo,
-            isDarkLogo: feed.isDarkLogo,
             originalRssUrl: feed.rssUrl
         };
     });
