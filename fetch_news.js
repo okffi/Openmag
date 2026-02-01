@@ -87,25 +87,28 @@ async function run() {
                 feedName: c[1],
                 rssUrl: c[2], 
                 scrapeUrl: c[3],
-                nameFI: c[7] || c[1],
-                isDarkLogo: (c[11] || "").toUpperCase() === "TRUE" || c[11] === "1"
+                nameChecked: c[4] || c[1],
+                sheetDesc: (c[5] || "").trim(),
+                isDarkLogo: (c[8] || "").toUpperCase() === "TRUE" || c[8] === "1",
+                lang: feedLang,
+                scope: feedScope
             };
         }).filter(f => f !== null);
         
         for (const feed of feeds) {
             try {
                 if (feed.rssUrl && feed.rssUrl.length > 10) {
-                    console.log(`[RSS] ${feed.nameFI}: ${feed.rssUrl}`);
+                    console.log(`[RSS] ${feed.nameChecked}: ${feed.rssUrl}`);
                     await processRSS(feed, allArticles, now);
                 } else if (feed.scrapeUrl) {
-                    console.log(`[SCRAPE] ${feed.nameFI}: ${feed.scrapeUrl}`);
+                    console.log(`[SCRAPE] ${feed.nameChecked}: ${feed.scrapeUrl}`);
                     await processScraper(feed, allArticles, now);
                 }
                 // Pieni viive estää robotin leimaamisen hyökkäykseksi
                 await new Promise(r => setTimeout(r, 600));
             } catch (e) {
-                console.error(`Virhe kohteessa ${feed.nameFI || 'Tuntematon'}: ${e.message}`);
-                failedFeeds.push(`${feed.nameFI || feed.category}: ${e.message}`);
+                console.error(`Virhe kohteessa ${feed.nameChecked || 'Tuntematon'}: ${e.message}`);
+                failedFeeds.push(`${feed.nameChecked || feed.category}: ${e.message}`);
             }
         }
         // 3. DUPLIKAATTIEN POISTO
@@ -213,7 +216,7 @@ async function processRSS(feed, allArticles, now) {
         feedContent = await parser.parseURL(feed.rssUrl);
     } catch (err) {
         // Poikkeuslogiikka XML-virheille, sertifikaattivioille tai jos palvelin hylkää peruspyynnön
-        console.log(`[POIKKEUS] Vikasietoinen haku: ${feed.nameFI}`);
+        console.log(`[POIKKEUS] Vikasietoinen haku: ${feed.nameChecked}`);
         
         try {
             // Käytetään axiosia yllä määritellyllä configilla (sisältää User-Agentin)
@@ -230,7 +233,7 @@ async function processRSS(feed, allArticles, now) {
     }
     
     // 1. Poimitaan syötteen kuvaus
-    const sourceDescription = feedContent.description ? feedContent.description.trim() : "";
+    const sourceDescription = feed.sheetDesc || (feedContent.description ? feedContent.description.trim() : "");
     
 // 2. Poimitaan logo
     let sourceLogo = feedContent.image ? feedContent.image.url : null;
@@ -246,7 +249,7 @@ async function processRSS(feed, allArticles, now) {
             }
         } catch (e) {
             // Jos URL on edelleen viallinen (esim. pelkkä polku), ei kaadeta ajoa
-            console.log(`[VAROITUS] Faviconin luonti epäonnistui kohteelle ${feed.nameFI}: ${e.message}`);
+            console.log(`[VAROITUS] Faviconin luonti epäonnistui kohteelle ${feed.nameChecked}: ${e.message}`);
         }
     }
 
@@ -379,11 +382,13 @@ async function processRSS(feed, allArticles, now) {
             pubDate: itemDate.toISOString(),
             content: finalSnippet,
             creator: item.creator || item.author || "",
-            sourceTitle: feed.nameFI || feed.feedName || feedContent.title || "Lähde",
+            sourceTitle: feed.nameChecked || feed.feedName || feedContent.title || "Lähde",
             sheetCategory: feed.category,
             enforcedImage: finalImg,
             sourceDescription: sourceDescription,
             sourceLogo: sourceLogo,
+            lang: feed.lang,
+            scope: feed.scope,
             isDarkLogo: feed.isDarkLogo,
             originalRssUrl: feed.rssUrl
         };
@@ -440,7 +445,7 @@ async function processScraper(feed, allArticles, now) {
                     enforcedImage: finalImg,
                     // LISÄÄ NÄMÄ MYÖS SCRAPERIIN:
                     sourceDescription: "Verkkosivulta poimittu uutinen.",
-                    sourceLogo: `https://www.google.com/s2/favicons?sz=64&domain=${domain}`,
+                    sourceLogo: `https://www.google.com/s2/favicons?sz=128&domain=${domain}`,
                     isDarkLogo: feed.isDarkLogo
                 });
             }
