@@ -253,7 +253,7 @@ async function processRSS(feed, allArticles, now) {
             itemDate.setMinutes(itemDate.getMinutes() - randomMinutes);
         }
         
-// --- KUVAN POIMINTA ALKAA ---
+        // --- KUVAN POIMINTA ALKAA ---
         // Alustetaan muuttuja img tyhjäksi. Jos kuvaa ei löydy mistään alta, se jää nulliksi.
         let img = null;
 
@@ -330,12 +330,6 @@ async function processRSS(feed, allArticles, now) {
         }
         // --- KUVAN POIMINTA PÄÄTTYY ---
         
-        // LOPULLINEN VARMISTUS WSRV.NL -YHTEENSOPIVUUTEEN:
-        // Jos kuva-URL sisältää XML-entiteettejä (&amp;), palautetaan ne raakamuotoon (&).
-        // Tämä estää tupla-enkoodauksen (kuten %26amp%3B), joka rikkoisi wsrv.nl-pyynnön.
-        if (img && img.includes('&amp;')) {
-            img = img.replace(/&amp;/g, '&');
-        }
 
         // --- TEKSTIN POIMINTA ALKAA ---
         // Haetaan raakateksti useasta mahdollisesta kentästä (ePressi käyttää content:encoded)
@@ -366,6 +360,13 @@ async function processRSS(feed, allArticles, now) {
             }
         }
 
+        let finalImg = img;
+        if (finalImg && typeof finalImg === 'string') {
+            // Palautetaan mahdolliset XML-entiteetit raakamuotoon, jotta selain voi 
+            // enkoodata ne puhtaasti wsrv.nl-palvelulle (ei tupla-enkoodausta).
+            finalImg = finalImg.replace(/&amp;/g, '&');
+        }
+
         return {
             title: item.title,
             link: articleLink,
@@ -374,7 +375,7 @@ async function processRSS(feed, allArticles, now) {
             creator: item.creator || item.author || "",
             sourceTitle: feed.nameFI || feed.feedName || feedContent.title || "Lähde",
             sheetCategory: feed.category,
-            enforcedImage: img,
+            enforcedImage: finalImg,
             sourceDescription: sourceDescription,
             sourceLogo: sourceLogo,
             originalRssUrl: feed.rssUrl
@@ -468,6 +469,11 @@ function extractImageFromContent(item, baseUrl) {
             // --- TÄRKEIN KORJAUS COARILLE JA WP-KUVILLE ---
             // Poistetaan kaikki parametrit, jotta wsrv.nl ei saa tuplakoodattuja merkkejä
             // Esim: image.png?resize=1024%2C768 -> image.png
+            // Jos cheerio tai aiempi XML-puhdistus on jättänyt URL-osoitteeseen 
+            // entiteettejä, siivotaan ne tässä vaiheessa.
+            if (src.includes('&amp;')) {
+                src = src.replace(/&amp;/g, '&');
+            }
             if (src.includes('?')) {
                 src = src.split('?')[0];
             }
