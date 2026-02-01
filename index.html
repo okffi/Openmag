@@ -785,9 +785,17 @@ async function changeSource(file, title, el) {
         setViewTitleAndRss(viewTitle, title, rssLink, isMainFeed, siteUrl);
 
         if (viewDesc) {
-            viewDesc.innerText = isMainFeed 
-                ? "Kokoelma seurattujen lähteiden tuoreimpia uutisia." 
-                : (first.sourceDescription || "");
+            if (isMainFeed) {
+                // Poimitaan päivitysaika statsDatasta
+                const lastUpdate = (window.statsData && statsData.__meta) 
+                    ? statsData.__meta.last_updated 
+                    : "";
+                
+                viewDesc.innerText = `Kokoelma seurattujen lähteiden tuoreimpia uutisia. ${lastUpdate ? '(Päivitetty: ' + lastUpdate + ')' : ''}`;
+            } else {
+                // Näytetään lähteen oma kuvaus (esim. RSS-syötteestä poimittu)
+                viewDesc.innerText = first.sourceDescription || "";
+            }
         }
     }
 
