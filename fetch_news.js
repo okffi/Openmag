@@ -71,30 +71,36 @@ async function run() {
         
         const feeds = rows.map(row => {
             if (!row || row.trim() === '') return null;
-            const c = row.split('\t').map(v => v.trim());
             
-            // Logataan vain ensimmäinen onnistunut rivi testiksi
-            if (c.length > 0 && c[1] === "Open Knowledge Foundation DE") {
-                 console.log(`--- DEBUG: Esimerkkirivi parsittu ---`);
-                 console.log(`Kategoria: ${c[0]}, Nimi: ${c[1]}, RSS: ${c[2]}`);
-            }
-        
+            // Trimmaus kaikille sarakkeille kerralla
+            const c = row.split('\t').map(v => v ? v.trim() : '');
+            
             // Validointi: vähintään URL (sarake 2) on löydyttävä
-            if (c.length < 3 || !c[2] || c[2].length < 10) return null; 
-        
+            if (c.length < 3 || !c[2] || c[2].length < 10) return null;
+
+            // Debug-logiikka (valinnainen)
+            if (c[1] === "Open Knowledge Foundation DE") {
+                 console.log(`--- DEBUG: Parsittu ${c[1]} ---`);
+            }
+
+            // Poimitaan kielitiedot selkeästi
+            const lang = (c[6] || "fi").toLowerCase();
+            const scope = (c[7] || "World");
+
+            // Palautetaan yhdenmukainen objekti
             return { 
                 category: c[0] || "Yleinen",
-                feedName: c[1],
+                feedName: c[1] || "Nimetön syöte",
                 rssUrl: c[2], 
-                scrapeUrl: c[3],
-                nameChecked: c[4] || c[1],
-                sheetDesc: (c[5] || "").trim(),
-                isDarkLogo: (c[8] || "").toUpperCase() === "TRUE" || c[8] === "1",
-                lang: feedLang,
-                scope: feedScope
+                scrapeUrl: c[3] || "",
+                nameChecked: c[4] || c[1] || "Lähde",
+                sheetDesc: c[5] || "",
+                lang: lang,
+                scope: scope,
+                isDarkLogo: c[8].toUpperCase() === "TRUE" || c[8] === "1",
+                originalRssUrl: c[2] // Pidetään tallessa alkuperäinen
             };
         }).filter(f => f !== null);
-        
         for (const feed of feeds) {
             try {
                 if (feed.rssUrl && feed.rssUrl.length > 10) {
