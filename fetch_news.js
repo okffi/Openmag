@@ -384,6 +384,7 @@ async function processRSS(feed, allArticles, now) {
             enforcedImage: finalImg,
             sourceDescription: sourceDescription,
             sourceLogo: sourceLogo,
+            isDarkLogo: feed.isDarkLogo,
             originalRssUrl: feed.rssUrl
         };
     });
