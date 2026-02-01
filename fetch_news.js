@@ -30,6 +30,11 @@ async function run() {
     const cleanLogFile = path.join(__dirname, 'last_clean.txt');
     const sourcesDir = path.join(__dirname, 'sources');
 
+    function cleanXML(text) {
+        if (!text) return "";
+        return text.replace(/<!\[CDATA\[/g, "").replace(/\]\]>/g, "").trim();
+    }
+
     try {
         // 1. PÄIVITTÄINEN PUHDISTUSLOGIIKKA
         let lastCleanDate = "";
@@ -69,35 +74,22 @@ async function run() {
         console.log(`Rivejä yhteensä (ilman otsikkoa): ${rows.length}`);
         console.log(`Esimerkki ensimmäisestä raakarivistä:\n"${rows[0]}"`);
         
-        const feeds = rows.map((row, index) => {
-            if (!row || row.trim() === '') return null;
-            
-            // Käytetään tabulaattoria ja varmistetaan, että jokainen kenttä on olemassa
+        const feeds = rows.map(row => {
             const c = row.split('\t').map(v => v ? v.trim() : '');
             
-            // Validointi: tarvitsemme kategorian, nimen ja URL:n
-            if (c.length < 3 || !c[2] || c[2].length < 10) {
-                // console.log(`Rivi ${index + 2} hylätty: Puutteelliset tiedot`);
-                return null;
-            }
+            // Validointi: vähintään RSS tai Scrape URL on löydyttävä
+            if (!c[2] && !c[3]) return null;
 
-            // Poimitaan kielitiedot ja skooppi (oletusarvot mukana)
-            const lang = (c[6] || "fi").toLowerCase();
-            const scope = (c[7] || "World");
-
-            // Rakennetaan objekti
             return { 
                 category: c[0] || "Yleinen",
                 feedName: c[1] || "Nimetön",
                 rssUrl: c[2], 
                 scrapeUrl: c[3] || "",
-                nameChecked: c[4] || c[1] || "Lähde",
+                nameChecked: c[4] || c[1] || "Lähde", // Tämä on "kuningas"
                 sheetDesc: c[5] || "",
-                lang: lang,
-                scope: scope,
-                // Varmistetaan että c[8] on olemassa ennen toUpperCase-kutsua
-                isDarkLogo: (c[8] || "").toUpperCase() === "TRUE" || c[8] === "1",
-                originalRssUrl: c[2]
+                lang: (c[6] || "fi").toLowerCase(),
+                scope: c[7] || "World",
+                isDarkLogo: (c[8] || "").toUpperCase() === "TRUE" || c[8] === "1"
             };
         }).filter(f => f !== null);
 
@@ -129,11 +121,13 @@ async function run() {
             return true;
         });
 
-        // 4. TALLENNUS ARKISTOIHIN
+        // 4. TALLENNUS ARKISTOIHIN JA TILASTOIHIN
         const sourceStats = {};
         const articlesBySource = {};
+
         allArticles.forEach(art => {
-            const src = art.sourceTitle || "Muu";
+            // Käytetään artikkelin mukana kulkevaa puhdasta nimeä
+            const src = art.sourceTitle; 
             const fileKey = src.replace(/[^a-z0-9]/gi, '_').toLowerCase();
             
             if (!articlesBySource[fileKey]) articlesBySource[fileKey] = [];
@@ -143,8 +137,9 @@ async function run() {
                 sourceStats[src] = { 
                     file: `${fileKey}.json`, 
                     count: 0,
-                    // TÄMÄ RIVI PUUTTUI: Tallennetaan kategoria uutisesta tilastoihin
-                    category: art.sheetCategory || "Yleinen" 
+                    category: art.sheetCategory || "Yleinen",
+                    // Lisätään kuvaus myös tilastoihin, jos käyttöliittymä tarvitsee sitä
+                    description: art.sourceDescription || "" 
                 };
             }
             sourceStats[src].count++;
@@ -383,23 +378,27 @@ async function processRSS(feed, allArticles, now) {
             // enkoodata ne puhtaasti wsrv.nl-palvelulle (ei tupla-enkoodausta).
             finalImg = finalImg.replace(/&amp;/g, '&');
         }
-
+        // Valitaan kuvaus: 1. Sheets (sheetDesc), 2. RSS (feedContent.description), 3. Tyhjä
+        const finalDescription = cleanXML(feed.sheetDesc || (feedContent.description ? feedContent.description.trim() : ""));
+    
         return {
-            title: item.title,
+            title: cleanXML(item.title),
             link: articleLink,
             pubDate: itemDate.toISOString(),
             content: finalSnippet,
-            creator: item.creator || item.author || "",
-            sourceTitle: feed.nameChecked || feed.feedName || feedContent.title || "Lähde",
+            creator: cleanXML(item.creator || item.author || ""),
+            // Nimi on aina Sheets-nimi (nameChecked)
+            sourceTitle: feed.nameChecked, 
             sheetCategory: feed.category,
             enforcedImage: finalImg,
-            sourceDescription: sourceDescription,
+            sourceDescription: finalDescription, // <--- Korjattu tähän
             sourceLogo: sourceLogo,
             lang: feed.lang,
             scope: feed.scope,
             isDarkLogo: feed.isDarkLogo,
             originalRssUrl: feed.rssUrl
         };
+
     });
     allArticles.push(...items);
 }
@@ -422,6 +421,9 @@ async function processScraper(feed, allArticles, now) {
         const selector = scraperRule ? scraperRule.listSelector : 'article';
         const elements = $(selector).get().slice(0, 10);
 
+        // Valitaan kuvaus: Ensisijaisesti sarake F, muuten geneerinen teksti
+        const sourceDescription = feed.sheetDesc || "Verkkosivulta poimittu uutinen.";
+
         for (const el of elements) {
             let item;
             if (scraperRule) {
@@ -443,17 +445,19 @@ async function processScraper(feed, allArticles, now) {
                 }
             
                 allArticles.push({
-                    title: item.title,
+                    title: cleanXML(item.title), // Käytetään puhdistusta
                     link: fullLink,
                     pubDate: item.pubDate || now.toISOString(),
                     content: item.content || "Lue lisää sivustolta.",
-                    creator: item.creator || "",
-                    sourceTitle: domain,
+                    creator: cleanXML(item.creator || ""),
+                    // Pakotetaan Sheets-nimi (sarake E / nameChecked)
+                    sourceTitle: feed.nameChecked || domain,
                     sheetCategory: feed.category,
                     enforcedImage: finalImg,
-                    // LISÄÄ NÄMÄ MYÖS SCRAPERIIN:
-                    sourceDescription: "Verkkosivulta poimittu uutinen.",
+                    sourceDescription: cleanXML(sourceDescription),
                     sourceLogo: `https://www.google.com/s2/favicons?sz=128&domain=${domain}`,
+                    lang: feed.lang,   // Lisätty kieli
+                    scope: feed.scope, // Lisätty skooppi
                     isDarkLogo: feed.isDarkLogo
                 });
             }
