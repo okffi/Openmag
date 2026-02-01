@@ -611,7 +611,14 @@ async function initSidebar() {
 }
 
 function renderCategoryView(list) {
-    list.innerHTML = `<div class="source-item active" onclick="changeSource('data.json', 'Tuoreimmat uutiset', this)">Tuoreimmat uutiset</div>`;
+    // 1. Tyhjennetään lista ja luodaan "Tuoreimmat uutiset" -painike turvallisesti
+    list.innerHTML = ''; 
+    
+    const mainItem = document.createElement('div');
+    mainItem.className = 'source-item active';
+    mainItem.textContent = 'Tuoreimmat uutiset';
+    mainItem.onclick = (e) => changeSource('data.json', 'Tuoreimmat uutiset', e.currentTarget);
+    list.appendChild(mainItem);
 
     const cats = {};
     Object.keys(statsData).forEach(name => {
@@ -624,9 +631,11 @@ function renderCategoryView(list) {
     Object.keys(cats).sort().forEach(catName => {
         const group = document.createElement('div');
         group.className = 'category-group';
+        
         const header = document.createElement('div');
         header.className = 'category-header';
-        header.innerText = catName;
+        header.textContent = catName; // Turvallisempi kuin innerText
+
         const submenu = document.createElement('div');
         submenu.className = 'source-submenu';
 
@@ -640,7 +649,13 @@ function renderCategoryView(list) {
         cats[catName].sort((a,b) => a.name.localeCompare(b.name, 'fi')).forEach(src => {
             const item = document.createElement('div');
             item.className = 'source-item';
-            item.innerHTML = `${src.name} <span>${src.count}</span>`;
+            
+            // 2. KORJAUS: Luodaan nimi ja lukumäärä-span erikseen
+            item.textContent = src.name + ' '; 
+            const countSpan = document.createElement('span');
+            countSpan.textContent = src.count;
+            item.appendChild(countSpan);
+
             item.onclick = (e) => {
                 e.stopPropagation();
                 changeSource(`sources/${src.file}`, src.name, item);
@@ -655,18 +670,39 @@ function renderCategoryView(list) {
 }
 
 function renderAZView(list) {
-    list.innerHTML = `<div class="source-item" onclick="changeSource('data.json', 'Tuoreimmat uutiset', this)">Tuoreimmat uutiset</div>`;
+    // 1. Tyhjennetään lista ja luodaan "Tuoreimmat uutiset" -painike
+    list.innerHTML = ''; 
 
+    const mainItem = document.createElement('div');
+    mainItem.className = 'source-item'; // A-Z näkymässä oletuksena ei active, ellei olla juuri siellä
+    mainItem.textContent = 'Tuoreimmat uutiset';
+    mainItem.onclick = (e) => changeSource('data.json', 'Tuoreimmat uutiset', e.currentTarget);
+    list.appendChild(mainItem);
+
+    // 2. Suodatetaan ja lajitellaan lähteet
     const sortedSources = Object.keys(statsData)
         .filter(key => key !== "__meta")
         .sort((a, b) => a.localeCompare(b, 'fi'));
 
+    // 3. Luodaan lähderivit
     sortedSources.forEach(sourceName => {
         const info = statsData[sourceName];
         const item = document.createElement('div');
         item.className = 'source-item';
-        item.innerHTML = `${sourceName} <span class="count-badge">${info.count}</span>`;
+        
+        // Luodaan nimi tekstinä
+        item.textContent = sourceName + ' ';
+        
+        // Luodaan lukumäärä-badge omana elementtinään
+        const countSpan = document.createElement('span');
+        countSpan.className = 'count-badge';
+        countSpan.textContent = info.count;
+        
+        item.appendChild(countSpan);
+
+        // Asetetaan klikkaustapahtuma
         item.onclick = () => changeSource(`sources/${info.file}`, sourceName, item);
+        
         list.appendChild(item);
     });
 }
@@ -692,39 +728,50 @@ async function changeSource(file, title, el) {
     const viewDesc = document.getElementById('current-view-description');
     const logoCont = document.getElementById('feed-logo-container');
 
-    // keep user feedback
+    // 1. Käyttäjäpalaute heti alussa
     if (viewTitle) viewTitle.textContent = title;
     if (viewDesc) viewDesc.innerText = "Ladataan...";
 
+    // 2. Logon ja taustan nollaus
     if (logoCont) {
         logoCont.style.display = (file === 'data.json') ? 'none' : 'flex';
-        logoCont.innerHTML = ""; // we'll populate safely below if needed
+        logoCont.innerHTML = ""; 
         logoCont.classList.remove('dark-bg');
     }
 
     currentCategory = 'All';
     displayedCount = 0;
 
+    // 3. Aktiivisen linkin korostus (Yhdenmukaistettu)
     document.querySelectorAll('.source-item').forEach(i => i.classList.remove('active'));
-    if (el) el.classList.add('active');
+    
+    if (el) {
+        el.classList.add('active');
+    } else {
+        // Jos 'el' puuttuu (esim. sivun ensilataus), etsitään "Tuoreimmat uutiset" tekstin perusteella
+        document.querySelectorAll('.source-item').forEach(i => {
+            if (i.textContent.trim() === 'Tuoreimmat uutiset') i.classList.add('active');
+        });
+    }
 
+    // 4. Datan lataus
     await loadData(file);
 
+    // 5. Käyttöliittymän päivitys datan perusteella
     if (allArticles.length > 0) {
         const first = allArticles[0];
         const isMainFeed = (file === 'data.json');
         const rssLink = first.originalRssUrl || (isMainFeed ? 'data.json' : file);
 
+        // Logo-logiikka (vain jos ei päänäkymä)
         if (!isMainFeed && logoCont) {
+            // Nyt isDarkLogo toimii, kunhan se on JSON-datassa mukana
             if (first.isDarkLogo) logoCont.classList.add('dark-bg');
 
-            // safe logo insertion (avoid innerHTML)
-            logoCont.innerHTML = ''; // clear
             if (first.sourceLogo) {
                 const img = document.createElement('img');
                 img.src = first.sourceLogo;
                 img.alt = title;
-                // optional: set width/height or classes if needed
                 logoCont.appendChild(img);
             }
         }
@@ -734,18 +781,23 @@ async function changeSource(file, title, el) {
             try { siteUrl = new URL(first.link).origin; } catch(e) {}
         }
 
-        // Use the helper to safely set the title and RSS link (no raw innerHTML)
+        // Käytetään olemassa olevaa apufunktiota otsikolle ja linkeille
         setViewTitleAndRss(viewTitle, title, rssLink, isMainFeed, siteUrl);
 
         if (viewDesc) {
-            viewDesc.innerText = isMainFeed ? "Kokoelma seurattujen lähteiden tuoreimpia uutisia." : (first.sourceDescription || "");
+            viewDesc.innerText = isMainFeed 
+                ? "Kokoelma seurattujen lähteiden tuoreimpia uutisia." 
+                : (first.sourceDescription || "");
         }
     }
 
+    // 6. Sivupalkin sulkeminen mobiilissa
     if (window.innerWidth < 1000) {
         const sidebar = document.getElementById('source-sidebar');
-        sidebar.classList.remove('open');
+        if (sidebar) sidebar.classList.remove('open');
     }
+    
+    // 7. Pehmeä skrollaus ylös
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -790,6 +842,11 @@ function toggleSidebar() {
         setTimeout(() => msnry.layout(), 450);
     }
 }
+    
+window.addEventListener('DOMContentLoaded', () => {
+    // Kutsutaan suoraan changeSource-funktiota oletusasetuksilla
+    changeSource('data.json', 'Tuoreimmat uutiset');
+});
 
 init();
 </script>
