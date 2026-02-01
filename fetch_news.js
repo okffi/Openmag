@@ -42,14 +42,11 @@ async function run() {
             if (fs.existsSync(sourcesDir)) {
                 fs.readdirSync(sourcesDir).forEach(file => fs.unlinkSync(path.join(sourcesDir, file)));
             } else {
-                fs.writeFileSync(cleanLogFile, today); // Tämä luo tiedoston
+                fs.mkdirSync(sourcesDir, { recursive: true });
             }
-            
-            // Fyysinen nollaus
             allArticles = []; 
-            if (fs.existsSync('data.json')) {
-                fs.unlinkSync('data.json');
-            }
+            if (fs.existsSync('data.json')) fs.unlinkSync('data.json');
+            // Merkitään ajo tehdyksi vasta tässä
             fs.writeFileSync(cleanLogFile, today);
         } else {
             console.log(`--- Jatketaan päivää: ladataan olemassa oleva data ---`);
