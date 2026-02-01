@@ -31,7 +31,7 @@ async function run() {
     const sourcesDir = path.join(__dirname, 'sources');
 
     try {
-        // 1. PÄIVITTÄINEN PUHDISTUSLOGIIKKA - Korjattu Digitoday-ongelma
+        // 1. PÄIVITTÄINEN PUHDISTUSLOGIIKKA
         let lastCleanDate = "";
         if (fs.existsSync(cleanLogFile)) {
             lastCleanDate = fs.readFileSync(cleanLogFile, 'utf8').trim();
@@ -253,17 +253,27 @@ async function processRSS(feed, allArticles, now) {
             itemDate.setMinutes(itemDate.getMinutes() - randomMinutes);
         }
         
-        // --- KUVAN POIMINTA ALKAA ---
+// --- KUVAN POIMINTA ALKAA ---
+        // Alustetaan muuttuja img tyhjäksi. Jos kuvaa ei löydy mistään alta, se jää nulliksi.
         let img = null;
 
         // A) Kokeillaan standardeja mediakenttiä
+        // RSS-syötteet käyttävät usein media:content-tagia. Parseri voi nimetä sen kummalla vain tavalla.
         let mContent = item.mediaContent || item['media:content'];
+        
         if (mContent) {
+            // Varmistetaan, että käsitellään taulukkoa (listaa), vaikka syötteessä olisi vain yksi kuva.
             const mediaArray = Array.isArray(mContent) ? mContent : [mContent];
-            let maxW = 0;
+            let maxW = 0; // Käytetään suurimman kuvan etsimiseen (leveys pikseleinä).
+
             mediaArray.forEach(m => {
+                // Haetaan kuvan URL. XML-rakenteesta riippuen se on joko m.url tai m.$.url.
                 const currentUrl = m.url || m.$?.url;
+                // Muutetaan leveystieto numeroksi vertailua varten.
                 const currentWidth = parseInt(m.width || m.$?.width || 0);
+                
+                // Valintalogiikka: otetaan kuva, jos se on leveämpi kuin edellinen löydetty,
+                // tai jos kyseessä on ensimmäinen löydetty URL.
                 if (currentUrl && (currentWidth >= maxW || !img)) {
                     maxW = currentWidth;
                     img = currentUrl;
@@ -271,39 +281,61 @@ async function processRSS(feed, allArticles, now) {
             });
         }
 
+        // Jos media:content ei tärpännyt, katsotaan mediaThumbnail-kenttä (pienoiskuva).
         if (!img && item.mediaThumbnail) {
+            // Tarkistetaan molemmat mahdolliset XML-polut URL-osoitteelle.
             img = item.mediaThumbnail.$?.url || item.mediaThumbnail.url;
         }
 
+        // Jos ei vieläkään kuvaa, katsotaan enclosure-tagi (usein käytössä podcasteissa tai vanhemmissa RSS-malleissa).
         if (!img && item.enclosure && item.enclosure.url) {
             img = item.enclosure.url;
         }
 
-        // B) Jos ei vieläkään löydy (esim. OKFN/ePressi), kaivetaan sisällön seasta
+        // B) Jos ei vieläkään löydy (esim. OKFN/ePressi), kaivetaan sisällön seasta.
+        // Tämä kutsuu erillistä apufunktiota, joka "skrappaa" HTML-sisällön seasta <img>-tagit.
         if (!img) {
             img = extractImageFromContent(item, feed.rssUrl);
         }
 
         // C) ÄLYKÄS PUHDISTUS
+        // Tässä vaiheessa meillä on joko URL tai null. Jos meillä on URL, siivotaan se.
         if (img) {
+            // WordPress-pohjaiset sivustot (i0.wp.com / wp-content) käyttävät usein URL-parametreja kuvien koon muuttamiseen.
             if (img.includes('i0.wp.com') || img.includes('wp-content')) {
+                // Jos URL:ssa on kysymysmerkki (esim. kuva.jpg?w=640), katkaistaan se pois, jotta saamme alkuperäisen täysikokoisen kuvan.
                 if (img.includes('?')) {
                     img = img.split('?')[0];
                 }
             }
             
+            // Suhteellisten linkkien korjaus: Jos kuva alkaa "/" (esim. /kuvat/uudenvuoden.jpg), se ei toimi sellaisenaan.
             if (img.startsWith('/') && !img.startsWith('http')) {
                 try {
+                    // Luodaan URL-olio syötteen osoitteesta, jotta saamme domainin (esim. https://okfn.de).
                     const urlObj = new URL(feed.rssUrl);
+                    // Yhdistetään protokolla, domain ja suhteellinen polku täydelliseksi osoitteeksi.
                     img = `${urlObj.protocol}//${urlObj.hostname}${img}`;
-                } catch (e) { img = null; }
+                } catch (e) { 
+                    // Jos URL-muunnos epäonnistuu, hylätään kuva virheen välttämiseksi.
+                    img = null; 
+                }
             }
             
+            // Guardianin (guim.co.uk) kuvat saattavat joskus tulla vanhentuneella http-yhteydellä.
             if (img && img.includes('guim.co.uk')) {
+                // Pakotetaan https, jotta selain ei anna "mixed content" -varoitusta.
                 img = img.replace('http://', 'https://');
             }
         }
         // --- KUVAN POIMINTA PÄÄTTYY ---
+        
+        // LOPULLINEN VARMISTUS WSRV.NL -YHTEENSOPIVUUTEEN:
+        // Jos kuva-URL sisältää XML-entiteettejä (&amp;), palautetaan ne raakamuotoon (&).
+        // Tämä estää tupla-enkoodauksen (kuten %26amp%3B), joka rikkoisi wsrv.nl-pyynnön.
+        if (img && img.includes('&amp;')) {
+            img = img.replace(/&amp;/g, '&');
+        }
 
         // --- TEKSTIN POIMINTA ALKAA ---
         // Haetaan raakateksti useasta mahdollisesta kentästä (ePressi käyttää content:encoded)
