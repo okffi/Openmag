@@ -59,45 +59,50 @@ async function run() {
         console.log("Haetaan syötelistaa Google Sheetsistä (TSV)...");
         const cacheBuster = `&cb=${Date.now()}`;
         const response = await axios.get(SHEET_TSV_URL + cacheBuster);
-        const rows = response.data.split('\n').slice(1);
-        // ... response = await axios.get(SHEET_TSV_URL + cacheBuster); ...
+        
+        // Käytetään /\r?\n/ ja suodatetaan tyhjät rivit heti pois
+        const rows = response.data.split(/\r?\n/)
+            .slice(1)
+            .filter(row => row.trim() !== '');
 
         console.log(`--- DEBUG: Sheets-data haettu ---`);
-        console.log(`Rivejä yhteensä: ${rows.length}`);
+        console.log(`Rivejä yhteensä (ilman otsikkoa): ${rows.length}`);
         console.log(`Esimerkki ensimmäisestä raakarivistä:\n"${rows[0]}"`);
         
-        const feeds = rows.map(row => {
+        const feeds = rows.map((row, index) => {
             if (!row || row.trim() === '') return null;
             
-            // Trimmaus kaikille sarakkeille kerralla
+            // Käytetään tabulaattoria ja varmistetaan, että jokainen kenttä on olemassa
             const c = row.split('\t').map(v => v ? v.trim() : '');
             
-            // Validointi: vähintään URL (sarake 2) on löydyttävä
-            if (c.length < 3 || !c[2] || c[2].length < 10) return null;
-
-            // Debug-logiikka (valinnainen)
-            if (c[1] === "Open Knowledge Foundation DE") {
-                 console.log(`--- DEBUG: Parsittu ${c[1]} ---`);
+            // Validointi: tarvitsemme kategorian, nimen ja URL:n
+            if (c.length < 3 || !c[2] || c[2].length < 10) {
+                // console.log(`Rivi ${index + 2} hylätty: Puutteelliset tiedot`);
+                return null;
             }
 
-            // Poimitaan kielitiedot selkeästi
+            // Poimitaan kielitiedot ja skooppi (oletusarvot mukana)
             const lang = (c[6] || "fi").toLowerCase();
             const scope = (c[7] || "World");
 
-            // Palautetaan yhdenmukainen objekti
+            // Rakennetaan objekti
             return { 
                 category: c[0] || "Yleinen",
-                feedName: c[1] || "Nimetön syöte",
+                feedName: c[1] || "Nimetön",
                 rssUrl: c[2], 
                 scrapeUrl: c[3] || "",
                 nameChecked: c[4] || c[1] || "Lähde",
                 sheetDesc: c[5] || "",
                 lang: lang,
                 scope: scope,
-                isDarkLogo: c[8].toUpperCase() === "TRUE" || c[8] === "1",
-                originalRssUrl: c[2] // Pidetään tallessa alkuperäinen
+                // Varmistetaan että c[8] on olemassa ennen toUpperCase-kutsua
+                isDarkLogo: (c[8] || "").toUpperCase() === "TRUE" || c[8] === "1",
+                originalRssUrl: c[2]
             };
         }).filter(f => f !== null);
+
+        console.log(`--- Parsittu ${feeds.length} voimassa olevaa syötettä ---`);
+        
         for (const feed of feeds) {
             try {
                 if (feed.rssUrl && feed.rssUrl.length > 10) {
