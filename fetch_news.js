@@ -8,6 +8,11 @@ const http = require('http');
 const httpsAgent = new https.Agent({ rejectUnauthorized: false });
 const httpAgent = new http.Agent();
 
+function cleanXML(text) {
+    if (!text) return "";
+    return text.replace(/<!\[CDATA\[/g, "").replace(/\]\]>/g, "").trim();
+}
+
 const parser = new Parser({ 
     headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) OpenMag-Robot-v1' },
     customFields: {
@@ -29,11 +34,6 @@ async function run() {
     const today = now.toISOString().split('T')[0];
     const cleanLogFile = path.join(__dirname, 'last_clean.txt');
     const sourcesDir = path.join(__dirname, 'sources');
-
-    function cleanXML(text) {
-        if (!text) return "";
-        return text.replace(/<!\[CDATA\[/g, "").replace(/\]\]>/g, "").trim();
-    }
 
     try {
         // 1. PÄIVITTÄINEN PUHDISTUSLOGIIKKA
