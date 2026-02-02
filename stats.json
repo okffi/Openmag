@@ -55,7 +55,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 32,
+    "count": 33,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk"
   },
@@ -277,7 +277,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 20,
+    "count": 22,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page"
   },
@@ -313,7 +313,7 @@
   },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
-    "count": 48,
+    "count": 50,
     "category": "Perspectives",
     "description": ""
   },
@@ -322,6 +322,12 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": ""
+  },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 50,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL."
   },
   "Institute of Network Cultures": {
     "file": "institute_of_network_cultures.json",
@@ -340,12 +346,6 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": ""
-  },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 50,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL."
   },
   "Weekly OSM": {
     "file": "weekly_osm.json",
@@ -515,6 +515,12 @@
     "category": "Digital policy + rights",
     "description": "KR21 (Knowledge Rights 21) works to bring about changes in legislation and practice across Europe that will strengthen the right of all to access and apply knowledge for the benefit of research, science and society at large. This – and the education, knowledge valorisation and cultural participation it enables – are essential for innovation and development, and must be available to everyone in the information society, free of unnecessary hindrance or limitation. To achieve this, we believe that we need a modern legislative framework that places current research, education and scientific practice front and centre."
   },
+  "Ministry for Foreign Affairs of Finland | News": {
+    "file": "ministry_for_foreign_affairs_of_finland___news.json",
+    "count": 21,
+    "category": "Politics + Government",
+    "description": ""
+  },
   "FOSDEM 2026": {
     "file": "fosdem_2026.json",
     "count": 10,
@@ -567,12 +573,6 @@
     "file": "oulun_museo__ja_tiedekeskus.json",
     "count": 10,
     "category": "Culture",
-    "description": ""
-  },
-  "Ministry for Foreign Affairs of Finland | News": {
-    "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 20,
-    "category": "Politics + Government",
     "description": ""
   },
   "Cupore": {
@@ -847,7 +847,7 @@
   },
   "European Digital Rights (EDRi)": {
     "file": "european_digital_rights__edri_.json",
-    "count": 1,
+    "count": 20,
     "category": "Digital policy + rights",
     "description": "Protecting digital rights in Europe."
   },
@@ -1163,6 +1163,12 @@
     "category": "(Open) Science + Research",
     "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta"
   },
+  "Tulevaisuuden tutkimuksen seura ry": {
+    "file": "tulevaisuuden_tutkimuksen_seura_ry.json",
+    "count": 10,
+    "category": "Sustainability + Foresight",
+    "description": "Paremman tulevaisuuden puolesta"
+  },
   "Suomen YK-liitto": {
     "file": "suomen_yk_liitto.json",
     "count": 10,
@@ -1264,12 +1270,6 @@
     "count": 602,
     "category": "Culture",
     "description": ""
-  },
-  "infojustice": {
-    "file": "infojustice.json",
-    "count": 60,
-    "category": "Digital policy + rights",
-    "description": "- Hosted by the American University Program on Information Justice and Intellectual Property"
   },
   "Forum Information & Democracy": {
     "file": "forum_information___democracy.json",
