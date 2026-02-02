@@ -95,6 +95,10 @@ async function run() {
 
         console.log(`--- Parsittu ${feeds.length} voimassa olevaa syötettä ---`);
         
+        if (feeds.length === 0) {
+            console.error("VIRHE: Syötelista on tyhjä! Tarkista Sheets-yhteys.");
+        }
+        
         for (const feed of feeds) {
             try {
                 if (feed.rssUrl && feed.rssUrl.length > 10) {
