@@ -416,7 +416,7 @@ async function init() {
     observer.observe(document.querySelector('#scroll-sentinel'));
 }
 
-async function loadData(filePath, isInitial = false, forceRefresh = false) { // Lisätty forceRefresh
+async function loadData(filePath, isInitial = false, forceRefresh = false) {
     isLoading = true;
     displayedCount = 0;
     const container = document.querySelector('#magazine-grid');
@@ -432,36 +432,38 @@ async function loadData(filePath, isInitial = false, forceRefresh = false) { // 
     }
 
     try {
-        // MUUTOS TÄSSÄ: Jos forceRefresh on true, skipataan mainFeedCache
+        // 1. PÄÄTETÄÄN HAETAANKO VERKOSTA VAI VÄLIMUISTISTA
+        // Jos forceRefresh on true, haemme AINA uuden datan verkon yli
         if (filePath === 'data.json' && mainFeedCache && !isInitial && !forceRefresh) {
             allArticles = mainFeedCache;
+            console.log("Käytetään muistissa olevaa syötettä.");
         } else {
-            // Muussa tapauksessa ladataan verkosta
-            const response = await fetch(filePath + '?v=' + Date.now(), { cache: 'no-store' });
+            // Lisätään aikaleima JA no-cache -otsikot, jotta GitHub Pages / selain ei huijaa
+            const response = await fetch(filePath + '?v=' + Date.now(), { 
+                cache: 'no-cache', // no-cache tarkistaa onko tiedosto muuttunut
+                headers: { 'Cache-Control': 'no-cache' }
+            });
+
+            if (!response.ok) throw new Error("Palvelin vastasi virheellä.");
+            
             allArticles = await response.json();
             
-            // Tallennetaan pääsyöte muistiin myöhempää käyttöä varten
+            // Päivitetään muistiin vain jos ollaan päänäkymässä
             if (filePath === 'data.json') {
                 mainFeedCache = allArticles;
             }
+            console.log(`Haettu tuore data: ${filePath}`);
         }
 
         sentinel.innerText = "";
         displayArticles();
-    } catch (e) { 
-        console.error(e); 
-        sentinel.innerText = "Virhe ladattaessa uutisia.";
-    }
+        
+        // Päivitetään aikaleima UI:hin
+        updateViewMetadata();
 
-    if (allArticles.length > 0) {
-        const latestDate = new Date(allArticles[0].pubDate);
-        const timeStr = latestDate.toLocaleString('fi-FI', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' });
-        const descArea = document.getElementById('current-view-description');
-        if (descArea) {
-            // Pidetään pohjakuvaus jos se on asetettu, lisätään vain aikaleima
-            const currentDesc = descArea.innerText.split('Uusin artikkeli')[0];
-            descArea.innerHTML = `${currentDesc}<br><small style="opacity: 0.5">Uusin artikkeli päivitetty: ${timeStr}</small>`;
-        }
+    } catch (e) { 
+        console.error("Latausvirhe:", e); 
+        sentinel.innerText = "Virhe ladattaessa uutisia.";
     }
 }
 
