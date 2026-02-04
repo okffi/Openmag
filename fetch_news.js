@@ -489,6 +489,16 @@ function extractImageFromContent(item, baseUrl) {
         }
 
         if (src) {
+            // Jos src on pelkkä domain , se ei ole oikea kuva
+            try {
+                const checkUrl = new URL(src);
+                if (checkUrl.pathname === "/" || checkUrl.pathname === "") {
+                    return; // Hypätään tämän kuvan yli ja jatketaan seuraavaan <img> tagiin
+                }
+            } catch (e) {
+                // Jos URL on viallinen, jatketaan
+            }
+
             // --- TÄRKEIN KORJAUS COARILLE JA WP-KUVILLE ---
             // Poistetaan kaikki parametrit, jotta wsrv.nl ei saa tuplakoodattuja merkkejä
             // Esim: image.png?resize=1024%2C768 -> image.png
