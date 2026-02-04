@@ -8,11 +8,6 @@ const http = require('http');
 const httpsAgent = new https.Agent({ rejectUnauthorized: false });
 const httpAgent = new http.Agent();
 
-function cleanXML(text) {
-    if (!text) return "";
-    return text.replace(/<!\[CDATA\[/g, "").replace(/\]\]>/g, "").trim();
-}
-
 const parser = new Parser({ 
     headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) OpenMag-Robot-v1' },
     customFields: {
@@ -383,14 +378,14 @@ async function processRSS(feed, allArticles, now) {
             finalImg = finalImg.replace(/&amp;/g, '&');
         }
         // Valitaan kuvaus: 1. Sheets (sheetDesc), 2. RSS (feedContent.description), 3. Tyhjä
-        const finalDescription = cleanXML(feed.sheetDesc || (feedContent.description ? feedContent.description.trim() : ""));
+        const finalDescription = feed.sheetDesc || (feedContent.description ? feedContent.description.trim() : "");
     
         return {
-            title: cleanXML(item.title),
+            title: item.title,
             link: articleLink,
             pubDate: itemDate.toISOString(),
             content: finalSnippet,
-            creator: cleanXML(item.creator || item.author || ""),
+            creator: item.creator || item.author || "",
             // Nimi on aina Sheets-nimi (nameChecked)
             sourceTitle: feed.nameChecked, 
             sheetCategory: feed.category,
@@ -449,16 +444,16 @@ async function processScraper(feed, allArticles, now) {
                 }
             
                 allArticles.push({
-                    title: cleanXML(item.title), // Käytetään puhdistusta
+                    title: item.title, // Käytetään puhdistusta
                     link: fullLink,
                     pubDate: item.pubDate || now.toISOString(),
                     content: item.content || "Lue lisää sivustolta.",
-                    creator: cleanXML(item.creator || ""),
+                    creator: item.creator || "",
                     // Pakotetaan Sheets-nimi (sarake E / nameChecked)
                     sourceTitle: feed.nameChecked || domain,
                     sheetCategory: feed.category,
                     enforcedImage: finalImg,
-                    sourceDescription: cleanXML(sourceDescription),
+                    sourceDescription: sourceDescription,
                     sourceLogo: `https://www.google.com/s2/favicons?sz=128&domain=${domain}`,
                     lang: feed.lang,   // Lisätty kieli
                     scope: feed.scope, // Lisätty skooppi
