@@ -71,6 +71,30 @@
     "category": "Global policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti."
   },
+  "Euronews | Europe": {
+    "file": "euronews___europe.json",
+    "count": 50,
+    "category": "Politics + Government",
+    "description": "Latest news from Euronews"
+  },
+  "Sveriges Museer": {
+    "file": "sveriges_museer.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Vi tar tillvara och driver den svenska museisektorns gemensamma intressen."
+  },
+  "Tiede ja tutkimus - ePressi": {
+    "file": "tiede_ja_tutkimus___epressi.json",
+    "count": 19,
+    "category": "(Open) Science + Research",
+    "description": "Tiedotteiden tehokas julkaisukanava"
+  },
+  "Turun yliopisto": {
+    "file": "turun_yliopisto.json",
+    "count": 15,
+    "category": "(Open) Science + Research",
+    "description": "Turun yliopiston etusivun uutisten lyhennelmät"
+  },
   "Liikenne- ja viestintäministeriö | News": {
     "file": "liikenne__ja_viestint_ministeri____news.json",
     "count": 20,
@@ -209,12 +233,6 @@
     "category": "Global policy",
     "description": ""
   },
-  "Euronews | Europe": {
-    "file": "euronews___europe.json",
-    "count": 50,
-    "category": "Politics + Government",
-    "description": "Latest news from Euronews"
-  },
   "NOEMA": {
     "file": "noema.json",
     "count": 10,
@@ -323,12 +341,6 @@
     "category": "Culture",
     "description": "Stories from the Library of Congress"
   },
-  "Turun yliopisto": {
-    "file": "turun_yliopisto.json",
-    "count": 15,
-    "category": "(Open) Science + Research",
-    "description": "Turun yliopiston etusivun uutisten lyhennelmät"
-  },
   "United Nations | The Guardian": {
     "file": "united_nations___the_guardian.json",
     "count": 20,
@@ -349,7 +361,7 @@
   },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
-    "count": 10,
+    "count": 14,
     "category": "Politics + Government",
     "description": "syöte"
   },
@@ -364,6 +376,18 @@
     "count": 15,
     "category": "Perspectives",
     "description": ""
+  },
+  "Kulttuuri ja taide - ePressi": {
+    "file": "kulttuuri_ja_taide___epressi.json",
+    "count": 22,
+    "category": "Culture",
+    "description": "Tiedotteiden tehokas julkaisukanava"
+  },
+  "Epressi - Ulkomaat": {
+    "file": "epressi___ulkomaat.json",
+    "count": 18,
+    "category": "Global policy",
+    "description": "Tiedotteiden tehokas julkaisukanava"
   },
   "Avoin tiede": {
     "file": "avoin_tiede.json",
@@ -526,6 +550,12 @@
     "count": 4,
     "category": "(Open) Data + Technology",
     "description": "xkcd.com: A webcomic of romance and math humor."
+  },
+  "Ohjelmistoteollisuus | ePressi": {
+    "file": "ohjelmistoteollisuus___epressi.json",
+    "count": 20,
+    "category": "(Open) Data + Technology",
+    "description": "Tiedotteiden tehokas julkaisukanava"
   },
   "ICOM Finland": {
     "file": "icom_finland.json",
@@ -737,30 +767,6 @@
     "category": "Human Rights + Democracy",
     "description": ""
   },
-  "Avate Audiovisuaalisen alan tekijät ry": {
-    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": ""
-  },
-  "Open Science | Federation of Finnish Learned Societies": {
-    "file": "open_science___federation_of_finnish_learned_societies.json",
-    "count": 6,
-    "category": "(Open) Science + Research",
-    "description": ""
-  },
-  "Stanford CIS": {
-    "file": "stanford_cis.json",
-    "count": 15,
-    "category": "Digital policy + rights",
-    "description": "The Center for Internet and Society at Stanford Law School is a leader in the study of the law and policy around the Internet and other emerging technologies."
-  },
-  "CLARIN ERIC": {
-    "file": "clarin_eric.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Common Language Resources and Technology Infrastructure"
-  },
   "American Library Association": {
     "file": "american_library_association.json",
     "count": 10,
@@ -773,10 +779,22 @@
     "category": "Digital cultural heritage",
     "description": ""
   },
+  "Avate Audiovisuaalisen alan tekijät ry": {
+    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
+    "count": 10,
+    "category": "Cultural policy",
+    "description": ""
+  },
   "Avoin hallinto": {
     "file": "avoin_hallinto.json",
     "count": 10,
     "category": "Human Rights + Democracy",
+    "description": ""
+  },
+  "Open Science | Federation of Finnish Learned Societies": {
+    "file": "open_science___federation_of_finnish_learned_societies.json",
+    "count": 6,
+    "category": "(Open) Science + Research",
     "description": ""
   },
   "bellingcat": {
@@ -809,6 +827,12 @@
     "category": "Digital skills + Citizen science",
     "description": "We don't just build maps, we build mappers!"
   },
+  "Stanford CIS": {
+    "file": "stanford_cis.json",
+    "count": 15,
+    "category": "Digital policy + rights",
+    "description": "The Center for Internet and Society at Stanford Law School is a leader in the study of the law and policy around the Internet and other emerging technologies."
+  },
   "Sciences Po Technology and global affairs innovation hub": {
     "file": "sciences_po_technology_and_global_affairs_innovation_hub.json",
     "count": 22,
@@ -826,6 +850,12 @@
     "count": 10,
     "category": "(Open) Data + Technology",
     "description": "Community Health Analytics in Open Source Software"
+  },
+  "CLARIN ERIC": {
+    "file": "clarin_eric.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Common Language Resources and Technology Infrastructure"
   },
   "CMI": {
     "file": "cmi.json",
@@ -1067,12 +1097,6 @@
     "category": "Cultural policy",
     "description": "Kopiosto on tekijöiden, esittäjien ja kustantajien yhteinen tekijänoikeusjärjestö."
   },
-  "Kulttuuri ja taide - ePressi": {
-    "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 20,
-    "category": "Culture",
-    "description": "Tiedotteiden tehokas julkaisukanava"
-  },
   "Kulttuuriperintökasvatuksen seura": {
     "file": "kulttuuriperint_kasvatuksen_seura.json",
     "count": 9,
@@ -1169,11 +1193,11 @@
     "category": "(Open) Data + Technology",
     "description": "Open Source and Internet Commons for Europe’s Digital Sovereignty"
   },
-  "Ohjelmistoteollisuus | ePressi": {
-    "file": "ohjelmistoteollisuus___epressi.json",
-    "count": 20,
-    "category": "(Open) Data + Technology",
-    "description": "Tiedotteiden tehokas julkaisukanava"
+  "NORDIS": {
+    "file": "nordis.json",
+    "count": 10,
+    "category": "Journalism + investigation",
+    "description": "The Nordic Observatory for Digital Media and Information Disorder"
   },
   "Ministry of Justice | Finland | News": {
     "file": "ministry_of_justice___finland___news.json",
@@ -1301,12 +1325,6 @@
     "category": "Cultural policy",
     "description": ""
   },
-  "Sveriges Museer": {
-    "file": "sveriges_museer.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Vi tar tillvara och driver den svenska museisektorns gemensamma intressen."
-  },
   "Taide- ja kulttuurivirasto": {
     "file": "taide__ja_kulttuurivirasto.json",
     "count": 6,
@@ -1343,12 +1361,6 @@
     "category": "Digital skills + Citizen science",
     "description": "The Monthly newsletter for the Wikimedia-GLAM community"
   },
-  "Tiede ja tutkimus - ePressi": {
-    "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 19,
-    "category": "(Open) Science + Research",
-    "description": "Tiedotteiden tehokas julkaisukanava"
-  },
   "Tiedepolitiikka": {
     "file": "tiedepolitiikka.json",
     "count": 30,
@@ -1372,12 +1384,6 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta"
-  },
-  "Epressi - Ulkomaat": {
-    "file": "epressi___ulkomaat.json",
-    "count": 18,
-    "category": "Global policy",
-    "description": "Tiedotteiden tehokas julkaisukanava"
   },
   "Ulkoministeriö / Utrikesministeriet": {
     "file": "ulkoministeri____utrikesministeriet.json",
@@ -1419,6 +1425,12 @@
     "file": "valtiontalouden_tarkastusvirasto.json",
     "count": 10,
     "category": "Politics + Government",
+    "description": ""
+  },
+  "Varsinais-Suomen kulttuuriperintöblogi": {
+    "file": "varsinais_suomen_kulttuuriperint_blogi.json",
+    "count": 25,
+    "category": "Culture",
     "description": ""
   },
   "Wikimedia Deutschland Blog": {
