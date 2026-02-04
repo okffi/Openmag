@@ -37,7 +37,7 @@
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
-    "count": 31,
+    "count": 30,
     "category": "Perspectives",
     "description": ""
   },
@@ -169,7 +169,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 34,
+    "count": 33,
     "category": "Politics + Government",
     "description": "European Commission | News"
   },
@@ -283,7 +283,7 @@
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
-    "count": 28,
+    "count": 27,
     "category": "Global policy",
     "description": "the Global Magazine of News and Ideas"
   },
@@ -307,7 +307,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 22,
+    "count": 20,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page"
   },
@@ -370,6 +370,12 @@
     "count": 30,
     "category": "Global policy",
     "description": "UN News - Global perspective Human stories | SDGs"
+  },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 49,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL."
   },
   "Frame Contemporary Art Finland": {
     "file": "frame_contemporary_art_finland.json",
@@ -449,12 +455,6 @@
     "category": "Sustainability + Foresight",
     "description": "Noema Magazine"
   },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 49,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL."
-  },
   "OpenForum Europe": {
     "file": "openforum_europe.json",
     "count": 10,
@@ -493,7 +493,7 @@
   },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
-    "count": 10,
+    "count": 13,
     "category": "(Open) Science + Research",
     "description": ""
   },
@@ -731,6 +731,12 @@
     "category": "Perspectives",
     "description": ""
   },
+  "bellingcat": {
+    "file": "bellingcat.json",
+    "count": 11,
+    "category": "Journalism + investigation",
+    "description": "the home of online investigations"
+  },
   "Access Now": {
     "file": "access_now.json",
     "count": 15,
@@ -779,12 +785,6 @@
     "category": "(Open) Science + Research",
     "description": ""
   },
-  "bellingcat": {
-    "file": "bellingcat.json",
-    "count": 10,
-    "category": "Journalism + investigation",
-    "description": "the home of online investigations"
-  },
   "Open Future": {
     "file": "open_future.json",
     "count": 10,
@@ -826,12 +826,6 @@
     "count": 22,
     "category": "Digital policy + rights",
     "description": "Website News RSS Feed"
-  },
-  "Center for Internet and Society": {
-    "file": "center_for_internet_and_society.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "The CIS is a CNRS research center"
   },
   "CHAOSS": {
     "file": "chaoss.json",
