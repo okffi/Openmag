@@ -67,7 +67,7 @@
   },
   "Yle": {
     "file": "yle.json",
-    "count": 24,
+    "count": 26,
     "category": "Global policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti."
   },
@@ -169,7 +169,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 41,
+    "count": 37,
     "category": "Politics + Government",
     "description": "European Commission | News"
   },
@@ -265,7 +265,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3231,
+    "count": 3232,
     "category": "Digital policy + rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy."
   },
@@ -283,7 +283,7 @@
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
-    "count": 28,
+    "count": 30,
     "category": "Global policy",
     "description": "the Global Magazine of News and Ideas"
   },
@@ -295,7 +295,7 @@
   },
   "Eduskunnan uusimmat tiedotteet": {
     "file": "eduskunnan_uusimmat_tiedotteet.json",
-    "count": 20,
+    "count": 21,
     "category": "Politics + Government",
     "description": "Eduskunnan tiedotteet - RSS"
   },
@@ -307,7 +307,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 20,
+    "count": 21,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page"
   },
@@ -321,6 +321,30 @@
     "file": "helsinki_uusimaa_region.json",
     "count": 10,
     "category": "Politics + Government",
+    "description": ""
+  },
+  "Verde": {
+    "file": "verde.json",
+    "count": 15,
+    "category": "Sustainability + Foresight",
+    "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja."
+  },
+  "FutureEverything » News": {
+    "file": "futureeverything___news.json",
+    "count": 10,
+    "category": "Digital cultural heritage",
+    "description": "Est. 1995. Cultural facilitators at the intersection of art, design, science and digital."
+  },
+  "The Signal: Digital Preservation": {
+    "file": "the_signal__digital_preservation.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Digital Happenings at the Library of Congress"
+  },
+  "Voima": {
+    "file": "voima.json",
+    "count": 15,
+    "category": "Perspectives",
     "description": ""
   },
   "Frame Contemporary Art Finland": {
@@ -346,12 +370,6 @@
     "count": 100,
     "category": "Digital cultural heritage",
     "description": "The Public Domain Review"
-  },
-  "Verde": {
-    "file": "verde.json",
-    "count": 15,
-    "category": "Sustainability + Foresight",
-    "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja."
   },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
@@ -467,12 +485,6 @@
     "category": "(Open) Science + Research",
     "description": ""
   },
-  "Voima": {
-    "file": "voima.json",
-    "count": 15,
-    "category": "Perspectives",
-    "description": ""
-  },
   "Epressi - Ulkomaat": {
     "file": "epressi___ulkomaat.json",
     "count": 18,
@@ -547,7 +559,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities"
   },
@@ -713,30 +725,6 @@
     "category": "Perspectives",
     "description": ""
   },
-  "Arktinen keskus": {
-    "file": "arktinen_keskus.json",
-    "count": 10,
-    "category": "Global policy",
-    "description": ""
-  },
-  "Arctic Centre at the University of Lapland": {
-    "file": "arctic_centre_at_the_university_of_lapland.json",
-    "count": 10,
-    "category": "Global policy",
-    "description": ""
-  },
-  "Open Future": {
-    "file": "open_future.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "Open Future Foundation"
-  },
-  "Hacks/Hackers": {
-    "file": "hacks_hackers.json",
-    "count": 15,
-    "category": "Journalism + investigation",
-    "description": "Advancing media innovation to foster public trust"
-  },
   "Access Now": {
     "file": "access_now.json",
     "count": 15,
@@ -747,6 +735,18 @@
     "file": "american_library_association.json",
     "count": 10,
     "category": "Culture",
+    "description": ""
+  },
+  "Arctic Centre at the University of Lapland": {
+    "file": "arctic_centre_at_the_university_of_lapland.json",
+    "count": 10,
+    "category": "Global policy",
+    "description": ""
+  },
+  "Arktinen keskus": {
+    "file": "arktinen_keskus.json",
+    "count": 10,
+    "category": "Global policy",
     "description": ""
   },
   "Ars Electronica Center": {
@@ -779,6 +779,12 @@
     "category": "Journalism + investigation",
     "description": "the home of online investigations"
   },
+  "Open Future": {
+    "file": "open_future.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "Open Future Foundation"
+  },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
     "count": 10,
@@ -796,6 +802,12 @@
     "count": 20,
     "category": "Digital skills + Citizen science",
     "description": "We don't just build maps, we build mappers!"
+  },
+  "Hacks/Hackers": {
+    "file": "hacks_hackers.json",
+    "count": 15,
+    "category": "Journalism + investigation",
+    "description": "Advancing media innovation to foster public trust"
   },
   "Stanford CIS": {
     "file": "stanford_cis.json",
@@ -953,9 +965,15 @@
     "category": "Digital skills + Citizen science",
     "description": "UCL's interdisciplinary research group on Extreme Citizen Science"
   },
+  "Finnish AI Region": {
+    "file": "finnish_ai_region.json",
+    "count": 20,
+    "category": "(Open) Data + Technology",
+    "description": "FAIR"
+  },
   "Follow the News published by UNESCO on Intangible Cultural Heritage": {
     "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
-    "count": 602,
+    "count": 604,
     "category": "Culture",
     "description": ""
   },
@@ -1024,12 +1042,6 @@
     "count": 20,
     "category": "Sustainability + Foresight",
     "description": "Ilmasto- ja energiapoliittinen ministerityöryhmä - ajankohtaista"
-  },
-  "infojustice": {
-    "file": "infojustice.json",
-    "count": 60,
-    "category": "Digital policy + rights",
-    "description": "- Hosted by the American University Program on Information Justice and Intellectual Property"
   },
   "JOKES": {
     "file": "jokes.json",
@@ -1138,12 +1150,6 @@
     "count": 10,
     "category": "Digital policy + rights",
     "description": ""
-  },
-  "FutureEverything » News": {
-    "file": "futureeverything___news.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": "Est. 1995. Cultural facilitators at the intersection of art, design, science and digital."
   },
   "News – Oxford Internet Institute": {
     "file": "news___oxford_internet_institute.json",
@@ -1330,12 +1336,6 @@
     "count": 419,
     "category": "Digital cultural heritage",
     "description": "The Library Innovation Lab is growing knowledge and community by bringing library principles to technological frontiers."
-  },
-  "The Signal: Digital Preservation": {
-    "file": "the_signal__digital_preservation.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Digital Happenings at the Library of Congress"
   },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
