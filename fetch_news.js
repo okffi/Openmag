@@ -46,6 +46,7 @@ async function run() {
             }
             allArticles = []; 
             if (fs.existsSync('data.json')) fs.unlinkSync('data.json');
+            // Merkitään ajo tehdyksi vasta tässä
             fs.writeFileSync(cleanLogFile, today);
         } else {
             console.log(`--- Jatketaan päivää: ladataan olemassa oleva data ---`);
@@ -54,17 +55,24 @@ async function run() {
             }
         }
 
-        // 2. HAETAAN SYÖTTEET
+        // 2. HAETAAN SYÖTTEET (Cache Buster ja parannettu validointi)
         console.log("Haetaan syötelistaa Google Sheetsistä (TSV)...");
         const cacheBuster = `&cb=${Date.now()}`;
         const response = await axios.get(SHEET_TSV_URL + cacheBuster);
         
+        // Käytetään /\r?\n/ ja suodatetaan tyhjät rivit heti pois
         const rows = response.data.split(/\r?\n/)
             .slice(1)
             .filter(row => row.trim() !== '');
 
+        console.log(`--- DEBUG: Sheets-data haettu ---`);
+        console.log(`Rivejä yhteensä (ilman otsikkoa): ${rows.length}`);
+        console.log(`Esimerkki ensimmäisestä raakarivistä:\n"${rows[0]}"`);
+        
         const feeds = rows.map(row => {
             const c = row.split('\t').map(v => v ? v.trim() : '');
+            
+            // Validointi: vähintään RSS tai Scrape URL on löydyttävä
             if (!c[2] && !c[3]) return null;
 
             return { 
@@ -72,7 +80,7 @@ async function run() {
                 feedName: c[1] || "Nimetön",
                 rssUrl: c[2], 
                 scrapeUrl: c[3] || "",
-                nameChecked: c[4] || c[1] || "Lähde",
+                nameChecked: c[4] || c[1] || "Lähde", // Tämä on "kuningas"
                 sheetDesc: c[5] || "",
                 lang: (c[6] || "fi").toLowerCase(),
                 scope: c[7] || "World",
@@ -82,33 +90,26 @@ async function run() {
 
         console.log(`--- Parsittu ${feeds.length} voimassa olevaa syötettä ---`);
         
-        // 1. AJO: Varmat ja standardit RSS-syötteet
-        for (const feed of feeds.filter(f => f.rssUrl && f.rssUrl.length > 10)) {
-            try {
-                console.log(`[RSS] ${feed.nameChecked}: ${feed.rssUrl}`);
-                await processRSS(feed, allArticles, now);
-                await new Promise(r => setTimeout(r, 600));
-            } catch (e) {
-                console.error(`RSS-virhe [${feed.nameChecked}]: ${e.message}`);
-                failedFeeds.push(`RSS ${feed.nameChecked}: ${e.message}`);
-            }
+        if (feeds.length === 0) {
+            console.error("VIRHE: Syötelista on tyhjä! Tarkista Sheets-yhteys.");
         }
         
-        // 2. AJO: Kokeelliset skraappaukset (eristetty muusta datasta)
-        // Voit ottaa tämän käyttöön tai jättää pois vaikuttamatta RSS-hakuun
-        /*
-        for (const feed of feeds.filter(f => f.scrapeUrl)) {
+        for (const feed of feeds) {
             try {
-                console.log(`[SCRAPE] ${feed.nameChecked}: ${feed.scrapeUrl}`);
-                await processScraper(feed, allArticles, now);
-                await new Promise(r => setTimeout(r, 1000));
+                if (feed.rssUrl && feed.rssUrl.length > 10) {
+                    console.log(`[RSS] ${feed.nameChecked}: ${feed.rssUrl}`);
+                    await processRSS(feed, allArticles, now);
+                } else if (feed.scrapeUrl) {
+                    console.log(`[SCRAPE] ${feed.nameChecked}: ${feed.scrapeUrl}`);
+                    await processScraper(feed, allArticles, now);
+                }
+                // Pieni viive estää robotin leimaamisen hyökkäykseksi
+                await new Promise(r => setTimeout(r, 600));
             } catch (e) {
-                console.error(`Scrape-virhe [${feed.nameChecked}]: ${e.message}`);
-                failedFeeds.push(`SCRAPE ${feed.nameChecked}: ${e.message}`);
+                console.error(`Virhe kohteessa ${feed.nameChecked || 'Tuntematon'}: ${e.message}`);
+                failedFeeds.push(`${feed.nameChecked || feed.category}: ${e.message}`);
             }
         }
-        */
-
         // 3. DUPLIKAATTIEN POISTO
         const seenPostUrls = new Set();
         allArticles = allArticles.filter(art => {
@@ -119,11 +120,12 @@ async function run() {
             return true;
         });
 
-        // 4. TALLENNUS ARKISTOIHIN
+        // 4. TALLENNUS ARKISTOIHIN JA TILASTOIHIN
         const sourceStats = {};
         const articlesBySource = {};
 
         allArticles.forEach(art => {
+            // Käytetään artikkelin mukana kulkevaa puhdasta nimeä
             const src = art.sourceTitle; 
             const fileKey = src.replace(/[^a-z0-9]/gi, '_').toLowerCase();
             
@@ -135,14 +137,17 @@ async function run() {
                     file: `${fileKey}.json`, 
                     count: 0,
                     category: art.sheetCategory || "Yleinen",
+                    // Lisätään kuvaus myös tilastoihin, jos käyttöliittymä tarvitsee sitä
                     description: art.sourceDescription || "" 
                 };
             }
             sourceStats[src].count++;
         });
 
+        // Jos kansiota ei ole, luodaan se ennen kirjoittamista
         if (!fs.existsSync(sourcesDir)) {
             fs.mkdirSync(sourcesDir, { recursive: true });
+            console.log("Sources-kansiota ei ollut – luotiin uusi.");
         }
 
         Object.keys(articlesBySource).forEach(key => {
@@ -181,7 +186,7 @@ async function run() {
             }
         });
 
-        // 6. TALLENNUS
+        // 6. TALLENNUS - Nostettu 1000 artikkeliin
         fs.writeFileSync('data.json', JSON.stringify(finalSorted.slice(0, 1000), null, 2));
         fs.writeFileSync('stats.json', JSON.stringify(sourceStats, null, 2));
 
@@ -195,102 +200,204 @@ async function run() {
 
 async function processRSS(feed, allArticles, now) {
     let feedContent;
+
+    // Määritetään yhteiset asetukset axios-pyyntöjä varten
     const axiosConfig = {
         timeout: 15000,
-        headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36', 'Accept': 'text/xml,application/xml' },
-        httpsAgent
+        headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+        },
+        httpsAgent: typeof httpsAgent !== 'undefined' ? httpsAgent : undefined
     };
 
     try {
+        // Yritetään ensin normaalisti rss-parserilla
+        // Huom: rss-parser ei tue suoraan axios-headersseja, joten jos tämä epäonnistuu,
+        // mennään automaattisesti catch-lohkoon, jossa axios käyttää User-Agentia.
         feedContent = await parser.parseURL(feed.rssUrl);
     } catch (err) {
+        // Poikkeuslogiikka XML-virheille, sertifikaattivioille tai jos palvelin hylkää peruspyynnön
+        console.log(`[POIKKEUS] Vikasietoinen haku: ${feed.nameChecked}`);
+        
         try {
+            // Käytetään axiosia yllä määritellyllä configilla (sisältää User-Agentin)
             const response = await axios.get(feed.rssUrl, axiosConfig);
+            
             let xmlData = response.data;
+            // Puhdistetaan rikkonaiset XML-merkit
             xmlData = xmlData.replace(/&(?!(amp|lt|gt|quot|apos|#\d+|#x[a-f\d]+);)/gi, '&amp;');
+            
             feedContent = await parser.parseString(xmlData);
         } catch (retryErr) {
-            throw new Error(`RSS luku epäonnistui: ${retryErr.message}`);
+            throw new Error(`Vikasietoinen haku epäonnistui: ${retryErr.message}`);
         }
     }
     
+    // 1. Poimitaan syötteen kuvaus
     const sourceDescription = feed.sheetDesc || (feedContent.description ? feedContent.description.trim() : "");
+    
+// 2. Poimitaan logo
     let sourceLogo = feedContent.image ? feedContent.image.url : null;
     
     if (!sourceLogo) {
         try {
+            // Yritetään ensin syötteen ilmoittamaa linkkiä, sitten uutislinkkiä, ja lopuksi RSS-osoitetta
             const linkToParse = feedContent.link || (feedContent.items[0] && feedContent.items[0].link) || feed.rssUrl;
+            
             if (linkToParse) {
                 const domain = new URL(linkToParse).hostname;
                 sourceLogo = `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
             }
-        } catch (e) {}
+        } catch (e) {
+            // Jos URL on edelleen viallinen (esim. pelkkä polku), ei kaadeta ajoa
+            console.log(`[VAROITUS] Faviconin luonti epäonnistui kohteelle ${feed.nameChecked}: ${e.message}`);
+        }
     }
 
     const items = feedContent.items.map(item => {
         let itemDate = new Date(item.pubDate || item.isoDate);
         if (isNaN(itemDate.getTime()) || itemDate > now) itemDate = now;
 
-        // KUVAN POIMINTA
+        if (itemDate.getHours() === 0 && itemDate.getMinutes() === 0) {
+            const randomMinutes = Math.floor(Math.random() * 720);
+            itemDate.setMinutes(itemDate.getMinutes() - randomMinutes);
+        }
+        
+        // --- KUVAN POIMINTA ALKAA ---
+        // Alustetaan muuttuja img tyhjäksi. Jos kuvaa ei löydy mistään alta, se jää nulliksi.
         let img = null;
+
+        // A) Kokeillaan standardeja mediakenttiä
+        // RSS-syötteet käyttävät usein media:content-tagia. Parseri voi nimetä sen kummalla vain tavalla.
         let mContent = item.mediaContent || item['media:content'];
+        
         if (mContent) {
+            // Varmistetaan, että käsitellään taulukkoa (listaa), vaikka syötteessä olisi vain yksi kuva.
             const mediaArray = Array.isArray(mContent) ? mContent : [mContent];
-            let maxW = 0;
+            let maxW = 0; // Käytetään suurimman kuvan etsimiseen (leveys pikseleinä).
+
             mediaArray.forEach(m => {
+                // Haetaan kuvan URL. XML-rakenteesta riippuen se on joko m.url tai m.$.url.
                 const currentUrl = m.url || m.$?.url;
+                // Muutetaan leveystieto numeroksi vertailua varten.
                 const currentWidth = parseInt(m.width || m.$?.width || 0);
+                
+                // Valintalogiikka: otetaan kuva, jos se on leveämpi kuin edellinen löydetty,
+                // tai jos kyseessä on ensimmäinen löydetty URL.
                 if (currentUrl && (currentWidth >= maxW || !img)) {
                     maxW = currentWidth;
                     img = currentUrl;
                 }
             });
         }
-        if (!img && item.mediaThumbnail) img = item.mediaThumbnail.$?.url || item.mediaThumbnail.url;
-        if (!img && item.enclosure && item.enclosure.url) img = item.enclosure.url;
-        if (!img) img = extractImageFromContent(item, feed.rssUrl);
 
-        if (img) {
-            if (img.includes('?')) img = img.split('?')[0];
-            if (img.startsWith('/') && !img.startsWith('http')) {
-                try {
-                    const urlObj = new URL(feed.rssUrl);
-                    img = `${urlObj.protocol}//${urlObj.hostname}${img}`;
-                } catch (e) { img = null; }
-            }
-            if (img && img.includes('guim.co.uk')) img = img.replace('http://', 'https://');
-            img = img.replace(/&amp;/g, '&');
+        // Jos media:content ei tärpännyt, katsotaan mediaThumbnail-kenttä (pienoiskuva).
+        if (!img && item.mediaThumbnail) {
+            // Tarkistetaan molemmat mahdolliset XML-polut URL-osoitteelle.
+            img = item.mediaThumbnail.$?.url || item.mediaThumbnail.url;
         }
 
-        // TEKSTIN POIMINTA JA PUHDISTUS (Lisätty sanitointi tässä)
+        // Jos ei vieläkään kuvaa, katsotaan enclosure-tagi (usein käytössä podcasteissa tai vanhemmissa RSS-malleissa).
+        if (!img && item.enclosure && item.enclosure.url) {
+            img = item.enclosure.url;
+        }
+
+        // B) Jos ei vieläkään löydy (esim. OKFN/ePressi), kaivetaan sisällön seasta.
+        // Tämä kutsuu erillistä apufunktiota, joka "skrappaa" HTML-sisällön seasta <img>-tagit.
+        if (!img) {
+            img = extractImageFromContent(item, feed.rssUrl);
+        }
+
+        // C) ÄLYKÄS PUHDISTUS
+        // Tässä vaiheessa meillä on joko URL tai null. Jos meillä on URL, siivotaan se.
+        if (img) {
+            // WordPress-pohjaiset sivustot (i0.wp.com / wp-content) käyttävät usein URL-parametreja kuvien koon muuttamiseen.
+            if (img.includes('i0.wp.com') || img.includes('wp-content')) {
+                // Jos URL:ssa on kysymysmerkki (esim. kuva.jpg?w=640), katkaistaan se pois, jotta saamme alkuperäisen täysikokoisen kuvan.
+                if (img.includes('?')) {
+                    img = img.split('?')[0];
+                }
+            }
+            
+            // Suhteellisten linkkien korjaus: Jos kuva alkaa "/" (esim. /kuvat/uudenvuoden.jpg), se ei toimi sellaisenaan.
+            if (img.startsWith('/') && !img.startsWith('http')) {
+                try {
+                    // Luodaan URL-olio syötteen osoitteesta, jotta saamme domainin (esim. https://okfn.de).
+                    const urlObj = new URL(feed.rssUrl);
+                    // Yhdistetään protokolla, domain ja suhteellinen polku täydelliseksi osoitteeksi.
+                    img = `${urlObj.protocol}//${urlObj.hostname}${img}`;
+                } catch (e) { 
+                    // Jos URL-muunnos epäonnistuu, hylätään kuva virheen välttämiseksi.
+                    img = null; 
+                }
+            }
+            
+            // Guardianin (guim.co.uk) kuvat saattavat joskus tulla vanhentuneella http-yhteydellä.
+            if (img && img.includes('guim.co.uk')) {
+                // Pakotetaan https, jotta selain ei anna "mixed content" -varoitusta.
+                img = img.replace('http://', 'https://');
+            }
+        }
+        // --- KUVAN POIMINTA PÄÄTTYY ---
+        
+
+        // --- TEKSTIN POIMINTA ALKAA ---
+        // Haetaan raakateksti useasta mahdollisesta kentästä (ePressi käyttää content:encoded)
         const rawContent = item['content:encoded'] || item.contentEncoded || item.content || item.description || "";
         
-        // Luodaan Cheerio-olio, jotta voidaan poistaa roska-tagit
-        const $ = cheerio.load(rawContent);
-        $('script, style, iframe, form, noscript').remove(); // Poistetaan Gravity Forms, tyylit ja upotukset
-        
-        let cleanText = $.text() // Otetaan vain puhdas teksti
+        // Poistetaan HTML ja ylimääräiset tyhjät
+        let cleanText = rawContent
+            .replace(/<[^>]*>/g, ' ')
             .replace(/\s+/g, ' ')
             .trim();
 
-        if (cleanText.length < 10) cleanText = item.title || "";
-        const finalSnippet = cleanText.length > 500 ? cleanText.substring(0, 500) + "..." : cleanText;
+        // Jos teksti jäi tyhjäksi tai on vain pisteitä, käytetään otsikkoa varalla
+        if (cleanText.length < 10 || cleanText === "...") {
+            cleanText = item.title || "";
+        }
 
+        const finalSnippet = cleanText.length > 500 
+            ? cleanText.substring(0, 500) + "..." 
+            : cleanText;
+        // --- TEKSTIN POIMINTA PÄÄTTYY ---
+
+        let articleLink = item.link;
+        if (articleLink && !articleLink.startsWith('http')) {
+            try {
+                articleLink = new URL(articleLink, feed.rssUrl).href;
+            } catch (e) {
+                console.error("Linkin korjaus epäonnistui:", articleLink);
+            }
+        }
+
+        let finalImg = img;
+        if (finalImg && typeof finalImg === 'string') {
+            // Palautetaan mahdolliset XML-entiteetit raakamuotoon, jotta selain voi 
+            // enkoodata ne puhtaasti wsrv.nl-palvelulle (ei tupla-enkoodausta).
+            finalImg = finalImg.replace(/&amp;/g, '&');
+        }
+        // Valitaan kuvaus: 1. Sheets (sheetDesc), 2. RSS (feedContent.description), 3. Tyhjä
+        const finalDescription = feed.sheetDesc || (feedContent.description ? feedContent.description.trim() : "");
+    
         return {
             title: item.title,
-            link: item.link,
+            link: articleLink,
             pubDate: itemDate.toISOString(),
             content: finalSnippet,
             creator: item.creator || item.author || "",
+            // Nimi on aina Sheets-nimi (nameChecked)
             sourceTitle: feed.nameChecked, 
             sheetCategory: feed.category,
-            enforcedImage: img,
-            sourceDescription: sourceDescription,
+            enforcedImage: finalImg,
+            sourceDescription: finalDescription, // <--- Korjattu tähän
             sourceLogo: sourceLogo,
             lang: feed.lang,
             scope: feed.scope,
-            isDarkLogo: feed.isDarkLogo
+            isDarkLogo: feed.isDarkLogo,
+            originalRssUrl: feed.rssUrl
         };
+
     });
     allArticles.push(...items);
 }
@@ -300,9 +407,11 @@ async function processScraper(feed, allArticles, now) {
     const domain = urlObj.hostname.replace('www.', '');
 
     try {
-        const { data } = await axios.get(feed.scrapeUrl, { headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 15000 });
+        const { data } = await axios.get(feed.scrapeUrl, { 
+            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
+            timeout: 15000 
+        });
         const $ = cheerio.load(data);
-        $('script, style, iframe, form').remove(); // Puhdistetaan skraappaus-data
         
         let scraperRule = null;
         const rulePath = path.join(__dirname, 'scrapers', `${domain}.js`);
@@ -310,6 +419,9 @@ async function processScraper(feed, allArticles, now) {
 
         const selector = scraperRule ? scraperRule.listSelector : 'article';
         const elements = $(selector).get().slice(0, 10);
+
+        // Valitaan kuvaus: Ensisijaisesti sarake F, muuten geneerinen teksti
+        const sourceDescription = feed.sheetDesc || "Verkkosivulta poimittu uutinen.";
 
         for (const el of elements) {
             let item;
@@ -326,46 +438,97 @@ async function processScraper(feed, allArticles, now) {
 
             if (item && item.title && item.link) {
                 const fullLink = item.link.startsWith('http') ? item.link : new URL(item.link, feed.scrapeUrl).href;
+                let finalImg = item.enforcedImage;
+                if (finalImg && !finalImg.startsWith('http')) {
+                    finalImg = new URL(finalImg, fullLink).href;
+                }
+            
                 allArticles.push({
-                    title: item.title,
+                    title: item.title, // Käytetään puhdistusta
                     link: fullLink,
                     pubDate: item.pubDate || now.toISOString(),
                     content: item.content || "Lue lisää sivustolta.",
+                    creator: item.creator || "",
+                    // Pakotetaan Sheets-nimi (sarake E / nameChecked)
                     sourceTitle: feed.nameChecked || domain,
                     sheetCategory: feed.category,
-                    enforcedImage: item.enforcedImage,
-                    sourceDescription: feed.sheetDesc || "Verkkosivulta poimittu.",
+                    enforcedImage: finalImg,
+                    sourceDescription: sourceDescription,
                     sourceLogo: `https://www.google.com/s2/favicons?sz=128&domain=${domain}`,
-                    lang: feed.lang,
-                    scope: feed.scope,
+                    lang: feed.lang,   // Lisätty kieli
+                    scope: feed.scope, // Lisätty skooppi
                     isDarkLogo: feed.isDarkLogo
                 });
             }
         }
-    } catch (err) { console.error(`Scraper epäonnistui ${domain}: ${err.message}`); }
+    } catch (err) {
+        console.error(`Scraper epäonnistui kohteelle ${domain}: ${err.message}`);
+    }
 }
 
 function extractImageFromContent(item, baseUrl) {
-    const searchString = (item.contentEncoded || "") + (item.content || "") + (item.description || "");
+    const searchString = (item.contentEncoded || "") + 
+                         (item['content:encoded'] || "") + 
+                         (item.content || "") + 
+                         (item.description || "") +
+                         (item.summary || "");
+    
     if (!searchString) return null;
 
     const $ = cheerio.load(searchString);
-    $('script, style').remove(); // Varmistetaan, ettei poimita skriptien sisällä olevia URL-osoitteita
-    
     let foundImg = null;
+
     $('img').each((i, el) => {
         if (foundImg) return;
-        let src = $(el).attr('src') || $(el).attr('data-src');
+        
+        let src = $(el).attr('src') || $(el).attr('data-src') || $(el).attr('data-lazy-src');
+        
+        if (!src && $(el).attr('srcset')) {
+            const sets = $(el).attr('srcset').split(',');
+            src = sets[sets.length - 1].trim().split(' ')[0];
+        }
+
         if (src) {
+            // Jos src on pelkkä domain , se ei ole oikea kuva
             try {
-                const checkUrl = new URL(src, baseUrl);
-                if (checkUrl.pathname === "/" || checkUrl.pathname === "") return;
-                
-                // Poistetaan analytiikka-kuvat
-                if (/analytics|doubleclick|pixel|1x1|avatar|count/i.test(src)) return;
-                
-                foundImg = checkUrl.href;
-            } catch (e) {}
+                const checkUrl = new URL(src);
+                if (checkUrl.pathname === "/" || checkUrl.pathname === "") {
+                    return; // Hypätään tämän kuvan yli ja jatketaan seuraavaan <img> tagiin
+                }
+            } catch (e) {
+                // Jos URL on viallinen, jatketaan
+            }
+
+            // --- TÄRKEIN KORJAUS COARILLE JA WP-KUVILLE ---
+            // Poistetaan kaikki parametrit, jotta wsrv.nl ei saa tuplakoodattuja merkkejä
+            // Esim: image.png?resize=1024%2C768 -> image.png
+            // Jos cheerio tai aiempi XML-puhdistus on jättänyt URL-osoitteeseen 
+            // entiteettejä, siivotaan ne tässä vaiheessa.
+            if (src.includes('&amp;')) {
+                src = src.replace(/&amp;/g, '&');
+            }
+            if (src.includes('?')) {
+                src = src.split('?')[0];
+            }
+            
+            // Jos kyseessä on i0.wp.com -linkki, se toimii usein paremmin ilman i0-alkua
+            // mutta usein parametrien poisto riittää jo sellaisenaan.
+
+            if (src.startsWith('/') && !src.startsWith('//')) {
+                try {
+                    const urlObj = new URL(baseUrl);
+                    src = `${urlObj.protocol}//${urlObj.hostname}${src}`;
+                } catch (e) {}
+            } else if (src.startsWith('//')) {
+                src = 'https:' + src;
+            }
+            
+            if (src.startsWith('http')) {
+                const isUseless = /analytics|doubleclick|pixel|1x1|wp-emoji|avatar|count/i.test(src);
+                if (!isUseless) {
+                    foundImg = src;
+                }
+            }
         }
     });
     return foundImg;
