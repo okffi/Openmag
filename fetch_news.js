@@ -82,21 +82,32 @@ async function run() {
 
         console.log(`--- Parsittu ${feeds.length} voimassa olevaa syötettä ---`);
         
-        for (const feed of feeds) {
+        // 1. AJO: Varmat ja standardit RSS-syötteet
+        for (const feed of feeds.filter(f => f.rssUrl && f.rssUrl.length > 10)) {
             try {
-                if (feed.rssUrl && feed.rssUrl.length > 10) {
-                    console.log(`[RSS] ${feed.nameChecked}: ${feed.rssUrl}`);
-                    await processRSS(feed, allArticles, now);
-                } else if (feed.scrapeUrl) {
-                    console.log(`[SCRAPE] ${feed.nameChecked}: ${feed.scrapeUrl}`);
-                    await processScraper(feed, allArticles, now);
-                }
+                console.log(`[RSS] ${feed.nameChecked}: ${feed.rssUrl}`);
+                await processRSS(feed, allArticles, now);
                 await new Promise(r => setTimeout(r, 600));
             } catch (e) {
-                console.error(`Virhe kohteessa ${feed.nameChecked}: ${e.message}`);
-                failedFeeds.push(`${feed.nameChecked}: ${e.message}`);
+                console.error(`RSS-virhe [${feed.nameChecked}]: ${e.message}`);
+                failedFeeds.push(`RSS ${feed.nameChecked}: ${e.message}`);
             }
         }
+        
+        // 2. AJO: Kokeelliset skraappaukset (eristetty muusta datasta)
+        // Voit ottaa tämän käyttöön tai jättää pois vaikuttamatta RSS-hakuun
+        /*
+        for (const feed of feeds.filter(f => f.scrapeUrl)) {
+            try {
+                console.log(`[SCRAPE] ${feed.nameChecked}: ${feed.scrapeUrl}`);
+                await processScraper(feed, allArticles, now);
+                await new Promise(r => setTimeout(r, 1000));
+            } catch (e) {
+                console.error(`Scrape-virhe [${feed.nameChecked}]: ${e.message}`);
+                failedFeeds.push(`SCRAPE ${feed.nameChecked}: ${e.message}`);
+            }
+        }
+        */
 
         // 3. DUPLIKAATTIEN POISTO
         const seenPostUrls = new Set();
