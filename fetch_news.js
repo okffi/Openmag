@@ -94,22 +94,37 @@ async function run() {
             console.error("VIRHE: Syötelista on tyhjä! Tarkista Sheets-yhteys.");
         }
         
-        for (const feed of feeds) {
+        // 2.1. KÄSITTELE RSS-SYÖTTEET (Vakaa osio)
+        const rssFeeds = feeds.filter(f => f.rssUrl && f.rssUrl.length > 10);
+        console.log(`--- Aloitetaan RSS-haku (${rssFeeds.length} kpl) ---`);
+        
+        for (const feed of rssFeeds) {
             try {
-                if (feed.rssUrl && feed.rssUrl.length > 10) {
-                    console.log(`[RSS] ${feed.nameChecked}: ${feed.rssUrl}`);
-                    await processRSS(feed, allArticles, now);
-                } else if (feed.scrapeUrl) {
-                    console.log(`[SCRAPE] ${feed.nameChecked}: ${feed.scrapeUrl}`);
-                    await processScraper(feed, allArticles, now);
-                }
-                // Pieni viive estää robotin leimaamisen hyökkäykseksi
+                console.log(`[RSS] ${feed.nameChecked}: ${feed.rssUrl}`);
+                await processRSS(feed, allArticles, now);
                 await new Promise(r => setTimeout(r, 600));
             } catch (e) {
-                console.error(`Virhe kohteessa ${feed.nameChecked || 'Tuntematon'}: ${e.message}`);
-                failedFeeds.push(`${feed.nameChecked || feed.category}: ${e.message}`);
+                console.error(`RSS-virhe kohteessa ${feed.nameChecked}: ${e.message}`);
+                failedFeeds.push(`RSS: ${feed.nameChecked}: ${e.message}`);
             }
         }
+
+        // 2.2. KÄSITTELE SCRAPERIT (Kokeellinen osio - tällä hetkellä pois päältä)
+        /*
+        const scrapeFeeds = feeds.filter(f => f.scrapeUrl && !f.rssUrl);
+        console.log(`--- Aloitetaan Scraper-haku (${scrapeFeeds.length} kpl) ---`);
+
+        for (const feed of scrapeFeeds) {
+            try {
+                console.log(`[SCRAPE] ${feed.nameChecked}: ${feed.scrapeUrl}`);
+                await processScraper(feed, allArticles, now);
+                await new Promise(r => setTimeout(r, 1000));
+            } catch (e) {
+                console.error(`Scraper-virhe kohteessa ${feed.nameChecked}: ${e.message}`);
+                failedFeeds.push(`SCRAPE: ${feed.nameChecked}: ${e.message}`);
+            }
+        }
+        */
         // 3. DUPLIKAATTIEN POISTO
         const seenPostUrls = new Set();
         allArticles = allArticles.filter(art => {
