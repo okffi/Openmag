@@ -23,6 +23,24 @@
     "category": "Global policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti."
   },
+  "Euronews | Europe": {
+    "file": "euronews___europe.json",
+    "count": 51,
+    "category": "Politics + Government",
+    "description": "Latest news from Euronews"
+  },
+  "Suomen Kuvalehti": {
+    "file": "suomen_kuvalehti.json",
+    "count": 32,
+    "category": "Perspectives",
+    "description": ""
+  },
+  "Tech Policy Press": {
+    "file": "tech_policy_press.json",
+    "count": 3238,
+    "category": "Digital policy + rights",
+    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy."
+  },
   "Access Now": {
     "file": "access_now.json",
     "count": 15,
@@ -67,7 +85,7 @@
   },
   "Avoin tiede": {
     "file": "avoin_tiede.json",
-    "count": 2,
+    "count": 10,
     "category": "(Open) Science + Research",
     "description": ""
   },
@@ -251,12 +269,6 @@
     "category": "Culture",
     "description": "Museoalan ihmisten, ilmiöiden ja puheenaiheiden media."
   },
-  "Euronews | Europe": {
-    "file": "euronews___europe.json",
-    "count": 51,
-    "category": "Politics + Government",
-    "description": "Latest news from Euronews"
-  },
   "NOEMA": {
     "file": "noema.json",
     "count": 10,
@@ -335,23 +347,11 @@
     "category": "Culture",
     "description": ""
   },
-  "Suomen Kuvalehti": {
-    "file": "suomen_kuvalehti.json",
-    "count": 33,
-    "category": "Perspectives",
-    "description": ""
-  },
   "Technology – POLITICO": {
     "file": "technology___politico.json",
     "count": 31,
     "category": "Digital policy + rights",
     "description": "European Politics, Policy, Government News"
-  },
-  "Tech Policy Press": {
-    "file": "tech_policy_press.json",
-    "count": 3238,
-    "category": "Digital policy + rights",
-    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy."
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
@@ -403,7 +403,7 @@
   },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
-    "count": 10,
+    "count": 11,
     "category": "Politics + Government",
     "description": "syöte"
   },
@@ -424,6 +424,12 @@
     "count": 16,
     "category": "Digital skills + Citizen science",
     "description": "Neues aus dem Wikimedia-Universum"
+  },
+  "DARIAH-EU": {
+    "file": "dariah_eu.json",
+    "count": 10,
+    "category": "Digital cultural heritage",
+    "description": "Digital Research Infrastructure for the Arts and Humanities"
   },
   "bellingcat": {
     "file": "bellingcat.json",
@@ -589,7 +595,7 @@
   },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
-    "count": 15,
+    "count": 14,
     "category": "(Open) Science + Research",
     "description": "Turun yliopiston etusivun uutisten lyhennelmät"
   },
@@ -779,12 +785,6 @@
     "category": "Digital cultural heritage",
     "description": ""
   },
-  "Weekly OSM": {
-    "file": "weekly_osm.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "weekly &#8211; semanario &#8211; hebdo &#8211; 週刊 &#8211; týdeník &#8211; Wochennotiz &#8211; 주간 &#8211; tygodnik"
-  },
   "American Library Association": {
     "file": "american_library_association.json",
     "count": 10,
@@ -807,6 +807,12 @@
     "file": "avoin_hallinto.json",
     "count": 10,
     "category": "Human Rights + Democracy",
+    "description": ""
+  },
+  "Open Science | Federation of Finnish Learned Societies": {
+    "file": "open_science___federation_of_finnish_learned_societies.json",
+    "count": 6,
+    "category": "(Open) Science + Research",
     "description": ""
   },
   "Open Future": {
@@ -1157,12 +1163,6 @@
     "category": "Human Rights + Democracy",
     "description": ""
   },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities"
-  },
   "News – Oxford Internet Institute": {
     "file": "news___oxford_internet_institute.json",
     "count": 10,
@@ -1337,6 +1337,12 @@
     "category": "Digital skills + Citizen science",
     "description": "The Monthly newsletter for the Wikimedia-GLAM community"
   },
+  "Tiedepolitiikka": {
+    "file": "tiedepolitiikka.json",
+    "count": 30,
+    "category": "(Open) Science + Research",
+    "description": ""
+  },
   "REPAIR Tiedotteet": {
     "file": "repair_tiedotteet.json",
     "count": 10,
@@ -1348,6 +1354,12 @@
     "count": 10,
     "category": "Digital policy + rights",
     "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä"
+  },
+  "TSV": {
+    "file": "tsv.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta"
   },
   "Ulkoministeriö / Utrikesministeriet": {
     "file": "ulkoministeri____utrikesministeriet.json",
@@ -1396,6 +1408,12 @@
     "count": 25,
     "category": "Culture",
     "description": ""
+  },
+  "Weekly OSM": {
+    "file": "weekly_osm.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "weekly &#8211; semanario &#8211; hebdo &#8211; 週刊 &#8211; týdeník &#8211; Wochennotiz &#8211; 주간 &#8211; tygodnik"
   },
   "WIPO In Focus": {
     "file": "wipo_in_focus.json",
