@@ -110,7 +110,7 @@ async function run() {
         }
 
         // 2.2. KÄSITTELE SCRAPERIT (Kokeellinen osio - tällä hetkellä pois päältä)
-        
+        /*
         const scrapeFeeds = feeds.filter(f => f.scrapeUrl && !f.rssUrl);
         console.log(`--- Aloitetaan Scraper-haku (${scrapeFeeds.length} kpl) ---`);
 
@@ -124,7 +124,7 @@ async function run() {
                 failedFeeds.push(`SCRAPE: ${feed.nameChecked}: ${e.message}`);
             }
         }
-
+        */
         // 3. DUPLIKAATTIEN POISTO
         const seenPostUrls = new Set();
         allArticles = allArticles.filter(art => {
