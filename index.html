@@ -422,7 +422,7 @@ async function loadData(filePath, isInitial = false, forceRefresh = false) {
     const container = document.querySelector('#magazine-grid');
     const sentinel = document.querySelector('#scroll-sentinel');
     
-    sentinel.innerText = "Ladataan sisältöä...";
+     sentinel.innerText = "Ladataan uutisia...";
     container.classList.remove('loaded');
     
     const existingItems = container.querySelectorAll('.grid-item');
@@ -459,11 +459,13 @@ async function loadData(filePath, isInitial = false, forceRefresh = false) {
         displayArticles();
         
         // Päivitetään aikaleima UI:hin
-        updateViewMetadata();
+        if (typeof updateViewMetadata === 'function') updateViewMetadata();
 
     } catch (e) { 
         console.error("Latausvirhe:", e); 
         sentinel.innerText = "Virhe ladattaessa uutisia.";
+    } finally {
+        isLoading = false; 
     }
 }
 
