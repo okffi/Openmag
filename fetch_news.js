@@ -420,36 +420,31 @@ async function processRSS(feed, allArticles, now) {
 async function processScraper(feed, allArticles, now) {
     const urlObj = new URL(feed.scrapeUrl);
     const domain = urlObj.hostname.replace('www.', '');
+    const scraperPath = path.join(__dirname, 'scrapers', `${domain}.js`);
 
     try {
+        // Tarkistetaan löytyykö sääntöä ennen kuin edes ladataan sivua
+        if (!fs.existsSync(scraperPath)) {
+            console.log(`[SCRAPE] Ei kustomoitua skriptiä: ${domain}.`);
+            return;
+        }
+
+        const scraperRule = require(scraperPath);
         const { data } = await axios.get(feed.scrapeUrl, { 
             headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
             timeout: 15000 
         });
+
         const $ = cheerio.load(data);
-        
-        let scraperRule = null;
-        const rulePath = path.join(__dirname, 'scrapers', `${domain}.js`);
-        if (fs.existsSync(rulePath)) scraperRule = require(rulePath);
+        // POISTETAAN ROSKA: Gravity Forms, tyylit jne.
+        $('script, style, iframe, form').remove();
 
-        const selector = scraperRule ? scraperRule.listSelector : 'article';
+        const selector = scraperRule.listSelector || 'article';
         const elements = $(selector).get().slice(0, 10);
-
-        // Valitaan kuvaus: Ensisijaisesti sarake F, muuten geneerinen teksti
         const sourceDescription = feed.sheetDesc || "Verkkosivulta poimittu uutinen.";
 
         for (const el of elements) {
-            let item;
-            if (scraperRule) {
-                item = await scraperRule.parse($, el, axios, cheerio);
-            } else {
-                item = {
-                    title: $(el).find('h2, h3, .title').first().text().trim(),
-                    link: $(el).find('a').first().attr('href'),
-                    enforcedImage: $(el).find('img').first().attr('src'),
-                    content: ""
-                };
-            }
+            let item = await scraperRule.parse($, el, axios, cheerio);
 
             if (item && item.title && item.link) {
                 const fullLink = item.link.startsWith('http') ? item.link : new URL(item.link, feed.scrapeUrl).href;
@@ -457,22 +452,23 @@ async function processScraper(feed, allArticles, now) {
                 if (finalImg && !finalImg.startsWith('http')) {
                     finalImg = new URL(finalImg, fullLink).href;
                 }
-            
+
                 allArticles.push({
-                    title: item.title, // Käytetään puhdistusta
+                    title: item.title,
                     link: fullLink,
                     pubDate: item.pubDate || now.toISOString(),
                     content: item.content || "Lue lisää sivustolta.",
                     creator: item.creator || "",
-                    // Pakotetaan Sheets-nimi (sarake E / nameChecked)
                     sourceTitle: feed.nameChecked || domain,
                     sheetCategory: feed.category,
                     enforcedImage: finalImg,
                     sourceDescription: sourceDescription,
                     sourceLogo: `https://www.google.com/s2/favicons?sz=128&domain=${domain}`,
-                    lang: feed.lang,   // Lisätty kieli
-                    scope: feed.scope, // Lisätty skooppi
-                    isDarkLogo: feed.isDarkLogo
+                    lang: feed.lang,
+                    scope: feed.scope,
+                    isDarkLogo: feed.isDarkLogo,
+                    // TÄMÄ PUUTTUI NYKYISESTÄ:
+                    originalRssUrl: feed.rssUrl || "" 
                 });
             }
         }
