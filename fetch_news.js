@@ -169,29 +169,23 @@ async function run() {
             fs.writeFileSync(path.join(sourcesDir, `${key}.json`), JSON.stringify(articlesBySource[key], null, 2));
         });
 
-        // 5. ETUSIVUN JÄRJESTELY (ROUND ROBIN + RAJOITUS 5 KPL/LÄHDE)
+        // 5. ETUSIVUN JÄRJESTELY (ROUND ROBIN)
         const days = {};
         allArticles.forEach(art => {
             const d = art.pubDate.split('T')[0];
             if (!days[d]) days[d] = [];
             days[d].push(art);
         });
-        
+
         let finalSorted = []; 
         Object.keys(days).sort().reverse().forEach(day => {
             const dayArticles = days[day];
             const bySource = {};
-            
             dayArticles.forEach(art => {
                 const src = art.sourceTitle || "Muu";
                 if (!bySource[src]) bySource[src] = [];
-                
-                // RAJOITUS: Lisätään päivän alle vain, jos lähteeltä on alle 5 uutista kyseiselle päivälle
-                if (bySource[src].length < 5) {
-                    bySource[src].push(art);
-                }
+                bySource[src].push(art);
             });
-        
             const daySources = Object.keys(bySource);
             let hasItems = true;
             let i = 0;
