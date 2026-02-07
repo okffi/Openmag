@@ -392,20 +392,11 @@ async function processRSS(feed, allArticles, now) {
         // --- TEKSTIN POIMINTA PÄÄTTYY ---
 
         let articleLink = item.link;
-
-        if (articleLink) {
-            // 1. KORJAUS: Korjataan viallinen protokolla (https:/ -> https://)
-            if (articleLink.startsWith('https:/') && !articleLink.startsWith('https://')) {
-                articleLink = articleLink.replace('https:/', 'https://');
-            }
-
-            // 2. KORJAUS: Muutetaan suhteelliset linkit täysiksi URL-osoitteiksi
-            if (!articleLink.startsWith('http')) {
-                try {
-                    articleLink = new URL(articleLink, feed.rssUrl).href;
-                } catch (e) {
-                    console.error("Linkin korjaus epäonnistui:", articleLink);
-                }
+        if (articleLink && !articleLink.startsWith('http')) {
+            try {
+                articleLink = new URL(articleLink, feed.rssUrl).href;
+            } catch (e) {
+                console.error("Linkin korjaus epäonnistui:", articleLink);
             }
         }
 
