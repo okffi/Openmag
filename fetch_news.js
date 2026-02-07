@@ -356,16 +356,30 @@ async function processRSS(feed, allArticles, now) {
         }
         // --- KUVAN POIMINTA PÄÄTTYY ---
         
-
         // --- TEKSTIN POIMINTA ALKAA ---
-        // Haetaan raakateksti useasta mahdollisesta kentästä (ePressi käyttää content:encoded)
         const rawContent = item['content:encoded'] || item.contentEncoded || item.content || item.description || "";
         
-        // Poistetaan HTML ja ylimääräiset tyhjät
-        let cleanText = rawContent
-            .replace(/<[^>]*>/g, ' ')
-            .replace(/\s+/g, ' ')
-            .trim();
+        // Käytetään Cheeriota HTML:n puhdistamiseen tekstiksi muuttamisen sijaan
+        const $cleaner = cheerio.load(rawContent);
+        
+        // 1. Poistetaan vaaralliset tai ulkoasua rikkovat elementit
+        $cleaner('script, style, iframe, form, embed, object').remove();
+        
+        // 2. POISTETAAN INLINE-TYYLIT (Tämä estää Tactical Techin tyylivalumat)
+        $cleaner('*').removeAttr('style');
+        
+        // 3. Otetaan puhdistettu HTML (body-tagin sisältö)
+        let safeHTML = $cleaner('body').html() || $cleaner.html();
+        
+        // 4. Katkaistaan hallitusti, jos teksti on massiivinen
+        if (safeHTML.length > 1000) {
+            safeHTML = safeHTML.substring(0, 1000);
+            // Lataamalla katkaistu teksti uudelleen, Cheerio sulkee mahdolliset avoimeksi jääneet tagit
+            safeHTML = cheerio.load(safeHTML).html();
+        }
+        
+        // Tallennetaan puhdistettu HTML
+        let cleanText = safeHTML.trim();
 
         // Jos teksti jäi tyhjäksi tai on vain pisteitä, käytetään otsikkoa varalla
         if (cleanText.length < 10 || cleanText === "...") {
