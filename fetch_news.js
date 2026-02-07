@@ -324,78 +324,44 @@ async function processRSS(feed, allArticles, now) {
             img = item.enclosure.url;
         }
 
-        // B) Jos ei vieläkään löydy (esim. OKFN/ePressi), kaivetaan sisällön seasta.
-        // Tämä kutsuu erillistä apufunktiota, joka "skrappaa" HTML-sisällön seasta <img>-tagit.
-        if (!img) {
-            img = extractImageFromContent(item, feed.rssUrl);
-        }
-
-        // C) ÄLYKÄS PUHDISTUS
-        // Tässä vaiheessa meillä on joko URL tai null. Jos meillä on URL, siivotaan se.
-        if (img) {
-            // WordPress-pohjaiset sivustot (i0.wp.com / wp-content) käyttävät usein URL-parametreja kuvien koon muuttamiseen.
-            if (img.includes('i0.wp.com') || img.includes('wp-content')) {
-                // Jos URL:ssa on kysymysmerkki (esim. kuva.jpg?w=640), katkaistaan se pois, jotta saamme alkuperäisen täysikokoisen kuvan.
-                if (img.includes('?')) {
-                    img = img.split('?')[0];
-                }
-            }
-            
-            // Suhteellisten linkkien korjaus: Jos kuva alkaa "/" (esim. /kuvat/uudenvuoden.jpg), se ei toimi sellaisenaan.
-            if (img.startsWith('/') && !img.startsWith('http')) {
-                try {
-                    // Luodaan URL-olio syötteen osoitteesta, jotta saamme domainin (esim. https://okfn.de).
-                    const urlObj = new URL(feed.rssUrl);
-                    // Yhdistetään protokolla, domain ja suhteellinen polku täydelliseksi osoitteeksi.
-                    img = `${urlObj.protocol}//${urlObj.hostname}${img}`;
-                } catch (e) { 
-                    // Jos URL-muunnos epäonnistuu, hylätään kuva virheen välttämiseksi.
-                    img = null; 
-                }
-            }
-            
-            // Guardianin (guim.co.uk) kuvat saattavat joskus tulla vanhentuneella http-yhteydellä.
-            if (img && img.includes('guim.co.uk')) {
-                // Pakotetaan https, jotta selain ei anna "mixed content" -varoitusta.
-                img = img.replace('http://', 'https://');
-            }
-        }
-        // --- KUVAN POIMINTA PÄÄTTYY ---
-        
-        // --- TEKSTIN POIMINTA ALKAA ---
+        // --- TEKSTIN JA KUVAN KÄSITTELY (YHDISTETTY) ---
         const rawContent = item['content:encoded'] || item.contentEncoded || item.content || item.description || "";
-        
-        // Käytetään Cheeriota HTML:n puhdistamiseen tekstiksi muuttamisen sijaan
-        const $cleaner = cheerio.load(rawContent);
-        
-        // 1. Poistetaan vaaralliset tai ulkoasua rikkovat elementit
-        $cleaner('script, style, iframe, form, embed, object').remove();
-        
-        // 2. POISTETAAN INLINE-TYYLIT (Tämä estää Tactical Techin tyylivalumat)
-        $cleaner('*').removeAttr('style');
-        
-        // 3. Otetaan puhdistettu HTML (body-tagin sisältö)
-        let safeHTML = $cleaner('body').html() || $cleaner.html();
-        
-        // 4. Katkaistaan hallitusti, jos teksti on massiivinen
-        if (safeHTML.length > 1000) {
-            safeHTML = safeHTML.substring(0, 1000);
-            // Lataamalla katkaistu teksti uudelleen, Cheerio sulkee mahdolliset avoimeksi jääneet tagit
-            safeHTML = cheerio.load(safeHTML).html();
+        const $c = cheerio.load(rawContent);
+
+        // 1. Jos kuvaa ei vielä ole löytynyt, yritetään poimia se tästä sisällöstä
+        if (!img) {
+            const firstImg = $c('img').first();
+            if (firstImg.length) {
+                img = firstImg.attr('src');
+            }
         }
         
-        // Tallennetaan puhdistettu HTML
+        // 2. POISTETAAN ROSKA (Tämä korjaa COST-ongelman)
+        // Poistetaan kuvat, haitalliset skriptit JA WordPressin figure-rakenteet
+        $c('img, script, style, iframe, form, figure, figcaption, video, audio').remove();
+        
+        // 3. PUHDISTETAAN ATTRUBUUTIT
+        // Poistetaan inline-tyylit ja ne koodit (srcset, sizes), jotka jäivät kummittelemaan
+        $c('*').removeAttr('style').removeAttr('srcset').removeAttr('sizes').removeAttr('fetchpriority').removeAttr('decoding');
+        
+        // 4. MUODOSTETAAN LOPULLINEN TEKSTI
+        let safeHTML = $c('body').html() || $c.html() || "";
+        
+        // Hallittu katkaisu, jotta tagit sulkeutuvat oikein
+        if (safeHTML.length > 800) {
+            safeHTML = safeHTML.substring(0, 800);
+            safeHTML = cheerio.load(safeHTML).html(); 
+        }
+        
         let cleanText = safeHTML.trim();
 
-        // Jos teksti jäi tyhjäksi tai on vain pisteitä, käytetään otsikkoa varalla
-        if (cleanText.length < 10 || cleanText === "...") {
+        // Jos teksti jäi tyhjäksi, käytetään otsikkoa varalla
+        if (cleanText.length < 10) {
             cleanText = item.title || "";
         }
 
-        const finalSnippet = cleanText.length > 500 
-            ? cleanText.substring(0, 500) + "..." 
-            : cleanText;
-        // --- TEKSTIN POIMINTA PÄÄTTYY ---
+        // Käytetään tätä lopullisena sisältönä
+        const finalSnippet = cleanText;
 
         let articleLink = item.link;
 
@@ -504,74 +470,6 @@ async function processScraper(feed, allArticles, now) {
     } catch (err) {
         console.error(`Scraper epäonnistui kohteelle ${domain}: ${err.message}`);
     }
-}
-
-function extractImageFromContent(item, baseUrl) {
-    const searchString = (item.contentEncoded || "") + 
-                         (item['content:encoded'] || "") + 
-                         (item.content || "") + 
-                         (item.description || "") +
-                         (item.summary || "");
-    
-    if (!searchString) return null;
-
-    const $ = cheerio.load(searchString);
-    let foundImg = null;
-
-    $('img').each((i, el) => {
-        if (foundImg) return;
-        
-        let src = $(el).attr('src') || $(el).attr('data-src') || $(el).attr('data-lazy-src');
-        
-        if (!src && $(el).attr('srcset')) {
-            const sets = $(el).attr('srcset').split(',');
-            src = sets[sets.length - 1].trim().split(' ')[0];
-        }
-
-        if (src) {
-            // Jos src on pelkkä domain , se ei ole oikea kuva
-            try {
-                const checkUrl = new URL(src);
-                if (checkUrl.pathname === "/" || checkUrl.pathname === "") {
-                    return; // Hypätään tämän kuvan yli ja jatketaan seuraavaan <img> tagiin
-                }
-            } catch (e) {
-                // Jos URL on viallinen, jatketaan
-            }
-
-            // --- TÄRKEIN KORJAUS COARILLE JA WP-KUVILLE ---
-            // Poistetaan kaikki parametrit, jotta wsrv.nl ei saa tuplakoodattuja merkkejä
-            // Esim: image.png?resize=1024%2C768 -> image.png
-            // Jos cheerio tai aiempi XML-puhdistus on jättänyt URL-osoitteeseen 
-            // entiteettejä, siivotaan ne tässä vaiheessa.
-            if (src.includes('&amp;')) {
-                src = src.replace(/&amp;/g, '&');
-            }
-            if (src.includes('?')) {
-                src = src.split('?')[0];
-            }
-            
-            // Jos kyseessä on i0.wp.com -linkki, se toimii usein paremmin ilman i0-alkua
-            // mutta usein parametrien poisto riittää jo sellaisenaan.
-
-            if (src.startsWith('/') && !src.startsWith('//')) {
-                try {
-                    const urlObj = new URL(baseUrl);
-                    src = `${urlObj.protocol}//${urlObj.hostname}${src}`;
-                } catch (e) {}
-            } else if (src.startsWith('//')) {
-                src = 'https:' + src;
-            }
-            
-            if (src.startsWith('http')) {
-                const isUseless = /analytics|doubleclick|pixel|1x1|wp-emoji|avatar|count/i.test(src);
-                if (!isUseless) {
-                    foundImg = src;
-                }
-            }
-        }
-    });
-    return foundImg;
 }
 
 run().then(() => {
