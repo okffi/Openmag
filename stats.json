@@ -65,6 +65,12 @@
     "category": "Global policy",
     "description": ""
   },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 51,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL."
+  },
   "Amnesty International": {
     "file": "amnesty_international.json",
     "count": 12,
@@ -238,12 +244,6 @@
     "count": 10,
     "category": "Sustainability + Foresight",
     "description": "Noema Magazine"
-  },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 51,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL."
   },
   "Oikeusministeriö | Tiedotteet ja uutiset": {
     "file": "oikeusministeri____tiedotteet_ja_uutiset.json",
@@ -493,7 +493,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities"
   },
@@ -580,6 +580,12 @@
     "count": 20,
     "category": "Politics + Government",
     "description": ""
+  },
+  "resilience": {
+    "file": "resilience.json",
+    "count": 10,
+    "category": "Perspectives",
+    "description": "Insight and inspiration in turbulent times."
   },
   "bellingcat": {
     "file": "bellingcat.json",
@@ -1007,30 +1013,6 @@
     "category": "Politics + Government",
     "description": ""
   },
-  "JOKES": {
-    "file": "jokes.json",
-    "count": 10,
-    "category": "Journalism + investigation",
-    "description": "Journalistisen kulttuurin edistämissäätiö"
-  },
-  "Luovat ry": {
-    "file": "luovat_ry.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "Luovan työn tekijät ja yrittäjät, Luovat ry"
-  },
-  "NGI Commons": {
-    "file": "ngi_commons.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "Open Source and Internet Commons for Europe’s Digital Sovereignty"
-  },
-  "Open Government Partnership Newsletter": {
-    "file": "open_government_partnership_newsletter.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": ""
-  },
   "American Library Association": {
     "file": "american_library_association.json",
     "count": 10,
@@ -1187,6 +1169,12 @@
     "category": "Digital policy + rights",
     "description": "- Hosted by the American University Program on Information Justice and Intellectual Property"
   },
+  "JOKES": {
+    "file": "jokes.json",
+    "count": 10,
+    "category": "Journalism + investigation",
+    "description": "Journalistisen kulttuurin edistämissäätiö"
+  },
   "JSN": {
     "file": "jsn.json",
     "count": 10,
@@ -1229,6 +1217,12 @@
     "category": "Digital policy + rights",
     "description": "Grounding Indigenous Rights"
   },
+  "Luovat ry": {
+    "file": "luovat_ry.json",
+    "count": 10,
+    "category": "Cultural policy",
+    "description": "Luovan työn tekijät ja yrittäjät, Luovat ry"
+  },
   "MCN": {
     "file": "mcn.json",
     "count": 12,
@@ -1259,6 +1253,12 @@
     "category": "(Open) Data + Technology",
     "description": "Internet of humans"
   },
+  "NGI Commons": {
+    "file": "ngi_commons.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "Open Source and Internet Commons for Europe’s Digital Sovereignty"
+  },
   "NORDIS": {
     "file": "nordis.json",
     "count": 10,
@@ -1282,6 +1282,12 @@
     "count": 10,
     "category": "(Open) Data + Technology",
     "description": "Together, for a better net."
+  },
+  "Open Government Partnership Newsletter": {
+    "file": "open_government_partnership_newsletter.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": ""
   },
   "Open Objects": {
     "file": "open_objects.json",
@@ -1324,12 +1330,6 @@
     "count": 9,
     "category": "Global policy",
     "description": ""
-  },
-  "resilience": {
-    "file": "resilience.json",
-    "count": 11,
-    "category": "Perspectives",
-    "description": "Insight and inspiration in turbulent times."
   },
   "Rising Voices": {
     "file": "rising_voices.json",
