@@ -53,17 +53,17 @@
     "category": "(Open) Data + Technology",
     "description": "weekly &#8211; semanario &#8211; hebdo &#8211; 週刊 &#8211; týdeník &#8211; Wochennotiz &#8211; 주간 &#8211; tygodnik"
   },
-  "Hrana": {
-    "file": "hrana.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency"
-  },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
     "count": 51,
     "category": "Politics + Government",
     "description": "Latest news from Euronews"
+  },
+  "Hrana": {
+    "file": "hrana.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency"
   },
   "OATP primary": {
     "file": "oatp_primary.json",
@@ -88,6 +88,12 @@
     "count": 20,
     "category": "Global policy",
     "description": "Latest news and features from theguardian.com, the world's leading liberal voice"
+  },
+  "Technology – POLITICO": {
+    "file": "technology___politico.json",
+    "count": 31,
+    "category": "Digital policy + rights",
+    "description": "European Politics, Policy, Government News"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
@@ -299,15 +305,9 @@
     "category": "Sustainability + Foresight",
     "description": ""
   },
-  "Technology – POLITICO": {
-    "file": "technology___politico.json",
-    "count": 31,
-    "category": "Digital policy + rights",
-    "description": "European Politics, Policy, Government News"
-  },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3242,
+    "count": 3243,
     "category": "Digital policy + rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy."
   },
@@ -379,7 +379,7 @@
   },
   "Ministry for Foreign Affairs of Finland | News": {
     "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 21,
+    "count": 20,
     "category": "Politics + Government",
     "description": ""
   },
@@ -589,7 +589,7 @@
   },
   "Open Science | Federation of Finnish Learned Societies": {
     "file": "open_science___federation_of_finnish_learned_societies.json",
-    "count": 2,
+    "count": 10,
     "category": "(Open) Science + Research",
     "description": ""
   },
@@ -787,7 +787,7 @@
   },
   "DataEthics": {
     "file": "dataethics.json",
-    "count": 3,
+    "count": 5,
     "category": "Digital policy + rights",
     "description": "Alt om data-etik"
   },
@@ -859,7 +859,7 @@
   },
   "Avoin tiede": {
     "file": "avoin_tiede.json",
-    "count": 2,
+    "count": 6,
     "category": "(Open) Science + Research",
     "description": ""
   },
@@ -1397,6 +1397,12 @@
     "category": "Digital skills + Citizen science",
     "description": "The Monthly newsletter for the Wikimedia-GLAM community"
   },
+  "Tiedepolitiikka": {
+    "file": "tiedepolitiikka.json",
+    "count": 30,
+    "category": "(Open) Science + Research",
+    "description": ""
+  },
   "REPAIR Tiedotteet": {
     "file": "repair_tiedotteet.json",
     "count": 10,
@@ -1408,6 +1414,12 @@
     "count": 10,
     "category": "Digital policy + rights",
     "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä"
+  },
+  "TSV": {
+    "file": "tsv.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta"
   },
   "Ulkoministeriö / Utrikesministeriet": {
     "file": "ulkoministeri____utrikesministeriet.json",
