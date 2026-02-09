@@ -37,9 +37,51 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 11,
+    "count": 12,
     "category": "Digital skills + Citizen science",
     "description": "News from the Wikimedia movement"
+  },
+  "Global Voices": {
+    "file": "global_voices.json",
+    "count": 16,
+    "category": "Human Rights + Democracy",
+    "description": "Citizen media stories from around the world"
+  },
+  "MustRead": {
+    "file": "mustread.json",
+    "count": 10,
+    "category": "Perspectives",
+    "description": ""
+  },
+  "Euronews | Europe": {
+    "file": "euronews___europe.json",
+    "count": 52,
+    "category": "Politics + Government",
+    "description": "Latest news from Euronews"
+  },
+  "The Ulkopolitist": {
+    "file": "the_ulkopolitist.json",
+    "count": 10,
+    "category": "Global policy",
+    "description": "Parempaa ulkopoliittista keskustelua."
+  },
+  "Tiede ja tutkimus - ePressi": {
+    "file": "tiede_ja_tutkimus___epressi.json",
+    "count": 21,
+    "category": "(Open) Science + Research",
+    "description": "Tiedotteiden tehokas julkaisukanava"
+  },
+  "Turun yliopisto": {
+    "file": "turun_yliopisto.json",
+    "count": 12,
+    "category": "(Open) Science + Research",
+    "description": "Turun yliopiston etusivun uutisten lyhennelmät"
+  },
+  "Finnish Government": {
+    "file": "finnish_government.json",
+    "count": 100,
+    "category": "Politics + Government",
+    "description": "Valtioneuvoston tiedotteet"
   },
   "EUvsDisinfo": {
     "file": "euvsdisinfo.json",
@@ -55,15 +97,9 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 10,
+    "count": 12,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency"
-  },
-  "Euronews | Europe": {
-    "file": "euronews___europe.json",
-    "count": 51,
-    "category": "Politics + Government",
-    "description": "Latest news from Euronews"
   },
   "OATP primary": {
     "file": "oatp_primary.json",
@@ -82,12 +118,6 @@
     "count": 32,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk"
-  },
-  "The Ulkopolitist": {
-    "file": "the_ulkopolitist.json",
-    "count": 10,
-    "category": "Global policy",
-    "description": "Parempaa ulkopoliittista keskustelua."
   },
   "Voima": {
     "file": "voima.json",
@@ -133,7 +163,7 @@
   },
   "Ministry for Foreign Affairs of Finland | News": {
     "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 20,
+    "count": 21,
     "category": "Politics + Government",
     "description": ""
   },
@@ -205,7 +235,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 30,
+    "count": 33,
     "category": "Politics + Government",
     "description": "European Commission | News"
   },
@@ -226,12 +256,6 @@
     "count": 40,
     "category": "(Open) Data + Technology",
     "description": ""
-  },
-  "Global Voices": {
-    "file": "global_voices.json",
-    "count": 16,
-    "category": "Human Rights + Democracy",
-    "description": "Citizen media stories from around the world"
   },
   "Internet Archive Blogs": {
     "file": "internet_archive_blogs.json",
@@ -263,12 +287,6 @@
     "category": "Culture",
     "description": "Tiedotteiden tehokas julkaisukanava"
   },
-  "MustRead": {
-    "file": "mustread.json",
-    "count": 10,
-    "category": "Perspectives",
-    "description": ""
-  },
   "Museovirasto - uusimmat tiedotteet": {
     "file": "museovirasto___uusimmat_tiedotteet.json",
     "count": 25,
@@ -289,7 +307,7 @@
   },
   "Open Culture": {
     "file": "open_culture.json",
-    "count": 15,
+    "count": 16,
     "category": "Digital cultural heritage",
     "description": "The best free cultural & educational media on the web"
   },
@@ -335,35 +353,17 @@
     "category": "(Open) Science + Research",
     "description": "What’s Hot and Cooking In Scholarly Publishing"
   },
-  "Tiede ja tutkimus - ePressi": {
-    "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 21,
-    "category": "(Open) Science + Research",
-    "description": "Tiedotteiden tehokas julkaisukanava"
-  },
   "Timeless": {
     "file": "timeless.json",
     "count": 10,
     "category": "Culture",
     "description": "Stories from the Library of Congress"
   },
-  "Turun yliopisto": {
-    "file": "turun_yliopisto.json",
-    "count": 13,
-    "category": "(Open) Science + Research",
-    "description": "Turun yliopiston etusivun uutisten lyhennelmät"
-  },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
     "count": 10,
     "category": "Politics + Government",
     "description": "syöte"
-  },
-  "Finnish Government": {
-    "file": "finnish_government.json",
-    "count": 100,
-    "category": "Politics + Government",
-    "description": "Valtioneuvoston tiedotteet"
   },
   "Verde": {
     "file": "verde.json",
@@ -421,7 +421,7 @@
   },
   "Open Science | Federation of Finnish Learned Societies": {
     "file": "open_science___federation_of_finnish_learned_societies.json",
-    "count": 2,
+    "count": 10,
     "category": "(Open) Science + Research",
     "description": ""
   },
@@ -517,7 +517,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities"
   },
@@ -775,7 +775,7 @@
   },
   "Avoin tiede": {
     "file": "avoin_tiede.json",
-    "count": 2,
+    "count": 6,
     "category": "(Open) Science + Research",
     "description": ""
   },
@@ -907,7 +907,7 @@
   },
   "Ylioppilaslehti": {
     "file": "ylioppilaslehti.json",
-    "count": 5,
+    "count": 10,
     "category": "Perspectives",
     "description": ""
   },
@@ -1211,6 +1211,12 @@
     "category": "Politics + Government",
     "description": ""
   },
+  "Kuntaliitto": {
+    "file": "kuntaliitto.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": ""
+  },
   "Local Contexts": {
     "file": "local_contexts.json",
     "count": 10,
@@ -1258,12 +1264,6 @@
     "count": 10,
     "category": "(Open) Data + Technology",
     "description": "Open Source and Internet Commons for Europe’s Digital Sovereignty"
-  },
-  "NORDIS": {
-    "file": "nordis.json",
-    "count": 10,
-    "category": "Journalism + investigation",
-    "description": "The Nordic Observatory for Digital Media and Information Disorder"
   },
   "Ministry of Justice | Finland | News": {
     "file": "ministry_of_justice___finland___news.json",
@@ -1397,6 +1397,12 @@
     "category": "Digital skills + Citizen science",
     "description": "The Monthly newsletter for the Wikimedia-GLAM community"
   },
+  "Tiedepolitiikka": {
+    "file": "tiedepolitiikka.json",
+    "count": 30,
+    "category": "(Open) Science + Research",
+    "description": ""
+  },
   "REPAIR Tiedotteet": {
     "file": "repair_tiedotteet.json",
     "count": 10,
@@ -1408,6 +1414,12 @@
     "count": 10,
     "category": "Digital policy + rights",
     "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä"
+  },
+  "TSV": {
+    "file": "tsv.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta"
   },
   "Ulkoministeriö / Utrikesministeriet": {
     "file": "ulkoministeri____utrikesministeriet.json",
