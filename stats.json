@@ -37,7 +37,7 @@
   },
   "Yle": {
     "file": "yle.json",
-    "count": 21,
+    "count": 22,
     "category": "Global policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti."
   },
@@ -52,6 +52,30 @@
     "count": 10,
     "category": "Global policy",
     "description": "Parempaa ulkopoliittista keskustelua."
+  },
+  "EUvsDisinfo": {
+    "file": "euvsdisinfo.json",
+    "count": 10,
+    "category": "Journalism + investigation",
+    "description": "DON'T BE DECEIVED, QUESTION EVEN MORE"
+  },
+  "Foreign Policy": {
+    "file": "foreign_policy.json",
+    "count": 26,
+    "category": "Global policy",
+    "description": "the Global Magazine of News and Ideas"
+  },
+  "Tiede ja tutkimus - ePressi": {
+    "file": "tiede_ja_tutkimus___epressi.json",
+    "count": 23,
+    "category": "(Open) Science + Research",
+    "description": "Tiedotteiden tehokas julkaisukanava"
+  },
+  "Maailman Kuvalehti": {
+    "file": "maailman_kuvalehti.json",
+    "count": 10,
+    "category": "Global policy",
+    "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta."
   },
   "Arktinen keskus": {
     "file": "arktinen_keskus.json",
@@ -97,7 +121,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital skills + Citizen science",
     "description": "News from the Wikimedia movement"
   },
@@ -112,12 +136,6 @@
     "count": 28,
     "category": "Politics + Government",
     "description": "European Union | Featured news"
-  },
-  "Foreign Policy": {
-    "file": "foreign_policy.json",
-    "count": 26,
-    "category": "Global policy",
-    "description": "the Global Magazine of News and Ideas"
   },
   "Frame Contemporary Art Finland": {
     "file": "frame_contemporary_art_finland.json",
@@ -259,7 +277,7 @@
   },
   "Eduskunnan uusimmat tiedotteet": {
     "file": "eduskunnan_uusimmat_tiedotteet.json",
-    "count": 18,
+    "count": 17,
     "category": "Politics + Government",
     "description": "Eduskunnan tiedotteet - RSS"
   },
@@ -283,14 +301,8 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 20,
+    "count": 23,
     "category": "Culture",
-    "description": "Tiedotteiden tehokas julkaisukanava"
-  },
-  "Tiede ja tutkimus - ePressi": {
-    "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 22,
-    "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava"
   },
   "Epressi - Ulkomaat": {
@@ -307,7 +319,7 @@
   },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
-    "count": 10,
+    "count": 11,
     "category": "Politics + Government",
     "description": "syöte"
   },
@@ -413,12 +425,6 @@
     "category": "Sustainability + Foresight",
     "description": ""
   },
-  "Maailman Kuvalehti": {
-    "file": "maailman_kuvalehti.json",
-    "count": 10,
-    "category": "Global policy",
-    "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta."
-  },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
     "count": 10,
@@ -448,12 +454,6 @@
     "count": 20,
     "category": "Digital policy + rights",
     "description": "Protecting digital rights in Europe."
-  },
-  "EUvsDisinfo": {
-    "file": "euvsdisinfo.json",
-    "count": 10,
-    "category": "Journalism + investigation",
-    "description": "DON'T BE DECEIVED, QUESTION EVEN MORE"
   },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
@@ -875,6 +875,12 @@
     "category": "Culture",
     "description": "LIBRARY CHANNEL — Library WebTV"
   },
+  "Ministry for Foreign Affairs of Finland | News": {
+    "file": "ministry_for_foreign_affairs_of_finland___news.json",
+    "count": 20,
+    "category": "Politics + Government",
+    "description": ""
+  },
   "Open Science | Federation of Finnish Learned Societies": {
     "file": "open_science___federation_of_finnish_learned_societies.json",
     "count": 10,
@@ -928,12 +934,6 @@
     "count": 1,
     "category": "Digital cultural heritage",
     "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES"
-  },
-  "Ministry for Foreign Affairs of Finland | News": {
-    "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 20,
-    "category": "Politics + Government",
-    "description": ""
   },
   "Digital Scholarship Leiden": {
     "file": "digital_scholarship_leiden.json",
@@ -1030,12 +1030,6 @@
     "count": 10,
     "category": "Digital policy + rights",
     "description": ""
-  },
-  "Online Journalism Blog": {
-    "file": "online_journalism_blog.json",
-    "count": 10,
-    "category": "Journalism + investigation",
-    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet."
   },
   "Varsinais-Suomen kulttuuriperintöblogi": {
     "file": "varsinais_suomen_kulttuuriperint_blogi.json",
@@ -1253,6 +1247,12 @@
     "category": "Politics + Government",
     "description": ""
   },
+  "Online Journalism Blog": {
+    "file": "online_journalism_blog.json",
+    "count": 10,
+    "category": "Journalism + investigation",
+    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet."
+  },
   "ICOMOS Open Archive: EPrints on Cultural Heritage: No conditions. Results ordered -Date Deposited.": {
     "file": "icomos_open_archive__eprints_on_cultural_heritage__no_conditions__results_ordered__date_deposited_.json",
     "count": 20,
@@ -1407,6 +1407,12 @@
     "file": "kulttilehdet.json",
     "count": 10,
     "category": "Journalism + investigation",
+    "description": ""
+  },
+  "Kuntaliitto": {
+    "file": "kuntaliitto.json",
+    "count": 10,
+    "category": "Politics + Government",
     "description": ""
   },
   "Association of Finnish Cities and Municipalities": {
