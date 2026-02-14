@@ -65,6 +65,24 @@
     "category": "Journalism + investigation",
     "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest."
   },
+  "Foreign Policy": {
+    "file": "foreign_policy.json",
+    "count": 26,
+    "category": "Global policy",
+    "description": "the Global Magazine of News and Ideas"
+  },
+  "Global Voices": {
+    "file": "global_voices.json",
+    "count": 15,
+    "category": "Human Rights + Democracy",
+    "description": "Citizen media stories from around the world"
+  },
+  "Technology – POLITICO": {
+    "file": "technology___politico.json",
+    "count": 31,
+    "category": "Digital policy + rights",
+    "description": "European Politics, Policy, Government News"
+  },
   "Arktinen keskus": {
     "file": "arktinen_keskus.json",
     "count": 10,
@@ -91,7 +109,7 @@
   },
   "Timeless": {
     "file": "timeless.json",
-    "count": 4,
+    "count": 10,
     "category": "Culture",
     "description": "Stories from the Library of Congress"
   },
@@ -124,18 +142,6 @@
     "count": 29,
     "category": "Politics + Government",
     "description": "European Union | Featured news"
-  },
-  "Foreign Policy": {
-    "file": "foreign_policy.json",
-    "count": 26,
-    "category": "Global policy",
-    "description": "the Global Magazine of News and Ideas"
-  },
-  "Global Voices": {
-    "file": "global_voices.json",
-    "count": 15,
-    "category": "Human Rights + Democracy",
-    "description": "Citizen media stories from around the world"
   },
   "ICOMOS Suomen osasto r.y": {
     "file": "icomos_suomen_osasto_r_y.json",
@@ -370,12 +376,6 @@
     "count": 15,
     "category": "Digital cultural heritage",
     "description": "The best free cultural & educational media on the web"
-  },
-  "Technology – POLITICO": {
-    "file": "technology___politico.json",
-    "count": 31,
-    "category": "Digital policy + rights",
-    "description": "European Politics, Policy, Government News"
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
@@ -679,7 +679,7 @@
   },
   "Avoin tiede": {
     "file": "avoin_tiede.json",
-    "count": 7,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": ""
   },
@@ -943,7 +943,7 @@
   },
   "Open Science | Federation of Finnish Learned Societies": {
     "file": "open_science___federation_of_finnish_learned_societies.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": ""
   },
@@ -1009,7 +1009,7 @@
   },
   "The Signal: Digital Preservation": {
     "file": "the_signal__digital_preservation.json",
-    "count": 1,
+    "count": 10,
     "category": "Culture",
     "description": "Digital Happenings at the Library of Congress"
   },
@@ -1185,12 +1185,6 @@
     "file": "internet_governance_forum__igf_.json",
     "count": 10,
     "category": "Digital policy + rights",
-    "description": ""
-  },
-  "Tiedepolitiikka": {
-    "file": "tiedepolitiikka.json",
-    "count": 30,
-    "category": "(Open) Science + Research",
     "description": ""
   },
   "Kansalaisfoorumi": {
@@ -1421,6 +1415,12 @@
     "category": "Digital cultural heritage",
     "description": "Defining the Future of Museums"
   },
+  "NORDIS": {
+    "file": "nordis.json",
+    "count": 10,
+    "category": "Journalism + investigation",
+    "description": "The Nordic Observatory for Digital Media and Information Disorder"
+  },
   "Oxfam International": {
     "file": "oxfam_international.json",
     "count": 10,
@@ -1456,12 +1456,6 @@
     "count": 20,
     "category": "Perspectives",
     "description": "<p>Project Syndicate&nbsp;produces and delivers original commentaries by prominent economists, political leaders, scholars, business leaders, and civic activists to a global audience, including nearly 500 media outlets in more than 150 countries</p>"
-  },
-  "TSV": {
-    "file": "tsv.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta"
   },
   "UN Global Pulse": {
     "file": "un_global_pulse.json",
