@@ -17,9 +17,27 @@
     "category": "Digital skills + Citizen science",
     "description": "Tactical Tech is an international NGO that engages with citizens and civil-society organisations to explore and mitigate the impacts of technology on society."
   },
+  "Global Voices": {
+    "file": "global_voices.json",
+    "count": 15,
+    "category": "Human Rights + Democracy",
+    "description": "Citizen media stories from around the world"
+  },
+  "Suomen Kuvalehti": {
+    "file": "suomen_kuvalehti.json",
+    "count": 31,
+    "category": "Perspectives",
+    "description": ""
+  },
+  "Yle": {
+    "file": "yle.json",
+    "count": 23,
+    "category": "Global policy",
+    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti."
+  },
   "Culture Action Europe News": {
     "file": "culture_action_europe_news.json",
-    "count": 10,
+    "count": 1,
     "category": "Cultural policy",
     "description": "We take care of the cultural ecosystem."
   },
@@ -35,21 +53,9 @@
     "category": "Global policy",
     "description": "the Global Magazine of News and Ideas"
   },
-  "Global Voices": {
-    "file": "global_voices.json",
-    "count": 15,
-    "category": "Human Rights + Democracy",
-    "description": "Citizen media stories from around the world"
-  },
-  "Suomen Kuvalehti": {
-    "file": "suomen_kuvalehti.json",
-    "count": 31,
-    "category": "Perspectives",
-    "description": ""
-  },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 36,
+    "count": 48,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL."
   },
@@ -94,12 +100,6 @@
     "count": 32,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk"
-  },
-  "Yle": {
-    "file": "yle.json",
-    "count": 21,
-    "category": "Global policy",
-    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti."
   },
   "Arktinen keskus": {
     "file": "arktinen_keskus.json",
@@ -163,7 +163,7 @@
   },
   "EUvsDisinfo": {
     "file": "euvsdisinfo.json",
-    "count": 10,
+    "count": 3,
     "category": "Journalism + investigation",
     "description": "DON'T BE DECEIVED, QUESTION EVEN MORE"
   },
@@ -241,7 +241,7 @@
   },
   "Uutiset arkistot - UN Women": {
     "file": "uutiset_arkistot___un_women.json",
-    "count": 12,
+    "count": 1,
     "category": "Global policy",
     "description": ""
   },
@@ -541,7 +541,7 @@
   },
   "Dittmar & Indrenius Attorneys Ltd.": {
     "file": "dittmar___indrenius_attorneys_ltd_.json",
-    "count": 10,
+    "count": 5,
     "category": "Digital policy + rights",
     "description": ""
   },
@@ -553,7 +553,7 @@
   },
   "JOKES": {
     "file": "jokes.json",
-    "count": 10,
+    "count": 2,
     "category": "Journalism + investigation",
     "description": "Journalistisen kulttuurin edistämissäätiö"
   },
@@ -589,7 +589,7 @@
   },
   "CODATA": {
     "file": "codata.json",
-    "count": 10,
+    "count": 2,
     "category": "(Open) Science + Research",
     "description": "Committee on Data of the ISC"
   },
@@ -661,7 +661,7 @@
   },
   "Voima": {
     "file": "voima.json",
-    "count": 15,
+    "count": 9,
     "category": "Perspectives",
     "description": ""
   },
@@ -703,7 +703,7 @@
   },
   "Global Solutions Initiative": {
     "file": "global_solutions_initiative.json",
-    "count": 10,
+    "count": 1,
     "category": "Global policy",
     "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance."
   },
@@ -721,7 +721,7 @@
   },
   "Tulevaisuuden tutkimuksen seura ry": {
     "file": "tulevaisuuden_tutkimuksen_seura_ry.json",
-    "count": 10,
+    "count": 2,
     "category": "Sustainability + Foresight",
     "description": "Paremman tulevaisuuden puolesta"
   },
@@ -739,7 +739,7 @@
   },
   "Le Monde diplomatique - English edition": {
     "file": "le_monde_diplomatique___english_edition.json",
-    "count": 10,
+    "count": 2,
     "category": "Global policy",
     "description": ""
   },
@@ -757,7 +757,7 @@
   },
   "Sveriges Museer": {
     "file": "sveriges_museer.json",
-    "count": 10,
+    "count": 2,
     "category": "Culture",
     "description": "Vi tar tillvara och driver den svenska museisektorns gemensamma intressen."
   },
@@ -769,13 +769,13 @@
   },
   "CIVICUS News": {
     "file": "civicus_news.json",
-    "count": 50,
+    "count": 1,
     "category": "Human Rights + Democracy",
     "description": ""
   },
   "CIVICUS Op-Eds": {
     "file": "civicus_op_eds.json",
-    "count": 50,
+    "count": 2,
     "category": "Human Rights + Democracy",
     "description": ""
   },
@@ -875,6 +875,12 @@
     "category": "Digital cultural heritage",
     "description": "'Every age has its orthodoxy and no orthodoxy is ever right.'"
   },
+  "Ministry for Foreign Affairs of Finland | News": {
+    "file": "ministry_for_foreign_affairs_of_finland___news.json",
+    "count": 20,
+    "category": "Politics + Government",
+    "description": ""
+  },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
     "count": 15,
@@ -889,19 +895,19 @@
   },
   "DataEthics": {
     "file": "dataethics.json",
-    "count": 5,
+    "count": 1,
     "category": "Digital policy + rights",
     "description": "Alt om data-etik"
   },
   "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
     "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
-    "count": 10,
+    "count": 1,
     "category": "Cultural policy",
     "description": ""
   },
   "Suomen YK-liitto": {
     "file": "suomen_yk_liitto.json",
-    "count": 10,
+    "count": 3,
     "category": "Global policy",
     "description": ""
   },
@@ -909,12 +915,6 @@
     "file": "wikimedia_suomi.json",
     "count": 10,
     "category": "Digital skills + Citizen science",
-    "description": ""
-  },
-  "Ministry for Foreign Affairs of Finland | News": {
-    "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 20,
-    "category": "Politics + Government",
     "description": ""
   },
   "YK:n alueellinen tiedotuskeskus – Suomi": {
@@ -967,13 +967,13 @@
   },
   "Follow the News published by UNESCO on Intangible Cultural Heritage": {
     "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
-    "count": 608,
+    "count": 1,
     "category": "Culture",
     "description": ""
   },
   "Forum Information & Democracy": {
     "file": "forum_information___democracy.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital policy + rights",
     "description": ""
   },
@@ -1015,7 +1015,7 @@
   },
   "FutureEverything » News": {
     "file": "futureeverything___news.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital cultural heritage",
     "description": "Est. 1995. Cultural facilitators at the intersection of art, design, science and digital."
   },
@@ -1073,12 +1073,6 @@
     "category": "Digital skills + Citizen science",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers."
   },
-  "CHAOSS": {
-    "file": "chaoss.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "Community Health Analytics in Open Source Software"
-  },
   "Cultural Heritage Informatics": {
     "file": "cultural_heritage_informatics.json",
     "count": 10,
@@ -1115,12 +1109,6 @@
     "category": "Digital cultural heritage",
     "description": "building a CUNY DH Community since 2010"
   },
-  "Datafied Life Collaboratory": {
-    "file": "datafied_life_collaboratory.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": ""
-  },
   "Digital Humanities @ Stanford": {
     "file": "digital_humanities___stanford.json",
     "count": 137,
@@ -1132,12 +1120,6 @@
     "count": 10,
     "category": "Digital policy + rights",
     "description": "Electronic Frontier Finland - Effi ry:n kotisivut"
-  },
-  "ELKA": {
-    "file": "elka.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Suomen elinkeinoelämän keskusarkisto"
   },
   "FCAI | News": {
     "file": "fcai___news.json",
@@ -1181,12 +1163,6 @@
     "category": "(Open) Science + Research",
     "description": ""
   },
-  "Kansalaisfoorumi": {
-    "file": "kansalaisfoorumi.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "Koulutusta, kulttuuria ja kansalaistoimintaa"
-  },
   "Kopiosto": {
     "file": "kopiosto.json",
     "count": 9,
@@ -1222,18 +1198,6 @@
     "count": 12,
     "category": "Digital cultural heritage",
     "description": "Advancing digital transformation in museums"
-  },
-  "Museoliitto": {
-    "file": "museoliitto.json",
-    "count": 10,
-    "category": "Culture",
-    "description": ""
-  },
-  "Museums Computer Group": {
-    "file": "museums_computer_group.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": "For everyone working with digital technologies in museums"
   },
   "Next Generation Internet": {
     "file": "next_generation_internet.json",
@@ -1337,12 +1301,6 @@
     "category": "Sustainability + Foresight",
     "description": "Ilmasto- ja energiapoliittinen ministerityöryhmä - ajankohtaista"
   },
-  "Wikimedia Sverige": {
-    "file": "wikimedia_sverige.json",
-    "count": 10,
-    "category": "Digital skills + Citizen science",
-    "description": "Vi arbetar för fri kunskap"
-  },
   "News – Wikimedia Foundation": {
     "file": "news___wikimedia_foundation.json",
     "count": 10,
@@ -1366,12 +1324,6 @@
     "count": 9,
     "category": "Journalism + investigation",
     "description": "the home of online investigations"
-  },
-  "Digime": {
-    "file": "digime.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": ""
   },
   "European Parliament | Culture and education": {
     "file": "european_parliament___culture_and_education.json",
@@ -1486,18 +1438,6 @@
     "count": 20,
     "category": "Digital skills + Citizen science",
     "description": "We don't just build maps, we build mappers!"
-  },
-  "YK-nuoret": {
-    "file": "yk_nuoret.json",
-    "count": 10,
-    "category": "Global policy",
-    "description": "Suomen YK-nuoret"
-  },
-  "Ykspilkkuviis.fi": {
-    "file": "ykspilkkuviis_fi.json",
-    "count": 10,
-    "category": "Perspectives",
-    "description": "Kestävän elämän media"
   },
   "Ylioppilaslehti": {
     "file": "ylioppilaslehti.json",
