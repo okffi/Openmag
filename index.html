@@ -438,20 +438,31 @@ let currentCategory = 'All';
 let statsData = null; // Globaali välimuisti
 let mainFeedCache = null;
 
-    // Function to apply filters to the global 'allArticles' array
+    function resetFilters() {
+        document.getElementById('langFilter').value = 'all';
+        document.getElementById('scopeFilter').value = 'all';
+        updateView();
+    }
+    
+    // Päivitetty updateView, joka nollaa näkymän oikein Masonrylle
     function updateView() {
-        const selectedLang = document.getElementById('langFilter').value;
-        const selectedScope = document.getElementById('scopeFilter').value;
+        // 1. Asetetaan lähtökohtana päänäkymä (mainFeedCache), jos ollaan etusivulla
+        // tai nykyinen allArticles, jos ollaan yksittäisessä lähteessä.
+        // Tässä esimerkissä oletetaan, että haluat suodattaa nykyistä näkymää.
+        
+        displayedCount = 0;
+        const container = document.querySelector('#magazine-grid');
+        const existingItems = container.querySelectorAll('.grid-item');
+        
+        // Poistetaan vanhat kortit Masonrysta
+        if (existingItems.length && msnry) {
+            msnry.remove(existingItems);
+            msnry.layout();
+        }
     
-        const filtered = allArticles.filter(art => {
-            const langMatch = (selectedLang === 'all') || (art.lang === selectedLang);
-            const scopeMatch = (selectedScope === 'all') || (art.scope === selectedScope);
-            return langMatch && scopeMatch;
-        });
-    
-        // Clear the grid and re-render
-        // Note: Use your existing render function name here (e.g., renderArticles or displayNews)
-        displayArticles(filtered);
+        // displayArticles() hoitaa suodatuksen lennosta, kunhan se lukee arvot
+        displayArticles();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     
     // Add event listeners
@@ -620,15 +631,33 @@ function setViewTitleAndRss(viewTitleEl, title, rssLink, isMainFeed, siteUrl) {
     rssA.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.18,15.64A2.18,2.18,0,0,1,8.36,17.82c0,1.21-.98,2.18-2.18,2.18A2.18,2.18,0,0,1,4,17.82,2.18,2.18,0,0,1,6.18,15.64M4,4.44A15.56,15.56,0,0,1,19.56,20h-2.83A12.73,12.73,0,0,0,4,7.27Zm0,5.66a9.9,9.9,0,0,1,9.9,9.9H11.07A7.07,7.07,0,0,0,4,12.93Z"/></svg>';
     viewTitleEl.appendChild(rssA);
 }
-
-/* --- Replace the existing displayArticles() with this safer implementation --- */
+    
 function displayArticles() {
-    const filtered = currentCategory === 'All' ? allArticles : allArticles.filter(a => a.sheetCategory === currentCategory);
+    const selectedLang = document.getElementById('langFilter').value;
+    const selectedScope = document.getElementById('scopeFilter').value;
+
+    // Suodatetaan globaali data ennen slice-operaatiota
+    const filtered = allArticles.filter(art => {
+        const langMatch = (selectedLang === 'all') || (art.lang === selectedLang);
+        const scopeMatch = (selectedScope === 'all') || (art.scope === selectedScope);
+        const catMatch = (currentCategory === 'All') || (art.sheetCategory === currentCategory);
+        return langMatch && scopeMatch && catMatch;
+    });
+
     const slice = filtered.slice(displayedCount, displayedCount + PAGE_SIZE);
     const sentinel = document.querySelector('#scroll-sentinel');
 
     if (slice.length === 0 && displayedCount === 0) {
-        sentinel.innerText = "— Täällä ei ole juuri nyt uutta —";
+        const isFiltered = document.getElementById('langFilter').value !== 'all' || 
+                           document.getElementById('scopeFilter').value !== 'all';
+        
+        sentinel.innerHTML = isFiltered 
+            ? `<div style="padding: 20px;">
+                <p>Valituilla suodattimilla ei löytynyt uutisia.</p>
+                <button onclick="resetFilters()" style="background:var(--text-dark); color:white; border:none; padding:8px 15px; cursor:pointer; font-size:0.7rem; font-weight:700; text-transform:uppercase;">Nollaa suodattimet</button>
+               </div>`
+            : "— Täällä ei ole juuri nyt uutta —";
+            
         isLoading = false;
         return;
     }
