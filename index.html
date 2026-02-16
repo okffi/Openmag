@@ -208,6 +208,29 @@
             text-transform: uppercase;
         }
 
+        .header-controls {
+            display: flex;
+            gap: 10px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+            flex-wrap: wrap; /* Wraps nicely on mobile */
+        }
+        
+        .news-select {
+            padding: 8px 12px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            outline: none;
+            cursor: pointer;
+            background: white;
+        }
+        
+        .news-select:hover {
+            border-color: #007bff;
+        }
+
         #feed-header-area {
             display: flex;
             align-items: center;
@@ -376,7 +399,28 @@
                 <div id="current-view-description"></div>
             </div>
         </div>
-            
+        <div class="header-controls">
+            <div class="filter-group">
+                <select id="langFilter" class="news-select">
+                    <option value="all">Languages (All)</option>
+                    <option value="fi">Suomi</option>
+                    <option value="en">English</option>
+                    <option value="sv">Svenska</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                </select>
+            </div>
+        
+            <div class="filter-group">
+                <select id="scopeFilter" class="news-select">
+                    <option value="all">Regions (All)</option>
+                    <option value="Finland">Finland</option>
+                    <option value="Nordic + Baltic countries">Nordic + Baltic</option>
+                    <option value="Europe">Europe</option>
+                    <option value="World">World</option>
+                </select>
+            </div>
+        </div>
         <div class="grid" id="magazine-grid">
             <div class="grid-sizer"></div>
         </div>
@@ -394,7 +438,26 @@ let currentCategory = 'All';
 let statsData = null; // Globaali välimuisti
 let mainFeedCache = null;
 
-async function init() {
+    // Function to apply filters to the global 'allArticles' array
+    function updateView() {
+        const selectedLang = document.getElementById('langFilter').value;
+        const selectedScope = document.getElementById('scopeFilter').value;
+    
+        const filtered = allArticles.filter(art => {
+            const langMatch = (selectedLang === 'all') || (art.lang === selectedLang);
+            const scopeMatch = (selectedScope === 'all') || (art.scope === selectedScope);
+            return langMatch && scopeMatch;
+        });
+    
+        // Clear the grid and re-render
+        // Note: Use your existing render function name here (e.g., renderArticles or displayNews)
+        displayArticles(filtered);
+    }
+    
+    // Add event listeners
+    document.getElementById('langFilter').addEventListener('change', updateView);
+    document.getElementById('scopeFilter').addEventListener('change', updateView);
+    async function init() {
     const container = document.querySelector('#magazine-grid');
     msnry = new Masonry(container, { 
         itemSelector: '.grid-item', 
