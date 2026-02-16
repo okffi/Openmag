@@ -444,24 +444,20 @@ let mainFeedCache = null;
         updateView();
     }
     
-    // Päivitetty updateView, joka nollaa näkymän oikein Masonrylle
     function updateView() {
-        // 1. Asetetaan lähtökohtana päänäkymä (mainFeedCache), jos ollaan etusivulla
-        // tai nykyinen allArticles, jos ollaan yksittäisessä lähteessä.
-        // Tässä esimerkissä oletetaan, että haluat suodattaa nykyistä näkymää.
-        
         displayedCount = 0;
         const container = document.querySelector('#magazine-grid');
         const existingItems = container.querySelectorAll('.grid-item');
         
-        // Poistetaan vanhat kortit Masonrysta
         if (existingItems.length && msnry) {
             msnry.remove(existingItems);
             msnry.layout();
         }
     
-        // displayArticles() hoitaa suodatuksen lennosta, kunhan se lukee arvot
         displayArticles();
+        
+        const activeView = document.getElementById('btn-az').classList.contains('active') ? 'az' : 'categories';
+        showSidebarView(activeView);
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     
@@ -714,18 +710,37 @@ async function initSidebar() {
 }
 
 function renderCategoryView(list) {
-    // 1. Tyhjennetään lista ja luodaan "Tuoreimmat uutiset" -painike turvallisesti
     list.innerHTML = ''; 
     
+    // Haetaan valitut suodattimet
+    const selectedLang = document.getElementById('langFilter').value;
+    const selectedScope = document.getElementById('scopeFilter').value;
+
+    // Luodaan setti lähteistä, joita on saatavilla näillä suodattimilla
+    const availableSources = new Set();
+    allArticles.forEach(art => {
+        const langMatch = (selectedLang === 'all') || (art.lang === selectedLang);
+        const scopeMatch = (selectedScope === 'all') || (art.scope === selectedScope);
+        
+        if (langMatch && scopeMatch) {
+            availableSources.add(art.sourceTitle);
+        }
+    });
+
     const mainItem = document.createElement('div');
     mainItem.className = 'source-item active';
     mainItem.textContent = 'Tuoreimmat uutiset';
     mainItem.onclick = (e) => changeSource('data.json', 'Tuoreimmat uutiset', e.currentTarget);
     list.appendChild(mainItem);
 
+    // Kategoriat...
     const cats = {};
     Object.keys(statsData).forEach(name => {
         if (name === "__meta") return;
+        
+        // TÄRKEÄ TARKISTUS: Näytetään lähde vain, jos se on saatavilla valituilla suodattimilla
+        if (!availableSources.has(name)) return;
+
         const cat = statsData[name].category || "Yleinen";
         if (!cats[cat]) cats[cat] = [];
         cats[cat].push({ name, ...statsData[name] });
@@ -773,18 +788,29 @@ function renderCategoryView(list) {
 }
 
 function renderAZView(list) {
-    // 1. Tyhjennetään lista ja luodaan "Tuoreimmat uutiset" -painike
     list.innerHTML = ''; 
+    
+    const selectedLang = document.getElementById('langFilter').value;
+    const selectedScope = document.getElementById('scopeFilter').value;
 
+    // 1. Kerätään ne lähteet, joissa on uutisia valituilla suodattimilla
+    const availableSources = new Set();
+    allArticles.forEach(art => {
+        const langMatch = (selectedLang === 'all') || (art.lang === selectedLang);
+        const scopeMatch = (selectedScope === 'all') || (art.scope === selectedScope);
+        if (langMatch && scopeMatch) availableSources.add(art.sourceTitle);
+    });
+
+    // "Tuoreimmat uutiset" -nappi
     const mainItem = document.createElement('div');
-    mainItem.className = 'source-item'; // A-Z näkymässä oletuksena ei active, ellei olla juuri siellä
+    mainItem.className = 'source-item';
     mainItem.textContent = 'Tuoreimmat uutiset';
     mainItem.onclick = (e) => changeSource('data.json', 'Tuoreimmat uutiset', e.currentTarget);
     list.appendChild(mainItem);
 
-    // 2. Suodatetaan ja lajitellaan lähteet
+    // 2. Suodatetaan ja lajitellaan lähteet (Vain kerran, suodatus mukana)
     const sortedSources = Object.keys(statsData)
-        .filter(key => key !== "__meta")
+        .filter(key => key !== "__meta" && availableSources.has(key))
         .sort((a, b) => a.localeCompare(b, 'fi'));
 
     // 3. Luodaan lähderivit
@@ -793,17 +819,13 @@ function renderAZView(list) {
         const item = document.createElement('div');
         item.className = 'source-item';
         
-        // Luodaan nimi tekstinä
         item.textContent = sourceName + ' ';
         
-        // Luodaan lukumäärä-badge omana elementtinään
         const countSpan = document.createElement('span');
         countSpan.className = 'count-badge';
         countSpan.textContent = info.count;
         
         item.appendChild(countSpan);
-
-        // Asetetaan klikkaustapahtuma
         item.onclick = () => changeSource(`sources/${info.file}`, sourceName, item);
         
         list.appendChild(item);
