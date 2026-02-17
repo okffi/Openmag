@@ -153,9 +153,7 @@ async function run() {
                     count: 0,
                     category: art.sheetCategory || "Yleinen",
                     // Lisätään kuvaus myös tilastoihin, jos käyttöliittymä tarvitsee sitä
-                    description: art.sourceDescription || "",
-                    lang: art.lang || "en",
-                    scope: art.scope || "World"
+                    description: art.sourceDescription || "" 
                 };
             }
             sourceStats[src].count++;
