@@ -89,7 +89,7 @@
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
-    "count": 26,
+    "count": 27,
     "category": "Global policy",
     "description": "the Global Magazine of News and Ideas",
     "lang": "en",
@@ -417,7 +417,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 51,
+    "count": 50,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -508,6 +508,14 @@
     "count": 10,
     "category": "Sustainability + Foresight",
     "description": "Noema Magazine",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Creative Commons": {
+    "file": "creative_commons.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -617,7 +625,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 6,
+    "count": 10,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -910,14 +918,6 @@
     "description": "Digitaalisista tutkimuspalveluista ja avoimesta tieteestä / About digital research services and open science",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Creative Commons": {
-    "file": "creative_commons.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
