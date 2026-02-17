@@ -7,7 +7,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital skills + Citizen science",
     "description": "News from the Wikimedia movement"
   },
@@ -40,6 +40,30 @@
     "count": 10,
     "category": "Global policy",
     "description": "Parempaa ulkopoliittista keskustelua."
+  },
+  "Maailman Kuvalehti": {
+    "file": "maailman_kuvalehti.json",
+    "count": 12,
+    "category": "Global policy",
+    "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta."
+  },
+  "Kulttuuri ja taide - ePressi": {
+    "file": "kulttuuri_ja_taide___epressi.json",
+    "count": 21,
+    "category": "Culture",
+    "description": "Tiedotteiden tehokas julkaisukanava"
+  },
+  "Tietotekniikka | ePressi": {
+    "file": "tietotekniikka___epressi.json",
+    "count": 14,
+    "category": "(Open) Data + Technology",
+    "description": "Tiedotteiden tehokas julkaisukanava"
+  },
+  "Euronews | Europe": {
+    "file": "euronews___europe.json",
+    "count": 53,
+    "category": "Politics + Government",
+    "description": "Latest news from Euronews"
   },
   "Global Voices Advox": {
     "file": "global_voices_advox.json",
@@ -85,7 +109,7 @@
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
-    "count": 25,
+    "count": 26,
     "category": "Global policy",
     "description": "the Global Magazine of News and Ideas"
   },
@@ -100,12 +124,6 @@
     "count": 20,
     "category": "Politics + Government",
     "description": ""
-  },
-  "Maailman Kuvalehti": {
-    "file": "maailman_kuvalehti.json",
-    "count": 12,
-    "category": "Global policy",
-    "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta."
   },
   "Michael Culture Association": {
     "file": "michael_culture_association.json",
@@ -175,7 +193,7 @@
   },
   "Amnesty Suomi": {
     "file": "amnesty_suomi.json",
-    "count": 10,
+    "count": 11,
     "category": "Human Rights + Democracy",
     "description": ""
   },
@@ -221,12 +239,6 @@
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency"
   },
-  "Kulttuuri ja taide - ePressi": {
-    "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 20,
-    "category": "Culture",
-    "description": "Tiedotteiden tehokas julkaisukanava"
-  },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
     "count": 20,
@@ -239,12 +251,6 @@
     "category": "Global policy",
     "description": "Tiedotteiden tehokas julkaisukanava"
   },
-  "Euronews | Europe": {
-    "file": "euronews___europe.json",
-    "count": 50,
-    "category": "Politics + Government",
-    "description": "Latest news from Euronews"
-  },
   "Finnish AI Region": {
     "file": "finnish_ai_region.json",
     "count": 20,
@@ -253,7 +259,7 @@
   },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
-    "count": 10,
+    "count": 11,
     "category": "Politics + Government",
     "description": "syöte"
   },
@@ -490,12 +496,6 @@
     "count": 15,
     "category": "Politics + Government",
     "description": "Eduskunnan kirjaston tiedotteet - RSS"
-  },
-  "Tietotekniikka | ePressi": {
-    "file": "tietotekniikka___epressi.json",
-    "count": 14,
-    "category": "(Open) Data + Technology",
-    "description": "Tiedotteiden tehokas julkaisukanava"
   },
   "Suomalaisen Kirjallisuuden Seura (SKS)": {
     "file": "suomalaisen_kirjallisuuden_seura__sks_.json",
@@ -751,7 +751,7 @@
   },
   "Avoin tiede": {
     "file": "avoin_tiede.json",
-    "count": 7,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": ""
   },
@@ -793,7 +793,7 @@
   },
   "Berkman Klein Center for Internet & Society at Harvard University": {
     "file": "berkman_klein_center_for_internet___society_at_harvard_university.json",
-    "count": 10,
+    "count": 4,
     "category": "Perspectives",
     "description": ""
   },
@@ -913,7 +913,7 @@
   },
   "Ministry for Foreign Affairs of Finland | News": {
     "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 20,
+    "count": 4,
     "category": "Politics + Government",
     "description": ""
   },
@@ -973,7 +973,7 @@
   },
   "Open Science | Federation of Finnish Learned Societies": {
     "file": "open_science___federation_of_finnish_learned_societies.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": ""
   },
@@ -1185,12 +1185,6 @@
     "file": "internet_governance_forum__igf_.json",
     "count": 10,
     "category": "Digital policy + rights",
-    "description": ""
-  },
-  "Tiedepolitiikka": {
-    "file": "tiedepolitiikka.json",
-    "count": 30,
-    "category": "(Open) Science + Research",
     "description": ""
   },
   "Kansalaisfoorumi": {
@@ -1415,6 +1409,12 @@
     "category": "Journalism + investigation",
     "description": ""
   },
+  "Kuntaliitto": {
+    "file": "kuntaliitto.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": ""
+  },
   "Association of Finnish Cities and Municipalities": {
     "file": "association_of_finnish_cities_and_municipalities.json",
     "count": 10,
@@ -1463,12 +1463,6 @@
     "category": "Perspectives",
     "description": "<p>Project Syndicate&nbsp;produces and delivers original commentaries by prominent economists, political leaders, scholars, business leaders, and civic activists to a global audience, including nearly 500 media outlets in more than 150 countries</p>"
   },
-  "TSV": {
-    "file": "tsv.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta"
-  },
   "UN Global Pulse": {
     "file": "un_global_pulse.json",
     "count": 10,
@@ -1510,12 +1504,6 @@
     "count": 10,
     "category": "Perspectives",
     "description": "Kestävän elämän media"
-  },
-  "Ylioppilaslehti": {
-    "file": "ylioppilaslehti.json",
-    "count": 10,
-    "category": "Perspectives",
-    "description": ""
   },
   "Puistokatu 4": {
     "file": "puistokatu_4.json",
