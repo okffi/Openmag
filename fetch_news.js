@@ -152,8 +152,9 @@ async function run() {
                     file: `${fileKey}.json`, 
                     count: 0,
                     category: art.sheetCategory || "Yleinen",
-                    // Lisätään kuvaus myös tilastoihin, jos käyttöliittymä tarvitsee sitä
-                    description: art.sourceDescription || "" 
+                    description: art.sourceDescription || "",
+                    lang: art.lang || "en",
+                    scope: art.scope || "World"
                 };
             }
             sourceStats[src].count++;
