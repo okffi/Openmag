@@ -712,20 +712,8 @@ async function initSidebar() {
 function renderCategoryView(list) {
     list.innerHTML = ''; 
     
-    // Haetaan valitut suodattimet
     const selectedLang = document.getElementById('langFilter').value;
     const selectedScope = document.getElementById('scopeFilter').value;
-
-    // Luodaan setti lähteistä, joita on saatavilla näillä suodattimilla
-    const availableSources = new Set();
-    allArticles.forEach(art => {
-        const langMatch = (selectedLang === 'all') || (art.lang === selectedLang);
-        const scopeMatch = (selectedScope === 'all') || (art.scope === selectedScope);
-        
-        if (langMatch && scopeMatch) {
-            availableSources.add(art.sourceTitle);
-        }
-    });
 
     const mainItem = document.createElement('div');
     mainItem.className = 'source-item active';
@@ -733,26 +721,33 @@ function renderCategoryView(list) {
     mainItem.onclick = (e) => changeSource('data.json', 'Tuoreimmat uutiset', e.currentTarget);
     list.appendChild(mainItem);
 
-    // Kategoriat...
     const cats = {};
     Object.keys(statsData).forEach(name => {
         if (name === "__meta") return;
         
-        // TÄRKEÄ TARKISTUS: Näytetään lähde vain, jos se on saatavilla valituilla suodattimilla
-        if (!availableSources.has(name)) return;
+        const info = statsData[name];
 
-        const cat = statsData[name].category || "Yleinen";
+        // --- UUSI SUODATUSLOGIIKKA ALKAA ---
+        // Katsotaan suoraan stats.jsoniin tallennettuja tietoja
+        const langMatch = (selectedLang === 'all') || (info.lang === selectedLang);
+        const scopeMatch = (selectedScope === 'all') || (info.scope === selectedScope);
+
+        if (!langMatch || !scopeMatch) return; // Hypätään yli, jos ei täsmää
+        // --- UUSI SUODATUSLOGIIKKA PÄÄTTYY ---
+
+        const cat = info.category || "Yleinen";
         if (!cats[cat]) cats[cat] = [];
-        cats[cat].push({ name, ...statsData[name] });
+        cats[cat].push({ name, ...info });
     });
 
+    // Loppuosa on identtinen nykyisen koodisi kanssa
     Object.keys(cats).sort().forEach(catName => {
         const group = document.createElement('div');
         group.className = 'category-group';
         
         const header = document.createElement('div');
         header.className = 'category-header';
-        header.textContent = catName; // Turvallisempi kuin innerText
+        header.textContent = catName;
 
         const submenu = document.createElement('div');
         submenu.className = 'source-submenu';
@@ -768,7 +763,6 @@ function renderCategoryView(list) {
             const item = document.createElement('div');
             item.className = 'source-item';
             
-            // 2. KORJAUS: Luodaan nimi ja lukumäärä-span erikseen
             item.textContent = src.name + ' '; 
             const countSpan = document.createElement('span');
             countSpan.textContent = src.count;
@@ -793,14 +787,6 @@ function renderAZView(list) {
     const selectedLang = document.getElementById('langFilter').value;
     const selectedScope = document.getElementById('scopeFilter').value;
 
-    // 1. Kerätään ne lähteet, joissa on uutisia valituilla suodattimilla
-    const availableSources = new Set();
-    allArticles.forEach(art => {
-        const langMatch = (selectedLang === 'all') || (art.lang === selectedLang);
-        const scopeMatch = (selectedScope === 'all') || (art.scope === selectedScope);
-        if (langMatch && scopeMatch) availableSources.add(art.sourceTitle);
-    });
-
     // "Tuoreimmat uutiset" -nappi
     const mainItem = document.createElement('div');
     mainItem.className = 'source-item';
@@ -808,12 +794,20 @@ function renderAZView(list) {
     mainItem.onclick = (e) => changeSource('data.json', 'Tuoreimmat uutiset', e.currentTarget);
     list.appendChild(mainItem);
 
-    // 2. Suodatetaan ja lajitellaan lähteet (Vain kerran, suodatus mukana)
+    // Suodatetaan ja lajitellaan lähteet suoraan statsDatan ominaisuuksien mukaan
     const sortedSources = Object.keys(statsData)
-        .filter(key => key !== "__meta" && availableSources.has(key))
+        .filter(key => {
+            if (key === "__meta") return false;
+            
+            const info = statsData[key];
+            const langMatch = (selectedLang === 'all') || (info.lang === selectedLang);
+            const scopeMatch = (selectedScope === 'all') || (info.scope === selectedScope);
+            
+            return langMatch && scopeMatch;
+        })
         .sort((a, b) => a.localeCompare(b, 'fi'));
 
-    // 3. Luodaan lähderivit
+    // Luodaan lähderivit
     sortedSources.forEach(sourceName => {
         const info = statsData[sourceName];
         const item = document.createElement('div');
