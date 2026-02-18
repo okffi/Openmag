@@ -33,7 +33,7 @@
   },
   "Yle": {
     "file": "yle.json",
-    "count": 22,
+    "count": 23,
     "category": "Global policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -145,7 +145,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 51,
+    "count": 53,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -246,6 +246,54 @@
     "description": "News from the Wikimedia movement",
     "lang": "en",
     "scope": "World"
+  },
+  "Internet Archive Europe": {
+    "file": "internet_archive_europe.json",
+    "count": 3,
+    "category": "Digital cultural heritage",
+    "description": "Bringing Collections to Life",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Open Culture": {
+    "file": "open_culture.json",
+    "count": 16,
+    "category": "Digital cultural heritage",
+    "description": "The best free cultural & educational media on the web",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "ProPublica": {
+    "file": "propublica.json",
+    "count": 20,
+    "category": "Journalism + investigation",
+    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "The Conversation – Articles (EUROPE)": {
+    "file": "the_conversation___articles__europe_.json",
+    "count": 50,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Project Syndicate": {
+    "file": "project_syndicate.json",
+    "count": 21,
+    "category": "Perspectives",
+    "description": "Project Syndicate - The World’s Opinion Page",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Eduskunnan uusimmat tiedotteet": {
+    "file": "eduskunnan_uusimmat_tiedotteet.json",
+    "count": 20,
+    "category": "Politics + Government",
+    "description": "Eduskunnan tiedotteet - RSS",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
@@ -367,14 +415,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Open Culture": {
-    "file": "open_culture.json",
-    "count": 16,
-    "category": "Digital cultural heritage",
-    "description": "The best free cultural & educational media on the web",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
     "count": 10,
@@ -479,14 +519,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "The Conversation – Articles (EUROPE)": {
-    "file": "the_conversation___articles__europe_.json",
-    "count": 50,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
     "count": 47,
@@ -503,14 +535,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Project Syndicate": {
-    "file": "project_syndicate.json",
-    "count": 21,
-    "category": "Perspectives",
-    "description": "Project Syndicate - The World’s Opinion Page",
-    "lang": "en",
-    "scope": "World"
-  },
   "European Commission": {
     "file": "european_commission.json",
     "count": 30,
@@ -524,14 +548,6 @@
     "count": 20,
     "category": "Politics + Government",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Eduskunnan uusimmat tiedotteet": {
-    "file": "eduskunnan_uusimmat_tiedotteet.json",
-    "count": 20,
-    "category": "Politics + Government",
-    "description": "Eduskunnan tiedotteet - RSS",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -633,7 +649,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 6,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -799,14 +815,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "ProPublica": {
-    "file": "propublica.json",
-    "count": 20,
-    "category": "Journalism + investigation",
-    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
-    "lang": "en",
-    "scope": "World"
-  },
   "OpenWebSearch.eu": {
     "file": "openwebsearch_eu.json",
     "count": 10,
@@ -860,14 +868,6 @@
     "count": 10,
     "category": "Digital cultural heritage",
     "description": "Art, heritage & technologies",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Internet Archive Europe": {
-    "file": "internet_archive_europe.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": "Bringing Collections to Life",
     "lang": "en",
     "scope": "Europe"
   },
@@ -1316,14 +1316,6 @@
     "count": 10,
     "category": "Culture",
     "description": "LIBRARY CHANNEL — Library WebTV",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "YK:n alueellinen tiedotuskeskus – Suomi": {
-    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
-    "count": 15,
-    "category": "Global policy",
-    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1863,6 +1855,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "YK:n alueellinen tiedotuskeskus – Suomi": {
+    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
+    "count": 15,
+    "category": "Global policy",
+    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "UN Global Pulse": {
     "file": "un_global_pulse.json",
     "count": 10,
@@ -1989,6 +1989,14 @@
     "category": "Politics + Government",
     "description": "",
     "lang": "en",
+    "scope": "Finland"
+  },
+  "Kuntaliitto": {
+    "file": "kuntaliitto.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
     "scope": "Finland"
   },
   "Association of Finnish Cities and Municipalities": {
