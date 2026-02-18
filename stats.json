@@ -145,7 +145,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 53,
+    "count": 55,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -217,7 +217,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 19,
+    "count": 21,
     "category": "Culture",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -249,7 +249,7 @@
   },
   "Internet Archive Europe": {
     "file": "internet_archive_europe.json",
-    "count": 3,
+    "count": 10,
     "category": "Digital cultural heritage",
     "description": "Bringing Collections to Life",
     "lang": "en",
@@ -257,7 +257,7 @@
   },
   "Open Culture": {
     "file": "open_culture.json",
-    "count": 16,
+    "count": 15,
     "category": "Digital cultural heritage",
     "description": "The best free cultural & educational media on the web",
     "lang": "en",
@@ -289,11 +289,19 @@
   },
   "Eduskunnan uusimmat tiedotteet": {
     "file": "eduskunnan_uusimmat_tiedotteet.json",
-    "count": 20,
+    "count": 21,
     "category": "Politics + Government",
     "description": "Eduskunnan tiedotteet - RSS",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "The Scholarly Kitchen": {
+    "file": "the_scholarly_kitchen.json",
+    "count": 15,
+    "category": "(Open) Science + Research",
+    "description": "What’s Hot and Cooking In Scholarly Publishing",
+    "lang": "en",
+    "scope": "World"
   },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
@@ -327,14 +335,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "The Scholarly Kitchen": {
-    "file": "the_scholarly_kitchen.json",
-    "count": 15,
-    "category": "(Open) Science + Research",
-    "description": "What’s Hot and Cooking In Scholarly Publishing",
-    "lang": "en",
-    "scope": "World"
-  },
   "OATP primary": {
     "file": "oatp_primary.json",
     "count": 50,
@@ -353,7 +353,7 @@
   },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
-    "count": 10,
+    "count": 15,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -537,7 +537,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 30,
+    "count": 31,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -649,7 +649,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 6,
+    "count": 10,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -1775,14 +1775,6 @@
     "lang": "fr",
     "scope": "Europe"
   },
-  "WIPO In Focus": {
-    "file": "wipo_in_focus.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "WIPO In Focus",
-    "lang": "en",
-    "scope": "World"
-  },
   "Suomen Sukututkimusseura": {
     "file": "suomen_sukututkimusseura.json",
     "count": 25,
@@ -1989,6 +1981,14 @@
     "category": "Politics + Government",
     "description": "",
     "lang": "en",
+    "scope": "Finland"
+  },
+  "Ministry for Foreign Affairs of Finland | News": {
+    "file": "ministry_for_foreign_affairs_of_finland___news.json",
+    "count": 20,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
     "scope": "Finland"
   },
   "Kuntaliitto": {
