@@ -33,7 +33,7 @@
   },
   "Yle": {
     "file": "yle.json",
-    "count": 20,
+    "count": 21,
     "category": "Global policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -76,6 +76,46 @@
     "count": 32,
     "category": "Perspectives",
     "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Tiede ja tutkimus - ePressi": {
+    "file": "tiede_ja_tutkimus___epressi.json",
+    "count": 24,
+    "category": "(Open) Science + Research",
+    "description": "Tiedotteiden tehokas julkaisukanava",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Helsingin yliopisto": {
+    "file": "helsingin_yliopisto.json",
+    "count": 25,
+    "category": "(Open) Science + Research",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Foreign Policy": {
+    "file": "foreign_policy.json",
+    "count": 25,
+    "category": "Global policy",
+    "description": "the Global Magazine of News and Ideas",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Maailman Kuvalehti": {
+    "file": "maailman_kuvalehti.json",
+    "count": 12,
+    "category": "Global policy",
+    "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Finnish Government": {
+    "file": "finnish_government.json",
+    "count": 100,
+    "category": "Politics + Government",
+    "description": "Valtioneuvoston tiedotteet",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -151,27 +191,11 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Tiede ja tutkimus - ePressi": {
-    "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 24,
-    "category": "(Open) Science + Research",
-    "description": "Tiedotteiden tehokas julkaisukanava",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Helsingin yliopisto": {
-    "file": "helsingin_yliopisto.json",
-    "count": 25,
-    "category": "(Open) Science + Research",
-    "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -303,22 +327,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Foreign Policy": {
-    "file": "foreign_policy.json",
-    "count": 25,
-    "category": "Global policy",
-    "description": "the Global Magazine of News and Ideas",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Maailman Kuvalehti": {
-    "file": "maailman_kuvalehti.json",
-    "count": 12,
-    "category": "Global policy",
-    "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Uutiset arkistot - UN Women": {
     "file": "uutiset_arkistot___un_women.json",
     "count": 12,
@@ -417,7 +425,7 @@
   },
   "resilience": {
     "file": "resilience.json",
-    "count": 11,
+    "count": 14,
     "category": "Perspectives",
     "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
@@ -439,14 +447,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Finnish Government": {
-    "file": "finnish_government.json",
-    "count": 100,
-    "category": "Politics + Government",
-    "description": "Valtioneuvoston tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Eduskunnan uusimmat tiedotteet": {
     "file": "eduskunnan_uusimmat_tiedotteet.json",
     "count": 19,
@@ -465,7 +465,7 @@
   },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
-    "count": 12,
+    "count": 13,
     "category": "Politics + Government",
     "description": "syöte",
     "lang": "fi",
@@ -545,7 +545,7 @@
   },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
-    "count": 12,
+    "count": 14,
     "category": "(Open) Science + Research",
     "description": "Turun yliopiston etusivun uutisten lyhennelmät",
     "lang": "fi",
@@ -1327,22 +1327,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Open Science | Federation of Finnish Learned Societies": {
-    "file": "open_science___federation_of_finnish_learned_societies.json",
-    "count": 1,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "en",
-    "scope": "Finland"
-  },
-  "Follow the News published by UNESCO on Intangible Cultural Heritage": {
-    "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
-    "count": 608,
-    "category": "Culture",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "CHAOSS": {
     "file": "chaoss.json",
     "count": 10,
@@ -1494,6 +1478,14 @@
     "description": "Unity in Diversity",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Follow the News published by UNESCO on Intangible Cultural Heritage": {
+    "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
+    "count": 608,
+    "category": "Culture",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "ICOM Finland": {
     "file": "icom_finland.json",
@@ -1973,6 +1965,14 @@
     "category": "Politics + Government",
     "description": "",
     "lang": "en",
+    "scope": "Finland"
+  },
+  "Kuntaliitto": {
+    "file": "kuntaliitto.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
     "scope": "Finland"
   },
   "Association of Finnish Cities and Municipalities": {
