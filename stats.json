@@ -17,7 +17,7 @@
   },
   "Yle": {
     "file": "yle.json",
-    "count": 26,
+    "count": 28,
     "category": "Global policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -49,7 +49,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 26,
+    "count": 27,
     "category": "Culture",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -423,6 +423,38 @@
     "lang": "en",
     "scope": "World"
   },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 49,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "TIEKE": {
+    "file": "tieke.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Foreign Policy": {
+    "file": "foreign_policy.json",
+    "count": 26,
+    "category": "Global policy",
+    "description": "the Global Magazine of News and Ideas",
+    "lang": "en",
+    "scope": "World"
+  },
+  "NOEMA": {
+    "file": "noema.json",
+    "count": 10,
+    "category": "Sustainability + Foresight",
+    "description": "Noema Magazine",
+    "lang": "en",
+    "scope": "World"
+  },
   "NGI Commons": {
     "file": "ngi_commons.json",
     "count": 10,
@@ -438,14 +470,6 @@
     "description": "ICT Solutions for Brilliant Minds",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 49,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
-    "lang": "en",
-    "scope": "World"
   },
   "Avoin tiede": {
     "file": "avoin_tiede.json",
@@ -545,7 +569,7 @@
   },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital policy + rights",
     "description": "",
     "lang": "en",
@@ -588,14 +612,6 @@
     "count": 10,
     "category": "Digital policy + rights",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Foreign Policy": {
-    "file": "foreign_policy.json",
-    "count": 26,
-    "category": "Global policy",
-    "description": "the Global Magazine of News and Ideas",
     "lang": "en",
     "scope": "World"
   },
@@ -796,14 +812,6 @@
     "count": 15,
     "category": "Journalism + investigation",
     "description": "Advancing media innovation to foster public trust",
-    "lang": "en",
-    "scope": "World"
-  },
-  "NOEMA": {
-    "file": "noema.json",
-    "count": 10,
-    "category": "Sustainability + Foresight",
-    "description": "Noema Magazine",
     "lang": "en",
     "scope": "World"
   },
@@ -1732,14 +1740,6 @@
     "count": 10,
     "category": "Digital policy + rights",
     "description": "researcher community focused on digital social sciences",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "TIEKE": {
-    "file": "tieke.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
