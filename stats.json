@@ -33,7 +33,7 @@
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
-    "count": 38,
+    "count": 39,
     "category": "Perspectives",
     "description": "",
     "lang": "fi",
@@ -169,7 +169,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 37,
+    "count": 38,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -209,7 +209,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 33,
+    "count": 34,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -228,6 +228,70 @@
     "count": 100,
     "category": "Politics + Government",
     "description": "Valtioneuvoston tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Opetusministeriö | Ajankohtaista": {
+    "file": "opetusministeri____ajankohtaista.json",
+    "count": 20,
+    "category": "Cultural policy",
+    "description": "Opetus- ja kulttuuriministeriön tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Cupore": {
+    "file": "cupore.json",
+    "count": 10,
+    "category": "Cultural policy",
+    "description": "Kulttuuripolitiikan tutkimuskeskus Cupore",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "ICCROM": {
+    "file": "iccrom.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "CREATe": {
+    "file": "create.json",
+    "count": 10,
+    "category": "Digital cultural heritage",
+    "description": "Centre for Regulation of the Creative Economy",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Open Culture": {
+    "file": "open_culture.json",
+    "count": 16,
+    "category": "Digital cultural heritage",
+    "description": "The best free cultural & educational media on the web",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Knowledge Rights 21": {
+    "file": "knowledge_rights_21.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "We advocate for your right to access and share knowledge!",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "United Nations | The Guardian": {
+    "file": "united_nations___the_guardian.json",
+    "count": 20,
+    "category": "Global policy",
+    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Verde": {
+    "file": "verde.json",
+    "count": 15,
+    "category": "Sustainability + Foresight",
+    "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -356,14 +420,6 @@
     "count": 10,
     "category": "Digital cultural heritage",
     "description": "Bringing Collections to Life",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Open Culture": {
-    "file": "open_culture.json",
-    "count": 16,
-    "category": "Digital cultural heritage",
-    "description": "The best free cultural & educational media on the web",
     "lang": "en",
     "scope": "Europe"
   },
@@ -505,7 +561,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 20,
+    "count": 21,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -513,7 +569,7 @@
   },
   "resilience": {
     "file": "resilience.json",
-    "count": 11,
+    "count": 15,
     "category": "Perspectives",
     "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
@@ -556,14 +612,6 @@
     "count": 25,
     "category": "Politics + Government",
     "description": "Uusimmat tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Verde": {
-    "file": "verde.json",
-    "count": 15,
-    "category": "Sustainability + Foresight",
-    "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -646,14 +694,6 @@
     "description": "The Public Domain Review",
     "lang": "en",
     "scope": "World"
-  },
-  "CREATe": {
-    "file": "create.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": "Centre for Regulation of the Creative Economy",
-    "lang": "en",
-    "scope": "Europe"
   },
   "mySociety": {
     "file": "mysociety.json",
@@ -743,14 +783,6 @@
     "lang": "en",
     "scope": "Finland"
   },
-  "Opetusministeriö | Ajankohtaista": {
-    "file": "opetusministeri____ajankohtaista.json",
-    "count": 20,
-    "category": "Cultural policy",
-    "description": "Opetus- ja kulttuuriministeriön tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Finnish Ministry of Education and Culture | Current issues": {
     "file": "finnish_ministry_of_education_and_culture___current_issues.json",
     "count": 20,
@@ -809,7 +841,7 @@
   },
   "Open Knowledge Foundation DE": {
     "file": "open_knowledge_foundation_de.json",
-    "count": 712,
+    "count": 713,
     "category": "Digital policy + rights",
     "description": "Blog on OKF DE",
     "lang": "de",
@@ -857,7 +889,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 10,
+    "count": 1,
     "category": "Journalism + investigation",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -959,14 +991,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "ICCROM": {
-    "file": "iccrom.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Time Machine Europe": {
     "file": "time_machine_europe.json",
     "count": 12,
@@ -998,14 +1022,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "United Nations | The Guardian": {
-    "file": "united_nations___the_guardian.json",
-    "count": 20,
-    "category": "Global policy",
-    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
-    "lang": "en",
-    "scope": "World"
   },
   "Avoin hallinto": {
     "file": "avoin_hallinto.json",
@@ -1060,14 +1076,6 @@
     "count": 10,
     "category": "Cultural policy",
     "description": "Luovan työn tekijät ja yrittäjät, Luovat ry",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Cupore": {
-    "file": "cupore.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "Kulttuuripolitiikan tutkimuskeskus Cupore",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1262,14 +1270,6 @@
     "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Knowledge Rights 21": {
-    "file": "knowledge_rights_21.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "We advocate for your right to access and share knowledge!",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Le Monde diplomatique - English edition": {
     "file": "le_monde_diplomatique___english_edition.json",
@@ -1989,6 +1989,14 @@
     "category": "Politics + Government",
     "description": "",
     "lang": "en",
+    "scope": "Finland"
+  },
+  "Kuntaliitto": {
+    "file": "kuntaliitto.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
     "scope": "Finland"
   },
   "Association of Finnish Cities and Municipalities": {
