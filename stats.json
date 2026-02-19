@@ -49,7 +49,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 25,
+    "count": 26,
     "category": "Culture",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -89,7 +89,7 @@
   },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
-    "count": 13,
+    "count": 14,
     "category": "(Open) Science + Research",
     "description": "Turun yliopiston etusivun uutisten lyhennelmät",
     "lang": "fi",
@@ -97,7 +97,7 @@
   },
   "Technology – POLITICO": {
     "file": "technology___politico.json",
-    "count": 32,
+    "count": 31,
     "category": "Digital policy + rights",
     "description": "European Politics, Policy, Government News",
     "lang": "en",
@@ -159,6 +159,78 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Forum Virium Helsinki": {
+    "file": "forum_virium_helsinki.json",
+    "count": 40,
+    "category": "(Open) Data + Technology",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Technology | Guardian": {
+    "file": "technology___guardian.json",
+    "count": 37,
+    "category": "(Open) Data + Technology",
+    "description": "Technology news, comment and analysis | guardian.co.uk",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Suomen kulttuuri- ja tiedeinstituutit": {
+    "file": "suomen_kulttuuri__ja_tiedeinstituutit.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Kansallisarkiston tiedotteet": {
+    "file": "kansallisarkiston_tiedotteet.json",
+    "count": 20,
+    "category": "Culture",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "CIVICUS Op-Eds": {
+    "file": "civicus_op_eds.json",
+    "count": 50,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "bellingcat": {
+    "file": "bellingcat.json",
+    "count": 10,
+    "category": "Journalism + investigation",
+    "description": "the home of online investigations",
+    "lang": "en",
+    "scope": "World"
+  },
+  "European Commission": {
+    "file": "european_commission.json",
+    "count": 33,
+    "category": "Politics + Government",
+    "description": "European Commission | News",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Oikeusministeriö | Tiedotteet ja uutiset": {
+    "file": "oikeusministeri____tiedotteet_ja_uutiset.json",
+    "count": 20,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Finnish Government": {
+    "file": "finnish_government.json",
+    "count": 100,
+    "category": "Politics + Government",
+    "description": "Valtioneuvoston tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "NGI Commons": {
     "file": "ngi_commons.json",
     "count": 10,
@@ -174,22 +246,6 @@
     "description": "ICT Solutions for Brilliant Minds",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Forum Virium Helsinki": {
-    "file": "forum_virium_helsinki.json",
-    "count": 40,
-    "category": "(Open) Data + Technology",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Technology | Guardian": {
-    "file": "technology___guardian.json",
-    "count": 36,
-    "category": "(Open) Data + Technology",
-    "description": "Technology news, comment and analysis | guardian.co.uk",
-    "lang": "en",
-    "scope": "Europe"
   },
   "The Scholarly Kitchen": {
     "file": "the_scholarly_kitchen.json",
@@ -305,7 +361,7 @@
   },
   "Open Culture": {
     "file": "open_culture.json",
-    "count": 15,
+    "count": 16,
     "category": "Digital cultural heritage",
     "description": "The best free cultural & educational media on the web",
     "lang": "en",
@@ -463,24 +519,8 @@
     "lang": "en",
     "scope": "World"
   },
-  "European Commission": {
-    "file": "european_commission.json",
-    "count": 31,
-    "category": "Politics + Government",
-    "description": "European Commission | News",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Liikenne- ja viestintäministeriö | News": {
     "file": "liikenne__ja_viestint_ministeri____news.json",
-    "count": 20,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Oikeusministeriö | Tiedotteet ja uutiset": {
-    "file": "oikeusministeri____tiedotteet_ja_uutiset.json",
     "count": 20,
     "category": "Politics + Government",
     "description": "",
@@ -492,14 +532,6 @@
     "count": 10,
     "category": "Politics + Government",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Finnish Government": {
-    "file": "finnish_government.json",
-    "count": 100,
-    "category": "Politics + Government",
-    "description": "Valtioneuvoston tiedotteet",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -582,14 +614,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Suomen kulttuuri- ja tiedeinstituutit": {
-    "file": "suomen_kulttuuri__ja_tiedeinstituutit.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "K-blogg - Riksantikvarieämbetets blogg": {
     "file": "k_blogg___riksantikvarie_mbetets_blogg.json",
@@ -1055,14 +1079,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Kansallisarkiston tiedotteet": {
-    "file": "kansallisarkiston_tiedotteet.json",
-    "count": 20,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Kotiseutuliitto": {
     "file": "kotiseutuliitto.json",
     "count": 10,
@@ -1271,22 +1287,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "CIVICUS Op-Eds": {
-    "file": "civicus_op_eds.json",
-    "count": 50,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "bellingcat": {
-    "file": "bellingcat.json",
-    "count": 10,
-    "category": "Journalism + investigation",
-    "description": "the home of online investigations",
-    "lang": "en",
-    "scope": "World"
-  },
   "Berkman Klein Center for Internet & Society at Harvard University": {
     "file": "berkman_klein_center_for_internet___society_at_harvard_university.json",
     "count": 10,
@@ -1319,14 +1319,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "CCC Event Blog": {
-    "file": "ccc_event_blog.json",
-    "count": 15,
-    "category": "(Open) Data + Technology",
-    "description": "Recent content on CCC Event Blog",
-    "lang": "de",
-    "scope": "Europe"
-  },
   "CHAOSS": {
     "file": "chaoss.json",
     "count": 10,
@@ -1334,6 +1326,14 @@
     "description": "Community Health Analytics in Open Source Software",
     "lang": "en",
     "scope": "World"
+  },
+  "CCC Event Blog": {
+    "file": "ccc_event_blog.json",
+    "count": 15,
+    "category": "(Open) Data + Technology",
+    "description": "Recent content on CCC Event Blog",
+    "lang": "de",
+    "scope": "Europe"
   },
   "FCAI | News": {
     "file": "fcai___news.json",
@@ -1989,14 +1989,6 @@
     "category": "Politics + Government",
     "description": "",
     "lang": "en",
-    "scope": "Finland"
-  },
-  "Kuntaliitto": {
-    "file": "kuntaliitto.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "fi",
     "scope": "Finland"
   },
   "Association of Finnish Cities and Municipalities": {
