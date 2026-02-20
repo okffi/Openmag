@@ -25,7 +25,7 @@
   },
   "Yle": {
     "file": "yle.json",
-    "count": 21,
+    "count": 22,
     "category": "Global policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -145,7 +145,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 38,
+    "count": 39,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -153,7 +153,7 @@
   },
   "Technology – POLITICO": {
     "file": "technology___politico.json",
-    "count": 33,
+    "count": 34,
     "category": "Digital policy + rights",
     "description": "European Politics, Policy, Government News",
     "lang": "en",
@@ -313,7 +313,7 @@
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
-    "count": 26,
+    "count": 30,
     "category": "Global policy",
     "description": "the Global Magazine of News and Ideas",
     "lang": "en",
@@ -334,6 +334,38 @@
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
     "scope": "World"
+  },
+  "Timeless": {
+    "file": "timeless.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Stories from the Library of Congress",
+    "lang": "en",
+    "scope": "World"
+  },
+  "K-blogg - Riksantikvarieämbetets blogg": {
+    "file": "k_blogg___riksantikvarie_mbetets_blogg.json",
+    "count": 100,
+    "category": "Culture",
+    "description": "",
+    "lang": "sv",
+    "scope": "Nordic + Baltic countries"
+  },
+  "Data Rescue Project": {
+    "file": "data_rescue_project.json",
+    "count": 15,
+    "category": "Journalism + investigation",
+    "description": "Preserving public data",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Sitra": {
+    "file": "sitra.json",
+    "count": 10,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -465,7 +497,7 @@
   },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
-    "count": 10,
+    "count": 12,
     "category": "Digital policy + rights",
     "description": "",
     "lang": "en",
@@ -831,14 +863,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "K-blogg - Riksantikvarieämbetets blogg": {
-    "file": "k_blogg___riksantikvarie_mbetets_blogg.json",
-    "count": 100,
-    "category": "Culture",
-    "description": "",
-    "lang": "sv",
-    "scope": "Nordic + Baltic countries"
-  },
   "Sveriges Museer": {
     "file": "sveriges_museer.json",
     "count": 10,
@@ -902,14 +926,6 @@
     "description": "Advancing media innovation to foster public trust",
     "lang": "en",
     "scope": "World"
-  },
-  "Sitra": {
-    "file": "sitra.json",
-    "count": 10,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Copernicus Institute": {
     "file": "copernicus_institute.json",
@@ -985,7 +1001,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 10,
+    "count": 1,
     "category": "Journalism + investigation",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -1046,14 +1062,6 @@
     "description": "Arvoa taiteelle",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Timeless": {
-    "file": "timeless.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Stories from the Library of Congress",
-    "lang": "en",
-    "scope": "World"
   },
   "ICOMOS Suomen osasto r.y": {
     "file": "icomos_suomen_osasto_r_y.json",
@@ -1279,14 +1287,6 @@
     "lang": "en",
     "scope": "Finland"
   },
-  "Data Rescue Project": {
-    "file": "data_rescue_project.json",
-    "count": 15,
-    "category": "Journalism + investigation",
-    "description": "Preserving public data",
-    "lang": "en",
-    "scope": "World"
-  },
   "Valtiontalouden tarkastusvirasto": {
     "file": "valtiontalouden_tarkastusvirasto.json",
     "count": 10,
@@ -1326,30 +1326,6 @@
     "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Le Monde diplomatique - English edition": {
-    "file": "le_monde_diplomatique___english_edition.json",
-    "count": 10,
-    "category": "Global policy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "CIVICUS News": {
-    "file": "civicus_news.json",
-    "count": 50,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Berkman Klein Center for Internet & Society at Harvard University": {
-    "file": "berkman_klein_center_for_internet___society_at_harvard_university.json",
-    "count": 10,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
@@ -1511,6 +1487,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Follow the News published by UNESCO on Intangible Cultural Heritage": {
+    "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
+    "count": 608,
+    "category": "Culture",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "ICOM Finland": {
     "file": "icom_finland.json",
     "count": 10,
@@ -1654,6 +1638,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Digital Scholarship Leiden": {
+    "file": "digital_scholarship_leiden.json",
+    "count": 10,
+    "category": "Digital cultural heritage",
+    "description": "DigitalScholarship Leiden",
+    "lang": "en",
+    "scope": "Europe"
   },
   "MuseumNext": {
     "file": "museumnext.json",
@@ -1847,6 +1839,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Le Monde diplomatique - English edition": {
+    "file": "le_monde_diplomatique___english_edition.json",
+    "count": 10,
+    "category": "Global policy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Public Institutions": {
     "file": "public_institutions.json",
     "count": 9,
@@ -1895,6 +1895,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "CoP CC on Participatory and Deliberative Democracy": {
+    "file": "cop_cc_on_participatory_and_deliberative_democracy.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Kansalaisfoorumi": {
     "file": "kansalaisfoorumi.json",
     "count": 10,
@@ -1906,6 +1914,14 @@
   "Open Government Partnership Newsletter": {
     "file": "open_government_partnership_newsletter.json",
     "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "CIVICUS News": {
+    "file": "civicus_news.json",
+    "count": 50,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -1943,6 +1959,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Berkman Klein Center for Internet & Society at Harvard University": {
+    "file": "berkman_klein_center_for_internet___society_at_harvard_university.json",
+    "count": 10,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Project Syndicate economists": {
     "file": "project_syndicate_economists.json",
     "count": 20,
@@ -1965,6 +1989,14 @@
     "category": "Politics + Government",
     "description": "",
     "lang": "en",
+    "scope": "Finland"
+  },
+  "Kuntaliitto": {
+    "file": "kuntaliitto.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
     "scope": "Finland"
   },
   "Association of Finnish Cities and Municipalities": {
