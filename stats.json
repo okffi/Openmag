@@ -65,7 +65,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 21,
+    "count": 26,
     "category": "Culture",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -78,6 +78,70 @@
     "description": "Clear on climate",
     "lang": "en",
     "scope": "World"
+  },
+  "Helsingin yliopisto": {
+    "file": "helsingin_yliopisto.json",
+    "count": 25,
+    "category": "(Open) Science + Research",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Oulu2026": {
+    "file": "oulu2026.json",
+    "count": 100,
+    "category": "Culture",
+    "description": "Oulu on Euroopan kulttuuripääkaupunki 2026",
+    "lang": "en",
+    "scope": "Finland"
+  },
+  "Suomalaisen Kirjallisuuden Seura (SKS)": {
+    "file": "suomalaisen_kirjallisuuden_seura__sks_.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Diff": {
+    "file": "diff.json",
+    "count": 11,
+    "category": "Digital skills + Citizen science",
+    "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Maailman Kuvalehti": {
+    "file": "maailman_kuvalehti.json",
+    "count": 11,
+    "category": "Global policy",
+    "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Global Voices": {
+    "file": "global_voices.json",
+    "count": 15,
+    "category": "Human Rights + Democracy",
+    "description": "Citizen media stories from around the world",
+    "lang": "en",
+    "scope": "World"
+  },
+  "European Commission": {
+    "file": "european_commission.json",
+    "count": 30,
+    "category": "Politics + Government",
+    "description": "European Commission | News",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Euronews | Europe": {
+    "file": "euronews___europe.json",
+    "count": 52,
+    "category": "Politics + Government",
+    "description": "Latest news from Euronews",
+    "lang": "en",
+    "scope": "Europe"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -121,7 +185,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 32,
+    "count": 35,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -164,14 +228,6 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Helsingin yliopisto": {
-    "file": "helsingin_yliopisto.json",
-    "count": 25,
-    "category": "(Open) Science + Research",
-    "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -231,14 +287,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Suomalaisen Kirjallisuuden Seura (SKS)": {
-    "file": "suomalaisen_kirjallisuuden_seura__sks_.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "ICCROM": {
     "file": "iccrom.json",
     "count": 10,
@@ -297,7 +345,7 @@
   },
   "Technology – POLITICO": {
     "file": "technology___politico.json",
-    "count": 33,
+    "count": 34,
     "category": "Digital policy + rights",
     "description": "European Politics, Policy, Government News",
     "lang": "en",
@@ -318,14 +366,6 @@
     "description": "Neues aus dem Wikimedia-Universum",
     "lang": "de",
     "scope": "Europe"
-  },
-  "Diff": {
-    "file": "diff.json",
-    "count": 11,
-    "category": "Digital skills + Citizen science",
-    "description": "News from the Wikimedia movement",
-    "lang": "en",
-    "scope": "World"
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
@@ -348,14 +388,6 @@
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Global Voices": {
-    "file": "global_voices.json",
-    "count": 15,
-    "category": "Human Rights + Democracy",
-    "description": "Citizen media stories from around the world",
     "lang": "en",
     "scope": "World"
   },
@@ -423,14 +455,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "European Commission": {
-    "file": "european_commission.json",
-    "count": 30,
-    "category": "Politics + Government",
-    "description": "European Commission | News",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "European Union": {
     "file": "european_union.json",
     "count": 29,
@@ -487,14 +511,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Euronews | Europe": {
-    "file": "euronews___europe.json",
-    "count": 51,
-    "category": "Politics + Government",
-    "description": "Latest news from Euronews",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
     "count": 10,
@@ -524,6 +540,14 @@
     "count": 15,
     "category": "Sustainability + Foresight",
     "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Ihmisoikeuskeskus": {
+    "file": "ihmisoikeuskeskus.json",
+    "count": 50,
+    "category": "Human Rights + Democracy",
+    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -599,14 +623,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Oulu2026": {
-    "file": "oulu2026.json",
-    "count": 100,
-    "category": "Culture",
-    "description": "Oulu on Euroopan kulttuuripääkaupunki 2026",
-    "lang": "en",
-    "scope": "Finland"
-  },
   "Ars Electronica Center": {
     "file": "ars_electronica_center.json",
     "count": 10,
@@ -676,14 +692,6 @@
     "count": 10,
     "category": "Digital policy + rights",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Maailman Kuvalehti": {
-    "file": "maailman_kuvalehti.json",
-    "count": 11,
-    "category": "Global policy",
-    "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta.",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -849,7 +857,7 @@
   },
   "Amnesty Suomi": {
     "file": "amnesty_suomi.json",
-    "count": 10,
+    "count": 8,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "fi",
@@ -897,7 +905,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 5,
+    "count": 10,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -1918,14 +1926,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Ihmisoikeuskeskus": {
-    "file": "ihmisoikeuskeskus.json",
-    "count": 50,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Oxfam International": {
     "file": "oxfam_international.json",
