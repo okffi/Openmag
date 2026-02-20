@@ -25,7 +25,7 @@
   },
   "Yle": {
     "file": "yle.json",
-    "count": 20,
+    "count": 21,
     "category": "Global policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -49,7 +49,7 @@
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
-    "count": 34,
+    "count": 35,
     "category": "Perspectives",
     "description": "",
     "lang": "fi",
@@ -57,7 +57,7 @@
   },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
-    "count": 15,
+    "count": 14,
     "category": "(Open) Science + Research",
     "description": "Turun yliopiston etusivun uutisten lyhennelmät",
     "lang": "fi",
@@ -73,7 +73,7 @@
   },
   "Carbon Brief": {
     "file": "carbon_brief.json",
-    "count": 12,
+    "count": 13,
     "category": "Sustainability + Foresight",
     "description": "Clear on climate",
     "lang": "en",
@@ -129,7 +129,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 33,
+    "count": 36,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -145,7 +145,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 37,
+    "count": 38,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -209,7 +209,7 @@
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
-    "count": 15,
+    "count": 16,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
@@ -295,6 +295,46 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 48,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Tiede ja tutkimus - ePressi": {
+    "file": "tiede_ja_tutkimus___epressi.json",
+    "count": 21,
+    "category": "(Open) Science + Research",
+    "description": "Tiedotteiden tehokas julkaisukanava",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Foreign Policy": {
+    "file": "foreign_policy.json",
+    "count": 26,
+    "category": "Global policy",
+    "description": "the Global Magazine of News and Ideas",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Hrana": {
+    "file": "hrana.json",
+    "count": 12,
+    "category": "Human Rights + Democracy",
+    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Project Syndicate": {
+    "file": "project_syndicate.json",
+    "count": 24,
+    "category": "Perspectives",
+    "description": "Project Syndicate - The World’s Opinion Page",
+    "lang": "en",
+    "scope": "World"
+  },
   "CHAOSS": {
     "file": "chaoss.json",
     "count": 10,
@@ -342,22 +382,6 @@
     "description": "Scholarly Publishing and Academic Resources Coalition",
     "lang": "en",
     "scope": "World"
-  },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 49,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Tiede ja tutkimus - ePressi": {
-    "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 21,
-    "category": "(Open) Science + Research",
-    "description": "Tiedotteiden tehokas julkaisukanava",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
@@ -471,14 +495,6 @@
     "lang": "de",
     "scope": "Europe"
   },
-  "Foreign Policy": {
-    "file": "foreign_policy.json",
-    "count": 26,
-    "category": "Global policy",
-    "description": "the Global Magazine of News and Ideas",
-    "lang": "en",
-    "scope": "World"
-  },
   "Freedom House": {
     "file": "freedom_house.json",
     "count": 10,
@@ -492,14 +508,6 @@
     "count": 50,
     "category": "Human Rights + Democracy",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Project Syndicate": {
-    "file": "project_syndicate.json",
-    "count": 24,
-    "category": "Perspectives",
-    "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
     "scope": "World"
   },
@@ -609,7 +617,7 @@
   },
   "Avoin tiede": {
     "file": "avoin_tiede.json",
-    "count": 2,
+    "count": 7,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -750,14 +758,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Hrana": {
-    "file": "hrana.json",
-    "count": 12,
-    "category": "Human Rights + Democracy",
-    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
-    "lang": "en",
-    "scope": "World"
   },
   "WITNESS": {
     "file": "witness.json",
@@ -1399,6 +1399,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Open Science | Federation of Finnish Learned Societies": {
+    "file": "open_science___federation_of_finnish_learned_societies.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "en",
+    "scope": "Finland"
+  },
   "Open Access and Digital Scholarship Blog": {
     "file": "open_access_and_digital_scholarship_blog.json",
     "count": 15,
@@ -1410,6 +1418,14 @@
   "Datafied Life Collaboratory": {
     "file": "datafied_life_collaboratory.json",
     "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Tiedepolitiikka": {
+    "file": "tiedepolitiikka.json",
+    "count": 30,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -1428,6 +1444,14 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "TSV": {
+    "file": "tsv.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1486,14 +1510,6 @@
     "description": "Unity in Diversity",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Follow the News published by UNESCO on Intangible Cultural Heritage": {
-    "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
-    "count": 608,
-    "category": "Culture",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "ICOM Finland": {
     "file": "icom_finland.json",
@@ -1638,14 +1654,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Digital Scholarship Leiden": {
-    "file": "digital_scholarship_leiden.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": "DigitalScholarship Leiden",
-    "lang": "en",
-    "scope": "Europe"
   },
   "MuseumNext": {
     "file": "museumnext.json",
@@ -1884,14 +1892,6 @@
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "Helping the global population join the global conversation",
-    "lang": "en",
-    "scope": "World"
-  },
-  "CoP CC on Participatory and Deliberative Democracy": {
-    "file": "cop_cc_on_participatory_and_deliberative_democracy.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
