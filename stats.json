@@ -105,7 +105,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 11,
+    "count": 12,
     "category": "Digital skills + Citizen science",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -129,7 +129,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 30,
+    "count": 33,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -137,11 +137,27 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 52,
+    "count": 55,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Technology | Guardian": {
+    "file": "technology___guardian.json",
+    "count": 35,
+    "category": "(Open) Data + Technology",
+    "description": "Technology news, comment and analysis | guardian.co.uk",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Technology – POLITICO": {
+    "file": "technology___politico.json",
+    "count": 34,
+    "category": "Digital policy + rights",
+    "description": "European Politics, Policy, Government News",
+    "lang": "en",
+    "scope": "World"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -182,14 +198,6 @@
     "description": "FAIR",
     "lang": "en",
     "scope": "Finland"
-  },
-  "Technology | Guardian": {
-    "file": "technology___guardian.json",
-    "count": 35,
-    "category": "(Open) Data + Technology",
-    "description": "Technology news, comment and analysis | guardian.co.uk",
-    "lang": "en",
-    "scope": "Europe"
   },
   "The Scholarly Kitchen": {
     "file": "the_scholarly_kitchen.json",
@@ -313,7 +321,7 @@
   },
   "Open Culture": {
     "file": "open_culture.json",
-    "count": 15,
+    "count": 16,
     "category": "Digital cultural heritage",
     "description": "The best free cultural & educational media on the web",
     "lang": "en",
@@ -342,14 +350,6 @@
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Technology – POLITICO": {
-    "file": "technology___politico.json",
-    "count": 34,
-    "category": "Digital policy + rights",
-    "description": "European Politics, Policy, Government News",
-    "lang": "en",
-    "scope": "World"
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
@@ -857,7 +857,7 @@
   },
   "Amnesty Suomi": {
     "file": "amnesty_suomi.json",
-    "count": 8,
+    "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "fi",
@@ -961,7 +961,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 10,
+    "count": 1,
     "category": "Journalism + investigation",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -1297,7 +1297,7 @@
   },
   "Europa Nostra": {
     "file": "europa_nostra.json",
-    "count": 10,
+    "count": 1,
     "category": "Culture",
     "description": "The Voice of Cultural Heritage in Europe",
     "lang": "en",
@@ -1342,22 +1342,6 @@
     "description": "Open Access and Digital Scholarship at Imperial College London",
     "lang": "en",
     "scope": "World"
-  },
-  "Open Objects": {
-    "file": "open_objects.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": "'Every age has its orthodoxy and no orthodoxy is ever right.'",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Open Future": {
-    "file": "open_future.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "Open Future Foundation",
-    "lang": "en",
-    "scope": "Europe"
   },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
@@ -1679,6 +1663,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Open Objects": {
+    "file": "open_objects.json",
+    "count": 10,
+    "category": "Digital cultural heritage",
+    "description": "'Every age has its orthodoxy and no orthodoxy is ever right.'",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Source Code Exhibition": {
     "file": "source_code_exhibition.json",
     "count": 10,
@@ -1764,6 +1756,14 @@
     "count": 10,
     "category": "Digital policy + rights",
     "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Open Future": {
+    "file": "open_future.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "Open Future Foundation",
     "lang": "en",
     "scope": "Europe"
   },
@@ -1989,6 +1989,14 @@
     "category": "Politics + Government",
     "description": "",
     "lang": "en",
+    "scope": "Finland"
+  },
+  "Kuntaliitto": {
+    "file": "kuntaliitto.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
     "scope": "Finland"
   },
   "Association of Finnish Cities and Municipalities": {
