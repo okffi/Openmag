@@ -8,7 +8,456 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        :root {
+            --primary-color: #007AFF;
+            --bg-color: #ffffff;
+            --sidebar-bg: #f8f9fa;
+            --text-dark: #121212;
+            --text-muted: #6c757d;
+            --card-bg: #ffffff;
+            --border-color: #eeeeee;
+            --sidebar-width: 280px;
+        }
+
+        * { box-sizing: border-box; }
+        a { text-decoration: none !important; color: inherit; }
+        
+        body { 
+            background-color: var(--bg-color); 
+            font-family: 'DM Sans', sans-serif; 
+            margin: 0; 
+            padding: 0;
+            color: var(--text-dark);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* SIVUPALKKI */
+        .sidebar { 
+            height: 100vh; 
+            width: var(--sidebar-width); 
+            position: sticky;
+            top: 0; 
+            left: 0; 
+            background-color: var(--sidebar-bg); 
+            border-right: 1px solid var(--border-color);
+            transition: transform 0.4s ease, margin-left 0.4s ease;
+            flex-shrink: 0;
+            overflow-y: auto;
+            z-index: 2000;
+        }
+
+        .sidebar.closed {
+            margin-left: calc(-1 * var(--sidebar-width));
+        }
+
+        .sidebar h3 { 
+            padding: 30px 30px 20px; 
+            margin: 0; 
+            font-family: 'Playfair Display', serif; 
+            font-size: 1.5rem; 
+            color: var(--text-dark);
+        }
+
+        #sidebar-toggle { 
+            position: fixed; top: 15px; left: 20px; z-index: 1500; 
+            background: var(--text-dark); 
+            color: white; border: none; padding: 10px 18px; 
+            border-radius: 0; 
+            cursor: pointer; 
+            font-size: 0.7rem; font-weight: 700;
+        }
+
+        .sidebar-view-toggle {
+            display: flex;
+            padding: 10px 20px;
+            background: #eee;
+            margin: 0 20px 15px;
+            border-radius: 25px;
+            gap: 0;
+        }
+        
+        .sidebar-view-toggle button {
+            flex: 1;
+            border: none;
+            background: none;
+            padding: 8px;
+            border-radius: 20px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .sidebar-view-toggle button.active {
+            background: var(--text-dark);
+            color: white;
+        }
+        
+        /* SIVUPALKKI - HAITARI JA KOHTEET */
+        .category-group {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.65rem;
+            color: var(--text-dark);
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .category-header:hover {
+            background-color: #fff;
+            color: var(--primary-color);
+        }
+
+        .category-header::after {
+            content: '+';
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
+            color: #ccc;
+            transition: transform 0.3s ease;
+        }
+
+        .category-group.open .category-header::after {
+            content: '−';
+            color: var(--primary-color);
+        }
+
+        .source-submenu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+            background-color: #ffffff;
+        }
+
+        .category-group.open .source-submenu {
+            max-height: 2000px;
+            transition: max-height 0.4s ease-in;
+        }
+
+        .source-item { 
+            cursor: pointer; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            font-size: 0.85rem; 
+            color: var(--text-muted); 
+            padding: 10px 20px;
+            transition: all 0.2s ease;
+        }
+
+        .source-submenu .source-item {
+            padding-left: 35px;
+            font-size: 0.8rem;
+        }
+        
+        .source-item:hover { 
+            background-color: #fff; 
+            color: var(--primary-color); 
+        }
+        
+        .source-item.active { 
+            background-color: #fff; 
+            color: var(--primary-color); 
+            font-weight: 700; 
+            border-left: 3px solid var(--primary-color); 
+        }
+        
+        .source-item span { font-size: 0.7rem; color: #b7b7b7; font-weight: 400; }
+        
+        /* A-Ö badge tyyli */
+        .count-badge { font-size: 0.7rem; color: #b7b7b7; }
+
+        /* SISÄLTÖALUE JA HEADER */
+        main {
+            flex-grow: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header { 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: center;
+        }
+
+        header h1 { 
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem; 
+            margin: 0;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+header.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 12px 25px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    gap: 10px;
+}
+
+/* Mustapohjainen valikkotyyli */
+.dark-select {
+    background-color: var(--text-dark);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    outline: none;
+    appearance: none; /* Poistaa selaimen nuolen */
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='white' d='M0 2l4 4 4-4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 30px;
+    transition: background-color 0.2s;
+}
+
+.dark-select:hover {
+    background-color: #333;
+}
+
+/* Mobiiliskaalaus: otsikko piiloon tai pienennetään jos tila loppuu */
+@media (max-width: 600px) {
+    .header-left h1 { font-size: 1rem; }
+    .dark-select { padding: 6px 12px; padding-right: 25px; font-size: 0.65rem; }
+}
+        
+        .header-left h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        
+        .pill-group {
+            display: flex;
+            gap: 5px;
+            background: #f1f1f1;
+            padding: 4px;
+            border-radius: 25px;
+        }
+        
+        .pill {
+            border: none;
+            background: none;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: all 0.2s ease;
+        }
+        
+        .pill.active {
+            background: var(--text-dark);
+            color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .pill-divider {
+            width: 1px;
+            height: 24px;
+            background: var(--border-color);
+        }
+        
+        /* Poistetaan vanha header-controls tyyli jos se jäi */
+        .header-controls { display: none; }
+        
+        .news-select {
+            padding: 8px 12px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            outline: none;
+            cursor: pointer;
+            background: white;
+        }
+        
+        .news-select:hover {
+            border-color: #007bff;
+        }
+
+        #feed-header-area {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            margin: 40px 20px;
+            min-height: 80px;
+        }
+        
+        #feed-info-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
+        }
+            
+        #feed-logo-container {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #feed-logo-container img {
+            max-width: 80px;
+            max-height: 80px;
+            width: auto;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        
+        #feed-logo-container.dark-bg { 
+            background-color: #1a1a1a; 
+        }
+        
+        #feed-logo-container.dark-bg img {
+            max-width: 60px;
+            max-height: 60px;
+        }
+        
+        .view-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: var(--text-dark);
+            margin: 0;
+            line-height: 1.1;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        #current-view-description {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        .title-link:hover { color: var(--primary-color); }
+
+        .rss-link {
+            display: inline-flex; 
+            align-items: center;
+            justify-content: center;
+            vertical-align: middle; 
+            color: var(--primary-color);
+            opacity: 0.4;
+            transition: opacity 0.2s;
+        }
+        
+        .rss-link svg {
+            width: 20px;
+            height: 20px;
+            display: block; 
+        }
+        .rss-link:hover { opacity: 1; }
+
+        /* GRID & CARDS */
+        .grid { width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 20px; opacity: 0; transition: opacity 0.5s ease; }
+        .grid.loaded { opacity: 1; }
+        .grid-sizer, .grid-item { width: 31%; }
+
+        .grid-item {
+            margin-bottom: 25px; 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color);
+            display: block; 
+            transition: border-color 0.3s ease;
+        }
+        .grid-item:hover { border-color: var(--primary-color); }
+        
+        .grid-item img { width: 100%; height: auto; display: block; background: #f8f9fa; }
+
+        .content { padding: 20px; }
+        .content .category-label { 
+            text-transform: uppercase; 
+            font-size: 0.6rem; 
+            letter-spacing: 2px; 
+            color: var(--primary-color) !important; 
+            font-weight: 700; 
+            display: block; 
+            margin-bottom: 10px; 
+        }
+        
+        .grid-item h2 { 
+            font-family: 'Playfair Display', serif; 
+            margin: 0 0 12px; 
+            font-size: 1.35rem; 
+            line-height: 1.25; 
+            color: var(--text-dark); 
+        }
+        
+        .grid-item p { 
+            color: var(--text-muted); 
+            font-size: 0.9rem; 
+            line-height: 1.5;
+            margin-bottom: 0; 
+        }
+        
+        .meta-info { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-top: 15px; 
+            padding-top: 15px; 
+            border-top: 1px solid #f8f9fa;
+            font-size: 0.6rem; 
+            letter-spacing: 1px;
+            color: #999;
+            text-transform: uppercase;
+        }
+
+        #scroll-sentinel { text-align: center; padding: 80px 0; font-size: 0.8rem; color: #bbb; text-transform: uppercase; letter-spacing: 3px; }
+
+        @media (max-width: 1100px) { .grid-sizer, .grid-item { width: 48%; } }
+        @media (max-width: 650px) { 
+            .grid-sizer, .grid-item { width: 100%; } 
+            .sidebar { position: fixed; transform: translateX(-100%); }
+            .sidebar.open { transform: translateX(0); }
+            .sidebar.closed { margin-left: 0; }
+        }
+    </style>
 </head>
 <body>
 
@@ -29,18 +478,21 @@
                 <h1>OpenMag</h1>
             </div>
             <div class="header-right">
-                <div class="pill-group" id="lang-pills">
-                    <button class="pill active" data-value="all" onclick="setPillFilter('lang', 'all')">All</button>
-                    <button class="pill" data-value="fi" onclick="setPillFilter('lang', 'fi')">FI</button>
-                    <button class="pill" data-value="en" onclick="setPillFilter('lang', 'en')">EN</button>
-                    <button class="pill" data-value="sv" onclick="setPillFilter('lang', 'sv')">SV</button>
-                </div>
-                <div class="pill-divider"></div>
-                <div class="pill-group" id="scope-pills">
-                    <button class="pill active" data-value="all" onclick="setPillFilter('scope', 'all')">Global</button>
-                    <button class="pill" data-value="Finland" onclick="setPillFilter('scope', 'Finland')">Finland</button>
-                    <button class="pill" data-value="Europe" onclick="setPillFilter('scope', 'Europe')">Europe</button>
-                </div>
+                <select id="langFilter" class="dark-select">
+                    <option value="all">Languages (All)</option>
+                    <option value="fi">Suomi</option>
+                    <option value="en">English</option>
+                    <option value="sv">Svenska</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                </select>
+                <select id="scopeFilter" class="dark-select">
+                    <option value="all">Regions (All)</option>
+                    <option value="Finland">Finland</option>
+                    <option value="Nordic + Baltic countries">Nordic + Baltic</option>
+                    <option value="Europe">Europe</option>
+                    <option value="World">World</option>
+                </select>
             </div>
         </header>
         <div id="feed-header-area">
@@ -66,8 +518,8 @@ let isLoading = false;
 let currentCategory = 'All';
 let statsData = null; 
 let mainFeedCache = null;
-let currentLang = 'all';
-let currentScope = 'all';
+
+// Globaali muuttuja käännöksille
 let translations = {}; 
 
 // Perusfunktio: hakee tekstin avaimen perusteella
@@ -311,9 +763,8 @@ function setViewTitleAndRss(viewTitleEl, title, rssLink, isMainFeed, siteUrl) {
 }
     
 function displayArticles() {
-    // Etsi displayArticles-funktiosta nämä rivit ja muuta ne:
-    const selectedLang = currentLang;
-    const selectedScope = currentScope;
+    const selectedLang = document.getElementById('langFilter').value;
+    const selectedScope = document.getElementById('scopeFilter').value;
 
     const filtered = allArticles.filter(art => {
         const langMatch = (selectedLang === 'all') || (art.lang === selectedLang);
