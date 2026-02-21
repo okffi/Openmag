@@ -22,7 +22,7 @@ const parser = new Parser({
 
 const SHEET_TSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=0&single=true&output=tsv";
 // PÄIVITYS: Lisää tähän käännösvälilehtesi GID (esim. gid=12345678)
-const TRANSLATIONS_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=1801826012&single=true&output=tsv";
+const TRANSLATIONS_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=1293197638&single=true&output=tsv";
 
 async function run() {
     let failedFeeds = []; 
