@@ -178,8 +178,16 @@ main { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; }
 .grid-item p { color: var(--text-muted); font-size: 0.9rem; }
 
 .meta-info { 
-    display: flex; justify-content: space-between; margin-top: 15px; padding-top: 15px; 
-    border-top: 1px solid #f8f9fa; font-size: 0.6rem; color: #999; text-transform: uppercase;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 15px; 
+    padding-top: 15px; 
+    border-top: 1px solid #f8f9fa;
+    font-size: 0.6rem; 
+    letter-spacing: 1px;
+    color: #999;
+    text-transform: uppercase;
 }
 
 #scroll-sentinel { text-align: center; padding: 80px 0; color: #bbb; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; }
