@@ -155,25 +155,25 @@ async function run() {
         const sourceStats = {};
         const articlesBySource = {};
 
+        // Etsi tämä kohta (n. rivi 118-132) ja muuta se tällaiseksi:
         allArticles.forEach(art => {
-            // Käytetään artikkelin mukana kulkevaa puhdasta nimeä
-            const src = art.sourceTitle; 
-            const fileKey = src.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+            const srcName = art.sourceTitle; // Alkuperäinen nimi (esim. "Helsingin Sanomat")
+            const fileKey = srcName.replace(/[^a-z0-9]/gi, '_').toLowerCase(); // Vain tiedostonimeen
             
             if (!articlesBySource[fileKey]) articlesBySource[fileKey] = [];
             articlesBySource[fileKey].push(art);
             
-            if (!sourceStats[src]) {
-                sourceStats[src] = { 
+            if (!sourceStats[srcName]) { // Käytetään avaimena alkuperäistä nimeä
+                sourceStats[srcName] = { 
                     file: `${fileKey}.json`, 
                     count: 0,
-                    category: art.sheetCategory || "Yleinen",
+                    category: art.sheetCategory || "General",
                     description: art.sourceDescription || "",
                     lang: art.lang || "en",
                     scope: art.scope || "World"
                 };
             }
-            sourceStats[src].count++;
+            sourceStats[srcName].count++;
         });
 
         // Jos kansiota ei ole, luodaan se ennen kirjoittamista
