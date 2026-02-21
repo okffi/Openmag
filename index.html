@@ -438,6 +438,36 @@ let currentCategory = 'All';
 let statsData = null; // Globaali välimuisti
 let mainFeedCache = null;
 
+// Globaali muuttuja käännöksille
+let translations = {}; 
+
+// Perusfunktio: hakee tekstin avaimen perusteella
+function t(key) {
+    const lang = document.getElementById('langFilter').value || 'en';
+    if (translations[lang] && translations[lang][key]) {
+        return translations[lang][key];
+    }
+    // Jos käännöstä ei löydy, palautetaan avain ilman ryhmä-etuliitettä (siistimpi fallback)
+    return key.includes('.') ? key.split('.')[1].replace(/_/g, ' ') : key;
+}
+
+// Kohdan 1 funktio: muuttaa "Culture" -> "cat.culture" ja kääntää sen
+function getTranslation(group, value) {
+    if (!value) return t(`${group}.general`); // Fallback esim. cat.general
+    
+    // Luodaan tekninen avain (slug) samalla logiikalla kuin Sheetsissä
+    const slug = value.toString()
+        .replace(/[\(\)\+]/g, '') // Poistetaan ( ) +
+        .trim()
+        .replace(/\s+/g, '_')     // Välilyönnit -> alaviiva
+        .replace(/[^a-zA-Z0-9_]/g, '') // Vain kirjaimet, numerot ja alaviiva
+        .replace(/_+/g, '_')      // Ei tuplaviivoja
+        .toLowerCase();
+    
+    const key = `${group}.${slug}`;
+    return t(key);
+}
+
     function resetFilters() {
         document.getElementById('langFilter').value = 'all';
         document.getElementById('scopeFilter').value = 'all';
