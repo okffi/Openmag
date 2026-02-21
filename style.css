@@ -102,6 +102,7 @@ header.main-header {
     font-size: 1.5rem; 
 }
 
+/* Sidebar-toggle perusasetukset */
 #sidebar-toggle { 
     position: fixed; 
     top: 15px; 
@@ -114,6 +115,26 @@ header.main-header {
     cursor: pointer; 
     font-size: 0.7rem; 
     font-weight: 700;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* PIILOTUS: Kun sivupalkki on AUKI isolla näytöllä, nappi menee piiloon */
+@media (min-width: 651px) {
+    /* Jos sivupalkissa EI ole 'closed' luokkaa, nappi on näkymätön */
+    .sidebar:not(.closed) ~ #sidebar-toggle {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(-20px);
+    }
+}
+
+/* MOBIILI: Napin on hyvä näkyä aina, jotta palkin saa kiinni/auki */
+@media (max-width: 650px) {
+    #sidebar-toggle {
+        opacity: 1 !important;
+        transform: none !important;
+        pointer-events: auto !important;
+    }
 }
 
 /* Sivupalkin pillerit (Kategoriat / A-Ö) */
