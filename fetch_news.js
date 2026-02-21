@@ -21,7 +21,9 @@ const parser = new Parser({
 });
 
 const SHEET_TSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=0&single=true&output=tsv";
-    
+// HUOM: Varmista että GID on oikea käännösvälilehdellesi
+const TRANSLATIONS_TSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=1801826012&single=true&output=tsv";
+
 async function run() {
     let failedFeeds = []; 
     let allArticles = [];
@@ -38,7 +40,7 @@ async function run() {
         }
 
         if (lastCleanDate !== today) {
-            console.log(`--- PÄIVÄN ENSIMMÄINEN AJO: Puhdistetaan arkistot ja data.json (${today}) ---`);
+            console.log(`--- PÄIVÄN ENSIMMÄINEN AJO: Puhdistetaan arkistot (${today}) ---`);
             if (fs.existsSync(sourcesDir)) {
                 fs.readdirSync(sourcesDir).forEach(file => fs.unlinkSync(path.join(sourcesDir, file)));
             } else {
@@ -46,7 +48,6 @@ async function run() {
             }
             allArticles = []; 
             if (fs.existsSync('data.json')) fs.unlinkSync('data.json');
-            // Merkitään ajo tehdyksi vasta tässä
             fs.writeFileSync(cleanLogFile, today);
         } else {
             console.log(`--- Jatketaan päivää: ladataan olemassa oleva data ---`);
@@ -55,32 +56,45 @@ async function run() {
             }
         }
 
-        // 2. HAETAAN SYÖTTEET (Cache Buster ja parannettu validointi)
-        console.log("Haetaan syötelistaa Google Sheetsistä (TSV)...");
         const cacheBuster = `&cb=${Date.now()}`;
-        const response = await axios.get(SHEET_TSV_URL + cacheBuster);
-        
-        // Käytetään /\r?\n/ ja suodatetaan tyhjät rivit heti pois
-        const rows = response.data.split(/\r?\n/)
-            .slice(1)
-            .filter(row => row.trim() !== '');
 
-        console.log(`--- DEBUG: Sheets-data haettu ---`);
-        console.log(`Rivejä yhteensä (ilman otsikkoa): ${rows.length}`);
-        console.log(`Esimerkki ensimmäisestä raakarivistä:\n"${rows[0]}"`);
+        // --- UUSI: HAETAAN KÄÄNNÖKSET ---
+        console.log("Päivitetään käännökset Sheetsistä...");
+        try {
+            const transResponse = await axios.get(TRANSLATIONS_TSV_URL + cacheBuster);
+            const transRows = transResponse.data.split(/\r?\n/).slice(1).filter(r => r.trim() !== '');
+            const translations = { fi: {}, en: {}, sv: {}, de: {}, fr: {} };
+
+            transRows.forEach(row => {
+                const [group, key, en, fi, sv, de, fr] = row.split('\t').map(v => v ? v.trim() : '');
+                if (key) {
+                    translations.en[key] = en;
+                    translations.fi[key] = fi;
+                    translations.sv[key] = sv;
+                    translations.de[key] = de;
+                    translations.fr[key] = fr;
+                }
+            });
+            fs.writeFileSync('translations.json', JSON.stringify(translations, null, 2));
+            console.log("translations.json luotu onnistuneesti.");
+        } catch (e) {
+            console.error("Virhe käännösten haussa:", e.message);
+        }
+
+        // 2. HAETAAN SYÖTTEET
+        console.log("Haetaan syötelistaa...");
+        const response = await axios.get(SHEET_TSV_URL + cacheBuster);
+        const rows = response.data.split(/\r?\n/).slice(1).filter(row => row.trim() !== '');
         
         const feeds = rows.map(row => {
             const c = row.split('\t').map(v => v ? v.trim() : '');
-            
-            // Validointi: vähintään RSS tai Scrape URL on löydyttävä
             if (!c[2] && !c[3]) return null;
-
             return { 
                 category: c[0] || "Yleinen",
                 feedName: c[1] || "Nimetön",
                 rssUrl: c[2], 
                 scrapeUrl: c[3] || "",
-                nameChecked: c[4] || c[1] || "Lähde", // Tämä on "kuningas"
+                nameChecked: c[4] || c[1] || "Lähde",
                 sheetDesc: c[5] || "",
                 lang: (c[6] || "fi").toLowerCase(),
                 scope: c[7] || "World",
@@ -88,82 +102,47 @@ async function run() {
             };
         }).filter(f => f !== null);
 
-        console.log(`--- Parsittu ${feeds.length} voimassa olevaa syötettä ---`);
-        
-        if (feeds.length === 0) {
-            console.error("VIRHE: Syötelista on tyhjä! Tarkista Sheets-yhteys.");
-        }
-        
-        // 2.1. KÄSITTELE RSS-SYÖTTEET (Vakaa osio)
-        const rssFeeds = feeds.filter(f => f.rssUrl && f.rssUrl.length > 10);
-        console.log(`--- Aloitetaan RSS-haku (${rssFeeds.length} kpl) ---`);
-        
-        for (const feed of rssFeeds) {
+        // RSS-HAKU
+        for (const feed of feeds.filter(f => f.rssUrl)) {
             try {
-                console.log(`[RSS] ${feed.nameChecked}: ${feed.rssUrl}`);
+                console.log(`[RSS] ${feed.nameChecked}`);
                 await processRSS(feed, allArticles, now);
                 await new Promise(r => setTimeout(r, 600));
             } catch (e) {
-                console.error(`RSS-virhe kohteessa ${feed.nameChecked}: ${e.message}`);
-                failedFeeds.push(`RSS: ${feed.nameChecked}: ${e.message}`);
+                console.error(`RSS-virhe: ${feed.nameChecked}: ${e.message}`);
+                failedFeeds.push(`${feed.nameChecked}: ${e.message}`);
             }
         }
 
-        // 2.2. KÄSITTELE SCRAPERIT (Kokeellinen osio - tällä hetkellä pois päältä)
-        
-        const scrapeFeeds = feeds.filter(f => f.scrapeUrl && !f.rssUrl);
-        console.log(`--- Aloitetaan Scraper-haku (${scrapeFeeds.length} kpl) ---`);
+        // 3. SUODATUS JA DUPLIKAATIT
+        const seenUrls = new Set();
+        const maxFuture = now.getTime() + 10 * 60000;
 
-        for (const feed of scrapeFeeds) {
-            try {
-                console.log(`[SCRAPE] ${feed.nameChecked}: ${feed.scrapeUrl}`);
-                await processScraper(feed, allArticles, now);
-                await new Promise(r => setTimeout(r, 1000));
-            } catch (e) {
-                console.error(`Scraper-virhe kohteessa ${feed.nameChecked}: ${e.message}`);
-                failedFeeds.push(`SCRAPE: ${feed.nameChecked}: ${e.message}`);
-            }
-        }
-
-        // 3. DUPLIKAATTIEN POISTO
-        const seenPostUrls = new Set();
         allArticles = allArticles.filter(art => {
-            if (!art || !art.link) return false;
+            if (!art || !art.link || !art.pubDate) return false;
             const cleanUrl = art.link.split('?')[0].split('#')[0].trim().toLowerCase();
-            if (seenPostUrls.has(cleanUrl)) return false;
-            seenPostUrls.add(cleanUrl);
-            return true;
-        });
-
-        // 3.1. SUODATUS: POISTETAAN TULEVAISUUDEN JA PÄIVÄMÄÄRÄTTÖMÄT ARTIKKELIT
-        const maxFutureTime = now.getTime() + 10 * 60000; // 10 minuutin puskuri aikavyöhykkeille
-        allArticles = allArticles.filter(art => {
-            if (!art.pubDate) return false; // Poistetaan jos päivämäärä puuttuu
-            
             const artTime = new Date(art.pubDate).getTime();
-            if (isNaN(artTime)) return false; // Poistetaan jos päivämäärä on viallinen
-            
-            // Poistetaan jos päivämäärä on tulevaisuudessa
-            if (artTime > maxFutureTime) {
-                console.log(`[SUODATUS] Hylätään tulevaisuuden uutinen: ${art.title} (${art.pubDate})`);
-                return false;
-            }
+            if (seenUrls.has(cleanUrl) || isNaN(artTime) || artTime > maxFuture) return false;
+            seenUrls.add(cleanUrl);
             return true;
         });
 
-        // 4. TALLENNUS ARKISTOIHIN JA TILASTOIHIN
-        const sourceStats = {};
+        // 4. TILASTOT JA LÄHDEKOHTAISET TIEDOSTOT
+        const sourceStats = {
+            "__meta": {
+                "last_updated": now.toLocaleString('fi-FI', { timeZone: 'Europe/Helsinki' })
+            }
+        };
         const articlesBySource = {};
 
-        // Etsi tämä kohta (n. rivi 118-132) ja muuta se tällaiseksi:
         allArticles.forEach(art => {
-            const srcName = art.sourceTitle; // Alkuperäinen nimi (esim. "Helsingin Sanomat")
-            const fileKey = srcName.replace(/[^a-z0-9]/gi, '_').toLowerCase(); // Vain tiedostonimeen
+            const srcName = art.sourceTitle;
+            const fileKey = srcName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
             
             if (!articlesBySource[fileKey]) articlesBySource[fileKey] = [];
             articlesBySource[fileKey].push(art);
             
-            if (!sourceStats[srcName]) { // Käytetään avaimena alkuperäistä nimeä
+            if (!sourceStats[srcName]) {
                 sourceStats[srcName] = { 
                     file: `${fileKey}.json`, 
                     count: 0,
@@ -176,17 +155,12 @@ async function run() {
             sourceStats[srcName].count++;
         });
 
-        // Jos kansiota ei ole, luodaan se ennen kirjoittamista
-        if (!fs.existsSync(sourcesDir)) {
-            fs.mkdirSync(sourcesDir, { recursive: true });
-            console.log("Sources-kansiota ei ollut – luotiin uusi.");
-        }
-
+        if (!fs.existsSync(sourcesDir)) fs.mkdirSync(sourcesDir, { recursive: true });
         Object.keys(articlesBySource).forEach(key => {
             fs.writeFileSync(path.join(sourcesDir, `${key}.json`), JSON.stringify(articlesBySource[key], null, 2));
         });
 
-        // 5. ETUSIVUN JÄRJESTELY (ROUND ROBIN + RAJOITUS 5 KPL/LÄHDE)
+        // 5. ETUSIVUN ROUND ROBIN
         const days = {};
         allArticles.forEach(art => {
             const d = art.pubDate.split('T')[0];
@@ -196,40 +170,28 @@ async function run() {
         
         let finalSorted = []; 
         Object.keys(days).sort().reverse().forEach(day => {
-            const dayArticles = days[day];
             const bySource = {};
-            
-            dayArticles.forEach(art => {
-                const src = art.sourceTitle || "Muu";
+            days[day].forEach(art => {
+                const src = art.sourceTitle;
                 if (!bySource[src]) bySource[src] = [];
-                
-                // RAJOITUS: Lisätään päivän alle vain, jos lähteeltä on alle 5 uutista kyseiselle päivälle
-                if (bySource[src].length < 5) {
-                    bySource[src].push(art);
-                }
+                if (bySource[src].length < 5) bySource[src].push(art);
             });
-        
             const daySources = Object.keys(bySource);
-            let hasItems = true;
-            let i = 0;
+            let i = 0, hasItems = true;
             while (hasItems) {
                 hasItems = false;
                 daySources.forEach(src => {
-                    if (bySource[src][i]) {
-                        finalSorted.push(bySource[src][i]);
-                        hasItems = true;
-                    }
+                    if (bySource[src][i]) { finalSorted.push(bySource[src][i]); hasItems = true; }
                 });
                 i++;
             }
         });
 
-        // 6. TALLENNUS - Nostettu 1000 artikkeliin
+        // 6. TALLENNUS
         fs.writeFileSync('data.json', JSON.stringify(finalSorted.slice(0, 1000), null, 2));
         fs.writeFileSync('stats.json', JSON.stringify(sourceStats, null, 2));
 
-        if (failedFeeds.length > 0) fs.writeFileSync('failed_feeds.txt', failedFeeds.join('\n'));
-        console.log(`Success! data.json päivitetty.`);
+        console.log(`Valmis! Päivitetty ${allArticles.length} uutista.`);
     } catch (error) {
         console.error("Kriittinen virhe:", error);
         process.exit(1);
