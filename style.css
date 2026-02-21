@@ -55,40 +55,6 @@ header.main-header {
     gap: 10px;
 }
 
-/* RSS-ikonin tyylit */
-.rss-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 10px;
-    color: var(--primary-color);
-    opacity: 0.6;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    vertical-align: middle;
-}
-
-.rss-link:hover {
-    opacity: 1;
-    transform: scale(1.1);
-}
-
-.rss-link svg {
-    width: 24px;  /* Varmistetaan koko */
-    height: 24px;
-    display: block;
-    fill: currentColor; /* Käyttää .rss-link värimäärittelyä */
-}
-
-/* Jos otsikko on linkki (lähdenäkymä) */
-.title-link {
-    cursor: pointer;
-    transition: color 0.2s;
-}
-
-.title-link:hover {
-    color: var(--primary-color);
-}
-
 /* Mustapohjainen valikko (Dark Select) */
 .dark-select {
     background-color: var(--text-dark);
