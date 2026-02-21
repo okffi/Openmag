@@ -214,7 +214,7 @@
             padding: 15px;
             background: #f8f9fa;
             border-bottom: 1px solid #ddd;
-            flex-wrap: wrap; 
+            flex-wrap: wrap; /* Wraps nicely on mobile */
         }
         
         .news-select {
@@ -293,10 +293,10 @@
         .title-link:hover { color: var(--primary-color); }
 
         .rss-link {
-            display: inline-flex; 
+            display: inline-flex; /* Tämä on kriittinen */
             align-items: center;
             justify-content: center;
-            vertical-align: middle; 
+            vertical-align: middle; /* Auttaa tekstin seassa */
             color: var(--primary-color);
             opacity: 0.4;
             transition: opacity 0.2s;
@@ -305,7 +305,7 @@
         .rss-link svg {
             width: 20px;
             height: 20px;
-            display: block; 
+            display: block; /* Poistaa SVG:n oletusarvoisen pienen tyhjän tilan alla */
         }
         .rss-link:hover { opacity: 1; }
 
@@ -380,7 +380,7 @@
     <button id="sidebar-toggle" onclick="toggleSidebar()">☰</button>
 
     <aside id="source-sidebar" class="sidebar">
-        <h3 id="sidebar-main-title">Julkaisijat</h3>
+        <h3>Julkaisijat</h3>
         <div class="sidebar-view-toggle">
             <button id="btn-categories" class="active" onclick="showSidebarView('categories')">Kategoriat</button>
             <button id="btn-az" onclick="showSidebarView('az')">A–Ö</button>
@@ -435,7 +435,7 @@ const PAGE_SIZE = 50;
 let msnry;
 let isLoading = false;
 let currentCategory = 'All';
-let statsData = null; 
+let statsData = null; // Globaali välimuisti
 let mainFeedCache = null;
 
 // Globaali muuttuja käännöksille
@@ -453,15 +453,15 @@ function t(key) {
 
 // Kohdan 1 funktio: muuttaa "Culture" -> "cat.culture" ja kääntää sen
 function getTranslation(group, value) {
-    if (!value || value === 'All') return t(`${group}.general`); 
+    if (!value) return t(`${group}.general`); // Fallback esim. cat.general
     
     // Luodaan tekninen avain (slug) samalla logiikalla kuin Sheetsissä
     const slug = value.toString()
-        .replace(/[\(\)\+]/g, '') 
+        .replace(/[\(\)\+]/g, '') // Poistetaan ( ) +
         .trim()
-        .replace(/\s+/g, '_')     
-        .replace(/[^a-zA-Z0-9_]/g, '') 
-        .replace(/_+/g, '_')      
+        .replace(/\s+/g, '_')     // Välilyönnit -> alaviiva
+        .replace(/[^a-zA-Z0-9_]/g, '') // Vain kirjaimet, numerot ja alaviiva
+        .replace(/_+/g, '_')      // Ei tuplaviivoja
         .toLowerCase();
     
     const key = `${group}.${slug}`;
@@ -486,35 +486,14 @@ function getTranslation(group, value) {
     
         displayArticles();
         
-        // Päivitetään suodattimien ja UI-tekstien käännökset kielen mukaan
-        updateUITranslations();
-
         const activeView = document.getElementById('btn-az').classList.contains('active') ? 'az' : 'categories';
         showSidebarView(activeView);
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     
-    // Apufunktio käyttöliittymän tekstien päivittämiseen kielen mukaan
-    function updateUITranslations() {
-        document.getElementById('sidebar-main-title').textContent = t('ui.publishers');
-        document.getElementById('btn-categories').textContent = t('ui.categories');
-        document.getElementById('btn-az').textContent = t('ui.az');
-        
-        // Select-valikot
-        document.querySelector('#langFilter option[value="all"]').textContent = t('ui.languages_all');
-        
-        // Huom: reg-etuliite vaatii getTranslation-logiikan
-        const scopeOptions = document.querySelectorAll('#scopeFilter option');
-        scopeOptions.forEach(opt => {
-            if (opt.value === 'all') opt.textContent = t('reg.all_regions') || "Regions (All)";
-            else opt.textContent = getTranslation('reg', opt.value);
-        });
-    }
-
     // Add event listeners
     document.getElementById('langFilter').addEventListener('change', updateView);
     document.getElementById('scopeFilter').addEventListener('change', updateView);
-
     async function init() {
     const container = document.querySelector('#magazine-grid');
     msnry = new Masonry(container, { 
@@ -525,19 +504,11 @@ function getTranslation(group, value) {
         transitionDuration: '0.4s'
     });
 
+    // Make msnry available on window so inline image onload handlers can call it reliably
     window.msnry = msnry;
 
-    // Ladataan ensin käännökset
-    try {
-        const res = await fetch('translations.json?v=' + Date.now());
-        translations = await res.json();
-    } catch(e) {
-        console.warn("Käännöstiedostoa ei löytynyt, käytetään oletuksia.");
-    }
-
     await loadData('data.json', true);
-    initSidebar(); 
-    updateUITranslations();
+    initSidebar(); // Tämä lataa myös statsData:n
 
     const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && !isLoading) displayArticles();
@@ -551,7 +522,7 @@ async function loadData(filePath, isInitial = false, forceRefresh = false) {
     const container = document.querySelector('#magazine-grid');
     const sentinel = document.querySelector('#scroll-sentinel');
     
-    sentinel.innerText = t('msg.loading_news');
+     sentinel.innerText = "Ladataan uutisia...";
     container.classList.remove('loaded');
     
     const existingItems = container.querySelectorAll('.grid-item');
@@ -561,35 +532,44 @@ async function loadData(filePath, isInitial = false, forceRefresh = false) {
     }
 
     try {
+        // 1. PÄÄTETÄÄN HAETAANKO VERKOSTA VAI VÄLIMUISTISTA
+        // Jos forceRefresh on true, haemme AINA uuden datan verkon yli
         if (filePath === 'data.json' && mainFeedCache && !isInitial && !forceRefresh) {
             allArticles = mainFeedCache;
-            console.log(t('msg.using_cached_feed'));
+            console.log("Käytetään muistissa olevaa syötettä.");
         } else {
+            // Lisätään aikaleima JA no-cache -otsikot, jotta GitHub Pages / selain ei huijaa
             const response = await fetch(filePath + '?v=' + Date.now(), { 
-                cache: 'no-cache', 
+                cache: 'no-cache', // no-cache tarkistaa onko tiedosto muuttunut
                 headers: { 'Cache-Control': 'no-cache' }
             });
 
-            if (!response.ok) throw new Error(t('msg.the_server_responded_with_an_error'));
+            if (!response.ok) throw new Error("Palvelin vastasi virheellä.");
             
             allArticles = await response.json();
             
+            // Päivitetään muistiin vain jos ollaan päänäkymässä
             if (filePath === 'data.json') {
                 mainFeedCache = allArticles;
             }
+            console.log(`Haettu tuore data: ${filePath}`);
         }
 
         sentinel.innerText = "";
         displayArticles();
         
+        // Päivitetään aikaleima UI:hin
+        if (typeof updateViewMetadata === 'function') updateViewMetadata();
+
     } catch (e) { 
         console.error("Latausvirhe:", e); 
-        sentinel.innerText = t('msg.error_loading_news');
+        sentinel.innerText = "Virhe ladattaessa uutisia.";
     } finally {
         isLoading = false; 
     }
 }
 
+/* --- Add this helper function near the other functions in the <script> --- */
 function createArticleCard(item) {
   const img = item.enforcedImage;
   const card = document.createElement('div');
@@ -603,6 +583,7 @@ function createArticleCard(item) {
   if (img) {
     const image = document.createElement('img');
     image.src = `https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af`;
+    // use the global msnry reference; we make sure to set window.msnry in init()
     image.onload = () => { if (window.msnry && typeof window.msnry.layout === 'function') window.msnry.layout(); };
     link.appendChild(image);
   }
@@ -612,18 +593,14 @@ function createArticleCard(item) {
 
   const category = document.createElement('span');
   category.className = 'category-label';
-  // KÄÄNNÖS: Teksti käännetään, mutta logiikkaan lähetetään item.sheetCategory
-  category.textContent = getTranslation('cat', item.sheetCategory);
-    
-  category.onclick = (e) => {
-    const rawCategory = item.sheetCategory || 'All'; 
-    handleCategoryClick(e, rawCategory);
-  };
+  category.textContent = item.sheetCategory || 'Yleinen';
+  category.onclick = (e) => handleCategoryClick(e, item.sheetCategory || 'Yleinen');
 
   const h2 = document.createElement('h2');
   h2.textContent = item.title || '';
 
   const p = document.createElement('p');
+  // strip HTML, limit length, and use textContent (safe)
   const clean = (item.content || "").replace(/<[^>]*>/g, '').substring(0, 150);
   p.textContent = clean + (clean.length ? '...' : '');
 
@@ -632,11 +609,11 @@ function createArticleCard(item) {
 
   const src = document.createElement('span');
   src.className = 'source-trigger';
-  src.textContent = `${item.sourceTitle || t('ui.general')}${item.creator ? ' | ' + item.creator : ''}`;
+  src.textContent = `${item.sourceTitle || 'Lähde'}${item.creator ? ' | ' + item.creator : ''}`;
   src.onclick = (e) => { e.stopPropagation(); handleSourceClick(e, item.sourceTitle); };
 
   const dateSpan = document.createElement('span');
-  dateSpan.textContent = item.pubDate ? new Date(item.pubDate).toLocaleDateString(document.getElementById('langFilter').value === 'fi' ? 'fi-FI' : 'en-GB') : '';
+  dateSpan.textContent = item.pubDate ? new Date(item.pubDate).toLocaleDateString('fi-FI') : '';
 
   meta.appendChild(src);
   meta.appendChild(dateSpan);
@@ -652,22 +629,21 @@ function createArticleCard(item) {
   return card;
 }
 
+/* Safe helper to set the title + RSS link without using innerHTML */
 function setViewTitleAndRss(viewTitleEl, title, rssLink, isMainFeed, siteUrl) {
     if (!viewTitleEl) return;
+    // remove previous children
     while (viewTitleEl.firstChild) viewTitleEl.removeChild(viewTitleEl.firstChild);
 
-    // KÄÄNNÖS: Jos päänäkymä, käännetään teksti
-    const displayTitle = isMainFeed ? t('ui.latest_news') : title;
-
     if (isMainFeed) {
-        viewTitleEl.appendChild(document.createTextNode(displayTitle));
+        viewTitleEl.appendChild(document.createTextNode(title));
     } else {
         const a = document.createElement('a');
         a.href = siteUrl || '#';
         a.target = '_blank';
         a.rel = 'noopener';
         a.className = 'title-link';
-        a.textContent = displayTitle;
+        a.textContent = title;
         viewTitleEl.appendChild(a);
     }
 
@@ -676,7 +652,8 @@ function setViewTitleAndRss(viewTitleEl, title, rssLink, isMainFeed, siteUrl) {
     rssA.target = '_blank';
     rssA.rel = 'noopener';
     rssA.className = 'rss-link';
-    rssA.title = 'RSS';
+    rssA.title = 'RSS-lähde';
+    // trusted static SVG for the icon
     rssA.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.18,15.64A2.18,2.18,0,0,1,8.36,17.82c0,1.21-.98,2.18-2.18,2.18A2.18,2.18,0,0,1,4,17.82,2.18,2.18,0,0,1,6.18,15.64M4,4.44A15.56,15.56,0,0,1,19.56,20h-2.83A12.73,12.73,0,0,0,4,7.27Zm0,5.66a9.9,9.9,0,0,1,9.9,9.9H11.07A7.07,7.07,0,0,0,4,12.93Z"/></svg>';
     viewTitleEl.appendChild(rssA);
 }
@@ -685,6 +662,7 @@ function displayArticles() {
     const selectedLang = document.getElementById('langFilter').value;
     const selectedScope = document.getElementById('scopeFilter').value;
 
+    // Suodatetaan globaali data ennen slice-operaatiota
     const filtered = allArticles.filter(art => {
         const langMatch = (selectedLang === 'all') || (art.lang === selectedLang);
         const scopeMatch = (selectedScope === 'all') || (art.scope === selectedScope);
@@ -701,22 +679,22 @@ function displayArticles() {
         
         sentinel.innerHTML = isFiltered 
             ? `<div style="padding: 20px;">
-                <p>${t('msg.no_news_found_with_the_selected_filters')}</p>
-                <button onclick="resetFilters()" style="background:var(--text-dark); color:white; border:none; padding:8px 15px; cursor:pointer; font-size:0.7rem; font-weight:700; text-transform:uppercase;">${t('ui.reset_filters')}</button>
+                <p>Valituilla suodattimilla ei löytynyt uutisia.</p>
+                <button onclick="resetFilters()" style="background:var(--text-dark); color:white; border:none; padding:8px 15px; cursor:pointer; font-size:0.7rem; font-weight:700; text-transform:uppercase;">Nollaa suodattimet</button>
                </div>`
-            : t('msg._nothing_new_here_right_now_');
+            : "— Täällä ei ole juuri nyt uutta —";
             
         isLoading = false;
         return;
     }
 
     if (slice.length === 0) {
-        sentinel.innerText = t('msg._you_are_up_to_date_');
+        sentinel.innerText = "— Olet ajan tasalla —";
         isLoading = false;
         return;
     }
 
-    sentinel.innerText = t('msg.loading_more');
+    sentinel.innerText = "Ladataan lisää...";
     const container = document.querySelector('#magazine-grid');
     const newElements = [];
 
@@ -726,6 +704,7 @@ function displayArticles() {
         newElements.push(card);
     });
 
+    // increment by actual number of appended items (fix for overshoot)
     displayedCount += slice.length;
 
     imagesLoaded(container, () => {
@@ -741,12 +720,14 @@ function displayArticles() {
 }
 
 
+// SIVUPALKKI-LOGIIKKA
 async function initSidebar() {
     const list = document.getElementById('source-list');
     if (!list) return;
 
     if (!statsData) {
         try {
+            // Lisätään cache: 'no-store' varmuuden vuoksi fetch-asetuksiin
             const response = await fetch('stats.json?v=' + Date.now(), { cache: 'no-store' });
             statsData = await response.json();
         } catch (e) { 
@@ -754,8 +735,8 @@ async function initSidebar() {
             return;
         }
     }
-    const activeView = document.getElementById('btn-az').classList.contains('active') ? 'az' : 'categories';
-    showSidebarView(activeView);
+    // Käytetään globaalia statsDataa (jonka fetch juuri täytti tai joka oli jo olemassa)
+    renderCategoryView(list);
 }
 
 function renderCategoryView(list) {
@@ -766,7 +747,7 @@ function renderCategoryView(list) {
 
     const mainItem = document.createElement('div');
     mainItem.className = 'source-item active';
-    mainItem.textContent = t('ui.latest_news');
+    mainItem.textContent = 'Tuoreimmat uutiset';
     mainItem.onclick = (e) => changeSource('data.json', 'Tuoreimmat uutiset', e.currentTarget);
     list.appendChild(mainItem);
 
@@ -775,24 +756,28 @@ function renderCategoryView(list) {
         if (name === "__meta") return;
         
         const info = statsData[name];
+
+        // --- UUSI SUODATUSLOGIIKKA ALKAA ---
+        // Katsotaan suoraan stats.jsoniin tallennettuja tietoja
         const langMatch = (selectedLang === 'all') || (info.lang === selectedLang);
         const scopeMatch = (selectedScope === 'all') || (info.scope === selectedScope);
 
-        if (!langMatch || !scopeMatch) return; 
+        if (!langMatch || !scopeMatch) return; // Hypätään yli, jos ei täsmää
+        // --- UUSI SUODATUSLOGIIKKA PÄÄTTYY ---
 
-        const cat = info.category || "General";
+        const cat = info.category || "Yleinen";
         if (!cats[cat]) cats[cat] = [];
         cats[cat].push({ name, ...info });
     });
 
+    // Loppuosa on identtinen nykyisen koodisi kanssa
     Object.keys(cats).sort().forEach(catName => {
         const group = document.createElement('div');
         group.className = 'category-group';
         
         const header = document.createElement('div');
         header.className = 'category-header';
-        // KÄÄNNÖS
-        header.textContent = getTranslation('cat', catName);
+        header.textContent = catName;
 
         const submenu = document.createElement('div');
         submenu.className = 'source-submenu';
@@ -832,12 +817,14 @@ function renderAZView(list) {
     const selectedLang = document.getElementById('langFilter').value;
     const selectedScope = document.getElementById('scopeFilter').value;
 
+    // "Tuoreimmat uutiset" -nappi
     const mainItem = document.createElement('div');
     mainItem.className = 'source-item';
-    mainItem.textContent = t('ui.latest_news');
+    mainItem.textContent = 'Tuoreimmat uutiset';
     mainItem.onclick = (e) => changeSource('data.json', 'Tuoreimmat uutiset', e.currentTarget);
     list.appendChild(mainItem);
 
+    // Suodatetaan ja lajitellaan lähteet suoraan statsDatan ominaisuuksien mukaan
     const sortedSources = Object.keys(statsData)
         .filter(key => {
             if (key === "__meta") return false;
@@ -850,6 +837,7 @@ function renderAZView(list) {
         })
         .sort((a, b) => a.localeCompare(b, 'fi'));
 
+    // Luodaan lähderivit
     sortedSources.forEach(sourceName => {
         const info = statsData[sourceName];
         const item = document.createElement('div');
@@ -889,14 +877,13 @@ async function changeSource(file, title, el) {
     const viewDesc = document.getElementById('current-view-description');
     const logoCont = document.getElementById('feed-logo-container');
 
-    const isMainFeed = (file === 'data.json');
-    const displayTitle = isMainFeed ? t('ui.latest_news') : title;
+    // 1. Käyttäjäpalaute heti alussa
+    if (viewTitle) viewTitle.textContent = title;
+    if (viewDesc) viewDesc.innerText = "Ladataan...";
 
-    if (viewTitle) viewTitle.textContent = displayTitle;
-    if (viewDesc) viewDesc.innerText = t('msg.loading_news');
-
+    // 2. Logon ja taustan nollaus
     if (logoCont) {
-        logoCont.style.display = isMainFeed ? 'none' : 'flex';
+        logoCont.style.display = (file === 'data.json') ? 'none' : 'flex';
         logoCont.innerHTML = ""; 
         logoCont.classList.remove('dark-bg');
     }
@@ -904,24 +891,32 @@ async function changeSource(file, title, el) {
     currentCategory = 'All';
     displayedCount = 0;
 
+    // 3. Aktiivisen linkin korostus (Yhdenmukaistettu)
     document.querySelectorAll('.source-item').forEach(i => i.classList.remove('active'));
     
     if (el) {
         el.classList.add('active');
-    } else if (isMainFeed) {
+    } else {
+        // Jos 'el' puuttuu (esim. sivun ensilataus), etsitään "Tuoreimmat uutiset" tekstin perusteella
         document.querySelectorAll('.source-item').forEach(i => {
-            if (i.textContent.includes(t('ui.latest_news'))) i.classList.add('active');
+            if (i.textContent.trim() === 'Tuoreimmat uutiset') i.classList.add('active');
         });
     }
 
+    // 4. Datan lataus
     await loadData(file);
 
+    // 5. Käyttöliittymän päivitys datan perusteella
     if (allArticles.length > 0) {
         const first = allArticles[0];
+        const isMainFeed = (file === 'data.json');
         const rssLink = first.originalRssUrl || (isMainFeed ? 'data.json' : file);
 
+        // Logo-logiikka (vain jos ei päänäkymä)
         if (!isMainFeed && logoCont) {
+            // Nyt isDarkLogo toimii, kunhan se on JSON-datassa mukana
             if (first.isDarkLogo) logoCont.classList.add('dark-bg');
+
             if (first.sourceLogo) {
                 const img = document.createElement('img');
                 img.src = first.sourceLogo;
@@ -935,39 +930,41 @@ async function changeSource(file, title, el) {
             try { siteUrl = new URL(first.link).origin; } catch(e) {}
         }
 
+        // Käytetään olemassa olevaa apufunktiota otsikolle ja linkeille
         setViewTitleAndRss(viewTitle, title, rssLink, isMainFeed, siteUrl);
 
         if (viewDesc) {
             if (isMainFeed) {
+                // Poimitaan päivitysaika statsDatasta
                 const lastUpdate = (window.statsData && statsData.__meta) 
                     ? statsData.__meta.last_updated 
                     : "";
                 
-                viewDesc.innerText = `${t('ui.a_collection_of_the_latest_news_from_followed_sources')} ${lastUpdate ? t('ui.updated_') + lastUpdate + ')' : ''}`;
+                viewDesc.innerText = `Kokoelma seurattujen lähteiden tuoreimpia uutisia. ${lastUpdate ? '(Päivitetty: ' + lastUpdate + ')' : ''}`;
             } else {
+                // Näytetään lähteen oma kuvaus (esim. RSS-syötteestä poimittu)
                 viewDesc.innerText = first.sourceDescription || "";
             }
         }
     }
 
+    // 6. Sivupalkin sulkeminen mobiilissa
     if (window.innerWidth < 1000) {
         const sidebar = document.getElementById('source-sidebar');
         if (sidebar) sidebar.classList.remove('open');
     }
     
+    // 7. Pehmeä skrollaus ylös
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 function filterByCategory(catName) {
     currentCategory = catName;
-    const viewTitle = document.getElementById('current-view-title');
+    document.getElementById('current-view-title').innerText = catName;
     const viewDesc = document.getElementById('current-view-description');
     const logoCont = document.getElementById('feed-logo-container');
     
-    // KÄÄNNÖS: Näytetään käännetty nimi, mutta logiikka käyttää catNamea
-    if (viewTitle) viewTitle.innerText = getTranslation('cat', catName);
-    
-    if (viewDesc) viewDesc.innerText = `${t('ui.latest_news_from_the_category')} ${getTranslation('cat', catName)}`;
+    if (viewDesc) viewDesc.innerText = `Uusimmat uutiset kategoriasta: ${catName}`;
     if (logoCont) {
         logoCont.innerHTML = ""; 
         logoCont.style.display = 'none';
@@ -1004,7 +1001,8 @@ function toggleSidebar() {
 }
     
 window.addEventListener('DOMContentLoaded', () => {
-    // init hoitaa latauksen
+    // Kutsutaan suoraan changeSource-funktiota oletusasetuksilla
+    changeSource('data.json', 'Tuoreimmat uutiset');
 });
 
 init();
