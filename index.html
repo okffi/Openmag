@@ -497,8 +497,8 @@ let isLoading = false;
 let currentCategory = 'All';
 let statsData = null; 
 let mainFeedCache = null;
-let currentLang = 'all';
-let currentScope = 'all';
+
+// Globaali muuttuja käännöksille
 let translations = {}; 
 
 // Perusfunktio: hakee tekstin avaimen perusteella
@@ -742,9 +742,8 @@ function setViewTitleAndRss(viewTitleEl, title, rssLink, isMainFeed, siteUrl) {
 }
     
 function displayArticles() {
-    // Etsi displayArticles-funktiosta nämä rivit ja muuta ne:
-    const selectedLang = currentLang;
-    const selectedScope = currentScope;
+    const selectedLang = document.getElementById('langFilter').value;
+    const selectedScope = document.getElementById('scopeFilter').value;
 
     const filtered = allArticles.filter(art => {
         const langMatch = (selectedLang === 'all') || (art.lang === selectedLang);
