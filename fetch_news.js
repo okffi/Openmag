@@ -295,6 +295,12 @@ async function processRSS(feed, allArticles, now) {
 
     const items = feedContent.items.map(item => {
         let itemDate = new Date(item.pubDate || item.isoDate);
+        if (isNaN(itemDate.getTime()) || itemDate > now) itemDate = now;
+
+        if (itemDate.getHours() === 0 && itemDate.getMinutes() === 0) {
+            const randomMinutes = Math.floor(Math.random() * 720);
+            itemDate.setMinutes(itemDate.getMinutes() - randomMinutes);
+        }
         
         // --- KUVAN POIMINTA ALKAA ---
         // Alustetaan muuttuja img tyhjäksi. Jos kuvaa ei löydy mistään alta, se jää nulliksi.
