@@ -208,14 +208,80 @@
             text-transform: uppercase;
         }
 
-        .header-controls {
+        header.main-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 10px 30px;
+            border-bottom: 1px solid var(--border-color);
             display: flex;
-            gap: 10px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-bottom: 1px solid #ddd;
-            flex-wrap: wrap; 
+            justify-content: space-between;
+            align-items: center;
         }
+
+        header.main-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 10px 30px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-left h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .pill-group {
+            display: flex;
+            gap: 5px;
+            background: #f1f1f1;
+            padding: 4px;
+            border-radius: 25px;
+        }
+        
+        .pill {
+            border: none;
+            background: none;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            color: var(--text-muted);
+            transition: all 0.2s ease;
+        }
+        
+        .pill.active {
+            background: var(--text-dark);
+            color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .pill-divider {
+            width: 1px;
+            height: 24px;
+            background: var(--border-color);
+        }
+        
+        /* Poistetaan vanha header-controls tyyli jos se jäi */
+        .header-controls { display: none; }
         
         .news-select {
             padding: 8px 12px;
@@ -389,36 +455,30 @@
     </aside>
 
     <main>
-        <header>
-            <h1>OpenMag</h1>
+        <header class="main-header">
+            <div class="header-left">
+                <h1>OpenMag</h1>
+            </div>
+            <div class="header-right">
+                <div class="pill-group" id="lang-pills">
+                    <button class="pill active" data-value="all" onclick="setPillFilter('lang', 'all')">All</button>
+                    <button class="pill" data-value="fi" onclick="setPillFilter('lang', 'fi')">FI</button>
+                    <button class="pill" data-value="en" onclick="setPillFilter('lang', 'en')">EN</button>
+                    <button class="pill" data-value="sv" onclick="setPillFilter('lang', 'sv')">SV</button>
+                </div>
+                <div class="pill-divider"></div>
+                <div class="pill-group" id="scope-pills">
+                    <button class="pill active" data-value="all" onclick="setPillFilter('scope', 'all')">Global</button>
+                    <button class="pill" data-value="Finland" onclick="setPillFilter('scope', 'Finland')">Finland</button>
+                    <button class="pill" data-value="Europe" onclick="setPillFilter('scope', 'Europe')">Europe</button>
+                </div>
+            </div>
         </header>
         <div id="feed-header-area">
             <div id="feed-logo-container"></div>
             <div id="feed-info-container">
                 <div id="current-view-title" class="view-title">Tuoreimmat uutiset</div>
                 <div id="current-view-description"></div>
-            </div>
-        </div>
-        <div class="header-controls">
-            <div class="filter-group">
-                <select id="langFilter" class="news-select">
-                    <option value="all">Languages (All)</option>
-                    <option value="fi">Suomi</option>
-                    <option value="en">English</option>
-                    <option value="sv">Svenska</option>
-                    <option value="de">Deutsch</option>
-                    <option value="fr">Français</option>
-                </select>
-            </div>
-        
-            <div class="filter-group">
-                <select id="scopeFilter" class="news-select">
-                    <option value="all">Regions (All)</option>
-                    <option value="Finland">Finland</option>
-                    <option value="Nordic + Baltic countries">Nordic + Baltic</option>
-                    <option value="Europe">Europe</option>
-                    <option value="World">World</option>
-                </select>
             </div>
         </div>
         <div class="grid" id="magazine-grid">
