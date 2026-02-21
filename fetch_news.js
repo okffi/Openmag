@@ -135,6 +135,22 @@ async function run() {
             return true;
         });
 
+        // 3.1. SUODATUS: POISTETAAN TULEVAISUUDEN JA PÄIVÄMÄÄRÄTTÖMÄT ARTIKKELIT
+        const maxFutureTime = now.getTime() + 10 * 60000; // 10 minuutin puskuri aikavyöhykkeille
+        allArticles = allArticles.filter(art => {
+            if (!art.pubDate) return false; // Poistetaan jos päivämäärä puuttuu
+            
+            const artTime = new Date(art.pubDate).getTime();
+            if (isNaN(artTime)) return false; // Poistetaan jos päivämäärä on viallinen
+            
+            // Poistetaan jos päivämäärä on tulevaisuudessa
+            if (artTime > maxFutureTime) {
+                console.log(`[SUODATUS] Hylätään tulevaisuuden uutinen: ${art.title} (${art.pubDate})`);
+                return false;
+            }
+            return true;
+        });
+
         // 4. TALLENNUS ARKISTOIHIN JA TILASTOIHIN
         const sourceStats = {};
         const articlesBySource = {};
