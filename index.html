@@ -73,28 +73,28 @@
 
         .sidebar-view-toggle {
             display: flex;
-            padding: 0 20px 15px;
-            gap: 10px;
+            padding: 10px 20px;
+            background: #eee;
+            margin: 0 20px 15px;
+            border-radius: 25px;
+            gap: 0;
         }
         
         .sidebar-view-toggle button {
             flex: 1;
+            border: none;
             background: none;
-            border: 1px solid var(--border-color);
-            padding: 8px 5px;
+            padding: 8px;
+            border-radius: 20px;
             font-size: 0.65rem;
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             cursor: pointer;
-            color: var(--text-muted);
             transition: all 0.2s;
         }
         
         .sidebar-view-toggle button.active {
             background: var(--text-dark);
             color: white;
-            border-color: var(--text-dark);
         }
         
         /* SIVUPALKKI - HAITARI JA KOHTEET */
@@ -208,43 +208,61 @@
             text-transform: uppercase;
         }
 
-        header.main-header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 10px 30px;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+header.main-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 12px 25px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        header.main-header {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 10px 30px;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+.header-right {
+    display: flex;
+    gap: 10px;
+}
+
+/* Mustapohjainen valikkotyyli */
+.dark-select {
+    background-color: var(--text-dark);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    outline: none;
+    appearance: none; /* Poistaa selaimen nuolen */
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='white' d='M0 2l4 4 4-4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 30px;
+    transition: background-color 0.2s;
+}
+
+.dark-select:hover {
+    background-color: #333;
+}
+
+/* Mobiiliskaalaus: otsikko piiloon tai pienennetään jos tila loppuu */
+@media (max-width: 600px) {
+    .header-left h1 { font-size: 1rem; }
+    .dark-select { padding: 6px 12px; padding-right: 25px; font-size: 0.65rem; }
+}
         
         .header-left h1 {
             font-family: 'Playfair Display', serif;
             font-size: 1.4rem;
             margin: 0;
             letter-spacing: 2px;
-        }
-        
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
         }
         
         .pill-group {
@@ -460,18 +478,21 @@
                 <h1>OpenMag</h1>
             </div>
             <div class="header-right">
-                <div class="pill-group" id="lang-pills">
-                    <button class="pill active" data-value="all" onclick="setPillFilter('lang', 'all')">All</button>
-                    <button class="pill" data-value="fi" onclick="setPillFilter('lang', 'fi')">FI</button>
-                    <button class="pill" data-value="en" onclick="setPillFilter('lang', 'en')">EN</button>
-                    <button class="pill" data-value="sv" onclick="setPillFilter('lang', 'sv')">SV</button>
-                </div>
-                <div class="pill-divider"></div>
-                <div class="pill-group" id="scope-pills">
-                    <button class="pill active" data-value="all" onclick="setPillFilter('scope', 'all')">Global</button>
-                    <button class="pill" data-value="Finland" onclick="setPillFilter('scope', 'Finland')">Finland</button>
-                    <button class="pill" data-value="Europe" onclick="setPillFilter('scope', 'Europe')">Europe</button>
-                </div>
+                <select id="langFilter" class="dark-select">
+                    <option value="all">Languages (All)</option>
+                    <option value="fi">Suomi</option>
+                    <option value="en">English</option>
+                    <option value="sv">Svenska</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                </select>
+                <select id="scopeFilter" class="dark-select">
+                    <option value="all">Regions (All)</option>
+                    <option value="Finland">Finland</option>
+                    <option value="Nordic + Baltic countries">Nordic + Baltic</option>
+                    <option value="Europe">Europe</option>
+                    <option value="World">World</option>
+                </select>
             </div>
         </header>
         <div id="feed-header-area">
