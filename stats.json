@@ -33,7 +33,7 @@
   },
   "DataEthics": {
     "file": "dataethics.json",
-    "count": 5,
+    "count": 1,
     "category": "Digital policy + rights",
     "description": "Alt om data-etik",
     "lang": "en",
@@ -97,7 +97,7 @@
   },
   "EUvsDisinfo": {
     "file": "euvsdisinfo.json",
-    "count": 10,
+    "count": 7,
     "category": "Journalism + investigation",
     "description": "DON'T BE DECEIVED, QUESTION EVEN MORE",
     "lang": "en",
@@ -108,6 +108,14 @@
     "count": 11,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
+    "lang": "en",
+    "scope": "World"
+  },
+  "resilience": {
+    "file": "resilience.json",
+    "count": 12,
+    "category": "Perspectives",
+    "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
     "scope": "World"
   },
@@ -185,7 +193,7 @@
   },
   "Culture Action Europe News": {
     "file": "culture_action_europe_news.json",
-    "count": 10,
+    "count": 2,
     "category": "Cultural policy",
     "description": "We take care of the cultural ecosystem.",
     "lang": "en",
@@ -383,14 +391,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "resilience": {
-    "file": "resilience.json",
-    "count": 12,
-    "category": "Perspectives",
-    "description": "Insight and inspiration in turbulent times.",
-    "lang": "en",
-    "scope": "World"
-  },
   "European Commission": {
     "file": "european_commission.json",
     "count": 30,
@@ -465,7 +465,7 @@
   },
   "CHAOSS": {
     "file": "chaoss.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Data + Technology",
     "description": "Community Health Analytics in Open Source Software",
     "lang": "en",
@@ -649,7 +649,7 @@
   },
   "CIVICUS Op-Eds": {
     "file": "civicus_op_eds.json",
-    "count": 50,
+    "count": 2,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -889,7 +889,7 @@
   },
   "Avoin tiede": {
     "file": "avoin_tiede.json",
-    "count": 2,
+    "count": 7,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -905,7 +905,7 @@
   },
   "CODATA": {
     "file": "codata.json",
-    "count": 10,
+    "count": 2,
     "category": "(Open) Science + Research",
     "description": "Committee on Data of the ISC",
     "lang": "en",
@@ -921,7 +921,7 @@
   },
   "Sveriges Museer": {
     "file": "sveriges_museer.json",
-    "count": 10,
+    "count": 3,
     "category": "Culture",
     "description": "Vi tar tillvara och driver den svenska museisektorns gemensamma intressen.",
     "lang": "sv",
@@ -1001,7 +1001,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 4,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -1241,7 +1241,7 @@
   },
   "JOKES": {
     "file": "jokes.json",
-    "count": 10,
+    "count": 1,
     "category": "Journalism + investigation",
     "description": "Journalistisen kulttuurin edistämissäätiö",
     "lang": "fi",
@@ -1289,7 +1289,7 @@
   },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital skills + Citizen science",
     "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
@@ -1297,7 +1297,7 @@
   },
   "Global Solutions Initiative": {
     "file": "global_solutions_initiative.json",
-    "count": 10,
+    "count": 1,
     "category": "Global policy",
     "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
     "lang": "en",
@@ -1321,7 +1321,7 @@
   },
   "Tulevaisuuden tutkimuksen seura ry": {
     "file": "tulevaisuuden_tutkimuksen_seura_ry.json",
-    "count": 10,
+    "count": 1,
     "category": "Sustainability + Foresight",
     "description": "Paremman tulevaisuuden puolesta",
     "lang": "fi",
@@ -1361,16 +1361,8 @@
   },
   "CIVICUS News": {
     "file": "civicus_news.json",
-    "count": 50,
+    "count": 1,
     "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Berkman Klein Center for Internet & Society at Harvard University": {
-    "file": "berkman_klein_center_for_internet___society_at_harvard_university.json",
-    "count": 10,
-    "category": "Perspectives",
     "description": "",
     "lang": "en",
     "scope": "World"
@@ -1423,6 +1415,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Open Science | Federation of Finnish Learned Societies": {
+    "file": "open_science___federation_of_finnish_learned_societies.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "en",
+    "scope": "Finland"
+  },
   "Open Access and Digital Scholarship Blog": {
     "file": "open_access_and_digital_scholarship_blog.json",
     "count": 15,
@@ -1431,9 +1431,9 @@
     "lang": "en",
     "scope": "World"
   },
-  "Datafied Life Collaboratory": {
-    "file": "datafied_life_collaboratory.json",
-    "count": 10,
+  "Tiedepolitiikka": {
+    "file": "tiedepolitiikka.json",
+    "count": 30,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -1452,6 +1452,14 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "TSV": {
+    "file": "tsv.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1479,22 +1487,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
-    "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "ELKA": {
-    "file": "elka.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Suomen elinkeinoelämän keskusarkisto",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "European Heritage Tribune": {
     "file": "european_heritage_tribune.json",
     "count": 10,
@@ -1514,14 +1506,6 @@
   "Kulttuuriperintökasvatuksen seura": {
     "file": "kulttuuriperint_kasvatuksen_seura.json",
     "count": 9,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Museoliitto": {
-    "file": "museoliitto.json",
-    "count": 10,
     "category": "Culture",
     "description": "",
     "lang": "fi",
@@ -1599,14 +1583,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "FutureEverything » News": {
-    "file": "futureeverything___news.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": "Est. 1995. Cultural facilitators at the intersection of art, design, science and digital.",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "The Harvard Library Innovation Lab": {
     "file": "the_harvard_library_innovation_lab.json",
     "count": 419,
@@ -1623,14 +1599,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Museums Computer Group": {
-    "file": "museums_computer_group.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": "For everyone working with digital technologies in museums",
-    "lang": "en",
-    "scope": "World"
-  },
   "The Museum Of The Future": {
     "file": "the_museum_of_the_future.json",
     "count": 10,
@@ -1638,14 +1606,6 @@
     "description": "Step into Tomorrow",
     "lang": "en",
     "scope": "World"
-  },
-  "Digime": {
-    "file": "digime.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Digital Scholarship Leiden": {
     "file": "digital_scholarship_leiden.json",
@@ -1855,22 +1815,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Suomen YK-liitto": {
-    "file": "suomen_yk_liitto.json",
-    "count": 10,
-    "category": "Global policy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "YK-nuoret": {
-    "file": "yk_nuoret.json",
-    "count": 10,
-    "category": "Global policy",
-    "description": "Suomen YK-nuoret",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Rising Voices": {
     "file": "rising_voices.json",
     "count": 10,
@@ -1886,14 +1830,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Kansalaisfoorumi": {
-    "file": "kansalaisfoorumi.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "Koulutusta, kulttuuria ja kansalaistoimintaa",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Open Government Partnership Newsletter": {
     "file": "open_government_partnership_newsletter.json",
@@ -1935,6 +1871,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Berkman Klein Center for Internet & Society at Harvard University": {
+    "file": "berkman_klein_center_for_internet___society_at_harvard_university.json",
+    "count": 10,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Project Syndicate economists": {
     "file": "project_syndicate_economists.json",
     "count": 20,
@@ -1942,14 +1886,6 @@
     "description": "<p>Project Syndicate&nbsp;produces and delivers original commentaries by prominent economists, political leaders, scholars, business leaders, and civic activists to a global audience, including nearly 500 media outlets in more than 150 countries</p>",
     "lang": "en",
     "scope": "World"
-  },
-  "Ykspilkkuviis.fi": {
-    "file": "ykspilkkuviis_fi.json",
-    "count": 10,
-    "category": "Perspectives",
-    "description": "Kestävän elämän media",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Ministry of Justice | Finland | News": {
     "file": "ministry_of_justice___finland___news.json",
