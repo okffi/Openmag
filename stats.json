@@ -1,7 +1,7 @@
 {
   "Yle": {
     "file": "yle.json",
-    "count": 24,
+    "count": 25,
     "category": "Global policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -145,7 +145,7 @@
   },
   "Open Culture": {
     "file": "open_culture.json",
-    "count": 17,
+    "count": 16,
     "category": "Digital cultural heritage",
     "description": "The best free cultural & educational media on the web",
     "lang": "en",
@@ -161,7 +161,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 36,
+    "count": 35,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -249,7 +249,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 23,
+    "count": 24,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -263,6 +263,54 @@
     "lang": "en",
     "scope": "World"
   },
+  "University of Helsinki": {
+    "file": "university_of_helsinki.json",
+    "count": 11,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Kansallisarkiston tiedotteet": {
+    "file": "kansallisarkiston_tiedotteet.json",
+    "count": 20,
+    "category": "Culture",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Knowledge Rights 21": {
+    "file": "knowledge_rights_21.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "We advocate for your right to access and share knowledge!",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Tech Policy Press": {
+    "file": "tech_policy_press.json",
+    "count": 3289,
+    "category": "Digital policy + rights",
+    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Amnesty Suomi": {
+    "file": "amnesty_suomi.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Helsingin kaupunki | Uutiset": {
+    "file": "helsingin_kaupunki___uutiset.json",
+    "count": 13,
+    "category": "Politics + Government",
+    "description": "syöte",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Weekly OSM": {
     "file": "weekly_osm.json",
     "count": 10,
@@ -273,7 +321,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 33,
+    "count": 34,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -300,14 +348,6 @@
     "count": 32,
     "category": "Digital policy + rights",
     "description": "European Politics, Policy, Government News",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Tech Policy Press": {
-    "file": "tech_policy_press.json",
-    "count": 3288,
-    "category": "Digital policy + rights",
-    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
     "scope": "World"
   },
@@ -591,14 +631,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "University of Helsinki": {
-    "file": "university_of_helsinki.json",
-    "count": 11,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "EUSBSR": {
     "file": "eusbsr.json",
     "count": 10,
@@ -647,14 +679,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Kansallisarkiston tiedotteet": {
-    "file": "kansallisarkiston_tiedotteet.json",
-    "count": 20,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "World Heritage Centre News": {
     "file": "world_heritage_centre_news.json",
     "count": 10,
@@ -694,14 +718,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Knowledge Rights 21": {
-    "file": "knowledge_rights_21.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "We advocate for your right to access and share knowledge!",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Wikimedia Deutschland Blog": {
     "file": "wikimedia_deutschland_blog.json",
@@ -772,14 +788,6 @@
     "count": 50,
     "category": "Politics + Government",
     "description": "Uusimmat hallituksen esitykset (RSS)",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Helsingin kaupunki | Uutiset": {
-    "file": "helsingin_kaupunki___uutiset.json",
-    "count": 13,
-    "category": "Politics + Government",
-    "description": "syöte",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1007,14 +1015,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Amnesty Suomi": {
-    "file": "amnesty_suomi.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Hacks/Hackers": {
     "file": "hacks_hackers.json",
     "count": 15,
@@ -1033,7 +1033,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 4,
+    "count": 10,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -1081,7 +1081,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 10,
+    "count": 1,
     "category": "Journalism + investigation",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -1217,7 +1217,7 @@
   },
   "Kotiseutuliitto": {
     "file": "kotiseutuliitto.json",
-    "count": 10,
+    "count": 4,
     "category": "Culture",
     "description": "",
     "lang": "fi",
@@ -1325,22 +1325,6 @@
     "category": "Human Rights + Democracy",
     "description": "Peace broker",
     "lang": "en",
-    "scope": "Finland"
-  },
-  "Valtiontalouden tarkastusvirasto": {
-    "file": "valtiontalouden_tarkastusvirasto.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Tulevaisuuden tutkimuksen seura ry": {
-    "file": "tulevaisuuden_tutkimuksen_seura_ry.json",
-    "count": 10,
-    "category": "Sustainability + Foresight",
-    "description": "Paremman tulevaisuuden puolesta",
-    "lang": "fi",
     "scope": "Finland"
   },
   "CCC Event Blog": {
@@ -1983,6 +1967,14 @@
     "lang": "en",
     "scope": "Finland"
   },
+  "Valtiontalouden tarkastusvirasto": {
+    "file": "valtiontalouden_tarkastusvirasto.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Kuntaliitto": {
     "file": "kuntaliitto.json",
     "count": 10,
@@ -2015,6 +2007,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Tulevaisuuden tutkimuksen seura ry": {
+    "file": "tulevaisuuden_tutkimuksen_seura_ry.json",
+    "count": 10,
+    "category": "Sustainability + Foresight",
+    "description": "Paremman tulevaisuuden puolesta",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Front Line Defenders": {
     "file": "front_line_defenders.json",
     "count": 10,
@@ -2030,6 +2030,22 @@
     "description": "Digital Humanities in the Nordic and Baltic Countries",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
+  },
+  "Ulkopoliittinen instituutti (UPI)": {
+    "file": "ulkopoliittinen_instituutti__upi_.json",
+    "count": 10,
+    "category": "Global policy",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "The Finnish Institute of International Affairs (FIIA)": {
+    "file": "the_finnish_institute_of_international_affairs__fiia_.json",
+    "count": 10,
+    "category": "Global policy",
+    "description": "",
+    "lang": "en",
+    "scope": "Finland"
   },
   "Puistokatu 4": {
     "file": "puistokatu_4.json",
