@@ -1,7 +1,7 @@
 {
   "Yle": {
     "file": "yle.json",
-    "count": 23,
+    "count": 24,
     "category": "Global policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -9,7 +9,7 @@
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
-    "count": 13,
+    "count": 14,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
@@ -121,7 +121,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 52,
+    "count": 55,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -132,6 +132,54 @@
     "count": 100,
     "category": "Sustainability + Foresight",
     "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Helsingin yliopisto": {
+    "file": "helsingin_yliopisto.json",
+    "count": 25,
+    "category": "(Open) Science + Research",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Open Culture": {
+    "file": "open_culture.json",
+    "count": 17,
+    "category": "Digital cultural heritage",
+    "description": "The best free cultural & educational media on the web",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Ihmisoikeusliitto": {
+    "file": "ihmisoikeusliitto.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "European Commission": {
+    "file": "european_commission.json",
+    "count": 33,
+    "category": "Politics + Government",
+    "description": "European Commission | News",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Eduskunnan uusimmat tiedotteet": {
+    "file": "eduskunnan_uusimmat_tiedotteet.json",
+    "count": 19,
+    "category": "Politics + Government",
+    "description": "Eduskunnan tiedotteet - RSS",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Kotimaisten kielten keskus KOTUS": {
+    "file": "kotimaisten_kielten_keskus_kotus.json",
+    "count": 10,
+    "category": "Cultural policy",
+    "description": "Kotimaisten kielten keskus",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -185,7 +233,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 10,
+    "count": 12,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -263,14 +311,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Helsingin yliopisto": {
-    "file": "helsingin_yliopisto.json",
-    "count": 25,
-    "category": "(Open) Science + Research",
-    "description": "Uusimmat tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Culture Action Europe News": {
     "file": "culture_action_europe_news.json",
     "count": 10,
@@ -329,7 +369,7 @@
   },
   "Institute of Network Cultures": {
     "file": "institute_of_network_cultures.json",
-    "count": 4,
+    "count": 3,
     "category": "Digital cultural heritage",
     "description": "",
     "lang": "en",
@@ -340,14 +380,6 @@
     "count": 10,
     "category": "Digital cultural heritage",
     "description": "Centre for Regulation of the Creative Economy",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Open Culture": {
-    "file": "open_culture.json",
-    "count": 16,
-    "category": "Digital cultural heritage",
-    "description": "The best free cultural & educational media on the web",
     "lang": "en",
     "scope": "Europe"
   },
@@ -431,22 +463,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "European Commission": {
-    "file": "european_commission.json",
-    "count": 33,
-    "category": "Politics + Government",
-    "description": "European Commission | News",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Eduskunnan uusimmat tiedotteet": {
-    "file": "eduskunnan_uusimmat_tiedotteet.json",
-    "count": 19,
-    "category": "Politics + Government",
-    "description": "Eduskunnan tiedotteet - RSS",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Presidentti": {
     "file": "presidentti.json",
     "count": 10,
@@ -479,13 +495,13 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Kotimaisten kielten keskus KOTUS": {
-    "file": "kotimaisten_kielten_keskus_kotus.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "Kotimaisten kielten keskus",
-    "lang": "fi",
-    "scope": "Finland"
+  "CIVICUS News": {
+    "file": "civicus_news.json",
+    "count": 50,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -975,17 +991,9 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Ihmisoikeusliitto": {
-    "file": "ihmisoikeusliitto.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Amnesty Suomi": {
     "file": "amnesty_suomi.json",
-    "count": 10,
+    "count": 7,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "fi",
@@ -1057,7 +1065,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 1,
+    "count": 10,
     "category": "Journalism + investigation",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -1167,14 +1175,6 @@
     "lang": "en",
     "scope": "Finland"
   },
-  "Think Open": {
-    "file": "think_open.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Digitaalisista tutkimuspalveluista ja avoimesta tieteestä / About digital research services and open science",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "CLARIN ERIC": {
     "file": "clarin_eric.json",
     "count": 10,
@@ -1182,6 +1182,14 @@
     "description": "Common Language Resources and Technology Infrastructure",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Think Open": {
+    "file": "think_open.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Digitaalisista tutkimuspalveluista ja avoimesta tieteestä / About digital research services and open science",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Luovat ry": {
     "file": "luovat_ry.json",
@@ -1334,22 +1342,6 @@
     "description": "We are a global charitable organization empowering people to keep the Internet a force for good: open, globally connected, secure, and trustworthy.",
     "lang": "en",
     "scope": "World"
-  },
-  "Europa Nostra": {
-    "file": "europa_nostra.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "The Voice of Cultural Heritage in Europe",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Museovirasto - uusimmat tiedotteet": {
-    "file": "museovirasto___uusimmat_tiedotteet.json",
-    "count": 25,
-    "category": "Culture",
-    "description": "Uusimmat tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
@@ -1551,6 +1543,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Europa Nostra": {
+    "file": "europa_nostra.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "The Voice of Cultural Heritage in Europe",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "European Parliament | Culture and education": {
     "file": "european_parliament___culture_and_education.json",
     "count": 25,
@@ -1564,6 +1564,14 @@
     "count": 10,
     "category": "Culture",
     "description": "LIBRARY CHANNEL — Library WebTV",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Museovirasto - uusimmat tiedotteet": {
+    "file": "museovirasto___uusimmat_tiedotteet.json",
+    "count": 25,
+    "category": "Culture",
+    "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1903,14 +1911,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "CIVICUS News": {
-    "file": "civicus_news.json",
-    "count": 50,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Oxfam International": {
     "file": "oxfam_international.json",
     "count": 10,
@@ -1973,14 +1973,6 @@
     "category": "Politics + Government",
     "description": "",
     "lang": "en",
-    "scope": "Finland"
-  },
-  "Kuntaliitto": {
-    "file": "kuntaliitto.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "fi",
     "scope": "Finland"
   },
   "Association of Finnish Cities and Municipalities": {
