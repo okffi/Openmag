@@ -2,28 +2,31 @@ name: Update Magazine News
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Suoritetaan kerran tunnissa
-  workflow_dispatch:      # Mahdollistaa manuaalisen käynnistyksen GitHubin kautta
+    - cron: '0 * * * *'  # Kerran tunnissa
+  workflow_dispatch:      # Manuaalinen käynnistys
   push:
     branches:
       - main
     paths-ignore:
       - 'data.json'
       - 'stats.json'
+      - 'translations.json'
       - 'sources/**'
       - 'failed_feeds.txt'
+      - 'last_clean.txt'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     
-    # Tarvitaan oikeudet kirjoittaa tiedostoja takaisin arkistoon
     permissions:
       contents: write
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Haetaan koko historia merge-ongelmien välttämiseksi
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -34,8 +37,6 @@ jobs:
         run: npm install axios rss-parser cheerio
 
       - name: Run Fetch Script
-        env:
-          SHEET_CSV_URL: ${{ secrets.SHEET_CSV_URL }}
         run: node fetch_news.js
 
       - name: Show failed feeds
@@ -47,19 +48,21 @@ jobs:
           git config --global user.name 'NewsRobot'
           git config --global user.email 'robot@openmag.fi'
           
-          # 1. Haetaan uusin tilanne ja nollataan Git-lukot
-          git fetch origin main
-          git reset --soft origin/main
+          # Haetaan uusin tilanne mahdollisten muiden muutosten varalta
+          git pull origin main --rebase
           
-          # 2. Lisätään tiedostot (jotka fetch_news.js juuri loi)
-          git add data.json stats.json last_clean.txt
-          if [ -d "sources" ]; then git add sources/*.json; fi
+          # LISÄTTY: translations.json lisätty add-listalle
+          git add data.json stats.json translations.json last_clean.txt
           
-          # 3. Tehdään commit vain jos on oikeasti jotain uutta
-          git commit -m "Automated news update $(date +'%Y-%m-%d %H:%M') [skip ci]" || echo "No changes"
-          git push origin main
-
-      - name: Purge Cache (Optional)
-        run: |
-          # Tämä on lähinnä varmistus, GitHub hoitaa tämän yleensä itse
-          echo "Päivitys valmis: $(date)"
+          # Lisätään sources-kansio vain jos siellä on tiedostoja
+          if [ -d "sources" ] && [ "$(ls -A sources/*.json 2>/dev/null)" ]; then 
+            git add sources/*.json
+          fi
+          
+          # Commit vain jos muutoksia on
+          if git diff --staged --quiet; then
+            echo "Ei uutta tallennettavaa."
+          else
+            git commit -m "Automated update $(date +'%Y-%m-%d %H:%M') [skip ci]"
+            git push origin main
+          fi
