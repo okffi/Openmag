@@ -12,12 +12,12 @@ let currentLang = 'all';
 let currentScope = 'all';
 
 // --- APUFUNKTIOT ---
-function t(key) {
+function t(key, originalValue = null) {
     const lang = document.getElementById('langFilter').value || 'en';
     if (translations[lang] && translations[lang][key]) {
         return translations[lang][key];
     }
-    return key.includes('.') ? key.split('.')[1].replace(/_/g, ' ') : key;
+    return originalValue || (key.includes('.') ? key.split('.')[1].replace(/_/g, ' ') : key);
 }
 
 function getTranslation(group, value) {
