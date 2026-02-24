@@ -20,6 +20,12 @@ function t(key, originalValue = null) {
     return originalValue || (key.includes('.') ? key.split('.')[1].replace(/_/g, ' ') : key);
 }
 
+function decodeHtml(html) {
+    const txt = document.createElement("textarea");
+    txt.innerHTML = html;
+    return txt.value;
+}
+
 function getTranslation(group, value) {
     if (!value || value === 'All') return t(`${group}.general`); 
     const slug = value.toString()
@@ -221,31 +227,44 @@ function createArticleCard(item) {
 
 function setViewTitleAndRss(viewTitleEl, title, rssLink, isMainFeed, siteUrl) {
     if (!viewTitleEl) return;
-    while (viewTitleEl.firstChild) viewTitleEl.removeChild(viewTitleEl.firstChild);
+    
+    // 1. Tyhjennetään elementti turvallisesti ilman innerHTML:ää
+    while (viewTitleEl.firstChild) {
+        viewTitleEl.removeChild(viewTitleEl.firstChild);
+    }
 
-    // KÄÄNNÖS: Jos päänäkymä, käännetään teksti
-    const displayTitle = isMainFeed ? t('ui.latest_news') : title;
+    // KÄÄNNÖS: Jos päänäkymä, käytetään käännettyä "Tuoreimmat uutiset"
+    const displayTitle = isMainFeed ? t('ui.latest_news') : decodeHtml(title);
 
     if (isMainFeed) {
-        viewTitleEl.appendChild(document.createTextNode(displayTitle));
+        // Päänäkymässä vain teksti. textContent on 100% immuuni XSS-hyökkäyksille.
+        viewTitleEl.textContent = displayTitle;
+        return; 
     } else {
+        // Lähdenäkymässä luodaan linkki
         const a = document.createElement('a');
         a.href = siteUrl || '#';
         a.target = '_blank';
         a.rel = 'noopener';
         a.className = 'title-link';
-        a.textContent = displayTitle;
+        a.textContent = displayTitle; // Turvallinen tekstin asetus
         viewTitleEl.appendChild(a);
+        
+        // Lisätään RSS-ikoni VAIN, jos ollaan lähdenäkymässä
+        if (rssLink && rssLink !== 'data.json') {
+            const rssA = document.createElement('a');
+            rssA.href = rssLink;
+            rssA.target = '_blank';
+            rssA.rel = 'noopener';
+            rssA.className = 'rss-link';
+            rssA.title = 'RSS';
+            
+            // Tässä kohtaa SVG-koodin syöttö on turvallista, koska koodi on omaasi
+            rssA.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.18,15.64A2.18,2.18,0,0,1,8.36,17.82c0,1.21-.98,2.18-2.18,2.18A2.18,2.18,0,0,1,4,17.82,2.18,2.18,0,0,1,6.18,15.64M4,4.44A15.56,15.56,0,0,1,19.56,20h-2.83A12.73,12.73,0,0,0,4,7.27Zm0,5.66a9.9,9.9,0,0,1,9.9,9.9H11.07A7.07,7.07,0,0,0,4,12.93Z"/></svg>';
+            
+            viewTitleEl.appendChild(rssA);
+        }
     }
-
-    const rssA = document.createElement('a');
-    rssA.href = rssLink || '#';
-    rssA.target = '_blank';
-    rssA.rel = 'noopener';
-    rssA.className = 'rss-link';
-    rssA.title = 'RSS';
-    rssA.innerHTML = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.18,15.64A2.18,2.18,0,0,1,8.36,17.82c0,1.21-.98,2.18-2.18,2.18A2.18,2.18,0,0,1,4,17.82,2.18,2.18,0,0,1,6.18,15.64M4,4.44A15.56,15.56,0,0,1,19.56,20h-2.83A12.73,12.73,0,0,0,4,7.27Zm0,5.66a9.9,9.9,0,0,1,9.9,9.9H11.07A7.07,7.07,0,0,0,4,12.93Z"/></svg>';
-    viewTitleEl.appendChild(rssA);
 }
     
 function displayArticles() {
