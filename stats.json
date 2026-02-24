@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "24.2.2026 klo 21.50.42"
+    "last_updated": "24.2.2026 klo 22.45.50"
   },
   "Technology – POLITICO": {
     "file": "technology___politico.json",
@@ -164,7 +164,7 @@
   },
   "Eduskunnan uusimmat tiedotteet": {
     "file": "eduskunnan_uusimmat_tiedotteet.json",
-    "count": 19,
+    "count": 20,
     "category": "Politics + Government",
     "description": "Eduskunnan tiedotteet - RSS",
     "lang": "fi",
@@ -284,7 +284,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 37,
+    "count": 38,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -487,6 +487,22 @@
     "count": 10,
     "category": "Sustainability + Foresight",
     "description": "Noema Magazine",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Internet Archive Blogs": {
+    "file": "internet_archive_blogs.json",
+    "count": 10,
+    "category": "Digital cultural heritage",
+    "description": "Updates from the Internet Archive",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Electronic Frontier Foundation": {
+    "file": "electronic_frontier_foundation.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -754,14 +770,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Electronic Frontier Foundation": {
-    "file": "electronic_frontier_foundation.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "UN News - Global perspective Human stories": {
     "file": "un_news___global_perspective_human_stories.json",
     "count": 30,
@@ -903,14 +911,6 @@
     "count": 10,
     "category": "Culture",
     "description": "All the World Heritage News",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Internet Archive Blogs": {
-    "file": "internet_archive_blogs.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": "Updates from the Internet Archive",
     "lang": "en",
     "scope": "World"
   },
@@ -1322,30 +1322,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Kotiseutuliitto": {
-    "file": "kotiseutuliitto.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Taide- ja kulttuurivirasto": {
-    "file": "taide__ja_kulttuurivirasto.json",
-    "count": 7,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Oulun museo- ja tiedekeskus": {
-    "file": "oulun_museo__ja_tiedekeskus.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
     "count": 15,
@@ -1530,6 +1506,22 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Kotiseutuliitto": {
+    "file": "kotiseutuliitto.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Taide- ja kulttuurivirasto": {
+    "file": "taide__ja_kulttuurivirasto.json",
+    "count": 7,
+    "category": "Culture",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Museoliitto": {
     "file": "museoliitto.json",
     "count": 10,
@@ -1545,6 +1537,14 @@
     "description": "",
     "lang": "en",
     "scope": "World"
+  },
+  "Oulun museo- ja tiedekeskus": {
+    "file": "oulun_museo__ja_tiedekeskus.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Blue Shield International": {
     "file": "blue_shield_international.json",
@@ -2016,14 +2016,6 @@
     "category": "Politics + Government",
     "description": "",
     "lang": "en",
-    "scope": "Finland"
-  },
-  "Kuntaliitto": {
-    "file": "kuntaliitto.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "fi",
     "scope": "Finland"
   },
   "Association of Finnish Cities and Municipalities": {
