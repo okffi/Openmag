@@ -48,20 +48,17 @@ jobs:
           git config --global user.name 'NewsRobot'
           git config --global user.email 'robot@openmag.fi'
           
-          # Haetaan uusin tilanne mahdollisten muiden muutosten varalta
-          git pull origin main --rebase
-          
-          # LISÄTTY: translations.json lisätty add-listalle
+          # 1. Lisätään KAIKKI muuttuneet tiedostot heti stagaukseen
           git add data.json stats.json translations.json last_clean.txt
+          if [ -d "sources" ]; then git add sources/*.json; fi
           
-          # Lisätään sources-kansio vain jos siellä on tiedostoja
-          if [ -d "sources" ] && [ "$(ls -A sources/*.json 2>/dev/null)" ]; then 
-            git add sources/*.json
-          fi
+          # 2. Tehdään haku ja rebase. 
+          # Käytetään autostash-lippua, jotta Git siirtää muutokset sivuun pullin ajaksi.
+          git pull --rebase --autostash origin main
           
-          # Commit vain jos muutoksia on
+          # 3. Commit vain jos on jotain tallennettavaa
           if git diff --staged --quiet; then
-            echo "Ei uutta tallennettavaa."
+            echo "Ei muutoksia tallennettavaksi."
           else
             git commit -m "Automated update $(date +'%Y-%m-%d %H:%M') [skip ci]"
             git push origin main
