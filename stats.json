@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "25.2.2026 klo 13.46.12"
+    "last_updated": "25.2.2026 klo 15.22.26"
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
@@ -28,7 +28,7 @@
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
-    "count": 35,
+    "count": 36,
     "category": "Perspectives",
     "description": "",
     "lang": "fi",
@@ -92,7 +92,7 @@
   },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
-    "count": 17,
+    "count": 18,
     "category": "(Open) Science + Research",
     "description": "Turun yliopiston etusivun uutisten lyhennelmät",
     "lang": "fi",
@@ -124,7 +124,7 @@
   },
   "Eduskunnan uusimmat tiedotteet": {
     "file": "eduskunnan_uusimmat_tiedotteet.json",
-    "count": 21,
+    "count": 22,
     "category": "Politics + Government",
     "description": "Eduskunnan tiedotteet - RSS",
     "lang": "fi",
@@ -132,7 +132,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 53,
+    "count": 55,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -188,7 +188,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 12,
+    "count": 13,
     "category": "Digital skills + Citizen science",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -308,7 +308,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 10,
+    "count": 11,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -324,7 +324,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 21,
+    "count": 23,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -340,7 +340,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 36,
+    "count": 37,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -348,11 +348,35 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 33,
+    "count": 36,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Museovirasto - uusimmat tiedotteet": {
+    "file": "museovirasto___uusimmat_tiedotteet.json",
+    "count": 25,
+    "category": "Culture",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Open Future": {
+    "file": "open_future.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "Open Future Foundation",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Technology – POLITICO": {
+    "file": "technology___politico.json",
+    "count": 32,
+    "category": "Digital policy + rights",
+    "description": "European Politics, Policy, Government News",
+    "lang": "en",
+    "scope": "World"
   },
   "CODATA": {
     "file": "codata.json",
@@ -388,7 +412,7 @@
   },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
-    "count": 10,
+    "count": 15,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -474,17 +498,9 @@
     "lang": "en",
     "scope": "World"
   },
-  "Technology – POLITICO": {
-    "file": "technology___politico.json",
-    "count": 32,
-    "category": "Digital policy + rights",
-    "description": "European Politics, Policy, Government News",
-    "lang": "en",
-    "scope": "World"
-  },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3292,
+    "count": 3295,
     "category": "Digital policy + rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -649,6 +665,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "European Cultural Foundation": {
+    "file": "european_cultural_foundation.json",
+    "count": 10,
+    "category": "Cultural policy",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "xkcd": {
     "file": "xkcd.json",
@@ -897,14 +921,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "European Cultural Foundation": {
-    "file": "european_cultural_foundation.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -1260,7 +1276,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 1,
+    "count": 10,
     "category": "Journalism + investigation",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -1374,22 +1390,6 @@
     "file": "taide__ja_kulttuurivirasto.json",
     "count": 7,
     "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Oulun museo- ja tiedekeskus": {
-    "file": "oulun_museo__ja_tiedekeskus.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
     "description": "",
     "lang": "fi",
     "scope": "Finland"
@@ -1578,6 +1578,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Oulun museo- ja tiedekeskus": {
+    "file": "oulun_museo__ja_tiedekeskus.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Blue Shield International": {
     "file": "blue_shield_international.json",
     "count": 10,
@@ -1610,14 +1618,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Museovirasto - uusimmat tiedotteet": {
-    "file": "museovirasto___uusimmat_tiedotteet.json",
-    "count": 25,
-    "category": "Culture",
-    "description": "Uusimmat tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Cultural Heritage Informatics": {
     "file": "cultural_heritage_informatics.json",
     "count": 10,
@@ -1641,6 +1641,14 @@
     "description": "Articles and events from the Digital Humanities community at Stanford University",
     "lang": "en",
     "scope": "World"
+  },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 10,
+    "category": "Digital cultural heritage",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "EUscreen": {
     "file": "euscreen.json",
@@ -1783,14 +1791,6 @@
     "count": 10,
     "category": "Digital policy + rights",
     "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Open Future": {
-    "file": "open_future.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "Open Future Foundation",
     "lang": "en",
     "scope": "Europe"
   },
