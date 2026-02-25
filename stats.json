@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "25.2.2026 klo 15.22.26"
+    "last_updated": "25.2.2026 klo 16.58.31"
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
@@ -28,7 +28,7 @@
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
-    "count": 36,
+    "count": 37,
     "category": "Perspectives",
     "description": "",
     "lang": "fi",
@@ -84,7 +84,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 22,
+    "count": 21,
     "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -124,7 +124,7 @@
   },
   "Eduskunnan uusimmat tiedotteet": {
     "file": "eduskunnan_uusimmat_tiedotteet.json",
-    "count": 22,
+    "count": 23,
     "category": "Politics + Government",
     "description": "Eduskunnan tiedotteet - RSS",
     "lang": "fi",
@@ -188,7 +188,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 13,
+    "count": 14,
     "category": "Digital skills + Citizen science",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -348,7 +348,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 36,
+    "count": 37,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -378,6 +378,54 @@
     "lang": "en",
     "scope": "World"
   },
+  "University of Helsinki": {
+    "file": "university_of_helsinki.json",
+    "count": 15,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Finnish Ministry of Education and Culture | Current issues": {
+    "file": "finnish_ministry_of_education_and_culture___current_issues.json",
+    "count": 20,
+    "category": "Cultural policy",
+    "description": "",
+    "lang": "en",
+    "scope": "Finland"
+  },
+  "Gramex ry": {
+    "file": "gramex_ry.json",
+    "count": 10,
+    "category": "Cultural policy",
+    "description": "Gramex on äänitteellä esiintyvien muusikoiden ja musiikkituottajien tekijänoikeusjärjestö  sekä suuri kotimaisen musiikin edistäjä.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "European Digital Rights (EDRi)": {
+    "file": "european_digital_rights__edri_.json",
+    "count": 20,
+    "category": "Digital policy + rights",
+    "description": "Protecting digital rights in Europe.",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Tech Policy Press": {
+    "file": "tech_policy_press.json",
+    "count": 3296,
+    "category": "Digital policy + rights",
+    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Amnesty Suomi": {
+    "file": "amnesty_suomi.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "CODATA": {
     "file": "codata.json",
     "count": 10,
@@ -388,7 +436,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 48,
+    "count": 50,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -409,14 +457,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "University of Helsinki": {
-    "file": "university_of_helsinki.json",
-    "count": 15,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Kansallisarkiston tiedotteet": {
     "file": "kansallisarkiston_tiedotteet.json",
@@ -498,14 +538,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Tech Policy Press": {
-    "file": "tech_policy_press.json",
-    "count": 3295,
-    "category": "Digital policy + rights",
-    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Uutiset arkistot - UN Women": {
     "file": "uutiset_arkistot___un_women.json",
     "count": 12,
@@ -545,14 +577,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Amnesty Suomi": {
-    "file": "amnesty_suomi.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "CIVICUS News": {
     "file": "civicus_news.json",
@@ -728,14 +752,6 @@
     "category": "Digital cultural heritage",
     "description": "",
     "lang": "de",
-    "scope": "Europe"
-  },
-  "European Digital Rights (EDRi)": {
-    "file": "european_digital_rights__edri_.json",
-    "count": 20,
-    "category": "Digital policy + rights",
-    "description": "Protecting digital rights in Europe.",
-    "lang": "en",
     "scope": "Europe"
   },
   "TIEKE": {
@@ -962,14 +978,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Finnish Ministry of Education and Culture | Current issues": {
-    "file": "finnish_ministry_of_education_and_culture___current_issues.json",
-    "count": 20,
-    "category": "Cultural policy",
-    "description": "",
-    "lang": "en",
-    "scope": "Finland"
-  },
   "Cupore": {
     "file": "cupore.json",
     "count": 10,
@@ -1004,7 +1012,7 @@
   },
   "Open Knowledge Foundation DE": {
     "file": "open_knowledge_foundation_de.json",
-    "count": 713,
+    "count": 714,
     "category": "Digital policy + rights",
     "description": "Blog on OKF DE",
     "lang": "de",
@@ -1095,14 +1103,6 @@
     "count": 10,
     "category": "Cultural policy",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Gramex ry": {
-    "file": "gramex_ry.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "Gramex on äänitteellä esiintyvien muusikoiden ja musiikkituottajien tekijänoikeusjärjestö  sekä suuri kotimaisen musiikin edistäjä.",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1378,22 +1378,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Kotiseutuliitto": {
-    "file": "kotiseutuliitto.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Taide- ja kulttuurivirasto": {
-    "file": "taide__ja_kulttuurivirasto.json",
-    "count": 7,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
     "count": 15,
@@ -1561,6 +1545,22 @@
     "description": "Unity in Diversity",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Kotiseutuliitto": {
+    "file": "kotiseutuliitto.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Taide- ja kulttuurivirasto": {
+    "file": "taide__ja_kulttuurivirasto.json",
+    "count": 7,
+    "category": "Culture",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Museoliitto": {
     "file": "museoliitto.json",
