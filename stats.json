@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "25.2.2026 klo 18.15.05"
+    "last_updated": "25.2.2026 klo 20.05.23"
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
@@ -308,7 +308,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 11,
+    "count": 12,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -340,7 +340,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 37,
+    "count": 39,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -372,7 +372,7 @@
   },
   "Technology – POLITICO": {
     "file": "technology___politico.json",
-    "count": 32,
+    "count": 33,
     "category": "Digital policy + rights",
     "description": "European Politics, Policy, Government News",
     "lang": "en",
@@ -428,7 +428,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 52,
+    "count": 53,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -476,7 +476,7 @@
   },
   "Global Solutions Initiative": {
     "file": "global_solutions_initiative.json",
-    "count": 10,
+    "count": 11,
     "category": "Global policy",
     "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
     "lang": "en",
@@ -489,6 +489,22 @@
     "description": "Eduskunnan kirjaston tiedotteet - RSS",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "The Conversation – Articles (EUROPE)": {
+    "file": "the_conversation___articles__europe_.json",
+    "count": 50,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Carbon Brief": {
+    "file": "carbon_brief.json",
+    "count": 11,
+    "category": "Sustainability + Foresight",
+    "description": "Clear on climate",
+    "lang": "en",
+    "scope": "World"
   },
   "CODATA": {
     "file": "codata.json",
@@ -556,7 +572,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 4,
+    "count": 10,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -580,7 +596,7 @@
   },
   "Electronic Frontier Foundation": {
     "file": "electronic_frontier_foundation.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital policy + rights",
     "description": "",
     "lang": "en",
@@ -658,14 +674,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "The Conversation – Articles (EUROPE)": {
-    "file": "the_conversation___articles__europe_.json",
-    "count": 50,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
     "count": 50,
@@ -697,14 +705,6 @@
     "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Carbon Brief": {
-    "file": "carbon_brief.json",
-    "count": 11,
-    "category": "Sustainability + Foresight",
-    "description": "Clear on climate",
-    "lang": "en",
-    "scope": "World"
   },
   "NOEMA": {
     "file": "noema.json",
@@ -881,6 +881,14 @@
     "description": "Kotimaisten kielten keskus",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Wikimédia France": {
+    "file": "wikim_dia_france.json",
+    "count": 10,
+    "category": "Digital skills + Citizen science",
+    "description": "Association pour le libre partage de la connaissance",
+    "lang": "fr",
+    "scope": "Europe"
   },
   "Weekly OSM": {
     "file": "weekly_osm.json",
@@ -1284,19 +1292,11 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 10,
+    "count": 1,
     "category": "Journalism + investigation",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
-  },
-  "Wikimédia France": {
-    "file": "wikim_dia_france.json",
-    "count": 10,
-    "category": "Digital skills + Citizen science",
-    "description": "Association pour le libre partage de la connaissance",
-    "lang": "fr",
-    "scope": "Europe"
   },
   "Kuvasto": {
     "file": "kuvasto.json",
@@ -1377,14 +1377,6 @@
     "description": "A globally operating, independent think tank",
     "lang": "en",
     "scope": "Finland"
-  },
-  "Heritage Research Hub": {
-    "file": "heritage_research_hub.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "A platform on and for cultural heritage research",
-    "lang": "en",
-    "scope": "Europe"
   },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
@@ -2097,6 +2089,14 @@
     "description": "",
     "lang": "fi",
     "scope": "World"
+  },
+  "Heritage Research Hub": {
+    "file": "heritage_research_hub.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "A platform on and for cultural heritage research",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Puistokatu 4": {
     "file": "puistokatu_4.json",
