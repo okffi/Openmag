@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "25.2.2026 klo 8.10.47"
+    "last_updated": "25.2.2026 klo 9.57.07"
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
@@ -28,9 +28,49 @@
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
-    "count": 33,
+    "count": 34,
     "category": "Perspectives",
     "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Kulttuuri ja taide - ePressi": {
+    "file": "kulttuuri_ja_taide___epressi.json",
+    "count": 24,
+    "category": "Culture",
+    "description": "Tiedotteiden tehokas julkaisukanava",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Global Voices Advox": {
+    "file": "global_voices_advox.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "Defending Free Speech Online",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Global Voices": {
+    "file": "global_voices.json",
+    "count": 16,
+    "category": "Human Rights + Democracy",
+    "description": "Citizen media stories from around the world",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Finnish Government": {
+    "file": "finnish_government.json",
+    "count": 100,
+    "category": "Politics + Government",
+    "description": "Valtioneuvoston tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Ulkoministeriö / Utrikesministeriet": {
+    "file": "ulkoministeri____utrikesministeriet.json",
+    "count": 26,
+    "category": "Politics + Government",
+    "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -92,7 +132,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 20,
+    "count": 22,
     "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -116,7 +156,7 @@
   },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
-    "count": 14,
+    "count": 15,
     "category": "(Open) Science + Research",
     "description": "Turun yliopiston etusivun uutisten lyhennelmät",
     "lang": "fi",
@@ -145,14 +185,6 @@
     "description": "Vi tar tillvara och driver den svenska museisektorns gemensamma intressen.",
     "lang": "sv",
     "scope": "Nordic + Baltic countries"
-  },
-  "Kulttuuri ja taide - ePressi": {
-    "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 21,
-    "category": "Culture",
-    "description": "Tiedotteiden tehokas julkaisukanava",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Suomalaisen Kirjallisuuden Seura (SKS)": {
     "file": "suomalaisen_kirjallisuuden_seura__sks_.json",
@@ -244,7 +276,7 @@
   },
   "Maailman Kuvalehti": {
     "file": "maailman_kuvalehti.json",
-    "count": 10,
+    "count": 11,
     "category": "Global policy",
     "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta.",
     "lang": "fi",
@@ -281,14 +313,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Global Voices": {
-    "file": "global_voices.json",
-    "count": 16,
-    "category": "Human Rights + Democracy",
-    "description": "Citizen media stories from around the world",
-    "lang": "en",
-    "scope": "World"
   },
   "Open Government Partnership Newsletter": {
     "file": "open_government_partnership_newsletter.json",
@@ -426,14 +450,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Finnish Government": {
-    "file": "finnish_government.json",
-    "count": 100,
-    "category": "Politics + Government",
-    "description": "Valtioneuvoston tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Valtiontalouden tarkastusvirasto": {
     "file": "valtiontalouden_tarkastusvirasto.json",
     "count": 10,
@@ -452,7 +468,7 @@
   },
   "Eduskunnan uusimmat tiedotteet": {
     "file": "eduskunnan_uusimmat_tiedotteet.json",
-    "count": 19,
+    "count": 20,
     "category": "Politics + Government",
     "description": "Eduskunnan tiedotteet - RSS",
     "lang": "fi",
@@ -460,7 +476,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 50,
+    "count": 51,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -468,7 +484,7 @@
   },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
-    "count": 10,
+    "count": 13,
     "category": "Politics + Government",
     "description": "syöte",
     "lang": "fi",
@@ -620,7 +636,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital policy + rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -722,14 +738,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Global Voices Advox": {
-    "file": "global_voices_advox.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "Defending Free Speech Online",
-    "lang": "en",
-    "scope": "World"
-  },
   "News – Oxford Internet Institute": {
     "file": "news___oxford_internet_institute.json",
     "count": 10,
@@ -780,7 +788,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 5,
+    "count": 10,
     "category": "Digital cultural heritage",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -1068,7 +1076,7 @@
   },
   "OpenForum Europe": {
     "file": "openforum_europe.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital policy + rights",
     "description": "Open Technologies for Europe's Digital Decade",
     "lang": "en",
@@ -1196,7 +1204,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 1,
+    "count": 10,
     "category": "Journalism + investigation",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -1340,7 +1348,7 @@
   },
   "Taide- ja kulttuurivirasto": {
     "file": "taide__ja_kulttuurivirasto.json",
-    "count": 1,
+    "count": 7,
     "category": "Culture",
     "description": "",
     "lang": "fi",
@@ -1385,14 +1393,6 @@
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Copyright Literacy": {
-    "file": "copyright_literacy.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "Decoding copyright and bringing you enlightenment",
-    "lang": "en",
-    "scope": "World"
   },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
@@ -1706,6 +1706,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "MuseumNext": {
+    "file": "museumnext.json",
+    "count": 10,
+    "category": "Digital cultural heritage",
+    "description": "Defining the Future of Museums",
+    "lang": "en",
+    "scope": "World"
+  },
   "Open Objects": {
     "file": "open_objects.json",
     "count": 10,
@@ -1729,6 +1737,14 @@
     "description": "Website of the COMMUNIA Association for the Public Domain",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Copyright Literacy": {
+    "file": "copyright_literacy.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "Decoding copyright and bringing you enlightenment",
+    "lang": "en",
+    "scope": "World"
   },
   "Stanford CIS": {
     "file": "stanford_cis.json",
@@ -2010,20 +2026,20 @@
     "lang": "en",
     "scope": "Finland"
   },
+  "Kuntaliitto": {
+    "file": "kuntaliitto.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Association of Finnish Cities and Municipalities": {
     "file": "association_of_finnish_cities_and_municipalities.json",
     "count": 10,
     "category": "Politics + Government",
     "description": "",
     "lang": "en",
-    "scope": "Finland"
-  },
-  "Ulkoministeriö / Utrikesministeriet": {
-    "file": "ulkoministeri____utrikesministeriet.json",
-    "count": 25,
-    "category": "Politics + Government",
-    "description": "Uusimmat tiedotteet",
-    "lang": "fi",
     "scope": "Finland"
   },
   "Ilmasto- ja energiapoliittinen ministerityöryhmä": {
