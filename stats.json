@@ -1,10 +1,10 @@
 {
   "__meta": {
-    "last_updated": "25.2.2026 klo 20.05.23"
+    "last_updated": "25.2.2026 klo 21.52.10"
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
-    "count": 25,
+    "count": 26,
     "category": "Global policy",
     "description": "the Global Magazine of News and Ideas",
     "lang": "en",
@@ -308,7 +308,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 12,
+    "count": 13,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -412,7 +412,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3296,
+    "count": 3297,
     "category": "Digital policy + rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -500,9 +500,17 @@
   },
   "Carbon Brief": {
     "file": "carbon_brief.json",
-    "count": 11,
+    "count": 10,
     "category": "Sustainability + Foresight",
     "description": "Clear on climate",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Electronic Frontier Foundation": {
+    "file": "electronic_frontier_foundation.json",
+    "count": 12,
+    "category": "Digital policy + rights",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -572,7 +580,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 4,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -580,7 +588,7 @@
   },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital policy + rights",
     "description": "",
     "lang": "en",
@@ -593,14 +601,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Electronic Frontier Foundation": {
-    "file": "electronic_frontier_foundation.json",
-    "count": 11,
-    "category": "Digital policy + rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "Uutiset arkistot - UN Women": {
     "file": "uutiset_arkistot___un_women.json",
@@ -1292,7 +1292,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 1,
+    "count": 10,
     "category": "Journalism + investigation",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -1360,22 +1360,6 @@
     "category": "Journalism + investigation",
     "description": "Julkisen sanan neuvosto",
     "lang": "fi",
-    "scope": "Finland"
-  },
-  "Ministry of Justice | Finland | Blog": {
-    "file": "ministry_of_justice___finland___blog.json",
-    "count": 20,
-    "category": "Politics + Government",
-    "description": "Oikeusblogi",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Demos Helsinki": {
-    "file": "demos_helsinki.json",
-    "count": 12,
-    "category": "Sustainability + Foresight",
-    "description": "A globally operating, independent think tank",
-    "lang": "en",
     "scope": "Finland"
   },
   "CCC Event Blog": {
@@ -2010,6 +1994,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Ministry of Justice | Finland | Blog": {
+    "file": "ministry_of_justice___finland___blog.json",
+    "count": 20,
+    "category": "Politics + Government",
+    "description": "Oikeusblogi",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Ministry of Justice | Finland | News": {
     "file": "ministry_of_justice___finland___news.json",
     "count": 20,
@@ -2031,6 +2023,14 @@
     "count": 10,
     "category": "Politics + Government",
     "description": "",
+    "lang": "en",
+    "scope": "Finland"
+  },
+  "Demos Helsinki": {
+    "file": "demos_helsinki.json",
+    "count": 12,
+    "category": "Sustainability + Foresight",
+    "description": "A globally operating, independent think tank",
     "lang": "en",
     "scope": "Finland"
   },
