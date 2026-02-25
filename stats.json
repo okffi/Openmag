@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "25.2.2026 klo 16.58.31"
+    "last_updated": "25.2.2026 klo 18.15.05"
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
@@ -36,7 +36,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 24,
+    "count": 25,
     "category": "Culture",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -84,7 +84,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 21,
+    "count": 20,
     "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -426,19 +426,75 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 52,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Kulta ry": {
+    "file": "kulta_ry.json",
+    "count": 12,
+    "category": "Cultural policy",
+    "description": "Kulttuuri- ja taidealan keskusjärjestö",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Cupore": {
+    "file": "cupore.json",
+    "count": 10,
+    "category": "Cultural policy",
+    "description": "Kulttuuripolitiikan tutkimuskeskus Cupore",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Institute of Network Cultures": {
+    "file": "institute_of_network_cultures.json",
+    "count": 15,
+    "category": "Digital cultural heritage",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "The Public Domain Review": {
+    "file": "the_public_domain_review.json",
+    "count": 100,
+    "category": "Digital cultural heritage",
+    "description": "The Public Domain Review",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Open Knowledge Foundation DE": {
+    "file": "open_knowledge_foundation_de.json",
+    "count": 715,
+    "category": "Digital policy + rights",
+    "description": "Blog on OKF DE",
+    "lang": "de",
+    "scope": "Europe"
+  },
+  "Global Solutions Initiative": {
+    "file": "global_solutions_initiative.json",
+    "count": 10,
+    "category": "Global policy",
+    "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Eduskunnan kirjasto": {
+    "file": "eduskunnan_kirjasto.json",
+    "count": 15,
+    "category": "Politics + Government",
+    "description": "Eduskunnan kirjaston tiedotteet - RSS",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "CODATA": {
     "file": "codata.json",
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "Committee on Data of the ISC",
-    "lang": "en",
-    "scope": "World"
-  },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 50,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
     "scope": "World"
   },
@@ -498,17 +554,9 @@
     "lang": "en",
     "scope": "World"
   },
-  "Institute of Network Cultures": {
-    "file": "institute_of_network_cultures.json",
-    "count": 15,
-    "category": "Digital cultural heritage",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 4,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -642,14 +690,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Eduskunnan kirjasto": {
-    "file": "eduskunnan_kirjasto.json",
-    "count": 15,
-    "category": "Politics + Government",
-    "description": "Eduskunnan kirjaston tiedotteet - RSS",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Tasavallan presidentin kanslia": {
     "file": "tasavallan_presidentin_kanslia.json",
     "count": 25,
@@ -660,7 +700,7 @@
   },
   "Carbon Brief": {
     "file": "carbon_brief.json",
-    "count": 10,
+    "count": 11,
     "category": "Sustainability + Foresight",
     "description": "Clear on climate",
     "lang": "en",
@@ -978,14 +1018,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Cupore": {
-    "file": "cupore.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "Kulttuuripolitiikan tutkimuskeskus Cupore",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Varsinais-Suomen kulttuuriperintöblogi": {
     "file": "varsinais_suomen_kulttuuriperint_blogi.json",
     "count": 25,
@@ -1009,14 +1041,6 @@
     "description": "All the World Heritage News",
     "lang": "en",
     "scope": "World"
-  },
-  "Open Knowledge Foundation DE": {
-    "file": "open_knowledge_foundation_de.json",
-    "count": 714,
-    "category": "Digital policy + rights",
-    "description": "Blog on OKF DE",
-    "lang": "de",
-    "scope": "Europe"
   },
   "Wikimedia Deutschland Blog": {
     "file": "wikimedia_deutschland_blog.json",
@@ -1087,14 +1111,6 @@
     "count": 7,
     "category": "(Open) Science + Research",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Kulta ry": {
-    "file": "kulta_ry.json",
-    "count": 12,
-    "category": "Cultural policy",
-    "description": "Kulttuuri- ja taidealan keskusjärjestö",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1175,14 +1191,6 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "Building a sustainable, global knowledge commons",
-    "lang": "en",
-    "scope": "World"
-  },
-  "The Public Domain Review": {
-    "file": "the_public_domain_review.json",
-    "count": 100,
-    "category": "Digital cultural heritage",
-    "description": "The Public Domain Review",
     "lang": "en",
     "scope": "World"
   },
@@ -1905,14 +1913,6 @@
     "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Global Solutions Initiative": {
-    "file": "global_solutions_initiative.json",
-    "count": 10,
-    "category": "Global policy",
-    "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
-    "lang": "en",
-    "scope": "Europe"
   },
   "UN Global Pulse": {
     "file": "un_global_pulse.json",
