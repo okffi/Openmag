@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "26.2.2026 klo 10.58.02"
+    "last_updated": "26.2.2026 klo 12.01.04"
   },
   "Yle": {
     "file": "yle.json",
@@ -28,7 +28,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 24,
+    "count": 27,
     "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -36,7 +36,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 21,
+    "count": 20,
     "category": "Culture",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -140,25 +140,57 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 52,
+    "count": 53,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
     "scope": "Europe"
   },
-  "OpenWebSearch.eu": {
-    "file": "openwebsearch_eu.json",
-    "count": 10,
+  "Ohjelmistoteollisuus | ePressi": {
+    "file": "ohjelmistoteollisuus___epressi.json",
+    "count": 20,
     "category": "(Open) Data + Technology",
-    "description": "Promoting Europe‘s Independence in Web Search",
-    "lang": "en",
-    "scope": "Europe"
+    "description": "Tiedotteiden tehokas julkaisukanava",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
     "count": 35,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Kansallisarkiston tiedotteet": {
+    "file": "kansallisarkiston_tiedotteet.json",
+    "count": 20,
+    "category": "Culture",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Suomalaisen Kirjallisuuden Seura (SKS)": {
+    "file": "suomalaisen_kirjallisuuden_seura__sks_.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Diff": {
+    "file": "diff.json",
+    "count": 11,
+    "category": "Digital skills + Citizen science",
+    "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
+  },
+  "OpenWebSearch.eu": {
+    "file": "openwebsearch_eu.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "Promoting Europe‘s Independence in Web Search",
     "lang": "en",
     "scope": "Europe"
   },
@@ -340,7 +372,7 @@
   },
   "Open Culture": {
     "file": "open_culture.json",
-    "count": 15,
+    "count": 17,
     "category": "Digital cultural heritage",
     "description": "The best free cultural & educational media on the web",
     "lang": "en",
@@ -410,14 +442,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Diff": {
-    "file": "diff.json",
-    "count": 11,
-    "category": "Digital skills + Citizen science",
-    "description": "News from the Wikimedia movement",
-    "lang": "en",
-    "scope": "World"
-  },
   "Extreme Citizen Science blog": {
     "file": "extreme_citizen_science_blog.json",
     "count": 10,
@@ -460,7 +484,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 15,
+    "count": 16,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -484,7 +508,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 10,
+    "count": 11,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -508,7 +532,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 20,
+    "count": 21,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -524,7 +548,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 31,
+    "count": 34,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -548,7 +572,7 @@
   },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
-    "count": 11,
+    "count": 13,
     "category": "Politics + Government",
     "description": "syöte",
     "lang": "fi",
@@ -602,14 +626,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Kansallisarkiston tiedotteet": {
-    "file": "kansallisarkiston_tiedotteet.json",
-    "count": 20,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Kulttuuriperintökasvatuksen seura": {
     "file": "kulttuuriperint_kasvatuksen_seura.json",
     "count": 9,
@@ -626,14 +642,6 @@
     "lang": "sv",
     "scope": "Nordic + Baltic countries"
   },
-  "Suomalaisen Kirjallisuuden Seura (SKS)": {
-    "file": "suomalaisen_kirjallisuuden_seura__sks_.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Internet Archive Blogs": {
     "file": "internet_archive_blogs.json",
     "count": 10,
@@ -644,7 +652,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 4,
+    "count": 10,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -948,7 +956,7 @@
   },
   "Follow the News published by UNESCO on Intangible Cultural Heritage": {
     "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
-    "count": 609,
+    "count": 1,
     "category": "Culture",
     "description": "",
     "lang": "en",
@@ -1044,7 +1052,7 @@
   },
   "Forum Information & Democracy": {
     "file": "forum_information___democracy.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital policy + rights",
     "description": "",
     "lang": "en",
@@ -1426,14 +1434,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Ohjelmistoteollisuus | ePressi": {
-    "file": "ohjelmistoteollisuus___epressi.json",
-    "count": 20,
-    "category": "(Open) Data + Technology",
-    "description": "Tiedotteiden tehokas julkaisukanava",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "ICANN New and Noteworthy": {
     "file": "icann_new_and_noteworthy.json",
     "count": 7,
@@ -1529,6 +1529,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Culture and Creativity": {
+    "file": "culture_and_creativity.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "ELKA": {
     "file": "elka.json",
@@ -2010,12 +2018,12 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Ministry of Justice | Finland | News": {
-    "file": "ministry_of_justice___finland___news.json",
-    "count": 20,
+  "Kuntaliitto": {
+    "file": "kuntaliitto.json",
+    "count": 10,
     "category": "Politics + Government",
     "description": "",
-    "lang": "en",
+    "lang": "fi",
     "scope": "Finland"
   },
   "Association of Finnish Cities and Municipalities": {
