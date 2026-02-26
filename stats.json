@@ -1,10 +1,10 @@
 {
   "__meta": {
-    "last_updated": "26.2.2026 klo 16.54.49"
+    "last_updated": "26.2.2026 klo 17.59.58"
   },
   "Yle": {
     "file": "yle.json",
-    "count": 22,
+    "count": 23,
     "category": "Global policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -12,7 +12,7 @@
   },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
-    "count": 51,
+    "count": 56,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -28,7 +28,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 28,
+    "count": 27,
     "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -156,7 +156,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 40,
+    "count": 41,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -204,7 +204,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 16,
+    "count": 15,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -228,7 +228,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 23,
+    "count": 24,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -386,6 +386,70 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 48,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "University of Helsinki": {
+    "file": "university_of_helsinki.json",
+    "count": 13,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "CMI": {
+    "file": "cmi.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "Peace broker",
+    "lang": "en",
+    "scope": "Finland"
+  },
+  "Kansalaisfoorumi": {
+    "file": "kansalaisfoorumi.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "Koulutusta, kulttuuria ja kansalaistoimintaa",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "European Union": {
+    "file": "european_union.json",
+    "count": 30,
+    "category": "Politics + Government",
+    "description": "European Union | Featured news",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Helsinki-Uusimaa Region": {
+    "file": "helsinki_uusimaa_region.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "NOEMA": {
+    "file": "noema.json",
+    "count": 10,
+    "category": "Sustainability + Foresight",
+    "description": "Noema Magazine",
+    "lang": "en",
+    "scope": "World"
+  },
+  "European Cultural Foundation": {
+    "file": "european_cultural_foundation.json",
+    "count": 10,
+    "category": "Cultural policy",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "xkcd": {
     "file": "xkcd.json",
     "count": 4,
@@ -402,14 +466,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 48,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
-    "lang": "en",
-    "scope": "World"
-  },
   "CLARIN ERIC": {
     "file": "clarin_eric.json",
     "count": 10,
@@ -417,14 +473,6 @@
     "description": "Common Language Resources and Technology Infrastructure",
     "lang": "en",
     "scope": "Europe"
-  },
-  "University of Helsinki": {
-    "file": "university_of_helsinki.json",
-    "count": 13,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Helsingin yliopisto": {
     "file": "helsingin_yliopisto.json",
@@ -540,7 +588,7 @@
   },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital policy + rights",
     "description": "",
     "lang": "en",
@@ -588,7 +636,7 @@
   },
   "Technology – POLITICO": {
     "file": "technology___politico.json",
-    "count": 33,
+    "count": 35,
     "category": "Digital policy + rights",
     "description": "European Politics, Policy, Government News",
     "lang": "en",
@@ -674,6 +722,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Ihmisoikeuskeskus": {
+    "file": "ihmisoikeuskeskus.json",
+    "count": 50,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "CODATA": {
     "file": "codata.json",
     "count": 10,
@@ -724,7 +780,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 3,
+    "count": 10,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -810,14 +866,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Helsinki-Uusimaa Region": {
-    "file": "helsinki_uusimaa_region.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Tasavallan presidentin kanslia": {
     "file": "tasavallan_presidentin_kanslia.json",
     "count": 25,
@@ -826,14 +874,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "NOEMA": {
-    "file": "noema.json",
-    "count": 10,
-    "category": "Sustainability + Foresight",
-    "description": "Noema Magazine",
-    "lang": "en",
-    "scope": "World"
-  },
   "Sitra": {
     "file": "sitra.json",
     "count": 10,
@@ -841,14 +881,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "European Cultural Foundation": {
-    "file": "european_cultural_foundation.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "EUvsDisinfo": {
     "file": "euvsdisinfo.json",
@@ -953,14 +985,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "European Union": {
-    "file": "european_union.json",
-    "count": 30,
-    "category": "Politics + Government",
-    "description": "European Union | Featured news",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Kotimaisten kielten keskus KOTUS": {
     "file": "kotimaisten_kielten_keskus_kotus.json",
@@ -1121,14 +1145,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Ihmisoikeuskeskus": {
-    "file": "ihmisoikeuskeskus.json",
-    "count": 50,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "NGI Commons": {
     "file": "ngi_commons.json",
@@ -1330,14 +1346,6 @@
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
-  "Kuvasto": {
-    "file": "kuvasto.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "Arvoa taiteelle",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
     "count": 15,
@@ -1471,6 +1479,14 @@
     "count": 9,
     "category": "Cultural policy",
     "description": "Kopiosto on tekijöiden, esittäjien ja kustantajien yhteinen tekijänoikeusjärjestö.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Kuvasto": {
+    "file": "kuvasto.json",
+    "count": 10,
+    "category": "Cultural policy",
+    "description": "Arvoa taiteelle",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1914,14 +1930,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "CMI": {
-    "file": "cmi.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "Peace broker",
-    "lang": "en",
-    "scope": "Finland"
-  },
   "CoP CC on Participatory and Deliberative Democracy": {
     "file": "cop_cc_on_participatory_and_deliberative_democracy.json",
     "count": 10,
@@ -1929,14 +1937,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Kansalaisfoorumi": {
-    "file": "kansalaisfoorumi.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "Koulutusta, kulttuuria ja kansalaistoimintaa",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Oxfam International": {
     "file": "oxfam_international.json",
