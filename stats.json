@@ -1,10 +1,10 @@
 {
   "__meta": {
-    "last_updated": "26.2.2026 klo 12.01.04"
+    "last_updated": "26.2.2026 klo 13.43.58"
   },
   "Yle": {
     "file": "yle.json",
-    "count": 20,
+    "count": 21,
     "category": "Global policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -28,7 +28,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 27,
+    "count": 28,
     "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -36,7 +36,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 20,
+    "count": 22,
     "category": "Culture",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -140,7 +140,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 53,
+    "count": 54,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -156,7 +156,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 35,
+    "count": 38,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -180,11 +180,75 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 11,
+    "count": 12,
     "category": "Digital skills + Citizen science",
     "description": "News from the Wikimedia movement",
     "lang": "en",
     "scope": "World"
+  },
+  "Open Culture": {
+    "file": "open_culture.json",
+    "count": 17,
+    "category": "Digital cultural heritage",
+    "description": "The best free cultural & educational media on the web",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Global Voices": {
+    "file": "global_voices.json",
+    "count": 16,
+    "category": "Human Rights + Democracy",
+    "description": "Citizen media stories from around the world",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Hrana": {
+    "file": "hrana.json",
+    "count": 11,
+    "category": "Human Rights + Democracy",
+    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
+    "lang": "en",
+    "scope": "World"
+  },
+  "ProPublica": {
+    "file": "propublica.json",
+    "count": 20,
+    "category": "Journalism + investigation",
+    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Project Syndicate": {
+    "file": "project_syndicate.json",
+    "count": 22,
+    "category": "Perspectives",
+    "description": "Project Syndicate - The World’s Opinion Page",
+    "lang": "en",
+    "scope": "World"
+  },
+  "European Commission": {
+    "file": "european_commission.json",
+    "count": 34,
+    "category": "Politics + Government",
+    "description": "European Commission | News",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Helsingin kaupunki | Uutiset": {
+    "file": "helsingin_kaupunki___uutiset.json",
+    "count": 13,
+    "category": "Politics + Government",
+    "description": "syöte",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "OpenWebSearch.eu": {
     "file": "openwebsearch_eu.json",
@@ -220,7 +284,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 48,
+    "count": 32,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -370,14 +434,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Culture": {
-    "file": "open_culture.json",
-    "count": 17,
-    "category": "Digital cultural heritage",
-    "description": "The best free cultural & educational media on the web",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
     "count": 10,
@@ -482,14 +538,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Global Voices": {
-    "file": "global_voices.json",
-    "count": 16,
-    "category": "Human Rights + Democracy",
-    "description": "Citizen media stories from around the world",
-    "lang": "en",
-    "scope": "World"
-  },
   "Amnesty Suomi": {
     "file": "amnesty_suomi.json",
     "count": 10,
@@ -500,25 +548,9 @@
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
-    "count": 12,
+    "count": 13,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Hrana": {
-    "file": "hrana.json",
-    "count": 11,
-    "category": "Human Rights + Democracy",
-    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
-    "lang": "en",
-    "scope": "World"
-  },
-  "ProPublica": {
-    "file": "propublica.json",
-    "count": 20,
-    "category": "Journalism + investigation",
-    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
     "lang": "en",
     "scope": "World"
   },
@@ -530,14 +562,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Project Syndicate": {
-    "file": "project_syndicate.json",
-    "count": 21,
-    "category": "Perspectives",
-    "description": "Project Syndicate - The World’s Opinion Page",
-    "lang": "en",
-    "scope": "World"
-  },
   "resilience": {
     "file": "resilience.json",
     "count": 11,
@@ -545,14 +569,6 @@
     "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
     "scope": "World"
-  },
-  "European Commission": {
-    "file": "european_commission.json",
-    "count": 34,
-    "category": "Politics + Government",
-    "description": "European Commission | News",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Liikenne- ja viestintäministeriö | News": {
     "file": "liikenne__ja_viestint_ministeri____news.json",
@@ -567,14 +583,6 @@
     "count": 18,
     "category": "Politics + Government",
     "description": "Eduskunnan tiedotteet - RSS",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Helsingin kaupunki | Uutiset": {
-    "file": "helsingin_kaupunki___uutiset.json",
-    "count": 13,
-    "category": "Politics + Government",
-    "description": "syöte",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -794,6 +802,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "EUvsDisinfo": {
+    "file": "euvsdisinfo.json",
+    "count": 10,
+    "category": "Journalism + investigation",
+    "description": "DON'T BE DECEIVED, QUESTION EVEN MORE",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Culture Action Europe News": {
     "file": "culture_action_europe_news.json",
     "count": 10,
@@ -890,14 +906,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "EUvsDisinfo": {
-    "file": "euvsdisinfo.json",
-    "count": 10,
-    "category": "Journalism + investigation",
-    "description": "DON'T BE DECEIVED, QUESTION EVEN MORE",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
     "count": 10,
@@ -956,7 +964,7 @@
   },
   "Follow the News published by UNESCO on Intangible Cultural Heritage": {
     "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
-    "count": 1,
+    "count": 609,
     "category": "Culture",
     "description": "",
     "lang": "en",
@@ -1052,7 +1060,7 @@
   },
   "Forum Information & Democracy": {
     "file": "forum_information___democracy.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital policy + rights",
     "description": "",
     "lang": "en",
@@ -1194,6 +1202,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Culture and Creativity": {
+    "file": "culture_and_creativity.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Confederation of Open Access Repositories": {
     "file": "confederation_of_open_access_repositories.json",
     "count": 10,
@@ -1201,14 +1217,6 @@
     "description": "Building a sustainable, global knowledge commons",
     "lang": "en",
     "scope": "World"
-  },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Hacks/Hackers": {
     "file": "hacks_hackers.json",
@@ -1370,22 +1378,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Demos Helsinki": {
-    "file": "demos_helsinki.json",
-    "count": 12,
-    "category": "Sustainability + Foresight",
-    "description": "A globally operating, independent think tank",
-    "lang": "en",
-    "scope": "Finland"
-  },
-  "Heritage Research Hub": {
-    "file": "heritage_research_hub.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "A platform on and for cultural heritage research",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
     "count": 15,
@@ -1529,14 +1521,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Culture and Creativity": {
-    "file": "culture_and_creativity.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "ELKA": {
     "file": "elka.json",
@@ -2018,12 +2002,12 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Kuntaliitto": {
-    "file": "kuntaliitto.json",
-    "count": 10,
+  "Ministry of Justice | Finland | News": {
+    "file": "ministry_of_justice___finland___news.json",
+    "count": 20,
     "category": "Politics + Government",
     "description": "",
-    "lang": "fi",
+    "lang": "en",
     "scope": "Finland"
   },
   "Association of Finnish Cities and Municipalities": {
@@ -2040,6 +2024,14 @@
     "category": "Politics + Government",
     "description": "Uusimmat tiedotteet",
     "lang": "fi",
+    "scope": "Finland"
+  },
+  "Demos Helsinki": {
+    "file": "demos_helsinki.json",
+    "count": 12,
+    "category": "Sustainability + Foresight",
+    "description": "A globally operating, independent think tank",
+    "lang": "en",
     "scope": "Finland"
   },
   "Ilmasto- ja energiapoliittinen ministerityöryhmä": {
@@ -2097,6 +2089,14 @@
     "description": "",
     "lang": "fi",
     "scope": "World"
+  },
+  "Heritage Research Hub": {
+    "file": "heritage_research_hub.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "A platform on and for cultural heritage research",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Puistokatu 4": {
     "file": "puistokatu_4.json",
