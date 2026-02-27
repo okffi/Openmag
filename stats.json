@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "27.2.2026 klo 10.52.11"
+    "last_updated": "27.2.2026 klo 11.52.37"
   },
   "Global Voices": {
     "file": "global_voices.json",
@@ -76,7 +76,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 22,
+    "count": 23,
     "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -162,6 +162,46 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Museolehti": {
+    "file": "museolehti.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Museoalan ihmisten, ilmiöiden ja puheenaiheiden media.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Electronic Frontier Foundation": {
+    "file": "electronic_frontier_foundation.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Yle": {
+    "file": "yle.json",
+    "count": 21,
+    "category": "Global policy",
+    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "European Commission": {
+    "file": "european_commission.json",
+    "count": 32,
+    "category": "Politics + Government",
+    "description": "European Commission | News",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Kotimaisten kielten keskus KOTUS": {
+    "file": "kotimaisten_kielten_keskus_kotus.json",
+    "count": 10,
+    "category": "Cultural policy",
+    "description": "Kotimaisten kielten keskus",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "COSS ry": {
     "file": "coss_ry.json",
     "count": 15,
@@ -196,7 +236,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 32,
+    "count": 35,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -330,14 +370,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Electronic Frontier Foundation": {
-    "file": "electronic_frontier_foundation.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "mySociety": {
     "file": "mysociety.json",
     "count": 10,
@@ -378,14 +410,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Yle": {
-    "file": "yle.json",
-    "count": 21,
-    "category": "Global policy",
-    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "European Citizens' Initiative": {
     "file": "european_citizens__initiative.json",
     "count": 10,
@@ -412,7 +436,7 @@
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
-    "count": 12,
+    "count": 13,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
@@ -420,7 +444,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 10,
+    "count": 11,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -481,14 +505,6 @@
     "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
     "scope": "World"
-  },
-  "European Commission": {
-    "file": "european_commission.json",
-    "count": 31,
-    "category": "Politics + Government",
-    "description": "European Commission | News",
-    "lang": "en",
-    "scope": "Europe"
   },
   "European Union": {
     "file": "european_union.json",
@@ -796,7 +812,7 @@
   },
   "Presidentti": {
     "file": "presidentti.json",
-    "count": 10,
+    "count": 11,
     "category": "Politics + Government",
     "description": "",
     "lang": "fi",
@@ -1034,14 +1050,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Kotimaisten kielten keskus KOTUS": {
-    "file": "kotimaisten_kielten_keskus_kotus.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "Kotimaisten kielten keskus",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Weekly OSM": {
     "file": "weekly_osm.json",
     "count": 10,
@@ -1089,14 +1097,6 @@
     "description": "",
     "lang": "sv",
     "scope": "Nordic + Baltic countries"
-  },
-  "Museolehti": {
-    "file": "museolehti.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Museoalan ihmisten, ilmiöiden ja puheenaiheiden media.",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "CREATe": {
     "file": "create.json",
@@ -1356,19 +1356,11 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 10,
+    "count": 1,
     "category": "Journalism + investigation",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
-  },
-  "Kuvasto": {
-    "file": "kuvasto.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "Arvoa taiteelle",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
@@ -1503,6 +1495,14 @@
     "count": 9,
     "category": "Cultural policy",
     "description": "Kopiosto on tekijöiden, esittäjien ja kustantajien yhteinen tekijänoikeusjärjestö.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Kuvasto": {
+    "file": "kuvasto.json",
+    "count": 10,
+    "category": "Cultural policy",
+    "description": "Arvoa taiteelle",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1737,6 +1737,14 @@
     "description": "Electronic Frontier Finland - Effi ry:n kotisivut",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "infojustice": {
+    "file": "infojustice.json",
+    "count": 60,
+    "category": "Digital policy + rights",
+    "description": "- Hosted by the American University Program on Information Justice and Intellectual Property",
+    "lang": "en",
+    "scope": "World"
   },
   "Internet Governance Forum (IGF)": {
     "file": "internet_governance_forum__igf_.json",
@@ -2008,6 +2016,14 @@
     "category": "Politics + Government",
     "description": "",
     "lang": "en",
+    "scope": "Finland"
+  },
+  "Kuntaliitto": {
+    "file": "kuntaliitto.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
     "scope": "Finland"
   },
   "Association of Finnish Cities and Municipalities": {
