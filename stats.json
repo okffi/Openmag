@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "27.2.2026 klo 7.57.40"
+    "last_updated": "27.2.2026 klo 9.06.46"
   },
   "Global Voices": {
     "file": "global_voices.json",
@@ -23,6 +23,46 @@
     "count": 50,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Turun yliopisto": {
+    "file": "turun_yliopisto.json",
+    "count": 14,
+    "category": "(Open) Science + Research",
+    "description": "Turun yliopiston etusivun uutisten lyhennelmät",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Oulu2026": {
+    "file": "oulu2026.json",
+    "count": 100,
+    "category": "Culture",
+    "description": "Oulu on Euroopan kulttuuripääkaupunki 2026",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 10,
+    "category": "Digital cultural heritage",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Foreign Policy": {
+    "file": "foreign_policy.json",
+    "count": 26,
+    "category": "Global policy",
+    "description": "the Global Magazine of News and Ideas",
+    "lang": "en",
+    "scope": "World"
+  },
+  "EUvsDisinfo": {
+    "file": "euvsdisinfo.json",
+    "count": 10,
+    "category": "Journalism + investigation",
+    "description": "DON'T BE DECEIVED, QUESTION EVEN MORE",
     "lang": "en",
     "scope": "Europe"
   },
@@ -92,7 +132,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 20,
+    "count": 21,
     "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -103,14 +143,6 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Turun yliopisto": {
-    "file": "turun_yliopisto.json",
-    "count": 14,
-    "category": "(Open) Science + Research",
-    "description": "Turun yliopiston etusivun uutisten lyhennelmät",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -159,14 +191,6 @@
     "count": 20,
     "category": "Culture",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Oulu2026": {
-    "file": "oulu2026.json",
-    "count": 100,
-    "category": "Culture",
-    "description": "Oulu on Euroopan kulttuuripääkaupunki 2026",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -268,23 +292,15 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital skills + Citizen science",
     "description": "News from the Wikimedia movement",
     "lang": "en",
     "scope": "World"
   },
-  "Foreign Policy": {
-    "file": "foreign_policy.json",
-    "count": 26,
-    "category": "Global policy",
-    "description": "the Global Magazine of News and Ideas",
-    "lang": "en",
-    "scope": "World"
-  },
   "Maailman Kuvalehti": {
     "file": "maailman_kuvalehti.json",
-    "count": 10,
+    "count": 11,
     "category": "Global policy",
     "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta.",
     "lang": "fi",
@@ -529,6 +545,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Ylioppilaslehti": {
+    "file": "ylioppilaslehti.json",
+    "count": 10,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "xkcd": {
     "file": "xkcd.json",
@@ -873,14 +897,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "EUvsDisinfo": {
-    "file": "euvsdisinfo.json",
-    "count": 10,
-    "category": "Journalism + investigation",
-    "description": "DON'T BE DECEIVED, QUESTION EVEN MORE",
-    "lang": "en",
-    "scope": "Europe"
   },
   "bellingcat": {
     "file": "bellingcat.json",
@@ -1340,7 +1356,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 1,
+    "count": 10,
     "category": "Journalism + investigation",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -1382,14 +1398,6 @@
     "file": "arktinen_keskus.json",
     "count": 10,
     "category": "Global policy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Avoin hallinto": {
-    "file": "avoin_hallinto.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
     "description": "",
     "lang": "fi",
     "scope": "Finland"
@@ -1641,14 +1649,6 @@
     "description": "Articles and events from the Digital Humanities community at Stanford University",
     "lang": "en",
     "scope": "World"
-  },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "EUscreen": {
     "file": "euscreen.json",
@@ -1930,6 +1930,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Avoin hallinto": {
+    "file": "avoin_hallinto.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "CoP CC on Participatory and Deliberative Democracy": {
     "file": "cop_cc_on_participatory_and_deliberative_democracy.json",
     "count": 10,
@@ -1991,14 +1999,6 @@
     "count": 10,
     "category": "Perspectives",
     "description": "Kestävän elämän media",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Ylioppilaslehti": {
-    "file": "ylioppilaslehti.json",
-    "count": 10,
-    "category": "Perspectives",
-    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
