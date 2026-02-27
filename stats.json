@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "27.2.2026 klo 15.14.32"
+    "last_updated": "27.2.2026 klo 16.47.19"
   },
   "Global Voices": {
     "file": "global_voices.json",
@@ -20,7 +20,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 51,
+    "count": 55,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -188,7 +188,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 33,
+    "count": 34,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -236,7 +236,7 @@
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
-    "count": 14,
+    "count": 15,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
@@ -332,9 +332,49 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 22,
+    "count": 24,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Technology – POLITICO": {
+    "file": "technology___politico.json",
+    "count": 33,
+    "category": "Digital policy + rights",
+    "description": "European Politics, Policy, Government News",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Tech Policy Press": {
+    "file": "tech_policy_press.json",
+    "count": 3306,
+    "category": "Digital policy + rights",
+    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Zooniverse": {
+    "file": "zooniverse.json",
+    "count": 10,
+    "category": "Digital skills + Citizen science",
+    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Amnesty Suomi": {
+    "file": "amnesty_suomi.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Carbon Brief": {
+    "file": "carbon_brief.json",
+    "count": 11,
+    "category": "Sustainability + Foresight",
+    "description": "Clear on climate",
     "lang": "en",
     "scope": "World"
   },
@@ -388,7 +428,7 @@
   },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
-    "count": 10,
+    "count": 11,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -396,7 +436,7 @@
   },
   "EUSBSR": {
     "file": "eusbsr.json",
-    "count": 10,
+    "count": 11,
     "category": "Cultural policy",
     "description": "EU Strategy For The Baltic Sea Region",
     "lang": "en",
@@ -481,22 +521,6 @@
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Technology – POLITICO": {
-    "file": "technology___politico.json",
-    "count": 33,
-    "category": "Digital policy + rights",
-    "description": "European Politics, Policy, Government News",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Tech Policy Press": {
-    "file": "tech_policy_press.json",
-    "count": 3306,
-    "category": "Digital policy + rights",
-    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
-    "lang": "en",
-    "scope": "World"
   },
   "United Nations | The Guardian": {
     "file": "united_nations___the_guardian.json",
@@ -818,14 +842,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Amnesty Suomi": {
-    "file": "amnesty_suomi.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Ihmisoikeuskeskus": {
     "file": "ihmisoikeuskeskus.json",
     "count": 50,
@@ -841,14 +857,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Carbon Brief": {
-    "file": "carbon_brief.json",
-    "count": 11,
-    "category": "Sustainability + Foresight",
-    "description": "Clear on climate",
-    "lang": "en",
-    "scope": "World"
   },
   "Verde": {
     "file": "verde.json",
@@ -1354,14 +1362,6 @@
     "lang": "en",
     "scope": "Finland"
   },
-  "NORDIS": {
-    "file": "nordis.json",
-    "count": 10,
-    "category": "Journalism + investigation",
-    "description": "The Nordic Observatory for Digital Media and Information Disorder",
-    "lang": "en",
-    "scope": "Nordic + Baltic countries"
-  },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
     "count": 15,
@@ -1826,14 +1826,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Zooniverse": {
-    "file": "zooniverse.json",
-    "count": 10,
-    "category": "Digital skills + Citizen science",
-    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
-    "lang": "en",
-    "scope": "World"
-  },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
     "count": 10,
@@ -1986,6 +1978,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "NORDIS": {
+    "file": "nordis.json",
+    "count": 10,
+    "category": "Journalism + investigation",
+    "description": "The Nordic Observatory for Digital Media and Information Disorder",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
+  },
   "Project Syndicate economists": {
     "file": "project_syndicate_economists.json",
     "count": 20,
@@ -2016,14 +2016,6 @@
     "category": "Politics + Government",
     "description": "",
     "lang": "en",
-    "scope": "Finland"
-  },
-  "Kuntaliitto": {
-    "file": "kuntaliitto.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "fi",
     "scope": "Finland"
   },
   "Association of Finnish Cities and Municipalities": {
