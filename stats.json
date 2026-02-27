@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "27.2.2026 klo 6.51.25"
+    "last_updated": "27.2.2026 klo 7.57.40"
   },
   "Global Voices": {
     "file": "global_voices.json",
@@ -9,6 +9,22 @@
     "description": "Citizen media stories from around the world",
     "lang": "en",
     "scope": "World"
+  },
+  "Suomen Kuvalehti": {
+    "file": "suomen_kuvalehti.json",
+    "count": 34,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Euronews | Europe": {
+    "file": "euronews___europe.json",
+    "count": 50,
+    "category": "Politics + Government",
+    "description": "Latest news from Euronews",
+    "lang": "en",
+    "scope": "Europe"
   },
   "COSS ry": {
     "file": "coss_ry.json",
@@ -260,7 +276,7 @@
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
-    "count": 25,
+    "count": 26,
     "category": "Global policy",
     "description": "the Global Magazine of News and Ideas",
     "lang": "en",
@@ -361,14 +377,6 @@
     "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
     "lang": "en",
     "scope": "World"
-  },
-  "Suomen Kuvalehti": {
-    "file": "suomen_kuvalehti.json",
-    "count": 34,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "The Conversation – Articles (EUROPE)": {
     "file": "the_conversation___articles__europe_.json",
@@ -489,14 +497,6 @@
     "description": "Uusimmat hallituksen esitykset (RSS)",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Euronews | Europe": {
-    "file": "euronews___europe.json",
-    "count": 50,
-    "category": "Politics + Government",
-    "description": "Latest news from Euronews",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
@@ -1394,22 +1394,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Journalism + investigation",
-    "description": "Julkisen sanan neuvosto",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Ministry of Justice | Finland | Blog": {
-    "file": "ministry_of_justice___finland___blog.json",
-    "count": 20,
-    "category": "Politics + Government",
-    "description": "Oikeusblogi",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
     "count": 15,
@@ -1962,6 +1946,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Journalism + investigation",
+    "description": "Julkisen sanan neuvosto",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Guides - bellingcat": {
     "file": "guides___bellingcat.json",
     "count": 9,
@@ -1999,6 +1991,22 @@
     "count": 10,
     "category": "Perspectives",
     "description": "Kestävän elämän media",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Ylioppilaslehti": {
+    "file": "ylioppilaslehti.json",
+    "count": 10,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Ministry of Justice | Finland | Blog": {
+    "file": "ministry_of_justice___finland___blog.json",
+    "count": 20,
+    "category": "Politics + Government",
+    "description": "Oikeusblogi",
     "lang": "fi",
     "scope": "Finland"
   },
