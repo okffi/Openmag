@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "28.2.2026 klo 18.35.15"
+    "last_updated": "28.2.2026 klo 19.27.12"
   },
   "Yle": {
     "file": "yle.json",
@@ -119,6 +119,22 @@
     "count": 49,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Tech Policy Press": {
+    "file": "tech_policy_press.json",
+    "count": 3310,
+    "category": "Digital policy + rights",
+    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "The Conversation – Articles (GLOBAL)": {
+    "file": "the_conversation___articles__global_.json",
+    "count": 50,
+    "category": "Perspectives",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -290,14 +306,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Tech Policy Press": {
-    "file": "tech_policy_press.json",
-    "count": 3310,
-    "category": "Digital policy + rights",
-    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Zooniverse": {
     "file": "zooniverse.json",
     "count": 10,
@@ -359,14 +367,6 @@
     "count": 15,
     "category": "Journalism + investigation",
     "description": "Advancing media innovation to foster public trust",
-    "lang": "en",
-    "scope": "World"
-  },
-  "The Conversation – Articles (GLOBAL)": {
-    "file": "the_conversation___articles__global_.json",
-    "count": 50,
-    "category": "Perspectives",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -898,6 +898,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Nordisk kulturkontakt": {
+    "file": "nordisk_kulturkontakt.json",
+    "count": 12,
+    "category": "Cultural policy",
+    "description": "Vi stärker det nordiska samarbetet genom kultur",
+    "lang": "sv",
+    "scope": "Nordic + Baltic countries"
+  },
   "CODATA": {
     "file": "codata.json",
     "count": 10,
@@ -948,7 +956,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -1105,6 +1113,14 @@
     "description": "",
     "lang": "en",
     "scope": "World"
+  },
+  "Svenska institutet": {
+    "file": "svenska_institutet.json",
+    "count": 10,
+    "category": "Cultural policy",
+    "description": "Vi främjar Sverige i världen",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
   },
   "Weekly OSM": {
     "file": "weekly_osm.json",
@@ -1377,14 +1393,6 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
-  },
-  "NORDIS": {
-    "file": "nordis.json",
-    "count": 1,
-    "category": "Journalism + investigation",
-    "description": "The Nordic Observatory for Digital Media and Information Disorder",
-    "lang": "en",
-    "scope": "Nordic + Baltic countries"
   },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
@@ -1882,14 +1890,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Public Institutions": {
-    "file": "public_institutions.json",
-    "count": 9,
-    "category": "Global policy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "YK:n alueellinen tiedotuskeskus – Suomi": {
     "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
     "count": 15,
@@ -2105,21 +2105,5 @@
     "description": "A platform on and for cultural heritage research",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Svenska institutet": {
-    "file": "svenska_institutet.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "Vi främjar Sverige i världen",
-    "lang": "en",
-    "scope": "Nordic + Baltic countries"
-  },
-  "Nordisk kulturkontakt": {
-    "file": "nordisk_kulturkontakt.json",
-    "count": 12,
-    "category": "Cultural policy",
-    "description": "Vi stärker det nordiska samarbetet genom kultur",
-    "lang": "sv",
-    "scope": "Nordic + Baltic countries"
   }
 }
