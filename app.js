@@ -22,6 +22,9 @@
         if (translations[lang] && translations[lang][key]) {
             return translations[lang][key];
         }
+        if (translations['en'] && translations['en'][key]) {
+            return translations['en'][key];
+        }
         return originalValue || (key.includes('.') ? key.split('.')[1].replace(/_/g, ' ') : key);
     }
 
