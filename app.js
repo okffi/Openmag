@@ -15,6 +15,7 @@
     let translations = {};
     let currentLang = 'all';
     let currentScope = 'all';
+    let scrollObserver = null;
 
     // --- APUFUNKTIOT ---
     function t(key, originalValue = null) {
@@ -61,11 +62,12 @@
         const container = document.querySelector('#magazine-grid');
 
         // Tyhjennetään vain uutiskortit, säilytetään grid-sizer
+        // (.grid-item-valinnalla ei kosketa .grid-sizer-elementtiin)
         const items = container.querySelectorAll('.grid-item');
-        if (masonry && items.length) {
-            masonry.remove(items);
+        if (masonry) {
+            if (items.length) masonry.remove(items);
+            masonry.layout();
         }
-        container.innerHTML = '<div class="grid-sizer"></div>';
 
         displayArticles();
         updateUITranslations();
@@ -124,15 +126,20 @@
         initSidebar();
         updateUITranslations();
 
-        // Event listenerit
-        document.getElementById('langFilter').addEventListener('change', updateView);
-        document.getElementById('scopeFilter').addEventListener('change', updateView);
+        // Event listenerit - poistetaan vanhat ennen uusien lisäystä
+        const langFilter = document.getElementById('langFilter');
+        const scopeFilter = document.getElementById('scopeFilter');
+        langFilter.removeEventListener('change', updateView);
+        scopeFilter.removeEventListener('change', updateView);
+        langFilter.addEventListener('change', updateView);
+        scopeFilter.addEventListener('change', updateView);
 
-        // Scroll-tunnistin
-        const observer = new IntersectionObserver((entries) => {
+        // Scroll-tunnistin - katkaistaan mahdollinen aiempi ennen uuden luomista
+        if (scrollObserver) scrollObserver.disconnect();
+        scrollObserver = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting && !isLoading) displayArticles();
         }, { rootMargin: '400px' });
-        observer.observe(document.querySelector('#scroll-sentinel'));
+        scrollObserver.observe(document.querySelector('#scroll-sentinel'));
     }
 
     async function loadData(filePath, isInitial = false, forceRefresh = false) {
@@ -193,8 +200,18 @@
         if (img) {
             const image = document.createElement('img');
             image.src = `https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&af`;
-            image.onerror = () => { image.remove(); card.classList.add('no-image'); if (masonry) masonry.layout(); };
-            image.onload = () => { if (masonry && typeof masonry.layout === 'function') masonry.layout(); };
+            image.onerror = () => {
+                image.onerror = null;
+                image.onload = null;
+                image.remove();
+                card.classList.add('no-image');
+                if (masonry && typeof masonry.layout === 'function') masonry.layout();
+            };
+            image.onload = () => {
+                image.onerror = null;
+                image.onload = null;
+                if (masonry && typeof masonry.layout === 'function') masonry.layout();
+            };
             link.appendChild(image);
         }
 
