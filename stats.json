@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "1.3.2026 klo 13.27.40"
+    "last_updated": "1.3.2026 klo 15.03.40"
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
@@ -52,7 +52,7 @@
   },
   "Yle": {
     "file": "yle.json",
-    "count": 22,
+    "count": 23,
     "category": "Global policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -84,7 +84,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 32,
+    "count": 33,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -530,6 +530,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Lähde": {
+    "file": "l_hde.json",
+    "count": 3,
+    "category": "Yleinen",
+    "description": "Finnish Cultural Institute for the Benelux",
+    "lang": "fi",
+    "scope": "World"
+  },
   "COSS ry": {
     "file": "coss_ry.json",
     "count": 15,
@@ -676,7 +684,7 @@
   },
   "Ylioppilaslehti": {
     "file": "ylioppilaslehti.json",
-    "count": 2,
+    "count": 10,
     "category": "Perspectives",
     "description": "",
     "lang": "fi",
@@ -1396,7 +1404,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 1,
+    "count": 10,
     "category": "Journalism + investigation",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -1655,14 +1663,6 @@
     "count": 10,
     "category": "Digital cultural heritage",
     "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "FutureEverything » News": {
-    "file": "futureeverything___news.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": "Est. 1995. Cultural facilitators at the intersection of art, design, science and digital.",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2122,12 +2122,148 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Lähde": {
-    "file": "l_hde.json",
-    "count": 40,
+  "Pohjoismainen kulttuuripiste": {
+    "file": "pohjoismainen_kulttuuripiste.json",
+    "count": 12,
+    "category": "Culture",
+    "description": "Vi stärker det nordiska samarbetet genom kultur",
+    "lang": "fi",
+    "scope": "Nordic + Baltic countries"
+  },
+  "Nordic Culture Point": {
+    "file": "nordic_culture_point.json",
+    "count": 12,
+    "category": "Culture",
+    "description": "Vi stärker det nordiska samarbetet genom kultur",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
+  },
+  "Suomen Lähi-idän instituutti": {
+    "file": "suomen_l_hi_id_n_instituutti.json",
+    "count": 9,
     "category": "Culture",
     "description": "",
     "lang": "fi",
     "scope": "World"
+  },
+  "Finnish Institute in the Middle East": {
+    "file": "finnish_institute_in_the_middle_east.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Suomen Saksan-instituutti": {
+    "file": "suomen_saksan_instituutti.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Suomen Saksan-instituutti on Suomen kulttuurin, tieteen ja talouden foorumi saksankielisessä Euroopassa.",
+    "lang": "fi",
+    "scope": "Europe"
+  },
+  "The Finnland-Institut": {
+    "file": "the_finnland_institut.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "The Finnland-Institut is a forum for Finnish culture and arts, academia and business in the German-speaking region.",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Finnish Cultural Institute for the Benelux": {
+    "file": "finnish_cultural_institute_for_the_benelux.json",
+    "count": 8,
+    "category": "Culture",
+    "description": "Finnish Cultural Institute for the Benelux",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Suomen Benelux-instituutti": {
+    "file": "suomen_benelux_instituutti.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Finnish Cultural Institute for the Benelux",
+    "lang": "fi",
+    "scope": "Europe"
+  },
+  "Villa Karo": {
+    "file": "villa_karo.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "",
+    "lang": "fi",
+    "scope": "World"
+  },
+  "Suomen Madridin-instituutti": {
+    "file": "suomen_madridin_instituutti.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Instituto Iberoamericano de Finlandia - Suomen Madridin-instituutti",
+    "lang": "fi",
+    "scope": "Europe"
+  },
+  "Institut finlandais": {
+    "file": "institut_finlandais.json",
+    "count": 24,
+    "category": "Culture",
+    "description": "",
+    "lang": "fr",
+    "scope": "Europe"
+  },
+  "Suomen Rooman-instituutti": {
+    "file": "suomen_rooman_instituutti.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Suomen Rooman instituutti",
+    "lang": "fi",
+    "scope": "Europe"
+  },
+  "The Finnish Institute in Rome": {
+    "file": "the_finnish_institute_in_rome.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Suomen Rooman instituutti",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Finlandsinstitutet i Stockholm": {
+    "file": "finlandsinstitutet_i_stockholm.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Finlandsinstitutet i Stockholm",
+    "lang": "sv",
+    "scope": "Nordic + Baltic countries"
+  },
+  "Suomen Tukholman-instituutti": {
+    "file": "suomen_tukholman_instituutti.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Finlandsinstitutet i Stockholm",
+    "lang": "fi",
+    "scope": "Nordic + Baltic countries"
+  },
+  "Soome Instituut Eestis": {
+    "file": "soome_instituut_eestis.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Soome Eesti Instituudi Sihtasutus",
+    "lang": "et",
+    "scope": "Nordic + Baltic countries"
+  },
+  "Suomen Viron-instituutti": {
+    "file": "suomen_viron_instituutti.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Soome Eesti Instituudi Sihtasutus",
+    "lang": "fi",
+    "scope": "Nordic + Baltic countries"
+  },
+  "Finnish Institute in Estonia": {
+    "file": "finnish_institute_in_estonia.json",
+    "count": 9,
+    "category": "Culture",
+    "description": "Soome Eesti Instituudi Sihtasutus",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
   }
 }
