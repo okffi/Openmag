@@ -29,6 +29,9 @@
                 <h1>OpenMag</h1>
             </div>
             <div class="header-right">
+                <select id="uiLangFilter" class="dark-select">
+                    <option value="en">English</option>
+                </select>
                 <select id="langFilter" class="dark-select">
                     <option value="all">Languages (All)</option>
                     <option value="fi">Suomi</option>
@@ -48,9 +51,9 @@
         </header>
 
         <div id="feed-header-area">
-            <div id="feed-logo-container"></div>
+            <div id="feed-logo-container" style="display:none"></div>
             <div id="feed-info-container">
-                <div id="current-view-title" class="view-title">Tuoreimmat uutiset</div>
+                <div id="current-view-title" class="view-title"></div>
                 <div id="current-view-description"></div>
             </div>
         </div>

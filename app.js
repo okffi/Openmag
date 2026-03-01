@@ -15,11 +15,12 @@
     let translations = {};
     let currentLang = 'all';
     let currentScope = 'all';
+    let currentSourceFile = 'data.json';
     let scrollObserver = null;
 
     // --- APUFUNKTIOT ---
     function t(key, originalValue = null) {
-        const lang = document.getElementById('langFilter').value || 'en';
+        const lang = document.getElementById('uiLangFilter').value || 'en';
         if (translations[lang] && translations[lang][key]) {
             return translations[lang][key];
         }
@@ -92,6 +93,16 @@
             if (opt.value === 'all') opt.textContent = t('reg.all_regions') || "Regions (All)";
             else opt.textContent = getTranslation('reg', opt.value);
         });
+
+        // Päivitetään näkymän otsikko kielen vaihtuessa
+        const viewTitle = document.getElementById('current-view-title');
+        if (viewTitle && currentSourceFile === 'data.json') {
+            if (currentCategory === 'All') {
+                viewTitle.textContent = t('ui.latest_news');
+            } else {
+                viewTitle.textContent = getTranslation('cat', currentCategory);
+            }
+        }
     }
 
     // Tunnistetaan kieli ja aloitetaan
@@ -102,6 +113,22 @@
         if (supported.includes(userLang)) {
             document.getElementById('langFilter').value = userLang;
         }
+
+        // Rakennetaan käyttöliittymän kielivalikko: selaimen kieli + englanti
+        const uiLangFilter = document.getElementById('uiLangFilter');
+        const langNames = { fi: 'Suomi', en: 'English', sv: 'Svenska', de: 'Deutsch', fr: 'Français' };
+        uiLangFilter.innerHTML = '';
+        if (supported.includes(userLang) && userLang !== 'en') {
+            const opt = document.createElement('option');
+            opt.value = userLang;
+            opt.textContent = langNames[userLang];
+            uiLangFilter.appendChild(opt);
+        }
+        const enOpt = document.createElement('option');
+        enOpt.value = 'en';
+        enOpt.textContent = langNames['en'];
+        uiLangFilter.appendChild(enOpt);
+        uiLangFilter.value = supported.includes(userLang) ? userLang : 'en';
 
         // Masonry-alustus
         const container = document.querySelector('#magazine-grid');
@@ -133,6 +160,8 @@
         scopeFilter.removeEventListener('change', updateView);
         langFilter.addEventListener('change', updateView);
         scopeFilter.addEventListener('change', updateView);
+        uiLangFilter.removeEventListener('change', updateUITranslations);
+        uiLangFilter.addEventListener('change', updateUITranslations);
 
         // Scroll-tunnistin - katkaistaan mahdollinen aiempi ennen uuden luomista
         if (scrollObserver) scrollObserver.disconnect();
@@ -531,6 +560,8 @@
 
             const isMainFeed = (file === 'data.json');
             const displayTitle = isMainFeed ? t('ui.latest_news') : title;
+
+            currentSourceFile = file;
 
             if (viewTitle) viewTitle.textContent = displayTitle;
             if (viewDesc) viewDesc.innerText = t('msg.loading_news');
