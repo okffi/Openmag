@@ -17,6 +17,7 @@
     let currentScope = 'all';
     let currentSourceFile = 'data.json';
     let scrollObserver = null;
+    let pendingOperation = false;
 
     // --- APUFUNKTIOT ---
     function t(key, originalValue = null) {
@@ -54,21 +55,25 @@
         updateView();
     }
 
+    function clearGrid() {
+        const container = document.querySelector('#magazine-grid');
+        const items = container.querySelectorAll('.grid-item');
+        items.forEach(el => el.remove());
+        if (masonry) {
+            masonry.reloadItems();
+            masonry.layout();
+        }
+    }
+
     function updateView() {
+        if (pendingOperation) return;
+
         // Päivitetään globaalit suodatinarvot valikoista
         currentLang = document.getElementById('langFilter').value;
         currentScope = document.getElementById('scopeFilter').value;
 
         displayedCount = 0;
-        const container = document.querySelector('#magazine-grid');
-
-        // Tyhjennetään vain uutiskortit, säilytetään grid-sizer
-        // (.grid-item-valinnalla ei kosketa .grid-sizer-elementtiin)
-        const items = container.querySelectorAll('.grid-item');
-        if (masonry) {
-            if (items.length) masonry.remove(items);
-            masonry.layout();
-        }
+        clearGrid();
 
         displayArticles();
         updateUITranslations();
@@ -179,26 +184,33 @@
 
         sentinel.innerText = t('msg.loading_news');
         container.classList.remove('loaded');
-
-        const existingItems = container.querySelectorAll('.grid-item');
-        if (existingItems.length) {
-            masonry.remove(existingItems);
-            masonry.layout();
-        }
+        clearGrid();
 
         try {
             if (filePath === 'data.json' && mainFeedCache && !isInitial && !forceRefresh) {
                 allArticles = mainFeedCache;
                 console.log(t('msg.using_cached_feed'));
             } else {
-                const response = await fetch(filePath + '?v=' + Date.now(), {
-                    cache: 'no-cache',
-                    headers: { 'Cache-Control': 'no-cache' }
-                });
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 15000);
+                let response;
+                try {
+                    response = await fetch(filePath + '?v=' + Date.now(), {
+                        cache: 'no-cache',
+                        headers: { 'Cache-Control': 'no-cache' },
+                        signal: controller.signal
+                    });
+                } finally {
+                    clearTimeout(timeoutId);
+                }
 
                 if (!response.ok) throw new Error(t('msg.the_server_responded_with_an_error'));
 
-                allArticles = await response.json();
+                const data = await response.json();
+                if (!Array.isArray(data)) {
+                    throw new Error(t('msg.error_loading_news'));
+                }
+                allArticles = data;
 
                 if (filePath === 'data.json') {
                     mainFeedCache = allArticles;
@@ -210,8 +222,8 @@
 
         } catch (e) {
             console.error("Latausvirhe:", e);
+            allArticles = [];
             sentinel.innerText = t('msg.error_loading_news');
-        } finally {
             isLoading = false;
         }
     }
@@ -553,6 +565,8 @@
     }
 
     async function changeSource(file, title, el) {
+        if (pendingOperation) return;
+        pendingOperation = true;
         try {
             const viewTitle = document.getElementById('current-view-title');
             const viewDesc = document.getElementById('current-view-description');
@@ -574,6 +588,10 @@
 
             currentCategory = 'All';
             displayedCount = 0;
+
+            if (!isMainFeed) {
+                mainFeedCache = null;
+            }
 
             document.querySelectorAll('.source-item').forEach(i => i.classList.remove('active'));
 
@@ -629,6 +647,10 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } catch (e) {
             console.error("Error in changeSource:", e);
+            const viewDesc = document.getElementById('current-view-description');
+            if (viewDesc) viewDesc.innerText = t('msg.error_loading_news');
+        } finally {
+            pendingOperation = false;
         }
     }
 
