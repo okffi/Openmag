@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "2.3.2026 klo 17.49.41"
+    "last_updated": "2.3.2026 klo 18.28.36"
   },
   "Yle": {
     "file": "yle.json",
@@ -28,7 +28,7 @@
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
-    "count": 34,
+    "count": 35,
     "category": "Perspectives",
     "description": "",
     "lang": "fi",
@@ -92,7 +92,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 50,
+    "count": 51,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -140,7 +140,7 @@
   },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
-    "count": 16,
+    "count": 17,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -458,6 +458,22 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Center for European Policy Analysis": {
+    "file": "center_for_european_policy_analysis.json",
+    "count": 11,
+    "category": "Digital policy + rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "MySociety Newsletter": {
+    "file": "mysociety_newsletter.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Weekly OSM": {
     "file": "weekly_osm.json",
     "count": 10,
@@ -642,14 +658,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Center for European Policy Analysis": {
-    "file": "center_for_european_policy_analysis.json",
-    "count": 11,
-    "category": "Digital policy + rights",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "TIEKE": {
     "file": "tieke.json",
     "count": 10,
@@ -692,7 +700,7 @@
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
-    "count": 12,
+    "count": 13,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
@@ -1132,7 +1140,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -1410,14 +1418,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Avoin tiede": {
-    "file": "avoin_tiede.json",
-    "count": 7,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "FCAI | News": {
     "file": "fcai___news.json",
     "count": 20,
@@ -1509,6 +1509,14 @@
   "Tiedepolitiikka": {
     "file": "tiedepolitiikka.json",
     "count": 30,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Avoin tiede": {
+    "file": "avoin_tiede.json",
+    "count": 7,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -1970,14 +1978,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "MySociety Newsletter": {
-    "file": "mysociety_newsletter.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Sciences Po Technology and global affairs innovation hub": {
     "file": "sciences_po_technology_and_global_affairs_innovation_hub.json",
     "count": 22,
@@ -2177,14 +2177,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "NORDIS": {
-    "file": "nordis.json",
-    "count": 10,
-    "category": "Journalism + investigation",
-    "description": "The Nordic Observatory for Digital Media and Information Disorder",
-    "lang": "en",
-    "scope": "Nordic + Baltic countries"
   },
   "Project Syndicate economists": {
     "file": "project_syndicate_economists.json",
