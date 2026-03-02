@@ -52,7 +52,70 @@
     function resetFilters() {
         document.getElementById('langFilter').value = 'all';
         document.getElementById('scopeFilter').value = 'all';
+        syncSettingsPanelFromFilters();
         updateView();
+    }
+
+    function resetFiltersFromPanel() {
+        resetFilters();
+        closeSettingsPanel();
+    }
+
+    function toggleSettingsPanel() {
+        const panel = document.getElementById('settings-panel');
+        const btn = document.getElementById('settings-btn');
+        const isOpen = panel.classList.contains('open');
+        if (isOpen) {
+            closeSettingsPanel();
+        } else {
+            panel.hidden = false;
+            // Force reflow so the transition plays
+            void panel.offsetHeight;
+            panel.classList.add('open');
+            btn.classList.add('active');
+        }
+    }
+
+    function closeSettingsPanel() {
+        const panel = document.getElementById('settings-panel');
+        const btn = document.getElementById('settings-btn');
+        panel.classList.remove('open');
+        btn.classList.remove('active');
+        panel.addEventListener('transitionend', function handler() {
+            panel.removeEventListener('transitionend', handler);
+            if (!panel.classList.contains('open')) panel.hidden = true;
+        });
+    }
+
+    function applySettingsPanel() {
+        const selectedLang = document.querySelector('input[name="settings-lang"]:checked');
+        const selectedScope = document.querySelector('input[name="settings-scope"]:checked');
+        const selectedUiLang = document.querySelector('input[name="settings-ui-lang"]:checked');
+
+        if (selectedLang) document.getElementById('langFilter').value = selectedLang.value;
+        if (selectedScope) document.getElementById('scopeFilter').value = selectedScope.value;
+        if (selectedUiLang) {
+            document.getElementById('uiLangFilter').value = selectedUiLang.value;
+            updateUITranslations();
+        }
+
+        closeSettingsPanel();
+        updateView();
+    }
+
+    function syncSettingsPanelFromFilters() {
+        const langVal = document.getElementById('langFilter').value;
+        const scopeVal = document.getElementById('scopeFilter').value;
+        const uiLangVal = document.getElementById('uiLangFilter').value;
+
+        const langRadio = document.querySelector(`input[name="settings-lang"][value="${langVal}"]`);
+        if (langRadio) langRadio.checked = true;
+
+        const scopeRadio = document.querySelector(`input[name="settings-scope"][value="${scopeVal}"]`);
+        if (scopeRadio) scopeRadio.checked = true;
+
+        const uiLangRadio = document.querySelector(`input[name="settings-ui-lang"][value="${uiLangVal}"]`);
+        if (uiLangRadio) uiLangRadio.checked = true;
     }
 
     function clearGrid() {
@@ -89,15 +152,62 @@
         document.getElementById('btn-categories').textContent = t('ui.categories');
         document.getElementById('btn-az').textContent = t('ui.az');
 
-        // Select-valikot
-        document.querySelector('#langFilter option[value="all"]').textContent = t('ui.languages_all');
+        // Settings button label
+        const settingsBtnLabel = document.getElementById('settings-btn-label');
+        if (settingsBtnLabel) settingsBtnLabel.textContent = t('ui.settings');
 
-        // Huom: reg-etuliite vaatii getTranslation-logiikan
-        const scopeOptions = document.querySelectorAll('#scopeFilter option');
-        scopeOptions.forEach(opt => {
-            if (opt.value === 'all') opt.textContent = t('reg.all_regions') || "Regions (All)";
-            else opt.textContent = getTranslation('reg', opt.value);
+        // Settings panel section titles
+        const uiLangTitle = document.getElementById('settings-ui-lang-title');
+        if (uiLangTitle) uiLangTitle.textContent = t('ui.interface_language').toUpperCase();
+        const contentLangTitle = document.getElementById('settings-content-lang-title');
+        if (contentLangTitle) contentLangTitle.textContent = t('ui.content_language').toUpperCase();
+        const regionTitle = document.getElementById('settings-region-title');
+        if (regionTitle) regionTitle.textContent = t('ui.region').toUpperCase();
+
+        // Content language labels
+        const langLabelMap = {
+            all: 'settings-lang-all-label',
+            fi:  'settings-lang-fi-label',
+            en:  'settings-lang-en-label',
+            sv:  'settings-lang-sv-label',
+            de:  'settings-lang-de-label',
+            fr:  'settings-lang-fr-label'
+        };
+        const langTransMap = {
+            all: 'ui.all_languages',
+            fi:  'lang.finnish',
+            en:  'lang.english',
+            sv:  'lang.swedish',
+            de:  'lang.german',
+            fr:  'lang.french'
+        };
+        Object.keys(langLabelMap).forEach(key => {
+            const el = document.getElementById(langLabelMap[key]);
+            if (el) el.textContent = t(langTransMap[key]);
         });
+
+        // Region labels
+        const scopeLabelMap = {
+            'settings-scope-all-label':     t('ui.all_regions'),
+            'settings-scope-finland-label': t('reg.finland'),
+            'settings-scope-nordic-label':  t('reg.nordic_baltic_countries'),
+            'settings-scope-europe-label':  t('reg.europe'),
+            'settings-scope-world-label':   t('reg.world')
+        };
+        Object.keys(scopeLabelMap).forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = scopeLabelMap[id];
+        });
+
+        // Fallback note
+        const langNote = document.getElementById('settings-lang-note');
+        if (langNote) langNote.textContent = t('ui.english_fallback_note');
+
+        // Apply / Reset buttons
+        const applyBtn = document.getElementById('settings-apply-btn');
+        if (applyBtn) applyBtn.textContent = t('ui.apply').toUpperCase();
+        const resetBtn = document.getElementById('settings-reset-btn');
+        if (resetBtn) resetBtn.textContent = t('ui.reset_filters').toUpperCase();
 
         // Päivitetään näkymän otsikko kielen vaihtuessa
         const viewTitle = document.getElementById('current-view-title');
@@ -135,6 +245,29 @@
         uiLangFilter.appendChild(enOpt);
         uiLangFilter.value = supported.includes(userLang) ? userLang : 'en';
 
+        // Rakennetaan käyttöliittymän kielivalinnat asetuspaneeliin
+        const uiLangOptions = document.getElementById('settings-ui-lang-options');
+        if (uiLangOptions) {
+            uiLangOptions.innerHTML = '';
+            const uiLangs = supported.includes(userLang) && userLang !== 'en'
+                ? [userLang, 'en']
+                : ['en'];
+            uiLangs.forEach((lang, idx) => {
+                const label = document.createElement('label');
+                label.className = 'settings-radio-label';
+                const radio = document.createElement('input');
+                radio.type = 'radio';
+                radio.name = 'settings-ui-lang';
+                radio.value = lang;
+                if (idx === 0) radio.checked = true;
+                const span = document.createElement('span');
+                span.textContent = langNames[lang];
+                label.appendChild(radio);
+                label.appendChild(span);
+                uiLangOptions.appendChild(label);
+            });
+        }
+
         // Masonry-alustus
         const container = document.querySelector('#magazine-grid');
         masonry = new Masonry(container, {
@@ -157,6 +290,7 @@
         await loadData('data.json', true);
         initSidebar();
         updateUITranslations();
+        syncSettingsPanelFromFilters();
 
         // Event listenerit - poistetaan vanhat ennen uusien lisäystä
         const langFilter = document.getElementById('langFilter');
@@ -167,6 +301,17 @@
         scopeFilter.addEventListener('change', updateView);
         uiLangFilter.removeEventListener('change', updateUITranslations);
         uiLangFilter.addEventListener('change', updateUITranslations);
+
+        // Suljetaan asetuspaneeli klikkaamalla sen ulkopuolelle
+        document.addEventListener('click', (e) => {
+            const panel = document.getElementById('settings-panel');
+            const btn = document.getElementById('settings-btn');
+            if (panel && panel.classList.contains('open')) {
+                if (!panel.contains(e.target) && !btn.contains(e.target)) {
+                    closeSettingsPanel();
+                }
+            }
+        });
 
         // Scroll-tunnistin - katkaistaan mahdollinen aiempi ennen uuden luomista
         if (scrollObserver) scrollObserver.disconnect();
@@ -720,6 +865,9 @@
     window.toggleSidebar = toggleSidebar;
     window.showSidebarView = showSidebarView;
     window.resetFilters = resetFilters;
+    window.toggleSettingsPanel = toggleSettingsPanel;
+    window.applySettingsPanel = applySettingsPanel;
+    window.resetFiltersFromPanel = resetFiltersFromPanel;
 
     init();
 })();

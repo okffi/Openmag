@@ -88,6 +88,142 @@ header.main-header {
 
 .dark-select:hover { background-color: #333; }
 
+/* SETTINGS BUTTON */
+.settings-btn {
+    height: 30px;
+    padding: 0 16px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    outline: none;
+    background-color: var(--text-dark);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+.settings-btn:hover { background-color: #333; }
+.settings-btn.active { background-color: var(--primary-color); }
+
+.settings-arrow {
+    display: inline-block;
+    transition: transform 0.25s ease;
+    font-size: 0.55rem;
+}
+.settings-btn.active .settings-arrow { transform: rotate(180deg); }
+
+/* SETTINGS PANEL */
+.settings-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    z-index: 999;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0 25px;
+}
+.settings-panel.open {
+    max-height: 600px;
+    padding: 20px 25px 16px;
+}
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.settings-section-title {
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.settings-radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    padding: 4px 0;
+    transition: color 0.15s;
+}
+.settings-radio-label:hover { color: var(--primary-color); }
+.settings-radio-label input[type="radio"] {
+    accent-color: var(--text-dark);
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+
+.settings-note {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    margin: 8px 0 0;
+    font-style: italic;
+}
+
+.settings-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border-color);
+}
+
+.settings-apply-btn,
+.settings-reset-btn {
+    height: 28px;
+    padding: 0 20px;
+    border-radius: 20px;
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: background-color 0.2s ease;
+}
+.settings-apply-btn {
+    background-color: var(--text-dark);
+    color: white;
+}
+.settings-apply-btn:hover { background-color: #333; }
+.settings-reset-btn {
+    background-color: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border-color);
+}
+.settings-reset-btn:hover { color: var(--text-dark); border-color: var(--text-dark); }
+
+@media (max-width: 900px) {
+    .settings-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 650px) {
+    .settings-grid { grid-template-columns: 1fr; gap: 16px; }
+    .settings-panel.open { max-height: 1000px; }
+}
+
 /* RSS-ikonin tyylit */
 .rss-link {
     display: inline-flex;
