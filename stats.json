@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "2.3.2026 klo 9.11.37"
+    "last_updated": "2.3.2026 klo 10.55.03"
   },
   "Yle": {
     "file": "yle.json",
@@ -28,7 +28,7 @@
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
-    "count": 31,
+    "count": 32,
     "category": "Perspectives",
     "description": "",
     "lang": "fi",
@@ -44,7 +44,7 @@
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
-    "count": 26,
+    "count": 27,
     "category": "Global policy",
     "description": "the Global Magazine of News and Ideas",
     "lang": "en",
@@ -97,6 +97,22 @@
     "description": "Latest news from Euronews",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Maailman Kuvalehti": {
+    "file": "maailman_kuvalehti.json",
+    "count": 11,
+    "category": "Global policy",
+    "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Eduskunnan kirjasto": {
+    "file": "eduskunnan_kirjasto.json",
+    "count": 15,
+    "category": "Politics + Government",
+    "description": "Eduskunnan kirjaston tiedotteet - RSS",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Weekly OSM": {
     "file": "weekly_osm.json",
@@ -156,7 +172,7 @@
   },
   "The Conversation – Articles (EUROPE)": {
     "file": "the_conversation___articles__europe_.json",
-    "count": 50,
+    "count": 51,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -268,7 +284,7 @@
   },
   "Public Policy Archives — Association of Research Libraries": {
     "file": "public_policy_archives___association_of_research_libraries.json",
-    "count": 9,
+    "count": 2,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "en",
@@ -292,7 +308,7 @@
   },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
-    "count": 10,
+    "count": 12,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -356,7 +372,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 10,
+    "count": 4,
     "category": "Digital cultural heritage",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -401,14 +417,6 @@
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
     "scope": "World"
-  },
-  "Maailman Kuvalehti": {
-    "file": "maailman_kuvalehti.json",
-    "count": 11,
-    "category": "Global policy",
-    "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta.",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Ihmisoikeusliitto": {
     "file": "ihmisoikeusliitto.json",
@@ -495,14 +503,6 @@
     "count": 10,
     "category": "Politics + Government",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Eduskunnan kirjasto": {
-    "file": "eduskunnan_kirjasto.json",
-    "count": 15,
-    "category": "Politics + Government",
-    "description": "Eduskunnan kirjaston tiedotteet - RSS",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -708,7 +708,7 @@
   },
   "Forum Information & Democracy": {
     "file": "forum_information___democracy.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital policy + rights",
     "description": "",
     "lang": "en",
@@ -1164,7 +1164,7 @@
   },
   "Suomen Rooman-instituutti": {
     "file": "suomen_rooman_instituutti.json",
-    "count": 1,
+    "count": 10,
     "category": "Culture",
     "description": "Suomen Rooman instituutti",
     "lang": "fi",
@@ -1172,7 +1172,7 @@
   },
   "The Finnish Institute in Rome": {
     "file": "the_finnish_institute_in_rome.json",
-    "count": 1,
+    "count": 10,
     "category": "Culture",
     "description": "Suomen Rooman instituutti",
     "lang": "en",
@@ -1220,7 +1220,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital policy + rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -1284,7 +1284,7 @@
   },
   "Follow the News published by UNESCO on Intangible Cultural Heritage": {
     "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
-    "count": 609,
+    "count": 1,
     "category": "Culture",
     "description": "",
     "lang": "en",
@@ -1356,7 +1356,7 @@
   },
   "CSC": {
     "file": "csc.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "ICT Solutions for Brilliant Minds",
     "lang": "fi",
@@ -1420,7 +1420,7 @@
   },
   "OpenForum Europe": {
     "file": "openforum_europe.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital policy + rights",
     "description": "Open Technologies for Europe's Digital Decade",
     "lang": "en",
@@ -1610,14 +1610,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Taide- ja kulttuurivirasto": {
-    "file": "taide__ja_kulttuurivirasto.json",
-    "count": 7,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Museoliitto": {
     "file": "museoliitto.json",
     "count": 10,
@@ -1745,14 +1737,6 @@
     "description": "European Cloud for Heritage OpEn Science",
     "lang": "en",
     "scope": "Europe"
-  },
-  "MuseumNext": {
-    "file": "museumnext.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": "Defining the Future of Museums",
-    "lang": "en",
-    "scope": "World"
   },
   "Open Objects": {
     "file": "open_objects.json",
@@ -2074,6 +2058,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "NORDIS": {
+    "file": "nordis.json",
+    "count": 10,
+    "category": "Journalism + investigation",
+    "description": "The Nordic Observatory for Digital Media and Information Disorder",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
+  },
   "Project Syndicate economists": {
     "file": "project_syndicate_economists.json",
     "count": 20,
@@ -2104,6 +2096,14 @@
     "category": "Politics + Government",
     "description": "",
     "lang": "en",
+    "scope": "Finland"
+  },
+  "Kuntaliitto": {
+    "file": "kuntaliitto.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
     "scope": "Finland"
   },
   "Association of Finnish Cities and Municipalities": {
