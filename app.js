@@ -238,6 +238,12 @@
         link.target = '_blank';
         link.rel = 'noopener';
 
+        function addDocIcon(prepend) {
+            const docIcon = document.createElement('div');
+            docIcon.className = 'doc-icon';
+            if (prepend) link.prepend(docIcon); else link.appendChild(docIcon);
+        }
+
         if (img) {
             const image = document.createElement('img');
             image.dataset.originalSrc = img;
@@ -259,18 +265,22 @@
                         image.onerror = null;
                         image.onload = null;
                         image.remove();
+                        addDocIcon(true);
                         card.classList.add('no-image');
                         if (masonry && typeof masonry.layout === 'function') masonry.layout();
                     };
                     image.src = `https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800`;
                 } else {
                     image.remove();
+                    addDocIcon(true);
                     card.classList.add('no-image');
                     if (masonry && typeof masonry.layout === 'function') masonry.layout();
                 }
             };
             image.onload = onImageLoad;
             link.appendChild(image);
+        } else {
+            addDocIcon(false);
         }
 
         const content = document.createElement('div');

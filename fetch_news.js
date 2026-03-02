@@ -335,12 +335,18 @@ async function processRSS(feed, allArticles, now) {
                     }
                 }
             }
-            // 1b. Fallback: etsitään tavallinen <img>-tagi
+            // 1b. Fallback: etsitään tavallinen <img>-tagi (suodatetaan seurantapikselit)
             if (!img) {
-                const firstImg = $c('img').first();
-                if (firstImg.length) {
-                    img = firstImg.attr('src');
-                }
+                $c('img').each((_, el) => {
+                    const w = $c(el).attr('width');
+                    const h = $c(el).attr('height');
+                    // Ohitetaan seurantapikselit, joilla molemmat dimensiot ovat <= 1 (esim. Matomo 0x0)
+                    if (w !== undefined && h !== undefined && parseInt(w) <= 1 && parseInt(h) <= 1) {
+                        return true; // jatketaan seuraavaan
+                    }
+                    img = $c(el).attr('src');
+                    return false; // lopetetaan, kuva löytyi
+                });
             }
             if (img) {
                 console.log(`[KUVA] ${feed.nameChecked}: löytyi HTML-sisällöstä: ${img.substring(0, 80)}`);
