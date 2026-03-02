@@ -313,9 +313,51 @@ async function processRSS(feed, allArticles, now) {
 
         // 1. Jos kuvaa ei vielä ole löytynyt, yritetään poimia se tästä sisällöstä
         if (!img) {
-            const firstImg = $c('img').first();
-            if (firstImg.length) {
-                img = firstImg.attr('src');
+            // 1a. Kokeillaan ensin <picture>-elementtiä (moderni responsiivinen kuva)
+            const firstPicture = $c('picture').first();
+            if (firstPicture.length) {
+                // Yritetään ensin <source srcset> -attribuuttia
+                const source = firstPicture.find('source[srcset]').first();
+                if (source.length) {
+                    const srcset = source.attr('srcset');
+                    // Parsitaan srcset oikein: jaetaan pilkulla, otetaan ensimmäinen kandidaatti,
+                    // ja poistetaan mahdollinen leveys/tiheyskuvaaja (esim. "800w" tai "2x")
+                    if (srcset) {
+                        const firstCandidate = srcset.trim().split(',')[0].trim();
+                        img = firstCandidate.split(/\s+/)[0] || null;
+                    }
+                }
+                // Jos ei löytynyt sourcesta, kokeillaan picture-elementin sisällä olevaa img-tagia
+                if (!img) {
+                    const picImg = firstPicture.find('img').first();
+                    if (picImg.length) {
+                        img = picImg.attr('src');
+                    }
+                }
+            }
+            // 1b. Fallback: etsitään tavallinen <img>-tagi
+            if (!img) {
+                const firstImg = $c('img').first();
+                if (firstImg.length) {
+                    img = firstImg.attr('src');
+                }
+            }
+            if (img) {
+                console.log(`[KUVA] ${feed.nameChecked}: löytyi HTML-sisällöstä: ${img.substring(0, 80)}`);
+            } else {
+                console.log(`[KUVA] ${feed.nameChecked}: kuvaa ei löytynyt`);
+            }
+        }
+
+        // Muutetaan suhteelliset kuva-URL:t absoluuttisiksi
+        if (img && !img.startsWith('http') && !img.startsWith('//')) {
+            const baseUrl = item.link || feed.rssUrl;
+            try {
+                img = new URL(img, baseUrl).href;
+                console.log(`[KUVA] ${feed.nameChecked}: suhteellinen URL muutettu absoluuttiseksi: ${img.substring(0, 80)}`);
+            } catch (e) {
+                console.log(`[VAROITUS] ${feed.nameChecked}: kuva-URL:n korjaus epäonnistui: ${img}`);
+                img = null;
             }
         }
         
