@@ -349,7 +349,8 @@ main { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; }
     transition: border-color 0.3s ease;
 }
 .grid-item:hover { border-color: var(--primary-color); }
-.grid-item img { width: 100%; height: auto; display: block; background-color: #f8f9fa; }
+.grid-item img { width: 100%; height: auto; display: block; background-color: #ffffff; }
+.grid-item.no-image { background-color: #ffffff; }
 
 .content { padding: 15px; } /* Päivitetty 15px */
 
