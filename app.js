@@ -442,7 +442,17 @@
         src.onclick = (e) => { e.stopPropagation(); handleSourceClick(e, item.sourceTitle); };
 
         const dateSpan = document.createElement('span');
-        dateSpan.textContent = item.pubDate ? new Date(item.pubDate).toLocaleDateString(document.getElementById('langFilter').value === 'fi' ? 'fi-FI' : 'en-GB') : '';
+        if (item.pubDate) {
+            const locale = document.getElementById('langFilter').value === 'fi' ? 'fi-FI' : 'en-GB';
+            const d = new Date(item.pubDate);
+            const now = new Date();
+            const isToday = d.toLocaleDateString(locale) === now.toLocaleDateString(locale);
+            const timeStr = d.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit' });
+            const dateStr = d.toLocaleDateString(locale);
+            const todayLabel = locale === 'fi-FI' ? 'Tänään' : 'Today';
+            dateSpan.textContent = isToday ? `${timeStr} · ${todayLabel}` : `${timeStr} · ${dateStr}`;
+            dateSpan.title = d.toLocaleString(locale);
+        }
 
         meta.appendChild(src);
         meta.appendChild(dateSpan);
@@ -519,6 +529,11 @@
             return langMatch && scopeMatch && catMatch;
         });
 
+        filtered.sort((a, b) => {
+            const da = a.pubDate ? new Date(a.pubDate).getTime() : 0;
+            const db = b.pubDate ? new Date(b.pubDate).getTime() : 0;
+            return db - da;
+        });
         const slice = filtered.slice(displayedCount, displayedCount + PAGE_SIZE);
         const sentinel = document.querySelector('#scroll-sentinel');
 
