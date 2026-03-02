@@ -181,7 +181,12 @@ async function run() {
             days[day].forEach(art => {
                 const src = art.sourceTitle || "Muu";
                 if (!bySource[src]) bySource[src] = [];
-                if (bySource[src].length < 5) bySource[src].push(art);
+                bySource[src].push(art);
+            });
+            Object.keys(bySource).forEach(src => {
+                bySource[src] = bySource[src]
+                    .sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate))
+                    .slice(0, 5);
             });
             const daySources = Object.keys(bySource);
             let i = 0, hasItems = true;
