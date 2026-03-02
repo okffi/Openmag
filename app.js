@@ -387,7 +387,7 @@
                 image.onload = null;
                 if (masonry && typeof masonry.layout === 'function') masonry.layout();
             };
-            image.src = `https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&q=80&output=jpg&af`;
+            image.src = `https://wsrv.nl/?url=${encodeURIComponent(img)}&w=800&q=80&output=png`;
             image.onerror = () => {
                 image.onerror = null;
                 image.onload = null;
