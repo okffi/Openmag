@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "2.3.2026 klo 18.28.36"
+    "last_updated": "2.3.2026 klo 18.58.16"
   },
   "Yle": {
     "file": "yle.json",
@@ -164,7 +164,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 36,
+    "count": 37,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -474,6 +474,22 @@
     "lang": "en",
     "scope": "World"
   },
+  "TIEKE": {
+    "file": "tieke.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Amnesty International": {
+    "file": "amnesty_international.json",
+    "count": 14,
+    "category": "Human Rights + Democracy",
+    "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
+    "lang": "en",
+    "scope": "World"
+  },
   "Weekly OSM": {
     "file": "weekly_osm.json",
     "count": 10,
@@ -658,14 +674,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "TIEKE": {
-    "file": "tieke.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Electronic Frontier Foundation": {
     "file": "electronic_frontier_foundation.json",
     "count": 10,
@@ -697,14 +705,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Amnesty International": {
-    "file": "amnesty_international.json",
-    "count": 13,
-    "category": "Human Rights + Democracy",
-    "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
-    "lang": "en",
-    "scope": "World"
   },
   "WITNESS": {
     "file": "witness.json",
@@ -2178,6 +2178,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "NORDIS": {
+    "file": "nordis.json",
+    "count": 10,
+    "category": "Journalism + investigation",
+    "description": "The Nordic Observatory for Digital Media and Information Disorder",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
+  },
   "Project Syndicate economists": {
     "file": "project_syndicate_economists.json",
     "count": 20,
@@ -2255,6 +2263,38 @@
     "count": 20,
     "category": "Sustainability + Foresight",
     "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Journalism Science Alliance": {
+    "file": "journalism_science_alliance.json",
+    "count": 10,
+    "category": "Journalism + investigation",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "IJ4EU": {
+    "file": "ij4eu.json",
+    "count": 10,
+    "category": "Journalism + investigation",
+    "description": "Supporting cross-border investigative journalism in Europe",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "The Foreign Policy Centre": {
+    "file": "the_foreign_policy_centre.json",
+    "count": 10,
+    "category": "Global policy",
+    "description": "The Foreign Policy Centre (FPC) is an outward-looking, non-partisan international affairs think tank based in the UK.",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Euronews | The Europe Conversation": {
+    "file": "euronews___the_europe_conversation.json",
+    "count": 50,
+    "category": "Perspectives",
+    "description": "Latest news from Euronews",
     "lang": "en",
     "scope": "Europe"
   }
