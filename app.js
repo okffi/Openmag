@@ -222,13 +222,8 @@
 
     // Tunnistetaan kieli ja aloitetaan
     async function init() {
-        // Asetetaan oletuskieli selaimen mukaan ennen latausta
         const userLang = navigator.language.substring(0, 2);
         const supported = ['fi', 'en', 'sv', 'de', 'fr'];
-        if (supported.includes(userLang)) {
-            document.getElementById('langFilter').value = userLang;
-        }
-
         // Rakennetaan käyttöliittymän kielivalikko: selaimen kieli + englanti
         const uiLangFilter = document.getElementById('uiLangFilter');
         const langNames = { fi: 'Suomi', en: 'English', sv: 'Svenska', de: 'Deutsch', fr: 'Français' };
