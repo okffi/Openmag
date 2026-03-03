@@ -448,7 +448,7 @@
             const isToday = d.toLocaleDateString(locale) === now.toLocaleDateString(locale);
             const timeStr = d.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit' });
             const dateStr = d.toLocaleDateString(locale);
-            const todayLabel = locale === 'fi-FI' ? 'Tänään' : 'Today';
+            const todayLabel = t('ui.today');
             dateSpan.textContent = isToday ? `${timeStr} · ${todayLabel}` : `${timeStr} · ${dateStr}`;
             dateSpan.title = d.toLocaleString(locale);
         }
