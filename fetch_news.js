@@ -8,17 +8,35 @@ const http = require('http');
 const httpsAgent = new https.Agent({ rejectUnauthorized: false });
 const httpAgent = new http.Agent();
 
-const parser = new Parser({ 
-    headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) OpenMag-Robot-v1' },
-    customFields: {
-        item: [
-            ['media:content', 'mediaContent', {keepArray: true}],
-            ['media:thumbnail', 'mediaThumbnail'],
-            ['enclosure', 'enclosure'],
-            ['content:encoded', 'contentEncoded']
-        ] 
-    }
-});
+const USER_AGENTS = [
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+    'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0',
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_3_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.3.1 Safari/605.1.15',
+    'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
+];
+
+function getRandomUserAgent() {
+    return USER_AGENTS[Math.floor(Math.random() * USER_AGENTS.length)];
+}
+
+function createParser() {
+    return new Parser({
+        headers: {
+            'User-Agent': getRandomUserAgent(),
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.9',
+        },
+        customFields: {
+            item: [
+                ['media:content', 'mediaContent', {keepArray: true}],
+                ['media:thumbnail', 'mediaThumbnail'],
+                ['enclosure', 'enclosure'],
+                ['content:encoded', 'contentEncoded']
+            ] 
+        }
+    });
+}
 
 const SHEET_TSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=0&single=true&output=tsv";
 const TRANSLATIONS_TSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=204734258&single=true&output=tsv";
@@ -263,8 +281,11 @@ async function processRSS(feed, allArticles, now) {
     const axiosConfig = {
         timeout: 15000,
         headers: {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+            'User-Agent': getRandomUserAgent(),
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.9',
+            'Referer': 'https://www.google.com/',
+            'Cache-Control': 'no-cache',
         },
         httpsAgent: typeof httpsAgent !== 'undefined' ? httpsAgent : undefined
     };
@@ -273,7 +294,7 @@ async function processRSS(feed, allArticles, now) {
         // Yritetään ensin normaalisti rss-parserilla
         // Huom: rss-parser ei tue suoraan axios-headersseja, joten jos tämä epäonnistuu,
         // mennään automaattisesti catch-lohkoon, jossa axios käyttää User-Agentia.
-        feedContent = await parser.parseURL(feed.rssUrl);
+        feedContent = await createParser().parseURL(feed.rssUrl);
     } catch (err) {
         // Poikkeuslogiikka XML-virheille, sertifikaattivioille tai jos palvelin hylkää peruspyynnön
         console.log(`[POIKKEUS] Vikasietoinen haku: ${feed.nameChecked}`);
@@ -286,7 +307,7 @@ async function processRSS(feed, allArticles, now) {
             // Puhdistetaan rikkonaiset XML-merkit
             xmlData = xmlData.replace(/&(?!(amp|lt|gt|quot|apos|#\d+|#x[a-f\d]+);)/gi, '&amp;');
             
-            feedContent = await parser.parseString(xmlData);
+            feedContent = await createParser().parseString(xmlData);
         } catch (retryErr) {
             throw new Error(`Vikasietoinen haku epäonnistui: ${retryErr.message}`);
         }
@@ -499,7 +520,13 @@ async function processScraper(feed, allArticles, now) {
 
         const scraperRule = require(scraperPath);
         const { data } = await axios.get(feed.scrapeUrl, { 
-            headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36' },
+            headers: {
+                'User-Agent': getRandomUserAgent(),
+                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+                'Accept-Language': 'en-US,en;q=0.9',
+                'Referer': 'https://www.google.com/',
+                'Cache-Control': 'no-cache',
+            },
             timeout: 15000 
         });
 
