@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "3.3.2026 klo 12.34.26"
+    "last_updated": "3.3.2026 klo 12.51.32"
   },
   "United Nations | The Guardian": {
     "file": "united_nations___the_guardian.json",
@@ -194,6 +194,62 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "The Scholarly Kitchen": {
+    "file": "the_scholarly_kitchen.json",
+    "count": 15,
+    "category": "(Open) Science + Research",
+    "description": "What’s Hot and Cooking In Scholarly Publishing",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Helsingin yliopisto": {
+    "file": "helsingin_yliopisto.json",
+    "count": 25,
+    "category": "(Open) Science + Research",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "ProPublica": {
+    "file": "propublica.json",
+    "count": 20,
+    "category": "Journalism + investigation",
+    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "The Conversation – Articles (EUROPE)": {
+    "file": "the_conversation___articles__europe_.json",
+    "count": 50,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "resilience": {
+    "file": "resilience.json",
+    "count": 14,
+    "category": "Perspectives",
+    "description": "Insight and inspiration in turbulent times.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Helsingin kaupunki | Uutiset": {
+    "file": "helsingin_kaupunki___uutiset.json",
+    "count": 12,
+    "category": "Politics + Government",
+    "description": "syöte",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Verde": {
+    "file": "verde.json",
+    "count": 15,
+    "category": "Sustainability + Foresight",
+    "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "COSS ry": {
     "file": "coss_ry.json",
     "count": 15,
@@ -225,14 +281,6 @@
     "description": "Digitaalisista tutkimuspalveluista ja avoimesta tieteestä / About digital research services and open science",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "The Scholarly Kitchen": {
-    "file": "the_scholarly_kitchen.json",
-    "count": 15,
-    "category": "(Open) Science + Research",
-    "description": "What’s Hot and Cooking In Scholarly Publishing",
-    "lang": "en",
-    "scope": "World"
   },
   "OATP primary": {
     "file": "oatp_primary.json",
@@ -482,22 +530,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "ProPublica": {
-    "file": "propublica.json",
-    "count": 20,
-    "category": "Journalism + investigation",
-    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "The Conversation – Articles (EUROPE)": {
-    "file": "the_conversation___articles__europe_.json",
-    "count": 50,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
     "count": 49,
@@ -519,14 +551,6 @@
     "count": 20,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
-    "lang": "en",
-    "scope": "World"
-  },
-  "resilience": {
-    "file": "resilience.json",
-    "count": 14,
-    "category": "Perspectives",
-    "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
     "scope": "World"
   },
@@ -578,14 +602,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Helsingin kaupunki | Uutiset": {
-    "file": "helsingin_kaupunki___uutiset.json",
-    "count": 12,
-    "category": "Politics + Government",
-    "description": "syöte",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Presidentti": {
     "file": "presidentti.json",
     "count": 10,
@@ -609,14 +625,6 @@
     "description": "Clear on climate",
     "lang": "en",
     "scope": "World"
-  },
-  "Verde": {
-    "file": "verde.json",
-    "count": 15,
-    "category": "Sustainability + Foresight",
-    "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "xkcd": {
     "file": "xkcd.json",
@@ -713,14 +721,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Helsingin yliopisto": {
-    "file": "helsingin_yliopisto.json",
-    "count": 25,
-    "category": "(Open) Science + Research",
-    "description": "Uusimmat tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Museolehti": {
     "file": "museolehti.json",
@@ -1204,7 +1204,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -1954,6 +1954,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Internet Governance Forum (IGF)": {
+    "file": "internet_governance_forum__igf_.json",
+    "count": 20,
+    "category": "Digital policy + rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Local Contexts": {
     "file": "local_contexts.json",
     "count": 10,
@@ -2193,6 +2201,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "NORDIS": {
+    "file": "nordis.json",
+    "count": 10,
+    "category": "Journalism + investigation",
+    "description": "The Nordic Observatory for Digital Media and Information Disorder",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
   },
   "Project Syndicate economists": {
     "file": "project_syndicate_economists.json",
