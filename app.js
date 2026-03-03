@@ -37,6 +37,16 @@
         return txt.value;
     }
 
+    function normalizeText(text) {
+        if (!text) return text;
+        text = text.replace(/&nbsp;/gi, ' ');
+        text = text.replace(/&#160;/g, ' ');
+        text = text.replace(/[\u200B-\u200D\uFEFF\u2060\u061C\u200E\u200F\u180E]/g, '');
+        text = text.replace(/\u00A0/g, ' ');
+        text = text.replace(/ {2,}/g, ' ');
+        return text.trim();
+    }
+
     function getTranslation(group, value) {
         if (!value || value === 'All') return t(`${group}.general`);
         const slug = value.toString()
@@ -429,7 +439,7 @@
         h2.textContent = item.title || '';
 
         const p = document.createElement('p');
-        const clean = (item.content || "").replace(/<[^>]*>/g, '').substring(0, CONTENT_PREVIEW_LENGTH);
+        const clean = normalizeText((item.content || "").replace(/<[^>]*>/g, '')).substring(0, CONTENT_PREVIEW_LENGTH);
         p.textContent = clean + (clean.length ? '...' : '');
 
         const meta = document.createElement('div');
