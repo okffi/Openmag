@@ -44,6 +44,7 @@
         text = text.replace(/[\u200B-\u200D\uFEFF\u2060\u061C\u200E\u200F\u180E]/g, '');
         text = text.replace(/\u00A0/g, ' ');
         text = text.replace(/ {2,}/g, ' ');
+        text = text.replace(/&amp;/gi, '&');
         return text.trim();
     }
 
