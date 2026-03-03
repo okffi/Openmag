@@ -442,7 +442,9 @@
 
         const dateSpan = document.createElement('span');
         if (item.pubDate) {
-            const locale = document.getElementById('langFilter').value === 'fi' ? 'fi-FI' : 'en-GB';
+            const uiLang = document.getElementById('uiLangFilter').value;
+            const localeMap = { fi: 'fi-FI', en: 'en-GB', sv: 'sv-SE', de: 'de-DE', fr: 'fr-FR' };
+            const locale = localeMap[uiLang] || 'en-GB';
             const d = new Date(item.pubDate);
             const now = new Date();
             const isToday = d.toLocaleDateString(locale) === now.toLocaleDateString(locale);
