@@ -22,6 +22,49 @@ const parser = new Parser({
 
 const SHEET_TSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=0&single=true&output=tsv";
 const TRANSLATIONS_TSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=204734258&single=true&output=tsv";
+
+async function getSourceLogo(feedContent, domain, sourceName) {
+    // 1. Check multiple RSS feed image metadata fields
+    if (feedContent) {
+        const rssLogo = (feedContent.image && feedContent.image.url) ||
+                        (feedContent.logo && feedContent.logo.url) ||
+                        (feedContent.icon && feedContent.icon.url) ||
+                        (feedContent.itunes && feedContent.itunes.image && feedContent.itunes.image.url);
+        if (rssLogo) {
+            console.log(`[LOGO] ${sourceName}: RSS feed image: ${rssLogo.substring(0, 80)}`);
+            return rssLogo;
+        }
+    }
+
+    if (!domain) return null;
+
+    // 2. Try favicon/logo services in order
+    const services = [
+        { name: 'Google Favicon', url: `https://www.google.com/s2/favicons?sz=128&domain=${domain}` },
+        { name: 'DuckDuckGo Icon', url: `https://icons.duckduckgo.com/ip3/${domain}.ico` },
+        { name: 'Bing Favicon', url: `https://www.bing.com/favicon.ico?domain=${domain}` },
+        { name: 'Direct favicon', url: `https://${domain}/favicon.ico` },
+        { name: 'Apple touch icon', url: `https://${domain}/apple-touch-icon.png` },
+        { name: 'Clearbit Logo', url: `https://logo.clearbit.com/${domain}` },
+    ];
+
+    for (const service of services) {
+        try {
+            await axios.head(service.url, {
+                timeout: 3000,
+                validateStatus: s => s < 400,
+                httpsAgent: httpsAgent
+            });
+            console.log(`[LOGO] ${sourceName}: ${service.name}: ${service.url}`);
+            return service.url;
+        } catch (e) {
+            // try next service
+        }
+    }
+
+    console.log(`[LOGO] ${sourceName}: all logo sources failed`);
+    return null;
+}
     
 async function run() {
     let failedFeeds = []; 
@@ -252,22 +295,16 @@ async function processRSS(feed, allArticles, now) {
     // 1. Poimitaan syötteen kuvaus
     const sourceDescription = feed.sheetDesc || (feedContent.description ? feedContent.description.trim() : "");
     
-// 2. Poimitaan logo
-    let sourceLogo = feedContent.image ? feedContent.image.url : null;
-    
-    if (!sourceLogo) {
-        try {
-            // Yritetään ensin syötteen ilmoittamaa linkkiä, sitten uutislinkkiä, ja lopuksi RSS-osoitetta
-            const linkToParse = feedContent.link || (feedContent.items[0] && feedContent.items[0].link) || feed.rssUrl;
-            
-            if (linkToParse) {
-                const domain = new URL(linkToParse).hostname;
-                sourceLogo = `https://www.google.com/s2/favicons?sz=128&domain=${domain}`;
-            }
-        } catch (e) {
-            // Jos URL on edelleen viallinen (esim. pelkkä polku), ei kaadeta ajoa
-            console.log(`[VAROITUS] Faviconin luonti epäonnistui kohteelle ${feed.nameChecked}: ${e.message}`);
-        }
+// 2. Poimitaan logo (monitasoinen varajärjestelmä)
+    let sourceLogo = null;
+    try {
+        // Yritetään ensin syötteen ilmoittamaa linkkiä, sitten uutislinkkiä, ja lopuksi RSS-osoitetta
+        const linkToParse = feedContent.link || (feedContent.items[0] && feedContent.items[0].link) || feed.rssUrl;
+        const domain = linkToParse ? new URL(linkToParse).hostname : null;
+        sourceLogo = await getSourceLogo(feedContent, domain, feed.nameChecked);
+    } catch (e) {
+        // Jos URL on edelleen viallinen (esim. pelkkä polku), ei kaadeta ajoa
+        console.log(`[VAROITUS] Logon haku epäonnistui kohteelle ${feed.nameChecked}: ${e.message}`);
     }
 
     const items = feedContent.items.map(item => {
@@ -494,7 +531,7 @@ async function processScraper(feed, allArticles, now) {
                     sheetCategory: feed.category,
                     enforcedImage: finalImg,
                     sourceDescription: sourceDescription,
-                    sourceLogo: `https://www.google.com/s2/favicons?sz=128&domain=${domain}`,
+                    sourceLogo: await getSourceLogo(null, domain, feed.nameChecked || domain),
                     lang: feed.lang,
                     scope: feed.scope,
                     isDarkLogo: feed.isDarkLogo,
