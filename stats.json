@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "3.3.2026 klo 21.02.12"
+    "last_updated": "3.3.2026 klo 21.35.45"
   },
   "United Nations | The Guardian": {
     "file": "united_nations___the_guardian.json",
@@ -116,7 +116,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 59,
+    "count": 60,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -188,7 +188,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 36,
+    "count": 37,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -396,7 +396,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 54,
+    "count": 51,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -404,7 +404,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -460,7 +460,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 15,
+    "count": 17,
     "category": "Journalism + investigation",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -492,7 +492,7 @@
   },
   "Follow the News published by UNESCO on Intangible Cultural Heritage": {
     "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
-    "count": 1,
+    "count": 610,
     "category": "Culture",
     "description": "",
     "lang": "en",
@@ -519,6 +519,14 @@
     "count": 10,
     "category": "Culture",
     "description": "Digital Happenings at the Library of Congress",
+    "lang": "en",
+    "scope": "World"
+  },
+  "The Conversation – Articles (GLOBAL)": {
+    "file": "the_conversation___articles__global_.json",
+    "count": 56,
+    "category": "Perspectives",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -703,14 +711,6 @@
     "count": 15,
     "category": "Journalism + investigation",
     "description": "Preserving public data",
-    "lang": "en",
-    "scope": "World"
-  },
-  "The Conversation – Articles (GLOBAL)": {
-    "file": "the_conversation___articles__global_.json",
-    "count": 57,
-    "category": "Perspectives",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -916,7 +916,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital cultural heritage",
     "description": "",
     "lang": "fi",
@@ -951,6 +951,14 @@
     "count": 15,
     "category": "Journalism + investigation",
     "description": "Advancing media innovation to foster public trust",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Freedom House": {
+    "file": "freedom_house.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -1308,7 +1316,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -1428,7 +1436,7 @@
   },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital skills + Citizen science",
     "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
@@ -1441,14 +1449,6 @@
     "description": "Association pour le libre partage de la connaissance",
     "lang": "fr",
     "scope": "Europe"
-  },
-  "Freedom House": {
-    "file": "freedom_house.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "DataEthics": {
     "file": "dataethics.json",
@@ -1482,18 +1482,18 @@
     "lang": "en",
     "scope": "Finland"
   },
-  "Avate Audiovisuaalisen alan tekijät ry": {
-    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Avoin hallinto": {
     "file": "avoin_hallinto.json",
     "count": 10,
     "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Avoin tiede": {
+    "file": "avoin_tiede.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
     "scope": "Finland"
@@ -1954,6 +1954,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Open Knowledge Foundation Blog": {
+    "file": "open_knowledge_foundation_blog.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "Content for a fair, sustainable and open future",
+    "lang": "en",
+    "scope": "World"
+  },
   "Open Objects": {
     "file": "open_objects.json",
     "count": 10,
@@ -1961,6 +1969,14 @@
     "description": "'Every age has its orthodoxy and no orthodoxy is ever right.'",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Open Science | Federation of Finnish Learned Societies": {
+    "file": "open_science___federation_of_finnish_learned_societies.json",
+    "count": 7,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "en",
+    "scope": "Finland"
   },
   "Open Search Foundation": {
     "file": "open_search_foundation.json",
@@ -2170,19 +2186,27 @@
     "lang": "en",
     "scope": "World"
   },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
-    "category": "Digital skills + Citizen science",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
-    "lang": "en",
-    "scope": "World"
+  "Tiedepolitiikka": {
+    "file": "tiedepolitiikka.json",
+    "count": 30,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Tietopoliitiikan yhteistyöryhmä": {
     "file": "tietopoliitiikan_yhteisty_ryhm_.json",
     "count": 10,
     "category": "Digital policy + rights",
     "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "TSV": {
+    "file": "tsv.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
     "lang": "fi",
     "scope": "Finland"
   },
