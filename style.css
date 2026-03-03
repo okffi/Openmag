@@ -288,16 +288,11 @@ header.main-header {
 }
 
 @media (min-width: 651px) {
-    /* Piilotetaan nappi, kun sivupalkki on auki */
-    .sidebar:not(.closed) ~ #sidebar-toggle {
-        opacity: 0;
-        pointer-events: none;
-        transform: translateX(-20px);
-    }
+    #sidebar-toggle { display: none; }
 }
 
 @media (max-width: 650px) {
-    #sidebar-toggle { opacity: 1 !important; transform: none !important; pointer-events: auto !important; }
+    header.main-header { padding-left: 70px; }
 }
 
 /* Haitari-valikko */

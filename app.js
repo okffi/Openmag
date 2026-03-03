@@ -845,6 +845,11 @@
         document.querySelectorAll('.source-item').forEach(i => i.classList.remove('active'));
         mainFeedCache = null;
         loadData('data.json');
+
+        if (window.innerWidth < 1000) {
+            const sidebar = document.getElementById('source-sidebar');
+            if (sidebar) sidebar.classList.remove('open');
+        }
     }
 
     function handleCategoryClick(event, catName) {
