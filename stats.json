@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "3.3.2026 klo 19.55.12"
+    "last_updated": "3.3.2026 klo 21.02.12"
   },
   "United Nations | The Guardian": {
     "file": "united_nations___the_guardian.json",
@@ -108,7 +108,7 @@
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
-    "count": 29,
+    "count": 30,
     "category": "Politics + Government",
     "description": "the Global Magazine of News and Ideas",
     "lang": "en",
@@ -404,7 +404,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -463,6 +463,62 @@
     "count": 15,
     "category": "Journalism + investigation",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Digital meets Culture": {
+    "file": "digital_meets_culture.json",
+    "count": 10,
+    "category": "Digital cultural heritage",
+    "description": "Art, heritage & technologies",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Electronic Frontier Foundation": {
+    "file": "electronic_frontier_foundation.json",
+    "count": 11,
+    "category": "Digital policy + rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Finlandsinstitutet i Stockholm": {
+    "file": "finlandsinstitutet_i_stockholm.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Finlandsinstitutet i Stockholm",
+    "lang": "sv",
+    "scope": "Nordic + Baltic countries"
+  },
+  "Follow the News published by UNESCO on Intangible Cultural Heritage": {
+    "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
+    "count": 1,
+    "category": "Culture",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "NOEMA": {
+    "file": "noema.json",
+    "count": 10,
+    "category": "Sustainability + Foresight",
+    "description": "Noema Magazine",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Suomen Tukholman-instituutti": {
+    "file": "suomen_tukholman_instituutti.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Finlandsinstitutet i Stockholm",
+    "lang": "fi",
+    "scope": "Nordic + Baltic countries"
+  },
+  "The Signal: Digital Preservation": {
+    "file": "the_signal__digital_preservation.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Digital Happenings at the Library of Congress",
     "lang": "en",
     "scope": "World"
   },
@@ -546,22 +602,6 @@
     "lang": "fi",
     "scope": "Europe"
   },
-  "Finlandsinstitutet i Stockholm": {
-    "file": "finlandsinstitutet_i_stockholm.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Finlandsinstitutet i Stockholm",
-    "lang": "sv",
-    "scope": "Nordic + Baltic countries"
-  },
-  "Suomen Tukholman-instituutti": {
-    "file": "suomen_tukholman_instituutti.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Finlandsinstitutet i Stockholm",
-    "lang": "fi",
-    "scope": "Nordic + Baltic countries"
-  },
   "Internet Archive Europe": {
     "file": "internet_archive_europe.json",
     "count": 10,
@@ -589,14 +629,6 @@
   "MySociety Newsletter": {
     "file": "mysociety_newsletter.json",
     "count": 10,
-    "category": "Digital policy + rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Electronic Frontier Foundation": {
-    "file": "electronic_frontier_foundation.json",
-    "count": 11,
     "category": "Digital policy + rights",
     "description": "",
     "lang": "en",
@@ -676,7 +708,7 @@
   },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
-    "count": 49,
+    "count": 57,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -740,7 +772,7 @@
   },
   "xkcd": {
     "file": "xkcd.json",
-    "count": 5,
+    "count": 4,
     "category": "(Open) Data + Technology",
     "description": "xkcd.com: A webcomic of romance and math humor.",
     "lang": "en",
@@ -1049,14 +1081,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "NOEMA": {
-    "file": "noema.json",
-    "count": 10,
-    "category": "Sustainability + Foresight",
-    "description": "Noema Magazine",
-    "lang": "en",
-    "scope": "World"
   },
   "IJ4EU": {
     "file": "ij4eu.json",
@@ -1404,7 +1428,7 @@
   },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital skills + Citizen science",
     "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
@@ -1433,14 +1457,6 @@
     "description": "Alt om data-etik",
     "lang": "en",
     "scope": "World"
-  },
-  "News – Oxford Internet Institute": {
-    "file": "news___oxford_internet_institute.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Arctic Centre at the University of Lapland": {
     "file": "arctic_centre_at_the_university_of_lapland.json",
@@ -1522,6 +1538,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Copyright Literacy": {
+    "file": "copyright_literacy.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "Decoding copyright and bringing you enlightenment",
+    "lang": "en",
+    "scope": "World"
+  },
   "Creative Commons": {
     "file": "creative_commons.json",
     "count": 10,
@@ -1585,14 +1609,6 @@
     "description": "Articles and events from the Digital Humanities community at Stanford University",
     "lang": "en",
     "scope": "World"
-  },
-  "Digital meets Culture": {
-    "file": "digital_meets_culture.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": "Art, heritage & technologies",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Digital Scholarship Leiden": {
     "file": "digital_scholarship_leiden.json",
@@ -1681,14 +1697,6 @@
     "description": "Soome Eesti Instituudi Sihtasutus",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
-  },
-  "Follow the News published by UNESCO on Intangible Cultural Heritage": {
-    "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
-    "count": 610,
-    "category": "Culture",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "FOSDEM 2026": {
     "file": "fosdem_2026.json",
@@ -1906,6 +1914,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "News – Oxford Internet Institute": {
+    "file": "news___oxford_internet_institute.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Next Generation Internet": {
     "file": "next_generation_internet.json",
     "count": 10,
@@ -1935,14 +1951,6 @@
     "count": 15,
     "category": "(Open) Science + Research",
     "description": "Open Access and Digital Scholarship at Imperial College London",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Open Knowledge Foundation Blog": {
-    "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "Content for a fair, sustainable and open future",
     "lang": "en",
     "scope": "World"
   },
@@ -2159,14 +2167,6 @@
     "count": 10,
     "category": "Digital cultural heritage",
     "description": "Step into Tomorrow",
-    "lang": "en",
-    "scope": "World"
-  },
-  "The Signal: Digital Preservation": {
-    "file": "the_signal__digital_preservation.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Digital Happenings at the Library of Congress",
     "lang": "en",
     "scope": "World"
   },
