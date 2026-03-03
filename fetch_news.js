@@ -20,6 +20,20 @@ function getRandomUserAgent() {
     return USER_AGENTS[Math.floor(Math.random() * USER_AGENTS.length)];
 }
 
+function normalizeContent(text) {
+    if (!text) return text;
+    // Decode common HTML entities for non-breaking spaces
+    text = text.replace(/&nbsp;/gi, ' ');
+    text = text.replace(/&#160;/g, ' ');
+    // Remove invisible/zero-width Unicode characters and directional marks
+    text = text.replace(/[\u200B-\u200D\uFEFF\u2060\u061C\u200E\u200F\u180E]/g, '');
+    // Normalize non-breaking spaces to regular spaces
+    text = text.replace(/\u00A0/g, ' ');
+    // Collapse multiple consecutive spaces to a single space
+    text = text.replace(/ {2,}/g, ' ');
+    return text.trim();
+}
+
 function createParser() {
     return new Parser({
         headers: {
@@ -447,7 +461,7 @@ async function processRSS(feed, allArticles, now) {
             safeHTML = cheerio.load(safeHTML).html(); 
         }
         
-        let cleanText = safeHTML.trim();
+        let cleanText = normalizeContent(safeHTML);
 
         // Jos teksti jäi tyhjäksi, käytetään otsikkoa varalla
         if (cleanText.length < 10) {
@@ -482,10 +496,10 @@ async function processRSS(feed, allArticles, now) {
             finalImg = finalImg.replace(/&amp;/g, '&');
         }
         // Valitaan kuvaus: 1. Sheets (sheetDesc), 2. RSS (feedContent.description), 3. Tyhjä
-        const finalDescription = feed.sheetDesc || (feedContent.description ? feedContent.description.trim() : "");
+        const finalDescription = normalizeContent(feed.sheetDesc || (feedContent.description || ""));
     
         return {
-            title: item.title,
+            title: normalizeContent(item.title),
             link: articleLink,
             pubDate: itemDate.toISOString(),
             content: finalSnippet,
