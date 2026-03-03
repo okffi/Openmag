@@ -148,7 +148,6 @@
 
     // Apufunktio käyttöliittymän tekstien päivittämiseen kielen mukaan
     function updateUITranslations() {
-        document.getElementById('sidebar-main-title').textContent = t('ui.publishers');
         document.getElementById('btn-categories').textContent = t('ui.categories');
         document.getElementById('btn-az').textContent = t('ui.az');
 
