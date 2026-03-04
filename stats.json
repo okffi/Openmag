@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "4.3.2026 klo 21.00.56"
+    "last_updated": "4.3.2026 klo 22.39.06"
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
@@ -76,7 +76,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 53,
+    "count": 54,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -220,7 +220,7 @@
   },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
-    "count": 17,
+    "count": 16,
     "category": "(Open) Science + Research",
     "description": "Turun yliopiston etusivun uutisten lyhennelmät",
     "lang": "fi",
@@ -244,7 +244,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 13,
+    "count": 14,
     "category": "Digital skills + Citizen science",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -474,6 +474,22 @@
     "lang": "en",
     "scope": "World"
   },
+  "Creative Commons": {
+    "file": "creative_commons.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Technology – POLITICO": {
+    "file": "technology___politico.json",
+    "count": 31,
+    "category": "Digital policy + rights",
+    "description": "European Politics, Policy, Government News",
+    "lang": "en",
+    "scope": "World"
+  },
   "CODATA": {
     "file": "codata.json",
     "count": 10,
@@ -484,7 +500,7 @@
   },
   "Confederation of Open Access Repositories": {
     "file": "confederation_of_open_access_repositories.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Science + Research",
     "description": "Building a sustainable, global knowledge commons",
     "lang": "en",
@@ -641,14 +657,6 @@
     "description": "Finlandsinstitutet i Stockholm",
     "lang": "fi",
     "scope": "Nordic + Baltic countries"
-  },
-  "Technology – POLITICO": {
-    "file": "technology___politico.json",
-    "count": 31,
-    "category": "Digital policy + rights",
-    "description": "European Politics, Policy, Government News",
-    "lang": "en",
-    "scope": "World"
   },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
@@ -1044,7 +1052,7 @@
   },
   "Zooniverse": {
     "file": "zooniverse.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital skills + Citizen science",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
@@ -1124,7 +1132,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital policy + rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1546,14 +1554,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Creative Commons": {
-    "file": "creative_commons.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "CSC": {
     "file": "csc.json",
     "count": 10,
@@ -1809,6 +1809,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Journalism + investigation",
+    "description": "Julkisen sanan neuvosto",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "K-blogg - Riksantikvarieämbetets blogg": {
     "file": "k_blogg___riksantikvarie_mbetets_blogg.json",
