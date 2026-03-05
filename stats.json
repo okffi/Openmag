@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "5.3.2026 klo 11.54.25"
+    "last_updated": "5.3.2026 klo 12.51.02"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
@@ -52,7 +52,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 55,
+    "count": 56,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -116,7 +116,7 @@
   },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
-    "count": 16,
+    "count": 17,
     "category": "(Open) Science + Research",
     "description": "Turun yliopiston etusivun uutisten lyhennelmät",
     "lang": "fi",
@@ -140,7 +140,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -148,7 +148,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 34,
+    "count": 35,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -185,6 +185,70 @@
     "description": "Association pour le libre partage de la connaissance",
     "lang": "fr",
     "scope": "Europe"
+  },
+  "Diff": {
+    "file": "diff.json",
+    "count": 11,
+    "category": "Digital skills + Citizen science",
+    "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Kotimaisten kielten keskus KOTUS": {
+    "file": "kotimaisten_kielten_keskus_kotus.json",
+    "count": 10,
+    "category": "Cultural policy",
+    "description": "Kotimaisten kielten keskus",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Open Culture": {
+    "file": "open_culture.json",
+    "count": 16,
+    "category": "Digital cultural heritage",
+    "description": "The best free cultural & educational media on the web",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "ProPublica": {
+    "file": "propublica.json",
+    "count": 20,
+    "category": "Journalism + investigation",
+    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Think Open": {
+    "file": "think_open.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Digitaalisista tutkimuspalveluista ja avoimesta tieteestä / About digital research services and open science",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "University of Helsinki": {
+    "file": "university_of_helsinki.json",
+    "count": 11,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Verde": {
+    "file": "verde.json",
+    "count": 15,
+    "category": "Sustainability + Foresight",
+    "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Ympäristöministeriön uutiset ja tiedotteet": {
+    "file": "ymp_rist_ministeri_n_uutiset_ja_tiedotteet.json",
+    "count": 100,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "bellingcat": {
     "file": "bellingcat.json",
@@ -223,14 +287,6 @@
     "count": 10,
     "category": "Digital policy + rights",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Diff": {
-    "file": "diff.json",
-    "count": 11,
-    "category": "Digital skills + Citizen science",
-    "description": "News from the Wikimedia movement",
     "lang": "en",
     "scope": "World"
   },
@@ -292,7 +348,7 @@
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
-    "count": 25,
+    "count": 26,
     "category": "Politics + Government",
     "description": "the Global Magazine of News and Ideas",
     "lang": "en",
@@ -346,14 +402,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Kotimaisten kielten keskus KOTUS": {
-    "file": "kotimaisten_kielten_keskus_kotus.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "Kotimaisten kielten keskus",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Kotiseutuliitto": {
     "file": "kotiseutuliitto.json",
     "count": 10,
@@ -378,14 +426,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Culture": {
-    "file": "open_culture.json",
-    "count": 16,
-    "category": "Digital cultural heritage",
-    "description": "The best free cultural & educational media on the web",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Opetusministeriö | Ajankohtaista": {
     "file": "opetusministeri____ajankohtaista.json",
     "count": 20,
@@ -402,17 +442,9 @@
     "lang": "en",
     "scope": "World"
   },
-  "ProPublica": {
-    "file": "propublica.json",
-    "count": 20,
-    "category": "Journalism + investigation",
-    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
-    "lang": "en",
-    "scope": "World"
-  },
   "resilience": {
     "file": "resilience.json",
-    "count": 11,
+    "count": 12,
     "category": "Perspectives",
     "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
@@ -498,22 +530,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "University of Helsinki": {
-    "file": "university_of_helsinki.json",
-    "count": 11,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Verde": {
-    "file": "verde.json",
-    "count": 15,
-    "category": "Sustainability + Foresight",
-    "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Voima": {
     "file": "voima.json",
     "count": 15,
@@ -538,14 +554,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Ympäristöministeriön uutiset ja tiedotteet": {
-    "file": "ymp_rist_ministeri_n_uutiset_ja_tiedotteet.json",
-    "count": 100,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "404 Media": {
     "file": "404_media.json",
     "count": 15,
@@ -561,6 +569,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "The Conversation – Articles (GLOBAL)": {
+    "file": "the_conversation___articles__global_.json",
+    "count": 52,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "CODATA": {
     "file": "codata.json",
@@ -698,14 +714,6 @@
     "lang": "fi",
     "scope": "Nordic + Baltic countries"
   },
-  "The Conversation – Articles (GLOBAL)": {
-    "file": "the_conversation___articles__global_.json",
-    "count": 51,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "The Public Domain Review": {
     "file": "the_public_domain_review.json",
     "count": 100,
@@ -788,7 +796,7 @@
   },
   "Eastflank": {
     "file": "eastflank.json",
-    "count": 10,
+    "count": 11,
     "category": "Politics + Government",
     "description": "Reporting",
     "lang": "en",
@@ -919,14 +927,6 @@
     "count": 25,
     "category": "Politics + Government",
     "description": "Uusimmat tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Think Open": {
-    "file": "think_open.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Digitaalisista tutkimuspalveluista ja avoimesta tieteestä / About digital research services and open science",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1172,7 +1172,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital policy + rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1466,22 +1466,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "The Harvard Library Innovation Lab": {
-    "file": "the_harvard_library_innovation_lab.json",
-    "count": 420,
-    "category": "Digital cultural heritage",
-    "description": "The Library Innovation Lab is growing knowledge and community by bringing library principles to technological frontiers.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Wikimedia Sverige": {
-    "file": "wikimedia_sverige.json",
-    "count": 10,
-    "category": "Digital skills + Citizen science",
-    "description": "Vi arbetar för fri kunskap",
-    "lang": "sv",
-    "scope": "Nordic + Baltic countries"
-  },
   "Arctic Centre at the University of Lapland": {
     "file": "arctic_centre_at_the_university_of_lapland.json",
     "count": 10,
@@ -1569,6 +1553,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Copyright Literacy": {
+    "file": "copyright_literacy.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "Decoding copyright and bringing you enlightenment",
+    "lang": "en",
+    "scope": "World"
   },
   "CSC": {
     "file": "csc.json",
@@ -1954,14 +1946,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Knowledge Foundation Blog": {
-    "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "Content for a fair, sustainable and open future",
-    "lang": "en",
-    "scope": "World"
-  },
   "Open Objects": {
     "file": "open_objects.json",
     "count": 10,
@@ -2154,6 +2138,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "The Harvard Library Innovation Lab": {
+    "file": "the_harvard_library_innovation_lab.json",
+    "count": 420,
+    "category": "Digital cultural heritage",
+    "description": "The Library Innovation Lab is growing knowledge and community by bringing library principles to technological frontiers.",
+    "lang": "en",
+    "scope": "World"
+  },
   "The Heritage Management Organization": {
     "file": "the_heritage_management_organization.json",
     "count": 10,
@@ -2170,19 +2162,19 @@
     "lang": "en",
     "scope": "World"
   },
+  "This Month in GLAM": {
+    "file": "this_month_in_glam.json",
+    "count": 10,
+    "category": "Digital skills + Citizen science",
+    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
+    "lang": "en",
+    "scope": "World"
+  },
   "Tiedepolitiikka": {
     "file": "tiedepolitiikka.json",
     "count": 30,
     "category": "(Open) Science + Research",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Tietopoliitiikan yhteistyöryhmä": {
-    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
-    "count": 10,
-    "category": "Digital policy + rights",
-    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2241,6 +2233,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Wikimedia Sverige": {
+    "file": "wikimedia_sverige.json",
+    "count": 10,
+    "category": "Digital skills + Citizen science",
+    "description": "Vi arbetar för fri kunskap",
+    "lang": "sv",
+    "scope": "Nordic + Baltic countries"
   },
   "WIPO In Focus": {
     "file": "wipo_in_focus.json",
