@@ -1,10 +1,10 @@
 {
   "__meta": {
-    "last_updated": "5.3.2026 klo 10.54.17"
+    "last_updated": "5.3.2026 klo 11.54.25"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
-    "count": 12,
+    "count": 13,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
@@ -12,7 +12,7 @@
   },
   "Yle": {
     "file": "yle.json",
-    "count": 23,
+    "count": 24,
     "category": "Politics + Government",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -52,7 +52,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 54,
+    "count": 55,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -92,7 +92,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 37,
+    "count": 35,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -100,7 +100,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 19,
+    "count": 22,
     "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -137,6 +137,54 @@
     "description": "Valtioneuvoston tiedotteet",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "DARIAH-EU": {
+    "file": "dariah_eu.json",
+    "count": 10,
+    "category": "Digital cultural heritage",
+    "description": "Digital Research Infrastructure for the Arts and Humanities",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "European Commission": {
+    "file": "european_commission.json",
+    "count": 34,
+    "category": "Politics + Government",
+    "description": "European Commission | News",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Helsingin kaupunki | Uutiset": {
+    "file": "helsingin_kaupunki___uutiset.json",
+    "count": 14,
+    "category": "Politics + Government",
+    "description": "syöte",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Ohjelmistoteollisuus | ePressi": {
+    "file": "ohjelmistoteollisuus___epressi.json",
+    "count": 20,
+    "category": "(Open) Data + Technology",
+    "description": "Tiedotteiden tehokas julkaisukanava",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Svenska institutet": {
+    "file": "svenska_institutet.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Vi främjar Sverige i världen",
+    "lang": "sv",
+    "scope": "Nordic + Baltic countries"
+  },
+  "Wikimédia France": {
+    "file": "wikim_dia_france.json",
+    "count": 10,
+    "category": "Digital skills + Citizen science",
+    "description": "Association pour le libre partage de la connaissance",
+    "lang": "fr",
+    "scope": "Europe"
   },
   "bellingcat": {
     "file": "bellingcat.json",
@@ -178,17 +226,9 @@
     "lang": "en",
     "scope": "World"
   },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Diff": {
     "file": "diff.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital skills + Citizen science",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -234,14 +274,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "European Commission": {
-    "file": "european_commission.json",
-    "count": 33,
-    "category": "Politics + Government",
-    "description": "European Commission | News",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "European Digital Rights (EDRi)": {
     "file": "european_digital_rights__edri_.json",
     "count": 20,
@@ -273,14 +305,6 @@
     "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
     "lang": "en",
     "scope": "World"
-  },
-  "Helsingin kaupunki | Uutiset": {
-    "file": "helsingin_kaupunki___uutiset.json",
-    "count": 14,
-    "category": "Politics + Government",
-    "description": "syöte",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Helsingin yliopisto": {
     "file": "helsingin_yliopisto.json",
@@ -354,17 +378,9 @@
     "lang": "en",
     "scope": "World"
   },
-  "Ohjelmistoteollisuus | ePressi": {
-    "file": "ohjelmistoteollisuus___epressi.json",
-    "count": 20,
-    "category": "(Open) Data + Technology",
-    "description": "Tiedotteiden tehokas julkaisukanava",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Open Culture": {
     "file": "open_culture.json",
-    "count": 15,
+    "count": 16,
     "category": "Digital cultural heritage",
     "description": "The best free cultural & educational media on the web",
     "lang": "en",
@@ -484,7 +500,7 @@
   },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
-    "count": 10,
+    "count": 11,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -540,7 +556,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital cultural heritage",
     "description": "",
     "lang": "fi",
@@ -684,7 +700,7 @@
   },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
-    "count": 50,
+    "count": 51,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -1052,7 +1068,7 @@
   },
   "Zooniverse": {
     "file": "zooniverse.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital skills + Citizen science",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
@@ -1156,7 +1172,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital policy + rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1442,14 +1458,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Svenska institutet": {
-    "file": "svenska_institutet.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Vi främjar Sverige i världen",
-    "lang": "sv",
-    "scope": "Nordic + Baltic countries"
-  },
   "Teosto": {
     "file": "teosto.json",
     "count": 10,
@@ -1465,14 +1473,6 @@
     "description": "The Library Innovation Lab is growing knowledge and community by bringing library principles to technological frontiers.",
     "lang": "en",
     "scope": "World"
-  },
-  "Wikimédia France": {
-    "file": "wikim_dia_france.json",
-    "count": 10,
-    "category": "Digital skills + Citizen science",
-    "description": "Association pour le libre partage de la connaissance",
-    "lang": "fr",
-    "scope": "Europe"
   },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
@@ -1817,14 +1817,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Journalism + investigation",
-    "description": "Julkisen sanan neuvosto",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "K-blogg - Riksantikvarieämbetets blogg": {
     "file": "k_blogg___riksantikvarie_mbetets_blogg.json",
@@ -2175,14 +2167,6 @@
     "count": 10,
     "category": "Digital cultural heritage",
     "description": "Step into Tomorrow",
-    "lang": "en",
-    "scope": "World"
-  },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
-    "category": "Digital skills + Citizen science",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
     "scope": "World"
   },
