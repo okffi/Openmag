@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "6.3.2026 klo 11.49.57"
+    "last_updated": "6.3.2026 klo 12.44.47"
   },
   "Yle": {
     "file": "yle.json",
@@ -140,7 +140,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 53,
+    "count": 55,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -188,7 +188,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 31,
+    "count": 35,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -201,6 +201,30 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Svenska institutet": {
+    "file": "svenska_institutet.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Vi främjar Sverige i världen",
+    "lang": "sv",
+    "scope": "Nordic + Baltic countries"
+  },
+  "Diff": {
+    "file": "diff.json",
+    "count": 11,
+    "category": "Digital skills + Citizen science",
+    "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
+  },
+  "PreventionWeb": {
+    "file": "preventionweb.json",
+    "count": 43,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Finnish AI Region": {
     "file": "finnish_ai_region.json",
@@ -346,14 +370,6 @@
     "lang": "fi",
     "scope": "Europe"
   },
-  "Svenska institutet": {
-    "file": "svenska_institutet.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Vi främjar Sverige i världen",
-    "lang": "sv",
-    "scope": "Nordic + Baltic countries"
-  },
   "Timeless": {
     "file": "timeless.json",
     "count": 10,
@@ -364,7 +380,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -450,17 +466,9 @@
     "lang": "en",
     "scope": "World"
   },
-  "Diff": {
-    "file": "diff.json",
-    "count": 11,
-    "category": "Digital skills + Citizen science",
-    "description": "News from the Wikimedia movement",
-    "lang": "en",
-    "scope": "World"
-  },
   "Extreme Citizen Science blog": {
     "file": "extreme_citizen_science_blog.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital skills + Citizen science",
     "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
@@ -580,7 +588,7 @@
   },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
-    "count": 50,
+    "count": 59,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -620,7 +628,7 @@
   },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
-    "count": 10,
+    "count": 11,
     "category": "Politics + Government",
     "description": "syöte",
     "lang": "fi",
@@ -700,19 +708,11 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital policy + rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
     "scope": "World"
-  },
-  "PreventionWeb": {
-    "file": "preventionweb.json",
-    "count": 43,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "xkcd": {
     "file": "xkcd.json",
@@ -892,7 +892,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital cultural heritage",
     "description": "",
     "lang": "fi",
@@ -908,7 +908,7 @@
   },
   "Confederation of Open Access Repositories": {
     "file": "confederation_of_open_access_repositories.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Science + Research",
     "description": "Building a sustainable, global knowledge commons",
     "lang": "en",
@@ -1164,7 +1164,7 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 2,
+    "count": 10,
     "category": "Journalism + investigation",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
@@ -1252,7 +1252,7 @@
   },
   "Zooniverse": {
     "file": "zooniverse.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital skills + Citizen science",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
@@ -1434,14 +1434,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Culture Action Europe News": {
-    "file": "culture_action_europe_news.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "We take care of the cultural ecosystem.",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "CHAOSS": {
     "file": "chaoss.json",
     "count": 10,
@@ -1593,6 +1585,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Culture Action Europe News": {
+    "file": "culture_action_europe_news.json",
+    "count": 10,
+    "category": "Cultural policy",
+    "description": "We take care of the cultural ecosystem.",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Kopiosto": {
     "file": "kopiosto.json",
@@ -2018,6 +2018,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Sciences Po Technology and global affairs innovation hub": {
     "file": "sciences_po_technology_and_global_affairs_innovation_hub.json",
     "count": 22,
@@ -2039,6 +2047,14 @@
     "count": 10,
     "category": "Digital policy + rights",
     "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Tietopoliitiikan yhteistyöryhmä": {
+    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2167,14 +2183,6 @@
     "count": 10,
     "category": "Journalism + investigation",
     "description": "Journalistisen kulttuurin edistämissäätiö",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Journalism + investigation",
-    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
