@@ -1033,11 +1033,9 @@
                 const count = byCategory[category].filter(b => b.sourceTitle === source).length;
                 const item = document.createElement('div');
                 item.className = 'source-item';
-                item.textContent = source;  // Name added as direct text
+                item.textContent = source;
                 const countSpan = document.createElement('span');
                 countSpan.textContent = count;
-
-                item.appendChild(nameSpan);
                 item.appendChild(countSpan);
                 item.onclick = (e) => { e.stopPropagation(); filterBookmarksBySource(source, category); };
                 submenu.appendChild(item);
