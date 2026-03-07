@@ -793,6 +793,14 @@
 
         // If we were in bookmarks view, reload articles for the current source
         if (wasBookmarksView) {
+            currentSourceFile = 'data.json';
+            currentCategory = 'All';
+            const viewTitle = document.getElementById('current-view-title');
+            const viewDesc = document.getElementById('current-view-description');
+            const logoCont = document.getElementById('feed-logo-container');
+            if (viewTitle) viewTitle.textContent = t('ui.latest_news');
+            if (viewDesc) viewDesc.innerText = t('ui.a_collection_of_the_latest_news_from_followed_sources');
+            if (logoCont) { logoCont.innerHTML = ''; logoCont.style.display = 'none'; }
             displayedCount = 0;
             clearGrid();
             displayArticles();
@@ -1005,6 +1013,16 @@
         const list = document.getElementById('source-list');
         list.innerHTML = '';
 
+        // "All items" top-level link
+        const allItem = document.createElement('div');
+        allItem.className = 'source-item active';
+        allItem.id = 'bookmark-all-item';
+        allItem.textContent = t('ui.all_items') || 'All items';
+        allItem.onclick = () => {
+            showBookmarksView();
+        };
+        list.appendChild(allItem);
+
         // Group bookmarks by category
         const byCategory = {};
         bookmarks.forEach(bm => {
@@ -1020,7 +1038,15 @@
             const header = document.createElement('div');
             header.className = 'category-header';
             header.textContent = getTranslation('cat', category);
-            header.onclick = () => group.classList.toggle('open');
+            header.onclick = () => {
+                group.classList.toggle('open');
+                filterBookmarksByCategory(category);
+                // Update active state
+                const allItemEl = document.getElementById('bookmark-all-item');
+                if (allItemEl) allItemEl.classList.remove('active');
+                list.querySelectorAll('.category-header').forEach(h => h.classList.remove('active'));
+                header.classList.add('active');
+            };
             group.appendChild(header);
 
             const submenu = document.createElement('div');
@@ -1052,6 +1078,32 @@
         const filtered = bookmarks.filter(b =>
             b.sourceTitle === source && b.sheetCategory === category
         );
+
+        const container = document.querySelector('#magazine-grid');
+        clearGrid();
+        container.classList.remove('loaded');
+
+        const newElements = [];
+        filtered.forEach(bm => {
+            const card = createArticleCard(bm);
+            container.appendChild(card);
+            newElements.push(card);
+        });
+
+        imagesLoaded(container, () => {
+            if (masonry) {
+                masonry.appended(newElements);
+                masonry.layout();
+            }
+            container.classList.add('loaded');
+        });
+    }
+
+    function filterBookmarksByCategory(category) {
+        const bookmarks = window.BookmarkManager ? window.BookmarkManager.getAll() : [];
+        const filtered = category === 'All'
+            ? bookmarks
+            : bookmarks.filter(b => (b.sheetCategory || 'Uncategorized') === category);
 
         const container = document.querySelector('#magazine-grid');
         clearGrid();
