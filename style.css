@@ -326,7 +326,6 @@ header.main-header {
 }
 .source-item:hover, .source-item.active { color: var(--primary-color); background: #fcfcfc; }
 .source-item.active { font-weight: 700; border-left: 3px solid var(--primary-color); }
-.source-item span { font-size: 0.7rem; color: #b7b7b7; font-weight: 400; }
 
 /* --- CONTENT AREA --- */
 main { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; }
