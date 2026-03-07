@@ -1033,9 +1033,7 @@
                 const count = byCategory[category].filter(b => b.sourceTitle === source).length;
                 const item = document.createElement('div');
                 item.className = 'source-item';
-
-                const nameSpan = document.createElement('span');
-                nameSpan.textContent = source;
+                item.textContent = source;  // Name added as direct text
                 const countSpan = document.createElement('span');
                 countSpan.textContent = count;
 
