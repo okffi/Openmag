@@ -363,6 +363,25 @@ main { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; }
     margin-top: 15px; padding-top: 15px; border-top: 1px solid #f8f9fa;
     font-size: 0.6rem; letter-spacing: 1px; color: #999; text-transform: uppercase;
 }
+/* Bookmarks navigation button in sidebar */
+.bookmark-nav-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 8px 12px;
+    color: #999;
+    transition: color 0.2s ease;
+}
+
+.bookmark-nav-btn:hover {
+    color: #ffc107;
+}
+
+.bookmark-nav-btn.active {
+    color: #ffc107;
+    font-weight: bold;
+}
 
 /* Bookmark button - positioned in upper right corner of card */
 .bookmark-btn {
@@ -396,6 +415,7 @@ main { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; }
 .bookmark-btn[aria-pressed="false"] {
     color: #999;
 }
+
 #scroll-sentinel { text-align: center; padding: 80px 0; color: #bbb; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; }
 
 /* --- RESPONSIVE --- */
