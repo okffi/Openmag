@@ -47,7 +47,6 @@
                     <option value="Europe">Europe</option>
                     <option value="World">World</option>
                 </select>
-                <button id="bookmarks-btn" class="bookmarks-btn" onclick="toggleBookmarksPanel()">&#9733; <span id="bookmarks-btn-label">BOOKMARKS</span> <span id="bookmarks-count" class="bookmarks-count" hidden>0</span></button>
                 <button id="settings-btn" class="settings-btn" onclick="toggleSettingsPanel()">&#9881; <span id="settings-btn-label">SETTINGS</span> <span id="settings-btn-arrow" class="settings-arrow">&#9660;</span></button>
             </div>
             <!-- Settings panel – positioned absolute below the sticky header -->
@@ -133,22 +132,6 @@
         <div id="scroll-sentinel"></div>
     </main>
 
-    <!-- Bookmarks Panel -->
-    <div id="bookmarks-panel" class="bookmarks-panel" hidden>
-        <div class="bookmarks-panel-header">
-            <h2 id="bookmarks-panel-title" class="bookmarks-panel-title">BOOKMARKS</h2>
-            <div class="bookmarks-panel-actions">
-                <button id="bookmarks-import-btn" class="bookmarks-action-btn" onclick="document.getElementById('bookmarks-import-input').click()">&#8599; Import</button>
-                <input type="file" id="bookmarks-import-input" accept=".json" style="display:none" onchange="handleImportBookmarks(this)">
-                <button id="bookmarks-export-btn" class="bookmarks-action-btn" onclick="BookmarkManager.exportBookmarks()">&#8600; Export</button>
-                <button id="bookmarks-clear-btn" class="bookmarks-action-btn bookmarks-action-btn--danger" onclick="handleClearAllBookmarks()">&#10006; Clear All</button>
-                <button class="bookmarks-close-btn" onclick="closeBookmarksPanel()">&#10005;</button>
-            </div>
-        </div>
-        <div id="bookmarks-grid" class="bookmarks-grid"></div>
-    </div>
-
-    <script src="bookmarks.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
