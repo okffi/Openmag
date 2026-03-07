@@ -55,39 +55,6 @@ header.main-header {
     gap: 10px;
 }
 
-/* YHTENÄISTETYT NAPIT JA VALIKOT (Korkeus 30px) */
-.dark-select,
-.sidebar-view-toggle button {
-    height: 30px; /* Päivitetty 30px */
-    padding: 0 16px;
-    border-radius: 20px;
-    font-size: 0.65rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px; /* Suurempi kirjainväli */
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: none;
-    outline: none;
-}
-
-.dark-select, 
-.sidebar-view-toggle button.active {
-    background-color: var(--text-dark);
-    color: white;
-}
-
-.dark-select {
-    appearance: none;
-    -webkit-appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='white' d='M0 2l4 4 4-4z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    padding-right: 30px;
-}
-
-.dark-select:hover { background-color: #333; }
-
 /* SETTINGS BUTTON */
 .settings-btn {
     height: 30px;
@@ -258,6 +225,39 @@ header.main-header {
 
 .sidebar.closed { margin-left: calc(-1 * var(--sidebar-width)); }
 
+/* YHTENÄISTETYT NAPIT JA VALIKOT (Korkeus 30px) */
+.dark-select,
+.sidebar-view-toggle button {
+    height: 30px;
+    padding: 0 16px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px; /* Suurempi kirjainväli */
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    outline: none;
+}
+
+.dark-select, 
+.sidebar-view-toggle button.active {
+    background-color: var(--text-dark);
+    color: white;
+}
+
+.dark-select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill='white' d='M0 2l4 4 4-4z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    padding-right: 30px;
+}
+
+.dark-select:hover { background-color: #333; }
+
 /* Sivupalkin kytkin (pilleritausta) */
 .sidebar-view-toggle {
     display: flex;
@@ -268,7 +268,12 @@ header.main-header {
     gap: 4px;
 }
 
-.sidebar-view-toggle button { flex: 1; background: none; color: var(--text-muted); }
+.sidebar-view-toggle button { 
+    flex: 1; 
+    background: none; 
+    color: var(--text-muted); 
+    white-space: nowrap;
+}
 
 /* SIDEBAR TOGGLE LOGIIKKA */
 #sidebar-toggle { 
