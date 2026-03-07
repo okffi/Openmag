@@ -477,6 +477,38 @@
         link.appendChild(content);
         card.appendChild(link);
 
+        // --- BOOKMARK BUTTON (upper right corner) ---
+        const bookmarkBtn = document.createElement('button');
+        bookmarkBtn.className = 'bookmark-btn';
+        bookmarkBtn.setAttribute('data-link', item.link);
+        
+        // Set initial state
+        const updateButtonState = () => {
+            const isBookmarked = window.BookmarkManager && window.BookmarkManager.isBookmarked(item.link);
+            bookmarkBtn.textContent = isBookmarked ? '★' : '☆';
+            bookmarkBtn.setAttribute('aria-pressed', isBookmarked);
+        };
+        
+        updateButtonState();
+        
+        // Handle bookmark click
+        bookmarkBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            if (!window.BookmarkManager) return;
+            
+            if (window.BookmarkManager.isBookmarked(item.link)) {
+                window.BookmarkManager.remove(item.link);
+            } else {
+                window.BookmarkManager.add(item);
+            }
+            updateButtonState();
+        });
+        
+        card.appendChild(bookmarkBtn);
+        // --- END BOOKMARK BUTTON ---
+
         return card;
     }
 
