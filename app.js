@@ -1,5 +1,6 @@
 // app.js - Encapsulated in IIFE to prevent global variable pollution
 // Show bookmarks view
+// Show bookmarks view
 window.showBookmarksView = function() {
     const btn = document.getElementById('btn-bookmarks');
     const btnCategories = document.getElementById('btn-categories');
@@ -10,7 +11,7 @@ window.showBookmarksView = function() {
     btnAz.classList.remove('active');
     btn.classList.add('active');
     
-    // Load and display bookmarks
+    // Load bookmarks
     const bookmarks = window.BookmarkManager.getAll();
     const container = document.querySelector('#magazine-grid');
     
@@ -24,13 +25,17 @@ window.showBookmarksView = function() {
         empty.style.color = '#999';
         empty.textContent = 'No bookmarks yet. Click ★ on articles to bookmark them.';
         container.appendChild(empty);
+        
+        // Clear sidebar
+        const list = document.getElementById('source-list');
+        list.innerHTML = '';
+        
         return;
     }
     
     // Create cards for each bookmark
     const newElements = [];
     bookmarks.forEach(bm => {
-        // Reconstruct article object from bookmark data
         const articleData = {
             title: bm.title,
             link: bm.link,
@@ -49,12 +54,115 @@ window.showBookmarksView = function() {
         newElements.push(card);
     });
     
-    // Re-layout masonry if available
+    // Re-layout masonry
     if (window.msnry && typeof window.msnry.appended === 'function') {
         window.msnry.appended(newElements);
         window.msnry.layout();
     }
+    
+    // Build sidebar for bookmarks view
+    buildBookmarksSidebar(bookmarks);
 };
+
+// Build sidebar showing bookmarks categories and sources
+function buildBookmarksSidebar(bookmarks) {
+    const list = document.getElementById('source-list');
+    list.innerHTML = '';
+    
+    // Group bookmarks by category
+    const byCategory = {};
+    bookmarks.forEach(bm => {
+        const cat = bm.sheetCategory || 'Uncategorized';
+        if (!byCategory[cat]) {
+            byCategory[cat] = [];
+        }
+        byCategory[cat].push(bm);
+    });
+    
+    // Create category groups
+    Object.keys(byCategory).sort().forEach(category => {
+        const group = document.createElement('div');
+        group.className = 'category-group';
+        
+        const header = document.createElement('div');
+        header.className = 'category-header';
+        header.textContent = category;
+        header.style.cursor = 'pointer';
+        header.onclick = (e) => {
+            group.classList.toggle('open');
+        };
+        
+        group.appendChild(header);
+        
+        // Get unique sources in this category
+        const sources = new Set();
+        byCategory[category].forEach(bm => {
+            sources.add(bm.sourceTitle || 'Unknown');
+        });
+        
+        const submenu = document.createElement('div');
+        submenu.className = 'source-submenu';
+        
+        // Add each source with count
+        Array.from(sources).sort().forEach(source => {
+            const count = byCategory[category].filter(b => b.sourceTitle === source).length;
+            
+            const item = document.createElement('div');
+            item.className = 'source-item';
+            item.innerHTML = `
+                <span>${source}</span>
+                <span style="font-size: 0.7rem; color: #999;">${count}</span>
+            `;
+            item.onclick = (e) => {
+                e.stopPropagation();
+                filterBookmarksBySource(source, category);
+            };
+            
+            submenu.appendChild(item);
+        });
+        
+        group.appendChild(submenu);
+        group.classList.add('open'); // Expand by default
+        list.appendChild(group);
+    });
+}
+
+// Filter bookmarks by source and category
+function filterBookmarksBySource(source, category) {
+    const bookmarks = window.BookmarkManager.getAll();
+    const filtered = bookmarks.filter(b => 
+        b.sourceTitle === source && b.sheetCategory === category
+    );
+    
+    const container = document.querySelector('#magazine-grid');
+    container.innerHTML = '<div class="grid-sizer"></div>';
+    
+    const newElements = [];
+    filtered.forEach(bm => {
+        const articleData = {
+            title: bm.title,
+            link: bm.link,
+            content: bm.content,
+            sourceTitle: bm.sourceTitle,
+            creator: bm.creator,
+            pubDate: bm.pubDate,
+            enforcedImage: bm.enforcedImage,
+            sheetCategory: bm.sheetCategory,
+            lang: bm.lang,
+            scope: bm.scope
+        };
+        
+        const card = createArticleCard(articleData);
+        container.appendChild(card);
+        newElements.push(card);
+    });
+    
+    if (window.msnry && typeof window.msnry.appended === 'function') {
+        window.msnry.appended(newElements);
+        window.msnry.layout();
+    }
+}
+
 (function () {
     // Constants
     const CONTENT_PREVIEW_LENGTH = 150;
@@ -821,6 +929,10 @@ window.showBookmarksView = function() {
     }
 
     function showSidebarView(view) {
+        const bookmarksBtn = document.getElementById('btn-bookmarks');
+        if (bookmarksBtn && bookmarksBtn.classList.contains('active')) {
+            return;
+        }
         const list = document.getElementById('source-list');
         const btnCat = document.getElementById('btn-categories');
         const btnAz = document.getElementById('btn-az');
