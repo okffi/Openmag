@@ -266,33 +266,6 @@ header.main-header {
     white-space: nowrap;
 }
 
-/* BOOKMARK BUTTON IN SIDEBAR */
-.bookmark-nav-btn {
-    background: #f0f0f0;
-    border: none;
-    cursor: pointer;
-    padding: 10px 14px;
-    color: #333;
-    transition: all 0.2s ease;
-    font-weight: 500;
-    border-radius: 20px;
-    white-space: nowrap;
-    flex-shrink: 0;
-    height: 30px;
-    font-size: 0.65rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-}
-
-.bookmark-nav-btn:hover {
-    background: #e0e0e0;
-}
-
-.bookmark-nav-btn.active {
-    background-color: var(--text-dark);
-    color: white;
-}
 
 /* SIDEBAR TOGGLE BUTTON */
 #sidebar-toggle { 
@@ -416,7 +389,7 @@ main { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; }
     position: absolute;
     top: 8px;
     right: 8px;
-    background: rgba(255, 255, 255, 0.9);
+    background: none;
     border: none;
     border-radius: 50%;
     width: 32px;
@@ -425,23 +398,51 @@ main { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; }
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     cursor: pointer;
     z-index: 10;
     transition: all 0.2s ease;
+    color: white;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.55);
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.45));
 }
 
 .bookmark-btn:hover {
-    background: #fff;
-    transform: scale(1.1);
+    transform: scale(1.15);
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.6));
 }
 
+/* Filled white star when bookmarked, on image */
 .bookmark-btn[aria-pressed="true"] {
-    color: #ffc107;
+    color: white;
 }
 
+/* Outline white star when not bookmarked, on image */
 .bookmark-btn[aria-pressed="false"] {
-    color: #999;
+    color: white;
+    opacity: 0.85;
+}
+
+/* When card has no image, star uses text colour instead of white */
+.no-image .bookmark-btn {
+    color: var(--text-dark);
+    filter: none;
+    text-shadow: none;
+    opacity: 1;
+}
+
+.no-image .bookmark-btn[aria-pressed="false"] {
+    color: var(--text-muted);
+    opacity: 1;
+}
+
+.no-image .bookmark-btn[aria-pressed="true"] {
+    color: var(--text-dark);
+}
+
+.no-image .bookmark-btn:hover {
+    filter: none;
+    color: var(--primary-color);
 }
 
 #scroll-sentinel { text-align: center; padding: 80px 0; color: #bbb; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; }
