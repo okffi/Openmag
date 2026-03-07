@@ -8,7 +8,7 @@
     --text-muted: #6c757d;
     --card-bg: #ffffff;
     --border-color: #eeeeee;
-    --sidebar-width: 280px;
+    --sidebar-width: 290px;
     --font-main: 'DM Sans', sans-serif;
     --font-serif: 'Playfair Display', serif;
 }
@@ -365,22 +365,26 @@ main { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; }
 }
 /* Bookmarks navigation button in sidebar */
 .bookmark-nav-btn {
-    background: none;
+    background: #f0f0f0;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
     cursor: pointer;
-    padding: 8px 12px;
-    color: #999;
-    transition: color 0.2s ease;
+    padding: 10px 14px;
+    color: #333;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .bookmark-nav-btn:hover {
-    color: #ffc107;
+    background: #e0e0e0;
 }
 
 .bookmark-nav-btn.active {
-    color: #ffc107;
-    font-weight: bold;
+    background: #ffc107;
+    color: #000;
 }
 
 /* Bookmark button - positioned in upper right corner of card */
