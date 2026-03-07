@@ -1,4 +1,60 @@
 // app.js - Encapsulated in IIFE to prevent global variable pollution
+// Show bookmarks view
+window.showBookmarksView = function() {
+    const btn = document.getElementById('btn-bookmarks');
+    const btnCategories = document.getElementById('btn-categories');
+    const btnAz = document.getElementById('btn-az');
+    
+    // Remove active state from other buttons
+    btnCategories.classList.remove('active');
+    btnAz.classList.remove('active');
+    btn.classList.add('active');
+    
+    // Load and display bookmarks
+    const bookmarks = window.BookmarkManager.getAll();
+    const container = document.querySelector('#magazine-grid');
+    
+    // Clear existing grid
+    container.innerHTML = '<div class="grid-sizer"></div>';
+    
+    if (bookmarks.length === 0) {
+        const empty = document.createElement('div');
+        empty.style.padding = '40px 20px';
+        empty.style.textAlign = 'center';
+        empty.style.color = '#999';
+        empty.textContent = 'No bookmarks yet. Click ★ on articles to bookmark them.';
+        container.appendChild(empty);
+        return;
+    }
+    
+    // Create cards for each bookmark
+    const newElements = [];
+    bookmarks.forEach(bm => {
+        // Reconstruct article object from bookmark data
+        const articleData = {
+            title: bm.title,
+            link: bm.link,
+            content: bm.content,
+            sourceTitle: bm.sourceTitle,
+            creator: bm.creator,
+            pubDate: bm.pubDate,
+            enforcedImage: bm.enforcedImage,
+            sheetCategory: bm.sheetCategory,
+            lang: bm.lang,
+            scope: bm.scope
+        };
+        
+        const card = createArticleCard(articleData);
+        container.appendChild(card);
+        newElements.push(card);
+    });
+    
+    // Re-layout masonry if available
+    if (window.msnry && typeof window.msnry.appended === 'function') {
+        window.msnry.appended(newElements);
+        window.msnry.layout();
+    }
+};
 (function () {
     // Constants
     const CONTENT_PREVIEW_LENGTH = 150;
