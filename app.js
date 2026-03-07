@@ -1,168 +1,4 @@
 // app.js - Encapsulated in IIFE to prevent global variable pollution
-// Show bookmarks view
-// Show bookmarks view
-window.showBookmarksView = function() {
-    const btn = document.getElementById('btn-bookmarks');
-    const btnCategories = document.getElementById('btn-categories');
-    const btnAz = document.getElementById('btn-az');
-    
-    // Remove active state from other buttons
-    btnCategories.classList.remove('active');
-    btnAz.classList.remove('active');
-    btn.classList.add('active');
-    
-    // Load bookmarks
-    const bookmarks = window.BookmarkManager.getAll();
-    const container = document.querySelector('#magazine-grid');
-    
-    // Clear existing grid
-    container.innerHTML = '<div class="grid-sizer"></div>';
-    
-    if (bookmarks.length === 0) {
-        const empty = document.createElement('div');
-        empty.style.padding = '40px 20px';
-        empty.style.textAlign = 'center';
-        empty.style.color = '#999';
-        empty.textContent = 'No bookmarks yet. Click ★ on articles to bookmark them.';
-        container.appendChild(empty);
-        
-        // Clear sidebar
-        const list = document.getElementById('source-list');
-        list.innerHTML = '';
-        
-        return;
-    }
-    
-    // Create cards for each bookmark
-    const newElements = [];
-    bookmarks.forEach(bm => {
-        const articleData = {
-            title: bm.title,
-            link: bm.link,
-            content: bm.content,
-            sourceTitle: bm.sourceTitle,
-            creator: bm.creator,
-            pubDate: bm.pubDate,
-            enforcedImage: bm.enforcedImage,
-            sheetCategory: bm.sheetCategory,
-            lang: bm.lang,
-            scope: bm.scope
-        };
-        
-        const card = createArticleCard(articleData);
-        container.appendChild(card);
-        newElements.push(card);
-    });
-    
-    // Re-layout masonry
-    if (window.msnry && typeof window.msnry.appended === 'function') {
-        window.msnry.appended(newElements);
-        window.msnry.layout();
-    }
-    
-    // Build sidebar for bookmarks view
-    buildBookmarksSidebar(bookmarks);
-};
-
-// Build sidebar showing bookmarks categories and sources
-function buildBookmarksSidebar(bookmarks) {
-    const list = document.getElementById('source-list');
-    list.innerHTML = '';
-    
-    // Group bookmarks by category
-    const byCategory = {};
-    bookmarks.forEach(bm => {
-        const cat = bm.sheetCategory || 'Uncategorized';
-        if (!byCategory[cat]) {
-            byCategory[cat] = [];
-        }
-        byCategory[cat].push(bm);
-    });
-    
-    // Create category groups
-    Object.keys(byCategory).sort().forEach(category => {
-        const group = document.createElement('div');
-        group.className = 'category-group';
-        
-        const header = document.createElement('div');
-        header.className = 'category-header';
-        header.textContent = category;
-        header.style.cursor = 'pointer';
-        header.onclick = (e) => {
-            group.classList.toggle('open');
-        };
-        
-        group.appendChild(header);
-        
-        // Get unique sources in this category
-        const sources = new Set();
-        byCategory[category].forEach(bm => {
-            sources.add(bm.sourceTitle || 'Unknown');
-        });
-        
-        const submenu = document.createElement('div');
-        submenu.className = 'source-submenu';
-        
-        // Add each source with count
-        Array.from(sources).sort().forEach(source => {
-            const count = byCategory[category].filter(b => b.sourceTitle === source).length;
-            
-            const item = document.createElement('div');
-            item.className = 'source-item';
-            item.innerHTML = `
-                <span>${source}</span>
-                <span style="font-size: 0.7rem; color: #999;">${count}</span>
-            `;
-            item.onclick = (e) => {
-                e.stopPropagation();
-                filterBookmarksBySource(source, category);
-            };
-            
-            submenu.appendChild(item);
-        });
-        
-        group.appendChild(submenu);
-        group.classList.add('open'); // Expand by default
-        list.appendChild(group);
-    });
-}
-
-// Filter bookmarks by source and category
-function filterBookmarksBySource(source, category) {
-    const bookmarks = window.BookmarkManager.getAll();
-    const filtered = bookmarks.filter(b => 
-        b.sourceTitle === source && b.sheetCategory === category
-    );
-    
-    const container = document.querySelector('#magazine-grid');
-    container.innerHTML = '<div class="grid-sizer"></div>';
-    
-    const newElements = [];
-    filtered.forEach(bm => {
-        const articleData = {
-            title: bm.title,
-            link: bm.link,
-            content: bm.content,
-            sourceTitle: bm.sourceTitle,
-            creator: bm.creator,
-            pubDate: bm.pubDate,
-            enforcedImage: bm.enforcedImage,
-            sheetCategory: bm.sheetCategory,
-            lang: bm.lang,
-            scope: bm.scope
-        };
-        
-        const card = createArticleCard(articleData);
-        container.appendChild(card);
-        newElements.push(card);
-    });
-    
-    if (window.msnry && typeof window.msnry.appended === 'function') {
-        window.msnry.appended(newElements);
-        window.msnry.layout();
-    }
-}
-
 (function () {
     // Constants
     const CONTENT_PREVIEW_LENGTH = 150;
@@ -173,6 +9,7 @@ function filterBookmarksBySource(source, category) {
     let displayedCount = 0;
     let masonry;
     let isLoading = false;
+    let isBookmarksView = false;
     let currentCategory = 'All';
     let statsData = null;
     let mainFeedCache = null;
@@ -305,6 +142,7 @@ function filterBookmarksBySource(source, category) {
 
     function updateView() {
         if (pendingOperation) return;
+        if (isBookmarksView) return;
 
         // Päivitetään globaalit suodatinarvot valikoista
         currentLang = document.getElementById('langFilter').value;
@@ -485,7 +323,7 @@ function filterBookmarksBySource(source, category) {
         // Scroll-tunnistin - katkaistaan mahdollinen aiempi ennen uuden luomista
         if (scrollObserver) scrollObserver.disconnect();
         scrollObserver = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting && !isLoading) displayArticles();
+            if (entries[0].isIntersecting && !isLoading && !isBookmarksView) displayArticles();
         }, { rootMargin: '400px' });
         scrollObserver.observe(document.querySelector('#scroll-sentinel'));
     }
@@ -821,6 +659,8 @@ function filterBookmarksBySource(source, category) {
     function renderCategoryView(list) {
         list.innerHTML = '';
 
+        if (!statsData) return;
+
         const selectedLang = document.getElementById('langFilter').value;
         const selectedScope = document.getElementById('scopeFilter').value;
 
@@ -889,6 +729,8 @@ function filterBookmarksBySource(source, category) {
     function renderAZView(list) {
         list.innerHTML = '';
 
+        if (!statsData) return;
+
         const selectedLang = document.getElementById('langFilter').value;
         const selectedScope = document.getElementById('scopeFilter').value;
 
@@ -929,10 +771,12 @@ function filterBookmarksBySource(source, category) {
     }
 
     function showSidebarView(view) {
+        const wasBookmarksView = isBookmarksView;
+        isBookmarksView = false;
+
         const bookmarksBtn = document.getElementById('btn-bookmarks');
-        if (bookmarksBtn && bookmarksBtn.classList.contains('active')) {
-            return;
-        }
+        if (bookmarksBtn) bookmarksBtn.classList.remove('active');
+
         const list = document.getElementById('source-list');
         const btnCat = document.getElementById('btn-categories');
         const btnAz = document.getElementById('btn-az');
@@ -945,6 +789,14 @@ function filterBookmarksBySource(source, category) {
             btnCat.classList.add('active');
             btnAz.classList.remove('active');
             renderCategoryView(list);
+        }
+
+        // If we were in bookmarks view, reload articles for the current source
+        if (wasBookmarksView) {
+            displayedCount = 0;
+            clearGrid();
+            displayArticles();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
 
@@ -1039,6 +891,10 @@ function filterBookmarksBySource(source, category) {
     }
 
     function filterByCategory(catName) {
+        isBookmarksView = false;
+        const bookmarksBtn = document.getElementById('btn-bookmarks');
+        if (bookmarksBtn) bookmarksBtn.classList.remove('active');
+
         currentCategory = catName;
         const viewTitle = document.getElementById('current-view-title');
         const viewDesc = document.getElementById('current-view-description');
@@ -1073,6 +929,9 @@ function filterBookmarksBySource(source, category) {
     async function handleSourceClick(event, sourceName) {
         event.preventDefault();
         event.stopPropagation();
+        isBookmarksView = false;
+        const bookmarksBtn = document.getElementById('btn-bookmarks');
+        if (bookmarksBtn) bookmarksBtn.classList.remove('active');
         if (statsData && statsData[sourceName]) {
             changeSource(`sources/${statsData[sourceName].file}`, sourceName, null);
         }
@@ -1088,9 +947,140 @@ function filterBookmarksBySource(source, category) {
         }
     }
 
+    // --- BOOKMARKS VIEW ---
+
+    function showBookmarksView() {
+        isBookmarksView = true;
+
+        const btn = document.getElementById('btn-bookmarks');
+        const btnCategories = document.getElementById('btn-categories');
+        const btnAz = document.getElementById('btn-az');
+        btnCategories.classList.remove('active');
+        btnAz.classList.remove('active');
+        btn.classList.add('active');
+
+        // Update view header
+        const viewTitle = document.getElementById('current-view-title');
+        const viewDesc = document.getElementById('current-view-description');
+        const logoCont = document.getElementById('feed-logo-container');
+        if (viewTitle) viewTitle.textContent = t('ui.bookmarks') || 'Bookmarks';
+        if (viewDesc) viewDesc.textContent = '';
+        if (logoCont) { logoCont.innerHTML = ''; logoCont.style.display = 'none'; }
+
+        const bookmarks = window.BookmarkManager ? window.BookmarkManager.getAll() : [];
+        const container = document.querySelector('#magazine-grid');
+        const sentinel = document.querySelector('#scroll-sentinel');
+
+        clearGrid();
+        container.classList.remove('loaded');
+        if (sentinel) sentinel.textContent = '';
+
+        if (bookmarks.length === 0) {
+            if (sentinel) sentinel.textContent = t('msg.no_bookmarks') || 'No bookmarks yet. Click \u2606 on articles to bookmark them.';
+            const list = document.getElementById('source-list');
+            if (list) list.innerHTML = '';
+            container.classList.add('loaded');
+            return;
+        }
+
+        const newElements = [];
+        bookmarks.forEach(bm => {
+            const card = createArticleCard(bm);
+            container.appendChild(card);
+            newElements.push(card);
+        });
+
+        imagesLoaded(container, () => {
+            if (masonry) {
+                masonry.appended(newElements);
+                masonry.layout();
+            }
+            container.classList.add('loaded');
+        });
+
+        buildBookmarksSidebar(bookmarks);
+    }
+
+    function buildBookmarksSidebar(bookmarks) {
+        const list = document.getElementById('source-list');
+        list.innerHTML = '';
+
+        // Group bookmarks by category
+        const byCategory = {};
+        bookmarks.forEach(bm => {
+            const cat = bm.sheetCategory || 'Uncategorized';
+            if (!byCategory[cat]) byCategory[cat] = [];
+            byCategory[cat].push(bm);
+        });
+
+        Object.keys(byCategory).sort().forEach(category => {
+            const group = document.createElement('div');
+            group.className = 'category-group';
+
+            const header = document.createElement('div');
+            header.className = 'category-header';
+            header.textContent = getTranslation('cat', category);
+            header.onclick = () => group.classList.toggle('open');
+            group.appendChild(header);
+
+            const submenu = document.createElement('div');
+            submenu.className = 'source-submenu';
+
+            const sources = new Set();
+            byCategory[category].forEach(bm => sources.add(bm.sourceTitle || 'Unknown'));
+
+            Array.from(sources).sort().forEach(source => {
+                const count = byCategory[category].filter(b => b.sourceTitle === source).length;
+                const item = document.createElement('div');
+                item.className = 'source-item';
+
+                const nameSpan = document.createElement('span');
+                nameSpan.textContent = source;
+                const countSpan = document.createElement('span');
+                countSpan.textContent = count;
+
+                item.appendChild(nameSpan);
+                item.appendChild(countSpan);
+                item.onclick = (e) => { e.stopPropagation(); filterBookmarksBySource(source, category); };
+                submenu.appendChild(item);
+            });
+
+            group.appendChild(submenu);
+            group.classList.add('open');
+            list.appendChild(group);
+        });
+    }
+
+    function filterBookmarksBySource(source, category) {
+        const bookmarks = window.BookmarkManager ? window.BookmarkManager.getAll() : [];
+        const filtered = bookmarks.filter(b =>
+            b.sourceTitle === source && b.sheetCategory === category
+        );
+
+        const container = document.querySelector('#magazine-grid');
+        clearGrid();
+        container.classList.remove('loaded');
+
+        const newElements = [];
+        filtered.forEach(bm => {
+            const card = createArticleCard(bm);
+            container.appendChild(card);
+            newElements.push(card);
+        });
+
+        imagesLoaded(container, () => {
+            if (masonry) {
+                masonry.appended(newElements);
+                masonry.layout();
+            }
+            container.classList.add('loaded');
+        });
+    }
+
     // Expose functions needed from HTML attributes
     window.toggleSidebar = toggleSidebar;
     window.showSidebarView = showSidebarView;
+    window.showBookmarksView = showBookmarksView;
     window.resetFilters = resetFilters;
     window.toggleSettingsPanel = toggleSettingsPanel;
     window.applySettingsPanel = applySettingsPanel;
