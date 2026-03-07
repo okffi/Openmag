@@ -296,7 +296,6 @@
         initSidebar();
         updateUITranslations();
         syncSettingsPanelFromFilters();
-        updateBookmarkCounter();
 
         // Event listenerit - poistetaan vanhat ennen uusien lisäystä
         const langFilter = document.getElementById('langFilter');
@@ -477,29 +476,6 @@
 
         link.appendChild(content);
         card.appendChild(link);
-
-        // Bookmark button
-        const bookmarkBtn = document.createElement('button');
-        bookmarkBtn.className = 'bookmark-btn';
-        bookmarkBtn.title = 'Bookmark';
-        const isBookmarked = BookmarkManager.isBookmarked(item.link);
-        bookmarkBtn.textContent = isBookmarked ? '★' : '☆';
-        bookmarkBtn.classList.toggle('bookmarked', isBookmarked);
-        bookmarkBtn.onclick = (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            if (BookmarkManager.isBookmarked(item.link)) {
-                BookmarkManager.removeBookmark(item.link);
-                bookmarkBtn.textContent = '☆';
-                bookmarkBtn.classList.remove('bookmarked');
-            } else {
-                BookmarkManager.addBookmark(item);
-                bookmarkBtn.textContent = '★';
-                bookmarkBtn.classList.add('bookmarked');
-            }
-            updateBookmarkCounter();
-        };
-        card.appendChild(bookmarkBtn);
 
         return card;
     }
@@ -912,166 +888,6 @@
         }
     }
 
-    function updateBookmarkCounter() {
-        const count = BookmarkManager.getBookmarkCount();
-        const badge = document.getElementById('bookmarks-count');
-        if (badge) {
-            badge.textContent = count;
-            badge.hidden = count === 0;
-        }
-    }
-
-    function toggleBookmarksPanel() {
-        const panel = document.getElementById('bookmarks-panel');
-        if (!panel) return;
-        if (panel.hidden) {
-            renderBookmarksPanel();
-            panel.hidden = false;
-            void panel.offsetHeight;
-            panel.classList.add('open');
-        } else {
-            closeBookmarksPanel();
-        }
-    }
-
-    function closeBookmarksPanel() {
-        const panel = document.getElementById('bookmarks-panel');
-        if (!panel) return;
-        panel.classList.remove('open');
-        panel.addEventListener('transitionend', function handler() {
-            panel.removeEventListener('transitionend', handler);
-            if (!panel.classList.contains('open')) panel.hidden = true;
-        });
-    }
-
-    function renderBookmarksPanel() {
-        const grid = document.getElementById('bookmarks-grid');
-        if (!grid) return;
-        grid.innerHTML = '';
-        const bookmarks = BookmarkManager.getBookmarks();
-        if (bookmarks.length === 0) {
-            const empty = document.createElement('p');
-            empty.className = 'bookmarks-empty';
-            empty.textContent = 'No bookmarks yet. Click ☆ on any article to save it.';
-            grid.appendChild(empty);
-            return;
-        }
-        bookmarks.forEach(bm => {
-            const card = document.createElement('div');
-            card.className = 'grid-item bookmarks-card' + (bm.image ? '' : ' no-image');
-
-            const link = document.createElement('a');
-            link.href = bm.link || '#';
-            link.target = '_blank';
-            link.rel = 'noopener';
-
-            if (bm.image) {
-                const img = document.createElement('img');
-                img.src = `https://wsrv.nl/?url=${encodeURIComponent(bm.image)}&w=800&q=80&output=png`;
-                img.onerror = () => { img.remove(); card.classList.add('no-image'); };
-                link.appendChild(img);
-            }
-
-            const content = document.createElement('div');
-            content.className = 'content';
-
-            if (bm.category) {
-                const cat = document.createElement('span');
-                cat.className = 'category-label';
-                cat.textContent = bm.category;
-                content.appendChild(cat);
-            }
-
-            const h2 = document.createElement('h2');
-            h2.textContent = bm.title || '';
-            content.appendChild(h2);
-
-            if (bm.content) {
-                const p = document.createElement('p');
-                const doc = new DOMParser().parseFromString(bm.content, 'text/html');
-                const clean = normalizeText(doc.body.textContent || '').substring(0, CONTENT_PREVIEW_LENGTH);
-                p.textContent = clean + (clean.length ? '...' : '');
-                content.appendChild(p);
-            }
-
-            const meta = document.createElement('div');
-            meta.className = 'meta-info';
-            if (bm.creator) {
-                const src = document.createElement('span');
-                src.textContent = bm.creator;
-                meta.appendChild(src);
-            }
-            if (bm.pubDate) {
-                const dateSpan = document.createElement('span');
-                try {
-                    dateSpan.textContent = new Date(bm.pubDate).toLocaleDateString();
-                } catch (e) {
-                    dateSpan.textContent = bm.pubDate;
-                }
-                meta.appendChild(dateSpan);
-            }
-            content.appendChild(meta);
-            link.appendChild(content);
-            card.appendChild(link);
-
-            const removeBtn = document.createElement('button');
-            removeBtn.className = 'bookmark-btn bookmarked';
-            removeBtn.textContent = '★';
-            removeBtn.title = 'Remove bookmark';
-            removeBtn.onclick = (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                BookmarkManager.removeBookmark(bm.link);
-                card.remove();
-                updateBookmarkCounter();
-                // Update star on any matching card in main grid
-                document.querySelectorAll('.bookmark-btn').forEach(btn => {
-                    const parentCard = btn.closest('.grid-item');
-                    if (parentCard) {
-                        const cardLink = parentCard.querySelector('a[href]');
-                        if (cardLink && cardLink.href === bm.link) {
-                            btn.textContent = '☆';
-                            btn.classList.remove('bookmarked');
-                        }
-                    }
-                });
-                const grid = document.getElementById('bookmarks-grid');
-                if (grid && grid.children.length === 0) {
-                    renderBookmarksPanel();
-                }
-            };
-            card.appendChild(removeBtn);
-
-            grid.appendChild(card);
-        });
-    }
-
-    function handleClearAllBookmarks() {
-        if (BookmarkManager.clearAllBookmarks()) {
-            updateBookmarkCounter();
-            renderBookmarksPanel();
-            // Reset all star buttons in main grid
-            document.querySelectorAll('.bookmark-btn.bookmarked').forEach(btn => {
-                btn.textContent = '☆';
-                btn.classList.remove('bookmarked');
-            });
-        }
-    }
-
-    function handleImportBookmarks(input) {
-        const file = input.files[0];
-        if (!file) return;
-        BookmarkManager.importBookmarks(file).then(added => {
-            updateBookmarkCounter();
-            renderBookmarksPanel();
-            input.value = '';
-        }).catch(err => {
-            console.error('Import failed:', err);
-            alert('Import failed: invalid or unreadable file.');
-            input.value = '';
-        });
-    }
-
     // Expose functions needed from HTML attributes
     window.toggleSidebar = toggleSidebar;
     window.showSidebarView = showSidebarView;
@@ -1079,10 +895,6 @@
     window.toggleSettingsPanel = toggleSettingsPanel;
     window.applySettingsPanel = applySettingsPanel;
     window.resetFiltersFromPanel = resetFiltersFromPanel;
-    window.toggleBookmarksPanel = toggleBookmarksPanel;
-    window.closeBookmarksPanel = closeBookmarksPanel;
-    window.handleClearAllBookmarks = handleClearAllBookmarks;
-    window.handleImportBookmarks = handleImportBookmarks;
 
     init();
 })();
