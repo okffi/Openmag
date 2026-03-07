@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "7.3.2026 klo 20.43.26"
+    "last_updated": "7.3.2026 klo 21.27.57"
   },
   "Electronic Frontier Foundation": {
     "file": "electronic_frontier_foundation.json",
@@ -111,6 +111,14 @@
     "count": 21,
     "category": "Human Rights + Democracy",
     "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "bellingcat": {
+    "file": "bellingcat.json",
+    "count": 10,
+    "category": "Journalism + investigation",
+    "description": "the home of online investigations",
     "lang": "en",
     "scope": "World"
   },
@@ -652,7 +660,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital cultural heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -745,14 +753,6 @@
     "description": "Koulutusta, kulttuuria ja kansalaistoimintaa",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "bellingcat": {
-    "file": "bellingcat.json",
-    "count": 10,
-    "category": "Journalism + investigation",
-    "description": "the home of online investigations",
-    "lang": "en",
-    "scope": "World"
   },
   "Journalism Science Alliance": {
     "file": "journalism_science_alliance.json",
@@ -852,7 +852,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 1,
+    "count": 10,
     "category": "Cultural policy",
     "description": "",
     "lang": "fi",
@@ -1284,7 +1284,7 @@
   },
   "Zooniverse": {
     "file": "zooniverse.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital skills + Citizen science",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
@@ -1417,14 +1417,6 @@
     "description": "Soome Eesti Instituudi Sihtasutus",
     "lang": "fi",
     "scope": "Nordic + Baltic countries"
-  },
-  "Open Knowledge Foundation DE": {
-    "file": "open_knowledge_foundation_de.json",
-    "count": 684,
-    "category": "Digital policy + rights",
-    "description": "Blog on OKF DE",
-    "lang": "de",
-    "scope": "Europe"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -1858,6 +1850,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Michael Culture Association": {
+    "file": "michael_culture_association.json",
+    "count": 1,
+    "category": "Digital cultural heritage",
+    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "MuseumNext": {
     "file": "museumnext.json",
     "count": 10,
@@ -1978,13 +1978,13 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Knowledge Foundation Blog": {
-    "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
+  "Open Knowledge Foundation DE": {
+    "file": "open_knowledge_foundation_de.json",
+    "count": 684,
     "category": "Digital policy + rights",
-    "description": "Content for a fair, sustainable and open future",
-    "lang": "en",
-    "scope": "World"
+    "description": "Blog on OKF DE",
+    "lang": "de",
+    "scope": "Europe"
   },
   "Opendata.ch": {
     "file": "opendata_ch.json",
