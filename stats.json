@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "8.3.2026 klo 16.32.13"
+    "last_updated": "8.3.2026 klo 17.31.18"
   },
   "Global Voices": {
     "file": "global_voices.json",
@@ -44,7 +44,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 52,
+    "count": 53,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -74,11 +74,35 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Weekly OSM": {
+    "file": "weekly_osm.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "weekly &#8211; semanario &#8211; hebdo &#8211; 週刊 &#8211; týdeník &#8211; Wochennotiz &#8211; 주간 &#8211; tygodnik",
+    "lang": "en",
+    "scope": "World"
+  },
   "OATP primary": {
     "file": "oatp_primary.json",
     "count": 49,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Tech Policy Press": {
+    "file": "tech_policy_press.json",
+    "count": 3341,
+    "category": "Digital policy + rights",
+    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "resilience": {
+    "file": "resilience.json",
+    "count": 12,
+    "category": "Perspectives",
+    "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
     "scope": "World"
   },
@@ -164,7 +188,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 17,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -370,14 +394,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Tech Policy Press": {
-    "file": "tech_policy_press.json",
-    "count": 3341,
-    "category": "Digital policy + rights",
-    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Technology – POLITICO": {
     "file": "technology___politico.json",
     "count": 31,
@@ -396,7 +412,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 1,
+    "count": 10,
     "category": "Journalism + investigation",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -415,14 +431,6 @@
     "count": 60,
     "category": "Journalism + investigation",
     "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "resilience": {
-    "file": "resilience.json",
-    "count": 12,
-    "category": "Perspectives",
-    "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
     "scope": "World"
   },
@@ -724,7 +732,7 @@
   },
   "Extreme Citizen Science blog": {
     "file": "extreme_citizen_science_blog.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital skills + Citizen science",
     "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
@@ -972,7 +980,7 @@
   },
   "Confederation of Open Access Repositories": {
     "file": "confederation_of_open_access_repositories.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Science + Research",
     "description": "Building a sustainable, global knowledge commons",
     "lang": "en",
@@ -1188,7 +1196,7 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 2,
+    "count": 10,
     "category": "Journalism + investigation",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
@@ -1209,14 +1217,6 @@
     "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Weekly OSM": {
-    "file": "weekly_osm.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "weekly &#8211; semanario &#8211; hebdo &#8211; 週刊 &#8211; týdeník &#8211; Wochennotiz &#8211; 주간 &#8211; tygodnik",
-    "lang": "en",
-    "scope": "World"
   },
   "Frame Contemporary Art Finland": {
     "file": "frame_contemporary_art_finland.json",
@@ -1268,7 +1268,7 @@
   },
   "Zooniverse": {
     "file": "zooniverse.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital skills + Citizen science",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
@@ -1348,7 +1348,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital policy + rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1417,22 +1417,6 @@
     "description": "Vi stärker det nordiska samarbetet genom kultur",
     "lang": "fi",
     "scope": "Nordic + Baltic countries"
-  },
-  "Michael Culture Association": {
-    "file": "michael_culture_association.json",
-    "count": 1,
-    "category": "Digital cultural heritage",
-    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Open Knowledge Foundation DE": {
-    "file": "open_knowledge_foundation_de.json",
-    "count": 684,
-    "category": "Digital policy + rights",
-    "description": "Blog on OKF DE",
-    "lang": "de",
-    "scope": "Europe"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -1866,6 +1850,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Michael Culture Association": {
+    "file": "michael_culture_association.json",
+    "count": 1,
+    "category": "Digital cultural heritage",
+    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "MuseumNext": {
     "file": "museumnext.json",
     "count": 10,
@@ -1986,6 +1978,22 @@
     "lang": "en",
     "scope": "World"
   },
+  "Open Knowledge Foundation Blog": {
+    "file": "open_knowledge_foundation_blog.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "Content for a fair, sustainable and open future",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Open Knowledge Foundation DE": {
+    "file": "open_knowledge_foundation_de.json",
+    "count": 684,
+    "category": "Digital policy + rights",
+    "description": "Blog on OKF DE",
+    "lang": "de",
+    "scope": "Europe"
+  },
   "Opendata.ch": {
     "file": "opendata_ch.json",
     "count": 10,
@@ -2049,14 +2057,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
-    "category": "Digital skills + Citizen science",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
-    "lang": "en",
-    "scope": "World"
   },
   "UN Maps": {
     "file": "un_maps.json",
@@ -2167,14 +2167,6 @@
     "count": 10,
     "category": "Journalism + investigation",
     "description": "Journalistisen kulttuurin edistämissäätiö",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Journalism + investigation",
-    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
