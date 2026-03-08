@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "8.3.2026 klo 9.36.03"
+    "last_updated": "8.3.2026 klo 10.39.46"
   },
   "Global Voices": {
     "file": "global_voices.json",
@@ -25,6 +25,14 @@
     "description": "Parempaa ulkopoliittista keskustelua.",
     "lang": "fi",
     "scope": "World"
+  },
+  "COST": {
+    "file": "cost.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
@@ -580,7 +588,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 10,
+    "count": 2,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -593,14 +601,6 @@
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "COST": {
-    "file": "cost.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Think Open": {
     "file": "think_open.json",
@@ -1004,7 +1004,7 @@
   },
   "Follow the News published by UNESCO on Intangible Cultural Heritage": {
     "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
-    "count": 1,
+    "count": 610,
     "category": "Culture",
     "description": "",
     "lang": "en",
@@ -1180,7 +1180,7 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 2,
+    "count": 10,
     "category": "Journalism + investigation",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
@@ -1340,7 +1340,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital policy + rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1431,14 +1431,6 @@
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "Defending Free Speech Online",
-    "lang": "en",
-    "scope": "World"
-  },
-  "UN News - Global perspective Human stories": {
-    "file": "un_news___global_perspective_human_stories.json",
-    "count": 30,
-    "category": "Politics + Government",
-    "description": "UN News - Global perspective Human stories | SDGs",
     "lang": "en",
     "scope": "World"
   },
@@ -2066,6 +2058,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "This Month in GLAM": {
+    "file": "this_month_in_glam.json",
+    "count": 10,
+    "category": "Digital skills + Citizen science",
+    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
+    "lang": "en",
+    "scope": "World"
+  },
   "UN Maps": {
     "file": "un_maps.json",
     "count": 10,
@@ -2279,6 +2279,14 @@
     "count": 10,
     "category": "Politics + Government",
     "description": "Meet UN Global Pulse, the Secretary-General’s Innovation Lab",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News - Global perspective Human stories": {
+    "file": "un_news___global_perspective_human_stories.json",
+    "count": 30,
+    "category": "Politics + Government",
+    "description": "UN News - Global perspective Human stories | SDGs",
     "lang": "en",
     "scope": "World"
   },
