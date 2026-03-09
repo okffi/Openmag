@@ -550,7 +550,7 @@ async function processScraper(feed, allArticles, now) {
 
         const selector = scraperRule.listSelector || 'article';
         const elements = $(selector).get().slice(0, 10);
-        const sourceDescription = feed.sheetDesc || "Verkkosivulta poimittu uutinen.";
+        const sourceDescription = feed.sheetDesc || "";
 
         for (const el of elements) {
             let item = await scraperRule.parse($, el, axios, cheerio);
