@@ -182,18 +182,18 @@
             fi:  'settings-lang-fi-label',
             en:  'settings-lang-en-label',
             sv:  'settings-lang-sv-label',
+            et:  'settings-lang-et-label',
             de:  'settings-lang-de-label',
-            fr:  'settings-lang-fr-label',
-            et:  'settings-lang-et-label'
+            fr:  'settings-lang-fr-label'
         };
         const langTransMap = {
             all: 'ui.all_languages',
             fi:  'lang.finnish',
             en:  'lang.english',
             sv:  'lang.swedish',
+            et:  'lang.estonian',
             de:  'lang.german',
-            fr:  'lang.french',
-            et:  'lang.estonian'
+            fr:  'lang.french'
         };
         Object.keys(langLabelMap).forEach(key => {
             const el = document.getElementById(langLabelMap[key]);
