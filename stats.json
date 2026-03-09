@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "9.3.2026 klo 15.58.58"
+    "last_updated": "9.3.2026 klo 16.41.06"
   },
   "CLARIN ERIC": {
     "file": "clarin_eric.json",
@@ -44,7 +44,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 35,
+    "count": 29,
     "category": "Culture",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -172,7 +172,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 52,
+    "count": 53,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -180,7 +180,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 34,
+    "count": 35,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -420,7 +420,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 16,
+    "count": 17,
     "category": "Peace + Crisis Intelligence",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -431,6 +431,46 @@
     "count": 20,
     "category": "Politics + Government",
     "description": "Eduskunnan tiedotteet - RSS",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Avoin tiede": {
+    "file": "avoin_tiede.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Follow the News published by UNESCO on Intangible Cultural Heritage": {
+    "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
+    "count": 611,
+    "category": "Culture",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Oulu2026": {
+    "file": "oulu2026.json",
+    "count": 100,
+    "category": "Culture",
+    "description": "Oulu on Euroopan kulttuuripääkaupunki 2026",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Center for European Policy Analysis": {
+    "file": "center_for_european_policy_analysis.json",
+    "count": 12,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Ministry of Justice | Finland | News": {
+    "file": "ministry_of_justice___finland___news.json",
+    "count": 40,
+    "category": "Politics + Government",
+    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -618,14 +658,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Center for European Policy Analysis": {
-    "file": "center_for_european_policy_analysis.json",
-    "count": 11,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Creative Commons": {
     "file": "creative_commons.json",
     "count": 10,
@@ -700,7 +732,7 @@
   },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
-    "count": 11,
+    "count": 12,
     "category": "Politics + Government",
     "description": "syöte",
     "lang": "fi",
@@ -709,14 +741,6 @@
   "Liikenne- ja viestintäministeriö | News": {
     "file": "liikenne__ja_viestint_ministeri____news.json",
     "count": 20,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Ministry of Justice | Finland | News": {
-    "file": "ministry_of_justice___finland___news.json",
-    "count": 40,
     "category": "Politics + Government",
     "description": "",
     "lang": "fi",
@@ -783,14 +807,6 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "Digitaalisista tutkimuspalveluista ja avoimesta tieteestä / About digital research services and open science",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Oulu2026": {
-    "file": "oulu2026.json",
-    "count": 100,
-    "category": "Culture",
-    "description": "Oulu on Euroopan kulttuuripääkaupunki 2026",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1060,7 +1076,7 @@
   },
   "Confederation of Open Access Repositories": {
     "file": "confederation_of_open_access_repositories.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": "Building a sustainable, global knowledge commons",
     "lang": "en",
@@ -1089,14 +1105,6 @@
     "description": "Finlandsinstitutet i Stockholm",
     "lang": "fi",
     "scope": "Nordic + Baltic countries"
-  },
-  "Follow the News published by UNESCO on Intangible Cultural Heritage": {
-    "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
-    "count": 611,
-    "category": "Culture",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "World Heritage Centre News": {
     "file": "world_heritage_centre_news.json",
@@ -1354,22 +1362,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Culture and Creativity": {
-    "file": "culture_and_creativity.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Kirjastokaista": {
-    "file": "kirjastokaista.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "LIBRARY CHANNEL — Library WebTV",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "CHAOSS": {
     "file": "chaoss.json",
     "count": 10,
@@ -1434,14 +1426,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Avoin tiede": {
-    "file": "avoin_tiede.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Datafied Life Collaboratory": {
     "file": "datafied_life_collaboratory.json",
     "count": 10,
@@ -1505,6 +1489,14 @@
     "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Culture and Creativity": {
+    "file": "culture_and_creativity.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Docomomo Suomi Finland ry": {
     "file": "docomomo_suomi_finland_ry.json",
@@ -1666,6 +1658,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Kirjastokaista": {
+    "file": "kirjastokaista.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "LIBRARY CHANNEL — Library WebTV",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Nordic Culture Point": {
     "file": "nordic_culture_point.json",
     "count": 12,
@@ -1738,14 +1738,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
-    "lang": "en",
-    "scope": "World"
-  },
   "Wikimedia Suomi": {
     "file": "wikimedia_suomi.json",
     "count": 10,
@@ -1753,14 +1745,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Wikimedia Sverige": {
-    "file": "wikimedia_sverige.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Vi arbetar för fri kunskap",
-    "lang": "sv",
-    "scope": "Nordic + Baltic countries"
   },
   "Cultural Heritage Informatics": {
     "file": "cultural_heritage_informatics.json",
@@ -2335,6 +2319,14 @@
     "count": 10,
     "category": "Politics + Government",
     "description": "Journalistisen kulttuurin edistämissäätiö",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
