@@ -237,10 +237,10 @@
     // Tunnistetaan kieli ja aloitetaan
     async function init() {
         const userLang = navigator.language.substring(0, 2);
-        const supported = ['fi', 'en', 'sv', 'de', 'fr'];
+        const supported = ['fi', 'en', 'sv', 'et', 'de', 'fr'];
         // Rakennetaan käyttöliittymän kielivalikko: selaimen kieli + englanti
         const uiLangFilter = document.getElementById('uiLangFilter');
-        const langNames = { fi: 'Suomi', en: 'English', sv: 'Svenska', de: 'Deutsch', fr: 'Français' };
+        const langNames = { fi: 'Suomi', en: 'English', sv: 'Svenska', et:'Eesti', de: 'Deutsch', fr: 'Français' };
         uiLangFilter.innerHTML = '';
         if (supported.includes(userLang) && userLang !== 'en') {
             const opt = document.createElement('option');
@@ -458,7 +458,7 @@
         const dateSpan = document.createElement('span');
         if (item.pubDate) {
             const uiLang = document.getElementById('uiLangFilter').value;
-            const localeMap = { fi: 'fi-FI', en: 'en-GB', sv: 'sv-SE', de: 'de-DE', fr: 'fr-FR' };
+            const localeMap = { fi: 'fi-FI', en: 'en-GB', sv: 'sv-SE', et: 'et-EE', de: 'de-DE', fr: 'fr-FR' };
             const locale = localeMap[uiLang] || 'en-GB';
             const d = new Date(item.pubDate);
             const now = new Date();
