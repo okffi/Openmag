@@ -137,13 +137,13 @@ async function run() {
         try {
             const transRes = await axios.get(TRANSLATIONS_TSV_URL + cacheBuster);
             const transRows = transRes.data.split(/\r?\n/).slice(1).filter(r => r.trim() !== '');
-            const transObj = { fi: {}, en: {}, sv: {}, de: {}, fr: {} };
+            const transObj = { fi: {}, en: {}, sv: {}, de: {}, fr: {}, et: {} };
 
             transRows.forEach(row => {
-                const [group, key, en, fi, sv, de, fr] = row.split('\t').map(v => v ? v.trim() : '');
+                const [group, key, en, fi, sv, de, fr, et] = row.split('\t').map(v => v ? v.trim() : '');
                 if (key) {
                     transObj.en[key] = en; transObj.fi[key] = fi;
-                    transObj.sv[key] = sv; transObj.de[key] = de; transObj.fr[key] = fr;
+                    transObj.sv[key] = sv; transObj.de[key] = de; transObj.fr[key] = fr; transObj.et[key] = et;
                 }
             });
             fs.writeFileSync('translations.json', JSON.stringify(transObj, null, 2));
