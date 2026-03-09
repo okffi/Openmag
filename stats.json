@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "9.3.2026 klo 19.49.26"
+    "last_updated": "9.3.2026 klo 20.48.45"
   },
   "CLARIN ERIC": {
     "file": "clarin_eric.json",
@@ -44,7 +44,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 29,
+    "count": 28,
     "category": "Culture",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -188,7 +188,7 @@
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
-    "count": 31,
+    "count": 30,
     "category": "Politics + Government",
     "description": "the Global Magazine of News and Ideas",
     "lang": "en",
@@ -284,7 +284,7 @@
   },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
-    "count": 16,
+    "count": 15,
     "category": "(Open) Science + Research",
     "description": "Turun yliopiston etusivun uutisten lyhennelmät",
     "lang": "fi",
@@ -364,7 +364,7 @@
   },
   "Eastflank": {
     "file": "eastflank.json",
-    "count": 11,
+    "count": 10,
     "category": "Politics + Government",
     "description": "Reporting",
     "lang": "en",
@@ -511,7 +511,7 @@
     "count": 24,
     "category": "Culture",
     "description": "",
-    "lang": "fr",
+    "lang": "en",
     "scope": "Europe"
   },
   "Internet Archive Blogs": {
@@ -519,6 +519,14 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Updates from the Internet Archive",
+    "lang": "en",
+    "scope": "World"
+  },
+  "NOEMA": {
+    "file": "noema.json",
+    "count": 10,
+    "category": "Peace + Crisis Intelligence",
+    "description": "Noema Magazine",
     "lang": "en",
     "scope": "World"
   },
@@ -945,14 +953,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "NOEMA": {
-    "file": "noema.json",
-    "count": 10,
-    "category": "Peace + Crisis Intelligence",
-    "description": "Noema Magazine",
-    "lang": "en",
-    "scope": "World"
   },
   "Kuvasto": {
     "file": "kuvasto.json",
@@ -1746,14 +1746,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
-    "lang": "en",
-    "scope": "World"
-  },
   "Wikimedia Suomi": {
     "file": "wikimedia_suomi.json",
     "count": 10,
@@ -1842,6 +1834,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Michael Culture Association": {
+    "file": "michael_culture_association.json",
+    "count": 1,
+    "category": "Digital Culture + Heritage",
+    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "MuseumNext": {
     "file": "museumnext.json",
     "count": 10,
@@ -1905,6 +1905,14 @@
     "description": "",
     "lang": "de",
     "scope": "Europe"
+  },
+  "Avate Audiovisuaalisen alan tekijät ry": {
+    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Kopiosto": {
     "file": "kopiosto.json",
@@ -2010,6 +2018,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Open Knowledge Foundation Blog": {
     "file": "open_knowledge_foundation_blog.json",
     "count": 10,
@@ -2033,14 +2049,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Rajapinta": {
-    "file": "rajapinta.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "researcher community focused on digital social sciences",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Sciences Po Technology and global affairs innovation hub": {
     "file": "sciences_po_technology_and_global_affairs_innovation_hub.json",
@@ -2196,7 +2204,7 @@
   },
   "OCCRP Features": {
     "file": "occrp_features.json",
-    "count": 987,
+    "count": 988,
     "category": "Peace + Crisis Intelligence",
     "description": "Features, delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
