@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "9.3.2026 klo 23.39.39"
+    "last_updated": "10.3.2026 klo 0.36.58"
   },
   "CLARIN ERIC": {
     "file": "clarin_eric.json",
@@ -92,7 +92,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 10,
+    "count": 4,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -452,7 +452,7 @@
   },
   "Oulu2026": {
     "file": "oulu2026.json",
-    "count": 101,
+    "count": 100,
     "category": "Culture",
     "description": "Oulu on Euroopan kulttuuripääkaupunki 2026",
     "lang": "fi",
@@ -554,6 +554,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "openDemocracy": {
+    "file": "opendemocracy.json",
+    "count": 20,
+    "category": "Human Rights + Democracy",
+    "description": "openDemocracy RSS",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
+  },
   "Weekly OSM": {
     "file": "weekly_osm.json",
     "count": 10,
@@ -612,7 +620,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "fi",
@@ -801,14 +809,6 @@
     "description": "Suomen Rooman instituutti",
     "lang": "fi",
     "scope": "Europe"
-  },
-  "openDemocracy": {
-    "file": "opendemocracy.json",
-    "count": 20,
-    "category": "Human Rights + Democracy",
-    "description": "openDemocracy RSS",
-    "lang": "en",
-    "scope": "Nordic + Baltic countries"
   },
   "Ohjelmistoteollisuus | ePressi": {
     "file": "ohjelmistoteollisuus___epressi.json",
@@ -1356,7 +1356,7 @@
   },
   "Zooniverse": {
     "file": "zooniverse.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Science + Research",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
@@ -1754,14 +1754,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
-    "lang": "en",
-    "scope": "World"
-  },
   "Wikimedia Suomi": {
     "file": "wikimedia_suomi.json",
     "count": 10,
@@ -1914,14 +1906,6 @@
     "lang": "de",
     "scope": "Europe"
   },
-  "Avate Audiovisuaalisen alan tekijät ry": {
-    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Kopiosto": {
     "file": "kopiosto.json",
     "count": 9,
@@ -2026,13 +2010,13 @@
     "lang": "en",
     "scope": "World"
   },
-  "mySociety": {
-    "file": "mysociety.json",
+  "Open Knowledge Foundation Blog": {
+    "file": "open_knowledge_foundation_blog.json",
     "count": 10,
     "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
+    "description": "Content for a fair, sustainable and open future",
     "lang": "en",
-    "scope": "Europe"
+    "scope": "World"
   },
   "Open Knowledge Foundation DE": {
     "file": "open_knowledge_foundation_de.json",
@@ -2049,6 +2033,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Sciences Po Technology and global affairs innovation hub": {
     "file": "sciences_po_technology_and_global_affairs_innovation_hub.json",
@@ -2321,14 +2313,6 @@
     "description": "EU Strategy For The Baltic Sea Region",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
-  },
-  "JOKES": {
-    "file": "jokes.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "Journalistisen kulttuurin edistämissäätiö",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Association of Finnish Cities and Municipalities": {
     "file": "association_of_finnish_cities_and_municipalities.json",
