@@ -971,7 +971,25 @@
         const viewTitle = document.getElementById('current-view-title');
         const viewDesc = document.getElementById('current-view-description');
         const logoCont = document.getElementById('feed-logo-container');
-        if (viewTitle) viewTitle.textContent = t('ui.bookmarks') || 'Bookmarks';
+        if (viewTitle) {
+            viewTitle.textContent = t('ui.bookmarks') || 'Bookmarks';
+
+            const csvA = document.createElement('a');
+            csvA.href = '#';
+            csvA.className = 'rss-link';
+            csvA.title = 'Export bookmarks as CSV';
+            csvA.setAttribute('aria-label', 'Export bookmarks as CSV');
+            csvA.onclick = function() { window.BookmarkManager.exportCsv(); return false; };
+
+            const csvSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            csvSvg.setAttribute('viewBox', '0 0 24 24');
+            csvSvg.setAttribute('fill', 'currentColor');
+            const csvPath = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            csvPath.setAttribute('d', 'M5,20H19V18H5M19,9H15V3H9V9H5L12,16L19,9Z');
+            csvSvg.appendChild(csvPath);
+            csvA.appendChild(csvSvg);
+            viewTitle.appendChild(csvA);
+        }
         if (viewDesc) viewDesc.textContent = '';
         if (logoCont) { logoCont.innerHTML = ''; logoCont.style.display = 'none'; }
 

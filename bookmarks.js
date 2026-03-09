@@ -85,6 +85,38 @@
          */
         getCount() {
             return this.getAll().length;
+        },
+
+        /**
+         * Export all bookmarks as a CSV file download
+         */
+        exportCsv() {
+            const bookmarks = this.getAll();
+            const columns = ['title', 'link', 'sourceTitle', 'creator', 'pubDate', 'sheetCategory', 'lang', 'scope', 'bookmarkedAt'];
+
+            function escapeField(value) {
+                const str = String(value == null ? '' : value);
+                if (str.includes(',') || str.includes('"') || str.includes('\n')) {
+                    return '"' + str.replace(/"/g, '""') + '"';
+                }
+                return str;
+            }
+
+            const rows = [columns.join(',')];
+            bookmarks.forEach(bm => {
+                rows.push(columns.map(col => escapeField(bm[col])).join(','));
+            });
+
+            const csvContent = rows.join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'bookmarks.csv';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
         }
     };
 })();
