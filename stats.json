@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "9.3.2026 klo 9.14.31"
+    "last_updated": "9.3.2026 klo 9.43.32"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
@@ -52,7 +52,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 17,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -111,6 +111,30 @@
     "count": 11,
     "category": "Politics + Government",
     "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "DARIAH-EU": {
+    "file": "dariah_eu.json",
+    "count": 10,
+    "category": "Digital cultural heritage",
+    "description": "Digital Research Infrastructure for the Arts and Humanities",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Yle": {
+    "file": "yle.json",
+    "count": 21,
+    "category": "Politics + Government",
+    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
+    "lang": "fi",
+    "scope": "World"
+  },
+  "Verde": {
+    "file": "verde.json",
+    "count": 16,
+    "category": "Sustainability + Foresight",
+    "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -196,7 +220,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 30,
+    "count": 32,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -280,14 +304,6 @@
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
-    "scope": "World"
-  },
-  "Yle": {
-    "file": "yle.json",
-    "count": 21,
-    "category": "Politics + Government",
-    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
-    "lang": "fi",
     "scope": "World"
   },
   "PreventionWeb": {
@@ -586,14 +602,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Verde": {
-    "file": "verde.json",
-    "count": 16,
-    "category": "Sustainability + Foresight",
-    "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Ympäristöministeriön uutiset ja tiedotteet": {
     "file": "ymp_rist_ministeri_n_uutiset_ja_tiedotteet.json",
     "count": 100,
@@ -732,7 +740,7 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital policy + rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
@@ -841,14 +849,6 @@
     "description": "Holding power accountable one whistleblower at a time.",
     "lang": "en",
     "scope": "World"
-  },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital cultural heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Finnish Ministry of Education and Culture | Current issues": {
     "file": "finnish_ministry_of_education_and_culture___current_issues.json",
@@ -988,7 +988,7 @@
   },
   "Confederation of Open Access Repositories": {
     "file": "confederation_of_open_access_repositories.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Science + Research",
     "description": "Building a sustainable, global knowledge commons",
     "lang": "en",
@@ -1370,22 +1370,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Cupore": {
-    "file": "cupore.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "Kulttuuripolitiikan tutkimuskeskus Cupore",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
-    "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "CHAOSS": {
     "file": "chaoss.json",
     "count": 10,
@@ -1530,14 +1514,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Avate Audiovisuaalisen alan tekijät ry": {
-    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
-    "category": "Cultural policy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Culture Action Europe News": {
     "file": "culture_action_europe_news.json",
     "count": 10,
@@ -1545,6 +1521,14 @@
     "description": "We take care of the cultural ecosystem.",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Cupore": {
+    "file": "cupore.json",
+    "count": 10,
+    "category": "Cultural policy",
+    "description": "Kulttuuripolitiikan tutkimuskeskus Cupore",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Kopiosto": {
     "file": "kopiosto.json",
@@ -1569,6 +1553,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
+    "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
+    "count": 10,
+    "category": "Cultural policy",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Docomomo Suomi Finland ry &#8211;": {
     "file": "docomomo_suomi_finland_ry___8211_.json",
@@ -2009,6 +2001,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital policy + rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Sciences Po Technology and global affairs innovation hub": {
     "file": "sciences_po_technology_and_global_affairs_innovation_hub.json",
