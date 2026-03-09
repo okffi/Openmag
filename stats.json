@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "9.3.2026 klo 16.41.06"
+    "last_updated": "9.3.2026 klo 16.59.08"
   },
   "CLARIN ERIC": {
     "file": "clarin_eric.json",
@@ -140,7 +140,7 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 10,
+    "count": 2,
     "category": "Peace + Crisis Intelligence",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
@@ -180,7 +180,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 35,
+    "count": 37,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -260,7 +260,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 35,
+    "count": 36,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -284,7 +284,7 @@
   },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
-    "count": 17,
+    "count": 16,
     "category": "(Open) Science + Research",
     "description": "Turun yliopiston etusivun uutisten lyhennelmät",
     "lang": "fi",
@@ -724,7 +724,7 @@
   },
   "Euroopan unioni": {
     "file": "euroopan_unioni.json",
-    "count": 30,
+    "count": 31,
     "category": "Politics + Government",
     "description": "European Union | Featured news",
     "lang": "fi",
@@ -1076,7 +1076,7 @@
   },
   "Confederation of Open Access Repositories": {
     "file": "confederation_of_open_access_repositories.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Science + Research",
     "description": "Building a sustainable, global knowledge commons",
     "lang": "en",
@@ -1340,7 +1340,7 @@
   },
   "Zooniverse": {
     "file": "zooniverse.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
@@ -1738,6 +1738,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "This Month in GLAM": {
+    "file": "this_month_in_glam.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
+    "lang": "en",
+    "scope": "World"
+  },
   "Wikimedia Suomi": {
     "file": "wikimedia_suomi.json",
     "count": 10,
@@ -1745,6 +1753,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Wikimedia Sverige": {
+    "file": "wikimedia_sverige.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Vi arbetar för fri kunskap",
+    "lang": "sv",
+    "scope": "Nordic + Baltic countries"
   },
   "Cultural Heritage Informatics": {
     "file": "cultural_heritage_informatics.json",
@@ -2034,14 +2050,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Rajapinta": {
-    "file": "rajapinta.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "researcher community focused on digital social sciences",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Sciences Po Technology and global affairs innovation hub": {
     "file": "sciences_po_technology_and_global_affairs_innovation_hub.json",
     "count": 22,
@@ -2063,14 +2071,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Tietopoliitiikan yhteistyöryhmä": {
-    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2319,14 +2319,6 @@
     "count": 10,
     "category": "Politics + Government",
     "description": "Journalistisen kulttuurin edistämissäätiö",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
