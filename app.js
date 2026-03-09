@@ -183,7 +183,8 @@
             en:  'settings-lang-en-label',
             sv:  'settings-lang-sv-label',
             de:  'settings-lang-de-label',
-            fr:  'settings-lang-fr-label'
+            fr:  'settings-lang-fr-label',
+            et:  'settings-lang-et-label'
         };
         const langTransMap = {
             all: 'ui.all_languages',
@@ -191,7 +192,8 @@
             en:  'lang.english',
             sv:  'lang.swedish',
             de:  'lang.german',
-            fr:  'lang.french'
+            fr:  'lang.french',
+            et:  'lang.estonian'
         };
         Object.keys(langLabelMap).forEach(key => {
             const el = document.getElementById(langLabelMap[key]);
