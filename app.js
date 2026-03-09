@@ -172,7 +172,7 @@
         const uiLangTitle = document.getElementById('settings-ui-lang-title');
         if (uiLangTitle) uiLangTitle.textContent = t('ui.interface_language').toUpperCase();
         const contentLangTitle = document.getElementById('settings-content-lang-title');
-        if (contentLangTitle) contentLangTitle.textContent = t('ui.content_language').toUpperCase();
+        if (contentLangTitle) contentLangTitle.textContent = t('ui.preferred_language').toUpperCase();
         const regionTitle = document.getElementById('settings-region-title');
         if (regionTitle) regionTitle.textContent = t('ui.region').toUpperCase();
 
