@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "9.3.2026 klo 18.36.28"
+    "last_updated": "9.3.2026 klo 19.49.26"
   },
   "CLARIN ERIC": {
     "file": "clarin_eric.json",
@@ -172,7 +172,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 54,
+    "count": 55,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -180,7 +180,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 38,
+    "count": 37,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -188,7 +188,7 @@
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
-    "count": 28,
+    "count": 31,
     "category": "Politics + Government",
     "description": "the Global Magazine of News and Ideas",
     "lang": "en",
@@ -236,7 +236,7 @@
   },
   "Yle": {
     "file": "yle.json",
-    "count": 22,
+    "count": 23,
     "category": "Politics + Government",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -252,7 +252,7 @@
   },
   "PreventionWeb": {
     "file": "preventionweb.json",
-    "count": 43,
+    "count": 45,
     "category": "Peace + Crisis Intelligence",
     "description": "",
     "lang": "en",
@@ -340,7 +340,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 24,
+    "count": 26,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -444,7 +444,7 @@
   },
   "Follow the News published by UNESCO on Intangible Cultural Heritage": {
     "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
-    "count": 611,
+    "count": 614,
     "category": "Culture",
     "description": "",
     "lang": "en",
@@ -452,7 +452,7 @@
   },
   "Oulu2026": {
     "file": "oulu2026.json",
-    "count": 100,
+    "count": 101,
     "category": "Culture",
     "description": "Oulu on Euroopan kulttuuripääkaupunki 2026",
     "lang": "fi",
@@ -460,7 +460,7 @@
   },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
-    "count": 12,
+    "count": 13,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -503,6 +503,22 @@
     "count": 60,
     "category": "Peace + Crisis Intelligence",
     "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Institut finlandais": {
+    "file": "institut_finlandais.json",
+    "count": 24,
+    "category": "Culture",
+    "description": "",
+    "lang": "fr",
+    "scope": "Europe"
+  },
+  "Internet Archive Blogs": {
+    "file": "internet_archive_blogs.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Updates from the Internet Archive",
     "lang": "en",
     "scope": "World"
   },
@@ -634,14 +650,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Institut finlandais": {
-    "file": "institut_finlandais.json",
-    "count": 23,
-    "category": "Culture",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Museovirasto - uusimmat tiedotteet": {
     "file": "museovirasto___uusimmat_tiedotteet.json",
     "count": 25,
@@ -708,7 +716,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 1,
+    "count": 10,
     "category": "Peace + Crisis Intelligence",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -820,7 +828,7 @@
   },
   "Extreme Citizen Science blog": {
     "file": "extreme_citizen_science_blog.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
@@ -860,7 +868,7 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
@@ -1340,7 +1348,7 @@
   },
   "Zooniverse": {
     "file": "zooniverse.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Science + Research",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
@@ -1826,14 +1834,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Internet Archive Blogs": {
-    "file": "internet_archive_blogs.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Updates from the Internet Archive",
-    "lang": "en",
-    "scope": "World"
-  },
   "MCN": {
     "file": "mcn.json",
     "count": 12,
@@ -1841,14 +1841,6 @@
     "description": "Advancing digital transformation in museums",
     "lang": "en",
     "scope": "World"
-  },
-  "Michael Culture Association": {
-    "file": "michael_culture_association.json",
-    "count": 1,
-    "category": "Digital Culture + Heritage",
-    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
-    "lang": "en",
-    "scope": "Europe"
   },
   "MuseumNext": {
     "file": "museumnext.json",
@@ -1913,14 +1905,6 @@
     "description": "",
     "lang": "de",
     "scope": "Europe"
-  },
-  "Avate Audiovisuaalisen alan tekijät ry": {
-    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Kopiosto": {
     "file": "kopiosto.json",
@@ -2025,14 +2009,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Open Knowledge Foundation Blog": {
     "file": "open_knowledge_foundation_blog.json",
