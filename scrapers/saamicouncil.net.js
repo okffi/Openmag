@@ -8,7 +8,7 @@ module.exports = {
         return {
             title: titleLink.text().trim(),
             link: titleLink.attr('href'),
-            enforcedImage: $(el).find('img').attr('src'),
+            enforcedImage: $(el).find('img').attr('src') || $(el).find('img').attr('data-src'),
             content: $(el).find('p').first().text().trim(),
             pubDate: rawDate ? new Date(rawDate).toISOString() : new Date().toISOString(),
             creator: ""
