@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "10.3.2026 klo 8.36.09"
+    "last_updated": "10.3.2026 klo 8.50.25"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
@@ -84,7 +84,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 50,
+    "count": 51,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -97,6 +97,38 @@
     "description": "the Global Magazine of News and Ideas",
     "lang": "en",
     "scope": "World"
+  },
+  "Kulttuuri ja taide - ePressi": {
+    "file": "kulttuuri_ja_taide___epressi.json",
+    "count": 20,
+    "category": "Culture",
+    "description": "Tiedotteiden tehokas julkaisukanava",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Suomalaisen Kirjallisuuden Seura (SKS)": {
+    "file": "suomalaisen_kirjallisuuden_seura__sks_.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "EUvsDisinfo": {
+    "file": "euvsdisinfo.json",
+    "count": 10,
+    "category": "Peace + Crisis Intelligence",
+    "description": "DON'T BE DECEIVED, QUESTION EVEN MORE",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Maailman Kuvalehti": {
+    "file": "maailman_kuvalehti.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta.",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
@@ -172,7 +204,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 20,
+    "count": 22,
     "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -247,14 +279,6 @@
     "count": 100,
     "category": "Culture",
     "description": "Oulu on Euroopan kulttuuripääkaupunki 2026",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Kulttuuri ja taide - ePressi": {
-    "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 20,
-    "category": "Culture",
-    "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -396,7 +420,7 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 10,
+    "count": 2,
     "category": "Peace + Crisis Intelligence",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
@@ -508,7 +532,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 30,
+    "count": 16,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -519,14 +543,6 @@
     "count": 10,
     "category": "Politics + Government",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Maailman Kuvalehti": {
-    "file": "maailman_kuvalehti.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta.",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -580,7 +596,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 3,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -596,7 +612,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 10,
+    "count": 4,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -625,14 +641,6 @@
     "description": "the home of online investigations",
     "lang": "en",
     "scope": "World"
-  },
-  "EUvsDisinfo": {
-    "file": "euvsdisinfo.json",
-    "count": 10,
-    "category": "Peace + Crisis Intelligence",
-    "description": "DON'T BE DECEIVED, QUESTION EVEN MORE",
-    "lang": "en",
-    "scope": "Europe"
   },
   "UN Women": {
     "file": "un_women.json",
@@ -721,14 +729,6 @@
     "description": "The Voice of Cultural Heritage in Europe",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Suomalaisen Kirjallisuuden Seura (SKS)": {
-    "file": "suomalaisen_kirjallisuuden_seura__sks_.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Museovirasto - uusimmat tiedotteet": {
     "file": "museovirasto___uusimmat_tiedotteet.json",
@@ -1228,7 +1228,7 @@
   },
   "Public Policy Archives — Association of Research Libraries": {
     "file": "public_policy_archives___association_of_research_libraries.json",
-    "count": 10,
+    "count": 3,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "en",
@@ -2018,13 +2018,13 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Knowledge Foundation Blog": {
-    "file": "open_knowledge_foundation_blog.json",
+  "mySociety": {
+    "file": "mysociety.json",
     "count": 10,
     "category": "Digital Policy + Rights",
-    "description": "Content for a fair, sustainable and open future",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
-    "scope": "World"
+    "scope": "Europe"
   },
   "Open Knowledge Foundation DE": {
     "file": "open_knowledge_foundation_de.json",
@@ -2361,14 +2361,6 @@
     "description": "Oikeusblogi",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Public Institutions": {
-    "file": "public_institutions.json",
-    "count": 9,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "The Finnish Institute of International Affairs (FIIA)": {
     "file": "the_finnish_institute_of_international_affairs__fiia_.json",
