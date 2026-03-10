@@ -474,12 +474,12 @@ async function processRSS(feed, allArticles, now) {
         let articleLink = item.link;
 
         if (articleLink) {
-            // 1. KORJAUS: Korjataan viallinen protokolla (https:/ -> https://)
+            // Korjataan viallinen protokolla (https:/ -> https://)
             if (articleLink.startsWith('https:/') && !articleLink.startsWith('https://')) {
                 articleLink = articleLink.replace('https:/', 'https://');
             }
 
-            // 2. KORJAUS: Muutetaan suhteelliset linkit täysiksi URL-osoitteiksi
+            // Muutetaan suhteelliset linkit täysiksi URL-osoitteiksi
             if (!articleLink.startsWith('http')) {
                 try {
                     articleLink = new URL(articleLink, feed.rssUrl).href;
@@ -491,11 +491,11 @@ async function processRSS(feed, allArticles, now) {
 
         let finalImg = img;
         if (finalImg && typeof finalImg === 'string') {
-            // Palautetaan mahdolliset XML-entiteetit raakamuotoon, jotta selain voi 
-            // enkoodata ne puhtaasti wsrv.nl-palvelulle (ei tupla-enkoodausta).
+            // Return potential XML entities in raw format so that the browser can 
+            // make a clean encode for the wsrv.nl service (no double encoding).
             finalImg = finalImg.replace(/&amp;/g, '&');
         }
-        // Valitaan kuvaus: 1. Sheets (sheetDesc), 2. RSS (feedContent.description), 3. Tyhjä
+        // Choose description: 1. Sheets (sheetDesc), 2. RSS (feedContent.description), 3. Empty
         const finalDescription = normalizeContent(feed.sheetDesc || (feedContent.description || ""));
     
         return {
@@ -504,11 +504,10 @@ async function processRSS(feed, allArticles, now) {
             pubDate: itemDate.toISOString(),
             content: finalSnippet,
             creator: item.creator || item.author || "",
-            // Nimi on aina Sheets-nimi (nameChecked)
             sourceTitle: feed.nameChecked, 
             sheetCategory: feed.category,
             enforcedImage: finalImg,
-            sourceDescription: finalDescription, // <--- Korjattu tähän
+            sourceDescription: finalDescription,
             sourceLogo: sourceLogo,
             lang: feed.lang,
             scope: feed.scope,
@@ -528,7 +527,7 @@ async function processScraper(feed, allArticles, now) {
     try {
         // Tarkistetaan löytyykö sääntöä ennen kuin edes ladataan sivua
         if (!fs.existsSync(scraperPath)) {
-            console.log(`[SCRAPE] Ei kustomoitua skriptiä: ${domain}.`);
+            console.log(`[SCRAPE] No custom script: ${domain}.`);
             return;
         }
 
@@ -566,7 +565,7 @@ async function processScraper(feed, allArticles, now) {
                     title: item.title,
                     link: fullLink,
                     pubDate: item.pubDate || now.toISOString(),
-                    content: item.content || "Lue lisää sivustolta.",
+                    content: item.content || "",
                     creator: item.creator || "",
                     sourceTitle: feed.nameChecked || domain,
                     sheetCategory: feed.category,
@@ -576,7 +575,6 @@ async function processScraper(feed, allArticles, now) {
                     lang: feed.lang,
                     scope: feed.scope,
                     isDarkLogo: feed.isDarkLogo,
-                    // TÄMÄ PUUTTUI NYKYISESTÄ:
                     originalRssUrl: feed.rssUrl || "" 
                 });
             }

@@ -135,7 +135,7 @@ header.main-header {
 }
 
 .settings-section-title {
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -149,14 +149,15 @@ header.main-header {
     margin-top: 12px;
     padding-top: 6px;
     border-top: 1px solid var(--border-color);
+    accent-color: var(--text-dark);
 }
 
 .settings-radio-label {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.8rem;
-    color: var(--text-dark);
+    font-size: 0.85rem;
+    color: var(--text-muted);
     cursor: pointer;
     padding: 4px 0;
     transition: color 0.15s;
@@ -199,7 +200,7 @@ header.main-header {
     height: 28px;
     padding: 0 20px;
     border-radius: 20px;
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
