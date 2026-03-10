@@ -330,7 +330,7 @@ async function processRSS(feed, allArticles, now) {
     // 1. Poimitaan syötteen kuvaus
     const sourceDescription = feed.sheetDesc || (feedContent.description ? feedContent.description.trim() : "");
     
-// 2. Poimitaan logo (monitasoinen varajärjestelmä)
+    // 2. Poimitaan logo (monitasoinen varajärjestelmä)
     let sourceLogo = null;
     try {
         // Yritetään ensin syötteen ilmoittamaa linkkiä, sitten uutislinkkiä, ja lopuksi RSS-osoitetta

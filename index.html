@@ -49,7 +49,7 @@
                     <option value="Europe">Europe</option>
                     <option value="World">World</option>
                 </select>
-                <button id="settings-btn" class="settings-btn" onclick="toggleSettingsPanel()">&#9881; <span id="settings-btn-label">SETTINGS</span> <span id="settings-btn-arrow" class="settings-arrow">&#9660;</span></button>
+                <button id="settings-btn" class="settings-btn" onclick="toggleSettingsPanel()"><span class="settings-clog">&#9881;</span> <span id="settings-btn-label">SETTINGS</span> <span id="settings-btn-arrow" class="settings-arrow">&#9660;</span></button>
             </div>
             <!-- Settings panel – positioned absolute below the sticky header -->
             <div id="settings-panel" class="settings-panel" hidden>
@@ -77,6 +77,10 @@
                         <label class="settings-radio-label">
                             <input type="radio" name="settings-lang" value="sv">
                             <span id="settings-lang-sv-label">Swedish</span>
+                        </label>
+                        <label class="settings-radio-label">
+                            <input type="radio" name="settings-lang" value="et">
+                            <span id="settings-lang-et-label">Estonian</span>
                         </label>
                         <label class="settings-radio-label">
                             <input type="radio" name="settings-lang" value="de">

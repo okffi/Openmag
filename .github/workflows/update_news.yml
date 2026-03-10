@@ -49,8 +49,8 @@ jobs:
           git config --global user.email 'robot@openmag.fi'
           
           # Yritetään lisätä tiedostot yksitellen
-          git add data.json stats.json last_clean.txt || echo "Perustiedostot puuttuvat"
-          git add translations.json || echo "translations.json ei löytynyt - tarkista robotin lokit"
+          git add data.json stats.json last_clean.txt || echo "Basic information missing"
+          git add translations.json || echo "translations.json not found - check robot logs"
           
           if [ -d "sources" ]; then 
             git add sources/*.json || echo "Ei uusia lähdetiedostoja"
