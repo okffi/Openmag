@@ -1,10 +1,10 @@
 {
   "__meta": {
-    "last_updated": "11.3.2026 klo 7.55.38"
+    "last_updated": "11.3.2026 klo 9.05.09"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
-    "count": 12,
+    "count": 13,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
@@ -56,6 +56,14 @@
     "category": "Politics + Government",
     "description": "Parempaa ulkopoliittista keskustelua.",
     "lang": "fi",
+    "scope": "World"
+  },
+  "Access Now": {
+    "file": "access_now.json",
+    "count": 15,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
     "scope": "World"
   },
   "CCC Event Blog": {
@@ -228,7 +236,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital Culture + Heritage",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -300,7 +308,7 @@
   },
   "Dittmar & Indrenius Attorneys Ltd.": {
     "file": "dittmar___indrenius_attorneys_ltd_.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "fi",
@@ -324,7 +332,7 @@
   },
   "Forum Information & Democracy": {
     "file": "forum_information___democracy.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -367,14 +375,6 @@
     "count": 31,
     "category": "Digital Policy + Rights",
     "description": "European Politics, Policy, Government News",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Access Now": {
-    "file": "access_now.json",
-    "count": 15,
-    "category": "Human Rights + Democracy",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -580,7 +580,7 @@
   },
   "Le Monde diplomatique - English edition": {
     "file": "le_monde_diplomatique___english_edition.json",
-    "count": 10,
+    "count": 6,
     "category": "Politics + Government",
     "description": "",
     "lang": "en",
@@ -624,6 +624,14 @@
     "category": "Politics + Government",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
+    "scope": "World"
+  },
+  "Global Voices": {
+    "file": "global_voices.json",
+    "count": 16,
+    "category": "Human Rights + Democracy",
+    "description": "Citizen media stories from around the world",
+    "lang": "en",
     "scope": "World"
   },
   "Forum Virium Helsinki": {
@@ -700,7 +708,7 @@
   },
   "Follow the News published by UNESCO on Intangible Cultural Heritage": {
     "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
-    "count": 614,
+    "count": 2,
     "category": "Culture",
     "description": "",
     "lang": "en",
@@ -772,7 +780,7 @@
   },
   "Internet Archive Blogs": {
     "file": "internet_archive_blogs.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "Updates from the Internet Archive",
     "lang": "en",
@@ -783,14 +791,6 @@
     "count": 50,
     "category": "Human Rights + Democracy",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Global Voices": {
-    "file": "global_voices.json",
-    "count": 16,
-    "category": "Human Rights + Democracy",
-    "description": "Citizen media stories from around the world",
     "lang": "en",
     "scope": "World"
   },
@@ -884,7 +884,7 @@
   },
   "UN Women": {
     "file": "un_women.json",
-    "count": 12,
+    "count": 4,
     "category": "Politics + Government",
     "description": "",
     "lang": "fi",
@@ -916,7 +916,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "fi",
@@ -996,7 +996,7 @@
   },
   "Voima": {
     "file": "voima.json",
-    "count": 15,
+    "count": 5,
     "category": "Perspectives",
     "description": "",
     "lang": "fi",
@@ -1044,7 +1044,7 @@
   },
   "Extreme Citizen Science blog": {
     "file": "extreme_citizen_science_blog.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
@@ -1276,7 +1276,7 @@
   },
   "Forbidden Stories": {
     "file": "forbidden_stories.json",
-    "count": 10,
+    "count": 1,
     "category": "Peace + Crisis Intelligence",
     "description": "",
     "lang": "en",
@@ -1433,14 +1433,6 @@
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
     "scope": "World"
-  },
-  "Museolehti": {
-    "file": "museolehti.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Museoalan ihmisten, ilmiöiden ja puheenaiheiden media.",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -1658,6 +1650,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Museolehti": {
+    "file": "museolehti.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Museoalan ihmisten, ilmiöiden ja puheenaiheiden media.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Museoliitto": {
     "file": "museoliitto.json",
     "count": 10,
@@ -1866,6 +1866,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Michael Culture Association": {
+    "file": "michael_culture_association.json",
+    "count": 1,
+    "category": "Digital Culture + Heritage",
+    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "MuseumNext": {
     "file": "museumnext.json",
     "count": 10,
@@ -2026,22 +2034,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Open Knowledge Foundation Blog": {
-    "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Content for a fair, sustainable and open future",
-    "lang": "en",
-    "scope": "World"
-  },
   "Open Knowledge Foundation DE": {
     "file": "open_knowledge_foundation_de.json",
     "count": 684,
@@ -2194,14 +2186,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Tutkivan journalismin yhdistys –tutkiva.fi": {
-    "file": "tutkivan_journalismin_yhdistys__tutkiva_fi.json",
-    "count": 10,
-    "category": "Peace + Crisis Intelligence",
-    "description": "",
-    "lang": "fi",
-    "scope": "World"
-  },
   "OCCRP Announcements": {
     "file": "occrp_announcements.json",
     "count": 200,
@@ -2231,14 +2215,6 @@
     "count": 7,
     "category": "Peace + Crisis Intelligence",
     "description": "Investigations, delivered straight to you. Well, your RSS reader anyway.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Investigations – ACDC": {
-    "file": "investigations___acdc.json",
-    "count": 10,
-    "category": "Peace + Crisis Intelligence",
-    "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
     "lang": "en",
     "scope": "World"
   },
@@ -2401,6 +2377,14 @@
     "description": "Suomen YK-nuoret",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "CERN": {
+    "file": "cern.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "Sámiráđđi": {
     "file": "s_mir___i.json",
