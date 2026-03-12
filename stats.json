@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "12.3.2026 klo 13.36.36"
+    "last_updated": "12.3.2026 klo 15.18.04"
   },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
@@ -36,7 +36,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 56,
+    "count": 57,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -84,7 +84,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 23,
+    "count": 24,
     "category": "Culture",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -100,7 +100,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 13,
+    "count": 14,
     "category": "Digital Culture + Heritage",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -108,7 +108,7 @@
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
-    "count": 13,
+    "count": 14,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
@@ -260,7 +260,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3354,
+    "count": 3355,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -316,7 +316,7 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
@@ -332,7 +332,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 21,
+    "count": 22,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -340,7 +340,7 @@
   },
   "resilience": {
     "file": "resilience.json",
-    "count": 15,
+    "count": 18,
     "category": "Perspectives",
     "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
@@ -353,6 +353,54 @@
     "description": "the Global Magazine of News and Ideas",
     "lang": "en",
     "scope": "World"
+  },
+  "Frame Contemporary Art Finland": {
+    "file": "frame_contemporary_art_finland.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Ympäristöministeriön uutiset ja tiedotteet": {
+    "file": "ymp_rist_ministeri_n_uutiset_ja_tiedotteet.json",
+    "count": 100,
+    "category": "Peace + Crisis Intelligence",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "European Commission": {
+    "file": "european_commission.json",
+    "count": 35,
+    "category": "Politics + Government",
+    "description": "European Commission | News",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Liikenne- ja viestintäministeriö | News": {
+    "file": "liikenne__ja_viestint_ministeri____news.json",
+    "count": 20,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Ministry of Justice | Finland | News": {
+    "file": "ministry_of_justice___finland___news.json",
+    "count": 40,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Uusimmat hallituksen esitykset (HE)": {
+    "file": "uusimmat_hallituksen_esitykset__he_.json",
+    "count": 50,
+    "category": "Politics + Government",
+    "description": "Uusimmat hallituksen esitykset (RSS)",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
@@ -380,7 +428,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 10,
+    "count": 5,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -652,7 +700,7 @@
   },
   "PreventionWeb": {
     "file": "preventionweb.json",
-    "count": 40,
+    "count": 45,
     "category": "Peace + Crisis Intelligence",
     "description": "",
     "lang": "en",
@@ -690,14 +738,6 @@
     "lang": "fi",
     "scope": "Europe"
   },
-  "European Commission": {
-    "file": "european_commission.json",
-    "count": 34,
-    "category": "Politics + Government",
-    "description": "European Commission | News",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Global Solutions Initiative": {
     "file": "global_solutions_initiative.json",
     "count": 10,
@@ -705,14 +745,6 @@
     "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
     "lang": "en",
     "scope": "World"
-  },
-  "Liikenne- ja viestintäministeriö | News": {
-    "file": "liikenne__ja_viestint_ministeri____news.json",
-    "count": 20,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "The Ulkopolitist": {
     "file": "the_ulkopolitist.json",
@@ -724,7 +756,7 @@
   },
   "Yle": {
     "file": "yle.json",
-    "count": 20,
+    "count": 21,
     "category": "Politics + Government",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -1124,35 +1156,11 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 10,
+    "count": 1,
     "category": "Peace + Crisis Intelligence",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
     "scope": "World"
-  },
-  "Ympäristöministeriön uutiset ja tiedotteet": {
-    "file": "ymp_rist_ministeri_n_uutiset_ja_tiedotteet.json",
-    "count": 100,
-    "category": "Peace + Crisis Intelligence",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Ministry of Justice | Finland | News": {
-    "file": "ministry_of_justice___finland___news.json",
-    "count": 40,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Uusimmat hallituksen esitykset (HE)": {
-    "file": "uusimmat_hallituksen_esitykset__he_.json",
-    "count": 50,
-    "category": "Politics + Government",
-    "description": "Uusimmat hallituksen esitykset (RSS)",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
@@ -1188,7 +1196,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "fi",
@@ -1362,46 +1370,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Finlandsinstitutet i Stockholm": {
-    "file": "finlandsinstitutet_i_stockholm.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Finlandsinstitutet i Stockholm",
-    "lang": "sv",
-    "scope": "Nordic + Baltic countries"
-  },
-  "Suomen Tukholman-instituutti": {
-    "file": "suomen_tukholman_instituutti.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Finlandsinstitutet i Stockholm",
-    "lang": "fi",
-    "scope": "Nordic + Baltic countries"
-  },
-  "TIEKE": {
-    "file": "tieke.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "CREATe": {
-    "file": "create.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Centre for Regulation of the Creative Economy",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "ICCROM": {
-    "file": "iccrom.json",
-    "count": 10,
-    "category": "Peace + Crisis Intelligence",
-    "description": "The International Centre for the Study of the Preservation and Restoration of Cultural Property (ICCROM)",
-    "lang": "en",
-    "scope": "World"
-  },
   "CHAOSS": {
     "file": "chaoss.json",
     "count": 10,
@@ -1554,6 +1522,22 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Finlandsinstitutet i Stockholm": {
+    "file": "finlandsinstitutet_i_stockholm.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Finlandsinstitutet i Stockholm",
+    "lang": "sv",
+    "scope": "Nordic + Baltic countries"
+  },
+  "Suomen Tukholman-instituutti": {
+    "file": "suomen_tukholman_instituutti.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Finlandsinstitutet i Stockholm",
+    "lang": "fi",
+    "scope": "Nordic + Baltic countries"
+  },
   "Finnish Cultural Institute for the Benelux": {
     "file": "finnish_cultural_institute_for_the_benelux.json",
     "count": 10,
@@ -1601,14 +1585,6 @@
     "description": "Soome Eesti Instituudi Sihtasutus",
     "lang": "fi",
     "scope": "Nordic + Baltic countries"
-  },
-  "Frame Contemporary Art Finland": {
-    "file": "frame_contemporary_art_finland.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "European Heritage Tribune": {
     "file": "european_heritage_tribune.json",
@@ -1738,14 +1714,6 @@
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
-  "Ars Electronica Center": {
-    "file": "ars_electronica_center.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "de",
-    "scope": "Europe"
-  },
   "News – Wikimedia Foundation": {
     "file": "news___wikimedia_foundation.json",
     "count": 10,
@@ -1841,6 +1809,14 @@
     "description": "Advancing digital transformation in museums",
     "lang": "en",
     "scope": "World"
+  },
+  "Michael Culture Association": {
+    "file": "michael_culture_association.json",
+    "count": 1,
+    "category": "Digital Culture + Heritage",
+    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
+    "lang": "en",
+    "scope": "Europe"
   },
   "MuseumNext": {
     "file": "museumnext.json",
@@ -2074,6 +2050,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "TIEKE": {
+    "file": "tieke.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Tietopoliitiikan yhteistyöryhmä": {
     "file": "tietopoliitiikan_yhteisty_ryhm_.json",
     "count": 10,
@@ -2089,6 +2073,14 @@
     "description": "WIPO In Focus",
     "lang": "en",
     "scope": "World"
+  },
+  "CREATe": {
+    "file": "create.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Centre for Regulation of the Creative Economy",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Avoin hallinto": {
     "file": "avoin_hallinto.json",
@@ -2143,6 +2135,14 @@
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "Helping the global population join the global conversation",
+    "lang": "en",
+    "scope": "World"
+  },
+  "ICCROM": {
+    "file": "iccrom.json",
+    "count": 10,
+    "category": "Peace + Crisis Intelligence",
+    "description": "The International Centre for the Study of the Preservation and Restoration of Cultural Property (ICCROM)",
     "lang": "en",
     "scope": "World"
   },
@@ -2204,7 +2204,7 @@
   },
   "OCCRP Features": {
     "file": "occrp_features.json",
-    "count": 988,
+    "count": 989,
     "category": "Peace + Crisis Intelligence",
     "description": "Features, delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
