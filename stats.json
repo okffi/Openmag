@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "13.3.2026 klo 6.50.30"
+    "last_updated": "13.3.2026 klo 7.55.37"
   },
   "Global Voices": {
     "file": "global_voices.json",
@@ -8,6 +8,46 @@
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
+    "scope": "World"
+  },
+  "Global Voices Advox": {
+    "file": "global_voices_advox.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "Defending Free Speech Online",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Suomen Kuvalehti": {
+    "file": "suomen_kuvalehti.json",
+    "count": 34,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "The Conversation – Articles (GLOBAL)": {
+    "file": "the_conversation___articles__global_.json",
+    "count": 50,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Foreign Policy": {
+    "file": "foreign_policy.json",
+    "count": 25,
+    "category": "Politics + Government",
+    "description": "the Global Magazine of News and Ideas",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Yle": {
+    "file": "yle.json",
+    "count": 21,
+    "category": "Politics + Government",
+    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
+    "lang": "fi",
     "scope": "World"
   },
   "CSC": {
@@ -172,7 +212,7 @@
   },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
@@ -340,7 +380,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 20,
+    "count": 21,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -364,7 +404,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 6,
+    "count": 10,
     "category": "Peace + Crisis Intelligence",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -442,14 +482,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Suomen Kuvalehti": {
-    "file": "suomen_kuvalehti.json",
-    "count": 34,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "The Conversation – Articles (EUROPE)": {
     "file": "the_conversation___articles__europe_.json",
     "count": 50,
@@ -505,14 +537,6 @@
     "description": "European Commission | News",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Foreign Policy": {
-    "file": "foreign_policy.json",
-    "count": 25,
-    "category": "Politics + Government",
-    "description": "the Global Magazine of News and Ideas",
-    "lang": "en",
-    "scope": "World"
   },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
@@ -617,14 +641,6 @@
     "description": "Valtioneuvoston tiedotteet",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Yle": {
-    "file": "yle.json",
-    "count": 20,
-    "category": "Politics + Government",
-    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
-    "lang": "fi",
-    "scope": "World"
   },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
@@ -858,14 +874,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "The Conversation – Articles (GLOBAL)": {
-    "file": "the_conversation___articles__global_.json",
-    "count": 50,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Voima": {
     "file": "voima.json",
     "count": 15,
@@ -1074,6 +1082,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Avoin tiede": {
+    "file": "avoin_tiede.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Internet Society": {
     "file": "internet_society.json",
     "count": 20,
@@ -1170,14 +1186,6 @@
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
-  "Global Voices Advox": {
-    "file": "global_voices_advox.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "Defending Free Speech Online",
-    "lang": "en",
-    "scope": "World"
-  },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
     "count": 10,
@@ -1185,6 +1193,14 @@
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
     "scope": "World"
+  },
+  "openDemocracy": {
+    "file": "opendemocracy.json",
+    "count": 20,
+    "category": "Human Rights + Democracy",
+    "description": "openDemocracy RSS",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
   },
   "Weekly OSM": {
     "file": "weekly_osm.json",
@@ -1348,35 +1364,11 @@
   },
   "Confederation of Open Access Repositories": {
     "file": "confederation_of_open_access_repositories.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Science + Research",
     "description": "Building a sustainable, global knowledge commons",
     "lang": "en",
     "scope": "World"
-  },
-  "SPARC": {
-    "file": "sparc.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Scholarly Publishing and Academic Resources Coalition",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Finlandsinstitutet i Stockholm": {
-    "file": "finlandsinstitutet_i_stockholm.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Finlandsinstitutet i Stockholm",
-    "lang": "sv",
-    "scope": "Nordic + Baltic countries"
-  },
-  "Suomen Tukholman-instituutti": {
-    "file": "suomen_tukholman_instituutti.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Finlandsinstitutet i Stockholm",
-    "lang": "fi",
-    "scope": "Nordic + Baltic countries"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -1426,14 +1418,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Avoin tiede": {
-    "file": "avoin_tiede.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Datafied Life Collaboratory": {
     "file": "datafied_life_collaboratory.json",
     "count": 10,
@@ -1482,6 +1466,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "SPARC": {
+    "file": "sparc.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Scholarly Publishing and Academic Resources Coalition",
+    "lang": "en",
+    "scope": "World"
+  },
   "Tiedepolitiikka": {
     "file": "tiedepolitiikka.json",
     "count": 30,
@@ -1529,6 +1521,22 @@
     "description": "Suomen elinkeinoelämän keskusarkisto",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Finlandsinstitutet i Stockholm": {
+    "file": "finlandsinstitutet_i_stockholm.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Finlandsinstitutet i Stockholm",
+    "lang": "sv",
+    "scope": "Nordic + Baltic countries"
+  },
+  "Suomen Tukholman-instituutti": {
+    "file": "suomen_tukholman_instituutti.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Finlandsinstitutet i Stockholm",
+    "lang": "fi",
+    "scope": "Nordic + Baltic countries"
   },
   "Finnish Cultural Institute for the Benelux": {
     "file": "finnish_cultural_institute_for_the_benelux.json",
@@ -1706,6 +1714,14 @@
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
+  },
   "News – Wikimedia Foundation": {
     "file": "news___wikimedia_foundation.json",
     "count": 10,
@@ -1729,14 +1745,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Wikimedia Sverige": {
-    "file": "wikimedia_sverige.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Vi arbetar för fri kunskap",
-    "lang": "sv",
-    "scope": "Nordic + Baltic countries"
   },
   "Cultural Heritage Informatics": {
     "file": "cultural_heritage_informatics.json",
@@ -1978,6 +1986,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "MySociety Newsletter": {
     "file": "mysociety_newsletter.json",
     "count": 10,
@@ -2121,14 +2137,6 @@
     "description": "Helping the global population join the global conversation",
     "lang": "en",
     "scope": "World"
-  },
-  "openDemocracy": {
-    "file": "opendemocracy.json",
-    "count": 20,
-    "category": "Human Rights + Democracy",
-    "description": "openDemocracy RSS",
-    "lang": "en",
-    "scope": "Nordic + Baltic countries"
   },
   "ICCROM": {
     "file": "iccrom.json",
