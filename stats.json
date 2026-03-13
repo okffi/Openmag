@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "13.3.2026 klo 7.55.37"
+    "last_updated": "13.3.2026 klo 9.05.32"
   },
   "Global Voices": {
     "file": "global_voices.json",
@@ -48,6 +48,14 @@
     "category": "Politics + Government",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
+    "scope": "World"
+  },
+  "Human Rights Watch News": {
+    "file": "human_rights_watch_news.json",
+    "count": 21,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
     "scope": "World"
   },
   "CSC": {
@@ -204,7 +212,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital Culture + Heritage",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -212,7 +220,7 @@
   },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
@@ -236,7 +244,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 4,
     "category": "Digital Culture + Heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -324,7 +332,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3357,
+    "count": 3358,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -377,14 +385,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Human Rights Watch News": {
-    "file": "human_rights_watch_news.json",
-    "count": 21,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "bellingcat": {
     "file": "bellingcat.json",
@@ -468,7 +468,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 20,
+    "count": 22,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -641,6 +641,14 @@
     "description": "Valtioneuvoston tiedotteet",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "UN Maps": {
+    "file": "un_maps.json",
+    "count": 11,
+    "category": "Peace + Crisis Intelligence",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
@@ -868,7 +876,7 @@
   },
   "Verde": {
     "file": "verde.json",
-    "count": 15,
+    "count": 16,
     "category": "Peace + Crisis Intelligence",
     "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
     "lang": "fi",
@@ -1228,7 +1236,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "fi",
@@ -1346,6 +1354,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
+  },
   "Berkman Klein Center for Internet & Society at Harvard University": {
     "file": "berkman_klein_center_for_internet___society_at_harvard_university.json",
     "count": 10,
@@ -1361,14 +1377,6 @@
     "description": "Peace broker",
     "lang": "en",
     "scope": "Finland"
-  },
-  "Confederation of Open Access Repositories": {
-    "file": "confederation_of_open_access_repositories.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Building a sustainable, global knowledge commons",
-    "lang": "en",
-    "scope": "World"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -1417,6 +1425,14 @@
     "description": "Internet of humans",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Confederation of Open Access Repositories": {
+    "file": "confederation_of_open_access_repositories.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Building a sustainable, global knowledge commons",
+    "lang": "en",
+    "scope": "World"
   },
   "Datafied Life Collaboratory": {
     "file": "datafied_life_collaboratory.json",
@@ -1714,14 +1730,6 @@
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
-  "Extreme Citizen Science blog": {
-    "file": "extreme_citizen_science_blog.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
-    "lang": "en",
-    "scope": "World"
-  },
   "News – Wikimedia Foundation": {
     "file": "news___wikimedia_foundation.json",
     "count": 10,
@@ -1745,6 +1753,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Wikimedia Sverige": {
+    "file": "wikimedia_sverige.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Vi arbetar för fri kunskap",
+    "lang": "sv",
+    "scope": "Nordic + Baltic countries"
   },
   "Cultural Heritage Informatics": {
     "file": "cultural_heritage_informatics.json",
@@ -1986,14 +2002,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "MySociety Newsletter": {
     "file": "mysociety_newsletter.json",
     "count": 10,
@@ -2055,14 +2063,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Tietopoliitiikan yhteistyöryhmä": {
-    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2143,14 +2143,6 @@
     "count": 10,
     "category": "Peace + Crisis Intelligence",
     "description": "The International Centre for the Study of the Preservation and Restoration of Cultural Property (ICCROM)",
-    "lang": "en",
-    "scope": "World"
-  },
-  "UN Maps": {
-    "file": "un_maps.json",
-    "count": 10,
-    "category": "Peace + Crisis Intelligence",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -2322,6 +2314,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "Julkisen sanan neuvosto",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Association of Finnish Cities and Municipalities": {
     "file": "association_of_finnish_cities_and_municipalities.json",
     "count": 10,
@@ -2425,6 +2425,14 @@
     "description": "En rättvis, fri och öppen framtid.",
     "lang": "sv",
     "scope": "Nordic + Baltic countries"
+  },
+  "UN Peacemaker": {
+    "file": "un_peacemaker.json",
+    "count": 10,
+    "category": "Peace + Crisis Intelligence",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "Sámiráđđi": {
     "file": "s_mir___i.json",
