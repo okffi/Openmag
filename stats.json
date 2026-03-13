@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "13.3.2026 klo 11.50.11"
+    "last_updated": "13.3.2026 klo 12.47.18"
   },
   "Global Voices": {
     "file": "global_voices.json",
@@ -52,7 +52,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 22,
+    "count": 23,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -92,7 +92,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3358,
+    "count": 3359,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -124,7 +124,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 22,
+    "count": 23,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -148,7 +148,7 @@
   },
   "Valtioneuvoston tiedotteet": {
     "file": "valtioneuvoston_tiedotteet.json",
-    "count": 100,
+    "count": 99,
     "category": "Politics + Government",
     "description": "Valtioneuvoston tiedotteet",
     "lang": "fi",
@@ -156,7 +156,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 33,
+    "count": 34,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -188,7 +188,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 22,
+    "count": 23,
     "category": "Culture",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -268,11 +268,59 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 32,
+    "count": 33,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
     "scope": "Europe"
+  },
+  "CODATA": {
+    "file": "codata.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Committee on Data of the ISC",
+    "lang": "en",
+    "scope": "World"
+  },
+  "The Scholarly Kitchen": {
+    "file": "the_scholarly_kitchen.json",
+    "count": 15,
+    "category": "(Open) Science + Research",
+    "description": "What’s Hot and Cooking In Scholarly Publishing",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Blue Shield International": {
+    "file": "blue_shield_international.json",
+    "count": 10,
+    "category": "Peace + Crisis Intelligence",
+    "description": "Protecting Cultural Heritage",
+    "lang": "en",
+    "scope": "World"
+  },
+  "PreventionWeb": {
+    "file": "preventionweb.json",
+    "count": 41,
+    "category": "Peace + Crisis Intelligence",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Ministry of Justice | Finland | News": {
+    "file": "ministry_of_justice___finland___news.json",
+    "count": 40,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Presidentti": {
+    "file": "presidentti.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "CSC": {
     "file": "csc.json",
@@ -305,14 +353,6 @@
     "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "The Scholarly Kitchen": {
-    "file": "the_scholarly_kitchen.json",
-    "count": 15,
-    "category": "(Open) Science + Research",
-    "description": "What’s Hot and Cooking In Scholarly Publishing",
-    "lang": "en",
-    "scope": "World"
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
@@ -396,7 +436,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 4,
+    "count": 3,
     "category": "Digital Culture + Heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -524,7 +564,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 6,
+    "count": 10,
     "category": "Peace + Crisis Intelligence",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -553,14 +593,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "PreventionWeb": {
-    "file": "preventionweb.json",
-    "count": 41,
-    "category": "Peace + Crisis Intelligence",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "The Conversation – Articles (EUROPE)": {
     "file": "the_conversation___articles__europe_.json",
@@ -634,22 +666,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Ministry of Justice | Finland | News": {
-    "file": "ministry_of_justice___finland___news.json",
-    "count": 40,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Presidentti": {
-    "file": "presidentti.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Tasavallan presidentin kanslia": {
     "file": "tasavallan_presidentin_kanslia.json",
     "count": 25,
@@ -698,6 +714,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Uutiset &#8211; Kielipankki": {
+    "file": "uutiset___8211__kielipankki.json",
+    "count": 2,
+    "category": "Digital Culture + Heritage",
+    "description": "The Language Bank of Finland",
+    "lang": "fi",
+    "scope": "World"
+  },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
     "count": 40,
@@ -724,7 +748,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 10,
+    "count": 4,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -735,14 +759,6 @@
     "count": 4,
     "category": "(Open) Data + Technology",
     "description": "xkcd.com: A webcomic of romance and math humor.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "CODATA": {
-    "file": "codata.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Committee on Data of the ISC",
     "lang": "en",
     "scope": "World"
   },
@@ -950,6 +966,14 @@
     "file": "faktabaari.json",
     "count": 5,
     "category": "Peace + Crisis Intelligence",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 3,
+    "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
     "scope": "Finland"
@@ -1220,11 +1244,19 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 20,
+    "count": 4,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
+  },
+  "Suomen kirjastoseura": {
+    "file": "suomen_kirjastoseura.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Weekly OSM": {
     "file": "weekly_osm.json",
@@ -1378,22 +1410,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Berkman Klein Center for Internet & Society at Harvard University": {
-    "file": "berkman_klein_center_for_internet___society_at_harvard_university.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "CMI": {
-    "file": "cmi.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "Peace broker",
-    "lang": "en",
-    "scope": "Finland"
-  },
   "CHAOSS": {
     "file": "chaoss.json",
     "count": 10,
@@ -1441,6 +1457,14 @@
     "description": "Internet of humans",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Confederation of Open Access Repositories": {
+    "file": "confederation_of_open_access_repositories.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Building a sustainable, global knowledge commons",
+    "lang": "en",
+    "scope": "World"
   },
   "Datafied Life Collaboratory": {
     "file": "datafied_life_collaboratory.json",
@@ -1802,14 +1826,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "EUscreen": {
     "file": "euscreen.json",
     "count": 10,
@@ -2090,12 +2106,28 @@
     "lang": "en",
     "scope": "World"
   },
+  "Berkman Klein Center for Internet & Society at Harvard University": {
+    "file": "berkman_klein_center_for_internet___society_at_harvard_university.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Avoin hallinto": {
     "file": "avoin_hallinto.json",
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "fi",
+    "scope": "Finland"
+  },
+  "CMI": {
+    "file": "cmi.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "Peace broker",
+    "lang": "en",
     "scope": "Finland"
   },
   "CoP CC on Participatory and Deliberative Democracy": {
@@ -2154,14 +2186,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Blue Shield International": {
-    "file": "blue_shield_international.json",
-    "count": 10,
-    "category": "Peace + Crisis Intelligence",
-    "description": "Protecting Cultural Heritage",
-    "lang": "en",
-    "scope": "World"
-  },
   "Guides - bellingcat": {
     "file": "guides___bellingcat.json",
     "count": 9,
@@ -2215,14 +2239,6 @@
     "count": 8,
     "category": "Peace + Crisis Intelligence",
     "description": "Investigations, delivered straight to you. Well, your RSS reader anyway.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Investigations – ACDC": {
-    "file": "investigations___acdc.json",
-    "count": 10,
-    "category": "Peace + Crisis Intelligence",
-    "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
     "lang": "en",
     "scope": "World"
   },
@@ -2311,6 +2327,14 @@
     "count": 10,
     "category": "Politics + Government",
     "description": "Journalistisen kulttuurin edistämissäätiö",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2434,21 +2458,13 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Suomen kirjastoseura": {
-    "file": "suomen_kirjastoseura.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Uutiset &#8211; Kielipankki": {
-    "file": "uutiset___8211__kielipankki.json",
-    "count": 99,
+  "Kielipankki": {
+    "file": "kielipankki.json",
+    "count": 97,
     "category": "Digital Culture + Heritage",
     "description": "The Language Bank of Finland",
     "lang": "fi",
-    "scope": "World"
+    "scope": "Finland"
   },
   "Sámiráđđi": {
     "file": "s_mir___i.json",
