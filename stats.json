@@ -1,10 +1,10 @@
 {
   "__meta": {
-    "last_updated": "13.3.2026 klo 17.51.35"
+    "last_updated": "13.3.2026 klo 18.51.02"
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 16,
+    "count": 15,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -52,7 +52,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 24,
+    "count": 19,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -84,7 +84,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 13,
+    "count": 14,
     "category": "Digital Culture + Heritage",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -124,7 +124,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 25,
+    "count": 27,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -180,7 +180,7 @@
   },
   "Kotimaisten kielten keskus KOTUS": {
     "file": "kotimaisten_kielten_keskus_kotus.json",
-    "count": 10,
+    "count": 5,
     "category": "Culture",
     "description": "Kotimaisten kielten keskus",
     "lang": "fi",
@@ -220,7 +220,7 @@
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
-    "count": 14,
+    "count": 15,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
@@ -468,7 +468,7 @@
   },
   "Sitra": {
     "file": "sitra.json",
-    "count": 10,
+    "count": 33,
     "category": "Peace + Crisis Intelligence",
     "description": "",
     "lang": "fi",
@@ -521,6 +521,30 @@
     "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Forbidden Stories": {
+    "file": "forbidden_stories.json",
+    "count": 10,
+    "category": "Peace + Crisis Intelligence",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "openDemocracy": {
+    "file": "opendemocracy.json",
+    "count": 20,
+    "category": "Human Rights + Democracy",
+    "description": "openDemocracy RSS",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
+  },
+  "Lähde": {
+    "file": "l_hde.json",
+    "count": 14,
+    "category": "Yleinen",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "World"
   },
   "CSC": {
     "file": "csc.json",
@@ -596,7 +620,7 @@
   },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
@@ -732,7 +756,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 10,
+    "count": 6,
     "category": "Peace + Crisis Intelligence",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -1322,14 +1346,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "openDemocracy": {
-    "file": "opendemocracy.json",
-    "count": 19,
-    "category": "Human Rights + Democracy",
-    "description": "openDemocracy RSS",
-    "lang": "en",
-    "scope": "Nordic + Baltic countries"
-  },
   "Suomen kirjastoseura": {
     "file": "suomen_kirjastoseura.json",
     "count": 10,
@@ -1423,38 +1439,6 @@
     "count": 10,
     "category": "Culture",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Freedom House": {
-    "file": "freedom_house.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Kansalaisfoorumi": {
-    "file": "kansalaisfoorumi.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "Koulutusta, kulttuuria ja kansalaistoimintaa",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Journalism Science Alliance": {
-    "file": "journalism_science_alliance.json",
-    "count": 10,
-    "category": "Peace + Crisis Intelligence",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "The Signals Network": {
-    "file": "the_signals_network.json",
-    "count": 10,
-    "category": "Peace + Crisis Intelligence",
-    "description": "Holding power accountable one whistleblower at a time.",
     "lang": "en",
     "scope": "World"
   },
@@ -1802,14 +1786,6 @@
     "lang": "fi",
     "scope": "Nordic + Baltic countries"
   },
-  "Forbidden Stories": {
-    "file": "forbidden_stories.json",
-    "count": 10,
-    "category": "Peace + Crisis Intelligence",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "FOSDEM 2026": {
     "file": "fosdem_2026.json",
     "count": 10,
@@ -1817,6 +1793,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Freedom House": {
+    "file": "freedom_house.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "FutureEverything » News": {
     "file": "futureeverything___news.json",
@@ -1882,6 +1866,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Journalism Science Alliance": {
+    "file": "journalism_science_alliance.json",
+    "count": 10,
+    "category": "Peace + Crisis Intelligence",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "K-blogg - Riksantikvarieämbetets blogg": {
     "file": "k_blogg___riksantikvarie_mbetets_blogg.json",
     "count": 100,
@@ -1889,6 +1881,14 @@
     "description": "",
     "lang": "sv",
     "scope": "Nordic + Baltic countries"
+  },
+  "Kansalaisfoorumi": {
+    "file": "kansalaisfoorumi.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "Koulutusta, kulttuuria ja kansalaistoimintaa",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Kansalliset dialogit": {
     "file": "kansalliset_dialogit.json",
@@ -2106,13 +2106,13 @@
     "lang": "en",
     "scope": "World"
   },
-  "Tietopoliitiikan yhteistyöryhmä": {
-    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
+  "The Signals Network": {
+    "file": "the_signals_network.json",
     "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
-    "lang": "fi",
-    "scope": "Finland"
+    "category": "Peace + Crisis Intelligence",
+    "description": "Holding power accountable one whistleblower at a time.",
+    "lang": "en",
+    "scope": "World"
   },
   "Tekijänoikeuden tiedotus- ja valvontakeskus ry": {
     "file": "tekij_noikeuden_tiedotus__ja_valvontakeskus_ry.json",
@@ -2121,6 +2121,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
   },
   "Knowledge Rights 21 Archive Feed": {
     "file": "knowledge_rights_21_archive_feed.json",
@@ -2434,13 +2442,117 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Lähde": {
-    "file": "l_hde.json",
-    "count": 327,
-    "category": "Yleinen",
+  "Aalto-yliopisto": {
+    "file": "aalto_yliopisto.json",
+    "count": 23,
+    "category": "(Open) Science + Research",
     "description": "Uusimmat tiedotteet",
     "lang": "fi",
-    "scope": "World"
+    "scope": "Finland"
+  },
+  "Amos Rex": {
+    "file": "amos_rex.json",
+    "count": 25,
+    "category": "Culture",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "AI Finland -verkosto": {
+    "file": "ai_finland__verkosto.json",
+    "count": 8,
+    "category": "Digital Policy + Rights",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Alfred Kordelinin säätiö": {
+    "file": "alfred_kordelinin_s__ti_.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "AVEK": {
+    "file": "avek.json",
+    "count": 23,
+    "category": "Digital Culture + Heritage",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Ateneumin taidemuseo / Konstmuseet Ateneum / Ateneum Art Museum": {
+    "file": "ateneumin_taidemuseo___konstmuseet_ateneum___ateneum_art_museum.json",
+    "count": 25,
+    "category": "Culture",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Digi- ja väestötietovirasto": {
+    "file": "digi__ja_v_est_tietovirasto.json",
+    "count": 24,
+    "category": "Politics + Government",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Euroopan parlamentti – Suomen-toimisto": {
+    "file": "euroopan_parlamentti___suomen_toimisto.json",
+    "count": 21,
+    "category": "Politics + Government",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Euroopan komission Suomen-edustusto": {
+    "file": "euroopan_komission_suomen_edustusto.json",
+    "count": 24,
+    "category": "Politics + Government",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Helsingin kaupunki, kulttuurin ja vapaa-ajan toimiala": {
+    "file": "helsingin_kaupunki__kulttuurin_ja_vapaa_ajan_toimiala.json",
+    "count": 21,
+    "category": "Culture",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Hanasaari": {
+    "file": "hanasaari.json",
+    "count": 25,
+    "category": "Culture",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Greenpeace": {
+    "file": "greenpeace.json",
+    "count": 25,
+    "category": "Human Rights + Democracy",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Ilmastopaneeli": {
+    "file": "ilmastopaneeli.json",
+    "count": 25,
+    "category": "Human Rights + Democracy",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "University of Oulu": {
+    "file": "university_of_oulu.json",
+    "count": 11,
+    "category": "(Open) Science + Research",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Project Syndicate economists": {
     "file": "project_syndicate_economists.json",
