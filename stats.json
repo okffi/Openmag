@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "13.3.2026 klo 15.15.41"
+    "last_updated": "13.3.2026 klo 16.51.31"
   },
   "Global Voices": {
     "file": "global_voices.json",
@@ -92,7 +92,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3360,
+    "count": 3361,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -124,7 +124,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 24,
+    "count": 25,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -140,7 +140,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 51,
+    "count": 54,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -164,7 +164,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 51,
+    "count": 50,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -172,7 +172,7 @@
   },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
-    "count": 11,
+    "count": 12,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -220,7 +220,7 @@
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
-    "count": 13,
+    "count": 14,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
@@ -260,7 +260,7 @@
   },
   "Eduskunnan uusimmat tiedotteet": {
     "file": "eduskunnan_uusimmat_tiedotteet.json",
-    "count": 21,
+    "count": 22,
     "category": "Politics + Government",
     "description": "Eduskunnan tiedotteet - RSS",
     "lang": "fi",
@@ -426,20 +426,76 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "CSC": {
-    "file": "csc.json",
+  "404 Media": {
+    "file": "404_media.json",
+    "count": 15,
+    "category": "Peace + Crisis Intelligence",
+    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Echoes - Eccch": {
+    "file": "echoes___eccch.json",
     "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "ICT Solutions for Brilliant Minds",
-    "lang": "fi",
-    "scope": "Finland"
+    "category": "Digital Culture + Heritage",
+    "description": "European Cloud for Heritage OpEn Science",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Finnish AI Region": {
     "file": "finnish_ai_region.json",
     "count": 20,
     "category": "(Open) Data + Technology",
     "description": "FAIR",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Kansallisarkiston tiedotteet": {
+    "file": "kansallisarkiston_tiedotteet.json",
+    "count": 20,
+    "category": "Culture",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "OCCRP": {
+    "file": "occrp.json",
+    "count": 60,
+    "category": "Peace + Crisis Intelligence",
+    "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
+    "scope": "World"
+  },
+  "Sitra": {
+    "file": "sitra.json",
+    "count": 10,
+    "category": "Peace + Crisis Intelligence",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Timeless": {
+    "file": "timeless.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Stories from the Library of Congress",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Faktabaari": {
+    "file": "faktabaari.json",
+    "count": 6,
+    "category": "Peace + Crisis Intelligence",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "CSC": {
+    "file": "csc.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "ICT Solutions for Brilliant Minds",
+    "lang": "fi",
     "scope": "Finland"
   },
   "Hacks/Hackers": {
@@ -564,7 +620,7 @@
   },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -658,30 +714,6 @@
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
-  "404 Media": {
-    "file": "404_media.json",
-    "count": 16,
-    "category": "Peace + Crisis Intelligence",
-    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "OCCRP": {
-    "file": "occrp.json",
-    "count": 60,
-    "category": "Peace + Crisis Intelligence",
-    "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Sitra": {
-    "file": "sitra.json",
-    "count": 10,
-    "category": "Peace + Crisis Intelligence",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "EUSBSR": {
     "file": "eusbsr.json",
     "count": 10,
@@ -756,7 +788,7 @@
   },
   "UN Maps": {
     "file": "un_maps.json",
-    "count": 1,
+    "count": 10,
     "category": "Peace + Crisis Intelligence",
     "description": "",
     "lang": "en",
@@ -786,6 +818,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Waag": {
+    "file": "waag.json",
+    "count": 20,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "fi",
+    "scope": "World"
+  },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
     "count": 40,
@@ -804,7 +844,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 4,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -841,14 +881,6 @@
     "description": "Suomen Rooman instituutti",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Kansallisarkiston tiedotteet": {
-    "file": "kansallisarkiston_tiedotteet.json",
-    "count": 20,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Kotiseutuliitto": {
     "file": "kotiseutuliitto.json",
@@ -1018,14 +1050,6 @@
     "lang": "fi",
     "scope": "World"
   },
-  "Faktabaari": {
-    "file": "faktabaari.json",
-    "count": 6,
-    "category": "Peace + Crisis Intelligence",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
     "count": 3,
@@ -1073,14 +1097,6 @@
     "description": "Kulttuuripolitiikan tutkimuskeskus Cupore",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Timeless": {
-    "file": "timeless.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Stories from the Library of Congress",
-    "lang": "en",
-    "scope": "World"
   },
   "Institute of Network Cultures": {
     "file": "institute_of_network_cultures.json",
@@ -1386,14 +1402,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Echoes - Eccch": {
-    "file": "echoes___eccch.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "European Cloud for Heritage OpEn Science",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Freedom House": {
     "file": "freedom_house.json",
     "count": 10,
@@ -1423,22 +1431,6 @@
     "count": 10,
     "category": "Peace + Crisis Intelligence",
     "description": "Holding power accountable one whistleblower at a time.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Ulkopoliittinen instituutti (UPI)": {
-    "file": "ulkopoliittinen_instituutti__upi_.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Extreme Citizen Science blog": {
-    "file": "extreme_citizen_science_blog.json",
-    "count": 1,
-    "category": "Digital Culture + Heritage",
-    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
     "scope": "World"
   },
@@ -1505,6 +1497,14 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
+  },
+  "Wikimedia Sverige": {
+    "file": "wikimedia_sverige.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Vi arbetar för fri kunskap",
+    "lang": "sv",
+    "scope": "Nordic + Baltic countries"
   },
   "Bündnis F5": {
     "file": "b_ndnis_f5.json",
@@ -1714,12 +1714,28 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
+  },
   "The Finnish Institute of International Affairs (FIIA)": {
     "file": "the_finnish_institute_of_international_affairs__fiia_.json",
     "count": 10,
     "category": "Politics + Government",
     "description": "",
     "lang": "en",
+    "scope": "Finland"
+  },
+  "Ulkopoliittinen instituutti (UPI)": {
+    "file": "ulkopoliittinen_instituutti__upi_.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
     "scope": "Finland"
   },
   "Finlandsinstitutet i Stockholm": {
@@ -1993,6 +2009,14 @@
     "description": "Advancing digital transformation in museums",
     "lang": "en",
     "scope": "World"
+  },
+  "Michael Culture Association": {
+    "file": "michael_culture_association.json",
+    "count": 1,
+    "category": "Digital Culture + Heritage",
+    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
+    "lang": "en",
+    "scope": "Europe"
   },
   "MuseumNext": {
     "file": "museumnext.json",
@@ -2346,14 +2370,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Tietopoliitiikan yhteistyöryhmä": {
-    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "TSV": {
     "file": "tsv.json",
     "count": 10,
@@ -2496,14 +2512,6 @@
     "category": "(Open) Science + Research",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
-    "scope": "World"
-  },
-  "Waag": {
-    "file": "waag.json",
-    "count": 20,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "fi",
     "scope": "World"
   },
   "Sámiráđđi": {
