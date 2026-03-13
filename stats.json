@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "13.3.2026 klo 12.47.18"
+    "last_updated": "13.3.2026 klo 13.37.27"
   },
   "Global Voices": {
     "file": "global_voices.json",
@@ -84,7 +84,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 12,
+    "count": 13,
     "category": "Digital Culture + Heritage",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -148,7 +148,7 @@
   },
   "Valtioneuvoston tiedotteet": {
     "file": "valtioneuvoston_tiedotteet.json",
-    "count": 99,
+    "count": 100,
     "category": "Politics + Government",
     "description": "Valtioneuvoston tiedotteet",
     "lang": "fi",
@@ -260,7 +260,7 @@
   },
   "Eduskunnan uusimmat tiedotteet": {
     "file": "eduskunnan_uusimmat_tiedotteet.json",
-    "count": 21,
+    "count": 22,
     "category": "Politics + Government",
     "description": "Eduskunnan tiedotteet - RSS",
     "lang": "fi",
@@ -268,7 +268,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 33,
+    "count": 36,
     "category": "Politics + Government",
     "description": "European Commission | News",
     "lang": "en",
@@ -322,6 +322,38 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Museolehti": {
+    "file": "museolehti.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Museoalan ihmisten, ilmiöiden ja puheenaiheiden media.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Digital meets Culture": {
+    "file": "digital_meets_culture.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Art, heritage & technologies",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "EUvsDisinfo": {
+    "file": "euvsdisinfo.json",
+    "count": 10,
+    "category": "Peace + Crisis Intelligence",
+    "description": "DON'T BE DECEIVED, QUESTION EVEN MORE",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "The Conversation – Articles (EUROPE)": {
+    "file": "the_conversation___articles__europe_.json",
+    "count": 50,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "CSC": {
     "file": "csc.json",
     "count": 10,
@@ -356,7 +388,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 20,
+    "count": 21,
     "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -404,7 +436,7 @@
   },
   "International Council on Archives (ICA)": {
     "file": "international_council_on_archives__ica_.json",
-    "count": 10,
+    "count": 2,
     "category": "Culture",
     "description": "",
     "lang": "en",
@@ -436,17 +468,9 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 3,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Digital meets Culture": {
-    "file": "digital_meets_culture.json",
     "count": 10,
     "category": "Digital Culture + Heritage",
-    "description": "Art, heritage & technologies",
+    "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
     "scope": "Europe"
   },
@@ -532,7 +556,7 @@
   },
   "CIVICUS News": {
     "file": "civicus_news.json",
-    "count": 50,
+    "count": 3,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -594,14 +618,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "The Conversation – Articles (EUROPE)": {
-    "file": "the_conversation___articles__europe_.json",
-    "count": 50,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "EUSBSR": {
     "file": "eusbsr.json",
     "count": 10,
@@ -628,7 +644,7 @@
   },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
-    "count": 10,
+    "count": 15,
     "category": "Politics + Government",
     "description": "syöte",
     "lang": "fi",
@@ -748,7 +764,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 4,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -884,7 +900,7 @@
   },
   "Open Knowledge Foundation Blog": {
     "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "Content for a fair, sustainable and open future",
     "lang": "en",
@@ -1012,7 +1028,7 @@
   },
   "Kirjastokaista": {
     "file": "kirjastokaista.json",
-    "count": 10,
+    "count": 14,
     "category": "Culture",
     "description": "LIBRARY CHANNEL — Library WebTV",
     "lang": "fi",
@@ -1105,14 +1121,6 @@
     "description": "We don't just build maps, we build mappers!",
     "lang": "en",
     "scope": "World"
-  },
-  "EUvsDisinfo": {
-    "file": "euvsdisinfo.json",
-    "count": 10,
-    "category": "Peace + Crisis Intelligence",
-    "description": "DON'T BE DECEIVED, QUESTION EVEN MORE",
-    "lang": "en",
-    "scope": "Europe"
   },
   "NOEMA": {
     "file": "noema.json",
@@ -1236,7 +1244,7 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 10,
+    "count": 1,
     "category": "Peace + Crisis Intelligence",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
@@ -1244,7 +1252,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 4,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -1404,7 +1412,7 @@
   },
   "Extreme Citizen Science blog": {
     "file": "extreme_citizen_science_blog.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
@@ -1537,6 +1545,14 @@
     "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Zooniverse": {
+    "file": "zooniverse.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
+    "lang": "en",
+    "scope": "World"
   },
   "Culture and Creativity": {
     "file": "culture_and_creativity.json",
@@ -1679,14 +1695,6 @@
     "count": 7,
     "category": "Culture",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Museolehti": {
-    "file": "museolehti.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Museoalan ihmisten, ilmiöiden ja puheenaiheiden media.",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2026,6 +2034,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "MySociety Newsletter": {
     "file": "mysociety_newsletter.json",
     "count": 10,
@@ -2242,6 +2258,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Investigations – ACDC": {
+    "file": "investigations___acdc.json",
+    "count": 10,
+    "category": "Peace + Crisis Intelligence",
+    "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
+    "lang": "en",
+    "scope": "World"
+  },
   "correctiv.org": {
     "file": "correctiv_org.json",
     "count": 100,
@@ -2327,14 +2351,6 @@
     "count": 10,
     "category": "Politics + Government",
     "description": "Journalistisen kulttuurin edistämissäätiö",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2463,6 +2479,14 @@
     "count": 97,
     "category": "Digital Culture + Heritage",
     "description": "The Language Bank of Finland",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Lastuja Suomen historiasta": {
+    "file": "lastuja_suomen_historiasta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Turun yliopiston Suomen historian oppiaineen blogi",
     "lang": "fi",
     "scope": "Finland"
   },
