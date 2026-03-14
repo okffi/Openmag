@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "14.3.2026 klo 11.40.59"
+    "last_updated": "14.3.2026 klo 12.36.42"
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
@@ -79,6 +79,14 @@
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "Defending Free Speech Online",
+    "lang": "en",
+    "scope": "World"
+  },
+  "ProPublica": {
+    "file": "propublica.json",
+    "count": 20,
+    "category": "Peace + Crisis Intelligence",
+    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
     "lang": "en",
     "scope": "World"
   },
@@ -260,7 +268,7 @@
   },
   "The Scholarly Kitchen": {
     "file": "the_scholarly_kitchen.json",
-    "count": 7,
+    "count": 15,
     "category": "(Open) Science + Research",
     "description": "What’s Hot and Cooking In Scholarly Publishing",
     "lang": "en",
@@ -498,14 +506,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "ProPublica": {
-    "file": "propublica.json",
-    "count": 20,
-    "category": "Peace + Crisis Intelligence",
-    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
-    "lang": "en",
-    "scope": "World"
-  },
   "resilience": {
     "file": "resilience.json",
     "count": 11,
@@ -628,7 +628,7 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
@@ -804,7 +804,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Culture + Heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -980,7 +980,7 @@
   },
   "Suomen Rooman-instituutti": {
     "file": "suomen_rooman_instituutti.json",
-    "count": 10,
+    "count": 2,
     "category": "Culture",
     "description": "Suomen Rooman instituutti",
     "lang": "fi",
@@ -988,7 +988,7 @@
   },
   "The Finnish Institute in Rome": {
     "file": "the_finnish_institute_in_rome.json",
-    "count": 10,
+    "count": 1,
     "category": "Culture",
     "description": "Suomen Rooman instituutti",
     "lang": "en",
@@ -1148,7 +1148,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -1396,7 +1396,7 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 1,
+    "count": 10,
     "category": "Peace + Crisis Intelligence",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
@@ -1591,6 +1591,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Mozilla's official blog on open Internet policy initiatives and developments",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Zooniverse": {
+    "file": "zooniverse.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
     "scope": "World"
   },
@@ -2234,14 +2242,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Public Policy Archives — Association of Research Libraries": {
-    "file": "public_policy_archives___association_of_research_libraries.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Suomen Taiteilijaseura": {
     "file": "suomen_taiteilijaseura.json",
     "count": 1,
@@ -2385,14 +2385,6 @@
     "description": "Defining the Future of Museums",
     "lang": "en",
     "scope": "World"
-  },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
   },
   "OCCRP Announcements": {
     "file": "occrp_announcements.json",
