@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "14.3.2026 klo 16.36.53"
+    "last_updated": "14.3.2026 klo 17.34.42"
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
@@ -44,7 +44,7 @@
   },
   "Yle": {
     "file": "yle.json",
-    "count": 21,
+    "count": 22,
     "category": "Politics + Government",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -103,6 +103,22 @@
     "count": 20,
     "category": "Politics + Government",
     "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Luovat ry": {
+    "file": "luovat_ry.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Luovan työn tekijät ja yrittäjät, Luovat ry",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 51,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
     "scope": "World"
   },
@@ -290,14 +306,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 51,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Blue Shield International": {
     "file": "blue_shield_international.json",
     "count": 10,
@@ -452,7 +460,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 14,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -684,7 +692,7 @@
   },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
@@ -948,7 +956,7 @@
   },
   "Open Knowledge Foundation Blog": {
     "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "Content for a fair, sustainable and open future",
     "lang": "en",
@@ -980,7 +988,7 @@
   },
   "Suomen Rooman-instituutti": {
     "file": "suomen_rooman_instituutti.json",
-    "count": 2,
+    "count": 10,
     "category": "Culture",
     "description": "Suomen Rooman instituutti",
     "lang": "fi",
@@ -988,7 +996,7 @@
   },
   "The Finnish Institute in Rome": {
     "file": "the_finnish_institute_in_rome.json",
-    "count": 1,
+    "count": 10,
     "category": "Culture",
     "description": "Suomen Rooman instituutti",
     "lang": "en",
@@ -1428,7 +1436,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "fi",
@@ -1583,6 +1591,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Mozilla's official blog on open Internet policy initiatives and developments",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Zooniverse": {
+    "file": "zooniverse.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
     "scope": "World"
   },
@@ -1961,14 +1977,6 @@
     "description": "Grounding Indigenous Rights",
     "lang": "en",
     "scope": "World"
-  },
-  "Luovat ry": {
-    "file": "luovat_ry.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Luovan työn tekijät ja yrittäjät, Luovat ry",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "MCN": {
     "file": "mcn.json",
