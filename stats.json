@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "15.3.2026 klo 10.47.33"
+    "last_updated": "15.3.2026 klo 11.41.52"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -16,6 +16,30 @@
     "category": "Politics + Government",
     "description": "Parempaa ulkopoliittista keskustelua.",
     "lang": "fi",
+    "scope": "World"
+  },
+  "CCC Event Blog": {
+    "file": "ccc_event_blog.json",
+    "count": 15,
+    "category": "(Open) Data + Technology",
+    "description": "Recent content on CCC Event Blog",
+    "lang": "de",
+    "scope": "Europe"
+  },
+  "Valtioneuvoston tiedotteet": {
+    "file": "valtioneuvoston_tiedotteet.json",
+    "count": 100,
+    "category": "Politics + Government",
+    "description": "Valtioneuvoston tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "United Nations | The Guardian": {
+    "file": "united_nations___the_guardian.json",
+    "count": 20,
+    "category": "Politics + Government",
+    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
+    "lang": "en",
     "scope": "World"
   },
   "Global Voices Advox": {
@@ -52,7 +76,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 15,
+    "count": 16,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -129,14 +153,6 @@
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
     "scope": "Europe"
-  },
-  "United Nations | The Guardian": {
-    "file": "united_nations___the_guardian.json",
-    "count": 20,
-    "category": "Politics + Government",
-    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
-    "lang": "en",
-    "scope": "World"
   },
   "Yle": {
     "file": "yle.json",
@@ -361,14 +377,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Valtioneuvoston tiedotteet": {
-    "file": "valtioneuvoston_tiedotteet.json",
-    "count": 100,
-    "category": "Politics + Government",
-    "description": "Valtioneuvoston tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
@@ -628,7 +636,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 20,
+    "count": 7,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -940,7 +948,7 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
@@ -1028,7 +1036,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 10,
+    "count": 4,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -1170,14 +1178,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "CCC Event Blog": {
-    "file": "ccc_event_blog.json",
-    "count": 15,
-    "category": "(Open) Data + Technology",
-    "description": "Recent content on CCC Event Blog",
-    "lang": "de",
-    "scope": "Europe"
-  },
   "The Heritage Management Organization": {
     "file": "the_heritage_management_organization.json",
     "count": 10,
@@ -1228,7 +1228,7 @@
   },
   "Avoin tiede": {
     "file": "avoin_tiede.json",
-    "count": 8,
+    "count": 2,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -1538,14 +1538,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Extreme Citizen Science blog": {
-    "file": "extreme_citizen_science_blog.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
-    "lang": "en",
-    "scope": "World"
-  },
   "Rising Voices": {
     "file": "rising_voices.json",
     "count": 10,
@@ -1578,12 +1570,12 @@
     "lang": "en",
     "scope": "Finland"
   },
-  "Open Science | Federation of Finnish Learned Societies": {
-    "file": "open_science___federation_of_finnish_learned_societies.json",
+  "Avate Audiovisuaalisen alan tekijät ry": {
+    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
     "count": 10,
-    "category": "(Open) Science + Research",
+    "category": "Digital Policy + Rights",
     "description": "",
-    "lang": "en",
+    "lang": "fi",
     "scope": "Finland"
   },
   "Mozilla Open Policy & Advocacy": {
@@ -1922,14 +1914,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Tiedepolitiikka": {
-    "file": "tiedepolitiikka.json",
-    "count": 30,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "JSN": {
     "file": "jsn.json",
     "count": 10,
@@ -2161,6 +2145,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
   },
   "Knowledge Rights 21 Archive Feed": {
     "file": "knowledge_rights_21_archive_feed.json",
@@ -2537,14 +2529,6 @@
     "description": "<p>Project Syndicate produces and delivers original commentaries by prominent economists, political leaders, scholars, business leaders, and civic activists to a global audience, including nearly 500 media outlets in more than 150 countries</p>",
     "lang": "en",
     "scope": "World"
-  },
-  "TSV": {
-    "file": "tsv.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Tutkivan journalismin yhdistys –tutkiva.fi": {
     "file": "tutkivan_journalismin_yhdistys__tutkiva_fi.json",
