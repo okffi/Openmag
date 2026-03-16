@@ -1,10 +1,10 @@
 {
   "__meta": {
-    "last_updated": "16.3.2026 klo 17.09.08"
+    "last_updated": "16.3.2026 klo 19.11.37"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
-    "count": 13,
+    "count": 14,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
@@ -20,7 +20,7 @@
   },
   "Yle": {
     "file": "yle.json",
-    "count": 23,
+    "count": 24,
     "category": "Politics + Government",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -28,7 +28,7 @@
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
-    "count": 28,
+    "count": 30,
     "category": "Politics + Government",
     "description": "the Global Magazine of News and Ideas",
     "lang": "en",
@@ -60,7 +60,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 42,
+    "count": 41,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -100,7 +100,7 @@
   },
   "Eduskunnan uusimmat tiedotteet": {
     "file": "eduskunnan_uusimmat_tiedotteet.json",
-    "count": 19,
+    "count": 20,
     "category": "Politics + Government",
     "description": "Eduskunnan tiedotteet - RSS",
     "lang": "fi",
@@ -156,7 +156,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 16,
+    "count": 15,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -188,7 +188,7 @@
   },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
-    "count": 16,
+    "count": 17,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -204,7 +204,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 30,
+    "count": 31,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -268,7 +268,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 14,
+    "count": 15,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -380,7 +380,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 52,
+    "count": 50,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -449,6 +449,46 @@
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
     "scope": "World"
+  },
+  "Center for European Policy Analysis": {
+    "file": "center_for_european_policy_analysis.json",
+    "count": 11,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "European Union": {
+    "file": "european_union.json",
+    "count": 30,
+    "category": "Politics + Government",
+    "description": "European Union | Featured news",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Taide- ja kulttuurivirasto": {
+    "file": "taide__ja_kulttuurivirasto.json",
+    "count": 8,
+    "category": "Culture",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "404 Media": {
+    "file": "404_media.json",
+    "count": 17,
+    "category": "Peace + Crisis Intelligence",
+    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Pedaali": {
+    "file": "pedaali.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Museopedagoginen yhdistys",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
@@ -532,19 +572,11 @@
   },
   "Rajapinta": {
     "file": "rajapinta.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "404 Media": {
-    "file": "404_media.json",
-    "count": 16,
-    "category": "Peace + Crisis Intelligence",
-    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
-    "lang": "en",
-    "scope": "World"
   },
   "bellingcat": {
     "file": "bellingcat.json",
@@ -569,14 +601,6 @@
     "description": "Stories from the Library of Congress",
     "lang": "en",
     "scope": "World"
-  },
-  "Center for European Policy Analysis": {
-    "file": "center_for_european_policy_analysis.json",
-    "count": 11,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "NGI Commons": {
     "file": "ngi_commons.json",
@@ -1066,14 +1090,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "European Union": {
-    "file": "european_union.json",
-    "count": 30,
-    "category": "Politics + Government",
-    "description": "European Union | Featured news",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
     "count": 40,
@@ -1124,7 +1140,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 3,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -1482,22 +1498,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "AlgorithmWatch": {
-    "file": "algorithmwatch.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Creative Commons": {
-    "file": "creative_commons.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Rising Voices": {
     "file": "rising_voices.json",
     "count": 10,
@@ -1521,6 +1521,14 @@
     "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
     "lang": "en",
     "scope": "World"
+  },
+  "AlgorithmWatch": {
+    "file": "algorithmwatch.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Arctic Centre at the University of Lapland": {
     "file": "arctic_centre_at_the_university_of_lapland.json",
@@ -1551,14 +1559,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Mozilla's official blog on open Internet policy initiatives and developments",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Open Knowledge Foundation Blog": {
-    "file": "open_knowledge_foundation_blog.json",
-    "count": 9,
-    "category": "Digital Policy + Rights",
-    "description": "Content for a fair, sustainable and open future",
     "lang": "en",
     "scope": "World"
   },
@@ -1657,6 +1657,14 @@
     "description": "Suomen avoimien tietojärjestelmien keskus - COSS ry",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Creative Commons": {
+    "file": "creative_commons.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "Culture Action Europe News": {
     "file": "culture_action_europe_news.json",
@@ -1946,14 +1954,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Taide- ja kulttuurivirasto": {
-    "file": "taide__ja_kulttuurivirasto.json",
-    "count": 8,
-    "category": "Culture",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "The Harvard Library Innovation Lab": {
     "file": "the_harvard_library_innovation_lab.json",
     "count": 420,
@@ -2137,14 +2137,6 @@
     "description": "Holding power accountable one whistleblower at a time.",
     "lang": "en",
     "scope": "World"
-  },
-  "Tietopoliitiikan yhteistyöryhmä": {
-    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Tekijänoikeuden tiedotus- ja valvontakeskus ry": {
     "file": "tekij_noikeuden_tiedotus__ja_valvontakeskus_ry.json",
@@ -2617,14 +2609,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Pedaali": {
-    "file": "pedaali.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Museopedagoginen yhdistys",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Puistokatu 4": {
     "file": "puistokatu_4.json",
