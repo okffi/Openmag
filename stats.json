@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "16.3.2026 klo 23.49.01"
+    "last_updated": "17.3.2026 klo 0.41.35"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
@@ -268,7 +268,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 15,
+    "count": 16,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -372,7 +372,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "fi",
@@ -388,7 +388,7 @@
   },
   "Avoin tiede": {
     "file": "avoin_tiede.json",
-    "count": 9,
+    "count": 4,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -476,7 +476,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 17,
+    "count": 18,
     "category": "Peace + Crisis Intelligence",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -527,7 +527,7 @@
     "count": 20,
     "category": "(Open) Data + Technology",
     "description": "FAIR",
-    "lang": "fi",
+    "lang": "en",
     "scope": "Finland"
   },
   "Diff": {
@@ -545,6 +545,14 @@
     "description": "",
     "lang": "en",
     "scope": "World"
+  },
+  "Sitra": {
+    "file": "sitra.json",
+    "count": 35,
+    "category": "Peace + Crisis Intelligence",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
@@ -740,7 +748,7 @@
   },
   "Blue Shield International": {
     "file": "blue_shield_international.json",
-    "count": 1,
+    "count": 10,
     "category": "Peace + Crisis Intelligence",
     "description": "Protecting Cultural Heritage",
     "lang": "en",
@@ -788,7 +796,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 20,
+    "count": 4,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -798,14 +806,6 @@
     "file": "presidentti.json",
     "count": 10,
     "category": "Politics + Government",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Sitra": {
-    "file": "sitra.json",
-    "count": 35,
-    "category": "Peace + Crisis Intelligence",
     "description": "",
     "lang": "fi",
     "scope": "Finland"
@@ -1276,7 +1276,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -1538,12 +1538,12 @@
     "lang": "en",
     "scope": "Finland"
   },
-  "Open Science | Federation of Finnish Learned Societies": {
-    "file": "open_science___federation_of_finnish_learned_societies.json",
+  "Avate Audiovisuaalisen alan tekijät ry": {
+    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
     "count": 10,
-    "category": "(Open) Science + Research",
+    "category": "Digital Policy + Rights",
     "description": "",
-    "lang": "en",
+    "lang": "fi",
     "scope": "Finland"
   },
   "Mozilla Open Policy & Advocacy": {
@@ -1898,14 +1898,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Tiedepolitiikka": {
-    "file": "tiedepolitiikka.json",
-    "count": 30,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Journalism Science Alliance": {
     "file": "journalism_science_alliance.json",
     "count": 10,
@@ -1913,6 +1905,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "Julkisen sanan neuvosto",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Kansalaisfoorumi": {
     "file": "kansalaisfoorumi.json",
@@ -2521,14 +2521,6 @@
     "description": "<p>Project Syndicate produces and delivers original commentaries by prominent economists, political leaders, scholars, business leaders, and civic activists to a global audience, including nearly 500 media outlets in more than 150 countries</p>",
     "lang": "en",
     "scope": "World"
-  },
-  "TSV": {
-    "file": "tsv.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Tutkivan journalismin yhdistys –tutkiva.fi": {
     "file": "tutkivan_journalismin_yhdistys__tutkiva_fi.json",
