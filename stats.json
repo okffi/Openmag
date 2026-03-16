@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "16.3.2026 klo 11.06.14"
+    "last_updated": "16.3.2026 klo 13.01.46"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
@@ -60,7 +60,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 35,
+    "count": 39,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -100,7 +100,7 @@
   },
   "Eduskunnan uusimmat tiedotteet": {
     "file": "eduskunnan_uusimmat_tiedotteet.json",
-    "count": 19,
+    "count": 20,
     "category": "Politics + Government",
     "description": "Eduskunnan tiedotteet - RSS",
     "lang": "fi",
@@ -108,7 +108,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 23,
+    "count": 19,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -138,6 +138,94 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "European Commission": {
+    "file": "european_commission.json",
+    "count": 30,
+    "category": "Politics + Government",
+    "description": "European Commission | News",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "The Foreign Policy Centre": {
+    "file": "the_foreign_policy_centre.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "The Foreign Policy Centre (FPC) is an outward-looking, non-partisan international affairs think tank based in the UK.",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Global Voices": {
+    "file": "global_voices.json",
+    "count": 16,
+    "category": "Human Rights + Democracy",
+    "description": "Citizen media stories from around the world",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Oikeusministeriö | Tiedotteet ja uutiset": {
+    "file": "oikeusministeri____tiedotteet_ja_uutiset.json",
+    "count": 20,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "CIVICUS News": {
+    "file": "civicus_news.json",
+    "count": 50,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Tietotekniikka | ePressi": {
+    "file": "tietotekniikka___epressi.json",
+    "count": 5,
+    "category": "(Open) Data + Technology",
+    "description": "Tiedotteiden tehokas julkaisukanava",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "University of Helsinki": {
+    "file": "university_of_helsinki.json",
+    "count": 13,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Open Culture": {
+    "file": "open_culture.json",
+    "count": 15,
+    "category": "Digital Culture + Heritage",
+    "description": "The best free cultural & educational media on the web",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Project Syndicate": {
+    "file": "project_syndicate.json",
+    "count": 29,
+    "category": "Perspectives",
+    "description": "Project Syndicate - The World’s Opinion Page",
+    "lang": "en",
+    "scope": "World"
+  },
+  "ProPublica": {
+    "file": "propublica.json",
+    "count": 20,
+    "category": "Peace + Crisis Intelligence",
+    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Turun yliopisto": {
+    "file": "turun_yliopisto.json",
+    "count": 14,
+    "category": "(Open) Science + Research",
+    "description": "Turun yliopiston etusivun uutisten lyhennelmät",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "EUvsDisinfo": {
     "file": "euvsdisinfo.json",
     "count": 10,
@@ -153,14 +241,6 @@
     "description": "Recent content on CCC Event Blog",
     "lang": "de",
     "scope": "Europe"
-  },
-  "Global Voices": {
-    "file": "global_voices.json",
-    "count": 16,
-    "category": "Human Rights + Democracy",
-    "description": "Citizen media stories from around the world",
-    "lang": "en",
-    "scope": "World"
   },
   "OATP primary": {
     "file": "oatp_primary.json",
@@ -196,7 +276,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 10,
+    "count": 13,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -290,14 +370,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "ProPublica": {
-    "file": "propublica.json",
-    "count": 20,
-    "category": "Peace + Crisis Intelligence",
-    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Avoin hallinto": {
     "file": "avoin_hallinto.json",
     "count": 10,
@@ -329,14 +401,6 @@
     "description": "Committee on Data of the ISC",
     "lang": "en",
     "scope": "World"
-  },
-  "European Commission": {
-    "file": "european_commission.json",
-    "count": 30,
-    "category": "Politics + Government",
-    "description": "European Commission | News",
-    "lang": "en",
-    "scope": "Europe"
   },
   "NGI Commons": {
     "file": "ngi_commons.json",
@@ -434,14 +498,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Oikeusministeriö | Tiedotteet ja uutiset": {
-    "file": "oikeusministeri____tiedotteet_ja_uutiset.json",
-    "count": 20,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Opetusministeriö | Ajankohtaista": {
     "file": "opetusministeri____ajankohtaista.json",
     "count": 20,
@@ -524,33 +580,17 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 20,
+    "count": 18,
     "category": "(Open) Science + Research",
-    "description": "Tiedotteiden tehokas julkaisukanava",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Tietotekniikka | ePressi": {
-    "file": "tietotekniikka___epressi.json",
-    "count": 17,
-    "category": "(Open) Data + Technology",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
     "scope": "Finland"
   },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
-    "count": 10,
+    "count": 12,
     "category": "Politics + Government",
     "description": "syöte",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "University of Helsinki": {
-    "file": "university_of_helsinki.json",
-    "count": 12,
-    "category": "(Open) Science + Research",
-    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -562,17 +602,9 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Culture": {
-    "file": "open_culture.json",
-    "count": 15,
-    "category": "Digital Culture + Heritage",
-    "description": "The best free cultural & educational media on the web",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 20,
+    "count": 6,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -593,14 +625,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Project Syndicate": {
-    "file": "project_syndicate.json",
-    "count": 29,
-    "category": "Perspectives",
-    "description": "Project Syndicate - The World’s Opinion Page",
-    "lang": "en",
-    "scope": "World"
   },
   "Sitra": {
     "file": "sitra.json",
@@ -631,14 +655,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Turun yliopisto": {
-    "file": "turun_yliopisto.json",
-    "count": 14,
-    "category": "(Open) Science + Research",
-    "description": "Turun yliopiston etusivun uutisten lyhennelmät",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -713,14 +729,6 @@
     "description": "EU Strategy For The Baltic Sea Region",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
-  },
-  "The Foreign Policy Centre": {
-    "file": "the_foreign_policy_centre.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "The Foreign Policy Centre (FPC) is an outward-looking, non-partisan international affairs think tank based in the UK.",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Frame Contemporary Art Finland": {
     "file": "frame_contemporary_art_finland.json",
@@ -823,14 +831,6 @@
     "count": 10,
     "category": "Culture",
     "description": "All the World Heritage News",
-    "lang": "en",
-    "scope": "World"
-  },
-  "CIVICUS News": {
-    "file": "civicus_news.json",
-    "count": 50,
-    "category": "Human Rights + Democracy",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -1164,7 +1164,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -1340,7 +1340,7 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 10,
+    "count": 1,
     "category": "Peace + Crisis Intelligence",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
@@ -1482,14 +1482,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Think Open": {
-    "file": "think_open.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Digitaalisista tutkimuspalveluista ja avoimesta tieteestä / About digital research services and open science",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Rising Voices": {
     "file": "rising_voices.json",
     "count": 10,
@@ -1522,14 +1514,6 @@
     "lang": "en",
     "scope": "Finland"
   },
-  "Avate Audiovisuaalisen alan tekijät ry": {
-    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Open Science | Federation of Finnish Learned Societies": {
     "file": "open_science___federation_of_finnish_learned_societies.json",
     "count": 10,
@@ -1546,13 +1530,21 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Knowledge Foundation Blog": {
-    "file": "open_knowledge_foundation_blog.json",
-    "count": 9,
-    "category": "Digital Policy + Rights",
-    "description": "Content for a fair, sustainable and open future",
+  "Zooniverse": {
+    "file": "zooniverse.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
     "scope": "World"
+  },
+  "Think Open": {
+    "file": "think_open.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Digitaalisista tutkimuspalveluista ja avoimesta tieteestä / About digital research services and open science",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Open Access and Digital Scholarship Blog": {
     "file": "open_access_and_digital_scholarship_blog.json",
@@ -1905,6 +1897,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "Julkisen sanan neuvosto",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "K-blogg - Riksantikvarieämbetets blogg": {
     "file": "k_blogg___riksantikvarie_mbetets_blogg.json",
@@ -2273,14 +2273,6 @@
     "description": "DigitalScholarship Leiden",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Epressi - Ulkomaat": {
-    "file": "epressi___ulkomaat.json",
-    "count": 20,
-    "category": "Politics + Government",
-    "description": "Tiedotteiden tehokas julkaisukanava",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Euronews | The Europe Conversation": {
     "file": "euronews___the_europe_conversation.json",
