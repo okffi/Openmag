@@ -158,5 +158,21 @@
     "scope": "World",
     "isDarkLogo": false,
     "originalRssUrl": "http://blog.wikimedia.org/feed/"
+  },
+  {
+    "title": "Building the Dagbanli Dictionary’s Audio Pipeline: OGG, iOS, and Transcoding",
+    "link": "https://diff.wikimedia.org/2026/03/17/building-the-dagbanli-dictionarys-audio-pipeline-ogg-ios-and-transcoding/",
+    "pubDate": "2026-03-17T07:00:00.000Z",
+    "content": "<html><head></head><body><p><em>A dictionary without pronunciation is incomplete, especially for a tonal language like Dagbanli. Here’s how we built a pipeline from Wikimedia Commons recordings to in-browser playback, including a workaround for iOS Safari.</em></p>\n\n\n\n<h2 class=\"wp-block-heading\">Introduction</h2>\n\n\n\n<p>Dagbanli is a tonal language where pronunciation carries meaning. The word <em>wahu</em> with high tones means “horse”, but with low tones means “snake”. A text-only dictionary that simply prints the spelling misses this crucial dimension. Listeners cannot know which word is intended unless they hear it.</p>\n\n\n\n<p>In our <a href=\"https://diff.wikimedia.org/2026/03/13/structuring-dagbanli-on-wikidata-lexemes-senses-and-the-digraph-challenge/\">previous post</a>, we covered how we structured Dagba</p></body></html>",
+    "creator": "Mohammed Awal Alhassan",
+    "sourceTitle": "Diff",
+    "sheetCategory": "Digital Culture + Heritage",
+    "enforcedImage": "https://diff.wikimedia.org/wp-content/uploads/2026/03/Kukoli-depiction-of-Dagbanli-Dcitionary.png?w=1024&resize=1024%2C683",
+    "sourceDescription": "News from the Wikimedia movement",
+    "sourceLogo": "https://diff.wikimedia.org/wp-content/uploads/2020/07/cropped-1024px-Wikimedia-logo.svg_.png?fit=32%2C32",
+    "lang": "en",
+    "scope": "World",
+    "isDarkLogo": false,
+    "originalRssUrl": "http://blog.wikimedia.org/feed/"
   }
 ]
