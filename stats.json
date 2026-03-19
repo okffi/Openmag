@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "19.3.2026 klo 18.01.52"
+    "last_updated": "19.3.2026 klo 19.55.48"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
@@ -12,7 +12,7 @@
   },
   "Yle": {
     "file": "yle.json",
-    "count": 21,
+    "count": 22,
     "category": "Politics + Government",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -44,7 +44,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 39,
+    "count": 41,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -84,7 +84,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 23,
+    "count": 24,
     "category": "Culture",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -148,7 +148,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 63,
+    "count": 64,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -228,7 +228,7 @@
   },
   "PreventionWeb": {
     "file": "preventionweb.json",
-    "count": 44,
+    "count": 46,
     "category": "Sustainability + Foresight",
     "description": "",
     "lang": "en",
@@ -324,7 +324,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 20,
+    "count": 21,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -492,7 +492,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 16,
+    "count": 17,
     "category": "Investigations + Conflict",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -634,6 +634,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "The Public Domain Review": {
+    "file": "the_public_domain_review.json",
+    "count": 100,
+    "category": "Digital Culture + Heritage",
+    "description": "The Public Domain Review",
+    "lang": "en",
+    "scope": "World"
+  },
   "xkcd": {
     "file": "xkcd.json",
     "count": 4,
@@ -732,7 +740,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 10,
+    "count": 14,
     "category": "Digital Culture + Heritage",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -756,7 +764,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 3,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -1508,7 +1516,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 10,
+    "count": 4,
     "category": "Investigations + Conflict",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -1594,6 +1602,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Zooniverse": {
+    "file": "zooniverse.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
+    "lang": "en",
+    "scope": "World"
+  },
   "SPARC": {
     "file": "sparc.json",
     "count": 10,
@@ -1607,14 +1623,6 @@
     "count": 15,
     "category": "(Open) Science + Research",
     "description": "Open Access and Digital Scholarship at Imperial College London",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Confederation of Open Access Repositories": {
-    "file": "confederation_of_open_access_repositories.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Building a sustainable, global knowledge commons",
     "lang": "en",
     "scope": "World"
   },
@@ -1753,14 +1761,6 @@
     "description": "Unity in Diversity",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Follow the News published by UNESCO on Intangible Cultural Heritage": {
-    "file": "follow_the_news_published_by_unesco_on_intangible_cultural_heritage.json",
-    "count": 615,
-    "category": "Culture",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "ICOMOS Suomen osasto r.y": {
     "file": "icomos_suomen_osasto_r_y.json",
@@ -1929,14 +1929,6 @@
     "description": "'Every age has its orthodoxy and no orthodoxy is ever right.'",
     "lang": "en",
     "scope": "Europe"
-  },
-  "The Public Domain Review": {
-    "file": "the_public_domain_review.json",
-    "count": 100,
-    "category": "Digital Culture + Heritage",
-    "description": "The Public Domain Review",
-    "lang": "en",
-    "scope": "World"
   },
   "Suomen Sukututkimusseura": {
     "file": "suomen_sukututkimusseura.json",
@@ -2511,14 +2503,6 @@
     "count": 10,
     "category": "Politics + Government",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
