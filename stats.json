@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "19.3.2026 klo 11.54.46"
+    "last_updated": "19.3.2026 klo 12.51.48"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
@@ -12,7 +12,7 @@
   },
   "Yle": {
     "file": "yle.json",
-    "count": 20,
+    "count": 21,
     "category": "Politics + Government",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -234,6 +234,78 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "CSC": {
+    "file": "csc.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "ICT Solutions for Brilliant Minds",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "The Scholarly Kitchen": {
+    "file": "the_scholarly_kitchen.json",
+    "count": 15,
+    "category": "(Open) Science + Research",
+    "description": "What’s Hot and Cooking In Scholarly Publishing",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Kotimaisten kielten keskus KOTUS": {
+    "file": "kotimaisten_kielten_keskus_kotus.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Kotimaisten kielten keskus",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Amos Rex": {
+    "file": "amos_rex.json",
+    "count": 25,
+    "category": "Culture",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "CREATe": {
+    "file": "create.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Centre for Regulation of the Creative Economy",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Hrana": {
+    "file": "hrana.json",
+    "count": 11,
+    "category": "Human Rights + Democracy",
+    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Kuvasto": {
+    "file": "kuvasto.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "Arvoa taiteelle",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "ProPublica": {
+    "file": "propublica.json",
+    "count": 20,
+    "category": "Investigations + Conflict",
+    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "bellingcat": {
+    "file": "bellingcat.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "the home of online investigations",
+    "lang": "en",
+    "scope": "World"
+  },
   "xkcd": {
     "file": "xkcd.json",
     "count": 4,
@@ -266,14 +338,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "The Scholarly Kitchen": {
-    "file": "the_scholarly_kitchen.json",
-    "count": 15,
-    "category": "(Open) Science + Research",
-    "description": "What’s Hot and Cooking In Scholarly Publishing",
-    "lang": "en",
-    "scope": "World"
-  },
   "OATP primary": {
     "file": "oatp_primary.json",
     "count": 49,
@@ -295,14 +359,6 @@
     "count": 20,
     "category": "Culture",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Kotimaisten kielten keskus KOTUS": {
-    "file": "kotimaisten_kielten_keskus_kotus.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Kotimaisten kielten keskus",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -404,7 +460,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Culture + Heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -431,14 +487,6 @@
     "count": 20,
     "category": "Digital Policy + Rights",
     "description": "Protecting digital rights in Europe.",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "CREATe": {
-    "file": "create.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
     "scope": "Europe"
   },
@@ -474,22 +522,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Hrana": {
-    "file": "hrana.json",
-    "count": 11,
-    "category": "Human Rights + Democracy",
-    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Kuvasto": {
-    "file": "kuvasto.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "Arvoa taiteelle",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "CMI": {
     "file": "cmi.json",
     "count": 10,
@@ -497,14 +529,6 @@
     "description": "Peace broker",
     "lang": "en",
     "scope": "Finland"
-  },
-  "ProPublica": {
-    "file": "propublica.json",
-    "count": 20,
-    "category": "Investigations + Conflict",
-    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
-    "lang": "en",
-    "scope": "World"
   },
   "European Civil Protection and Humanitarian Aid Operations": {
     "file": "european_civil_protection_and_humanitarian_aid_operations.json",
@@ -572,7 +596,7 @@
   },
   "resilience": {
     "file": "resilience.json",
-    "count": 11,
+    "count": 13,
     "category": "Perspectives",
     "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
@@ -580,7 +604,7 @@
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
-    "count": 25,
+    "count": 28,
     "category": "Politics + Government",
     "description": "the Global Magazine of News and Ideas",
     "lang": "en",
@@ -644,7 +668,7 @@
   },
   "Eduskunnan uusimmat tiedotteet": {
     "file": "eduskunnan_uusimmat_tiedotteet.json",
-    "count": 19,
+    "count": 21,
     "category": "Politics + Government",
     "description": "Eduskunnan tiedotteet - RSS",
     "lang": "fi",
@@ -703,14 +727,6 @@
     "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "CSC": {
-    "file": "csc.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "ICT Solutions for Brilliant Minds",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -868,7 +884,7 @@
   },
   "Internet Governance Forum (IGF)": {
     "file": "internet_governance_forum__igf_.json",
-    "count": 12,
+    "count": 20,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -905,14 +921,6 @@
     "description": "Sanasto on kirjallisuuden tekijänoikeusjärjestö.",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "bellingcat": {
-    "file": "bellingcat.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "the home of online investigations",
-    "lang": "en",
-    "scope": "World"
   },
   "EUvsDisinfo": {
     "file": "euvsdisinfo.json",
@@ -1044,7 +1052,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -1284,7 +1292,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 20,
+    "count": 3,
     "category": "Investigations + Conflict",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -1364,7 +1372,7 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
@@ -1906,14 +1914,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Amos Rex": {
-    "file": "amos_rex.json",
-    "count": 25,
-    "category": "Culture",
-    "description": "Uusimmat tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Alfred Kordelinin säätiö": {
     "file": "alfred_kordelinin_s__ti_.json",
     "count": 10,
@@ -1991,6 +1991,14 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Step into Tomorrow",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
     "scope": "World"
   },
@@ -2217,6 +2225,14 @@
     "description": "Open Future Foundation",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Tietopoliitiikan yhteistyöryhmä": {
+    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Knowledge Rights 21 Archive Feed": {
     "file": "knowledge_rights_21_archive_feed.json",
@@ -2588,7 +2604,7 @@
   },
   "Copernicus Institute": {
     "file": "copernicus_institute.json",
-    "count": 19,
+    "count": 20,
     "category": "Sustainability + Foresight",
     "description": "",
     "lang": "en",
