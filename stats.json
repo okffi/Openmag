@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "19.3.2026 klo 10.53.41"
+    "last_updated": "19.3.2026 klo 11.54.46"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
@@ -36,7 +36,7 @@
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
-    "count": 37,
+    "count": 38,
     "category": "Perspectives",
     "description": "",
     "lang": "fi",
@@ -44,7 +44,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 34,
+    "count": 35,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -52,7 +52,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 21,
+    "count": 20,
     "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -84,7 +84,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 19,
+    "count": 21,
     "category": "Culture",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -148,7 +148,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 55,
+    "count": 57,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -161,6 +161,78 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "University of Helsinki": {
+    "file": "university_of_helsinki.json",
+    "count": 11,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Finnish Cultural Institute for the Benelux": {
+    "file": "finnish_cultural_institute_for_the_benelux.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Finnish Cultural Institute for the Benelux",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Suomen Benelux-instituutti": {
+    "file": "suomen_benelux_instituutti.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Finnish Cultural Institute for the Benelux",
+    "lang": "fi",
+    "scope": "Europe"
+  },
+  "Hanasaari": {
+    "file": "hanasaari.json",
+    "count": 25,
+    "category": "Culture",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Museovirasto - uusimmat tiedotteet": {
+    "file": "museovirasto___uusimmat_tiedotteet.json",
+    "count": 25,
+    "category": "Culture",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Open Culture": {
+    "file": "open_culture.json",
+    "count": 15,
+    "category": "Digital Culture + Heritage",
+    "description": "The best free cultural & educational media on the web",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Dittmar & Indrenius Attorneys Ltd.": {
+    "file": "dittmar___indrenius_attorneys_ltd_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "United Nations | The Guardian": {
+    "file": "united_nations___the_guardian.json",
+    "count": 20,
+    "category": "Politics + Government",
+    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
+    "lang": "en",
+    "scope": "World"
+  },
+  "PreventionWeb": {
+    "file": "preventionweb.json",
+    "count": 41,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "xkcd": {
     "file": "xkcd.json",
@@ -210,36 +282,12 @@
     "lang": "en",
     "scope": "World"
   },
-  "University of Helsinki": {
-    "file": "university_of_helsinki.json",
-    "count": 11,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "HIIG": {
     "file": "hiig.json",
     "count": 20,
     "category": "(Open) Science + Research",
     "description": "Alexander von Humboldt Institute for Internet and Society",
     "lang": "en",
-    "scope": "Europe"
-  },
-  "Finnish Cultural Institute for the Benelux": {
-    "file": "finnish_cultural_institute_for_the_benelux.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Finnish Cultural Institute for the Benelux",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Suomen Benelux-instituutti": {
-    "file": "suomen_benelux_instituutti.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Finnish Cultural Institute for the Benelux",
-    "lang": "fi",
     "scope": "Europe"
   },
   "Kansallisarkiston tiedotteet": {
@@ -346,14 +394,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Open Culture": {
-    "file": "open_culture.json",
-    "count": 15,
-    "category": "Digital Culture + Heritage",
-    "description": "The best free cultural & educational media on the web",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Heritage Hub Kraków": {
     "file": "heritage_hub_krak_w.json",
     "count": 10,
@@ -436,7 +476,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 10,
+    "count": 11,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -658,14 +698,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "PreventionWeb": {
-    "file": "preventionweb.json",
-    "count": 41,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
     "count": 10,
@@ -836,19 +868,11 @@
   },
   "Internet Governance Forum (IGF)": {
     "file": "internet_governance_forum__igf_.json",
-    "count": 20,
+    "count": 12,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Dittmar & Indrenius Attorneys Ltd.": {
-    "file": "dittmar___indrenius_attorneys_ltd_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Electronic Frontier Foundation": {
     "file": "electronic_frontier_foundation.json",
@@ -1010,6 +1034,22 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Culture and Creativity": {
+    "file": "culture_and_creativity.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 2,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "NGI Commons": {
     "file": "ngi_commons.json",
     "count": 10,
@@ -1106,14 +1146,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Museovirasto - uusimmat tiedotteet": {
-    "file": "museovirasto___uusimmat_tiedotteet.json",
-    "count": 25,
-    "category": "Culture",
-    "description": "Uusimmat tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "CIVICUS News": {
     "file": "civicus_news.json",
     "count": 50,
@@ -1178,14 +1210,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "United Nations | The Guardian": {
-    "file": "united_nations___the_guardian.json",
-    "count": 20,
-    "category": "Politics + Government",
-    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
-    "lang": "en",
-    "scope": "World"
-  },
   "Rajapinta": {
     "file": "rajapinta.json",
     "count": 1,
@@ -1217,14 +1241,6 @@
     "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Culture and Creativity": {
-    "file": "culture_and_creativity.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Museolehti": {
     "file": "museolehti.json",
@@ -1324,7 +1340,7 @@
   },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
@@ -1546,30 +1562,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Open Search Foundation": {
-    "file": "open_search_foundation.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "Together, for a better net.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "OpenWebSearch.eu": {
-    "file": "openwebsearch_eu.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "Promoting Europe‘s Independence in Web Search",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Lastuja Suomen historiasta": {
-    "file": "lastuja_suomen_historiasta.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Turun yliopiston Suomen historian oppiaineen blogi",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "CHAOSS": {
     "file": "chaoss.json",
     "count": 10,
@@ -1610,6 +1602,22 @@
     "lang": "en",
     "scope": "World"
   },
+  "Open Search Foundation": {
+    "file": "open_search_foundation.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "Together, for a better net.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "OpenWebSearch.eu": {
+    "file": "openwebsearch_eu.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "Promoting Europe‘s Independence in Web Search",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Zooniverse": {
     "file": "zooniverse.json",
     "count": 10,
@@ -1631,6 +1639,14 @@
     "count": 15,
     "category": "(Open) Science + Research",
     "description": "Open Access and Digital Scholarship at Imperial College London",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Confederation of Open Access Repositories": {
+    "file": "confederation_of_open_access_repositories.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Building a sustainable, global knowledge commons",
     "lang": "en",
     "scope": "World"
   },
@@ -1890,14 +1906,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Hanasaari": {
-    "file": "hanasaari.json",
-    "count": 25,
-    "category": "Culture",
-    "description": "Uusimmat tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Amos Rex": {
     "file": "amos_rex.json",
     "count": 25,
@@ -1911,6 +1919,14 @@
     "count": 10,
     "category": "Culture",
     "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Lastuja Suomen historiasta": {
+    "file": "lastuja_suomen_historiasta.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Turun yliopiston Suomen historian oppiaineen blogi",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2001,14 +2017,6 @@
     "description": "Articles and events from the Digital Humanities community at Stanford University",
     "lang": "en",
     "scope": "World"
-  },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "MCN": {
     "file": "mcn.json",
@@ -2209,14 +2217,6 @@
     "description": "Open Future Foundation",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Tietopoliitiikan yhteistyöryhmä": {
-    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Knowledge Rights 21 Archive Feed": {
     "file": "knowledge_rights_21_archive_feed.json",
@@ -2530,14 +2530,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "Julkisen sanan neuvosto",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Oikeusblogi": {
     "file": "oikeusblogi.json",
     "count": 20,
@@ -2596,7 +2588,7 @@
   },
   "Copernicus Institute": {
     "file": "copernicus_institute.json",
-    "count": 20,
+    "count": 19,
     "category": "Sustainability + Foresight",
     "description": "",
     "lang": "en",
