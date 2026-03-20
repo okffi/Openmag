@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "20.3.2026 klo 11.52.33"
+    "last_updated": "20.3.2026 klo 12.48.38"
   },
   "Open Culture": {
     "file": "open_culture.json",
@@ -28,7 +28,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 21,
+    "count": 22,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -44,7 +44,7 @@
   },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
-    "count": 49,
+    "count": 54,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -172,7 +172,7 @@
   },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
-    "count": 13,
+    "count": 14,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -228,18 +228,18 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 33,
+    "count": 34,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
     "scope": "Europe"
   },
-  "CSC": {
-    "file": "csc.json",
-    "count": 10,
+  "Forum Virium Helsinki": {
+    "file": "forum_virium_helsinki.json",
+    "count": 40,
     "category": "(Open) Data + Technology",
-    "description": "ICT Solutions for Brilliant Minds",
-    "lang": "fi",
+    "description": "",
+    "lang": "en",
     "scope": "Finland"
   },
   "The Scholarly Kitchen": {
@@ -249,6 +249,78 @@
     "description": "What’s Hot and Cooking In Scholarly Publishing",
     "lang": "en",
     "scope": "World"
+  },
+  "Kirjastokaista": {
+    "file": "kirjastokaista.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "LIBRARY CHANNEL — Library WebTV",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Center for Internet and Society": {
+    "file": "center_for_internet_and_society.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "The CIS is a CNRS research center",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "openDemocracy": {
+    "file": "opendemocracy.json",
+    "count": 20,
+    "category": "Investigations + Conflict",
+    "description": "openDemocracy RSS",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
+  },
+  "ProPublica": {
+    "file": "propublica.json",
+    "count": 20,
+    "category": "Investigations + Conflict",
+    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Project Syndicate": {
+    "file": "project_syndicate.json",
+    "count": 22,
+    "category": "Perspectives",
+    "description": "Project Syndicate - The World’s Opinion Page",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Oikeusministeriö | Tiedotteet ja uutiset": {
+    "file": "oikeusministeri____tiedotteet_ja_uutiset.json",
+    "count": 20,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Presidentti": {
+    "file": "presidentti.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "CSC": {
+    "file": "csc.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "ICT Solutions for Brilliant Minds",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Sveriges Museer": {
     "file": "sveriges_museer.json",
@@ -562,14 +634,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "ProPublica": {
-    "file": "propublica.json",
-    "count": 20,
-    "category": "Investigations + Conflict",
-    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
-    "lang": "en",
-    "scope": "World"
-  },
   "bellingcat": {
     "file": "bellingcat.json",
     "count": 10,
@@ -634,14 +698,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Project Syndicate": {
-    "file": "project_syndicate.json",
-    "count": 22,
-    "category": "Perspectives",
-    "description": "Project Syndicate - The World’s Opinion Page",
-    "lang": "en",
-    "scope": "World"
-  },
   "resilience": {
     "file": "resilience.json",
     "count": 11,
@@ -674,14 +730,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Oikeusministeriö | Tiedotteet ja uutiset": {
-    "file": "oikeusministeri____tiedotteet_ja_uutiset.json",
-    "count": 20,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Opetusministeriö | Ajankohtaista": {
     "file": "opetusministeri____ajankohtaista.json",
     "count": 20,
@@ -703,14 +751,6 @@
     "count": 19,
     "category": "Politics + Government",
     "description": "Eduskunnan tiedotteet - RSS",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Presidentti": {
-    "file": "presidentti.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -764,7 +804,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -908,7 +948,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 2,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1004,19 +1044,11 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Culture + Heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Forum Virium Helsinki": {
-    "file": "forum_virium_helsinki.json",
-    "count": 40,
-    "category": "(Open) Data + Technology",
-    "description": "",
-    "lang": "en",
-    "scope": "Finland"
   },
   "Think Open": {
     "file": "think_open.json",
@@ -1108,7 +1140,7 @@
   },
   "Open Knowledge Foundation Blog": {
     "file": "open_knowledge_foundation_blog.json",
-    "count": 9,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "Content for a fair, sustainable and open future",
     "lang": "en",
@@ -1290,14 +1322,6 @@
     "lang": "sv",
     "scope": "Nordic + Baltic countries"
   },
-  "Kirjastokaista": {
-    "file": "kirjastokaista.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "LIBRARY CHANNEL — Library WebTV",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "European Cultural Foundation": {
     "file": "european_cultural_foundation.json",
     "count": 10,
@@ -1402,14 +1426,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Rajapinta": {
-    "file": "rajapinta.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "researcher community focused on digital social sciences",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Aalto-yliopisto": {
     "file": "aalto_yliopisto.json",
     "count": 25,
@@ -1449,14 +1465,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "openDemocracy": {
-    "file": "opendemocracy.json",
-    "count": 20,
-    "category": "Investigations + Conflict",
-    "description": "openDemocracy RSS",
-    "lang": "en",
-    "scope": "Nordic + Baltic countries"
   },
   "Forbidden Stories": {
     "file": "forbidden_stories.json",
@@ -1570,14 +1578,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Open Source Initiative": {
-    "file": "open_source_initiative.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
-    "lang": "en",
-    "scope": "World"
-  },
   "CHAOSS": {
     "file": "chaoss.json",
     "count": 10,
@@ -1623,6 +1623,14 @@
     "count": 10,
     "category": "(Open) Data + Technology",
     "description": "Together, for a better net.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Open Source Initiative": {
+    "file": "open_source_initiative.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
     "scope": "World"
   },
@@ -1978,14 +1986,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Extreme Citizen Science blog": {
-    "file": "extreme_citizen_science_blog.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
-    "lang": "en",
-    "scope": "World"
-  },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
     "count": 10,
@@ -2137,14 +2137,6 @@
     "description": "Mozilla's official blog on open Internet policy initiatives and developments",
     "lang": "en",
     "scope": "World"
-  },
-  "Center for Internet and Society": {
-    "file": "center_for_internet_and_society.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "The CIS is a CNRS research center",
-    "lang": "en",
-    "scope": "Europe"
   },
   "DataEthics": {
     "file": "dataethics.json",
@@ -2503,14 +2495,6 @@
     "count": 10,
     "category": "Politics + Government",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
