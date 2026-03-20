@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "20.3.2026 klo 23.37.35"
+    "last_updated": "21.3.2026 klo 0.36.34"
   },
   "Open Culture": {
     "file": "open_culture.json",
@@ -52,7 +52,7 @@
   },
   "Foreign Policy": {
     "file": "foreign_policy.json",
-    "count": 29,
+    "count": 30,
     "category": "Politics + Government",
     "description": "the Global Magazine of News and Ideas",
     "lang": "en",
@@ -60,7 +60,7 @@
   },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
-    "count": 16,
+    "count": 15,
     "category": "(Open) Science + Research",
     "description": "Turun yliopiston etusivun uutisten lyhennelmät",
     "lang": "fi",
@@ -212,7 +212,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 14,
+    "count": 15,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -596,7 +596,7 @@
   },
   "Electronic Frontier Foundation": {
     "file": "electronic_frontier_foundation.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -655,6 +655,14 @@
     "count": 4,
     "category": "(Open) Data + Technology",
     "description": "xkcd.com: A webcomic of romance and math humor.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "OCCRP": {
+    "file": "occrp.json",
+    "count": 56,
+    "category": "Investigations + Conflict",
+    "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
     "scope": "World"
   },
@@ -946,14 +954,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "OCCRP": {
-    "file": "occrp.json",
-    "count": 56,
-    "category": "Investigations + Conflict",
-    "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
-    "lang": "en",
-    "scope": "World"
-  },
   "OCHA - United Nations Office for the Coordination of Humanitarian Affairs<": {
     "file": "ocha___united_nations_office_for_the_coordination_of_humanitarian_affairs_.json",
     "count": 10,
@@ -1028,7 +1028,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1228,7 +1228,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -1594,6 +1594,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Open Source Initiative": {
+    "file": "open_source_initiative.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
+    "lang": "en",
+    "scope": "World"
+  },
   "OpenWebSearch.eu": {
     "file": "openwebsearch_eu.json",
     "count": 10,
@@ -1914,6 +1922,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "This Month in GLAM": {
+    "file": "this_month_in_glam.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
+    "lang": "en",
+    "scope": "World"
+  },
   "The Harvard Library Innovation Lab": {
     "file": "the_harvard_library_innovation_lab.json",
     "count": 420,
@@ -2146,6 +2162,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Tietopoliitiikan yhteistyöryhmä": {
+    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Knowledge Rights 21 Archive Feed": {
     "file": "knowledge_rights_21_archive_feed.json",
     "count": 10,
@@ -2276,14 +2300,6 @@
   },
   "Tekijänoikeuden tiedotus- ja valvontakeskus ry": {
     "file": "tekij_noikeuden_tiedotus__ja_valvontakeskus_ry.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Avate Audiovisuaalisen alan tekijät ry": {
-    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
     "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
