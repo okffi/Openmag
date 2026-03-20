@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "20.3.2026 klo 19.40.28"
+    "last_updated": "20.3.2026 klo 21.00.10"
   },
   "Open Culture": {
     "file": "open_culture.json",
@@ -28,7 +28,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 22,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -276,7 +276,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 21,
+    "count": 8,
     "category": "Investigations + Conflict",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -292,7 +292,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 24,
+    "count": 25,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -618,6 +618,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "Julkisen sanan neuvosto",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "CSC": {
     "file": "csc.json",
     "count": 10,
@@ -940,7 +948,7 @@
   },
   "resilience": {
     "file": "resilience.json",
-    "count": 11,
+    "count": 12,
     "category": "Perspectives",
     "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
@@ -996,7 +1004,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1554,14 +1562,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "The Signal: Digital Preservation": {
-    "file": "the_signal__digital_preservation.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Happenings at the Library of Congress",
-    "lang": "en",
-    "scope": "World"
-  },
   "CHAOSS": {
     "file": "chaoss.json",
     "count": 10,
@@ -1610,14 +1610,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Source Initiative": {
-    "file": "open_source_initiative.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
-    "lang": "en",
-    "scope": "World"
-  },
   "OpenWebSearch.eu": {
     "file": "openwebsearch_eu.json",
     "count": 10,
@@ -1647,6 +1639,14 @@
     "count": 15,
     "category": "(Open) Science + Research",
     "description": "Open Access and Digital Scholarship at Imperial College London",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Confederation of Open Access Repositories": {
+    "file": "confederation_of_open_access_repositories.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Building a sustainable, global knowledge commons",
     "lang": "en",
     "scope": "World"
   },
@@ -1778,14 +1778,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "UNESCO | Intangible Cultural Heritage": {
-    "file": "unesco___intangible_cultural_heritage.json",
-    "count": 615,
-    "category": "Culture",
-    "description": "UNESCO is publishing once a week news on its activities regarding the safeguarding of intangible cultural heritage",
-    "lang": "en",
-    "scope": "World"
-  },
   "ICOMOS Suomen osasto r.y": {
     "file": "icomos_suomen_osasto_r_y.json",
     "count": 10,
@@ -1897,6 +1889,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "The Signal: Digital Preservation": {
+    "file": "the_signal__digital_preservation.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Digital Happenings at the Library of Congress",
+    "lang": "en",
+    "scope": "World"
   },
   "CUNY Digital Humanities Initiative": {
     "file": "cuny_digital_humanities_initiative.json",
@@ -2114,6 +2114,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Copyright Literacy": {
+    "file": "copyright_literacy.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Decoding copyright and bringing you enlightenment",
+    "lang": "en",
+    "scope": "World"
+  },
   "DataEthics": {
     "file": "dataethics.json",
     "count": 5,
@@ -2306,14 +2314,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Online Journalism Blog": {
-    "file": "online_journalism_blog.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Investigations – ACDC": {
     "file": "investigations___acdc.json",
     "count": 10,
@@ -2487,14 +2487,6 @@
     "count": 10,
     "category": "Politics + Government",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
