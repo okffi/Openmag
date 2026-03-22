@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "22.3.2026 klo 16.35.40"
+    "last_updated": "22.3.2026 klo 17.33.41"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -44,7 +44,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 51,
+    "count": 52,
     "category": "Politics + Government",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -66,14 +66,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Technology | Guardian": {
-    "file": "technology___guardian.json",
-    "count": 33,
-    "category": "(Open) Data + Technology",
-    "description": "Technology news, comment and analysis | guardian.co.uk",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "OATP primary": {
     "file": "oatp_primary.json",
     "count": 48,
@@ -81,6 +73,22 @@
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
     "scope": "World"
+  },
+  "resilience": {
+    "file": "resilience.json",
+    "count": 12,
+    "category": "Perspectives",
+    "description": "Insight and inspiration in turbulent times.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Technology | Guardian": {
+    "file": "technology___guardian.json",
+    "count": 33,
+    "category": "(Open) Data + Technology",
+    "description": "Technology news, comment and analysis | guardian.co.uk",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Soome Instituut Eestis": {
     "file": "soome_instituut_eestis.json",
@@ -388,7 +396,7 @@
   },
   "Rajapinta": {
     "file": "rajapinta.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
@@ -538,14 +546,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "resilience": {
-    "file": "resilience.json",
-    "count": 12,
-    "category": "Perspectives",
-    "description": "Insight and inspiration in turbulent times.",
-    "lang": "en",
-    "scope": "World"
-  },
   "European Commission": {
     "file": "european_commission.json",
     "count": 29,
@@ -596,7 +596,7 @@
   },
   "JSN": {
     "file": "jsn.json",
-    "count": 1,
+    "count": 10,
     "category": "Politics + Government",
     "description": "Julkisen sanan neuvosto",
     "lang": "fi",
@@ -684,7 +684,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 20,
+    "count": 7,
     "category": "Investigations + Conflict",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -1578,14 +1578,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "UN Maps": {
-    "file": "un_maps.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "CHAOSS": {
     "file": "chaoss.json",
     "count": 10,
@@ -1631,14 +1623,6 @@
     "count": 10,
     "category": "(Open) Data + Technology",
     "description": "Together, for a better net.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Open Source Initiative": {
-    "file": "open_source_initiative.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
     "scope": "World"
   },
@@ -2042,6 +2026,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Wikimedia Sverige": {
+    "file": "wikimedia_sverige.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Vi arbetar för fri kunskap",
+    "lang": "sv",
+    "scope": "Nordic + Baltic countries"
+  },
   "Digital Scholarship Leiden": {
     "file": "digital_scholarship_leiden.json",
     "count": 10,
@@ -2314,6 +2306,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "UN Maps": {
+    "file": "un_maps.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
     "count": 10,
@@ -2465,14 +2465,6 @@
     "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "WIPO In Focus": {
-    "file": "wipo_in_focus.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "WIPO In Focus",
-    "lang": "en",
-    "scope": "World"
   },
   "Euronews | The Europe Conversation": {
     "file": "euronews___the_europe_conversation.json",
