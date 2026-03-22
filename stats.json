@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "22.3.2026 klo 13.30.20"
+    "last_updated": "22.3.2026 klo 15.07.06"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -49,6 +49,14 @@
     "description": "Latest news from Euronews",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Yle": {
+    "file": "yle.json",
+    "count": 22,
+    "category": "Politics + Government",
+    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
+    "lang": "fi",
+    "scope": "World"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
@@ -129,14 +137,6 @@
     "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Yle": {
-    "file": "yle.json",
-    "count": 21,
-    "category": "Politics + Government",
-    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
-    "lang": "fi",
-    "scope": "World"
   },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
@@ -436,7 +436,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 20,
+    "count": 19,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -484,7 +484,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 10,
+    "count": 2,
     "category": "Investigations + Conflict",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -1028,7 +1028,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1036,7 +1036,7 @@
   },
   "Heritage Research Hub": {
     "file": "heritage_research_hub.json",
-    "count": 10,
+    "count": 2,
     "category": "Culture",
     "description": "A platform on and for cultural heritage research",
     "lang": "en",
@@ -1164,7 +1164,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 2,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -2322,6 +2322,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Online Journalism Blog": {
+    "file": "online_journalism_blog.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
+    "lang": "en",
+    "scope": "World"
+  },
   "UN Peacemaker": {
     "file": "un_peacemaker.json",
     "count": 10,
@@ -2425,14 +2433,6 @@
     "description": "We don't just build maps, we build mappers!",
     "lang": "en",
     "scope": "World"
-  },
-  "Avate Audiovisuaalisen alan tekijät ry": {
-    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Kopiosto": {
     "file": "kopiosto.json",
