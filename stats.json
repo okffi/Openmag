@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "22.3.2026 klo 11.40.34"
+    "last_updated": "22.3.2026 klo 12.35.47"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -41,6 +41,14 @@
     "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Euronews | Europe": {
+    "file": "euronews___europe.json",
+    "count": 50,
+    "category": "Politics + Government",
+    "description": "Latest news from Euronews",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
@@ -105,14 +113,6 @@
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
     "scope": "World"
-  },
-  "Euronews | Europe": {
-    "file": "euronews___europe.json",
-    "count": 50,
-    "category": "Politics + Government",
-    "description": "Latest news from Euronews",
-    "lang": "en",
-    "scope": "Europe"
   },
   "United Nations | The Guardian": {
     "file": "united_nations___the_guardian.json",
@@ -180,7 +180,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 20,
+    "count": 36,
     "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -380,7 +380,7 @@
   },
   "Rajapinta": {
     "file": "rajapinta.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
@@ -681,6 +681,14 @@
     "description": "openDemocracy RSS",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
+  },
+  "Epressi - Ulkomaat": {
+    "file": "epressi___ulkomaat.json",
+    "count": 23,
+    "category": "Politics + Government",
+    "description": "Tiedotteiden tehokas julkaisukanava",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "CSC": {
     "file": "csc.json",
@@ -1156,7 +1164,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 2,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1183,14 +1191,6 @@
     "count": 10,
     "category": "Politics + Government",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Epressi - Ulkomaat": {
-    "file": "epressi___ulkomaat.json",
-    "count": 23,
-    "category": "Politics + Government",
-    "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1276,7 +1276,7 @@
   },
   "Open Knowledge Foundation Blog": {
     "file": "open_knowledge_foundation_blog.json",
-    "count": 1,
+    "count": 9,
     "category": "Digital Policy + Rights",
     "description": "Content for a fair, sustainable and open future",
     "lang": "en",
@@ -1585,22 +1585,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Le Monde diplomatique - English edition": {
-    "file": "le_monde_diplomatique___english_edition.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Helsinki-Uusimaa Region": {
-    "file": "helsinki_uusimaa_region.json",
-    "count": 10,
-    "category": "Politics + Government",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -2058,6 +2042,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Wikimedia Sverige": {
+    "file": "wikimedia_sverige.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Vi arbetar för fri kunskap",
+    "lang": "sv",
+    "scope": "Nordic + Baltic countries"
+  },
   "Digital Scholarship Leiden": {
     "file": "digital_scholarship_leiden.json",
     "count": 10,
@@ -2330,14 +2322,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Online Journalism Blog": {
-    "file": "online_journalism_blog.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
-    "lang": "en",
-    "scope": "World"
-  },
   "UN Peacemaker": {
     "file": "un_peacemaker.json",
     "count": 10,
@@ -2538,6 +2522,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Le Monde diplomatique - English edition": {
+    "file": "le_monde_diplomatique___english_edition.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Oikeusblogi": {
     "file": "oikeusblogi.json",
     "count": 20,
@@ -2560,6 +2552,14 @@
     "category": "Politics + Government",
     "description": "",
     "lang": "en",
+    "scope": "Finland"
+  },
+  "Helsinki-Uusimaa Region": {
+    "file": "helsinki_uusimaa_region.json",
+    "count": 10,
+    "category": "Politics + Government",
+    "description": "",
+    "lang": "fi",
     "scope": "Finland"
   },
   "Ilmasto- ja energiapoliittinen ministerityöryhmä": {
