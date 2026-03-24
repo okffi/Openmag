@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "24.3.2026 klo 13.52.13"
+    "last_updated": "24.3.2026 klo 15.40.23"
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
@@ -12,7 +12,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 22,
+    "count": 23,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -20,7 +20,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 28,
+    "count": 29,
     "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -196,7 +196,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 31,
+    "count": 34,
     "category": "Politics + Public sector",
     "description": "European Commission | News",
     "lang": "en",
@@ -244,7 +244,7 @@
   },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
-    "count": 12,
+    "count": 13,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -252,7 +252,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -404,7 +404,7 @@
   },
   "PreventionWeb": {
     "file": "preventionweb.json",
-    "count": 40,
+    "count": 44,
     "category": "Sustainability + Foresight",
     "description": "",
     "lang": "en",
@@ -420,9 +420,25 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3389,
+    "count": 3391,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "COST": {
+    "file": "cost.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Project Syndicate": {
+    "file": "project_syndicate.json",
+    "count": 22,
+    "category": "Perspectives",
+    "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
     "scope": "World"
   },
@@ -516,7 +532,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital Culture + Heritage",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -540,7 +556,7 @@
   },
   "Waag": {
     "file": "waag.json",
-    "count": 20,
+    "count": 21,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "en",
@@ -660,7 +676,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 15,
+    "count": 16,
     "category": "Investigations + Conflict",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -697,14 +713,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Project Syndicate": {
-    "file": "project_syndicate.json",
-    "count": 22,
-    "category": "Perspectives",
-    "description": "Project Syndicate - The World’s Opinion Page",
-    "lang": "en",
-    "scope": "World"
   },
   "Helsinki-Uusimaa Region": {
     "file": "helsinki_uusimaa_region.json",
@@ -964,7 +972,7 @@
   },
   "Rajapinta": {
     "file": "rajapinta.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
@@ -996,7 +1004,7 @@
   },
   "CIVICUS News": {
     "file": "civicus_news.json",
-    "count": 50,
+    "count": 49,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -1044,7 +1052,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 20,
+    "count": 4,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -1412,7 +1420,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 1,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1540,7 +1548,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -1596,7 +1604,7 @@
   },
   "Taide- ja kulttuurivirasto": {
     "file": "taide__ja_kulttuurivirasto.json",
-    "count": 8,
+    "count": 9,
     "category": "Culture",
     "description": "",
     "lang": "fi",
@@ -1654,6 +1662,14 @@
     "file": "arktinen_keskus.json",
     "count": 10,
     "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Avate Audiovisuaalisen alan tekijät ry": {
+    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
     "scope": "Finland"
@@ -2082,14 +2098,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Source Initiative": {
-    "file": "open_source_initiative.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
-    "lang": "en",
-    "scope": "World"
-  },
   "OpenWebSearch.eu": {
     "file": "openwebsearch_eu.json",
     "count": 10,
@@ -2258,6 +2266,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Wikimedia Sverige": {
+    "file": "wikimedia_sverige.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Vi arbetar för fri kunskap",
+    "lang": "sv",
+    "scope": "Nordic + Baltic countries"
+  },
   "Suomen Taiteilijaseura": {
     "file": "suomen_taiteilijaseura.json",
     "count": 1,
@@ -2287,14 +2303,6 @@
     "count": 9,
     "category": "Digital Policy + Rights",
     "description": "Website of the COMMUNIA Association for the Public Domain",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "COST": {
-    "file": "cost.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "",
     "lang": "en",
     "scope": "Europe"
   },
