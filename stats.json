@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "25.3.2026 klo 17.08.37"
+    "last_updated": "25.3.2026 klo 19.12.08"
   },
   "Technology – POLITICO": {
     "file": "technology___politico.json",
@@ -140,7 +140,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 60,
+    "count": 62,
     "category": "Global policy",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -244,7 +244,7 @@
   },
   "The Conversation – Articles (EUROPE)": {
     "file": "the_conversation___articles__europe_.json",
-    "count": 29,
+    "count": 31,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -276,7 +276,7 @@
   },
   "Tietotekniikka | ePressi": {
     "file": "tietotekniikka___epressi.json",
-    "count": 19,
+    "count": 18,
     "category": "(Open) Data + Technology",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -324,7 +324,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 22,
+    "count": 23,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -348,7 +348,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 36,
+    "count": 37,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -404,7 +404,7 @@
   },
   "OCCRP": {
     "file": "occrp.json",
-    "count": 55,
+    "count": 56,
     "category": "Investigations + Conflict",
     "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
@@ -436,7 +436,7 @@
   },
   "resilience": {
     "file": "resilience.json",
-    "count": 14,
+    "count": 13,
     "category": "Perspectives",
     "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
@@ -444,7 +444,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 34,
+    "count": 38,
     "category": "Politics + Public sector",
     "description": "European Commission | News",
     "lang": "en",
@@ -460,7 +460,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 20,
+    "count": 21,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -543,6 +543,86 @@
     "count": 28,
     "category": "Investigations + Conflict",
     "description": "UN News - Global perspective Human stories | Middle East",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Avoin tiede": {
+    "file": "avoin_tiede.json",
+    "count": 9,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Digital meets Culture": {
+    "file": "digital_meets_culture.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Art, heritage & technologies",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Internet Archive Europe": {
+    "file": "internet_archive_europe.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Bringing Collections to Life",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Time Machine Europe": {
+    "file": "time_machine_europe.json",
+    "count": 12,
+    "category": "Digital Culture + Heritage",
+    "description": "Join us on a journey through time",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "TIEKE": {
+    "file": "tieke.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Dittmar & Indrenius Attorneys Ltd.": {
+    "file": "dittmar___indrenius_attorneys_ltd_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Tech Policy Press": {
+    "file": "tech_policy_press.json",
+    "count": 3393,
+    "category": "Digital Policy + Rights",
+    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "OCCRP Announcements": {
+    "file": "occrp_announcements.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "OCCRP stories about Announcements delivered straight to you. Well, your RSS reader anyway.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Euroopan unioni": {
+    "file": "euroopan_unioni.json",
+    "count": 12,
+    "category": "Politics + Public sector",
+    "description": "European Union | Featured news",
+    "lang": "fi",
+    "scope": "Europe"
+  },
+  "Carbon Brief": {
+    "file": "carbon_brief.json",
+    "count": 10,
+    "category": "Sustainability + Foresight",
+    "description": "Clear on climate",
     "lang": "en",
     "scope": "World"
   },
@@ -644,7 +724,7 @@
   },
   "Kirjastokaista": {
     "file": "kirjastokaista.json",
-    "count": 10,
+    "count": 5,
     "category": "Culture",
     "description": "LIBRARY CHANNEL — Library WebTV",
     "lang": "fi",
@@ -698,17 +778,9 @@
     "lang": "en",
     "scope": "World"
   },
-  "Time Machine Europe": {
-    "file": "time_machine_europe.json",
-    "count": 12,
-    "category": "Digital Culture + Heritage",
-    "description": "Join us on a journey through time",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -724,19 +796,11 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
     "scope": "World"
-  },
-  "TIEKE": {
-    "file": "tieke.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "CREATe": {
     "file": "create.json",
@@ -753,14 +817,6 @@
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Tech Policy Press": {
-    "file": "tech_policy_press.json",
-    "count": 3393,
-    "category": "Digital Policy + Rights",
-    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
-    "lang": "en",
-    "scope": "World"
   },
   "Epressi - Ulkomaat": {
     "file": "epressi___ulkomaat.json",
@@ -812,7 +868,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 10,
+    "count": 11,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -898,14 +954,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Euroopan unioni": {
-    "file": "euroopan_unioni.json",
-    "count": 12,
-    "category": "Politics + Public sector",
-    "description": "European Union | Featured news",
-    "lang": "fi",
-    "scope": "Europe"
-  },
   "Oikeusministeriö | Tiedotteet ja uutiset": {
     "file": "oikeusministeri____tiedotteet_ja_uutiset.json",
     "count": 20,
@@ -972,7 +1020,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 5,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -991,6 +1039,14 @@
     "count": 12,
     "category": "Perspectives",
     "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 2,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
     "scope": "Europe"
   },
@@ -1066,14 +1122,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Internet Archive Europe": {
-    "file": "internet_archive_europe.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Bringing Collections to Life",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Mozilla Open Policy & Advocacy": {
     "file": "mozilla_open_policy___advocacy.json",
     "count": 10,
@@ -1081,14 +1129,6 @@
     "description": "Mozilla's official blog on open Internet policy initiatives and developments",
     "lang": "en",
     "scope": "World"
-  },
-  "Dittmar & Indrenius Attorneys Ltd.": {
-    "file": "dittmar___indrenius_attorneys_ltd_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Internet Society": {
     "file": "internet_society.json",
@@ -1162,14 +1202,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Carbon Brief": {
-    "file": "carbon_brief.json",
-    "count": 10,
-    "category": "Sustainability + Foresight",
-    "description": "Clear on climate",
-    "lang": "en",
-    "scope": "World"
-  },
   "Copernicus Institute": {
     "file": "copernicus_institute.json",
     "count": 20,
@@ -1220,7 +1252,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Culture + Heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -1263,14 +1295,6 @@
     "count": 10,
     "category": "Culture",
     "description": "Training Heritage Leaders",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Digital meets Culture": {
-    "file": "digital_meets_culture.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Art, heritage & technologies",
     "lang": "en",
     "scope": "Europe"
   },
@@ -1372,7 +1396,7 @@
   },
   "IVIR": {
     "file": "ivir.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "Universiteit van Amsterdam",
     "lang": "en",
@@ -1423,6 +1447,14 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "Maaseudun sivistysliitto",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 1,
+    "category": "Investigations + Conflict",
+    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1778,14 +1810,6 @@
     "lang": "en",
     "scope": "Finland"
   },
-  "Avoin tiede": {
-    "file": "avoin_tiede.json",
-    "count": 9,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "News – Oxford Internet Institute": {
     "file": "news___oxford_internet_institute.json",
     "count": 10,
@@ -2090,6 +2114,22 @@
     "lang": "en",
     "scope": "World"
   },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "This Month in GLAM": {
+    "file": "this_month_in_glam.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
+    "lang": "en",
+    "scope": "World"
+  },
   "The Harvard Library Innovation Lab": {
     "file": "the_harvard_library_innovation_lab.json",
     "count": 420,
@@ -2274,6 +2314,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Tietopoliitiikan yhteistyöryhmä": {
+    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Knowledge Rights 21 Archive Feed": {
     "file": "knowledge_rights_21_archive_feed.json",
     "count": 10,
@@ -2305,14 +2353,6 @@
     "description": "ICANN Announcements - 2006",
     "lang": "en",
     "scope": "World"
-  },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Sciences Po Technology and global affairs innovation hub": {
     "file": "sciences_po_technology_and_global_affairs_innovation_hub.json",
@@ -2458,14 +2498,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Julkisen sanan neuvosto",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "UN Maps": {
     "file": "un_maps.json",
     "count": 10,
@@ -2503,14 +2535,6 @@
     "count": 9,
     "category": "Investigations + Conflict",
     "description": "the home of online investigations",
-    "lang": "en",
-    "scope": "World"
-  },
-  "OCCRP Announcements": {
-    "file": "occrp_announcements.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "OCCRP stories about Announcements delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
     "scope": "World"
   },
