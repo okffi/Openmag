@@ -201,9 +201,14 @@ async function run() {
         const seenPostUrls = new Set();
         const maxFutureTime = now.getTime() + 10 * 60000;
         allArticles = allArticles.filter(art => {
-            if (!art || !art.link || !art.pubDate) return false;
+            // Accept articles with a link and any valid date field
+            if (!art || !art.link || !(art.pubDate || art.published || art.isoDate)) return false;
+        
+            // Use the first available date
+            const dateString = art.pubDate || art.published || art.isoDate;
             const cleanUrl = art.link.split('?')[0].split('#')[0].trim().toLowerCase();
-            const artTime = new Date(art.pubDate).getTime();
+            const artTime = new Date(dateString).getTime();
+        
             if (seenPostUrls.has(cleanUrl) || isNaN(artTime) || artTime > maxFutureTime) return false;
             seenPostUrls.add(cleanUrl);
             return true;
@@ -343,7 +348,7 @@ async function processRSS(feed, allArticles, now) {
     }
 
     const items = feedContent.items.map(item => {
-        let itemDate = new Date(item.pubDate || item.isoDate);
+        let itemDate = new Date(item.pubDate || item.published || item.updated || item.isoDate || now);
         
         // --- KUVAN POIMINTA ALKAA ---
         // Alustetaan muuttuja img tyhjäksi. Jos kuvaa ei löydy mistään alta, se jää nulliksi.
@@ -471,15 +476,29 @@ async function processRSS(feed, allArticles, now) {
         // Käytetään tätä lopullisena sisältönä
         const finalSnippet = cleanText;
 
-        let articleLink = item.link;
+        let articleLink = "";
+        let articleLink = "";
 
+        // Robust field handling (handles Atom and RSS)
+        if (typeof item.link === "string") {
+            articleLink = item.link;
+        } else if (Array.isArray(item.link)) {
+            // Atom feeds may have multiple <link> elements (rel="alternate", etc.)
+            const alternate = item.link.find(l => l.rel === 'alternate') || item.link[0];
+            articleLink = alternate && alternate.href ? alternate.href : "";
+        } else if (item.link && item.link.href) {
+            // Atom spec
+            articleLink = item.link.href;
+        }
+        
+        // Protocol repair and relative URL handling
         if (articleLink) {
-            // Korjataan viallinen protokolla (https:/ -> https://)
+            // Fix malformed protocol (https:/ -> https://)
             if (articleLink.startsWith('https:/') && !articleLink.startsWith('https://')) {
                 articleLink = articleLink.replace('https:/', 'https://');
             }
-
-            // Muutetaan suhteelliset linkit täysiksi URL-osoitteiksi
+        
+            // Convert relative links to absolute URLs
             if (!articleLink.startsWith('http')) {
                 try {
                     articleLink = new URL(articleLink, feed.rssUrl).href;
@@ -488,7 +507,6 @@ async function processRSS(feed, allArticles, now) {
                 }
             }
         }
-
         let finalImg = img;
         if (finalImg && typeof finalImg === 'string') {
             // Return potential XML entities in raw format so that the browser can 
