@@ -477,28 +477,19 @@ async function processRSS(feed, allArticles, now) {
         const finalSnippet = cleanText;
 
         let articleLink = "";
-        let articleLink = "";
-
-        // Robust field handling (handles Atom and RSS)
         if (typeof item.link === "string") {
             articleLink = item.link;
         } else if (Array.isArray(item.link)) {
-            // Atom feeds may have multiple <link> elements (rel="alternate", etc.)
             const alternate = item.link.find(l => l.rel === 'alternate') || item.link[0];
             articleLink = alternate && alternate.href ? alternate.href : "";
         } else if (item.link && item.link.href) {
-            // Atom spec
             articleLink = item.link.href;
         }
         
-        // Protocol repair and relative URL handling
         if (articleLink) {
-            // Fix malformed protocol (https:/ -> https://)
             if (articleLink.startsWith('https:/') && !articleLink.startsWith('https://')) {
                 articleLink = articleLink.replace('https:/', 'https://');
             }
-        
-            // Convert relative links to absolute URLs
             if (!articleLink.startsWith('http')) {
                 try {
                     articleLink = new URL(articleLink, feed.rssUrl).href;
