@@ -43,11 +43,11 @@ function createParser() {
         },
         customFields: {
             item: [
-                ['media:content', 'mediaContent', {keepArray: true}],
+                ['media:content', 'mediaContent', { keepArray: true }],
                 ['media:thumbnail', 'mediaThumbnail'],
                 ['enclosure', 'enclosure'],
                 ['content:encoded', 'contentEncoded']
-            ] 
+            ]
         }
     });
 }
@@ -59,9 +59,9 @@ async function getSourceLogo(feedContent, domain, sourceName) {
     // 1. Check multiple RSS feed image metadata fields
     if (feedContent) {
         const rssLogo = (feedContent.image && feedContent.image.url) ||
-                        (feedContent.logo && feedContent.logo.url) ||
-                        (feedContent.icon && feedContent.icon.url) ||
-                        (feedContent.itunes && feedContent.itunes.image && feedContent.itunes.image.url);
+            (feedContent.logo && feedContent.logo.url) ||
+            (feedContent.icon && feedContent.icon.url) ||
+            (feedContent.itunes && feedContent.itunes.image && feedContent.itunes.image.url);
         if (rssLogo) {
             console.log(`[LOGO] ${sourceName}: RSS feed image: ${rssLogo.substring(0, 80)}`);
             return rssLogo;
@@ -97,9 +97,9 @@ async function getSourceLogo(feedContent, domain, sourceName) {
     console.log(`[LOGO] ${sourceName}: all logo sources failed`);
     return null;
 }
-    
+
 async function run() {
-    let failedFeeds = []; 
+    let failedFeeds = [];
     let allArticles = [];
     const now = new Date();
     const today = now.toISOString().split('T')[0];
@@ -120,7 +120,7 @@ async function run() {
             } else {
                 fs.mkdirSync(sourcesDir, { recursive: true });
             }
-            allArticles = []; 
+            allArticles = [];
             if (fs.existsSync('data.json')) fs.unlinkSync('data.json');
             fs.writeFileSync(cleanLogFile, today);
         } else {
@@ -160,10 +160,10 @@ async function run() {
         const feeds = rows.map(row => {
             const c = row.split('\t').map(v => v ? v.trim() : '');
             if (!c[2] && !c[3]) return null;
-            return { 
+            return {
                 category: c[0] || "Yleinen",
                 feedName: c[1] || "Nimetön",
-                rssUrl: c[2], 
+                rssUrl: c[2],
                 scrapeUrl: c[3] || "",
                 nameChecked: c[4] || c[1] || "Lähde",
                 sheetDesc: c[5] || "",
@@ -201,14 +201,9 @@ async function run() {
         const seenPostUrls = new Set();
         const maxFutureTime = now.getTime() + 10 * 60000;
         allArticles = allArticles.filter(art => {
-            // Accept articles with a link and any valid date field
-            if (!art || !art.link || !(art.pubDate || art.published || art.isoDate)) return false;
-        
-            // Use the first available date
-            const dateString = art.pubDate || art.published || art.isoDate;
+            if (!art || !art.link || !art.pubDate) return false;
             const cleanUrl = art.link.split('?')[0].split('#')[0].trim().toLowerCase();
-            const artTime = new Date(dateString).getTime();
-        
+            const artTime = new Date(art.pubDate).getTime();
             if (seenPostUrls.has(cleanUrl) || isNaN(artTime) || artTime > maxFutureTime) return false;
             seenPostUrls.add(cleanUrl);
             return true;
@@ -225,13 +220,13 @@ async function run() {
         allArticles.forEach(art => {
             const srcName = art.sourceTitle;
             const fileKey = srcName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-            
+
             if (!articlesBySource[fileKey]) articlesBySource[fileKey] = [];
             articlesBySource[fileKey].push(art);
-            
+
             if (!sourceStats[srcName]) {
-                sourceStats[srcName] = { 
-                    file: `${fileKey}.json`, 
+                sourceStats[srcName] = {
+                    file: `${fileKey}.json`,
                     count: 0,
                     category: art.sheetCategory || "General",
                     description: art.sourceDescription || "",
@@ -254,8 +249,8 @@ async function run() {
             if (!days[d]) days[d] = [];
             days[d].push(art);
         });
-        
-        let finalSorted = []; 
+
+        let finalSorted = [];
         Object.keys(days).sort().reverse().forEach(day => {
             const bySource = {};
             days[day].forEach(art => {
@@ -317,24 +312,24 @@ async function processRSS(feed, allArticles, now) {
     } catch (err) {
         // Poikkeuslogiikka XML-virheille, sertifikaattivioille tai jos palvelin hylkää peruspyynnön
         console.log(`[POIKKEUS] Vikasietoinen haku: ${feed.nameChecked}`);
-        
+
         try {
             // Käytetään axiosia yllä määritellyllä configilla (sisältää User-Agentin)
             const response = await axios.get(feed.rssUrl, axiosConfig);
-            
+
             let xmlData = response.data;
             // Puhdistetaan rikkonaiset XML-merkit
             xmlData = xmlData.replace(/&(?!(amp|lt|gt|quot|apos|#\d+|#x[a-f\d]+);)/gi, '&amp;');
-            
+
             feedContent = await createParser().parseString(xmlData);
         } catch (retryErr) {
             throw new Error(`Vikasietoinen haku epäonnistui: ${retryErr.message}`);
         }
     }
-    
+
     // 1. Poimitaan syötteen kuvaus
     const sourceDescription = feed.sheetDesc || (feedContent.description ? feedContent.description.trim() : "");
-    
+
     // 2. Poimitaan logo (monitasoinen varajärjestelmä)
     let sourceLogo = null;
     try {
@@ -349,196 +344,159 @@ async function processRSS(feed, allArticles, now) {
 
     const items = feedContent.items
         .map(item => {
-            const rawDate =
-                item.pubDate ||
-                item.published ||
-                item.updated ||
-                item.isoDate ||
-                null;
-
+            // --- 1. Date: robust, only keep valid dates ---
+            const rawDate = item.pubDate || item.published || item.updated || item.isoDate || null;
             let isoDate = null;
             if (rawDate) {
                 const d = new Date(rawDate);
-                if (!isNaN(d.getTime())) {
-                    isoDate = d.toISOString();
-                }
+                if (!isNaN(d.getTime())) isoDate = d.toISOString();
             }
-        
-        // --- KUVAN POIMINTA ALKAA ---
-        // Alustetaan muuttuja img tyhjäksi. Jos kuvaa ei löydy mistään alta, se jää nulliksi.
-        let img = null;
 
-        // A) Kokeillaan standardeja mediakenttiä
-        // RSS-syötteet käyttävät usein media:content-tagia. Parseri voi nimetä sen kummalla vain tavalla.
-        let mContent = item.mediaContent || item['media:content'];
-        
-        if (mContent) {
-            // Varmistetaan, että käsitellään taulukkoa (listaa), vaikka syötteessä olisi vain yksi kuva.
-            const mediaArray = Array.isArray(mContent) ? mContent : [mContent];
-            let maxW = 0; // Käytetään suurimman kuvan etsimiseen (leveys pikseleinä).
-
-            mediaArray.forEach(m => {
-                // Haetaan kuvan URL. XML-rakenteesta riippuen se on joko m.url tai m.$.url.
-                const currentUrl = m.url || m.$?.url;
-                // Muutetaan leveystieto numeroksi vertailua varten.
-                const currentWidth = parseInt(m.width || m.$?.width || 0);
-                
-                // Valintalogiikka: otetaan kuva, jos se on leveämpi kuin edellinen löydetty,
-                // tai jos kyseessä on ensimmäinen löydetty URL.
-                if (currentUrl && (currentWidth >= maxW || !img)) {
-                    maxW = currentWidth;
-                    img = currentUrl;
+            // --- 2. Robust Link Extraction (Atom & RSS) ---
+            let articleLink = "";
+            if (typeof item.link === "string") {
+                articleLink = item.link;
+            } else if (Array.isArray(item.link)) {
+                const alternate = item.link.find(l => l.rel === 'alternate') || item.link[0];
+                articleLink = alternate && alternate.href ? alternate.href : "";
+            } else if (item.link && item.link.href) {
+                articleLink = item.link.href;
+            }
+            if (articleLink) {
+                if (articleLink.startsWith('https:/') && !articleLink.startsWith('https://')) {
+                    articleLink = articleLink.replace('https:/', 'https://');
                 }
-            });
-        }
-
-        // Jos media:content ei tärpännyt, katsotaan mediaThumbnail-kenttä (pienoiskuva).
-        if (!img && item.mediaThumbnail) {
-            // Tarkistetaan molemmat mahdolliset XML-polut URL-osoitteelle.
-            img = item.mediaThumbnail.$?.url || item.mediaThumbnail.url;
-        }
-
-        // Jos ei vieläkään kuvaa, katsotaan enclosure-tagi (usein käytössä podcasteissa tai vanhemmissa RSS-malleissa).
-        if (!img && item.enclosure && item.enclosure.url) {
-            img = item.enclosure.url;
-        }
-
-        // --- TEKSTIN JA KUVAN KÄSITTELY (YHDISTETTY) ---
-        const rawContent = item['content:encoded'] || item.contentEncoded || item.content || item.description || "";
-        const $c = cheerio.load(rawContent);
-
-        // 1. Jos kuvaa ei vielä ole löytynyt, yritetään poimia se tästä sisällöstä
-        if (!img) {
-            // 1a. Kokeillaan ensin <picture>-elementtiä (moderni responsiivinen kuva)
-            const firstPicture = $c('picture').first();
-            if (firstPicture.length) {
-                // Yritetään ensin <source srcset> -attribuuttia
-                const source = firstPicture.find('source[srcset]').first();
-                if (source.length) {
-                    const srcset = source.attr('srcset');
-                    // Parsitaan srcset oikein: jaetaan pilkulla, otetaan ensimmäinen kandidaatti,
-                    // ja poistetaan mahdollinen leveys/tiheyskuvaaja (esim. "800w" tai "2x")
-                    if (srcset) {
-                        const firstCandidate = srcset.trim().split(',')[0].trim();
-                        img = firstCandidate.split(/\s+/)[0] || null;
-                    }
-                }
-                // Jos ei löytynyt sourcesta, kokeillaan picture-elementin sisällä olevaa img-tagia
-                if (!img) {
-                    const picImg = firstPicture.find('img').first();
-                    if (picImg.length) {
-                        img = picImg.attr('src');
+                if (!articleLink.startsWith('http')) {
+                    try {
+                        articleLink = new URL(articleLink, feed.rssUrl).href;
+                    } catch (e) {
+                        console.error("Linkin korjaus epäonnistui:", articleLink);
                     }
                 }
             }
-            // 1b. Fallback: etsitään tavallinen <img>-tagi (suodatetaan seurantapikselit)
-            if (!img) {
-                $c('img').each((_, el) => {
-                    const w = $c(el).attr('width');
-                    const h = $c(el).attr('height');
-                    // Ohitetaan seurantapikselit, joilla molemmat dimensiot ovat <= 1 (esim. Matomo 0x0)
-                    if (w !== undefined && h !== undefined && parseInt(w) <= 1 && parseInt(h) <= 1) {
-                        return true; // jatketaan seuraavaan
+
+            // --- 3. Image Extraction ---
+            let img = null;
+            // A) Try standard media fields
+            let mContent = item.mediaContent || item['media:content'];
+            if (mContent) {
+                const mediaArray = Array.isArray(mContent) ? mContent : [mContent];
+                let maxW = 0;
+                mediaArray.forEach(m => {
+                    const currentUrl = m.url || m.$?.url;
+                    const currentWidth = parseInt(m.width || m.$?.width || 0);
+                    if (currentUrl && (currentWidth >= maxW || !img)) {
+                        maxW = currentWidth;
+                        img = currentUrl;
                     }
-                    img = $c(el).attr('src');
-                    return false; // lopetetaan, kuva löytyi
                 });
             }
-            if (img) {
-                console.log(`[KUVA] ${feed.nameChecked}: löytyi HTML-sisällöstä: ${img.substring(0, 80)}`);
-            } else {
-                console.log(`[KUVA] ${feed.nameChecked}: kuvaa ei löytynyt`);
+            // B) Try mediaThumbnail
+            if (!img && item.mediaThumbnail) {
+                img = item.mediaThumbnail.$?.url || item.mediaThumbnail.url;
             }
-        }
-
-        // Muutetaan suhteelliset kuva-URL:t absoluuttisiksi
-        if (img && !img.startsWith('http') && !img.startsWith('//')) {
-            const baseUrl = item.link || feed.rssUrl;
-            try {
-                img = new URL(img, baseUrl).href;
-                console.log(`[KUVA] ${feed.nameChecked}: suhteellinen URL muutettu absoluuttiseksi: ${img.substring(0, 80)}`);
-            } catch (e) {
-                console.log(`[VAROITUS] ${feed.nameChecked}: kuva-URL:n korjaus epäonnistui: ${img}`);
-                img = null;
+            // C) Try enclosure
+            if (!img && item.enclosure && item.enclosure.url) {
+                img = item.enclosure.url;
             }
-        }
-        
-        // 2. POISTETAAN ROSKA (Tämä korjaa COST-ongelman)
-        // Poistetaan kuvat, haitalliset skriptit JA WordPressin figure-rakenteet
-        $c('img, script, style, iframe, form, figure, figcaption, video, audio').remove();
-        
-        // 3. PUHDISTETAAN ATTRUBUUTIT
-        // Poistetaan inline-tyylit ja ne koodit (srcset, sizes), jotka jäivät kummittelemaan
-        $c('*').removeAttr('style').removeAttr('srcset').removeAttr('sizes').removeAttr('fetchpriority').removeAttr('decoding');
-        
-        // 4. MUODOSTETAAN LOPULLINEN TEKSTI
-        let safeHTML = $c('body').html() || $c.html() || "";
-        
-        // Hallittu katkaisu, jotta tagit sulkeutuvat oikein
-        if (safeHTML.length > 800) {
-            safeHTML = safeHTML.substring(0, 800);
-            safeHTML = cheerio.load(safeHTML).html(); 
-        }
-        
-        let cleanText = normalizeContent(safeHTML);
 
-        // Jos teksti jäi tyhjäksi, käytetään otsikkoa varalla
-        if (cleanText.length < 10) {
-            cleanText = item.title || "";
-        }
+            // --- 4. Content Extraction & Cleaning ---
+            const rawContent = item['content:encoded'] || item.contentEncoded || item.content || item.description || "";
+            const $c = cheerio.load(rawContent, { decodeEntities: true });
 
-        // Käytetään tätä lopullisena sisältönä
-        const finalSnippet = cleanText;
-
-        let articleLink = "";
-        if (typeof item.link === "string") {
-            articleLink = item.link;
-        } else if (Array.isArray(item.link)) {
-            const alternate = item.link.find(l => l.rel === 'alternate') || item.link[0];
-            articleLink = alternate && alternate.href ? alternate.href : "";
-        } else if (item.link && item.link.href) {
-            articleLink = item.link.href;
-        }
-        
-        if (articleLink) {
-            if (articleLink.startsWith('https:/') && !articleLink.startsWith('https://')) {
-                articleLink = articleLink.replace('https:/', 'https://');
-            }
-            if (!articleLink.startsWith('http')) {
-                try {
-                    articleLink = new URL(articleLink, feed.rssUrl).href;
-                } catch (e) {
-                    console.error("Linkin korjaus epäonnistui:", articleLink);
+            // D) If no image yet, try finding an image from HTML content
+            if (!img) {
+                // Try <picture>
+                const firstPicture = $c('picture').first();
+                if (firstPicture.length) {
+                    const source = firstPicture.find('source[srcset]').first();
+                    if (source.length) {
+                        const srcset = source.attr('srcset');
+                        if (srcset) {
+                            const firstCandidate = srcset.trim().split(',')[0].trim();
+                            img = firstCandidate.split(/\s+/)[0] || null;
+                        }
+                    }
+                    if (!img) {
+                        const picImg = firstPicture.find('img').first();
+                        if (picImg.length) img = picImg.attr('src');
+                    }
+                }
+                // Fallback: any <img> (ignore pixels)
+                if (!img) {
+                    $c('img').each((_, el) => {
+                        const w = $c(el).attr('width');
+                        const h = $c(el).attr('height');
+                        if (w !== undefined && h !== undefined && parseInt(w) <= 1 && parseInt(h) <= 1) {
+                            return true;
+                        }
+                        img = $c(el).attr('src');
+                        return false;
+                    });
                 }
             }
-        }
-        let finalImg = img;
-        if (finalImg && typeof finalImg === 'string') {
-            // Return potential XML entities in raw format so that the browser can 
-            // make a clean encode for the wsrv.nl service (no double encoding).
-            finalImg = finalImg.replace(/&amp;/g, '&');
-        }
-        // Choose description: 1. Sheets (sheetDesc), 2. RSS (feedContent.description), 3. Empty
-        const finalDescription = normalizeContent(feed.sheetDesc || (feedContent.description || ""));
-    
-        return {
-            title: normalizeContent(item.title),
-            link: articleLink,
-            pubDate: isoDate,
-            content: finalSnippet,
-            creator: item.creator || item.author || "",
-            sourceTitle: feed.nameChecked, 
-            sheetCategory: feed.category,
-            enforcedImage: finalImg,
-            sourceDescription: finalDescription,
-            sourceLogo: sourceLogo,
-            lang: feed.lang,
-            scope: feed.scope,
-            isDarkLogo: feed.isDarkLogo,
-            originalRssUrl: feed.rssUrl
-        };
 
-    })
+            // E) Absolute image URL if needed
+            if (img && !img.startsWith('http') && !img.startsWith('//')) {
+                const baseUrl = articleLink || feed.rssUrl;
+                try {
+                    img = new URL(img, baseUrl).href;
+                } catch (e) {
+                    console.log(`[VAROITUS] ${feed.nameChecked}: kuva-URL:n korjaus epäonnistui: ${img}`);
+                    img = null;
+                }
+            }
+            // (optional: log images)
+            // if (img) console.log(`[KUVA] ${feed.nameChecked}: kuva valittu: ${img.substring(0, 80)}`);
+
+            // F) Clean up unwanted tags and attributes in HTML
+            $c('img').each((_, el) => {
+                const w = $c(el).attr('width');
+                const h = $c(el).attr('height');
+                if (w !== undefined && h !== undefined && parseInt(w) <= 1 && parseInt(h) <= 1) {
+                    $c(el).remove();
+                }
+            });
+            $c('script, style, iframe, form, figure, figcaption, video, audio').remove();
+            $c('*').removeAttr('style').removeAttr('srcset').removeAttr('sizes')
+                .removeAttr('fetchpriority').removeAttr('decoding');
+
+            // G) Safe HTML for detail view
+            let htmlContent = $c('body').html() || $c.html() || "";
+            if (htmlContent.length > 1200) {
+                htmlContent = htmlContent.substring(0, 1200);
+                htmlContent = cheerio.load(htmlContent).html(); // Ensure valid HTML tags
+            }
+
+            // H) Safe plaintext snippet for list views
+            let textSnippet = normalizeContent(htmlContent.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ')).substring(0, 200);
+            if (textSnippet.length < 10) textSnippet = item.title || "";
+
+            // I) Final image URL cleaning
+            let finalImg = img && typeof img === "string" ? img.replace(/&amp;/g, '&') : null;
+
+            // J) Description fallback
+            const finalDescription = normalizeContent(feed.sheetDesc || (feedContent.description || ""));
+
+            return {
+                title: normalizeContent(item.title),
+                link: articleLink,
+                pubDate: isoDate,
+                content: htmlContent,
+                snippet: textSnippet,
+                creator: item.creator || item.author || "",
+                sourceTitle: feed.nameChecked,
+                sheetCategory: feed.category,
+                enforcedImage: finalImg,
+                sourceDescription: finalDescription,
+                sourceLogo: sourceLogo,
+                lang: feed.lang,
+                scope: feed.scope,
+                isDarkLogo: feed.isDarkLogo,
+                originalRssUrl: feed.rssUrl
+            };
+        })
+        .filter(item => item && item.pubDate); // Only keep items with valid date
     .filter(item => item && item.pubDate); // Only keep items with valid pubDate
     allArticles.push(...items);
 }
@@ -556,7 +514,7 @@ async function processScraper(feed, allArticles, now) {
         }
 
         const scraperRule = require(scraperPath);
-        const { data } = await axios.get(feed.scrapeUrl, { 
+        const { data } = await axios.get(feed.scrapeUrl, {
             headers: {
                 'User-Agent': getRandomUserAgent(),
                 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -564,11 +522,10 @@ async function processScraper(feed, allArticles, now) {
                 'Referer': 'https://www.google.com/',
                 'Cache-Control': 'no-cache',
             },
-            timeout: 15000 
+            timeout: 15000
         });
 
         const $ = cheerio.load(data);
-        // POISTETAAN ROSKA: Gravity Forms, tyylit jne.
         $('script, style, iframe, form').remove();
 
         const selector = scraperRule.listSelector || 'article';
@@ -585,10 +542,15 @@ async function processScraper(feed, allArticles, now) {
                     finalImg = new URL(finalImg, fullLink).href;
                 }
 
+                if (!item.pubDate) {
+                    console.warn(`Skipping scraped article with missing pubDate in source: ${feed.nameChecked || domain}`);
+                    continue;
+                }
+
                 allArticles.push({
                     title: item.title,
                     link: fullLink,
-                    pubDate: item.pubDate || now.toISOString(),
+                    pubDate: item.pubDate,
                     content: item.content || "",
                     creator: item.creator || "",
                     sourceTitle: feed.nameChecked || domain,
@@ -599,7 +561,7 @@ async function processScraper(feed, allArticles, now) {
                     lang: feed.lang,
                     scope: feed.scope,
                     isDarkLogo: feed.isDarkLogo,
-                    originalRssUrl: feed.rssUrl || "" 
+                    originalRssUrl: feed.rssUrl || ""
                 });
             }
         }
