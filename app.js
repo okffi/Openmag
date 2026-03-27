@@ -20,15 +20,11 @@
     let scrollObserver = null;
     let pendingOperation = false;
 
-    // --- APUFUNKTIOT ---
+    // --- HELPERS ---
     function t(key, originalValue = null) {
         const lang = document.getElementById('uiLangFilter').value || 'en';
-        if (translations[lang] && translations[lang][key]) {
-            return translations[lang][key];
-        }
-        if (translations['en'] && translations['en'][key]) {
-            return translations['en'][key];
-        }
+        if (translations[lang] && translations[lang][key]) return translations[lang][key];
+        if (translations['en'] && translations['en'][key]) return translations['en'][key];
         return originalValue || (key.includes('.') ? key.split('.')[1].replace(/_/g, ' ') : key);
     }
 
@@ -81,7 +77,6 @@
             closeSettingsPanel();
         } else {
             panel.hidden = false;
-            // Force reflow so the transition plays
             void panel.offsetHeight;
             panel.classList.add('open');
             btn.classList.add('active');
@@ -110,7 +105,6 @@
             document.getElementById('uiLangFilter').value = selectedUiLang.value;
             updateUITranslations();
         }
-
         closeSettingsPanel();
         updateView();
     }
@@ -122,10 +116,8 @@
 
         const langRadio = document.querySelector(`input[name="settings-lang"][value="${langVal}"]`);
         if (langRadio) langRadio.checked = true;
-
         const scopeRadio = document.querySelector(`input[name="settings-scope"][value="${scopeVal}"]`);
         if (scopeRadio) scopeRadio.checked = true;
-
         const uiLangRadio = document.querySelector(`input[name="settings-ui-lang"][value="${uiLangVal}"]`);
         if (uiLangRadio) uiLangRadio.checked = true;
     }
@@ -144,10 +136,8 @@
         if (pendingOperation) return;
         if (isBookmarksView) return;
 
-        // Päivitetään globaalit suodatinarvot valikoista
         currentLang = document.getElementById('langFilter').value;
         currentScope = document.getElementById('scopeFilter').value;
-
         displayedCount = 0;
         clearGrid();
 
@@ -161,62 +151,79 @@
 
     function populateContentLangRadios(uiLang) {
         const container = document.getElementById('settings-content-lang-options');
-        if (container) {
-            container.innerHTML = '';
-            // "All languages" button first
-            const allLabel = document.createElement('label');
-            allLabel.className = 'settings-radio-label';
-            const allRadio = document.createElement('input');
-            allRadio.type = 'radio';
-            allRadio.name = 'settings-lang';
-            allRadio.value = 'all';
-            allRadio.checked = true;
-            const allSpan = document.createElement('span');
-            allSpan.textContent = t('ui.all_languages');
-            allLabel.appendChild(allRadio);
-            allLabel.appendChild(allSpan);
-            container.appendChild(allLabel);
+        if (!container) return;
+        container.innerHTML = '';
 
-            // Dynamic languages
-            const languageCodes = Object.keys(translations);
-            languageCodes.forEach(langCode => {
-                const label = document.createElement('label');
-                label.className = 'settings-radio-label';
-                const radio = document.createElement('input');
-                radio.type = 'radio';
-                radio.name = 'settings-lang';
-                radio.value = langCode;
-                const span = document.createElement('span');
-                span.textContent =
-                    (translations[uiLang] && translations[uiLang]['lang.' + langCode]) ||
-                    (translations['en'] && translations['en']['lang.' + langCode]) ||
-                    langCode;
-                label.appendChild(radio);
-                label.appendChild(span);
-                container.appendChild(label);
-            });
-        }
+        // "All languages" option
+        const allLabel = document.createElement('label');
+        allLabel.className = 'settings-radio-label';
+        const allRadio = document.createElement('input');
+        allRadio.type = 'radio';
+        allRadio.name = 'settings-lang';
+        allRadio.value = 'all';
+        allRadio.checked = true;
+        const allSpan = document.createElement('span');
+        allSpan.textContent = t('ui.all_languages');
+        allLabel.appendChild(allRadio);
+        allLabel.appendChild(allSpan);
+        container.appendChild(allLabel);
+
+        // All real languages (from translations)
+        const languageCodes = Object.keys(translations);
+        languageCodes.forEach(langCode => {
+            const label = document.createElement('label');
+            label.className = 'settings-radio-label';
+            const radio = document.createElement('input');
+            radio.type = 'radio';
+            radio.name = 'settings-lang';
+            radio.value = langCode;
+            const span = document.createElement('span');
+            span.textContent =
+                (translations[uiLang] && translations[uiLang]['lang.' + langCode]) ||
+                (translations['en'] && translations['en']['lang.' + langCode]) ||
+                langCode;
+            label.appendChild(radio);
+            label.appendChild(span);
+            container.appendChild(label);
+        });
     }
 
-    // Apufunktio käyttöliittymän tekstien päivittämiseen kielen mukaan
+    function populateUiLangDropdown() {
+        const uiLangFilter = document.getElementById('uiLangFilter');
+        uiLangFilter.innerHTML = '';
+
+        const languageCodes = Object.keys(translations);
+        const browserLang = (navigator.language || 'en').substring(0, 2);
+        const langsToShow = languageCodes.includes(browserLang) && browserLang !== 'en'
+            ? [browserLang, 'en']
+            : ['en'];
+
+        langsToShow.forEach(langCode => {
+            const opt = document.createElement('option');
+            opt.value = langCode;
+            opt.textContent =
+                (translations[langCode] && translations[langCode]['lang.' + langCode]) ||
+                (translations['en'] && translations['en']['lang.' + langCode]) ||
+                langCode;
+            uiLangFilter.appendChild(opt);
+        });
+        uiLangFilter.value = langsToShow[0];
+    }
+
+    // Updates UI wording for buttons, labels, etc
     function updateUITranslations() {
         document.getElementById('btn-categories').textContent = t('ui.categories');
         document.getElementById('btn-az').textContent = t('ui.az');
 
-        // Settings button label
         const settingsBtnLabel = document.getElementById('settings-btn-label');
         if (settingsBtnLabel) settingsBtnLabel.textContent = t('ui.settings');
-
-        // Settings panel section titles
         const uiLangTitle = document.getElementById('settings-ui-lang-title');
         if (uiLangTitle) uiLangTitle.textContent = t('ui.interface_language').toUpperCase();
         const contentLangTitle = document.getElementById('settings-content-lang-title');
         if (contentLangTitle) contentLangTitle.textContent = t('ui.preferred_language').toUpperCase();
         const regionTitle = document.getElementById('settings-region-title');
         if (regionTitle) regionTitle.textContent = t('ui.region').toUpperCase();
-       
 
-        // Region labels
         const scopeLabelMap = {
             'settings-scope-all-label':     t('ui.all_regions'),
             'settings-scope-finland-label': t('reg.finland'),
@@ -229,17 +236,13 @@
             if (el) el.textContent = scopeLabelMap[id];
         });
 
-        // Fallback note
         const langNote = document.getElementById('settings-lang-note');
         if (langNote) langNote.textContent = t('ui.english_fallback_note');
-
-        // Apply / Reset buttons
         const applyBtn = document.getElementById('settings-apply-btn');
         if (applyBtn) applyBtn.textContent = t('ui.apply').toUpperCase();
         const resetBtn = document.getElementById('settings-reset-btn');
         if (resetBtn) resetBtn.textContent = t('ui.reset_filters').toUpperCase();
 
-        // Päivitetään näkymän otsikko kielen vaihtuessa
         const viewTitle = document.getElementById('current-view-title');
         if (viewTitle && currentSourceFile === 'data.json') {
             if (currentCategory === 'All') {
@@ -249,61 +252,21 @@
             }
         }
     }
-        
+
     async function init() {
         try {
             const res = await fetch('translations.json?v=' + Date.now());
             translations = await res.json();
-        } catch(e) {
+        } catch (e) {
             console.warn("Käännökset puuttuvat.");
         }
 
-        // Get available dynamic languages from the loaded translations
-        const languageCodes = Object.keys(translations);
-
-        // Detect best UI language for user
-        const userLang = (navigator.language || 'en').substring(0, 2);
-        let uiLang = languageCodes.includes(userLang) ? userLang : 'en';
-
-        // -- Populate UI language <select> --
+        populateUiLangDropdown();
         const uiLangFilter = document.getElementById('uiLangFilter');
-        uiLangFilter.innerHTML = '';
-        languageCodes.forEach(langCode => {
-            const opt = document.createElement('option');
-            opt.value = langCode;
-            opt.textContent =
-                (translations[uiLang] && translations[uiLang]['lang.' + langCode]) ||
-                (translations['en'] && translations['en']['lang.' + langCode]) ||
-                langCode;
-            uiLangFilter.appendChild(opt);
-        });
-        uiLangFilter.value = uiLang;
-
-        // -- Populate language radio group in settings panel --
-        const uiLangOptions = document.getElementById('settings-ui-lang-options');
-        if (uiLangOptions) {
-            uiLangOptions.innerHTML = '';
-            languageCodes.forEach((langCode, idx) => {
-                const label = document.createElement('label');
-                label.className = 'settings-radio-label';
-                const radio = document.createElement('input');
-                radio.type = 'radio';
-                radio.name = 'settings-ui-lang';
-                radio.value = langCode;
-                if (langCode === uiLang) radio.checked = true;
-                const span = document.createElement('span');
-                span.textContent =
-                    (translations[uiLang] && translations[uiLang]['lang.' + langCode]) ||
-                    (translations['en'] && translations['en']['lang.' + langCode]) ||
-                    langCode;
-                label.appendChild(radio);
-                label.appendChild(span);
-                uiLangOptions.appendChild(label);
-            });
-        }
+        let uiLang = uiLangFilter.value || 'en';
         populateContentLangRadios(uiLang);
 
-        // Masonry-alustus
+        // Masonry init
         const container = document.querySelector('#magazine-grid');
         masonry = new Masonry(container, {
             itemSelector: '.grid-item',
@@ -314,30 +277,29 @@
         });
         window.msnry = masonry;
 
-        // Ladataan ensin käännökset
-        try {
-            const res = await fetch('translations.json?v=' + Date.now());
-            translations = await res.json();
-        } catch(e) {
-            console.warn("Käännökset puuttuvat.");
-        }
-
         await loadData('data.json', true);
         initSidebar();
         updateUITranslations();
         syncSettingsPanelFromFilters();
 
-        // Event listenerit - poistetaan vanhat ennen uusien lisäystä
+        // Event handlers
         const langFilter = document.getElementById('langFilter');
         const scopeFilter = document.getElementById('scopeFilter');
         langFilter.removeEventListener('change', updateView);
         scopeFilter.removeEventListener('change', updateView);
         langFilter.addEventListener('change', updateView);
         scopeFilter.addEventListener('change', updateView);
+
         uiLangFilter.removeEventListener('change', updateUITranslations);
         uiLangFilter.addEventListener('change', updateUITranslations);
 
-        // Suljetaan asetuspaneeli klikkaamalla sen ulkopuolelle
+        // Update content lang radios and UI text on UI language change
+        uiLangFilter.addEventListener('change', () => {
+            const newUiLang = uiLangFilter.value;
+            populateContentLangRadios(newUiLang);
+            updateUITranslations();
+        });
+
         document.addEventListener('click', (e) => {
             const panel = document.getElementById('settings-panel');
             const btn = document.getElementById('settings-btn');
@@ -348,7 +310,7 @@
             }
         });
 
-        // Scroll-tunnistin - katkaistaan mahdollinen aiempi ennen uuden luomista
+        // Infinite scroll observer
         if (scrollObserver) scrollObserver.disconnect();
         scrollObserver = new IntersectionObserver((entries) => {
             if (entries[0].isIntersecting && !isLoading && !isBookmarksView) displayArticles();
@@ -1170,7 +1132,6 @@
             container.classList.add('loaded');
         });
     }
-
     // Expose functions needed from HTML attributes
     window.toggleSidebar = toggleSidebar;
     window.showSidebarView = showSidebarView;
