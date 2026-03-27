@@ -347,8 +347,22 @@ async function processRSS(feed, allArticles, now) {
         console.log(`[VAROITUS] Logon haku epäonnistui kohteelle ${feed.nameChecked}: ${e.message}`);
     }
 
-    const items = feedContent.items.map(item => {
-        let itemDate = new Date(item.pubDate || item.published || item.updated || item.isoDate || now);
+    const items = feedContent.items
+        .map(item => {
+            const rawDate =
+                item.pubDate ||
+                item.published ||
+                item.updated ||
+                item.isoDate ||
+                null;
+
+            let isoDate = null;
+            if (rawDate) {
+                const d = new Date(rawDate);
+                if (!isNaN(d.getTime())) {
+                    isoDate = d.toISOString();
+                }
+            }
         
         // --- KUVAN POIMINTA ALKAA ---
         // Alustetaan muuttuja img tyhjäksi. Jos kuvaa ei löydy mistään alta, se jää nulliksi.
@@ -510,7 +524,7 @@ async function processRSS(feed, allArticles, now) {
         return {
             title: normalizeContent(item.title),
             link: articleLink,
-            pubDate: itemDate.toISOString(),
+            pubDate: isoDate,
             content: finalSnippet,
             creator: item.creator || item.author || "",
             sourceTitle: feed.nameChecked, 
@@ -524,7 +538,8 @@ async function processRSS(feed, allArticles, now) {
             originalRssUrl: feed.rssUrl
         };
 
-    });
+    })
+    .filter(item => item && item.pubDate); // Only keep items with valid pubDate
     allArticles.push(...items);
 }
 
