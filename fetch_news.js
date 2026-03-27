@@ -497,7 +497,6 @@ async function processRSS(feed, allArticles, now) {
             };
         })
         .filter(item => item && item.pubDate); // Only keep items with valid date
-    .filter(item => item && item.pubDate); // Only keep items with valid pubDate
     allArticles.push(...items);
 }
 
