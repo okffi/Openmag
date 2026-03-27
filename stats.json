@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "27.3.2026 klo 7.45.01"
+    "last_updated": "27.3.2026 klo 8.16.52"
   },
   "Global Network of Internet and Society Centers NoC": {
     "file": "global_network_of_internet_and_society_centers_noc.json",
@@ -12,7 +12,7 @@
   },
   "Tactical Tech": {
     "file": "tactical_tech.json",
-    "count": 298,
+    "count": 5,
     "category": "Investigations + Conflict",
     "description": "Tactical Tech is an international NGO that engages with citizens and civil-society organisations to explore and mitigate the impacts of technology on society.",
     "lang": "en",
@@ -20,7 +20,7 @@
   },
   "Europol": {
     "file": "europol.json",
-    "count": 10,
+    "count": 5,
     "category": "Investigations + Conflict",
     "description": "News",
     "lang": "en",
@@ -36,9 +36,33 @@
   },
   "Effekt": {
     "file": "effekt.json",
-    "count": 6,
+    "count": 5,
     "category": "Culture",
     "description": "The Solutions Fund",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Global Voices": {
+    "file": "global_voices.json",
+    "count": 15,
+    "category": "Human Rights + Democracy",
+    "description": "Citizen media stories from around the world",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Human Rights Watch News": {
+    "file": "human_rights_watch_news.json",
+    "count": 20,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Suomen Kuvalehti": {
+    "file": "suomen_kuvalehti.json",
+    "count": 33,
+    "category": "Perspectives",
+    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -76,7 +100,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 50,
+    "count": 28,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -84,7 +108,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 31,
+    "count": 27,
     "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -402,14 +426,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Global Voices": {
-    "file": "global_voices.json",
-    "count": 15,
-    "category": "Human Rights + Democracy",
-    "description": "Citizen media stories from around the world",
-    "lang": "en",
-    "scope": "World"
-  },
   "Amnesty International": {
     "file": "amnesty_international.json",
     "count": 12,
@@ -423,14 +439,6 @@
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Human Rights Watch News": {
-    "file": "human_rights_watch_news.json",
-    "count": 20,
-    "category": "Human Rights + Democracy",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -535,14 +543,6 @@
     "count": 10,
     "category": "Perspectives",
     "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Suomen Kuvalehti": {
-    "file": "suomen_kuvalehti.json",
-    "count": 33,
-    "category": "Perspectives",
-    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -692,7 +692,7 @@
   },
   "Verde": {
     "file": "verde.json",
-    "count": 15,
+    "count": 16,
     "category": "Politics + Public sector",
     "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
     "lang": "fi",
@@ -742,6 +742,14 @@
     "file": "preventionweb.json",
     "count": 40,
     "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Center for European Policy Analysis": {
+    "file": "center_for_european_policy_analysis.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
     "scope": "Europe"
@@ -980,7 +988,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 1,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1306,6 +1314,22 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Open Knowledge Foundation Blog": {
+    "file": "open_knowledge_foundation_blog.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Content for a fair, sustainable and open future",
+    "lang": "en",
+    "scope": "World"
+  },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 2,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "CERN": {
     "file": "cern.json",
     "count": 10,
@@ -1316,7 +1340,7 @@
   },
   "Zooniverse": {
     "file": "zooniverse.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
@@ -1690,14 +1714,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "HIIG": {
-    "file": "hiig.json",
-    "count": 20,
-    "category": "(Open) Science + Research",
-    "description": "Alexander von Humboldt Institute for Internet and Society",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "CHAOSS": {
     "file": "chaoss.json",
     "count": 10,
@@ -1743,6 +1759,14 @@
     "count": 10,
     "category": "(Open) Data + Technology",
     "description": "Together, for a better net.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Open Source Initiative": {
+    "file": "open_source_initiative.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
     "scope": "World"
   },
@@ -1833,6 +1857,14 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
+  },
+  "HIIG": {
+    "file": "hiig.json",
+    "count": 20,
+    "category": "(Open) Science + Research",
+    "description": "Alexander von Humboldt Institute for Internet and Society",
+    "lang": "en",
+    "scope": "Europe"
   },
   "News – Oxford Internet Institute": {
     "file": "news___oxford_internet_institute.json",
@@ -2138,14 +2170,6 @@
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
-    "lang": "en",
-    "scope": "World"
-  },
   "Heritage Hub Kraków": {
     "file": "heritage_hub_krak_w.json",
     "count": 10,
@@ -2250,28 +2274,12 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Knowledge Foundation Blog": {
-    "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Content for a fair, sustainable and open future",
-    "lang": "en",
-    "scope": "World"
-  },
   "Bündnis F5": {
     "file": "b_ndnis_f5.json",
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "de",
-    "scope": "Europe"
-  },
-  "Center for European Policy Analysis": {
-    "file": "center_for_european_policy_analysis.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
     "scope": "Europe"
   },
   "Creative Commons": {
@@ -2378,14 +2386,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Sciences Po Technology and global affairs innovation hub": {
     "file": "sciences_po_technology_and_global_affairs_innovation_hub.json",
     "count": 22,
@@ -2442,14 +2442,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "YK:n alueellinen tiedotuskeskus – Suomi": {
-    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
-    "count": 15,
-    "category": "Global policy",
-    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "CoP CC on Participatory and Deliberative Democracy": {
     "file": "cop_cc_on_participatory_and_deliberative_democracy.json",
     "count": 10,
@@ -2497,6 +2489,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "openDemocracy": {
+    "file": "opendemocracy.json",
+    "count": 20,
+    "category": "Human Rights + Democracy",
+    "description": "openDemocracy RSS",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
   },
   "Investigations – ACDC": {
     "file": "investigations___acdc.json",
