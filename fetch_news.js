@@ -134,23 +134,30 @@ async function run() {
 
         // --- 2. KÄÄNNÖSTEN HAKU (RE-INSTATED) ---
         console.log("Päivitetään käännökset Sheetsistä...");
-        try {
-            const transRes = await axios.get(TRANSLATIONS_TSV_URL + cacheBuster);
-            const transRows = transRes.data.split(/\r?\n/).slice(1).filter(r => r.trim() !== '');
-            const transObj = { fi: {}, en: {}, sv: {}, de: {}, fr: {}, et: {} };
 
-            transRows.forEach(row => {
-                const [group, key, en, fi, sv, de, fr, et] = row.split('\t').map(v => v ? v.trim() : '');
-                if (key) {
-                    transObj.en[key] = en; transObj.fi[key] = fi;
-                    transObj.sv[key] = sv; transObj.de[key] = de; transObj.fr[key] = fr; transObj.et[key] = et;
-                }
-            });
-            fs.writeFileSync('translations.json', JSON.stringify(transObj, null, 2));
-            console.log("translations.json päivitetty.");
-        } catch (e) {
-            console.error("Käännösten haku epäonnistui:", e.message);
-        }
+        const transRes = await axios.get(TRANSLATIONS_TSV_URL + cacheBuster);
+        const transRows = transRes.data.split(/\r?\n/).filter(r => r.trim() !== '');
+
+        // 1. Parse header row for language columns
+        const header = transRows[0].split('\t').map(v => v.trim());
+        const langCols = header.slice(2); // skip Group and Key
+        const transObj = {};
+        langCols.forEach(lang => { transObj[lang] = {}; });
+
+        // 2. Parse translation rows
+        transRows.slice(1).forEach(row => {
+            const fields = row.split('\t').map(v => v ? v.trim() : '');
+            const group = fields[0], key = fields[1];
+            if (key) {
+                langCols.forEach((lang, idx) => {
+                    transObj[lang][key] = fields[idx + 2] || "";
+                });
+            }
+        });
+
+        fs.writeFileSync('translations.json', JSON.stringify(transObj, null, 2));
+        console.log("translations.json päivitetty.");
+
 
         // --- 3. SYÖTTEIDEN HAKU ---
         console.log("Haetaan syötelistaa Google Sheetsistä (TSV)...");
@@ -288,7 +295,7 @@ async function run() {
         process.exit(1);
     }
 }
-async function processRSS(feed, allArticles, now) {
+async function processRSS(feed, allArticles) {
     let feedContent;
 
     // Määritetään yhteiset asetukset axios-pyyntöjä varten
