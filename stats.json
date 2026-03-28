@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "28.3.2026 klo 9.49.16"
+    "last_updated": "28.3.2026 klo 10.50.53"
   },
   "Global Network of Internet and Society Centers NoC": {
     "file": "global_network_of_internet_and_society_centers_noc.json",
@@ -25,6 +25,38 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Euronews | Europe": {
+    "file": "euronews___europe.json",
+    "count": 50,
+    "category": "Global policy",
+    "description": "Latest news from Euronews",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Diff": {
+    "file": "diff.json",
+    "count": 11,
+    "category": "Digital Culture + Heritage",
+    "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Valtioneuvoston tiedotteet": {
+    "file": "valtioneuvoston_tiedotteet.json",
+    "count": 100,
+    "category": "Politics + Public sector",
+    "description": "Valtioneuvoston tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Yle | Kansainvälinen politiikka": {
+    "file": "yle___kansainv_linen_politiikka.json",
+    "count": 21,
+    "category": "Politics + Public sector",
+    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
+    "lang": "fi",
+    "scope": "World"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
@@ -87,14 +119,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Euronews | Europe": {
-    "file": "euronews___europe.json",
-    "count": 50,
-    "category": "Global policy",
-    "description": "Latest news from Euronews",
     "lang": "en",
     "scope": "Europe"
   },
@@ -199,14 +223,6 @@
     "count": 49,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Diff": {
-    "file": "diff.json",
-    "count": 11,
-    "category": "Digital Culture + Heritage",
-    "description": "News from the Wikimedia movement",
     "lang": "en",
     "scope": "World"
   },
@@ -540,7 +556,7 @@
   },
   "Avate Audiovisuaalisen alan tekijät ry": {
     "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
+    "count": 1,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -583,14 +599,6 @@
     "count": 20,
     "category": "Politics + Public sector",
     "description": "Opetus- ja kulttuuriministeriön tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Valtioneuvoston tiedotteet": {
-    "file": "valtioneuvoston_tiedotteet.json",
-    "count": 100,
-    "category": "Politics + Public sector",
-    "description": "Valtioneuvoston tiedotteet",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -657,14 +665,6 @@
     "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Yle | Kansainvälinen politiikka": {
-    "file": "yle___kansainv_linen_politiikka.json",
-    "count": 21,
-    "category": "Politics + Public sector",
-    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
-    "lang": "fi",
-    "scope": "World"
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
@@ -1276,7 +1276,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -1420,7 +1420,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1484,7 +1484,7 @@
   },
   "Zooniverse": {
     "file": "zooniverse.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Science + Research",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
@@ -1580,7 +1580,7 @@
   },
   "Berkman Klein Center for Internet & Society at Harvard University Community": {
     "file": "berkman_klein_center_for_internet___society_at_harvard_university_community.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -1714,22 +1714,6 @@
     "lang": "sv",
     "scope": "Finland"
   },
-  "Wikimedia Deutschland Blog": {
-    "file": "wikimedia_deutschland_blog.json",
-    "count": 16,
-    "category": "(Open) Data + Technology",
-    "description": "Neues aus dem Wikimedia-Universum",
-    "lang": "de",
-    "scope": "Germany"
-  },
-  "Finnish Cultural Institute for the Benelux": {
-    "file": "finnish_cultural_institute_for_the_benelux.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Finnish Cultural Institute for the Benelux",
-    "lang": "en",
-    "scope": "Belgium"
-  },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
     "count": 15,
@@ -1743,6 +1727,14 @@
     "count": 20,
     "category": "(Open) Science + Research",
     "description": "Alexander von Humboldt Institute for Internet and Society",
+    "lang": "de",
+    "scope": "Germany"
+  },
+  "Wikimedia Deutschland Blog": {
+    "file": "wikimedia_deutschland_blog.json",
+    "count": 16,
+    "category": "(Open) Data + Technology",
+    "description": "Neues aus dem Wikimedia-Universum",
     "lang": "de",
     "scope": "Germany"
   },
@@ -1817,6 +1809,14 @@
     "description": "",
     "lang": "en",
     "scope": "UK"
+  },
+  "Finnish Cultural Institute for the Benelux": {
+    "file": "finnish_cultural_institute_for_the_benelux.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Finnish Cultural Institute for the Benelux",
+    "lang": "en",
+    "scope": "Belgium"
   },
   "The Finnland-Institut": {
     "file": "the_finnland_institut.json",
@@ -2607,6 +2607,14 @@
     "count": 10,
     "category": "Global policy",
     "description": "Suomen YK-nuoret",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "YK:n alueellinen tiedotuskeskus – Suomi": {
+    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
+    "count": 15,
+    "category": "Global policy",
+    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
     "lang": "fi",
     "scope": "Finland"
   },
