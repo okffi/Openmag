@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "30.3.2026 klo 23.55.28"
+    "last_updated": "31.3.2026 klo 0.50.50"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
@@ -12,7 +12,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 21,
+    "count": 24,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -36,7 +36,7 @@
   },
   "Wikimedia Nederlands": {
     "file": "wikimedia_nederlands.json",
-    "count": 9,
+    "count": 8,
     "category": "(Open) Data + Technology",
     "description": "",
     "lang": "en",
@@ -436,7 +436,7 @@
   },
   "UN News - Global perspective Human stories | Peace and Security": {
     "file": "un_news___global_perspective_human_stories___peace_and_security.json",
-    "count": 8,
+    "count": 9,
     "category": "Investigations + Conflict",
     "description": "UN News - Global perspective Human stories | Peace and Security",
     "lang": "en",
@@ -596,7 +596,7 @@
   },
   "Zooniverse": {
     "file": "zooniverse.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
@@ -666,6 +666,38 @@
     "lang": "en",
     "scope": "World"
   },
+  "Center for European Policy Analysis": {
+    "file": "center_for_european_policy_analysis.json",
+    "count": 12,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Berkman Klein Center for Internet & Society at Harvard University Community": {
+    "file": "berkman_klein_center_for_internet___society_at_harvard_university_community.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Global Voices": {
+    "file": "global_voices.json",
+    "count": 15,
+    "category": "Human Rights + Democracy",
+    "description": "Citizen media stories from around the world",
+    "lang": "en",
+    "scope": "World"
+  },
+  "OCCRP Announcements": {
+    "file": "occrp_announcements.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "OCCRP stories about Announcements delivered straight to you. Well, your RSS reader anyway.",
+    "lang": "en",
+    "scope": "World"
+  },
   "CMI": {
     "file": "cmi.json",
     "count": 10,
@@ -679,14 +711,6 @@
     "count": 10,
     "category": "(Open) Data + Technology",
     "description": "weekly &#8211; semanario &#8211; hebdo &#8211; 週刊 &#8211; týdeník &#8211; Wochennotiz &#8211; 주간 &#8211; tygodnik",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Global Voices": {
-    "file": "global_voices.json",
-    "count": 15,
-    "category": "Human Rights + Democracy",
-    "description": "Citizen media stories from around the world",
     "lang": "en",
     "scope": "World"
   },
@@ -751,14 +775,6 @@
     "count": 12,
     "category": "Digital Culture + Heritage",
     "description": "Join us on a journey through time",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Center for European Policy Analysis": {
-    "file": "center_for_european_policy_analysis.json",
-    "count": 12,
-    "category": "Digital Policy + Rights",
-    "description": "",
     "lang": "en",
     "scope": "Europe"
   },
@@ -940,7 +956,7 @@
   },
   "Rajapinta": {
     "file": "rajapinta.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
@@ -1274,14 +1290,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "OCCRP Announcements": {
-    "file": "occrp_announcements.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "OCCRP stories about Announcements delivered straight to you. Well, your RSS reader anyway.",
-    "lang": "en",
-    "scope": "World"
-  },
   "WIPO Press Releases": {
     "file": "wipo_press_releases.json",
     "count": 10,
@@ -1594,30 +1602,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Copernicus Institute": {
-    "file": "copernicus_institute.json",
-    "count": 20,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "CERN": {
-    "file": "cern.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Mozilla Open Policy & Advocacy": {
-    "file": "mozilla_open_policy___advocacy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Mozilla's official blog on open Internet policy initiatives and developments",
-    "lang": "en",
-    "scope": "World"
-  },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
     "count": 15,
@@ -1874,6 +1858,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Copernicus Institute": {
+    "file": "copernicus_institute.json",
+    "count": 20,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "FCAI | News": {
     "file": "fcai___news.json",
     "count": 20,
@@ -1954,19 +1946,19 @@
     "lang": "en",
     "scope": "World"
   },
+  "CERN": {
+    "file": "cern.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Open Search Foundation": {
     "file": "open_search_foundation.json",
     "count": 10,
     "category": "(Open) Data + Technology",
     "description": "Together, for a better net.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Open Source Initiative": {
-    "file": "open_source_initiative.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
     "scope": "World"
   },
@@ -2026,14 +2018,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
-    "lang": "en",
-    "scope": "World"
-  },
   "The Harvard Library Innovation Lab": {
     "file": "the_harvard_library_innovation_lab.json",
     "count": 420,
@@ -2090,16 +2074,16 @@
     "lang": "en",
     "scope": "World"
   },
-  "Creative Commons": {
-    "file": "creative_commons.json",
+  "Mozilla Open Policy & Advocacy": {
+    "file": "mozilla_open_policy___advocacy.json",
     "count": 10,
     "category": "Digital Policy + Rights",
-    "description": "",
+    "description": "Mozilla's official blog on open Internet policy initiatives and developments",
     "lang": "en",
     "scope": "World"
   },
-  "Berkman Klein Center for Internet & Society at Harvard University Community": {
-    "file": "berkman_klein_center_for_internet___society_at_harvard_university_community.json",
+  "Creative Commons": {
+    "file": "creative_commons.json",
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
@@ -2231,6 +2215,14 @@
     "count": 10,
     "category": "Investigations + Conflict",
     "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Global Investigative Journalism Network": {
+    "file": "global_investigative_journalism_network.json",
+    "count": 20,
+    "category": "Investigations + Conflict",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -2535,6 +2527,14 @@
     "count": 10,
     "category": "Culture",
     "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
