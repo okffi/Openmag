@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "2.4.2026 klo 8.09.03"
+    "last_updated": "2.4.2026 klo 10.23.41"
   },
   "Internet Archive Blogs": {
     "file": "internet_archive_blogs.json",
@@ -33,6 +33,62 @@
     "description": "Parempaa ulkopoliittista keskustelua.",
     "lang": "fi",
     "scope": "World"
+  },
+  "AlgorithmWatch": {
+    "file": "algorithmwatch.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Germany"
+  },
+  "Global Network of Internet and Society Centers NoC": {
+    "file": "global_network_of_internet_and_society_centers_noc.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Freedom House": {
+    "file": "freedom_house.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Tiede ja tutkimus - ePressi": {
+    "file": "tiede_ja_tutkimus___epressi.json",
+    "count": 21,
+    "category": "(Open) Science + Research",
+    "description": "Tiedotteiden tehokas julkaisukanava",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Aalto-yliopisto": {
+    "file": "aalto_yliopisto.json",
+    "count": 25,
+    "category": "(Open) Science + Research",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Demokraatti": {
+    "file": "demokraatti.json",
+    "count": 31,
+    "category": "Politics + Public sector",
+    "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
+    "lang": "fi",
+    "scope": "Sweden"
   },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
@@ -220,7 +276,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 50,
+    "count": 29,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -236,7 +292,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital Culture + Heritage",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -287,14 +343,6 @@
     "count": 3418,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Global Network of Internet and Society Centers NoC": {
-    "file": "global_network_of_internet_and_society_centers_noc.json",
-    "count": 11,
-    "category": "Digital Policy + Rights",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -450,14 +498,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Tiede ja tutkimus - ePressi": {
-    "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 21,
-    "category": "(Open) Science + Research",
-    "description": "Tiedotteiden tehokas julkaisukanava",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
     "count": 10,
@@ -476,7 +516,7 @@
   },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
-    "count": 14,
+    "count": 15,
     "category": "(Open) Science + Research",
     "description": "Turun yliopiston etusivun uutisten lyhennelmät",
     "lang": "fi",
@@ -508,7 +548,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 20,
+    "count": 23,
     "category": "Culture",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -772,7 +812,7 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
@@ -799,14 +839,6 @@
     "count": 20,
     "category": "Global policy",
     "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Freedom House": {
-    "file": "freedom_house.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -956,7 +988,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 2,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1354,14 +1386,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Rajapinta": {
-    "file": "rajapinta.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "researcher community focused on digital social sciences",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Kansalliset dialogit": {
     "file": "kansalliset_dialogit.json",
     "count": 9,
@@ -1372,7 +1396,7 @@
   },
   "Avate Audiovisuaalisen alan tekijät ry": {
     "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 1,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1594,62 +1618,6 @@
     "lang": "sv",
     "scope": "Sweden"
   },
-  "The Finnish Institute in Rome": {
-    "file": "the_finnish_institute_in_rome.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Suomen Rooman instituutti",
-    "lang": "en",
-    "scope": "Italy"
-  },
-  "Institute of Network Cultures": {
-    "file": "institute_of_network_cultures.json",
-    "count": 15,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Digital Scholarship Leiden": {
-    "file": "digital_scholarship_leiden.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "DigitalScholarship Leiden",
-    "lang": "en",
-    "scope": "Belgium"
-  },
-  "NGI Commons": {
-    "file": "ngi_commons.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Open Source and Internet Commons for Europe’s Digital Sovereignty",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Center for Internet and Society": {
-    "file": "center_for_internet_and_society.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "The CIS is a CNRS research center",
-    "lang": "en",
-    "scope": "France"
-  },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 1,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "correctiv.org": {
-    "file": "correctiv_org.json",
-    "count": 100,
-    "category": "Investigations + Conflict",
-    "description": "Recherchen für die Gesellschaft",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "HIIG": {
     "file": "hiig.json",
     "count": 20,
@@ -1754,6 +1722,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "The Finnish Institute in Rome": {
+    "file": "the_finnish_institute_in_rome.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Suomen Rooman instituutti",
+    "lang": "en",
+    "scope": "Italy"
+  },
   "European Parliament | Culture and education": {
     "file": "european_parliament___culture_and_education.json",
     "count": 25,
@@ -1794,11 +1770,11 @@
     "lang": "en",
     "scope": "Poland"
   },
-  "Michael Culture Association": {
-    "file": "michael_culture_association.json",
-    "count": 1,
+  "Institute of Network Cultures": {
+    "file": "institute_of_network_cultures.json",
+    "count": 15,
     "category": "Digital Culture + Heritage",
-    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
+    "description": "",
     "lang": "en",
     "scope": "Europe"
   },
@@ -1810,13 +1786,37 @@
     "lang": "en",
     "scope": "UK"
   },
-  "AlgorithmWatch": {
-    "file": "algorithmwatch.json",
+  "DARIAH-EU": {
+    "file": "dariah_eu.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Digital Research Infrastructure for the Arts and Humanities",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Digital Scholarship Leiden": {
+    "file": "digital_scholarship_leiden.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "DigitalScholarship Leiden",
+    "lang": "en",
+    "scope": "Belgium"
+  },
+  "NGI Commons": {
+    "file": "ngi_commons.json",
     "count": 10,
     "category": "Digital Policy + Rights",
-    "description": "",
+    "description": "Open Source and Internet Commons for Europe’s Digital Sovereignty",
     "lang": "en",
-    "scope": "Germany"
+    "scope": "Europe"
+  },
+  "Center for Internet and Society": {
+    "file": "center_for_internet_and_society.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "The CIS is a CNRS research center",
+    "lang": "en",
+    "scope": "France"
   },
   "Next Generation Internet": {
     "file": "next_generation_internet.json",
@@ -1831,6 +1831,22 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Open Technologies for a Competitive and Sovereign Europe",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "correctiv.org": {
+    "file": "correctiv_org.json",
+    "count": 100,
+    "category": "Investigations + Conflict",
+    "description": "Recherchen für die Gesellschaft",
     "lang": "en",
     "scope": "Europe"
   },
@@ -1943,14 +1959,6 @@
     "count": 10,
     "category": "(Open) Data + Technology",
     "description": "Together, for a better net.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Open Source Initiative": {
-    "file": "open_source_initiative.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
     "scope": "World"
   },
@@ -2386,14 +2394,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Aalto-yliopisto": {
-    "file": "aalto_yliopisto.json",
-    "count": 25,
-    "category": "(Open) Science + Research",
-    "description": "Uusimmat tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "University of Oulu": {
     "file": "university_of_oulu.json",
     "count": 11,
@@ -2554,14 +2554,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Tietopoliitiikan yhteistyöryhmä": {
-    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "AI Finland -verkosto": {
     "file": "ai_finland__verkosto.json",
     "count": 8,
@@ -2583,14 +2575,6 @@
     "count": 10,
     "category": "Global policy",
     "description": "Suomen YK-nuoret",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2792,14 +2776,6 @@
     "category": "Digital Policy + Rights",
     "description": "Tech analysis without the boosterism",
     "lang": "en",
-    "scope": "Sweden"
-  },
-  "Demokraatti": {
-    "file": "demokraatti.json",
-    "count": 30,
-    "category": "Politics + Public sector",
-    "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
-    "lang": "fi",
     "scope": "Sweden"
   },
   "Puistokatu 4": {
