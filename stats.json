@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "2.4.2026 klo 20.03.31"
+    "last_updated": "2.4.2026 klo 22.05.44"
   },
   "Internet Archive Blogs": {
     "file": "internet_archive_blogs.json",
@@ -60,7 +60,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 18,
+    "count": 17,
     "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -108,7 +108,7 @@
   },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
-    "count": 15,
+    "count": 14,
     "category": "(Open) Science + Research",
     "description": "Turun yliopiston etusivun uutisten lyhennelmät",
     "lang": "fi",
@@ -228,7 +228,7 @@
   },
   "PreventionWeb": {
     "file": "preventionweb.json",
-    "count": 47,
+    "count": 48,
     "category": "Sustainability + Foresight",
     "description": "",
     "lang": "en",
@@ -276,7 +276,7 @@
   },
   "Avoin tiede": {
     "file": "avoin_tiede.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -420,7 +420,7 @@
   },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
-    "count": 11,
+    "count": 12,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -476,7 +476,7 @@
   },
   "Electronic Frontier Foundation": {
     "file": "electronic_frontier_foundation.json",
-    "count": 11,
+    "count": 15,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -500,7 +500,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 18,
+    "count": 17,
     "category": "Investigations + Conflict",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -588,7 +588,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 52,
+    "count": 32,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -600,6 +600,38 @@
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
+    "scope": "World"
+  },
+  "Technology – POLITICO": {
+    "file": "technology___politico.json",
+    "count": 31,
+    "category": "Digital Policy + Rights",
+    "description": "European Politics, Policy, Government News",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Amnesty International": {
+    "file": "amnesty_international.json",
+    "count": 12,
+    "category": "Human Rights + Democracy",
+    "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "bellingcat": {
+    "file": "bellingcat.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "the home of online investigations",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Data Rescue Project": {
+    "file": "data_rescue_project.json",
+    "count": 15,
+    "category": "Investigations + Conflict",
+    "description": "Preserving public data",
+    "lang": "en",
     "scope": "World"
   },
   "CCC Event Blog": {
@@ -692,7 +724,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 6,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -746,14 +778,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Technology – POLITICO": {
-    "file": "technology___politico.json",
-    "count": 31,
-    "category": "Digital Policy + Rights",
-    "description": "European Politics, Policy, Government News",
-    "lang": "en",
-    "scope": "World"
-  },
   "UN News - Global perspective Human stories": {
     "file": "un_news___global_perspective_human_stories.json",
     "count": 54,
@@ -767,22 +791,6 @@
     "count": 18,
     "category": "Human Rights + Democracy",
     "description": "UN News - Global perspective Human stories | Human Rights",
-    "lang": "en",
-    "scope": "World"
-  },
-  "bellingcat": {
-    "file": "bellingcat.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "the home of online investigations",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Data Rescue Project": {
-    "file": "data_rescue_project.json",
-    "count": 15,
-    "category": "Investigations + Conflict",
-    "description": "Preserving public data",
     "lang": "en",
     "scope": "World"
   },
@@ -1770,14 +1778,6 @@
     "lang": "en",
     "scope": "UK"
   },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Digital Scholarship Leiden": {
     "file": "digital_scholarship_leiden.json",
     "count": 10,
@@ -1858,11 +1858,11 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "FCAI | News": {
-    "file": "fcai___news.json",
-    "count": 20,
-    "category": "(Open) Data + Technology",
-    "description": "Finnish Center for Artificial Intelligence",
+  "Open Science | Federation of Finnish Learned Societies": {
+    "file": "open_science___federation_of_finnish_learned_societies.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "",
     "lang": "en",
     "scope": "Finland"
   },
@@ -2042,6 +2042,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
+  },
   "News – Wikimedia Foundation": {
     "file": "news___wikimedia_foundation.json",
     "count": 10,
@@ -2191,14 +2199,6 @@
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Amnesty International": {
-    "file": "amnesty_international.json",
-    "count": 12,
-    "category": "Human Rights + Democracy",
-    "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
     "scope": "World"
   },
@@ -2378,6 +2378,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Tiedepolitiikka": {
+    "file": "tiedepolitiikka.json",
+    "count": 30,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "REPAIR Tiedotteet": {
     "file": "repair_tiedotteet.json",
     "count": 10,
@@ -2391,6 +2399,14 @@
     "count": 11,
     "category": "(Open) Science + Research",
     "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "TSV": {
+    "file": "tsv.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2538,6 +2554,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Tietopoliitiikan yhteistyöryhmä": {
+    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "AI Finland -verkosto": {
     "file": "ai_finland__verkosto.json",
     "count": 8,
@@ -2567,6 +2591,14 @@
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2673,6 +2705,14 @@
     "description": "Soome Eesti Instituudi Sihtasutus",
     "lang": "fi",
     "scope": "Estonia"
+  },
+  "Norden | Pohjoismainen yhteistyö": {
+    "file": "norden___pohjoismainen_yhteisty_.json",
+    "count": 10,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Nordic + Baltic countries"
   },
   "Docomomo Suomi Finland ry": {
     "file": "docomomo_suomi_finland_ry.json",
