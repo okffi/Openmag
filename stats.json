@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "3.4.2026 klo 14.42.35"
+    "last_updated": "3.4.2026 klo 16.19.28"
   },
   "Institute of Network Cultures": {
     "file": "institute_of_network_cultures.json",
@@ -116,7 +116,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 24,
+    "count": 26,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -132,7 +132,7 @@
   },
   "Wikimedia Nederlands": {
     "file": "wikimedia_nederlands.json",
-    "count": 7,
+    "count": 8,
     "category": "(Open) Data + Technology",
     "description": "",
     "lang": "en",
@@ -151,6 +151,14 @@
     "count": 21,
     "category": "Human Rights + Democracy",
     "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "xkcd": {
+    "file": "xkcd.json",
+    "count": 5,
+    "category": "(Open) Data + Technology",
+    "description": "xkcd.com: A webcomic of romance and math humor.",
     "lang": "en",
     "scope": "World"
   },
@@ -252,7 +260,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 10,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -332,7 +340,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3423,
+    "count": 3426,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -420,7 +428,7 @@
   },
   "UN News - Global perspective Human stories | Peace and Security": {
     "file": "un_news___global_perspective_human_stories___peace_and_security.json",
-    "count": 4,
+    "count": 5,
     "category": "Investigations + Conflict",
     "description": "UN News - Global perspective Human stories | Peace and Security",
     "lang": "en",
@@ -636,7 +644,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -649,6 +657,14 @@
     "description": "Bringing Collections to Life",
     "lang": "en",
     "scope": "Netherlands"
+  },
+  "The Conversation – Articles (GLOBAL)": {
+    "file": "the_conversation___articles__global_.json",
+    "count": 49,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
@@ -708,7 +724,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 27,
+    "count": 30,
     "category": "Politics + Public sector",
     "description": "European Commission | News",
     "lang": "en",
@@ -737,14 +753,6 @@
     "description": "EU Strategy For The Baltic Sea Region",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
-  },
-  "xkcd": {
-    "file": "xkcd.json",
-    "count": 5,
-    "category": "(Open) Data + Technology",
-    "description": "xkcd.com: A webcomic of romance and math humor.",
-    "lang": "en",
-    "scope": "World"
   },
   "CODATA": {
     "file": "codata.json",
@@ -783,14 +791,6 @@
     "count": 15,
     "category": "Investigations + Conflict",
     "description": "Advancing media innovation to foster public trust",
-    "lang": "en",
-    "scope": "World"
-  },
-  "The Conversation – Articles (GLOBAL)": {
-    "file": "the_conversation___articles__global_.json",
-    "count": 49,
-    "category": "Perspectives",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -1172,7 +1172,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 1,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1602,14 +1602,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "WIPO Press Releases": {
-    "file": "wipo_press_releases.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "WIPO Press Releases",
-    "lang": "en",
-    "scope": "World"
-  },
   "HIIG": {
     "file": "hiig.json",
     "count": 20,
@@ -1762,14 +1754,6 @@
     "lang": "en",
     "scope": "Poland"
   },
-  "Michael Culture Association": {
-    "file": "michael_culture_association.json",
-    "count": 1,
-    "category": "Digital Culture + Heritage",
-    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Open Objects": {
     "file": "open_objects.json",
     "count": 10,
@@ -1823,14 +1807,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Open Technologies for a Competitive and Sovereign Europe",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2010,14 +1986,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
-    "lang": "en",
-    "scope": "World"
-  },
   "The Harvard Library Innovation Lab": {
     "file": "the_harvard_library_innovation_lab.json",
     "count": 420,
@@ -2079,6 +2047,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Mozilla's official blog on open Internet policy initiatives and developments",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Open Knowledge Foundation Blog": {
+    "file": "open_knowledge_foundation_blog.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Content for a fair, sustainable and open future",
     "lang": "en",
     "scope": "World"
   },
@@ -2210,14 +2186,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Online Journalism Blog": {
-    "file": "online_journalism_blog.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
-    "lang": "en",
-    "scope": "World"
-  },
   "UN Peacemaker": {
     "file": "un_peacemaker.json",
     "count": 10,
@@ -2295,6 +2263,14 @@
     "count": 20,
     "category": "Investigations + Conflict",
     "description": "We don't just build maps, we build mappers!",
+    "lang": "en",
+    "scope": "World"
+  },
+  "WIPO Press Releases": {
+    "file": "wipo_press_releases.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "WIPO Press Releases",
     "lang": "en",
     "scope": "World"
   },
@@ -2490,14 +2466,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Wikimedia Suomi": {
     "file": "wikimedia_suomi.json",
     "count": 10,
@@ -2530,14 +2498,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Tietopoliitiikan yhteistyöryhmä": {
-    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "AI Finland -verkosto": {
     "file": "ai_finland__verkosto.json",
     "count": 8,
@@ -2562,19 +2522,19 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "YK:n alueellinen tiedotuskeskus – Suomi": {
+    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
+    "count": 15,
+    "category": "Global policy",
+    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Avoin hallinto": {
     "file": "avoin_hallinto.json",
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2681,14 +2641,6 @@
     "description": "Soome Eesti Instituudi Sihtasutus",
     "lang": "fi",
     "scope": "Estonia"
-  },
-  "Norden | Pohjoismainen yhteistyö": {
-    "file": "norden___pohjoismainen_yhteisty_.json",
-    "count": 10,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Nordic + Baltic countries"
   },
   "Docomomo Suomi Finland ry": {
     "file": "docomomo_suomi_finland_ry.json",
