@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "3.4.2026 klo 10.20.34"
+    "last_updated": "3.4.2026 klo 12.04.01"
   },
   "Institute of Network Cultures": {
     "file": "institute_of_network_cultures.json",
@@ -12,7 +12,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 51,
+    "count": 52,
     "category": "Global policy",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -20,7 +20,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 11,
+    "count": 12,
     "category": "Digital Culture + Heritage",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -65,6 +65,30 @@
     "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Amnesty International": {
+    "file": "amnesty_international.json",
+    "count": 13,
+    "category": "Human Rights + Democracy",
+    "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Verde": {
+    "file": "verde.json",
+    "count": 17,
+    "category": "Politics + Public sector",
+    "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Yle | Kansainvälinen politiikka": {
+    "file": "yle___kansainv_linen_politiikka.json",
+    "count": 21,
+    "category": "Politics + Public sector",
+    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
+    "lang": "fi",
+    "scope": "World"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
@@ -290,14 +314,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Amnesty International": {
-    "file": "amnesty_international.json",
-    "count": 13,
-    "category": "Human Rights + Democracy",
-    "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
     "count": 16,
@@ -396,7 +412,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 20,
+    "count": 22,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -492,7 +508,7 @@
   },
   "Rajapinta": {
     "file": "rajapinta.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
@@ -562,14 +578,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Verde": {
-    "file": "verde.json",
-    "count": 16,
-    "category": "Politics + Public sector",
-    "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Sitra": {
     "file": "sitra.json",
     "count": 10,
@@ -602,14 +610,6 @@
     "lang": "fi",
     "scope": "World"
   },
-  "Yle | Kansainvälinen politiikka": {
-    "file": "yle___kansainv_linen_politiikka.json",
-    "count": 21,
-    "category": "Politics + Public sector",
-    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
-    "lang": "fi",
-    "scope": "World"
-  },
   "Avate Audiovisuaalisen alan tekijät ry": {
     "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
     "count": 10,
@@ -617,6 +617,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "European Heritage Hub": {
+    "file": "european_heritage_hub.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Where cultural heritage connects",
+    "lang": "en",
+    "scope": "Europe"
   },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
@@ -1604,7 +1612,7 @@
   },
   "FNG Research": {
     "file": "fng_research.json",
-    "count": 1,
+    "count": 10,
     "category": "Culture",
     "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
     "lang": "fi",
@@ -1614,14 +1622,6 @@
     "file": "avoin_hallinto.json",
     "count": 10,
     "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Suomen Arkkitehtiliitto SAFA": {
-    "file": "suomen_arkkitehtiliitto_safa.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
     "scope": "Finland"
@@ -1866,14 +1866,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "European Heritage Hub": {
-    "file": "european_heritage_hub.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Where cultural heritage connects",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "FCAI | News": {
     "file": "fcai___news.json",
     "count": 20,
@@ -1975,14 +1967,6 @@
     "count": 10,
     "category": "(Open) Data + Technology",
     "description": "Open Source for Open Knowledge",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Confederation of Open Access Repositories": {
-    "file": "confederation_of_open_access_repositories.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Building a sustainable, global knowledge commons",
     "lang": "en",
     "scope": "World"
   },
@@ -2506,6 +2490,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Wikimedia Suomi": {
     "file": "wikimedia_suomi.json",
     "count": 10,
@@ -2538,14 +2530,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Tietopoliitiikan yhteistyöryhmä": {
-    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "AI Finland -verkosto": {
     "file": "ai_finland__verkosto.json",
     "count": 8,
@@ -2567,14 +2551,6 @@
     "count": 10,
     "category": "Global policy",
     "description": "Suomen YK-nuoret",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "YK:n alueellinen tiedotuskeskus – Suomi": {
-    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
-    "count": 15,
-    "category": "Global policy",
-    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2615,6 +2591,14 @@
     "count": 10,
     "category": "IP + Creative Industry",
     "description": "Journalistisen kulttuurin edistämissäätiö",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Suomen Arkkitehtiliitto SAFA": {
+    "file": "suomen_arkkitehtiliitto_safa.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
