@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "3.4.2026 klo 13.52.28"
+    "last_updated": "3.4.2026 klo 14.42.35"
   },
   "Institute of Network Cultures": {
     "file": "institute_of_network_cultures.json",
@@ -20,7 +20,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 12,
+    "count": 13,
     "category": "Digital Culture + Heritage",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -130,6 +130,30 @@
     "lang": "en",
     "scope": "World"
   },
+  "Wikimedia Nederlands": {
+    "file": "wikimedia_nederlands.json",
+    "count": 7,
+    "category": "(Open) Data + Technology",
+    "description": "",
+    "lang": "en",
+    "scope": "Netherlands"
+  },
+  "The Scholarly Kitchen": {
+    "file": "the_scholarly_kitchen.json",
+    "count": 15,
+    "category": "(Open) Science + Research",
+    "description": "What’s Hot and Cooking In Scholarly Publishing",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Human Rights Watch News": {
+    "file": "human_rights_watch_news.json",
+    "count": 21,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "COST": {
     "file": "cost.json",
     "count": 10,
@@ -228,19 +252,11 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 20,
+    "count": 10,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
-  },
-  "The Scholarly Kitchen": {
-    "file": "the_scholarly_kitchen.json",
-    "count": 15,
-    "category": "(Open) Science + Research",
-    "description": "What’s Hot and Cooking In Scholarly Publishing",
-    "lang": "en",
-    "scope": "World"
   },
   "OATP primary": {
     "file": "oatp_primary.json",
@@ -338,14 +354,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Human Rights Watch News": {
-    "file": "human_rights_watch_news.json",
-    "count": 21,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "UN News - Global perspective Human stories | Human Rights": {
     "file": "un_news___global_perspective_human_stories___human_rights.json",
     "count": 19,
@@ -412,7 +420,7 @@
   },
   "UN News - Global perspective Human stories | Peace and Security": {
     "file": "un_news___global_perspective_human_stories___peace_and_security.json",
-    "count": 5,
+    "count": 4,
     "category": "Investigations + Conflict",
     "description": "UN News - Global perspective Human stories | Peace and Security",
     "lang": "en",
@@ -516,7 +524,7 @@
   },
   "Rajapinta": {
     "file": "rajapinta.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
@@ -628,11 +636,19 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Internet Archive Europe": {
+    "file": "internet_archive_europe.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Bringing Collections to Life",
+    "lang": "en",
+    "scope": "Netherlands"
   },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
@@ -714,14 +730,6 @@
     "lang": "en",
     "scope": "Netherlands"
   },
-  "Wikimedia Nederlands": {
-    "file": "wikimedia_nederlands.json",
-    "count": 7,
-    "category": "(Open) Data + Technology",
-    "description": "",
-    "lang": "en",
-    "scope": "Netherlands"
-  },
   "EUSBSR": {
     "file": "eusbsr.json",
     "count": 10,
@@ -732,7 +740,7 @@
   },
   "xkcd": {
     "file": "xkcd.json",
-    "count": 4,
+    "count": 5,
     "category": "(Open) Data + Technology",
     "description": "xkcd.com: A webcomic of romance and math humor.",
     "lang": "en",
@@ -780,7 +788,7 @@
   },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
-    "count": 47,
+    "count": 49,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -1570,14 +1578,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Internet Archive Europe": {
-    "file": "internet_archive_europe.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Bringing Collections to Life",
-    "lang": "en",
-    "scope": "Netherlands"
-  },
   "Journalism Science Alliance": {
     "file": "journalism_science_alliance.json",
     "count": 10,
@@ -1962,6 +1962,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Confederation of Open Access Repositories": {
+    "file": "confederation_of_open_access_repositories.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Building a sustainable, global knowledge commons",
+    "lang": "en",
+    "scope": "World"
+  },
   "SPARC": {
     "file": "sparc.json",
     "count": 10,
@@ -2071,14 +2079,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Mozilla's official blog on open Internet policy initiatives and developments",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Open Knowledge Foundation Blog": {
-    "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Content for a fair, sustainable and open future",
     "lang": "en",
     "scope": "World"
   },
@@ -2490,6 +2490,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Wikimedia Suomi": {
     "file": "wikimedia_suomi.json",
     "count": 10,
@@ -2673,6 +2681,14 @@
     "description": "Soome Eesti Instituudi Sihtasutus",
     "lang": "fi",
     "scope": "Estonia"
+  },
+  "Norden | Pohjoismainen yhteistyö": {
+    "file": "norden___pohjoismainen_yhteisty_.json",
+    "count": 10,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Nordic + Baltic countries"
   },
   "Docomomo Suomi Finland ry": {
     "file": "docomomo_suomi_finland_ry.json",
