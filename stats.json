@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "4.4.2026 klo 14.35.22"
+    "last_updated": "4.4.2026 klo 16.11.34"
   },
   "Global Network of Internet and Society Centers NoC": {
     "file": "global_network_of_internet_and_society_centers_noc.json",
@@ -60,7 +60,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 14,
+    "count": 15,
     "category": "Digital Culture + Heritage",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -81,6 +81,14 @@
     "description": "Parempaa ulkopoliittista keskustelua.",
     "lang": "fi",
     "scope": "World"
+  },
+  "Euronews | Europe": {
+    "file": "euronews___europe.json",
+    "count": 50,
+    "category": "Global policy",
+    "description": "Latest news from Euronews",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
@@ -105,14 +113,6 @@
     "description": "The best free cultural & educational media on the web",
     "lang": "en",
     "scope": "Netherlands"
-  },
-  "Euronews | Europe": {
-    "file": "euronews___europe.json",
-    "count": 50,
-    "category": "Global policy",
-    "description": "Latest news from Euronews",
-    "lang": "en",
-    "scope": "Europe"
   },
   "European Commission": {
     "file": "european_commission.json",
@@ -164,7 +164,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 50,
+    "count": 51,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -252,7 +252,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 15,
+    "count": 16,
     "category": "Investigations + Conflict",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -660,7 +660,7 @@
   },
   "Rajapinta": {
     "file": "rajapinta.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
@@ -756,7 +756,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -1204,7 +1204,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 1,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1316,7 +1316,7 @@
   },
   "Lastuja Suomen historiasta": {
     "file": "lastuja_suomen_historiasta.json",
-    "count": 2,
+    "count": 10,
     "category": "Culture",
     "description": "Turun yliopiston Suomen historian oppiaineen blogi",
     "lang": "fi",
@@ -1823,14 +1823,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Open Technologies for a Competitive and Sovereign Europe",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2562,19 +2554,19 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "YK:n alueellinen tiedotuskeskus – Suomi": {
+    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
+    "count": 15,
+    "category": "Global policy",
+    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Avoin hallinto": {
     "file": "avoin_hallinto.json",
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2674,6 +2666,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Norden | Pohjoismainen yhteistyö": {
+    "file": "norden___pohjoismainen_yhteisty_.json",
+    "count": 10,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Nordic + Baltic countries"
+  },
   "Docomomo Suomi Finland ry": {
     "file": "docomomo_suomi_finland_ry.json",
     "count": 14,
@@ -2751,14 +2751,6 @@
     "count": 10,
     "category": "Culture",
     "description": "Vi tar tillvara och driver den svenska museisektorns gemensamma intressen.",
-    "lang": "sv",
-    "scope": "Sweden"
-  },
-  "Wikimedia Sverige": {
-    "file": "wikimedia_sverige.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
     "scope": "Sweden"
   },
