@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "5.4.2026 klo 12.48.50"
+    "last_updated": "5.4.2026 klo 13.43.20"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -66,6 +66,14 @@
     "lang": "fi",
     "scope": "World"
   },
+  "Global Voices": {
+    "file": "global_voices.json",
+    "count": 15,
+    "category": "Human Rights + Democracy",
+    "description": "Citizen media stories from around the world",
+    "lang": "en",
+    "scope": "World"
+  },
   "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
     "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
     "count": 10,
@@ -111,14 +119,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Global Voices": {
-    "file": "global_voices.json",
-    "count": 15,
-    "category": "Human Rights + Democracy",
-    "description": "Citizen media stories from around the world",
     "lang": "en",
     "scope": "World"
   },
@@ -356,7 +356,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 10,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -444,7 +444,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -684,7 +684,7 @@
   },
   "Avate Audiovisuaalisen alan tekijät ry": {
     "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 2,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1076,7 +1076,7 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
@@ -1770,6 +1770,14 @@
     "lang": "en",
     "scope": "UK"
   },
+  "DARIAH-EU": {
+    "file": "dariah_eu.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Digital Research Infrastructure for the Arts and Humanities",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Digital Scholarship Leiden": {
     "file": "digital_scholarship_leiden.json",
     "count": 10,
@@ -1807,14 +1815,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Open Technologies for a Competitive and Sovereign Europe",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
     "scope": "Europe"
   },
@@ -1938,14 +1938,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Source Initiative": {
-    "file": "open_source_initiative.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Wikimedia Techblog": {
     "file": "wikimedia_techblog.json",
     "count": 10,
@@ -2023,6 +2015,14 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Step into Tomorrow",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
     "scope": "World"
   },
@@ -2546,11 +2546,27 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "YK:n alueellinen tiedotuskeskus – Suomi": {
+    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
+    "count": 15,
+    "category": "Global policy",
+    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Avoin hallinto": {
     "file": "avoin_hallinto.json",
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2727,14 +2743,6 @@
     "count": 10,
     "category": "Culture",
     "description": "Vi tar tillvara och driver den svenska museisektorns gemensamma intressen.",
-    "lang": "sv",
-    "scope": "Sweden"
-  },
-  "Wikimedia Sverige": {
-    "file": "wikimedia_sverige.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
     "scope": "Sweden"
   },
