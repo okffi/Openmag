@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "5.4.2026 klo 14.37.02"
+    "last_updated": "5.4.2026 klo 16.13.12"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -36,7 +36,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 33,
+    "count": 34,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -44,7 +44,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 13,
+    "count": 14,
     "category": "Digital Culture + Heritage",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -236,7 +236,7 @@
   },
   "Timeless": {
     "file": "timeless.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Culture + Heritage",
     "description": "Stories from the Library of Congress",
     "lang": "en",
@@ -452,7 +452,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -484,7 +484,7 @@
   },
   "The Signal: Digital Preservation": {
     "file": "the_signal__digital_preservation.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Culture + Heritage",
     "description": "Digital Happenings at the Library of Congress",
     "lang": "en",
@@ -1770,14 +1770,6 @@
     "lang": "en",
     "scope": "UK"
   },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Digital Scholarship Leiden": {
     "file": "digital_scholarship_leiden.json",
     "count": 10,
@@ -2010,6 +2002,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "This Month in GLAM": {
+    "file": "this_month_in_glam.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
+    "lang": "en",
+    "scope": "World"
+  },
   "The Harvard Library Innovation Lab": {
     "file": "the_harvard_library_innovation_lab.json",
     "count": 420,
@@ -2191,6 +2191,14 @@
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "Front Line Defenders supports the protection and security of human rights defenders at risk around the world.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Investigations – ACDC": {
+    "file": "investigations___acdc.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
     "lang": "en",
     "scope": "World"
   },
@@ -2514,14 +2522,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Tietopoliitiikan yhteistyöryhmä": {
-    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "AI Finland -verkosto": {
     "file": "ai_finland__verkosto.json",
     "count": 8,
@@ -2543,6 +2543,14 @@
     "count": 10,
     "category": "Global policy",
     "description": "Suomen YK-nuoret",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "YK:n alueellinen tiedotuskeskus – Suomi": {
+    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
+    "count": 15,
+    "category": "Global policy",
+    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
     "lang": "fi",
     "scope": "Finland"
   },
