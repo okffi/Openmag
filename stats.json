@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "5.4.2026 klo 23.42.05"
+    "last_updated": "6.4.2026 klo 0.39.43"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -52,7 +52,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 11,
+    "count": 12,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -372,7 +372,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 20,
+    "count": 10,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -524,7 +524,7 @@
   },
   "UN News - Global perspective Human stories": {
     "file": "un_news___global_perspective_human_stories.json",
-    "count": 54,
+    "count": 55,
     "category": "Global policy",
     "description": "UN News - Global perspective Human stories | Global",
     "lang": "en",
@@ -540,7 +540,7 @@
   },
   "UN News - Global perspective Human stories | Human Rights": {
     "file": "un_news___global_perspective_human_stories___human_rights.json",
-    "count": 20,
+    "count": 19,
     "category": "Human Rights + Democracy",
     "description": "UN News - Global perspective Human stories | Human Rights",
     "lang": "en",
@@ -596,7 +596,7 @@
   },
   "Avoin tiede": {
     "file": "avoin_tiede.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -700,7 +700,7 @@
   },
   "Avate Audiovisuaalisen alan tekijät ry": {
     "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
+    "count": 2,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -812,7 +812,7 @@
   },
   "Open By Default": {
     "file": "open_by_default.json",
-    "count": 1,
+    "count": 7,
     "category": "(Open) Data + Technology",
     "description": "",
     "lang": "en",
@@ -1084,7 +1084,7 @@
   },
   "Public Policy Archives — Association of Research Libraries": {
     "file": "public_policy_archives___association_of_research_libraries.json",
-    "count": 10,
+    "count": 2,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "en",
@@ -1204,7 +1204,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 1,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1276,7 +1276,7 @@
   },
   "Zooniverse": {
     "file": "zooniverse.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
@@ -1460,7 +1460,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 2,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -1818,6 +1818,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "correctiv.org": {
     "file": "correctiv_org.json",
     "count": 100,
@@ -1855,14 +1863,6 @@
     "count": 20,
     "category": "(Open) Data + Technology",
     "description": "Finnish Center for Artificial Intelligence",
-    "lang": "en",
-    "scope": "Finland"
-  },
-  "Open Science | Federation of Finnish Learned Societies": {
-    "file": "open_science___federation_of_finnish_learned_societies.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "",
     "lang": "en",
     "scope": "Finland"
   },
@@ -1954,14 +1954,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Confederation of Open Access Repositories": {
-    "file": "confederation_of_open_access_repositories.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Building a sustainable, global knowledge commons",
-    "lang": "en",
-    "scope": "World"
-  },
   "SPARC": {
     "file": "sparc.json",
     "count": 10,
@@ -1999,6 +1991,14 @@
     "count": 10,
     "category": "Culture",
     "description": "All the World Heritage News",
+    "lang": "en",
+    "scope": "World"
+  },
+  "This Month in GLAM": {
+    "file": "this_month_in_glam.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
     "scope": "World"
   },
@@ -2063,6 +2063,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Mozilla's official blog on open Internet policy initiatives and developments",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Open Knowledge Foundation Blog": {
+    "file": "open_knowledge_foundation_blog.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Content for a fair, sustainable and open future",
     "lang": "en",
     "scope": "World"
   },
@@ -2338,14 +2346,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Tiedepolitiikka": {
-    "file": "tiedepolitiikka.json",
-    "count": 30,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "REPAIR Tiedotteet": {
     "file": "repair_tiedotteet.json",
     "count": 10,
@@ -2359,14 +2359,6 @@
     "count": 11,
     "category": "(Open) Science + Research",
     "description": "Uusimmat tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "TSV": {
-    "file": "tsv.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2719,6 +2711,14 @@
     "count": 10,
     "category": "Culture",
     "description": "Vi tar tillvara och driver den svenska museisektorns gemensamma intressen.",
+    "lang": "sv",
+    "scope": "Sweden"
+  },
+  "Wikimedia Sverige": {
+    "file": "wikimedia_sverige.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
     "scope": "Sweden"
   },
