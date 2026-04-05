@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "5.4.2026 klo 11.54.01"
+    "last_updated": "5.4.2026 klo 12.48.50"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -34,6 +34,38 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Technology | Guardian": {
+    "file": "technology___guardian.json",
+    "count": 33,
+    "category": "(Open) Data + Technology",
+    "description": "Technology news, comment and analysis | guardian.co.uk",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Diff": {
+    "file": "diff.json",
+    "count": 12,
+    "category": "Digital Culture + Heritage",
+    "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Hrana": {
+    "file": "hrana.json",
+    "count": 11,
+    "category": "Human Rights + Democracy",
+    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Yle | Kansainvälinen politiikka": {
+    "file": "yle___kansainv_linen_politiikka.json",
+    "count": 21,
+    "category": "Politics + Public sector",
+    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
+    "lang": "fi",
+    "scope": "World"
+  },
   "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
     "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
     "count": 10,
@@ -66,14 +98,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Diff": {
-    "file": "diff.json",
-    "count": 11,
-    "category": "Digital Culture + Heritage",
-    "description": "News from the Wikimedia movement",
-    "lang": "en",
-    "scope": "World"
-  },
   "Global Voices Advox": {
     "file": "global_voices_advox.json",
     "count": 10,
@@ -98,17 +122,9 @@
     "lang": "en",
     "scope": "World"
   },
-  "Hrana": {
-    "file": "hrana.json",
-    "count": 11,
-    "category": "Human Rights + Democracy",
-    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
-    "lang": "en",
-    "scope": "World"
-  },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 18,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -153,14 +169,6 @@
     "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Technology | Guardian": {
-    "file": "technology___guardian.json",
-    "count": 33,
-    "category": "(Open) Data + Technology",
-    "description": "Technology news, comment and analysis | guardian.co.uk",
-    "lang": "en",
-    "scope": "World"
   },
   "Institute of Network Cultures": {
     "file": "institute_of_network_cultures.json",
@@ -346,17 +354,9 @@
     "lang": "fi",
     "scope": "Estonia"
   },
-  "Yle | Kansainvälinen politiikka": {
-    "file": "yle___kansainv_linen_politiikka.json",
-    "count": 21,
-    "category": "Politics + Public sector",
-    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
-    "lang": "fi",
-    "scope": "World"
-  },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 20,
+    "count": 10,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -444,7 +444,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -796,7 +796,7 @@
   },
   "Open By Default": {
     "file": "open_by_default.json",
-    "count": 1,
+    "count": 7,
     "category": "(Open) Data + Technology",
     "description": "",
     "lang": "en",
@@ -1188,7 +1188,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 1,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1452,7 +1452,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 2,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -1770,14 +1770,6 @@
     "lang": "en",
     "scope": "UK"
   },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Digital Scholarship Leiden": {
     "file": "digital_scholarship_leiden.json",
     "count": 10,
@@ -1815,6 +1807,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Open Technologies for a Competitive and Sovereign Europe",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2010,14 +2010,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
-    "lang": "en",
-    "scope": "World"
-  },
   "The Harvard Library Innovation Lab": {
     "file": "the_harvard_library_innovation_lab.json",
     "count": 420,
@@ -2031,14 +2023,6 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Step into Tomorrow",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Extreme Citizen Science blog": {
-    "file": "extreme_citizen_science_blog.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
     "scope": "World"
   },
@@ -2490,11 +2474,11 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
+  "FNG Research": {
+    "file": "fng_research.json",
     "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
+    "category": "Culture",
+    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2559,14 +2543,6 @@
     "count": 10,
     "category": "Global policy",
     "description": "Suomen YK-nuoret",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "YK:n alueellinen tiedotuskeskus – Suomi": {
-    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
-    "count": 15,
-    "category": "Global policy",
-    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2753,6 +2729,22 @@
     "description": "Vi tar tillvara och driver den svenska museisektorns gemensamma intressen.",
     "lang": "sv",
     "scope": "Sweden"
+  },
+  "Wikimedia Sverige": {
+    "file": "wikimedia_sverige.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Vi arbetar för fri kunskap",
+    "lang": "sv",
+    "scope": "Sweden"
+  },
+  "Open Knowledge Sweden": {
+    "file": "open_knowledge_sweden.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "En rättvis, fri och öppen framtid.",
+    "lang": "sv",
+    "scope": "Nordic + Baltic countries"
   },
   "Disconnect": {
     "file": "disconnect.json",
