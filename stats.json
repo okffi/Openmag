@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "5.4.2026 klo 10.17.35"
+    "last_updated": "5.4.2026 klo 11.54.01"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -26,6 +26,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Euronews | Europe": {
+    "file": "euronews___europe.json",
+    "count": 52,
+    "category": "Global policy",
+    "description": "Latest news from Euronews",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
     "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
     "count": 10,
@@ -39,14 +47,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Euronews | Europe": {
-    "file": "euronews___europe.json",
-    "count": 51,
-    "category": "Global policy",
-    "description": "Latest news from Euronews",
     "lang": "en",
     "scope": "Europe"
   },
@@ -68,7 +68,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital Culture + Heritage",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -100,7 +100,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 10,
+    "count": 11,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -108,7 +108,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 20,
+    "count": 18,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -156,7 +156,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 32,
+    "count": 33,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -348,7 +348,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 20,
+    "count": 21,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -660,7 +660,7 @@
   },
   "Rajapinta": {
     "file": "rajapinta.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
@@ -684,7 +684,7 @@
   },
   "Avate Audiovisuaalisen alan tekijät ry": {
     "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
+    "count": 2,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1076,7 +1076,7 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
@@ -1188,7 +1188,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 1,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1818,14 +1818,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "correctiv.org": {
     "file": "correctiv_org.json",
     "count": 100,
@@ -1897,6 +1889,14 @@
     "description": "Nordic research institute for regional development and planning",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
+  },
+  "Finnish Institute in Estonia": {
+    "file": "finnish_institute_in_estonia.json",
+    "count": 9,
+    "category": "Culture",
+    "description": "Soome Eesti Instituudi Sihtasutus",
+    "lang": "en",
+    "scope": "Estonia"
   },
   "Kaospilot": {
     "file": "kaospilot.json",
@@ -2490,11 +2490,11 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "FNG Research": {
-    "file": "fng_research.json",
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
     "count": 10,
-    "category": "Culture",
-    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
+    "category": "Digital Culture + Heritage",
+    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2753,22 +2753,6 @@
     "description": "Vi tar tillvara och driver den svenska museisektorns gemensamma intressen.",
     "lang": "sv",
     "scope": "Sweden"
-  },
-  "Wikimedia Sverige": {
-    "file": "wikimedia_sverige.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Vi arbetar för fri kunskap",
-    "lang": "sv",
-    "scope": "Sweden"
-  },
-  "Open Knowledge Sweden": {
-    "file": "open_knowledge_sweden.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "En rättvis, fri och öppen framtid.",
-    "lang": "sv",
-    "scope": "Nordic + Baltic countries"
   },
   "Disconnect": {
     "file": "disconnect.json",
