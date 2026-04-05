@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "5.4.2026 klo 8.47.51"
+    "last_updated": "5.4.2026 klo 10.17.35"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -16,6 +16,14 @@
     "category": "Global policy",
     "description": "Parempaa ulkopoliittista keskustelua.",
     "lang": "fi",
+    "scope": "World"
+  },
+  "Global Network of Internet and Society Centers NoC": {
+    "file": "global_network_of_internet_and_society_centers_noc.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
     "scope": "World"
   },
   "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
@@ -36,7 +44,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 50,
+    "count": 51,
     "category": "Global policy",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -76,14 +84,6 @@
   },
   "Electronic Frontier Foundation": {
     "file": "electronic_frontier_foundation.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Global Network of Internet and Society Centers NoC": {
-    "file": "global_network_of_internet_and_society_centers_noc.json",
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
@@ -220,7 +220,7 @@
   },
   "Timeless": {
     "file": "timeless.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Culture + Heritage",
     "description": "Stories from the Library of Congress",
     "lang": "en",
@@ -340,7 +340,7 @@
   },
   "Suomen Viron-instituutti": {
     "file": "suomen_viron_instituutti.json",
-    "count": 1,
+    "count": 10,
     "category": "Culture",
     "description": "Soome Eesti Instituudi Sihtasutus",
     "lang": "fi",
@@ -353,6 +353,14 @@
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
     "scope": "World"
+  },
+  "openDemocracy": {
+    "file": "opendemocracy.json",
+    "count": 20,
+    "category": "Human Rights + Democracy",
+    "description": "openDemocracy RSS",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
   },
   "COST": {
     "file": "cost.json",
@@ -468,7 +476,7 @@
   },
   "The Signal: Digital Preservation": {
     "file": "the_signal__digital_preservation.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Culture + Heritage",
     "description": "Digital Happenings at the Library of Congress",
     "lang": "en",
@@ -652,7 +660,7 @@
   },
   "Rajapinta": {
     "file": "rajapinta.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
@@ -788,7 +796,7 @@
   },
   "Open By Default": {
     "file": "open_by_default.json",
-    "count": 7,
+    "count": 1,
     "category": "(Open) Data + Technology",
     "description": "",
     "lang": "en",
@@ -1068,7 +1076,7 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
@@ -1209,6 +1217,14 @@
     "description": "Vi stärker det nordiska samarbetet genom kultur",
     "lang": "sv",
     "scope": "Nordic + Baltic countries"
+  },
+  "Suomen Rooman-instituutti": {
+    "file": "suomen_rooman_instituutti.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "Suomen Rooman instituutti",
+    "lang": "fi",
+    "scope": "Europe"
   },
   "Europa Nostra": {
     "file": "europa_nostra.json",
@@ -1436,7 +1452,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 10,
+    "count": 2,
     "category": "Investigations + Conflict",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -1585,14 +1601,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Journalism Science Alliance": {
-    "file": "journalism_science_alliance.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "HIIG": {
     "file": "hiig.json",
@@ -1810,6 +1818,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "correctiv.org": {
     "file": "correctiv_org.json",
     "count": 100,
@@ -1823,6 +1839,14 @@
     "count": 10,
     "category": "Investigations + Conflict",
     "description": "Supporting cross-border investigative journalism in Europe",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Journalism Science Alliance": {
+    "file": "journalism_science_alliance.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "",
     "lang": "en",
     "scope": "Europe"
   },
@@ -1874,14 +1898,6 @@
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
-  "Finnish Institute in Estonia": {
-    "file": "finnish_institute_in_estonia.json",
-    "count": 9,
-    "category": "Culture",
-    "description": "Soome Eesti Instituudi Sihtasutus",
-    "lang": "en",
-    "scope": "Estonia"
-  },
   "Kaospilot": {
     "file": "kaospilot.json",
     "count": 10,
@@ -1895,14 +1911,6 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Digital Humanities in the Nordic and Baltic Countries",
-    "lang": "en",
-    "scope": "Nordic + Baltic countries"
-  },
-  "openDemocracy": {
-    "file": "opendemocracy.json",
-    "count": 20,
-    "category": "Human Rights + Democracy",
-    "description": "openDemocracy RSS",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
@@ -2023,6 +2031,14 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Step into Tomorrow",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
     "scope": "World"
   },
@@ -2322,14 +2338,6 @@
     "lang": "fi",
     "scope": "Europe"
   },
-  "Suomen Rooman-instituutti": {
-    "file": "suomen_rooman_instituutti.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "Suomen Rooman instituutti",
-    "lang": "fi",
-    "scope": "Europe"
-  },
   "Koodia Suomesta": {
     "file": "koodia_suomesta.json",
     "count": 15,
@@ -2554,19 +2562,19 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "YK:n alueellinen tiedotuskeskus – Suomi": {
+    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
+    "count": 15,
+    "category": "Global policy",
+    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Avoin hallinto": {
     "file": "avoin_hallinto.json",
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
