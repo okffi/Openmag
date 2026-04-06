@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "6.4.2026 klo 16.25.36"
+    "last_updated": "6.4.2026 klo 17.56.36"
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
@@ -36,7 +36,7 @@
   },
   "Demokraatti": {
     "file": "demokraatti.json",
-    "count": 31,
+    "count": 32,
     "category": "Politics + Public sector",
     "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
     "lang": "fi",
@@ -100,7 +100,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 22,
+    "count": 24,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -119,6 +119,22 @@
     "count": 21,
     "category": "Investigations + Conflict",
     "description": "UN News - Global perspective Human stories | Middle East",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Tech Policy Press": {
+    "file": "tech_policy_press.json",
+    "count": 3430,
+    "category": "Digital Policy + Rights",
+    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "OCCRP": {
+    "file": "occrp.json",
+    "count": 54,
+    "category": "Investigations + Conflict",
+    "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
     "scope": "World"
   },
@@ -148,7 +164,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 50,
+    "count": 52,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -159,14 +175,6 @@
     "count": 30,
     "category": "Culture",
     "description": "UN News - Global perspective Human stories | Culture and Education",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Tech Policy Press": {
-    "file": "tech_policy_press.json",
-    "count": 3430,
-    "category": "Digital Policy + Rights",
-    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
     "scope": "World"
   },
@@ -184,6 +192,14 @@
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
+    "scope": "World"
+  },
+  "The Conversation – Articles (GLOBAL)": {
+    "file": "the_conversation___articles__global_.json",
+    "count": 48,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
     "scope": "World"
   },
   "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
@@ -228,7 +244,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 15,
+    "count": 16,
     "category": "Investigations + Conflict",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -335,14 +351,6 @@
     "count": 12,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "OCCRP": {
-    "file": "occrp.json",
-    "count": 54,
-    "category": "Investigations + Conflict",
-    "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
     "scope": "World"
   },
@@ -594,14 +602,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "The Conversation – Articles (GLOBAL)": {
-    "file": "the_conversation___articles__global_.json",
-    "count": 48,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Carbon Brief": {
     "file": "carbon_brief.json",
     "count": 10,
@@ -692,7 +692,7 @@
   },
   "Rajapinta": {
     "file": "rajapinta.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
@@ -716,7 +716,7 @@
   },
   "Avate Audiovisuaalisen alan tekijät ry": {
     "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 2,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1324,7 +1324,7 @@
   },
   "Zooniverse": {
     "file": "zooniverse.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Science + Research",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
@@ -1762,14 +1762,6 @@
     "lang": "en",
     "scope": "UK"
   },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Digital Scholarship Leiden": {
     "file": "digital_scholarship_leiden.json",
     "count": 10,
@@ -1807,14 +1799,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Open Technologies for a Competitive and Sovereign Europe",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2268,7 +2252,7 @@
   },
   "OCCRP Scoops": {
     "file": "occrp_scoops.json",
-    "count": 1,
+    "count": 2,
     "category": "Investigations + Conflict",
     "description": "OCCRP stories about Scoops delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
@@ -2490,11 +2474,11 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "FNG Research": {
-    "file": "fng_research.json",
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
     "count": 10,
-    "category": "Culture",
-    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
+    "category": "Digital Culture + Heritage",
+    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2575,14 +2559,6 @@
     "count": 10,
     "category": "Global policy",
     "description": "Suomen YK-nuoret",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "YK:n alueellinen tiedotuskeskus – Suomi": {
-    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
-    "count": 15,
-    "category": "Global policy",
-    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
     "lang": "fi",
     "scope": "Finland"
   },
