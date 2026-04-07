@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "7.4.2026 klo 20.09.58"
+    "last_updated": "7.4.2026 klo 22.14.59"
   },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
@@ -92,7 +92,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 22,
+    "count": 20,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -324,7 +324,7 @@
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
-    "count": 15,
+    "count": 16,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
@@ -538,6 +538,38 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "American Library Association": {
+    "file": "american_library_association.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "The Signal: Digital Preservation": {
+    "file": "the_signal__digital_preservation.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Digital Happenings at the Library of Congress",
+    "lang": "en",
+    "scope": "World"
+  },
+  "NOEMA": {
+    "file": "noema.json",
+    "count": 10,
+    "category": "Perspectives",
+    "description": "Noema Magazine",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Disconnect": {
+    "file": "disconnect.json",
+    "count": 15,
+    "category": "Digital Policy + Rights",
+    "description": "Tech analysis without the boosterism",
+    "lang": "en",
+    "scope": "Sweden"
+  },
   "Institute of Network Cultures": {
     "file": "institute_of_network_cultures.json",
     "count": 15,
@@ -580,7 +612,7 @@
   },
   "OCHA - United Nations Office for the Coordination of Humanitarian Affairs<": {
     "file": "ocha___united_nations_office_for_the_coordination_of_humanitarian_affairs_.json",
-    "count": 10,
+    "count": 11,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -692,19 +724,11 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 20,
+    "count": 7,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
-  },
-  "American Library Association": {
-    "file": "american_library_association.json",
-    "count": 10,
-    "category": "Culture",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "Timeless": {
     "file": "timeless.json",
@@ -735,14 +759,6 @@
     "count": 30,
     "category": "Global policy",
     "description": "UN News - Global perspective Human stories | Europe",
-    "lang": "en",
-    "scope": "World"
-  },
-  "NOEMA": {
-    "file": "noema.json",
-    "count": 10,
-    "category": "Perspectives",
-    "description": "Noema Magazine",
     "lang": "en",
     "scope": "World"
   },
@@ -839,14 +855,6 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Updates from the Internet Archive",
-    "lang": "en",
-    "scope": "World"
-  },
-  "The Signal: Digital Preservation": {
-    "file": "the_signal__digital_preservation.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Happenings at the Library of Congress",
     "lang": "en",
     "scope": "World"
   },
@@ -1538,14 +1546,6 @@
     "lang": "fi",
     "scope": "World"
   },
-  "CC Sweden": {
-    "file": "cc_sweden.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "Den svenska sidan om Creative Commons",
-    "lang": "sv",
-    "scope": "Sweden"
-  },
   "HIIG": {
     "file": "hiig.json",
     "count": 20,
@@ -1721,6 +1721,14 @@
     "description": "'Every age has its orthodoxy and no orthodoxy is ever right.'",
     "lang": "en",
     "scope": "UK"
+  },
+  "DARIAH-EU": {
+    "file": "dariah_eu.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Digital Research Infrastructure for the Arts and Humanities",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Digital Scholarship Leiden": {
     "file": "digital_scholarship_leiden.json",
@@ -2018,14 +2026,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Extreme Citizen Science blog": {
-    "file": "extreme_citizen_science_blog.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
-    "lang": "en",
-    "scope": "World"
-  },
   "News – Wikimedia Foundation": {
     "file": "news___wikimedia_foundation.json",
     "count": 10,
@@ -2063,6 +2063,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Mozilla's official blog on open Internet policy initiatives and developments",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Open Knowledge Foundation Blog": {
+    "file": "open_knowledge_foundation_blog.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Content for a fair, sustainable and open future",
     "lang": "en",
     "scope": "World"
   },
@@ -2175,6 +2183,14 @@
     "count": 10,
     "category": "Investigations + Conflict",
     "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Global Investigative Journalism Network": {
+    "file": "global_investigative_journalism_network.json",
+    "count": 20,
+    "category": "Investigations + Conflict",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -2506,6 +2522,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Tietopoliitiikan yhteistyöryhmä": {
+    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "EFFI.org:n uusimmat artikkelit": {
     "file": "effi_org_n_uusimmat_artikkelit.json",
     "count": 10,
@@ -2554,14 +2578,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "YK:n alueellinen tiedotuskeskus – Suomi": {
-    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
-    "count": 15,
-    "category": "Global policy",
-    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Avoin hallinto": {
     "file": "avoin_hallinto.json",
     "count": 10,
@@ -2575,6 +2591,14 @@
     "count": 9,
     "category": "Human Rights + Democracy",
     "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2698,14 +2722,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Norden | Pohjoismainen yhteistyö": {
-    "file": "norden___pohjoismainen_yhteisty_.json",
-    "count": 10,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Nordic + Baltic countries"
-  },
   "Docomomo Suomi Finland ry": {
     "file": "docomomo_suomi_finland_ry.json",
     "count": 14,
@@ -2802,12 +2818,12 @@
     "lang": "sv",
     "scope": "Nordic + Baltic countries"
   },
-  "Disconnect": {
-    "file": "disconnect.json",
-    "count": 15,
-    "category": "Digital Policy + Rights",
-    "description": "Tech analysis without the boosterism",
-    "lang": "en",
+  "CC Sweden": {
+    "file": "cc_sweden.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "Den svenska sidan om Creative Commons",
+    "lang": "sv",
     "scope": "Sweden"
   },
   "Puistokatu 4": {
