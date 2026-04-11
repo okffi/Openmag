@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "11.4.2026 klo 11.55.06"
+    "last_updated": "11.4.2026 klo 12.50.40"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -44,7 +44,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 16,
+    "count": 15,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -57,6 +57,22 @@
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "ProPublica": {
+    "file": "propublica.json",
+    "count": 20,
+    "category": "Investigations + Conflict",
+    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Yle | Kansainvälinen politiikka": {
+    "file": "yle___kansainv_linen_politiikka.json",
+    "count": 22,
+    "category": "Politics + Public sector",
+    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
+    "lang": "fi",
+    "scope": "World"
   },
   "HIIG": {
     "file": "hiig.json",
@@ -196,7 +212,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 48,
+    "count": 49,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -295,14 +311,6 @@
     "count": 20,
     "category": "Human Rights + Democracy",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "ProPublica": {
-    "file": "propublica.json",
-    "count": 20,
-    "category": "Investigations + Conflict",
-    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
     "lang": "en",
     "scope": "World"
   },
@@ -642,14 +650,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Yle | Kansainvälinen politiikka": {
-    "file": "yle___kansainv_linen_politiikka.json",
-    "count": 22,
-    "category": "Politics + Public sector",
-    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
-    "lang": "fi",
-    "scope": "World"
-  },
   "K-blogg - Riksantikvarieämbetets blogg": {
     "file": "k_blogg___riksantikvarie_mbetets_blogg.json",
     "count": 100,
@@ -676,11 +676,19 @@
   },
   "JSN": {
     "file": "jsn.json",
-    "count": 10,
+    "count": 1,
     "category": "Investigations + Conflict",
     "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "resilience": {
+    "file": "resilience.json",
+    "count": 17,
+    "category": "Perspectives",
+    "description": "Insight and inspiration in turbulent times.",
+    "lang": "en",
+    "scope": "World"
   },
   "Culture and Creativity": {
     "file": "culture_and_creativity.json",
@@ -732,7 +740,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -932,7 +940,7 @@
   },
   "Taide- ja kulttuurivirasto": {
     "file": "taide__ja_kulttuurivirasto.json",
-    "count": 10,
+    "count": 1,
     "category": "Culture",
     "description": "",
     "lang": "fi",
@@ -1058,6 +1066,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Eurozine": {
+    "file": "eurozine.json",
+    "count": 100,
+    "category": "Investigations + Conflict",
+    "description": "Eurozine: Europe's leading cultural journals at your fingertips",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
     "count": 15,
@@ -1100,7 +1116,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -1143,14 +1159,6 @@
     "count": 20,
     "category": "Investigations + Conflict",
     "description": "We don't just build maps, we build mappers!",
-    "lang": "en",
-    "scope": "World"
-  },
-  "resilience": {
-    "file": "resilience.json",
-    "count": 17,
-    "category": "Perspectives",
-    "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
     "scope": "World"
   },
@@ -1380,7 +1388,7 @@
   },
   "Rajapinta": {
     "file": "rajapinta.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
@@ -1738,22 +1746,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "OpenForum Europe": {
-    "file": "openforum_europe.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Open Technologies for a Competitive and Sovereign Europe",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "CREATe": {
-    "file": "create.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Centre for Regulation of the Creative Economy",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "IJ4EU": {
     "file": "ij4eu.json",
     "count": 10,
@@ -1922,14 +1914,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Source Initiative": {
-    "file": "open_source_initiative.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Wikimedia Techblog": {
     "file": "wikimedia_techblog.json",
     "count": 10,
@@ -2026,19 +2010,19 @@
     "lang": "en",
     "scope": "World"
   },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
+  },
   "News – Wikimedia Foundation": {
     "file": "news___wikimedia_foundation.json",
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "MuseumNext": {
-    "file": "museumnext.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Defining the Future of Museums",
     "lang": "en",
     "scope": "World"
   },
@@ -2138,6 +2122,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Public Institutions": {
+    "file": "public_institutions.json",
+    "count": 9,
+    "category": "Global policy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "UN Global Pulse": {
     "file": "un_global_pulse.json",
     "count": 10,
@@ -2207,6 +2199,14 @@
     "count": 10,
     "category": "Investigations + Conflict",
     "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Online Journalism Blog": {
+    "file": "online_journalism_blog.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
     "scope": "World"
   },
@@ -2471,6 +2471,22 @@
     "count": 25,
     "category": "Culture",
     "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "FNG Research": {
+    "file": "fng_research.json",
+    "count": 10,
+    "category": "Culture",
+    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2777,14 +2793,6 @@
     "description": "Den svenska sidan om Creative Commons",
     "lang": "sv",
     "scope": "Sweden"
-  },
-  "Eurozine": {
-    "file": "eurozine.json",
-    "count": 100,
-    "category": "Investigations + Conflict",
-    "description": "Eurozine: Europe's leading cultural journals at your fingertips",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Puistokatu 4": {
     "file": "puistokatu_4.json",
