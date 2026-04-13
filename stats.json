@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "13.4.2026 klo 18.23.55"
+    "last_updated": "13.4.2026 klo 20.12.41"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
@@ -124,7 +124,7 @@
   },
   "Demokraatti": {
     "file": "demokraatti.json",
-    "count": 37,
+    "count": 38,
     "category": "Politics + Public sector",
     "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
     "lang": "fi",
@@ -236,7 +236,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 12,
+    "count": 13,
     "category": "Digital Culture + Heritage",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -276,7 +276,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 14,
+    "count": 15,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -324,7 +324,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 21,
+    "count": 22,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -420,7 +420,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 23,
+    "count": 25,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -532,7 +532,7 @@
   },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
-    "count": 11,
+    "count": 12,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -556,7 +556,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 17,
+    "count": 18,
     "category": "Investigations + Conflict",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -618,19 +618,51 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 53,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Museoliitto": {
+    "file": "museoliitto.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Internet Society": {
+    "file": "internet_society.json",
+    "count": 20,
+    "category": "Digital Policy + Rights",
+    "description": "We are a global charitable organization empowering people to keep the Internet a force for good: open, globally connected, secure, and trustworthy.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Eastflank": {
+    "file": "eastflank.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Reporting",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Hacks/Hackers": {
+    "file": "hacks_hackers.json",
+    "count": 15,
+    "category": "Investigations + Conflict",
+    "description": "Advancing media innovation to foster public trust",
+    "lang": "en",
+    "scope": "World"
+  },
   "Weekly OSM": {
     "file": "weekly_osm.json",
     "count": 10,
     "category": "(Open) Data + Technology",
     "description": "weekly &#8211; semanario &#8211; hebdo &#8211; 週刊 &#8211; týdeník &#8211; Wochennotiz &#8211; 주간 &#8211; tygodnik",
-    "lang": "en",
-    "scope": "World"
-  },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 51,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
     "scope": "World"
   },
@@ -730,14 +762,6 @@
     "lang": "fi",
     "scope": "Europe"
   },
-  "Museoliitto": {
-    "file": "museoliitto.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Suomen kirjastoseura": {
     "file": "suomen_kirjastoseura.json",
     "count": 10,
@@ -804,7 +828,7 @@
   },
   "Electronic Frontier Foundation": {
     "file": "electronic_frontier_foundation.json",
-    "count": 10,
+    "count": 13,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -844,7 +868,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 20,
+    "count": 5,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -857,14 +881,6 @@
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
     "scope": "World"
-  },
-  "Eastflank": {
-    "file": "eastflank.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Reporting",
-    "lang": "en",
-    "scope": "Europe"
   },
   "EUvsDisinfo": {
     "file": "euvsdisinfo.json",
@@ -988,7 +1004,7 @@
   },
   "Avoin tiede": {
     "file": "avoin_tiede.json",
-    "count": 10,
+    "count": 3,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -1146,14 +1162,6 @@
     "lang": "en",
     "scope": "Americas"
   },
-  "Internet Society": {
-    "file": "internet_society.json",
-    "count": 20,
-    "category": "Digital Policy + Rights",
-    "description": "We are a global charitable organization empowering people to keep the Internet a force for good: open, globally connected, secure, and trustworthy.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Disconnect": {
     "file": "disconnect.json",
     "count": 15,
@@ -1292,7 +1300,7 @@
   },
   "Open Science | Federation of Finnish Learned Societies": {
     "file": "open_science___federation_of_finnish_learned_societies.json",
-    "count": 10,
+    "count": 2,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "en",
@@ -1514,14 +1522,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Hacks/Hackers": {
-    "file": "hacks_hackers.json",
-    "count": 15,
-    "category": "Investigations + Conflict",
-    "description": "Advancing media innovation to foster public trust",
-    "lang": "en",
-    "scope": "World"
-  },
   "UN News - Global perspective Human stories | Culture and Education": {
     "file": "un_news___global_perspective_human_stories___culture_and_education.json",
     "count": 30,
@@ -1569,22 +1569,6 @@
     "description": "Bringing Collections to Life",
     "lang": "en",
     "scope": "Netherlands"
-  },
-  "Knowledge Rights 21 Archive Feed": {
-    "file": "knowledge_rights_21_archive_feed.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Dittmar & Indrenius Attorneys Ltd.": {
-    "file": "dittmar___indrenius_attorneys_ltd_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Wikimedia Deutschland Blog": {
     "file": "wikimedia_deutschland_blog.json",
@@ -1738,6 +1722,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Confederation of Open Access Repositories": {
+    "file": "confederation_of_open_access_repositories.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Building a sustainable, global knowledge commons",
+    "lang": "en",
+    "scope": "World"
+  },
   "Public Policy Archives — Association of Research Libraries": {
     "file": "public_policy_archives___association_of_research_libraries.json",
     "count": 10,
@@ -1770,14 +1762,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Tiedepolitiikka": {
-    "file": "tiedepolitiikka.json",
-    "count": 30,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "REPAIR Tiedotteet": {
     "file": "repair_tiedotteet.json",
     "count": 10,
@@ -1791,14 +1775,6 @@
     "count": 11,
     "category": "(Open) Science + Research",
     "description": "Uusimmat tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "TSV": {
-    "file": "tsv.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2010,14 +1986,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "FNG Research": {
-    "file": "fng_research.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Pohjoismainen kulttuuripiste": {
     "file": "pohjoismainen_kulttuuripiste.json",
     "count": 12,
@@ -2170,6 +2138,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Digime": {
     "file": "digime.json",
     "count": 10,
@@ -2231,6 +2207,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Internet of humans",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "OpenForum Europe": {
+    "file": "openforum_europe.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Open Technologies for a Competitive and Sovereign Europe",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2314,6 +2298,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Knowledge Rights 21 Archive Feed": {
+    "file": "knowledge_rights_21_archive_feed.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "ICANN New and Noteworthy": {
     "file": "icann_new_and_noteworthy.json",
     "count": 7,
@@ -2327,6 +2319,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Dittmar & Indrenius Attorneys Ltd.": {
+    "file": "dittmar___indrenius_attorneys_ltd_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2391,14 +2391,6 @@
     "count": 10,
     "category": "Global policy",
     "description": "Suomen YK-nuoret",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "YK:n alueellinen tiedotuskeskus – Suomi": {
-    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
-    "count": 15,
-    "category": "Global policy",
-    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2527,6 +2519,14 @@
     "count": 10,
     "category": "Investigations + Conflict",
     "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Online Journalism Blog": {
+    "file": "online_journalism_blog.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
     "scope": "World"
   },
