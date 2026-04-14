@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "14.4.2026 klo 17.53.53"
+    "last_updated": "14.4.2026 klo 19.15.07"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -20,7 +20,7 @@
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
-    "count": 14,
+    "count": 15,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
@@ -108,7 +108,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 55,
+    "count": 56,
     "category": "Global policy",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -164,7 +164,7 @@
   },
   "Demokraatti": {
     "file": "demokraatti.json",
-    "count": 35,
+    "count": 36,
     "category": "Politics + Public sector",
     "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
     "lang": "fi",
@@ -215,7 +215,7 @@
     "count": 100,
     "category": "Culture + Education",
     "description": "Oulu on Euroopan kulttuuripääkaupunki 2026",
-    "lang": "fi",
+    "lang": "en",
     "scope": "Finland"
   },
   "Hanasaari": {
@@ -244,7 +244,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 13,
+    "count": 14,
     "category": "Digital Culture + Heritage",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -482,6 +482,102 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "The Public Domain Review": {
+    "file": "the_public_domain_review.json",
+    "count": 100,
+    "category": "Digital Culture + Heritage",
+    "description": "The Public Domain Review",
+    "lang": "en",
+    "scope": "World"
+  },
+  "404 Media": {
+    "file": "404_media.json",
+    "count": 16,
+    "category": "Investigations + Conflict",
+    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Cupore": {
+    "file": "cupore.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Kulttuuripolitiikan tutkimuskeskus Cupore",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "European Cultural Foundation": {
+    "file": "european_cultural_foundation.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Kansallisarkiston tiedotteet": {
+    "file": "kansallisarkiston_tiedotteet.json",
+    "count": 20,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Kulta ry": {
+    "file": "kulta_ry.json",
+    "count": 12,
+    "category": "Culture + Education",
+    "description": "Kulttuuri- ja taidealan keskusjärjestö",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Michael Culture Association": {
+    "file": "michael_culture_association.json",
+    "count": 1,
+    "category": "Digital Culture + Heritage",
+    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 32,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "OCCRP": {
+    "file": "occrp.json",
+    "count": 59,
+    "category": "Investigations + Conflict",
+    "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Open Source Initiative": {
+    "file": "open_source_initiative.json",
+    "count": 1,
+    "category": "(Open) Data + Technology",
+    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "ProPublica": {
+    "file": "propublica.json",
+    "count": 20,
+    "category": "Investigations + Conflict",
+    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News - Global perspective Human stories | Human Rights": {
+    "file": "un_news___global_perspective_human_stories___human_rights.json",
+    "count": 22,
+    "category": "Human Rights + Democracy",
+    "description": "UN News - Global perspective Human stories | Human Rights",
+    "lang": "en",
+    "scope": "World"
+  },
   "xkcd": {
     "file": "xkcd.json",
     "count": 4,
@@ -530,14 +626,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 49,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Think Open": {
     "file": "think_open.json",
     "count": 10,
@@ -567,14 +655,6 @@
     "count": 10,
     "category": "Culture + Education",
     "description": "Kotimaisten kielten keskus",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Kulta ry": {
-    "file": "kulta_ry.json",
-    "count": 12,
-    "category": "Culture + Education",
-    "description": "Kulttuuri- ja taidealan keskusjärjestö",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -676,7 +756,7 @@
   },
   "Electronic Frontier Foundation": {
     "file": "electronic_frontier_foundation.json",
-    "count": 10,
+    "count": 12,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -730,14 +810,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "ProPublica": {
-    "file": "propublica.json",
-    "count": 20,
-    "category": "Investigations + Conflict",
-    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Forbidden Stories": {
     "file": "forbidden_stories.json",
     "count": 10,
@@ -754,27 +826,11 @@
     "lang": "en",
     "scope": "World"
   },
-  "404 Media": {
-    "file": "404_media.json",
-    "count": 17,
-    "category": "Investigations + Conflict",
-    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
-    "lang": "en",
-    "scope": "World"
-  },
   "ICCROM": {
     "file": "iccrom.json",
     "count": 10,
     "category": "Investigations + Conflict",
     "description": "The International Centre for the Study of the Preservation and Restoration of Cultural Property (ICCROM)",
-    "lang": "en",
-    "scope": "World"
-  },
-  "OCCRP": {
-    "file": "occrp.json",
-    "count": 59,
-    "category": "Investigations + Conflict",
-    "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
     "scope": "World"
   },
@@ -969,14 +1025,6 @@
     "description": "Elinkeinoelämän tutkimuslaitos",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "European Cultural Foundation": {
-    "file": "european_cultural_foundation.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "World Heritage Centre News": {
     "file": "world_heritage_centre_news.json",
@@ -1202,14 +1250,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Kansallisarkiston tiedotteet": {
-    "file": "kansallisarkiston_tiedotteet.json",
-    "count": 20,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Museolehti": {
     "file": "museolehti.json",
     "count": 10,
@@ -1260,17 +1300,9 @@
   },
   "The Signal: Digital Preservation": {
     "file": "the_signal__digital_preservation.json",
-    "count": 9,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Digital Happenings at the Library of Congress",
-    "lang": "en",
-    "scope": "World"
-  },
-  "The Public Domain Review": {
-    "file": "the_public_domain_review.json",
-    "count": 100,
-    "category": "Digital Culture + Heritage",
-    "description": "The Public Domain Review",
     "lang": "en",
     "scope": "World"
   },
@@ -1466,14 +1498,6 @@
     "lang": "fi",
     "scope": "Europe"
   },
-  "Cupore": {
-    "file": "cupore.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Kulttuuripolitiikan tutkimuskeskus Cupore",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
     "count": 10,
@@ -1604,7 +1628,7 @@
   },
   "Avate Audiovisuaalisen alan tekijät ry": {
     "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 1,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1617,22 +1641,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Rajapinta": {
-    "file": "rajapinta.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "researcher community focused on digital social sciences",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "UN News - Global perspective Human stories | Culture and Education": {
-    "file": "un_news___global_perspective_human_stories___culture_and_education.json",
-    "count": 30,
-    "category": "Culture + Education",
-    "description": "UN News - Global perspective Human stories | Culture and Education",
-    "lang": "en",
-    "scope": "World"
   },
   "Wikimedia Techblog": {
     "file": "wikimedia_techblog.json",
@@ -1802,14 +1810,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "CoP CC on Participatory and Deliberative Democracy": {
-    "file": "cop_cc_on_participatory_and_deliberative_democracy.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
     "count": 10,
@@ -1874,14 +1874,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Digital Scholarship Leiden": {
-    "file": "digital_scholarship_leiden.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "DigitalScholarship Leiden",
-    "lang": "en",
-    "scope": "Belgium"
-  },
   "Dittmar & Indrenius Attorneys Ltd.": {
     "file": "dittmar___indrenius_attorneys_ltd_.json",
     "count": 10,
@@ -1914,14 +1906,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Euroopan parlamentti – Suomen-toimisto": {
     "file": "euroopan_parlamentti___suomen_toimisto.json",
     "count": 25,
@@ -1929,14 +1913,6 @@
     "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Europa Nostra": {
-    "file": "europa_nostra.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "The Voice of Cultural Heritage in Europe",
-    "lang": "en",
-    "scope": "Europe"
   },
   "European Civil Protection and Humanitarian Aid Operations": {
     "file": "european_civil_protection_and_humanitarian_aid_operations.json",
@@ -2007,14 +1983,6 @@
     "count": 616,
     "category": "Culture + Education",
     "description": "UNESCO is publishing once a week news on its activities regarding the safeguarding of intangible cultural heritage",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Forum Information & Democracy": {
-    "file": "forum_information___democracy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -2242,14 +2210,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Michael Culture Association": {
-    "file": "michael_culture_association.json",
-    "count": 1,
-    "category": "Digital Culture + Heritage",
-    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Museovirasto - uusimmat tiedotteet": {
     "file": "museovirasto___uusimmat_tiedotteet.json",
     "count": 25,
@@ -2311,14 +2271,6 @@
     "count": 12,
     "category": "Culture + Education",
     "description": "Vi stärker det nordiska samarbetet genom kultur",
-    "lang": "en",
-    "scope": "Nordic + Baltic countries"
-  },
-  "NORDIS": {
-    "file": "nordis.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
@@ -2402,14 +2354,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open By Default": {
-    "file": "open_by_default.json",
-    "count": 7,
-    "category": "(Open) Data + Technology",
-    "description": "",
-    "lang": "en",
-    "scope": "Netherlands"
-  },
   "Open Knowledge Foundation DE": {
     "file": "open_knowledge_foundation_de.json",
     "count": 684,
@@ -2441,14 +2385,6 @@
     "description": "Recent content on Open Regulatory Compliance Working Group",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Open Source Initiative": {
-    "file": "open_source_initiative.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
-    "lang": "en",
-    "scope": "World"
   },
   "OpenForum Europe": {
     "file": "openforum_europe.json",
@@ -2506,14 +2442,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Public Institutions": {
-    "file": "public_institutions.json",
-    "count": 9,
-    "category": "Global policy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "WIPO Publications": {
     "file": "wipo_publications.json",
     "count": 1,
@@ -2522,12 +2450,28 @@
     "lang": "en",
     "scope": "World"
   },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Rakennustaiteen Seura ry": {
     "file": "rakennustaiteen_seura_ry.json",
     "count": 5,
     "category": "Culture + Education",
     "description": "Samfundet för byggnadskonst - Architechtural Society",
     "lang": "fi",
+    "scope": "World"
+  },
+  "Reuters Institute for the Study of Journalism": {
+    "file": "reuters_institute_for_the_study_of_journalism.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "en",
     "scope": "World"
   },
   "Rising Voices": {
@@ -2714,11 +2658,11 @@
     "lang": "en",
     "scope": "World"
   },
-  "UN News - Global perspective Human stories | Human Rights": {
-    "file": "un_news___global_perspective_human_stories___human_rights.json",
-    "count": 22,
-    "category": "Human Rights + Democracy",
-    "description": "UN News - Global perspective Human stories | Human Rights",
+  "UN News - Global perspective Human stories | Culture and Education": {
+    "file": "un_news___global_perspective_human_stories___culture_and_education.json",
+    "count": 30,
+    "category": "Culture + Education",
+    "description": "UN News - Global perspective Human stories | Culture and Education",
     "lang": "en",
     "scope": "World"
   },
