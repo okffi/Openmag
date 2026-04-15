@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "15.4.2026 klo 23.06.08"
+    "last_updated": "16.4.2026 klo 0.57.50"
   },
   "Global Voices": {
     "file": "global_voices.json",
@@ -12,7 +12,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 21,
+    "count": 22,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -204,7 +204,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 36,
+    "count": 35,
     "category": "Politics + Public sector",
     "description": "European Commission | News",
     "lang": "en",
@@ -468,7 +468,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 11,
+    "count": 13,
     "category": "Digital Culture + Heritage",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -604,7 +604,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -620,7 +620,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 50,
+    "count": 49,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -684,7 +684,7 @@
   },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
-    "count": 45,
+    "count": 48,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -692,7 +692,7 @@
   },
   "UN News - Global perspective Human stories | Peace and Security": {
     "file": "un_news___global_perspective_human_stories___peace_and_security.json",
-    "count": 8,
+    "count": 9,
     "category": "Investigations + Conflict",
     "description": "UN News - Global perspective Human stories | Peace and Security",
     "lang": "en",
@@ -738,6 +738,22 @@
     "lang": "en",
     "scope": "World"
   },
+  "Center for European Policy Analysis": {
+    "file": "center_for_european_policy_analysis.json",
+    "count": 13,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Open Knowledge Foundation Blog": {
+    "file": "open_knowledge_foundation_blog.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Content for a fair, sustainable and open future",
+    "lang": "en",
+    "scope": "World"
+  },
   "Hacks/Hackers": {
     "file": "hacks_hackers.json",
     "count": 15,
@@ -753,14 +769,6 @@
     "description": "The Public Domain Review",
     "lang": "en",
     "scope": "World"
-  },
-  "Center for European Policy Analysis": {
-    "file": "center_for_european_policy_analysis.json",
-    "count": 13,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -916,7 +924,7 @@
   },
   "OCHA - United Nations Office for the Coordination of Humanitarian Affairs<": {
     "file": "ocha___united_nations_office_for_the_coordination_of_humanitarian_affairs_.json",
-    "count": 10,
+    "count": 9,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -1388,7 +1396,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 4,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -1442,17 +1450,9 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Knowledge Foundation Blog": {
-    "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Content for a fair, sustainable and open future",
-    "lang": "en",
-    "scope": "World"
-  },
   "JSN": {
     "file": "jsn.json",
-    "count": 10,
+    "count": 1,
     "category": "Investigations + Conflict",
     "description": "Julkisen sanan neuvosto",
     "lang": "fi",
@@ -1823,22 +1823,6 @@
     "count": 10,
     "category": "(Open) Data + Technology",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "CLARIN ERIC": {
-    "file": "clarin_eric.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Common Language Resources and Technology Infrastructure",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Confederation of Open Access Repositories": {
-    "file": "confederation_of_open_access_repositories.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Building a sustainable, global knowledge commons",
     "lang": "en",
     "scope": "World"
   },
@@ -2370,6 +2354,14 @@
     "lang": "sv",
     "scope": "Nordic + Baltic countries"
   },
+  "Nordregio": {
+    "file": "nordregio.json",
+    "count": 8,
+    "category": "(Open) Science + Research",
+    "description": "Nordic research institute for regional development and planning",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
+  },
   "OCCRP Announcements": {
     "file": "occrp_announcements.json",
     "count": 6,
@@ -2417,14 +2409,6 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
-  },
-  "Online Journalism Blog": {
-    "file": "online_journalism_blog.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
-    "lang": "en",
-    "scope": "World"
   },
   "CIVICUS Op-Eds": {
     "file": "civicus_op_eds.json",
@@ -2537,6 +2521,22 @@
     "description": "<p>Project Syndicate produces and delivers original commentaries by prominent economists, political leaders, scholars, business leaders, and civic activists to a global audience, including nearly 500 media outlets in more than 150 countries</p>",
     "lang": "en",
     "scope": "World"
+  },
+  "WIPO Publications": {
+    "file": "wipo_publications.json",
+    "count": 1,
+    "category": "IP + Creative Industry",
+    "description": "The WIPO RSS newsfeed provides access to the digital versions of our publications, studies and information products.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Rakennustaiteen Seura ry": {
     "file": "rakennustaiteen_seura_ry.json",
@@ -2711,14 +2711,6 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Tietopoliitiikan yhteistyöryhmä": {
-    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
     "lang": "fi",
     "scope": "Finland"
   },
