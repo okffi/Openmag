@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "15.4.2026 klo 1.55.31"
+    "last_updated": "15.4.2026 klo 2.52.00"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -44,7 +44,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 25,
+    "count": 26,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -132,7 +132,7 @@
   },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
-    "count": 45,
+    "count": 49,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -364,7 +364,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -372,7 +372,7 @@
   },
   "OCHA - United Nations Office for the Coordination of Humanitarian Affairs<": {
     "file": "ocha___united_nations_office_for_the_coordination_of_humanitarian_affairs_.json",
-    "count": 11,
+    "count": 12,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -460,7 +460,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 2,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -692,7 +692,7 @@
   },
   "Berkman Klein Center for Internet & Society at Harvard University Community": {
     "file": "berkman_klein_center_for_internet___society_at_harvard_university_community.json",
-    "count": 3,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -705,6 +705,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "COST": {
+    "file": "cost.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "xkcd": {
     "file": "xkcd.json",
@@ -1244,7 +1252,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 4,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -1260,7 +1268,7 @@
   },
   "JSN": {
     "file": "jsn.json",
-    "count": 10,
+    "count": 1,
     "category": "Investigations + Conflict",
     "description": "Julkisen sanan neuvosto",
     "lang": "fi",
@@ -1444,7 +1452,7 @@
   },
   "Taide- ja kulttuurivirasto": {
     "file": "taide__ja_kulttuurivirasto.json",
-    "count": 1,
+    "count": 10,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -1460,7 +1468,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -1524,7 +1532,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -1810,14 +1818,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Confederation of Open Access Repositories": {
-    "file": "confederation_of_open_access_repositories.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Building a sustainable, global knowledge commons",
-    "lang": "en",
-    "scope": "World"
-  },
   "CoP CC on Participatory and Deliberative Democracy": {
     "file": "cop_cc_on_participatory_and_deliberative_democracy.json",
     "count": 10,
@@ -1842,11 +1842,11 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "COST": {
-    "file": "cost.json",
+  "CREATe": {
+    "file": "create.json",
     "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "",
+    "category": "Digital Policy + Rights",
+    "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
     "scope": "Europe"
   },
@@ -1977,14 +1977,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Extreme Citizen Science blog": {
-    "file": "extreme_citizen_science_blog.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
-    "lang": "en",
-    "scope": "World"
   },
   "The Finnish Institute of International Affairs (FIIA)": {
     "file": "the_finnish_institute_of_international_affairs__fiia_.json",
@@ -2266,6 +2258,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "MuseumNext": {
+    "file": "museumnext.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Defining the Future of Museums",
+    "lang": "en",
+    "scope": "World"
+  },
   "MyData": {
     "file": "mydata.json",
     "count": 10,
@@ -2439,6 +2439,14 @@
     "count": 69,
     "category": "(Open) Data + Technology",
     "description": "Recent content on Open Regulatory Compliance Working Group",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "OpenForum Europe": {
+    "file": "openforum_europe.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Open Technologies for a Competitive and Sovereign Europe",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2777,6 +2785,14 @@
     "description": "Human Rights Video",
     "lang": "en",
     "scope": "World"
+  },
+  "YK:n alueellinen tiedotuskeskus – Suomi": {
+    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
+    "count": 15,
+    "category": "Global policy",
+    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "YK-nuoret": {
     "file": "yk_nuoret.json",
