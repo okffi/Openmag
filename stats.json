@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "17.4.2026 klo 22.15.58"
+    "last_updated": "17.4.2026 klo 23.55.18"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -172,7 +172,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 12,
+    "count": 13,
     "category": "Digital Culture + Heritage",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -540,7 +540,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 20,
+    "count": 8,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -596,7 +596,7 @@
   },
   "Europa Nostra": {
     "file": "europa_nostra.json",
-    "count": 10,
+    "count": 1,
     "category": "Culture + Education",
     "description": "The Voice of Cultural Heritage in Europe",
     "lang": "en",
@@ -641,6 +641,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "UN News - Global perspective Human stories | Culture and Education": {
+    "file": "un_news___global_perspective_human_stories___culture_and_education.json",
+    "count": 30,
+    "category": "Culture + Education",
+    "description": "UN News - Global perspective Human stories | Culture and Education",
+    "lang": "en",
+    "scope": "World"
   },
   "The Public Domain Review": {
     "file": "the_public_domain_review.json",
@@ -716,7 +724,7 @@
   },
   "Electronic Frontier Foundation": {
     "file": "electronic_frontier_foundation.json",
-    "count": 10,
+    "count": 12,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -1052,7 +1060,7 @@
   },
   "Avoin tiede": {
     "file": "avoin_tiede.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -1332,19 +1340,11 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 1,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "UN News - Global perspective Human stories | Culture and Education": {
-    "file": "un_news___global_perspective_human_stories___culture_and_education.json",
-    "count": 30,
-    "category": "Culture + Education",
-    "description": "UN News - Global perspective Human stories | Culture and Education",
-    "lang": "en",
-    "scope": "World"
   },
   "Wikimédia France": {
     "file": "wikim_dia_france.json",
@@ -1628,7 +1628,7 @@
   },
   "Soome Instituut Eestis": {
     "file": "soome_instituut_eestis.json",
-    "count": 10,
+    "count": 1,
     "category": "Culture + Education",
     "description": "Soome Eesti Instituudi Sihtasutus",
     "lang": "et",
@@ -1762,13 +1762,13 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Open Science | Federation of Finnish Learned Societies": {
-    "file": "open_science___federation_of_finnish_learned_societies.json",
+  "Wikimedia Sverige": {
+    "file": "wikimedia_sverige.json",
     "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "en",
-    "scope": "Finland"
+    "category": "Digital Culture + Heritage",
+    "description": "Vi arbetar för fri kunskap",
+    "lang": "sv",
+    "scope": "Sweden"
   },
   "Blue Shield International": {
     "file": "blue_shield_international.json",
@@ -1814,22 +1814,6 @@
     "file": "cern.json",
     "count": 10,
     "category": "(Open) Data + Technology",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Confederation of Open Access Repositories": {
-    "file": "confederation_of_open_access_repositories.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Building a sustainable, global knowledge commons",
-    "lang": "en",
-    "scope": "World"
-  },
-  "CoP CC on Participatory and Deliberative Democracy": {
-    "file": "cop_cc_on_participatory_and_deliberative_democracy.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
     "scope": "World"
@@ -1897,14 +1881,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Digital Scholarship Leiden": {
-    "file": "digital_scholarship_leiden.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "DigitalScholarship Leiden",
-    "lang": "en",
-    "scope": "Belgium"
   },
   "Direkt36": {
     "file": "direkt36.json",
@@ -2009,14 +1985,6 @@
     "description": "Finlandsinstitutet i Stockholm",
     "lang": "sv",
     "scope": "Sweden"
-  },
-  "Finnish Institute in Estonia": {
-    "file": "finnish_institute_in_estonia.json",
-    "count": 9,
-    "category": "Culture + Education",
-    "description": "Soome Eesti Instituudi Sihtasutus",
-    "lang": "en",
-    "scope": "Estonia"
   },
   "The Finnland-Institut": {
     "file": "the_finnland_institut.json",
@@ -2137,14 +2105,6 @@
     "description": "Suomen Rooman instituutti",
     "lang": "en",
     "scope": "Italy"
-  },
-  "Investigations – ACDC": {
-    "file": "investigations___acdc.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
-    "lang": "en",
-    "scope": "World"
   },
   "JOKES": {
     "file": "jokes.json",
@@ -2594,14 +2554,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Suomen Viron-instituutti": {
-    "file": "suomen_viron_instituutti.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Soome Eesti Instituudi Sihtasutus",
-    "lang": "fi",
-    "scope": "Estonia"
-  },
   "Suomen YK-liitto": {
     "file": "suomen_yk_liitto.json",
     "count": 10,
@@ -2666,14 +2618,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Tiedepolitiikka": {
-    "file": "tiedepolitiikka.json",
-    "count": 30,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Suomen Kotiseutuliitto | Tiedotteet": {
     "file": "suomen_kotiseutuliitto___tiedotteet.json",
     "count": 10,
@@ -2705,14 +2649,6 @@
     "description": "Join us on a journey through time",
     "lang": "en",
     "scope": "Europe"
-  },
-  "TSV": {
-    "file": "tsv.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Tulevaisuuden tutkimuksen seura ry": {
     "file": "tulevaisuuden_tutkimuksen_seura_ry.json",
