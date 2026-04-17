@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "17.4.2026 klo 16.50.56"
+    "last_updated": "17.4.2026 klo 18.02.09"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -36,7 +36,7 @@
   },
   "Demokraatti": {
     "file": "demokraatti.json",
-    "count": 36,
+    "count": 37,
     "category": "Politics + Public sector",
     "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
     "lang": "fi",
@@ -44,7 +44,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 36,
+    "count": 37,
     "category": "Politics + Public sector",
     "description": "European Commission | News",
     "lang": "en",
@@ -140,7 +140,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 18,
+    "count": 19,
     "category": "(Open) Science + Research",
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
@@ -260,7 +260,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 49,
+    "count": 48,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -372,7 +372,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 24,
+    "count": 25,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -476,7 +476,7 @@
   },
   "UN News - Global perspective Human stories | Middle East": {
     "file": "un_news___global_perspective_human_stories___middle_east.json",
-    "count": 25,
+    "count": 24,
     "category": "Investigations + Conflict",
     "description": "UN News - Global perspective Human stories | Middle East",
     "lang": "en",
@@ -490,19 +490,107 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "404 Media": {
+    "file": "404_media.json",
+    "count": 16,
+    "category": "Investigations + Conflict",
+    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "bellingcat": {
+    "file": "bellingcat.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "the home of online investigations",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Dittmar & Indrenius Attorneys Ltd.": {
+    "file": "dittmar___indrenius_attorneys_ltd_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "European Heritage Hub": {
+    "file": "european_heritage_hub.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Where cultural heritage connects",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "ICOMOS Suomen osasto r.y": {
+    "file": "icomos_suomen_osasto_r_y.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Rakennussuojelun ja kulttuuriympäristöjen vaalimisen asiantuntijajärjestö",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "IVIR": {
+    "file": "ivir.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Universiteit van Amsterdam",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "openDemocracy": {
+    "file": "opendemocracy.json",
+    "count": 20,
+    "category": "Human Rights + Democracy",
+    "description": "openDemocracy RSS",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
+  },
+  "Suomen Arkkitehtiliitto SAFA": {
+    "file": "suomen_arkkitehtiliitto_safa.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "The Signals Network": {
+    "file": "the_signals_network.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Holding power accountable one whistleblower at a time.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News - Global perspective Human stories | Human Rights": {
+    "file": "un_news___global_perspective_human_stories___human_rights.json",
+    "count": 22,
+    "category": "Human Rights + Democracy",
+    "description": "UN News - Global perspective Human stories | Human Rights",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News - Global perspective Human stories | Peace and Security": {
+    "file": "un_news___global_perspective_human_stories___peace_and_security.json",
+    "count": 8,
+    "category": "Investigations + Conflict",
+    "description": "UN News - Global perspective Human stories | Peace and Security",
+    "lang": "en",
+    "scope": "World"
+  },
+  "United Nations Sustainable Development": {
+    "file": "united_nations_sustainable_development.json",
+    "count": 8,
+    "category": "Sustainability + Foresight",
+    "description": "17 Goals to Transform Our World",
+    "lang": "en",
+    "scope": "World"
+  },
   "The Public Domain Review": {
     "file": "the_public_domain_review.json",
     "count": 100,
     "category": "Digital Culture + Heritage",
     "description": "The Public Domain Review",
-    "lang": "en",
-    "scope": "World"
-  },
-  "404 Media": {
-    "file": "404_media.json",
-    "count": 17,
-    "category": "Investigations + Conflict",
-    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
     "scope": "World"
   },
@@ -540,7 +628,7 @@
   },
   "Creative Commons": {
     "file": "creative_commons.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -682,14 +770,6 @@
     "lang": "en",
     "scope": "Netherlands"
   },
-  "IVIR": {
-    "file": "ivir.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Universiteit van Amsterdam",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Journalism Science Alliance": {
     "file": "journalism_science_alliance.json",
     "count": 10,
@@ -826,14 +906,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Suomen Arkkitehtiliitto SAFA": {
-    "file": "suomen_arkkitehtiliitto_safa.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "The Heritage Management Organization": {
     "file": "the_heritage_management_organization.json",
     "count": 10,
@@ -882,14 +954,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "UN News - Global perspective Human stories | Human Rights": {
-    "file": "un_news___global_perspective_human_stories___human_rights.json",
-    "count": 23,
-    "category": "Human Rights + Democracy",
-    "description": "UN News - Global perspective Human stories | Human Rights",
-    "lang": "en",
-    "scope": "World"
-  },
   "Wikimedia Deutschland Blog": {
     "file": "wikimedia_deutschland_blog.json",
     "count": 16,
@@ -921,14 +985,6 @@
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
     "scope": "Europe"
-  },
-  "openDemocracy": {
-    "file": "opendemocracy.json",
-    "count": 20,
-    "category": "Human Rights + Democracy",
-    "description": "openDemocracy RSS",
-    "lang": "en",
-    "scope": "Nordic + Baltic countries"
   },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
@@ -1100,7 +1156,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 4,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -1114,14 +1170,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "The Signals Network": {
-    "file": "the_signals_network.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Holding power accountable one whistleblower at a time.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Epressi - Ulkomaat": {
     "file": "epressi___ulkomaat.json",
     "count": 20,
@@ -1130,14 +1178,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "UN News - Global perspective Human stories | Peace and Security": {
-    "file": "un_news___global_perspective_human_stories___peace_and_security.json",
-    "count": 8,
-    "category": "Investigations + Conflict",
-    "description": "UN News - Global perspective Human stories | Peace and Security",
-    "lang": "en",
-    "scope": "World"
-  },
   "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
     "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
     "count": 10,
@@ -1145,14 +1185,6 @@
     "description": "",
     "lang": "en",
     "scope": "Poland"
-  },
-  "United Nations Sustainable Development": {
-    "file": "united_nations_sustainable_development.json",
-    "count": 8,
-    "category": "Sustainability + Foresight",
-    "description": "17 Goals to Transform Our World",
-    "lang": "en",
-    "scope": "World"
   },
   "Helsinki-Uusimaa Region": {
     "file": "helsinki_uusimaa_region.json",
@@ -1204,7 +1236,7 @@
   },
   "Zooniverse": {
     "file": "zooniverse.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
@@ -1345,14 +1377,6 @@
     "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "European Heritage Hub": {
-    "file": "european_heritage_hub.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Where cultural heritage connects",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Forbidden Stories": {
     "file": "forbidden_stories.json",
@@ -1618,46 +1642,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "American Library Association": {
-    "file": "american_library_association.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "bellingcat": {
-    "file": "bellingcat.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "the home of online investigations",
-    "lang": "en",
-    "scope": "World"
-  },
-  "correctiv.org": {
-    "file": "correctiv_org.json",
-    "count": 100,
-    "category": "Investigations + Conflict",
-    "description": "Recherchen für die Gesellschaft",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Direkt36": {
-    "file": "direkt36.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Direkt36 is a non-profit investigative journalism center with the mission to hold powerful people and institutions accountable.",
-    "lang": "en",
-    "scope": "Hungary"
-  },
-  "Disconnect": {
-    "file": "disconnect.json",
-    "count": 15,
-    "category": "Digital Policy + Rights",
-    "description": "Tech analysis without the boosterism",
-    "lang": "en",
-    "scope": "Sweden"
-  },
   "Wikimedia Techblog": {
     "file": "wikimedia_techblog.json",
     "count": 10,
@@ -1722,6 +1706,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "American Library Association": {
+    "file": "american_library_association.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Amos Rex": {
     "file": "amos_rex.json",
     "count": 25,
@@ -1769,6 +1761,14 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
+  },
+  "Wikimedia Sverige": {
+    "file": "wikimedia_sverige.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Vi arbetar för fri kunskap",
+    "lang": "sv",
+    "scope": "Sweden"
   },
   "Blue Shield International": {
     "file": "blue_shield_international.json",
@@ -1818,6 +1818,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Confederation of Open Access Repositories": {
+    "file": "confederation_of_open_access_repositories.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Building a sustainable, global knowledge commons",
+    "lang": "en",
+    "scope": "World"
+  },
   "CoP CC on Participatory and Deliberative Democracy": {
     "file": "cop_cc_on_participatory_and_deliberative_democracy.json",
     "count": 10,
@@ -1833,6 +1841,14 @@
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
     "scope": "World"
+  },
+  "correctiv.org": {
+    "file": "correctiv_org.json",
+    "count": 100,
+    "category": "Investigations + Conflict",
+    "description": "Recherchen für die Gesellschaft",
+    "lang": "en",
+    "scope": "Europe"
   },
   "COSS ry": {
     "file": "coss_ry.json",
@@ -1890,13 +1906,21 @@
     "lang": "en",
     "scope": "Belgium"
   },
-  "Dittmar & Indrenius Attorneys Ltd.": {
-    "file": "dittmar___indrenius_attorneys_ltd_.json",
+  "Direkt36": {
+    "file": "direkt36.json",
     "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Direkt36 is a non-profit investigative journalism center with the mission to hold powerful people and institutions accountable.",
+    "lang": "en",
+    "scope": "Hungary"
+  },
+  "Disconnect": {
+    "file": "disconnect.json",
+    "count": 15,
     "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
+    "description": "Tech analysis without the boosterism",
+    "lang": "en",
+    "scope": "Sweden"
   },
   "Docomomo Suomi Finland ry": {
     "file": "docomomo_suomi_finland_ry.json",
@@ -1919,6 +1943,14 @@
     "count": 10,
     "category": "Culture + Education",
     "description": "Suomen elinkeinoelämän keskusarkisto",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2010,6 +2042,14 @@
     "lang": "en",
     "scope": "Germany"
   },
+  "FNG Research": {
+    "file": "fng_research.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Forum Information & Democracy": {
     "file": "forum_information___democracy.json",
     "count": 10,
@@ -2073,14 +2113,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "ICOMOS Suomen osasto r.y": {
-    "file": "icomos_suomen_osasto_r_y.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Rakennussuojelun ja kulttuuriympäristöjen vaalimisen asiantuntijajärjestö",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "IJ4EU": {
     "file": "ij4eu.json",
@@ -2298,14 +2330,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Norden | Pohjoismainen yhteistyö": {
-    "file": "norden___pohjoismainen_yhteisty_.json",
-    "count": 10,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Nordic + Baltic countries"
-  },
   "Nordic Culture Point": {
     "file": "nordic_culture_point.json",
     "count": 12,
@@ -2335,14 +2359,6 @@
     "count": 8,
     "category": "Investigations + Conflict",
     "description": "OCCRP stories about Announcements delivered straight to you. Well, your RSS reader anyway.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "OCCRP Features": {
-    "file": "occrp_features.json",
-    "count": 1,
-    "category": "Investigations + Conflict",
-    "description": "OCCRP stories about Features delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
     "scope": "World"
   },
@@ -2503,14 +2519,6 @@
     "count": 20,
     "category": "Perspectives",
     "description": "<p>Project Syndicate produces and delivers original commentaries by prominent economists, political leaders, scholars, business leaders, and civic activists to a global audience, including nearly 500 media outlets in more than 150 countries</p>",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Public Institutions": {
-    "file": "public_institutions.json",
-    "count": 9,
-    "category": "Global policy",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
