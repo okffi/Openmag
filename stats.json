@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "18.4.2026 klo 23.46.14"
+    "last_updated": "19.4.2026 klo 0.42.40"
   },
   "Global Voices": {
     "file": "global_voices.json",
@@ -76,7 +76,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 52,
+    "count": 53,
     "category": "Global policy",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -145,6 +145,14 @@
     "description": "UN News - Global perspective Human stories | Peace and Security",
     "lang": "en",
     "scope": "World"
+  },
+  "Kulttuuri ja taide - ePressi": {
+    "file": "kulttuuri_ja_taide___epressi.json",
+    "count": 20,
+    "category": "Culture + Education",
+    "description": "Tiedotteiden tehokas julkaisukanava",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Verde": {
     "file": "verde.json",
@@ -378,14 +386,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Kulttuuri ja taide - ePressi": {
-    "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 20,
-    "category": "Culture + Education",
-    "description": "Tiedotteiden tehokas julkaisukanava",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Maailman Kuvalehti": {
     "file": "maailman_kuvalehti.json",
     "count": 10,
@@ -452,7 +452,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 9,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -692,7 +692,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -812,7 +812,7 @@
   },
   "UNESCO | Intangible Cultural Heritage": {
     "file": "unesco___intangible_cultural_heritage.json",
-    "count": 1,
+    "count": 617,
     "category": "Culture + Education",
     "description": "UNESCO is publishing once a week news on its activities regarding the safeguarding of intangible cultural heritage",
     "lang": "en",
@@ -1204,7 +1204,7 @@
   },
   "Open Knowledge Foundation Blog": {
     "file": "open_knowledge_foundation_blog.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Content for a fair, sustainable and open future",
     "lang": "en",
@@ -1866,6 +1866,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "CREATe": {
+    "file": "create.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Centre for Regulation of the Creative Economy",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "European Parliament | Culture and education": {
     "file": "european_parliament___culture_and_education.json",
     "count": 25,
@@ -1985,14 +1993,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Extreme Citizen Science blog": {
-    "file": "extreme_citizen_science_blog.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
-    "lang": "en",
-    "scope": "World"
   },
   "Suomen Tukholman-instituutti": {
     "file": "suomen_tukholman_instituutti.json",
@@ -2809,14 +2809,6 @@
     "description": "Kestävän elämän media",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Sámiráđđi": {
-    "file": "s_mir___i.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Nordic + Baltic countries"
   },
   "Puistokatu 4": {
     "file": "puistokatu_4.json",
