@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "18.4.2026 klo 8.44.45"
+    "last_updated": "18.4.2026 klo 10.19.54"
   },
   "Global Voices": {
     "file": "global_voices.json",
@@ -17,6 +17,22 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Global Voices Advox": {
+    "file": "global_voices_advox.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Defending Free Speech Online",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Global Network of Internet and Society Centers NoC": {
+    "file": "global_network_of_internet_and_society_centers_noc.json",
+    "count": 14,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "Verde": {
     "file": "verde.json",
@@ -140,7 +156,7 @@
   },
   "Europa Nostra": {
     "file": "europa_nostra.json",
-    "count": 1,
+    "count": 10,
     "category": "Culture + Education",
     "description": "The Voice of Cultural Heritage in Europe",
     "lang": "en",
@@ -314,14 +330,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Global Network of Internet and Society Centers NoC": {
-    "file": "global_network_of_internet_and_society_centers_noc.json",
-    "count": 14,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "NOEMA": {
     "file": "noema.json",
     "count": 10,
@@ -372,7 +380,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 10,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -468,7 +476,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 32,
+    "count": 33,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -1002,6 +1010,22 @@
     "lang": "de",
     "scope": "Germany"
   },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 4,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "WIPO Publications": {
+    "file": "wipo_publications.json",
+    "count": 1,
+    "category": "IP + Creative Industry",
+    "description": "The WIPO RSS newsfeed provides access to the digital versions of our publications, studies and information products.",
+    "lang": "en",
+    "scope": "World"
+  },
   "Data Rescue Project": {
     "file": "data_rescue_project.json",
     "count": 15,
@@ -1241,6 +1265,14 @@
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
     "scope": "World"
+  },
+  "Michael Culture Association": {
+    "file": "michael_culture_association.json",
+    "count": 1,
+    "category": "Digital Culture + Heritage",
+    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Hacks/Hackers": {
     "file": "hacks_hackers.json",
@@ -1530,14 +1562,6 @@
     "lang": "en",
     "scope": "Finland"
   },
-  "Global Voices Advox": {
-    "file": "global_voices_advox.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Defending Free Speech Online",
-    "lang": "en",
-    "scope": "World"
-  },
   "Suomen Rooman-instituutti": {
     "file": "suomen_rooman_instituutti.json",
     "count": 10,
@@ -1556,7 +1580,7 @@
   },
   "JSN": {
     "file": "jsn.json",
-    "count": 10,
+    "count": 1,
     "category": "Investigations + Conflict",
     "description": "Julkisen sanan neuvosto",
     "lang": "fi",
@@ -1648,30 +1672,6 @@
     "category": "Digital Policy + Rights",
     "description": "Tech analysis without the boosterism",
     "lang": "en",
-    "scope": "Sweden"
-  },
-  "Heritage Hub Kraków": {
-    "file": "heritage_hub_krak_w.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Heritage Hub for Central and Eastern Europe",
-    "lang": "en",
-    "scope": "Poland"
-  },
-  "Suomen Tukholman-instituutti": {
-    "file": "suomen_tukholman_instituutti.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Finlandsinstitutet i Stockholm",
-    "lang": "fi",
-    "scope": "Sweden"
-  },
-  "Finlandsinstitutet i Stockholm": {
-    "file": "finlandsinstitutet_i_stockholm.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Finlandsinstitutet i Stockholm",
-    "lang": "sv",
     "scope": "Sweden"
   },
   "Wikimedia Techblog": {
@@ -1858,14 +1858,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Copyright Literacy": {
-    "file": "copyright_literacy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Decoding copyright and bringing you enlightenment",
-    "lang": "en",
-    "scope": "World"
-  },
   "COSS ry": {
     "file": "coss_ry.json",
     "count": 15,
@@ -1946,14 +1938,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "European Research Council (ERC)": {
     "file": "european_research_council__erc_.json",
     "count": 10,
@@ -1961,6 +1945,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Heritage Hub Kraków": {
+    "file": "heritage_hub_krak_w.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Heritage Hub for Central and Eastern Europe",
+    "lang": "en",
+    "scope": "Poland"
   },
   "European Cultural Parliament": {
     "file": "european_cultural_parliament.json",
@@ -1993,6 +1985,22 @@
     "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
     "scope": "World"
+  },
+  "Suomen Tukholman-instituutti": {
+    "file": "suomen_tukholman_instituutti.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Finlandsinstitutet i Stockholm",
+    "lang": "fi",
+    "scope": "Sweden"
+  },
+  "Finlandsinstitutet i Stockholm": {
+    "file": "finlandsinstitutet_i_stockholm.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Finlandsinstitutet i Stockholm",
+    "lang": "sv",
+    "scope": "Sweden"
   },
   "Finnish Institute in Estonia": {
     "file": "finnish_institute_in_estonia.json",
@@ -2226,14 +2234,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Michael Culture Association": {
-    "file": "michael_culture_association.json",
-    "count": 1,
-    "category": "Digital Culture + Heritage",
-    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Museovirasto - uusimmat tiedotteet": {
     "file": "museovirasto___uusimmat_tiedotteet.json",
     "count": 25,
@@ -2257,14 +2257,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Nätverket KOD": {
     "file": "n_tverket_kod.json",
@@ -2313,6 +2305,14 @@
     "description": "Open Source and Internet Commons for Europe’s Digital Sovereignty",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Norden | Pohjoismainen yhteistyö": {
+    "file": "norden___pohjoismainen_yhteisty_.json",
+    "count": 10,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Nordic + Baltic countries"
   },
   "Nordic Culture Point": {
     "file": "nordic_culture_point.json",
@@ -2377,14 +2377,6 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
-  },
-  "Online Journalism Blog": {
-    "file": "online_journalism_blog.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
-    "lang": "en",
-    "scope": "World"
   },
   "CIVICUS Op-Eds": {
     "file": "civicus_op_eds.json",
@@ -2506,13 +2498,13 @@
     "lang": "en",
     "scope": "World"
   },
-  "WIPO Publications": {
-    "file": "wipo_publications.json",
-    "count": 1,
-    "category": "IP + Creative Industry",
-    "description": "The WIPO RSS newsfeed provides access to the digital versions of our publications, studies and information products.",
-    "lang": "en",
-    "scope": "World"
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Reuters Institute for the Study of Journalism": {
     "file": "reuters_institute_for_the_study_of_journalism.json",
@@ -2785,14 +2777,6 @@
     "description": "Human Rights Video",
     "lang": "en",
     "scope": "World"
-  },
-  "YK:n alueellinen tiedotuskeskus – Suomi": {
-    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
-    "count": 15,
-    "category": "Global policy",
-    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "YK-nuoret": {
     "file": "yk_nuoret.json",
