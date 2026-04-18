@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "18.4.2026 klo 1.51.14"
+    "last_updated": "18.4.2026 klo 2.49.11"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -260,7 +260,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 53,
+    "count": 33,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -516,7 +516,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -540,7 +540,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 20,
+    "count": 7,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -1060,7 +1060,7 @@
   },
   "Avoin tiede": {
     "file": "avoin_tiede.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -1588,7 +1588,7 @@
   },
   "JSN": {
     "file": "jsn.json",
-    "count": 1,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "Julkisen sanan neuvosto",
     "lang": "fi",
@@ -1644,7 +1644,7 @@
   },
   "Global Solutions Initiative": {
     "file": "global_solutions_initiative.json",
-    "count": 10,
+    "count": 1,
     "category": "Global policy",
     "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
     "lang": "en",
@@ -1762,14 +1762,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Open Science | Federation of Finnish Learned Societies": {
-    "file": "open_science___federation_of_finnish_learned_societies.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "en",
-    "scope": "Finland"
-  },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
     "count": 10,
@@ -1839,14 +1831,6 @@
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Copyright Literacy": {
-    "file": "copyright_literacy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
     "scope": "World"
   },
@@ -2514,6 +2498,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Public Institutions": {
+    "file": "public_institutions.json",
+    "count": 9,
+    "category": "Global policy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Rajapinta": {
     "file": "rajapinta.json",
     "count": 10,
@@ -2674,14 +2666,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Tiedepolitiikka": {
-    "file": "tiedepolitiikka.json",
-    "count": 30,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Suomen Kotiseutuliitto | Tiedotteet": {
     "file": "suomen_kotiseutuliitto___tiedotteet.json",
     "count": 10,
@@ -2713,14 +2697,6 @@
     "description": "Join us on a journey through time",
     "lang": "en",
     "scope": "Europe"
-  },
-  "TSV": {
-    "file": "tsv.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Tulevaisuuden tutkimuksen seura ry": {
     "file": "tulevaisuuden_tutkimuksen_seura_ry.json",
@@ -2801,6 +2777,14 @@
     "description": "Human Rights Video",
     "lang": "en",
     "scope": "World"
+  },
+  "YK:n alueellinen tiedotuskeskus – Suomi": {
+    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
+    "count": 15,
+    "category": "Global policy",
+    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "YK-nuoret": {
     "file": "yk_nuoret.json",
