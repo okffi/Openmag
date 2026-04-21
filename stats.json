@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "22.4.2026 klo 1.47.34"
+    "last_updated": "22.4.2026 klo 2.41.34"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
@@ -228,7 +228,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 17,
+    "count": 16,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -300,7 +300,7 @@
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
-    "count": 9,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "openDemocracy RSS",
     "lang": "en",
@@ -428,7 +428,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 4,
     "category": "Digital Culture + Heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -804,7 +804,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 10,
+    "count": 5,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -1004,7 +1004,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -1036,7 +1036,7 @@
   },
   "Global Investigative Journalism Network": {
     "file": "global_investigative_journalism_network.json",
-    "count": 20,
+    "count": 7,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -1516,7 +1516,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 3,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -1585,14 +1585,6 @@
     "description": "",
     "lang": "en",
     "scope": "Americas"
-  },
-  "Hanasaari": {
-    "file": "hanasaari.json",
-    "count": 25,
-    "category": "Culture + Education",
-    "description": "Uusimmat tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Wikimedia Techblog": {
     "file": "wikimedia_techblog.json",
@@ -1690,6 +1682,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Wikimedia Sverige": {
+    "file": "wikimedia_sverige.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Vi arbetar för fri kunskap",
+    "lang": "sv",
+    "scope": "Sweden"
+  },
   "Blue Shield International": {
     "file": "blue_shield_international.json",
     "count": 10,
@@ -1730,14 +1730,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Confederation of Open Access Repositories": {
-    "file": "confederation_of_open_access_repositories.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Building a sustainable, global knowledge commons",
-    "lang": "en",
-    "scope": "World"
-  },
   "International Communia Associati...": {
     "file": "international_communia_associati___.json",
     "count": 10,
@@ -1751,14 +1743,6 @@
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Copyright Literacy": {
-    "file": "copyright_literacy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
     "scope": "World"
   },
@@ -1898,14 +1882,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Extreme Citizen Science blog": {
-    "file": "extreme_citizen_science_blog.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
-    "lang": "en",
-    "scope": "World"
-  },
   "Suomen Tukholman-instituutti": {
     "file": "suomen_tukholman_instituutti.json",
     "count": 10,
@@ -1993,6 +1969,14 @@
     "description": "the home of online investigations",
     "lang": "en",
     "scope": "World"
+  },
+  "Hanasaari": {
+    "file": "hanasaari.json",
+    "count": 25,
+    "category": "Culture + Education",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "ICANN New and Noteworthy": {
     "file": "icann_new_and_noteworthy.json",
@@ -2666,6 +2650,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "This Month in GLAM": {
+    "file": "this_month_in_glam.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
+    "lang": "en",
+    "scope": "World"
+  },
   "Tiedepolitiikka": {
     "file": "tiedepolitiikka.json",
     "count": 30,
@@ -2793,6 +2785,14 @@
     "description": "Human Rights Video",
     "lang": "en",
     "scope": "World"
+  },
+  "YK:n alueellinen tiedotuskeskus – Suomi": {
+    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
+    "count": 15,
+    "category": "Global policy",
+    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "YK-nuoret": {
     "file": "yk_nuoret.json",
