@@ -1,10 +1,10 @@
 {
   "__meta": {
-    "last_updated": "21.4.2026 klo 23.08.31"
+    "last_updated": "22.4.2026 klo 0.52.58"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
-    "count": 11,
+    "count": 12,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
@@ -324,7 +324,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3476,
+    "count": 3477,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -540,7 +540,7 @@
   },
   "UN News - Global perspective Human stories | Middle East": {
     "file": "un_news___global_perspective_human_stories___middle_east.json",
-    "count": 25,
+    "count": 26,
     "category": "Investigations + Conflict",
     "description": "UN News - Global perspective Human stories | Middle East",
     "lang": "en",
@@ -572,7 +572,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 15,
+    "count": 16,
     "category": "Investigations + Conflict",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -700,7 +700,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 20,
+    "count": 11,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -719,6 +719,22 @@
     "count": 10,
     "category": "Investigations + Conflict",
     "description": "Grassroots efforts for sustainable peace.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "CHAOSS": {
+    "file": "chaoss.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "Community Health Analytics in Open Source Software",
+    "lang": "en",
+    "scope": "World"
+  },
+  "United Nations Sustainable Development": {
+    "file": "united_nations_sustainable_development.json",
+    "count": 12,
+    "category": "Sustainability + Foresight",
+    "description": "17 Goals to Transform Our World",
     "lang": "en",
     "scope": "World"
   },
@@ -780,7 +796,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 5,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -900,7 +916,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 4,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -983,14 +999,6 @@
     "count": 20,
     "category": "Global policy",
     "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
-    "lang": "en",
-    "scope": "World"
-  },
-  "United Nations Sustainable Development": {
-    "file": "united_nations_sustainable_development.json",
-    "count": 12,
-    "category": "Sustainability + Foresight",
-    "description": "17 Goals to Transform Our World",
     "lang": "en",
     "scope": "World"
   },
@@ -1100,7 +1108,7 @@
   },
   "EUvsDisinfo": {
     "file": "euvsdisinfo.json",
-    "count": 10,
+    "count": 2,
     "category": "Investigations + Conflict",
     "description": "DON'T BE DECEIVED, QUESTION EVEN MORE",
     "lang": "en",
@@ -1500,7 +1508,7 @@
   },
   "Mozilla Open Policy & Advocacy": {
     "file": "mozilla_open_policy___advocacy.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Mozilla's official blog on open Internet policy initiatives and developments",
     "lang": "en",
@@ -1567,14 +1575,6 @@
     "count": 15,
     "category": "Investigations + Conflict",
     "description": "Advancing media innovation to foster public trust",
-    "lang": "en",
-    "scope": "World"
-  },
-  "CHAOSS": {
-    "file": "chaoss.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "Community Health Analytics in Open Source Software",
     "lang": "en",
     "scope": "World"
   },
@@ -1679,6 +1679,14 @@
     "count": 25,
     "category": "Culture + Education",
     "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Avate Audiovisuaalisen alan tekijät ry": {
+    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1906,6 +1914,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
+  },
   "Suomen Tukholman-instituutti": {
     "file": "suomen_tukholman_instituutti.json",
     "count": 10,
@@ -1937,14 +1953,6 @@
     "description": "The Finnland-Institut is a forum for Finnish culture and arts, academia and business in the German-speaking region.",
     "lang": "en",
     "scope": "Germany"
-  },
-  "FNG Research": {
-    "file": "fng_research.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Forbidden Stories": {
     "file": "forbidden_stories.json",
@@ -2306,14 +2314,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Norden | Pohjoismainen yhteistyö": {
-    "file": "norden___pohjoismainen_yhteisty_.json",
-    "count": 10,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Nordic + Baltic countries"
-  },
   "Nordic Culture Point": {
     "file": "nordic_culture_point.json",
     "count": 12,
@@ -2489,6 +2489,14 @@
     "description": "<p>Project Syndicate produces and delivers original commentaries by prominent economists, political leaders, scholars, business leaders, and civic activists to a global audience, including nearly 500 media outlets in more than 150 countries</p>",
     "lang": "en",
     "scope": "World"
+  },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Reuters Institute for the Study of Journalism": {
     "file": "reuters_institute_for_the_study_of_journalism.json",
@@ -2793,6 +2801,14 @@
     "description": "Human Rights Video",
     "lang": "en",
     "scope": "World"
+  },
+  "YK:n alueellinen tiedotuskeskus – Suomi": {
+    "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
+    "count": 15,
+    "category": "Global policy",
+    "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "YK-nuoret": {
     "file": "yk_nuoret.json",
