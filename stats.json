@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "25.4.2026 klo 20.45.37"
+    "last_updated": "25.4.2026 klo 22.04.11"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -188,7 +188,7 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
@@ -380,7 +380,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 33,
+    "count": 48,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -540,7 +540,7 @@
   },
   "The Scholarly Kitchen": {
     "file": "the_scholarly_kitchen.json",
-    "count": 15,
+    "count": 14,
     "category": "(Open) Science + Research",
     "description": "What’s Hot and Cooking In Scholarly Publishing",
     "lang": "en",
@@ -900,7 +900,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -1308,7 +1308,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -1356,7 +1356,7 @@
   },
   "Le Monde diplomatique - English edition": {
     "file": "le_monde_diplomatique___english_edition.json",
-    "count": 10,
+    "count": 1,
     "category": "Global policy",
     "description": "",
     "lang": "en",
@@ -1548,7 +1548,7 @@
   },
   "Tutkivan journalismin yhdistys –tutkiva.fi": {
     "file": "tutkivan_journalismin_yhdistys__tutkiva_fi.json",
-    "count": 10,
+    "count": 1,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "fi",
@@ -1842,6 +1842,14 @@
     "lang": "en",
     "scope": "Finland"
   },
+  "Confederation of Open Access Repositories": {
+    "file": "confederation_of_open_access_repositories.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Building a sustainable, global knowledge commons",
+    "lang": "en",
+    "scope": "World"
+  },
   "International Communia Associati...": {
     "file": "international_communia_associati___.json",
     "count": 10,
@@ -1986,6 +1994,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
+  },
   "Finnish Institute in Estonia": {
     "file": "finnish_institute_in_estonia.json",
     "count": 9,
@@ -2009,22 +2025,6 @@
     "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Forbidden Stories": {
-    "file": "forbidden_stories.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Forum Information & Democracy": {
-    "file": "forum_information___democracy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "FOSDEM 2026": {
     "file": "fosdem_2026.json",
@@ -2129,14 +2129,6 @@
     "description": "Bringing Collections to Life",
     "lang": "en",
     "scope": "Netherlands"
-  },
-  "Investigations – ACDC": {
-    "file": "investigations___acdc.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
-    "lang": "en",
-    "scope": "World"
   },
   "JOKES": {
     "file": "jokes.json",
@@ -2519,14 +2511,6 @@
     "count": 20,
     "category": "Perspectives",
     "description": "<p>Project Syndicate produces and delivers original commentaries by prominent economists, political leaders, scholars, business leaders, and civic activists to a global audience, including nearly 500 media outlets in more than 150 countries</p>",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Public Institutions": {
-    "file": "public_institutions.json",
-    "count": 9,
-    "category": "Global policy",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
