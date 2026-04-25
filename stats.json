@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "25.4.2026 klo 22.04.11"
+    "last_updated": "25.4.2026 klo 23.49.24"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -129,6 +129,14 @@
     "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 48,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
   },
   "Verde": {
     "file": "verde.json",
@@ -377,14 +385,6 @@
     "description": "Vi stärker det nordiska samarbetet genom kultur",
     "lang": "sv",
     "scope": "Nordic + Baltic countries"
-  },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 48,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
-    "lang": "en",
-    "scope": "World"
   },
   "OCCRP": {
     "file": "occrp.json",
@@ -900,7 +900,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -1188,7 +1188,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 2,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1356,7 +1356,7 @@
   },
   "Le Monde diplomatique - English edition": {
     "file": "le_monde_diplomatique___english_edition.json",
-    "count": 1,
+    "count": 10,
     "category": "Global policy",
     "description": "",
     "lang": "en",
@@ -1412,7 +1412,7 @@
   },
   "Zooniverse": {
     "file": "zooniverse.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
@@ -1516,7 +1516,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 10,
+    "count": 1,
     "category": "Investigations + Conflict",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -1524,7 +1524,7 @@
   },
   "Open By Default": {
     "file": "open_by_default.json",
-    "count": 8,
+    "count": 1,
     "category": "(Open) Data + Technology",
     "description": "",
     "lang": "en",
@@ -1548,7 +1548,7 @@
   },
   "Tutkivan journalismin yhdistys –tutkiva.fi": {
     "file": "tutkivan_journalismin_yhdistys__tutkiva_fi.json",
-    "count": 1,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "fi",
@@ -1564,7 +1564,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -1580,7 +1580,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 5,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -1858,6 +1858,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Berkman Klein Center for Internet & Society at Harvard University Community": {
+    "file": "berkman_klein_center_for_internet___society_at_harvard_university_community.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Americas"
+  },
   "CoP CC on Participatory and Deliberative Democracy": {
     "file": "cop_cc_on_participatory_and_deliberative_democracy.json",
     "count": 10,
@@ -2026,6 +2034,22 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Forbidden Stories": {
+    "file": "forbidden_stories.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Forum Information & Democracy": {
+    "file": "forum_information___democracy.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "FOSDEM 2026": {
     "file": "fosdem_2026.json",
     "count": 10,
@@ -2130,6 +2154,14 @@
     "lang": "en",
     "scope": "Netherlands"
   },
+  "Investigations – ACDC": {
+    "file": "investigations___acdc.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
+    "lang": "en",
+    "scope": "World"
+  },
   "JOKES": {
     "file": "jokes.json",
     "count": 10,
@@ -2145,6 +2177,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Julkisen sanan neuvosto",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "K-blogg - Riksantikvarieämbetets blogg": {
     "file": "k_blogg___riksantikvarie_mbetets_blogg.json",
@@ -2338,6 +2378,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Norden | Pohjoismainen yhteistyö": {
+    "file": "norden___pohjoismainen_yhteisty_.json",
+    "count": 10,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Nordic + Baltic countries"
+  },
   "Nordregio": {
     "file": "nordregio.json",
     "count": 8,
@@ -2393,14 +2441,6 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
-  },
-  "Online Journalism Blog": {
-    "file": "online_journalism_blog.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
-    "lang": "en",
-    "scope": "World"
   },
   "Open Access and Digital Scholarship Blog": {
     "file": "open_access_and_digital_scholarship_blog.json",
