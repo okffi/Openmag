@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "25.4.2026 klo 19.53.51"
+    "last_updated": "25.4.2026 klo 20.45.37"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -114,6 +114,22 @@
     "lang": "en",
     "scope": "World"
   },
+  "Hrana": {
+    "file": "hrana.json",
+    "count": 11,
+    "category": "Human Rights + Democracy",
+    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Kulttuuri ja taide - ePressi": {
+    "file": "kulttuuri_ja_taide___epressi.json",
+    "count": 24,
+    "category": "Culture + Education",
+    "description": "Tiedotteiden tehokas julkaisukanava",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Verde": {
     "file": "verde.json",
     "count": 15,
@@ -172,7 +188,7 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
@@ -282,14 +298,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Hrana": {
-    "file": "hrana.json",
-    "count": 11,
-    "category": "Human Rights + Democracy",
-    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
-    "lang": "en",
-    "scope": "World"
-  },
   "Internet Society": {
     "file": "internet_society.json",
     "count": 20,
@@ -303,14 +311,6 @@
     "count": 10,
     "category": "Culture + Education",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Kulttuuri ja taide - ePressi": {
-    "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 24,
-    "category": "Culture + Education",
-    "description": "Tiedotteiden tehokas julkaisukanava",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -380,7 +380,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 48,
+    "count": 33,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -540,7 +540,7 @@
   },
   "The Scholarly Kitchen": {
     "file": "the_scholarly_kitchen.json",
-    "count": 14,
+    "count": 15,
     "category": "(Open) Science + Research",
     "description": "What’s Hot and Cooking In Scholarly Publishing",
     "lang": "en",
@@ -1564,7 +1564,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -1770,6 +1770,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Avate Audiovisuaalisen alan tekijät ry": {
+    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "AVEK": {
     "file": "avek.json",
     "count": 24,
@@ -1833,14 +1841,6 @@
     "description": "Peace broker",
     "lang": "en",
     "scope": "Finland"
-  },
-  "Confederation of Open Access Repositories": {
-    "file": "confederation_of_open_access_repositories.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Building a sustainable, global knowledge commons",
-    "lang": "en",
-    "scope": "World"
   },
   "International Communia Associati...": {
     "file": "international_communia_associati___.json",
@@ -1985,14 +1985,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Extreme Citizen Science blog": {
-    "file": "extreme_citizen_science_blog.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
-    "lang": "en",
-    "scope": "World"
   },
   "Finnish Institute in Estonia": {
     "file": "finnish_institute_in_estonia.json",
@@ -2161,14 +2153,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Julkisen sanan neuvosto",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "K-blogg - Riksantikvarieämbetets blogg": {
     "file": "k_blogg___riksantikvarie_mbetets_blogg.json",
@@ -2418,6 +2402,14 @@
     "lang": "en",
     "scope": "Finland"
   },
+  "Online Journalism Blog": {
+    "file": "online_journalism_blog.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
+    "lang": "en",
+    "scope": "World"
+  },
   "Open Access and Digital Scholarship Blog": {
     "file": "open_access_and_digital_scholarship_blog.json",
     "count": 15,
@@ -2527,6 +2519,14 @@
     "count": 20,
     "category": "Perspectives",
     "description": "<p>Project Syndicate produces and delivers original commentaries by prominent economists, political leaders, scholars, business leaders, and civic activists to a global audience, including nearly 500 media outlets in more than 150 countries</p>",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Public Institutions": {
+    "file": "public_institutions.json",
+    "count": 9,
+    "category": "Global policy",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
