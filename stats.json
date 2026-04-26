@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "26.4.2026 klo 9.12.57"
+    "last_updated": "26.4.2026 klo 11.19.06"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -10,14 +10,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "404 Media": {
-    "file": "404_media.json",
-    "count": 15,
-    "category": "Investigations + Conflict",
-    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Demokraatti": {
     "file": "demokraatti.json",
     "count": 30,
@@ -25,6 +17,46 @@
     "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Global Voices": {
+    "file": "global_voices.json",
+    "count": 16,
+    "category": "Human Rights + Democracy",
+    "description": "Citizen media stories from around the world",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Global Network of Internet and Society Centers NoC": {
+    "file": "global_network_of_internet_and_society_centers_noc.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Technology | Guardian": {
+    "file": "technology___guardian.json",
+    "count": 35,
+    "category": "(Open) Data + Technology",
+    "description": "Technology news, comment and analysis | guardian.co.uk",
+    "lang": "en",
+    "scope": "World"
+  },
+  "The Ulkopolitist": {
+    "file": "the_ulkopolitist.json",
+    "count": 10,
+    "category": "Global policy",
+    "description": "Parempaa ulkopoliittista keskustelua.",
+    "lang": "fi",
+    "scope": "World"
+  },
+  "404 Media": {
+    "file": "404_media.json",
+    "count": 15,
+    "category": "Investigations + Conflict",
+    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
+    "lang": "en",
+    "scope": "World"
   },
   "Diff": {
     "file": "diff.json",
@@ -41,14 +73,6 @@
     "description": "Reporting",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Global Voices": {
-    "file": "global_voices.json",
-    "count": 16,
-    "category": "Human Rights + Democracy",
-    "description": "Citizen media stories from around the world",
-    "lang": "en",
-    "scope": "World"
   },
   "Hrana": {
     "file": "hrana.json",
@@ -84,33 +108,17 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 50,
+    "count": 51,
     "category": "Global policy",
     "description": "Latest news from Euronews",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Global Network of Internet and Society Centers NoC": {
-    "file": "global_network_of_internet_and_society_centers_noc.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "OATP primary": {
     "file": "oatp_primary.json",
     "count": 48,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Technology | Guardian": {
-    "file": "technology___guardian.json",
-    "count": 34,
-    "category": "(Open) Data + Technology",
-    "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
     "scope": "World"
   },
@@ -316,7 +324,7 @@
   },
   "Global Investigative Journalism Network": {
     "file": "global_investigative_journalism_network.json",
-    "count": 10,
+    "count": 20,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -592,14 +600,6 @@
     "category": "(Open) Science + Research",
     "description": "What’s Hot and Cooking In Scholarly Publishing",
     "lang": "en",
-    "scope": "World"
-  },
-  "The Ulkopolitist": {
-    "file": "the_ulkopolitist.json",
-    "count": 10,
-    "category": "Global policy",
-    "description": "Parempaa ulkopoliittista keskustelua.",
-    "lang": "fi",
     "scope": "World"
   },
   "Tiede ja tutkimus - ePressi": {
@@ -1026,6 +1026,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "UNESCO | Intangible Cultural Heritage": {
+    "file": "unesco___intangible_cultural_heritage.json",
+    "count": 619,
+    "category": "Culture + Education",
+    "description": "UNESCO is publishing once a week news on its activities regarding the safeguarding of intangible cultural heritage",
+    "lang": "en",
+    "scope": "World"
+  },
   "Hacks/Hackers": {
     "file": "hacks_hackers.json",
     "count": 15,
@@ -1308,7 +1316,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -2018,13 +2026,13 @@
     "lang": "en",
     "scope": "Germany"
   },
-  "UNESCO | Intangible Cultural Heritage": {
-    "file": "unesco___intangible_cultural_heritage.json",
-    "count": 619,
+  "FNG Research": {
+    "file": "fng_research.json",
+    "count": 10,
     "category": "Culture + Education",
-    "description": "UNESCO is publishing once a week news on its activities regarding the safeguarding of intangible cultural heritage",
-    "lang": "en",
-    "scope": "World"
+    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Forbidden Stories": {
     "file": "forbidden_stories.json",
@@ -2417,6 +2425,14 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
+  },
+  "Online Journalism Blog": {
+    "file": "online_journalism_blog.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
+    "lang": "en",
+    "scope": "World"
   },
   "Open Access and Digital Scholarship Blog": {
     "file": "open_access_and_digital_scholarship_blog.json",
