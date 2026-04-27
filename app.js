@@ -174,7 +174,7 @@
         });
 
         // Restore previous selection if still valid
-        if (currentVal && select.querySelector(`option[value="${currentVal}"]`)) {
+        if (currentVal && Array.from(select.options).some(opt => opt.value === currentVal)) {
             select.value = currentVal;
         } else {
             select.value = 'all';
