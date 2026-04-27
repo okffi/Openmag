@@ -95,9 +95,9 @@
     }
 
     function applySettingsPanel() {
-        const selectedLang = document.querySelector('input[name="settings-lang"]:checked');
+        const selectedLang = document.getElementById('settings-content-lang-select');
         const selectedScope = document.querySelector('input[name="settings-scope"]:checked');
-        const selectedUiLang = document.querySelector('input[name="settings-ui-lang"]:checked');
+        const selectedUiLang = document.getElementById('settings-ui-lang-select');
 
         if (selectedLang) document.getElementById('langFilter').value = selectedLang.value;
         if (selectedScope) document.getElementById('scopeFilter').value = selectedScope.value;
@@ -114,12 +114,12 @@
         const scopeVal = document.getElementById('scopeFilter').value;
         const uiLangVal = document.getElementById('uiLangFilter').value;
 
-        const langRadio = document.querySelector(`input[name="settings-lang"][value="${langVal}"]`);
-        if (langRadio) langRadio.checked = true;
+        const contentLangSelect = document.getElementById('settings-content-lang-select');
+        if (contentLangSelect) contentLangSelect.value = langVal;
         const scopeRadio = document.querySelector(`input[name="settings-scope"][value="${scopeVal}"]`);
         if (scopeRadio) scopeRadio.checked = true;
-        const uiLangRadio = document.querySelector(`input[name="settings-ui-lang"][value="${uiLangVal}"]`);
-        if (uiLangRadio) uiLangRadio.checked = true;
+        const uiLangSelect = document.getElementById('settings-ui-lang-select');
+        if (uiLangSelect) uiLangSelect.value = uiLangVal;
     }
 
     function clearGrid() {
@@ -149,65 +149,67 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function populateContentLangRadios(uiLang) {
-        const container = document.getElementById('settings-content-lang-options');
-        if (!container) return;
-        container.innerHTML = '';
+    function populateContentLangSelect(uiLang) {
+        const select = document.getElementById('settings-content-lang-select');
+        if (!select) return;
+        const currentVal = select.value;
+        select.innerHTML = '';
 
         // "All languages" option
-        const allLabel = document.createElement('label');
-        allLabel.className = 'settings-radio-label';
-        const allRadio = document.createElement('input');
-        allRadio.type = 'radio';
-        allRadio.name = 'settings-lang';
-        allRadio.value = 'all';
-        allRadio.checked = true;
-        const allSpan = document.createElement('span');
-        allSpan.textContent = t('ui.all_languages');
-        allLabel.appendChild(allRadio);
-        allLabel.appendChild(allSpan);
-        container.appendChild(allLabel);
+        const allOpt = document.createElement('option');
+        allOpt.value = 'all';
+        allOpt.textContent = t('ui.all_languages');
+        select.appendChild(allOpt);
 
-        // All real languages (from translations)
+        // All language codes from translations
         const languageCodes = Object.keys(translations);
         languageCodes.forEach(langCode => {
-            const label = document.createElement('label');
-            label.className = 'settings-radio-label';
-            const radio = document.createElement('input');
-            radio.type = 'radio';
-            radio.name = 'settings-lang';
-            radio.value = langCode;
-            const span = document.createElement('span');
-            span.textContent =
+            const opt = document.createElement('option');
+            opt.value = langCode;
+            opt.textContent =
                 (translations[uiLang] && translations[uiLang]['lang.' + langCode]) ||
                 (translations['en'] && translations['en']['lang.' + langCode]) ||
                 langCode;
-            label.appendChild(radio);
-            label.appendChild(span);
-            container.appendChild(label);
+            select.appendChild(opt);
         });
+
+        // Restore previous selection if still valid
+        if (currentVal && select.querySelector(`option[value="${currentVal}"]`)) {
+            select.value = currentVal;
+        } else {
+            select.value = 'all';
+        }
     }
 
     function populateUiLangDropdown() {
         const uiLangFilter = document.getElementById('uiLangFilter');
-        uiLangFilter.innerHTML = '';
+        const uiLangSelect = document.getElementById('settings-ui-lang-select');
 
         const languageCodes = Object.keys(translations);
         const browserLang = (navigator.language || 'en').substring(0, 2);
-        const langsToShow = languageCodes.includes(browserLang) && browserLang !== 'en'
-            ? [browserLang, 'en']
-            : ['en'];
+        const defaultLang = languageCodes.includes(browserLang) ? browserLang : 'en';
 
-        langsToShow.forEach(langCode => {
-            const opt = document.createElement('option');
-            opt.value = langCode;
-            opt.textContent =
-                (translations[langCode] && translations[langCode]['lang.' + langCode]) ||
-                (translations['en'] && translations['en']['lang.' + langCode]) ||
-                langCode;
-            uiLangFilter.appendChild(opt);
-        });
-        uiLangFilter.value = langsToShow[0];
+        // Populate hidden filter (used by t())
+        uiLangFilter.innerHTML = '';
+        const hiddenOpt = document.createElement('option');
+        hiddenOpt.value = defaultLang;
+        uiLangFilter.appendChild(hiddenOpt);
+        uiLangFilter.value = defaultLang;
+
+        // Populate settings panel dropdown with ALL available languages
+        if (uiLangSelect) {
+            uiLangSelect.innerHTML = '';
+            languageCodes.forEach(langCode => {
+                const opt = document.createElement('option');
+                opt.value = langCode;
+                opt.textContent =
+                    (translations[langCode] && translations[langCode]['lang.' + langCode]) ||
+                    (translations['en'] && translations['en']['lang.' + langCode]) ||
+                    langCode;
+                uiLangSelect.appendChild(opt);
+            });
+            uiLangSelect.value = defaultLang;
+        }
     }
 
     // Updates UI wording for buttons, labels, etc
@@ -264,7 +266,7 @@
         populateUiLangDropdown();
         const uiLangFilter = document.getElementById('uiLangFilter');
         let uiLang = uiLangFilter.value || 'en';
-        populateContentLangRadios(uiLang);
+        populateContentLangSelect(uiLang);
 
         // Masonry init
         const container = document.querySelector('#magazine-grid');
@@ -293,18 +295,37 @@
         uiLangFilter.removeEventListener('change', updateUITranslations);
         uiLangFilter.addEventListener('change', updateUITranslations);
 
-        // Update content lang radios and UI text on UI language change
+        // Update content lang select and UI text on UI language change
         uiLangFilter.addEventListener('change', () => {
             const newUiLang = uiLangFilter.value;
-            populateContentLangRadios(newUiLang);
+            populateContentLangSelect(newUiLang);
             updateUITranslations();
         });
+
+        // Also sync uiLangFilter when the settings panel select changes
+        const uiLangSelectEl = document.getElementById('settings-ui-lang-select');
+        if (uiLangSelectEl) {
+            uiLangSelectEl.addEventListener('change', () => {
+                uiLangFilter.value = uiLangSelectEl.value;
+                populateContentLangSelect(uiLangSelectEl.value);
+                updateUITranslations();
+            });
+        }
 
         document.addEventListener('click', (e) => {
             const panel = document.getElementById('settings-panel');
             const btn = document.getElementById('settings-btn');
             if (panel && panel.classList.contains('open')) {
                 if (!panel.contains(e.target) && !btn.contains(e.target)) {
+                    closeSettingsPanel();
+                }
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const panel = document.getElementById('settings-panel');
+                if (panel && panel.classList.contains('open')) {
                     closeSettingsPanel();
                 }
             }
@@ -1138,6 +1159,7 @@
     window.showBookmarksView = showBookmarksView;
     window.resetFilters = resetFilters;
     window.toggleSettingsPanel = toggleSettingsPanel;
+    window.closeSettingsPanel = closeSettingsPanel;
     window.applySettingsPanel = applySettingsPanel;
     window.resetFiltersFromPanel = resetFiltersFromPanel;
 
