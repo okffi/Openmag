@@ -53,77 +53,51 @@
             </div>
             <!-- Settings panel – positioned absolute below the sticky header -->
             <div id="settings-panel" class="settings-panel" hidden>
-                <div class="settings-grid">
-                    <div class="settings-section">
-                        <div class="settings-section-title" id="settings-ui-lang-title">INTERFACE LANGUAGE</div>
-                        <div id="settings-ui-lang-options">
-                            <!-- Populated by JS -->
-                        </div>
+                <div class="settings-panel-body">
+                    <div class="settings-panel-header-row">
+                        <button id="settings-close-btn" class="settings-close-btn" onclick="closeSettingsPanel()" aria-label="Close settings">&#10005;</button>
                     </div>
-                    <div class="settings-section">
-                        <div class="settings-section-title" id="settings-content-lang-title">CONTENT LANGUAGE</div>
-                        <label class="settings-radio-label">
-                            <input type="radio" name="settings-lang" value="all" checked>
-                            <span id="settings-lang-all-label">All Languages</span>
-                        </label>
-                        <label class="settings-radio-label">
-                            <input type="radio" name="settings-lang" value="fi">
-                            <span id="settings-lang-fi-label">Finnish</span>
-                        </label>
-                        <label class="settings-radio-label">
-                            <input type="radio" name="settings-lang" value="en">
-                            <span id="settings-lang-en-label">English</span>
-                        </label>
-                        <label class="settings-radio-label">
-                            <input type="radio" name="settings-lang" value="sv">
-                            <span id="settings-lang-sv-label">Swedish</span>
-                        </label>
-                        <label class="settings-radio-label">
-                            <input type="radio" name="settings-lang" value="et">
-                            <span id="settings-lang-et-label">Estonian</span>
-                        </label>
-                        <label class="settings-radio-label">
-                            <input type="radio" name="settings-lang" value="de">
-                            <span id="settings-lang-de-label">German</span>
-                        </label>
-                        <label class="settings-radio-label">
-                            <input type="radio" name="settings-lang" value="fr">
-                            <span id="settings-lang-fr-label">French</span>
-                        </label>
-                        <div class="settings-section-footer">
-                            <label class="settings-checkbox-label">
-                                <input type="checkbox" id="settings-lang-fallback" unchecked>
-                                <span id="settings-lang-fallback-label">Näytä vain tämän kielinen sisältö</span>
+                    <div class="settings-grid">
+                        <div class="settings-section">
+                            <div class="settings-section-title" id="settings-ui-lang-title">INTERFACE LANGUAGE</div>
+                            <select id="settings-ui-lang-select" class="settings-select" aria-label="Interface language">
+                                <!-- Populated by JS -->
+                            </select>
+                        </div>
+                        <div class="settings-section">
+                            <div class="settings-section-title" id="settings-content-lang-title">CONTENT LANGUAGE</div>
+                            <select id="settings-content-lang-select" class="settings-select" aria-label="Content language">
+                                <!-- Populated by JS -->
+                            </select>
+                        </div>
+                        <div class="settings-section">
+                            <div class="settings-section-title" id="settings-region-title">REGION</div>
+                            <label class="settings-radio-label">
+                                <input type="radio" name="settings-scope" value="all" checked>
+                                <span id="settings-scope-all-label">All Regions</span>
+                            </label>
+                            <label class="settings-radio-label">
+                                <input type="radio" name="settings-scope" value="Finland">
+                                <span id="settings-scope-finland-label">Finland</span>
+                            </label>
+                            <label class="settings-radio-label">
+                                <input type="radio" name="settings-scope" value="Nordic + Baltic countries">
+                                <span id="settings-scope-nordic-label">Nordic + Baltic</span>
+                            </label>
+                            <label class="settings-radio-label">
+                                <input type="radio" name="settings-scope" value="Europe">
+                                <span id="settings-scope-europe-label">Europe</span>
+                            </label>
+                            <label class="settings-radio-label">
+                                <input type="radio" name="settings-scope" value="World">
+                                <span id="settings-scope-world-label">World</span>
                             </label>
                         </div>
                     </div>
-                    <div class="settings-section">
-                        <div class="settings-section-title" id="settings-region-title">REGION</div>
-                        <label class="settings-radio-label">
-                            <input type="radio" name="settings-scope" value="all" checked>
-                            <span id="settings-scope-all-label">All Regions</span>
-                        </label>
-                        <label class="settings-radio-label">
-                            <input type="radio" name="settings-scope" value="Finland">
-                            <span id="settings-scope-finland-label">Finland</span>
-                        </label>
-                        <label class="settings-radio-label">
-                            <input type="radio" name="settings-scope" value="Nordic + Baltic countries">
-                            <span id="settings-scope-nordic-label">Nordic + Baltic</span>
-                        </label>
-                        <label class="settings-radio-label">
-                            <input type="radio" name="settings-scope" value="Europe">
-                            <span id="settings-scope-europe-label">Europe</span>
-                        </label>
-                        <label class="settings-radio-label">
-                            <input type="radio" name="settings-scope" value="World">
-                            <span id="settings-scope-world-label">World</span>
-                        </label>
+                    <div class="settings-actions">
+                        <button id="settings-apply-btn" class="settings-apply-btn" onclick="applySettingsPanel()">APPLY</button>
+                        <button id="settings-reset-btn" class="settings-reset-btn" onclick="resetFiltersFromPanel()">RESET</button>
                     </div>
-                </div>
-                <div class="settings-actions">
-                    <button id="settings-apply-btn" class="settings-apply-btn" onclick="applySettingsPanel()">APPLY</button>
-                    <button id="settings-reset-btn" class="settings-reset-btn" onclick="resetFiltersFromPanel()">RESET</button>
                 </div>
             </div>
         </header>
