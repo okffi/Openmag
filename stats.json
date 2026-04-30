@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "1.5.2026 klo 0.08.25"
+    "last_updated": "1.5.2026 klo 1.58.38"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
@@ -60,7 +60,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 23,
+    "count": 24,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -420,7 +420,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 16,
+    "count": 17,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -516,7 +516,7 @@
   },
   "UN News - Global perspective Human stories | Middle East": {
     "file": "un_news___global_perspective_human_stories___middle_east.json",
-    "count": 25,
+    "count": 24,
     "category": "Investigations + Conflict",
     "description": "UN News - Global perspective Human stories | Middle East",
     "lang": "en",
@@ -588,7 +588,7 @@
   },
   "Electronic Frontier Foundation": {
     "file": "electronic_frontier_foundation.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -641,6 +641,22 @@
     "description": "",
     "lang": "en",
     "scope": "World"
+  },
+  "American Library Association": {
+    "file": "american_library_association.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Taide- ja kulttuurivirasto": {
+    "file": "taide__ja_kulttuurivirasto.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "CSC": {
     "file": "csc.json",
@@ -804,7 +820,7 @@
   },
   "Open Knowledge Foundation Blog": {
     "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "Content for a fair, sustainable and open future",
     "lang": "en",
@@ -1260,7 +1276,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -1578,30 +1594,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Software Heritage": {
-    "file": "software_heritage.json",
-    "count": 100,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Kielipankki": {
-    "file": "kielipankki.json",
-    "count": 99,
-    "category": "Digital Culture + Heritage",
-    "description": "The Language Bank of Finland",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Creative Commons": {
-    "file": "creative_commons.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Wikimedia Techblog": {
     "file": "wikimedia_techblog.json",
     "count": 10,
@@ -1807,14 +1799,6 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "American Library Association": {
-    "file": "american_library_association.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -2050,14 +2034,6 @@
     "lang": "fi",
     "scope": "Estonia"
   },
-  "Taide- ja kulttuurivirasto": {
-    "file": "taide__ja_kulttuurivirasto.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Suomen Kotiseutuliitto | Tiedotteet": {
     "file": "suomen_kotiseutuliitto___tiedotteet.json",
     "count": 10,
@@ -2098,6 +2074,14 @@
     "lang": "en",
     "scope": "Belgium"
   },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Heritage Hub Kraków": {
     "file": "heritage_hub_krak_w.json",
     "count": 10,
@@ -2105,14 +2089,6 @@
     "description": "Heritage Hub for Central and Eastern Europe",
     "lang": "en",
     "scope": "Poland"
-  },
-  "European Heritage Hub": {
-    "file": "european_heritage_hub.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Where cultural heritage connects",
-    "lang": "en",
-    "scope": "Europe"
   },
   "EUscreen": {
     "file": "euscreen.json",
@@ -2154,14 +2130,6 @@
     "lang": "sv",
     "scope": "Sweden"
   },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Open Objects": {
     "file": "open_objects.json",
     "count": 10,
@@ -2169,6 +2137,14 @@
     "description": "'Every age has its orthodoxy and no orthodoxy is ever right.'",
     "lang": "en",
     "scope": "UK"
+  },
+  "Software Heritage": {
+    "file": "software_heritage.json",
+    "count": 100,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "Source Code Exhibition": {
     "file": "source_code_exhibition.json",
@@ -2209,6 +2185,14 @@
     "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
     "scope": "World"
+  },
+  "Kielipankki": {
+    "file": "kielipankki.json",
+    "count": 99,
+    "category": "Digital Culture + Heritage",
+    "description": "The Language Bank of Finland",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Knowledge Rights 21 Archive Feed": {
     "file": "knowledge_rights_21_archive_feed.json",
@@ -2265,6 +2249,14 @@
     "description": "The CIS is a CNRS research center",
     "lang": "en",
     "scope": "France"
+  },
+  "Creative Commons": {
+    "file": "creative_commons.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "Forum Information & Democracy": {
     "file": "forum_information___democracy.json",
@@ -2354,11 +2346,11 @@
     "lang": "en",
     "scope": "World"
   },
-  "Rajapinta": {
-    "file": "rajapinta.json",
+  "Tietopoliitiikan yhteistyöryhmä": {
+    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
     "count": 10,
     "category": "Digital Policy + Rights",
-    "description": "researcher community focused on digital social sciences",
+    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2529,14 +2521,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Julkisen sanan neuvosto",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "OCCRP Announcements": {
     "file": "occrp_announcements.json",
@@ -2761,6 +2745,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Norden | Pohjoismainen yhteistyö": {
+    "file": "norden___pohjoismainen_yhteisty_.json",
+    "count": 10,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Nordic + Baltic countries"
   },
   "Oikeusblogi": {
     "file": "oikeusblogi.json",
