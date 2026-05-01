@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "1.5.2026 klo 22.21.03"
+    "last_updated": "2.5.2026 klo 0.01.04"
   },
   "Internet Archive Blogs": {
     "file": "internet_archive_blogs.json",
@@ -12,7 +12,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 20,
+    "count": 18,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -180,7 +180,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 48,
+    "count": 49,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -273,6 +273,38 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "xkcd": {
+    "file": "xkcd.json",
+    "count": 4,
+    "category": "(Open) Data + Technology",
+    "description": "xkcd.com: A webcomic of romance and math humor.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News - Global perspective Human stories | Culture and Education": {
+    "file": "un_news___global_perspective_human_stories___culture_and_education.json",
+    "count": 29,
+    "category": "Culture + Education",
+    "description": "UN News - Global perspective Human stories | Culture and Education",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Timeless": {
+    "file": "timeless.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Stories from the Library of Congress",
+    "lang": "en",
+    "scope": "World"
+  },
+  "OCHA": {
+    "file": "ocha.json",
+    "count": 11,
+    "category": "Investigations + Conflict",
+    "description": "United Nations Office for the Coordination of Humanitarian Affairs",
+    "lang": "en",
+    "scope": "World"
   },
   "COSS ry": {
     "file": "coss_ry.json",
@@ -570,14 +602,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "OCHA": {
-    "file": "ocha.json",
-    "count": 11,
-    "category": "Investigations + Conflict",
-    "description": "United Nations Office for the Coordination of Humanitarian Affairs",
-    "lang": "en",
-    "scope": "World"
-  },
   "UN News - Global perspective Human stories | Peace and Security": {
     "file": "un_news___global_perspective_human_stories___peace_and_security.json",
     "count": 11,
@@ -730,14 +754,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "xkcd": {
-    "file": "xkcd.json",
-    "count": 4,
-    "category": "(Open) Data + Technology",
-    "description": "xkcd.com: A webcomic of romance and math humor.",
-    "lang": "en",
-    "scope": "World"
-  },
   "News – Oxford Internet Institute": {
     "file": "news___oxford_internet_institute.json",
     "count": 10,
@@ -825,14 +841,6 @@
     "description": "",
     "lang": "sv",
     "scope": "Finland"
-  },
-  "UN News - Global perspective Human stories | Culture and Education": {
-    "file": "un_news___global_perspective_human_stories___culture_and_education.json",
-    "count": 29,
-    "category": "Culture + Education",
-    "description": "UN News - Global perspective Human stories | Culture and Education",
-    "lang": "en",
-    "scope": "World"
   },
   "Digital meets Culture": {
     "file": "digital_meets_culture.json",
@@ -1012,7 +1020,7 @@
   },
   "Avoin tiede": {
     "file": "avoin_tiede.json",
-    "count": 9,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -1081,14 +1089,6 @@
     "description": "Kotimaisten kielten keskus",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Timeless": {
-    "file": "timeless.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Stories from the Library of Congress",
-    "lang": "en",
-    "scope": "World"
   },
   "EFFI.org:n uusimmat artikkelit": {
     "file": "effi_org_n_uusimmat_artikkelit.json",
@@ -1484,7 +1484,7 @@
   },
   "bellingcat": {
     "file": "bellingcat.json",
-    "count": 10,
+    "count": 1,
     "category": "Investigations + Conflict",
     "description": "the home of online investigations",
     "lang": "en",
@@ -1569,30 +1569,6 @@
     "description": "Turun yliopiston Suomen historian oppiaineen blogi",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Museolehti": {
-    "file": "museolehti.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Museoalan ihmisten, ilmiöiden ja puheenaiheiden media.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Svenska institutet": {
-    "file": "svenska_institutet.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Vi främjar Sverige i världen",
-    "lang": "sv",
-    "scope": "Sweden"
-  },
-  "World Heritage Centre News": {
-    "file": "world_heritage_centre_news.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "All the World Heritage News",
-    "lang": "en",
-    "scope": "World"
   },
   "Wikimedia Techblog": {
     "file": "wikimedia_techblog.json",
@@ -1682,13 +1658,13 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Open Science | Federation of Finnish Learned Societies": {
-    "file": "open_science___federation_of_finnish_learned_societies.json",
-    "count": 10,
+  "Confederation of Open Access Repositories": {
+    "file": "confederation_of_open_access_repositories.json",
+    "count": 9,
     "category": "(Open) Science + Research",
-    "description": "",
+    "description": "Building a sustainable, global knowledge commons",
     "lang": "en",
-    "scope": "Finland"
+    "scope": "World"
   },
   "Datafied Life Collaboratory": {
     "file": "datafied_life_collaboratory.json",
@@ -1754,27 +1730,11 @@
     "lang": "en",
     "scope": "World"
   },
-  "Tiedepolitiikka": {
-    "file": "tiedepolitiikka.json",
-    "count": 30,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "REPAIR Tiedotteet": {
     "file": "repair_tiedotteet.json",
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "TSV": {
-    "file": "tsv.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1946,6 +1906,14 @@
     "lang": "fi",
     "scope": "Europe"
   },
+  "Museolehti": {
+    "file": "museolehti.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Museoalan ihmisten, ilmiöiden ja puheenaiheiden media.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Museoliitto": {
     "file": "museoliitto.json",
     "count": 10,
@@ -2026,6 +1994,14 @@
     "lang": "fi",
     "scope": "Estonia"
   },
+  "Svenska institutet": {
+    "file": "svenska_institutet.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Vi främjar Sverige i världen",
+    "lang": "sv",
+    "scope": "Sweden"
+  },
   "Suomen Kotiseutuliitto | Tiedotteet": {
     "file": "suomen_kotiseutuliitto___tiedotteet.json",
     "count": 10,
@@ -2040,6 +2016,14 @@
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
+    "scope": "World"
+  },
+  "World Heritage Centre News": {
+    "file": "world_heritage_centre_news.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "All the World Heritage News",
+    "lang": "en",
     "scope": "World"
   },
   "ATRIUM": {
@@ -2074,6 +2058,14 @@
     "lang": "en",
     "scope": "Poland"
   },
+  "European Heritage Hub": {
+    "file": "european_heritage_hub.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Where cultural heritage connects",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "EUscreen": {
     "file": "euscreen.json",
     "count": 10,
@@ -2081,6 +2073,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
   },
   "Internet Archive Europe": {
     "file": "internet_archive_europe.json",
@@ -2159,6 +2159,14 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Digital Happenings at the Library of Congress",
+    "lang": "en",
+    "scope": "World"
+  },
+  "This Month in GLAM": {
+    "file": "this_month_in_glam.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
     "scope": "World"
   },
@@ -2282,6 +2290,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Next Generation Internet": {
     "file": "next_generation_internet.json",
     "count": 10,
@@ -2321,6 +2337,14 @@
     "description": "Mozilla's official blog on open Internet policy initiatives and developments",
     "lang": "en",
     "scope": "World"
+  },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Tietopoliitiikan yhteistyöryhmä": {
     "file": "tietopoliitiikan_yhteisty_ryhm_.json",
@@ -2460,7 +2484,7 @@
   },
   "Guides - bellingcat": {
     "file": "guides___bellingcat.json",
-    "count": 7,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "the home of online investigations",
     "lang": "en",
@@ -2634,6 +2658,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
+    "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Suomen Taiteilijaseura": {
     "file": "suomen_taiteilijaseura.json",
     "count": 1,
@@ -2705,14 +2737,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Norden | Pohjoismainen yhteistyö": {
-    "file": "norden___pohjoismainen_yhteisty_.json",
-    "count": 10,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Nordic + Baltic countries"
   },
   "Oikeusblogi": {
     "file": "oikeusblogi.json",
