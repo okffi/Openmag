@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "3.5.2026 klo 17.55.17"
+    "last_updated": "3.5.2026 klo 18.54.52"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -84,9 +84,17 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 53,
+    "count": 41,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Tech Policy Press": {
+    "file": "tech_policy_press.json",
+    "count": 3515,
+    "category": "Digital Policy + Rights",
+    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
     "scope": "World"
   },
@@ -239,14 +247,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Tech Policy Press": {
-    "file": "tech_policy_press.json",
-    "count": 3515,
-    "category": "Digital Policy + Rights",
-    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
     "scope": "World"
   },
@@ -1436,7 +1436,7 @@
   },
   "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
     "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
-    "count": 10,
+    "count": 2,
     "category": "Culture + Education",
     "description": "",
     "lang": "en",
@@ -1631,14 +1631,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "ICCROM": {
-    "file": "iccrom.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "The International Centre for the Study of the Preservation and Restoration of Cultural Property (ICCROM)",
     "lang": "en",
     "scope": "World"
   },
@@ -2306,14 +2298,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Next Generation Internet": {
     "file": "next_generation_internet.json",
     "count": 10,
@@ -2506,6 +2490,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "ICCROM": {
+    "file": "iccrom.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "The International Centre for the Study of the Preservation and Restoration of Cultural Property (ICCROM)",
+    "lang": "en",
+    "scope": "World"
+  },
   "Investigations – ACDC": {
     "file": "investigations___acdc.json",
     "count": 10,
@@ -2521,14 +2513,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Julkisen sanan neuvosto",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "OCCRP Announcements": {
     "file": "occrp_announcements.json",
