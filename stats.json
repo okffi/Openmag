@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "3.5.2026 klo 9.32.50"
+    "last_updated": "3.5.2026 klo 11.51.43"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -10,14 +10,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Diff": {
-    "file": "diff.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "News from the Wikimedia movement",
-    "lang": "en",
-    "scope": "World"
-  },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
     "count": 32,
@@ -26,19 +18,43 @@
     "lang": "en",
     "scope": "World"
   },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 49,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Global Network of Internet and Society Centers NoC": {
     "file": "global_network_of_internet_and_society_centers_noc.json",
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Valtioneuvoston tiedotteet": {
+    "file": "valtioneuvoston_tiedotteet.json",
+    "count": 100,
+    "category": "Politics + Public sector",
+    "description": "Valtioneuvoston tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Yle | Kansainvälinen politiikka": {
+    "file": "yle___kansainv_linen_politiikka.json",
+    "count": 22,
+    "category": "Politics + Public sector",
+    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
+    "lang": "fi",
+    "scope": "World"
+  },
+  "Diff": {
+    "file": "diff.json",
+    "count": 11,
+    "category": "(Open) Data + Technology",
+    "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
+  },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 36,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
     "scope": "World"
   },
@@ -76,7 +92,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 10,
+    "count": 11,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -105,14 +121,6 @@
     "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Yle | Kansainvälinen politiikka": {
-    "file": "yle___kansainv_linen_politiikka.json",
-    "count": 21,
-    "category": "Politics + Public sector",
-    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
-    "lang": "fi",
-    "scope": "World"
   },
   "Tulevaisuuden tutkimuksen seura ry": {
     "file": "tulevaisuuden_tutkimuksen_seura_ry.json",
@@ -722,14 +730,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Valtioneuvoston tiedotteet": {
-    "file": "valtioneuvoston_tiedotteet.json",
-    "count": 100,
-    "category": "Politics + Public sector",
-    "description": "Valtioneuvoston tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Ympäristöministeriön uutiset ja tiedotteet": {
     "file": "ymp_rist_ministeri_n_uutiset_ja_tiedotteet.json",
     "count": 100,
@@ -745,6 +745,22 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Taide- ja kulttuurivirasto": {
+    "file": "taide__ja_kulttuurivirasto.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "OpenForum Europe": {
+    "file": "openforum_europe.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Open Technologies for a Competitive and Sovereign Europe",
+    "lang": "en",
+    "scope": "Europe"
   },
   "CSC": {
     "file": "csc.json",
@@ -1010,6 +1026,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Open Knowledge Foundation Blog": {
+    "file": "open_knowledge_foundation_blog.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Content for a fair, sustainable and open future",
+    "lang": "en",
+    "scope": "World"
+  },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
     "count": 10,
@@ -1186,6 +1210,22 @@
     "lang": "en",
     "scope": "World"
   },
+  "Avoin tiede": {
+    "file": "avoin_tiede.json",
+    "count": 9,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Michael Culture Association": {
+    "file": "michael_culture_association.json",
+    "count": 1,
+    "category": "Digital Culture + Heritage",
+    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
     "count": 40,
@@ -1322,6 +1362,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Knowledge Rights 21": {
+    "file": "knowledge_rights_21.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "We advocate for your right to access and share knowledge!",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "European Cultural Foundation": {
     "file": "european_cultural_foundation.json",
     "count": 10,
@@ -1441,6 +1489,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "bellingcat": {
+    "file": "bellingcat.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "the home of online investigations",
+    "lang": "en",
+    "scope": "World"
   },
   "Wikimédia France": {
     "file": "wikim_dia_france.json",
@@ -1674,14 +1730,6 @@
     "lang": "en",
     "scope": "Finland"
   },
-  "Avoin tiede": {
-    "file": "avoin_tiede.json",
-    "count": 9,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Confederation of Open Access Repositories": {
     "file": "confederation_of_open_access_repositories.json",
     "count": 10,
@@ -1756,11 +1804,19 @@
   },
   "SPARC": {
     "file": "sparc.json",
-    "count": 9,
+    "count": 10,
     "category": "(Open) Science + Research",
     "description": "Scholarly Publishing and Academic Resources Coalition",
     "lang": "en",
     "scope": "World"
+  },
+  "Think Open": {
+    "file": "think_open.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Digitaalisista tutkimuspalveluista ja avoimesta tieteestä / About digital research services and open science",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Tiedepolitiikka": {
     "file": "tiedepolitiikka.json",
@@ -2034,14 +2090,6 @@
     "lang": "fi",
     "scope": "Estonia"
   },
-  "Taide- ja kulttuurivirasto": {
-    "file": "taide__ja_kulttuurivirasto.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Suomen Kotiseutuliitto | Tiedotteet": {
     "file": "suomen_kotiseutuliitto___tiedotteet.json",
     "count": 10,
@@ -2082,14 +2130,6 @@
     "lang": "en",
     "scope": "Belgium"
   },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Heritage Hub Kraków": {
     "file": "heritage_hub_krak_w.json",
     "count": 10,
@@ -2097,6 +2137,14 @@
     "description": "Heritage Hub for Central and Eastern Europe",
     "lang": "en",
     "scope": "Poland"
+  },
+  "European Heritage Hub": {
+    "file": "european_heritage_hub.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Where cultural heritage connects",
+    "lang": "en",
+    "scope": "Europe"
   },
   "EUscreen": {
     "file": "euscreen.json",
@@ -2122,14 +2170,6 @@
     "lang": "en",
     "scope": "Netherlands"
   },
-  "Michael Culture Association": {
-    "file": "michael_culture_association.json",
-    "count": 1,
-    "category": "Digital Culture + Heritage",
-    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "MuseumNext": {
     "file": "museumnext.json",
     "count": 10,
@@ -2145,14 +2185,6 @@
     "description": "Kulturarv och digitalisering",
     "lang": "sv",
     "scope": "Sweden"
-  },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Open Objects": {
     "file": "open_objects.json",
@@ -2282,14 +2314,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Knowledge Rights 21": {
-    "file": "knowledge_rights_21.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "We advocate for your right to access and share knowledge!",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Local Contexts": {
     "file": "local_contexts.json",
     "count": 10,
@@ -2322,14 +2346,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Open Knowledge Foundation Blog": {
-    "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Content for a fair, sustainable and open future",
-    "lang": "en",
-    "scope": "World"
-  },
   "Open Knowledge Foundation DE": {
     "file": "open_knowledge_foundation_de.json",
     "count": 684,
@@ -2353,14 +2369,6 @@
     "description": "Mozilla's official blog on open Internet policy initiatives and developments",
     "lang": "en",
     "scope": "World"
-  },
-  "OpenForum Europe": {
-    "file": "openforum_europe.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Open Technologies for a Competitive and Sovereign Europe",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Rajapinta": {
     "file": "rajapinta.json",
@@ -2498,14 +2506,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "bellingcat": {
-    "file": "bellingcat.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "the home of online investigations",
-    "lang": "en",
-    "scope": "World"
-  },
   "Forbidden Stories": {
     "file": "forbidden_stories.json",
     "count": 10,
@@ -2538,14 +2538,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Julkisen sanan neuvosto",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "OCCRP Announcements": {
     "file": "occrp_announcements.json",
     "count": 8,
@@ -2575,14 +2567,6 @@
     "count": 9,
     "category": "Investigations + Conflict",
     "description": "OCCRP stories about Scoops delivered straight to you. Well, your RSS reader anyway.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Online Journalism Blog": {
-    "file": "online_journalism_blog.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
     "scope": "World"
   },
