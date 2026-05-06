@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "6.5.2026 klo 23.39.32"
+    "last_updated": "7.5.2026 klo 1.03.13"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -626,6 +626,38 @@
     "lang": "en",
     "scope": "World"
   },
+  "Global Voices Advox": {
+    "file": "global_voices_advox.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Defending Free Speech Online",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Open Knowledge Foundation Blog": {
+    "file": "open_knowledge_foundation_blog.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Content for a fair, sustainable and open future",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News - Global perspective Human stories | Europe": {
+    "file": "un_news___global_perspective_human_stories___europe.json",
+    "count": 30,
+    "category": "Global policy",
+    "description": "UN News - Global perspective Human stories | Europe",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News - Global perspective Human stories | Middle East": {
+    "file": "un_news___global_perspective_human_stories___middle_east.json",
+    "count": 26,
+    "category": "Investigations + Conflict",
+    "description": "UN News - Global perspective Human stories | Middle East",
+    "lang": "en",
+    "scope": "World"
+  },
   "CSC": {
     "file": "csc.json",
     "count": 10,
@@ -788,7 +820,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -865,14 +897,6 @@
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
-  },
-  "UN News - Global perspective Human stories | Middle East": {
-    "file": "un_news___global_perspective_human_stories___middle_east.json",
-    "count": 26,
-    "category": "Investigations + Conflict",
-    "description": "UN News - Global perspective Human stories | Middle East",
-    "lang": "en",
-    "scope": "World"
   },
   "Luovat ry": {
     "file": "luovat_ry.json",
@@ -1001,22 +1025,6 @@
     "description": "Join us on a journey through time",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Global Voices Advox": {
-    "file": "global_voices_advox.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Defending Free Speech Online",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Open Knowledge Foundation Blog": {
-    "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Content for a fair, sustainable and open future",
-    "lang": "en",
-    "scope": "World"
   },
   "United Nations | The Guardian": {
     "file": "united_nations___the_guardian.json",
@@ -1340,7 +1348,7 @@
   },
   "Avate Audiovisuaalisen alan tekijät ry": {
     "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
+    "count": 1,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1513,14 +1521,6 @@
     "description": "Soome Eesti Instituudi Sihtasutus",
     "lang": "et",
     "scope": "Estonia"
-  },
-  "EFFI.org:n uusimmat artikkelit": {
-    "file": "effi_org_n_uusimmat_artikkelit.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Electronic Frontier Finland - Effi ry:n kotisivut",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Wikimedia Techblog": {
     "file": "wikimedia_techblog.json",
@@ -2042,13 +2042,21 @@
     "lang": "en",
     "scope": "Belgium"
   },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
+  "European Heritage Hub": {
+    "file": "european_heritage_hub.json",
     "count": 10,
     "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
+    "description": "Where cultural heritage connects",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
   },
   "Internet Archive Europe": {
     "file": "internet_archive_europe.json",
@@ -2057,6 +2065,14 @@
     "description": "Bringing Collections to Life",
     "lang": "en",
     "scope": "Netherlands"
+  },
+  "MuseumNext": {
+    "file": "museumnext.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Defining the Future of Museums",
+    "lang": "en",
+    "scope": "World"
   },
   "Nätverket KOD": {
     "file": "n_tverket_kod.json",
@@ -2218,6 +2234,14 @@
     "lang": "en",
     "scope": "Sweden"
   },
+  "EFFI.org:n uusimmat artikkelit": {
+    "file": "effi_org_n_uusimmat_artikkelit.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Electronic Frontier Finland - Effi ry:n kotisivut",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Forum Information & Democracy": {
     "file": "forum_information___democracy.json",
     "count": 10,
@@ -2322,6 +2346,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "TIEKE": {
     "file": "tieke.json",
     "count": 10,
@@ -2361,14 +2393,6 @@
     "description": "The Foreign Policy Centre (FPC) is an outward-looking, non-partisan international affairs think tank based in the UK.",
     "lang": "en",
     "scope": "Europe"
-  },
-  "UN News - Global perspective Human stories | Europe": {
-    "file": "un_news___global_perspective_human_stories___europe.json",
-    "count": 30,
-    "category": "Global policy",
-    "description": "UN News - Global perspective Human stories | Europe",
-    "lang": "en",
-    "scope": "World"
   },
   "YK:n alueellinen tiedotuskeskus – Suomi": {
     "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
@@ -2458,14 +2482,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "bellingcat": {
-    "file": "bellingcat.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "the home of online investigations",
-    "lang": "en",
-    "scope": "World"
-  },
   "Forbidden Stories": {
     "file": "forbidden_stories.json",
     "count": 10,
@@ -2476,7 +2492,7 @@
   },
   "Guides - bellingcat": {
     "file": "guides___bellingcat.json",
-    "count": 7,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "the home of online investigations",
     "lang": "en",
@@ -2497,6 +2513,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Julkisen sanan neuvosto",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "OCCRP Announcements": {
     "file": "occrp_announcements.json",
@@ -2527,14 +2551,6 @@
     "count": 8,
     "category": "Investigations + Conflict",
     "description": "OCCRP stories about Scoops delivered straight to you. Well, your RSS reader anyway.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Online Journalism Blog": {
-    "file": "online_journalism_blog.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
     "scope": "World"
   },
@@ -2697,6 +2713,14 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
+  },
+  "Norden | Pohjoismainen yhteistyö": {
+    "file": "norden___pohjoismainen_yhteisty_.json",
+    "count": 10,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Nordic + Baltic countries"
   },
   "Oikeusblogi": {
     "file": "oikeusblogi.json",
