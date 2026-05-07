@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "7.5.2026 klo 17.34.17"
+    "last_updated": "7.5.2026 klo 19.57.40"
   },
   "404 Media": {
     "file": "404_media.json",
@@ -228,7 +228,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -268,7 +268,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 16,
+    "count": 15,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -292,7 +292,7 @@
   },
   "Global Investigative Journalism Network": {
     "file": "global_investigative_journalism_network.json",
-    "count": 13,
+    "count": 12,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -332,7 +332,7 @@
   },
   "HIIG": {
     "file": "hiig.json",
-    "count": 20,
+    "count": 22,
     "category": "(Open) Science + Research",
     "description": "Alexander von Humboldt Institute for Internet and Society",
     "lang": "en",
@@ -396,7 +396,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 22,
+    "count": 25,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -412,7 +412,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 33,
+    "count": 31,
     "category": "Politics + Public sector",
     "description": "European Commission | News",
     "lang": "en",
@@ -433,6 +433,110 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "CCC Event Blog": {
+    "file": "ccc_event_blog.json",
+    "count": 15,
+    "category": "(Open) Data + Technology",
+    "description": "Recent content on CCC Event Blog",
+    "lang": "de",
+    "scope": "Germany"
+  },
+  "University of Helsinki": {
+    "file": "university_of_helsinki.json",
+    "count": 13,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Timeless": {
+    "file": "timeless.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Stories from the Library of Congress",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Knowledge Rights 21 Archive Feed": {
+    "file": "knowledge_rights_21_archive_feed.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Access Now": {
+    "file": "access_now.json",
+    "count": 14,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Open Future": {
+    "file": "open_future.json",
+    "count": 18,
+    "category": "Digital Policy + Rights",
+    "description": "Open Future Foundation",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "United Nations | The Guardian": {
+    "file": "united_nations___the_guardian.json",
+    "count": 20,
+    "category": "Global policy",
+    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
+    "lang": "en",
+    "scope": "World"
+  },
+  "NOEMA": {
+    "file": "noema.json",
+    "count": 10,
+    "category": "Perspectives",
+    "description": "Noema Magazine",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Verde": {
+    "file": "verde.json",
+    "count": 15,
+    "category": "Politics + Public sector",
+    "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "European Union": {
+    "file": "european_union.json",
+    "count": 28,
+    "category": "Politics + Public sector",
+    "description": "European Union | Featured news",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Oikeusministeriö | Tiedotteet ja uutiset": {
+    "file": "oikeusministeri____tiedotteet_ja_uutiset.json",
+    "count": 20,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Carbon Brief": {
+    "file": "carbon_brief.json",
+    "count": 10,
+    "category": "Sustainability + Foresight",
+    "description": "Clear on climate",
+    "lang": "en",
+    "scope": "World"
+  },
+  "PreventionWeb": {
+    "file": "preventionweb.json",
+    "count": 52,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
@@ -463,14 +567,6 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "Digitaalisista tutkimuspalveluista ja avoimesta tieteestä / About digital research services and open science",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "University of Helsinki": {
-    "file": "university_of_helsinki.json",
-    "count": 12,
-    "category": "(Open) Science + Research",
-    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -548,7 +644,7 @@
   },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
@@ -604,7 +700,7 @@
   },
   "Open Knowledge Foundation Blog": {
     "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Policy + Rights",
     "description": "Content for a fair, sustainable and open future",
     "lang": "en",
@@ -708,7 +804,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 2,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -754,14 +850,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Verde": {
-    "file": "verde.json",
-    "count": 16,
-    "category": "Politics + Public sector",
-    "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Euroopan unioni": {
     "file": "euroopan_unioni.json",
     "count": 10,
@@ -769,14 +857,6 @@
     "description": "European Union | Featured news",
     "lang": "fi",
     "scope": "Europe"
-  },
-  "Oikeusministeriö | Tiedotteet ja uutiset": {
-    "file": "oikeusministeri____tiedotteet_ja_uutiset.json",
-    "count": 20,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Opetusministeriö | Ajankohtaista": {
     "file": "opetusministeri____ajankohtaista.json",
@@ -801,22 +881,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Carbon Brief": {
-    "file": "carbon_brief.json",
-    "count": 10,
-    "category": "Sustainability + Foresight",
-    "description": "Clear on climate",
-    "lang": "en",
-    "scope": "World"
-  },
-  "PreventionWeb": {
-    "file": "preventionweb.json",
-    "count": 52,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Kirjastokaista": {
     "file": "kirjastokaista.json",
@@ -962,14 +1026,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Timeless": {
-    "file": "timeless.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Stories from the Library of Congress",
-    "lang": "en",
-    "scope": "World"
-  },
   "Mozilla Open Policy & Advocacy": {
     "file": "mozilla_open_policy___advocacy.json",
     "count": 10,
@@ -1034,14 +1090,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "NOEMA": {
-    "file": "noema.json",
-    "count": 10,
-    "category": "Perspectives",
-    "description": "Noema Magazine",
-    "lang": "en",
-    "scope": "World"
-  },
   "Kuntaliitto": {
     "file": "kuntaliitto.json",
     "count": 10,
@@ -1060,7 +1108,7 @@
   },
   "United Nations Sustainable Development": {
     "file": "united_nations_sustainable_development.json",
-    "count": 6,
+    "count": 7,
     "category": "Sustainability + Foresight",
     "description": "17 Goals to Transform Our World",
     "lang": "en",
@@ -1154,14 +1202,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "United Nations | The Guardian": {
-    "file": "united_nations___the_guardian.json",
-    "count": 20,
-    "category": "Global policy",
-    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
-    "lang": "en",
-    "scope": "World"
-  },
   "Rising Voices": {
     "file": "rising_voices.json",
     "count": 10,
@@ -1242,14 +1282,6 @@
     "lang": "fi",
     "scope": "Europe"
   },
-  "European Union": {
-    "file": "european_union.json",
-    "count": 28,
-    "category": "Politics + Public sector",
-    "description": "European Union | Featured news",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Helsinki-Uusimaa Region": {
     "file": "helsinki_uusimaa_region.json",
     "count": 10,
@@ -1297,14 +1329,6 @@
     "description": "The Center for Internet and Society at Stanford Law School is a leader in the study of the law and policy around the Internet and other emerging technologies.",
     "lang": "en",
     "scope": "Americas"
-  },
-  "Access Now": {
-    "file": "access_now.json",
-    "count": 14,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "Blue Shield International": {
     "file": "blue_shield_international.json",
@@ -1402,14 +1426,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Open Future": {
-    "file": "open_future.json",
-    "count": 18,
-    "category": "Digital Policy + Rights",
-    "description": "Open Future Foundation",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "OpenForum Europe": {
     "file": "openforum_europe.json",
     "count": 10,
@@ -1452,7 +1468,7 @@
   },
   "Euronews | The Europe Conversation": {
     "file": "euronews___the_europe_conversation.json",
-    "count": 50,
+    "count": 49,
     "category": "Perspectives",
     "description": "Latest news from Euronews",
     "lang": "en",
@@ -1561,14 +1577,6 @@
     "description": "Den svenska sidan om Creative Commons",
     "lang": "sv",
     "scope": "Sweden"
-  },
-  "CCC Event Blog": {
-    "file": "ccc_event_blog.json",
-    "count": 15,
-    "category": "(Open) Data + Technology",
-    "description": "Recent content on CCC Event Blog",
-    "lang": "de",
-    "scope": "Germany"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -1857,6 +1865,14 @@
     "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "UNESCO | Intangible Cultural Heritage": {
+    "file": "unesco___intangible_cultural_heritage.json",
+    "count": 621,
+    "category": "Culture + Education",
+    "description": "UNESCO is publishing once a week news on its activities regarding the safeguarding of intangible cultural heritage",
+    "lang": "en",
+    "scope": "World"
   },
   "Hanasaari": {
     "file": "hanasaari.json",
@@ -2194,14 +2210,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Knowledge Rights 21 Archive Feed": {
-    "file": "knowledge_rights_21_archive_feed.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "MySociety Newsletter": {
     "file": "mysociety_newsletter.json",
     "count": 10,
@@ -2330,14 +2338,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Next Generation Internet": {
     "file": "next_generation_internet.json",
     "count": 10,
@@ -2383,6 +2383,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Tietopoliitiikan yhteistyöryhmä": {
+    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
     "lang": "fi",
     "scope": "Finland"
   },
