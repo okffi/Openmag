@@ -909,6 +909,29 @@
         }
     }
 
+    // Cache for AI-generated category summaries loaded from category_summaries.json
+    let categorySummariesCache = null;
+
+    /**
+     * Load category_summaries.json once and return the entry for catName, or null.
+     * Silently ignores fetch errors (file may not exist if summaries have not been generated yet).
+     */
+    async function fetchCategorySummary(catName) {
+        if (categorySummariesCache === null) {
+            try {
+                const res = await fetch('category_summaries.json', { cache: 'no-store' });
+                if (res.ok) {
+                    categorySummariesCache = await res.json();
+                } else {
+                    categorySummariesCache = {};
+                }
+            } catch (_e) {
+                categorySummariesCache = {};
+            }
+        }
+        return categorySummariesCache[catName] || null;
+    }
+
     function filterByCategory(catName) {
         isBookmarksView = false;
         const bookmarksBtn = document.getElementById('btn-bookmarks');
@@ -922,11 +945,19 @@
         // KÄÄNNÖS: Näytetään käännetty nimi, mutta logiikka käyttää catNamea
         if (viewTitle) viewTitle.innerText = getTranslation('cat', catName);
 
+        // Show a default description immediately, then overlay with an AI summary if available
         if (viewDesc) viewDesc.innerText = `${t('ui.latest_news_from_the_category')} ${getTranslation('cat', catName)}`;
         if (logoCont) {
             logoCont.innerHTML = "";
             logoCont.style.display = 'none';
         }
+
+        // Asynchronously replace the description with the cached AI summary when present
+        fetchCategorySummary(catName).then(entry => {
+            if (entry && entry.summary && viewDesc) {
+                viewDesc.innerText = entry.summary;
+            }
+        });
 
         displayedCount = 0;
         document.querySelectorAll('.source-item').forEach(i => i.classList.remove('active'));
