@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "9.5.2026 klo 22.13.53"
+    "last_updated": "9.5.2026 klo 23.53.46"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
@@ -156,11 +156,19 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 50,
+    "count": 51,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
     "scope": "World"
+  },
+  "The Heritage Management Organization": {
+    "file": "the_heritage_management_organization.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Training Heritage Leaders",
+    "lang": "en",
+    "scope": "Europe"
   },
   "COSS ry": {
     "file": "coss_ry.json",
@@ -324,7 +332,7 @@
   },
   "Soome Instituut Eestis": {
     "file": "soome_instituut_eestis.json",
-    "count": 1,
+    "count": 10,
     "category": "Culture + Education",
     "description": "Soome Eesti Instituudi Sihtasutus",
     "lang": "et",
@@ -1036,7 +1044,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -1212,7 +1220,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 2,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1546,14 +1554,6 @@
     "lang": "de",
     "scope": "Germany"
   },
-  "The Heritage Management Organization": {
-    "file": "the_heritage_management_organization.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Training Heritage Leaders",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "The Public Domain Review": {
     "file": "the_public_domain_review.json",
     "count": 100,
@@ -1730,14 +1730,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Confederation of Open Access Repositories": {
-    "file": "confederation_of_open_access_repositories.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Building a sustainable, global knowledge commons",
-    "lang": "en",
-    "scope": "World"
-  },
   "Datafied Life Collaboratory": {
     "file": "datafied_life_collaboratory.json",
     "count": 10,
@@ -1913,6 +1905,14 @@
     "description": "Finlandsinstitutet i Stockholm",
     "lang": "sv",
     "scope": "Sweden"
+  },
+  "Finnish Institute in Estonia": {
+    "file": "finnish_institute_in_estonia.json",
+    "count": 9,
+    "category": "Culture + Education",
+    "description": "Soome Eesti Instituudi Sihtasutus",
+    "lang": "en",
+    "scope": "Estonia"
   },
   "The Finnland-Institut": {
     "file": "the_finnland_institut.json",
@@ -2105,6 +2105,14 @@
     "description": "Suomen Saksan-instituutti on Suomen kulttuurin, tieteen ja talouden foorumi saksankielisessä Euroopassa.",
     "lang": "fi",
     "scope": "Europe"
+  },
+  "Suomen Viron-instituutti": {
+    "file": "suomen_viron_instituutti.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Soome Eesti Instituudi Sihtasutus",
+    "lang": "fi",
+    "scope": "Estonia"
   },
   "Suomen Kotiseutuliitto | Tiedotteet": {
     "file": "suomen_kotiseutuliitto___tiedotteet.json",
@@ -2330,14 +2338,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Next Generation Internet": {
     "file": "next_generation_internet.json",
     "count": 10,
@@ -2511,6 +2511,14 @@
     "count": 10,
     "category": "Investigations + Conflict",
     "description": "the home of online investigations",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Investigations – ACDC": {
+    "file": "investigations___acdc.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
     "lang": "en",
     "scope": "World"
   },
@@ -2729,14 +2737,6 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
-  },
-  "Norden | Pohjoismainen yhteistyö": {
-    "file": "norden___pohjoismainen_yhteisty_.json",
-    "count": 10,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Nordic + Baltic countries"
   },
   "Oikeusblogi": {
     "file": "oikeusblogi.json",
