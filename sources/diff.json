@@ -185,5 +185,22 @@
     "scope": "World",
     "isDarkLogo": false,
     "originalRssUrl": "https://blog.wikimedia.org/feed/"
+  },
+  {
+    "title": "What I learned building WikiVisage for Wikimedia Commons",
+    "link": "https://diff.wikimedia.org/2026/05/11/what-i-learned-building-wikivisage-for-wikimedia-commons/",
+    "pubDate": "2026-05-11T13:00:00.000Z",
+    "content": "<html><head></head><body><p><span data-wikipedia-preview=\"\" data-wp-title=\"Wikimedia Commons\" data-wp-lang=\"en\" class=\"wmf-wp-with-preview\">Wikimedia Commons</span> has more than 100 million freely licensed media files, but many photos still lack structured metadata saying who is in the image. On Commons, that information is usually added through <span data-wikipedia-preview=\"\" data-wp-title=\"Structured Data on Commons\" data-wp-lang=\"en\" class=\"wmf-wp-with-preview\">Structured Data on Commons</span>, using the P180 depicts property. When those statements are missing, images are harder to find, reuse, and connect to the rest of the Wikimedia ecosystem. That problem is especially visible for photos of people, where contributors still have to identify the subject and add the metadata by hand.</p>\n\n\n\n<p>I built WikiVisage to make that process easier. It is an open source Toolforge tool that helps contributors review faces in Commons images, suggest matches for a specific Wikidata item, and then write approved depicts statements back to Commons. The tool is available at <a href=\"https://wikivisage.toolforge.org/\">https://wikivisage.toolforge.org/</a>.</p>\n\n\n\n<p>The basic workflow is simple. A contributor starts </p></body></html>",
+    "snippet": "Wikimedia Commons has more than 100 million freely licensed media files, but many photos still lack structured metadata saying who is in the image. On Commons, that information is usually added throug",
+    "creator": "Premeditated",
+    "sourceTitle": "Diff",
+    "sheetCategory": "(Open) Data + Technology",
+    "enforcedImage": "https://diff.wikimedia.org/wp-content/uploads/2026/05/classify-ui.png?w=1024&resize=1024%2C889",
+    "sourceDescription": "News from the Wikimedia movement",
+    "sourceLogo": "https://diff.wikimedia.org/wp-content/uploads/2020/07/cropped-1024px-Wikimedia-logo.svg_.png?fit=32%2C32",
+    "lang": "en",
+    "scope": "World",
+    "isDarkLogo": false,
+    "originalRssUrl": "https://blog.wikimedia.org/feed/"
   }
 ]
