@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "12.5.2026 klo 23.44.07"
+    "last_updated": "13.5.2026 klo 1.17.08"
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
@@ -220,7 +220,7 @@
   },
   "The Scholarly Kitchen": {
     "file": "the_scholarly_kitchen.json",
-    "count": 14,
+    "count": 15,
     "category": "(Open) Science + Research",
     "description": "What’s Hot and Cooking In Scholarly Publishing",
     "lang": "en",
@@ -276,7 +276,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 15,
+    "count": 16,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -452,7 +452,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 49,
+    "count": 33,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -492,7 +492,7 @@
   },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
-    "count": 7,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -673,6 +673,30 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Berkman Klein Center for Internet & Society at Harvard University Community": {
+    "file": "berkman_klein_center_for_internet___society_at_harvard_university_community.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Americas"
+  },
+  "UN News - Global perspective Human stories": {
+    "file": "un_news___global_perspective_human_stories.json",
+    "count": 55,
+    "category": "Global policy",
+    "description": "UN News - Global perspective Human stories | Global",
+    "lang": "en",
+    "scope": "World"
+  },
+  "OCCRP": {
+    "file": "occrp.json",
+    "count": 60,
+    "category": "Investigations + Conflict",
+    "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
+    "lang": "en",
+    "scope": "World"
   },
   "Wikimédia France": {
     "file": "wikim_dia_france.json",
@@ -1034,14 +1058,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "UN News - Global perspective Human stories": {
-    "file": "un_news___global_perspective_human_stories.json",
-    "count": 55,
-    "category": "Global policy",
-    "description": "UN News - Global perspective Human stories | Global",
-    "lang": "en",
-    "scope": "World"
-  },
   "Koodia Suomesta": {
     "file": "koodia_suomesta.json",
     "count": 15,
@@ -1073,14 +1089,6 @@
     "description": "Training Heritage Leaders",
     "lang": "en",
     "scope": "Europe"
-  },
-  "OCCRP": {
-    "file": "occrp.json",
-    "count": 60,
-    "category": "Investigations + Conflict",
-    "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
-    "lang": "en",
-    "scope": "World"
   },
   "European Cultural Foundation": {
     "file": "european_cultural_foundation.json",
@@ -1482,14 +1490,6 @@
     "lang": "sv",
     "scope": "Sweden"
   },
-  "Berkman Klein Center for Internet & Society at Harvard University Community": {
-    "file": "berkman_klein_center_for_internet___society_at_harvard_university_community.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "Americas"
-  },
   "Ihmisoikeuskeskus": {
     "file": "ihmisoikeuskeskus.json",
     "count": 50,
@@ -1609,14 +1609,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Direkt36": {
-    "file": "direkt36.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Direkt36 is a non-profit investigative journalism center with the mission to hold powerful people and institutions accountable.",
-    "lang": "en",
-    "scope": "Hungary"
   },
   "Wikimedia Techblog": {
     "file": "wikimedia_techblog.json",
@@ -1818,6 +1810,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Zooniverse": {
+    "file": "zooniverse.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
+    "lang": "en",
+    "scope": "World"
+  },
   "Alfred Kordelinin säätiö": {
     "file": "alfred_kordelinin_s__ti_.json",
     "count": 12,
@@ -1913,14 +1913,6 @@
     "description": "The Finnland-Institut is a forum for Finnish culture and arts, academia and business in the German-speaking region.",
     "lang": "en",
     "scope": "Germany"
-  },
-  "FNG Research": {
-    "file": "fng_research.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "UNESCO | Intangible Cultural Heritage": {
     "file": "unesco___intangible_cultural_heritage.json",
@@ -2521,6 +2513,14 @@
     "description": "Protecting Cultural Heritage",
     "lang": "en",
     "scope": "World"
+  },
+  "Direkt36": {
+    "file": "direkt36.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Direkt36 is a non-profit investigative journalism center with the mission to hold powerful people and institutions accountable.",
+    "lang": "en",
+    "scope": "Hungary"
   },
   "Forbidden Stories": {
     "file": "forbidden_stories.json",
