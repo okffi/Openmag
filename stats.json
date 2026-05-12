@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "12.5.2026 klo 21.05.36"
+    "last_updated": "12.5.2026 klo 23.44.07"
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
@@ -36,7 +36,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 26,
+    "count": 27,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -124,7 +124,7 @@
   },
   "Global Network of Internet and Society Centers NoC": {
     "file": "global_network_of_internet_and_society_centers_noc.json",
-    "count": 10,
+    "count": 14,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -220,7 +220,7 @@
   },
   "The Scholarly Kitchen": {
     "file": "the_scholarly_kitchen.json",
-    "count": 15,
+    "count": 14,
     "category": "(Open) Science + Research",
     "description": "What’s Hot and Cooking In Scholarly Publishing",
     "lang": "en",
@@ -316,7 +316,7 @@
   },
   "Presidentti": {
     "file": "presidentti.json",
-    "count": 11,
+    "count": 10,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -404,7 +404,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 1,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -412,7 +412,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 23,
+    "count": 24,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -452,7 +452,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 33,
+    "count": 49,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -492,7 +492,7 @@
   },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
-    "count": 10,
+    "count": 7,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -564,7 +564,7 @@
   },
   "Voima": {
     "file": "voima.json",
-    "count": 13,
+    "count": 12,
     "category": "Perspectives",
     "description": "",
     "lang": "fi",
@@ -604,11 +604,75 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 11,
+    "count": 12,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
     "lang": "en",
     "scope": "World"
+  },
+  "Electronic Frontier Foundation": {
+    "file": "electronic_frontier_foundation.json",
+    "count": 13,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Global Voices Advox": {
+    "file": "global_voices_advox.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Defending Free Speech Online",
+    "lang": "en",
+    "scope": "World"
+  },
+  "United Nations | The Guardian": {
+    "file": "united_nations___the_guardian.json",
+    "count": 20,
+    "category": "Global policy",
+    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Amnesty International": {
+    "file": "amnesty_international.json",
+    "count": 12,
+    "category": "Human Rights + Democracy",
+    "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Data Rescue Project": {
+    "file": "data_rescue_project.json",
+    "count": 15,
+    "category": "Investigations + Conflict",
+    "description": "Preserving public data",
+    "lang": "en",
+    "scope": "World"
+  },
+  "bellingcat": {
+    "file": "bellingcat.json",
+    "count": 2,
+    "category": "Investigations + Conflict",
+    "description": "the home of online investigations",
+    "lang": "en",
+    "scope": "World"
+  },
+  "OCHA": {
+    "file": "ocha.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "United Nations Office for the Coordination of Humanitarian Affairs",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Foundation for European Progressive Studies": {
+    "file": "foundation_for_european_progressive_studies.json",
+    "count": 12,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Wikimédia France": {
     "file": "wikim_dia_france.json",
@@ -770,14 +834,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Electronic Frontier Foundation": {
-    "file": "electronic_frontier_foundation.json",
-    "count": 13,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "European Digital Rights (EDRi)": {
     "file": "european_digital_rights__edri_.json",
     "count": 20,
@@ -785,14 +841,6 @@
     "description": "Protecting digital rights in Europe.",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Global Voices Advox": {
-    "file": "global_voices_advox.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Defending Free Speech Online",
-    "lang": "en",
-    "scope": "World"
   },
   "Open Knowledge Foundation Blog": {
     "file": "open_knowledge_foundation_blog.json",
@@ -826,22 +874,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "United Nations | The Guardian": {
-    "file": "united_nations___the_guardian.json",
-    "count": 20,
-    "category": "Global policy",
-    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Amnesty International": {
-    "file": "amnesty_international.json",
-    "count": 12,
-    "category": "Human Rights + Democracy",
-    "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
-    "lang": "en",
-    "scope": "World"
-  },
   "CIVICUS News": {
     "file": "civicus_news.json",
     "count": 50,
@@ -858,22 +890,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Data Rescue Project": {
-    "file": "data_rescue_project.json",
-    "count": 15,
-    "category": "Investigations + Conflict",
-    "description": "Preserving public data",
-    "lang": "en",
-    "scope": "World"
-  },
-  "bellingcat": {
-    "file": "bellingcat.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "the home of online investigations",
-    "lang": "en",
-    "scope": "World"
-  },
   "European Civil Protection and Humanitarian Aid Operations": {
     "file": "european_civil_protection_and_humanitarian_aid_operations.json",
     "count": 30,
@@ -881,14 +897,6 @@
     "description": "European Civil Protection and Humanitarian Aid Operations | News",
     "lang": "en",
     "scope": "Europe"
-  },
-  "OCHA": {
-    "file": "ocha.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "United Nations Office for the Coordination of Humanitarian Affairs",
-    "lang": "en",
-    "scope": "World"
   },
   "UN News - Global perspective Human stories | Middle East": {
     "file": "un_news___global_perspective_human_stories___middle_east.json",
@@ -1004,7 +1012,7 @@
   },
   "Global Investigative Journalism Network": {
     "file": "global_investigative_journalism_network.json",
-    "count": 6,
+    "count": 20,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -1228,7 +1236,7 @@
   },
   "UN News - Global perspective Human stories | Peace and Security": {
     "file": "un_news___global_perspective_human_stories___peace_and_security.json",
-    "count": 7,
+    "count": 8,
     "category": "Investigations + Conflict",
     "description": "UN News - Global perspective Human stories | Peace and Security",
     "lang": "en",
@@ -1393,14 +1401,6 @@
     "description": "The WIPO RSS newsfeed provides access to the digital versions of our publications, studies and information products.",
     "lang": "en",
     "scope": "World"
-  },
-  "Foundation for European Progressive Studies": {
-    "file": "foundation_for_european_progressive_studies.json",
-    "count": 12,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Euronews | The Europe Conversation": {
     "file": "euronews___the_europe_conversation.json",
@@ -1618,22 +1618,6 @@
     "lang": "en",
     "scope": "Hungary"
   },
-  "Luovat ry": {
-    "file": "luovat_ry.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "Luovan työn tekijät ja yrittäjät, Luovat ry",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Kuntaliitto": {
-    "file": "kuntaliitto.json",
-    "count": 10,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Wikimedia Techblog": {
     "file": "wikimedia_techblog.json",
     "count": 10,
@@ -1673,6 +1657,14 @@
     "description": "Finnish Center for Artificial Intelligence",
     "lang": "en",
     "scope": "Finland"
+  },
+  "Open By Default": {
+    "file": "open_by_default.json",
+    "count": 8,
+    "category": "(Open) Data + Technology",
+    "description": "",
+    "lang": "en",
+    "scope": "Netherlands"
   },
   "Open Regulatory Compliance Working Group": {
     "file": "open_regulatory_compliance_working_group.json",
@@ -1825,14 +1817,6 @@
     "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Zooniverse": {
-    "file": "zooniverse.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
-    "lang": "en",
-    "scope": "World"
   },
   "Alfred Kordelinin säätiö": {
     "file": "alfred_kordelinin_s__ti_.json",
@@ -2394,14 +2378,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Rajapinta": {
-    "file": "rajapinta.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "researcher community focused on digital social sciences",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Tietopoliitiikan yhteistyöryhmä": {
     "file": "tietopoliitiikan_yhteisty_ryhm_.json",
     "count": 10,
@@ -2556,7 +2532,7 @@
   },
   "Guides - bellingcat": {
     "file": "guides___bellingcat.json",
-    "count": 8,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "the home of online investigations",
     "lang": "en",
@@ -2588,7 +2564,7 @@
   },
   "OCCRP Announcements": {
     "file": "occrp_announcements.json",
-    "count": 8,
+    "count": 9,
     "category": "Investigations + Conflict",
     "description": "OCCRP stories about Announcements delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
@@ -2714,6 +2690,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Luovat ry": {
+    "file": "luovat_ry.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "Luovan työn tekijät ja yrittäjät, Luovat ry",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Suomen Taiteilijaseura": {
     "file": "suomen_taiteilijaseura.json",
     "count": 1,
@@ -2776,6 +2760,14 @@
     "category": "Politics + Public sector",
     "description": "",
     "lang": "en",
+    "scope": "Finland"
+  },
+  "Kuntaliitto": {
+    "file": "kuntaliitto.json",
+    "count": 10,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
     "scope": "Finland"
   },
   "Norden | Pohjoismainen yhteistyö": {
