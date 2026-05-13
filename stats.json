@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "13.5.2026 klo 22.03.31"
+    "last_updated": "14.5.2026 klo 0.40.28"
   },
   "Diff": {
     "file": "diff.json",
@@ -156,7 +156,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 4,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -228,7 +228,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 38,
+    "count": 37,
     "category": "Politics + Public sector",
     "description": "European Commission | News",
     "lang": "en",
@@ -700,7 +700,7 @@
   },
   "UN News - Global perspective Human stories | Peace and Security": {
     "file": "un_news___global_perspective_human_stories___peace_and_security.json",
-    "count": 8,
+    "count": 9,
     "category": "Investigations + Conflict",
     "description": "UN News - Global perspective Human stories | Peace and Security",
     "lang": "en",
@@ -708,7 +708,7 @@
   },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
-    "count": 52,
+    "count": 51,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -721,6 +721,38 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "xkcd": {
+    "file": "xkcd.json",
+    "count": 4,
+    "category": "(Open) Data + Technology",
+    "description": "xkcd.com: A webcomic of romance and math humor.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Electronic Frontier Foundation": {
+    "file": "electronic_frontier_foundation.json",
+    "count": 12,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Internet Society": {
+    "file": "internet_society.json",
+    "count": 20,
+    "category": "Digital Policy + Rights",
+    "description": "We are a global charitable organization empowering people to keep the Internet a force for good: open, globally connected, secure, and trustworthy.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Local Contexts": {
+    "file": "local_contexts.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Grounding Indigenous Rights",
+    "lang": "en",
+    "scope": "World"
   },
   "CSC": {
     "file": "csc.json",
@@ -850,27 +882,11 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Electronic Frontier Foundation": {
-    "file": "electronic_frontier_foundation.json",
-    "count": 12,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Global Voices Advox": {
     "file": "global_voices_advox.json",
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Defending Free Speech Online",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Internet Society": {
-    "file": "internet_society.json",
-    "count": 20,
-    "category": "Digital Policy + Rights",
-    "description": "We are a global charitable organization empowering people to keep the Internet a force for good: open, globally connected, secure, and trustworthy.",
     "lang": "en",
     "scope": "World"
   },
@@ -1026,14 +1042,6 @@
     "lang": "fr",
     "scope": "Europe"
   },
-  "xkcd": {
-    "file": "xkcd.json",
-    "count": 4,
-    "category": "(Open) Data + Technology",
-    "description": "xkcd.com: A webcomic of romance and math humor.",
-    "lang": "en",
-    "scope": "World"
-  },
   "CLARIN ERIC": {
     "file": "clarin_eric.json",
     "count": 10,
@@ -1140,7 +1148,7 @@
   },
   "Open Knowledge Foundation Blog": {
     "file": "open_knowledge_foundation_blog.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Content for a fair, sustainable and open future",
     "lang": "en",
@@ -1412,7 +1420,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -1562,22 +1570,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "ATRIUM": {
-    "file": "atrium.json",
-    "count": 105,
-    "category": "Digital Culture + Heritage",
-    "description": "Facilitating access to digital research infrastructures and advancing frontier knowledge in the arts and humanities - across disciplines, languages and media.",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Wikimedia Sverige": {
-    "file": "wikimedia_sverige.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Vi arbetar för fri kunskap",
-    "lang": "sv",
-    "scope": "Sweden"
-  },
   "Wikimedia Techblog": {
     "file": "wikimedia_techblog.json",
     "count": 10,
@@ -1681,14 +1673,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Confederation of Open Access Repositories": {
-    "file": "confederation_of_open_access_repositories.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Building a sustainable, global knowledge commons",
-    "lang": "en",
-    "scope": "World"
   },
   "CODATA": {
     "file": "codata.json",
@@ -2058,6 +2042,14 @@
     "lang": "fi",
     "scope": "Europe"
   },
+  "Taide- ja kulttuurivirasto": {
+    "file": "taide__ja_kulttuurivirasto.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Suomen Kotiseutuliitto | Tiedotteet": {
     "file": "suomen_kotiseutuliitto___tiedotteet.json",
     "count": 8,
@@ -2098,6 +2090,22 @@
     "lang": "en",
     "scope": "World"
   },
+  "ATRIUM": {
+    "file": "atrium.json",
+    "count": 105,
+    "category": "Digital Culture + Heritage",
+    "description": "Facilitating access to digital research infrastructures and advancing frontier knowledge in the arts and humanities - across disciplines, languages and media.",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Wikimedia Sverige": {
+    "file": "wikimedia_sverige.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Vi arbetar för fri kunskap",
+    "lang": "sv",
+    "scope": "Sweden"
+  },
   "DHNB": {
     "file": "dhnb.json",
     "count": 10,
@@ -2121,6 +2129,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "MuseumNext": {
+    "file": "museumnext.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Defining the Future of Museums",
+    "lang": "en",
+    "scope": "World"
   },
   "News – Wikimedia Foundation": {
     "file": "news___wikimedia_foundation.json",
@@ -2298,14 +2314,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Local Contexts": {
-    "file": "local_contexts.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Grounding Indigenous Rights",
-    "lang": "en",
-    "scope": "World"
-  },
   "MyData": {
     "file": "mydata.json",
     "count": 10,
@@ -2335,6 +2343,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "OpenForum Europe": {
+    "file": "openforum_europe.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Open Technologies for a Competitive and Sovereign Europe",
     "lang": "en",
     "scope": "Europe"
   },
