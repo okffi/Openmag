@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "18.5.2026 klo 0.01.49"
+    "last_updated": "18.5.2026 klo 1.58.59"
   },
   "The Ulkopolitist": {
     "file": "the_ulkopolitist.json",
@@ -124,11 +124,19 @@
   },
   "Weekly OSM": {
     "file": "weekly_osm.json",
-    "count": 10,
+    "count": 2,
     "category": "(Open) Data + Technology",
     "description": "weekly &#8211; semanario &#8211; hebdo &#8211; 週刊 &#8211; týdeník &#8211; Wochennotiz &#8211; 주간 &#8211; tygodnik",
     "lang": "en",
     "scope": "World"
+  },
+  "Institute of Network Cultures": {
+    "file": "institute_of_network_cultures.json",
+    "count": 15,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Diff": {
     "file": "diff.json",
@@ -306,14 +314,6 @@
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
-  "Institute of Network Cultures": {
-    "file": "institute_of_network_cultures.json",
-    "count": 15,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Open Culture": {
     "file": "open_culture.json",
     "count": 15,
@@ -404,7 +404,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 17,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -636,7 +636,7 @@
   },
   "JSN": {
     "file": "jsn.json",
-    "count": 10,
+    "count": 1,
     "category": "Investigations + Conflict",
     "description": "Julkisen sanan neuvosto",
     "lang": "fi",
@@ -660,7 +660,7 @@
   },
   "Ministry for Foreign Affairs of Finland | News": {
     "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 22,
+    "count": 20,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -756,7 +756,7 @@
   },
   "bellingcat": {
     "file": "bellingcat.json",
-    "count": 10,
+    "count": 3,
     "category": "Investigations + Conflict",
     "description": "the home of online investigations",
     "lang": "en",
@@ -1020,7 +1020,7 @@
   },
   "Avoin hallinto": {
     "file": "avoin_hallinto.json",
-    "count": 1,
+    "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "fi",
@@ -1252,7 +1252,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 1,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -1396,7 +1396,7 @@
   },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
@@ -1634,6 +1634,14 @@
     "lang": "en",
     "scope": "Finland"
   },
+  "Open By Default": {
+    "file": "open_by_default.json",
+    "count": 8,
+    "category": "(Open) Data + Technology",
+    "description": "",
+    "lang": "en",
+    "scope": "Netherlands"
+  },
   "Open Regulatory Compliance Working Group": {
     "file": "open_regulatory_compliance_working_group.json",
     "count": 73,
@@ -1689,14 +1697,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Confederation of Open Access Repositories": {
-    "file": "confederation_of_open_access_repositories.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Building a sustainable, global knowledge commons",
-    "lang": "en",
-    "scope": "World"
   },
   "CODATA": {
     "file": "codata.json",
@@ -1857,6 +1857,14 @@
     "description": "Suomen elinkeinoelämän keskusarkisto",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Europa Nostra": {
+    "file": "europa_nostra.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "The Voice of Cultural Heritage in Europe",
+    "lang": "en",
+    "scope": "Europe"
   },
   "European Cultural Parliament": {
     "file": "european_cultural_parliament.json",
@@ -2540,7 +2548,7 @@
   },
   "Guides - bellingcat": {
     "file": "guides___bellingcat.json",
-    "count": 8,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "the home of online investigations",
     "lang": "en",
@@ -2697,14 +2705,6 @@
     "description": "The WIPO RSS newsfeed provides access to the digital versions of our publications, studies and information products.",
     "lang": "en",
     "scope": "World"
-  },
-  "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
-    "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Suomen Taiteilijaseura": {
     "file": "suomen_taiteilijaseura.json",
