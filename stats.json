@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "17.5.2026 klo 14.15.38"
+    "last_updated": "17.5.2026 klo 16.47.07"
   },
   "The Ulkopolitist": {
     "file": "the_ulkopolitist.json",
@@ -66,6 +66,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Euronews | Europe": {
+    "file": "euronews___europe.json",
+    "count": 50,
+    "category": "Global policy",
+    "description": "Latest news from Euronews",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Diff": {
     "file": "diff.json",
     "count": 10,
@@ -113,14 +121,6 @@
     "description": "European Politics, Policy, Government News",
     "lang": "en",
     "scope": "World"
-  },
-  "Euronews | Europe": {
-    "file": "euronews___europe.json",
-    "count": 50,
-    "category": "Global policy",
-    "description": "Latest news from Euronews",
-    "lang": "en",
-    "scope": "Europe"
   },
   "UN News - Global perspective Human stories": {
     "file": "un_news___global_perspective_human_stories.json",
@@ -340,7 +340,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3556,
+    "count": 3557,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -626,6 +626,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "resilience": {
+    "file": "resilience.json",
+    "count": 17,
+    "category": "Perspectives",
+    "description": "Insight and inspiration in turbulent times.",
+    "lang": "en",
+    "scope": "World"
+  },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
     "count": 15,
@@ -724,7 +732,7 @@
   },
   "bellingcat": {
     "file": "bellingcat.json",
-    "count": 3,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "the home of online investigations",
     "lang": "en",
@@ -924,7 +932,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -1041,14 +1049,6 @@
     "description": "Ei klikkiotsikoita, ei typeryyksiä. Vain juttuja, joilla on väliä.",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "resilience": {
-    "file": "resilience.json",
-    "count": 17,
-    "category": "Perspectives",
-    "description": "Insight and inspiration in turbulent times.",
-    "lang": "en",
-    "scope": "World"
   },
   "Liikenne- ja viestintäministeriö | News": {
     "file": "liikenne__ja_viestint_ministeri____news.json",
@@ -1388,7 +1388,7 @@
   },
   "Open Knowledge Foundation Blog": {
     "file": "open_knowledge_foundation_blog.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Content for a fair, sustainable and open future",
     "lang": "en",
@@ -1914,14 +1914,6 @@
     "lang": "en",
     "scope": "Germany"
   },
-  "FNG Research": {
-    "file": "fng_research.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "UNESCO | Intangible Cultural Heritage": {
     "file": "unesco___intangible_cultural_heritage.json",
     "count": 621,
@@ -2050,14 +2042,6 @@
     "lang": "fi",
     "scope": "Europe"
   },
-  "Taide- ja kulttuurivirasto": {
-    "file": "taide__ja_kulttuurivirasto.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Suomen Kotiseutuliitto | Tiedotteet": {
     "file": "suomen_kotiseutuliitto___tiedotteet.json",
     "count": 8,
@@ -2114,14 +2098,6 @@
     "lang": "en",
     "scope": "Belgium"
   },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Heritage Hub Kraków": {
     "file": "heritage_hub_krak_w.json",
     "count": 10,
@@ -2137,14 +2113,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "MuseumNext": {
-    "file": "museumnext.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Defining the Future of Museums",
-    "lang": "en",
-    "scope": "World"
   },
   "News – Wikimedia Foundation": {
     "file": "news___wikimedia_foundation.json",
@@ -2343,6 +2311,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "OpenForum Europe": {
+    "file": "openforum_europe.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Open Technologies for a Competitive and Sovereign Europe",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2548,7 +2524,7 @@
   },
   "Guides - bellingcat": {
     "file": "guides___bellingcat.json",
-    "count": 10,
+    "count": 8,
     "category": "Investigations + Conflict",
     "description": "the home of online investigations",
     "lang": "en",
@@ -2569,6 +2545,14 @@
     "description": "Supporting cross-border investigative journalism in Europe",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Investigations – ACDC": {
+    "file": "investigations___acdc.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
+    "lang": "en",
+    "scope": "World"
   },
   "Journalism Science Alliance": {
     "file": "journalism_science_alliance.json",
@@ -2697,14 +2681,6 @@
     "description": "The WIPO RSS newsfeed provides access to the digital versions of our publications, studies and information products.",
     "lang": "en",
     "scope": "World"
-  },
-  "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
-    "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Suomen Taiteilijaseura": {
     "file": "suomen_taiteilijaseura.json",
