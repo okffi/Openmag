@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "17.5.2026 klo 16.47.07"
+    "last_updated": "17.5.2026 klo 18.03.41"
   },
   "The Ulkopolitist": {
     "file": "the_ulkopolitist.json",
@@ -74,6 +74,22 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Tech Policy Press": {
+    "file": "tech_policy_press.json",
+    "count": 3557,
+    "category": "Digital Policy + Rights",
+    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Technology – POLITICO": {
+    "file": "technology___politico.json",
+    "count": 31,
+    "category": "Digital Policy + Rights",
+    "description": "European Politics, Policy, Government News",
+    "lang": "en",
+    "scope": "World"
+  },
   "Diff": {
     "file": "diff.json",
     "count": 10,
@@ -92,7 +108,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 50,
+    "count": 51,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -113,14 +129,6 @@
     "description": "",
     "lang": "sv",
     "scope": "Finland"
-  },
-  "Technology – POLITICO": {
-    "file": "technology___politico.json",
-    "count": 31,
-    "category": "Digital Policy + Rights",
-    "description": "European Politics, Policy, Government News",
-    "lang": "en",
-    "scope": "World"
   },
   "UN News - Global perspective Human stories": {
     "file": "un_news___global_perspective_human_stories.json",
@@ -316,7 +324,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 10,
+    "count": 5,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -335,14 +343,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Mozilla's official blog on open Internet policy initiatives and developments",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Tech Policy Press": {
-    "file": "tech_policy_press.json",
-    "count": 3557,
-    "category": "Digital Policy + Rights",
-    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
     "scope": "World"
   },
@@ -732,7 +732,7 @@
   },
   "bellingcat": {
     "file": "bellingcat.json",
-    "count": 10,
+    "count": 3,
     "category": "Investigations + Conflict",
     "description": "the home of online investigations",
     "lang": "en",
@@ -740,7 +740,7 @@
   },
   "Ministry for Foreign Affairs of Finland | News": {
     "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 20,
+    "count": 9,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -932,7 +932,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -1564,7 +1564,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -1914,6 +1914,14 @@
     "lang": "en",
     "scope": "Germany"
   },
+  "FNG Research": {
+    "file": "fng_research.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "UNESCO | Intangible Cultural Heritage": {
     "file": "unesco___intangible_cultural_heritage.json",
     "count": 621,
@@ -2244,7 +2252,7 @@
   },
   "Creative Commons": {
     "file": "creative_commons.json",
-    "count": 8,
+    "count": 9,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -2311,14 +2319,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "OpenForum Europe": {
-    "file": "openforum_europe.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Open Technologies for a Competitive and Sovereign Europe",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2524,7 +2524,7 @@
   },
   "Guides - bellingcat": {
     "file": "guides___bellingcat.json",
-    "count": 8,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "the home of online investigations",
     "lang": "en",
@@ -2681,6 +2681,14 @@
     "description": "The WIPO RSS newsfeed provides access to the digital versions of our publications, studies and information products.",
     "lang": "en",
     "scope": "World"
+  },
+  "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
+    "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Suomen Taiteilijaseura": {
     "file": "suomen_taiteilijaseura.json",
