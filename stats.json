@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "20.5.2026 klo 0.26.25"
+    "last_updated": "20.5.2026 klo 2.11.34"
   },
   "Diff": {
     "file": "diff.json",
@@ -52,7 +52,7 @@
   },
   "Elinkeinoelämän tutkimuslaitos (Etla)": {
     "file": "elinkeinoel_m_n_tutkimuslaitos__etla_.json",
-    "count": 50,
+    "count": 6,
     "category": "(Open) Science + Research",
     "description": "Elinkeinoelämän tutkimuslaitos",
     "lang": "fi",
@@ -212,7 +212,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 37,
+    "count": 35,
     "category": "Politics + Public sector",
     "description": "European Commission | News",
     "lang": "en",
@@ -236,7 +236,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 27,
+    "count": 28,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -268,7 +268,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -316,7 +316,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 20,
+    "count": 21,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -615,6 +615,30 @@
     "count": 8,
     "category": "Sustainability + Foresight",
     "description": "17 Goals to Transform Our World",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Global Voices Advox": {
+    "file": "global_voices_advox.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Defending Free Speech Online",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News - Global perspective Human stories | Europe": {
+    "file": "un_news___global_perspective_human_stories___europe.json",
+    "count": 30,
+    "category": "Global policy",
+    "description": "UN News - Global perspective Human stories | Europe",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Global Investigative Journalism Network": {
+    "file": "global_investigative_journalism_network.json",
+    "count": 8,
+    "category": "Investigations + Conflict",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -1092,7 +1116,7 @@
   },
   "Avate Audiovisuaalisen alan tekijät ry": {
     "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 1,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1156,11 +1180,19 @@
   },
   "Ministry for Foreign Affairs of Finland | News": {
     "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 24,
+    "count": 20,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "UN Maps": {
+    "file": "un_maps.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
@@ -1199,14 +1231,6 @@
     "count": 60,
     "category": "Digital Policy + Rights",
     "description": "- Hosted by the American University Program on Information Justice and Intellectual Property",
-    "lang": "en",
-    "scope": "World"
-  },
-  "UN News - Global perspective Human stories | Europe": {
-    "file": "un_news___global_perspective_human_stories___europe.json",
-    "count": 30,
-    "category": "Global policy",
-    "description": "UN News - Global perspective Human stories | Europe",
     "lang": "en",
     "scope": "World"
   },
@@ -1498,14 +1522,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Global Voices Advox": {
-    "file": "global_voices_advox.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Defending Free Speech Online",
-    "lang": "en",
-    "scope": "World"
-  },
   "The Foreign Policy Centre": {
     "file": "the_foreign_policy_centre.json",
     "count": 10,
@@ -1529,14 +1545,6 @@
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
-  },
-  "UN Maps": {
-    "file": "un_maps.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "Voima": {
     "file": "voima.json",
@@ -1713,6 +1721,14 @@
     "description": "Committee on Data of the ISC",
     "lang": "en",
     "scope": "World"
+  },
+  "Datafied Life Collaboratory": {
+    "file": "datafied_life_collaboratory.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "European Research Council (ERC)": {
     "file": "european_research_council__erc_.json",
@@ -2202,6 +2218,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "This Month in GLAM": {
+    "file": "this_month_in_glam.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
+    "lang": "en",
+    "scope": "World"
+  },
   "Time Machine Europe": {
     "file": "time_machine_europe.json",
     "count": 12,
@@ -2533,14 +2557,6 @@
   "Forbidden Stories": {
     "file": "forbidden_stories.json",
     "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Global Investigative Journalism Network": {
-    "file": "global_investigative_journalism_network.json",
-    "count": 20,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
