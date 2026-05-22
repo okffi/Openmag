@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "22.5.2026 klo 22.57.58"
+    "last_updated": "23.5.2026 klo 0.19.27"
   },
   "Technology – POLITICO": {
     "file": "technology___politico.json",
@@ -164,7 +164,7 @@
   },
   "Global Network of Internet and Society Centers NoC": {
     "file": "global_network_of_internet_and_society_centers_noc.json",
-    "count": 13,
+    "count": 14,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -244,7 +244,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 30,
+    "count": 33,
     "category": "Politics + Public sector",
     "description": "European Commission | News",
     "lang": "en",
@@ -348,7 +348,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -364,7 +364,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -524,10 +524,10 @@
   },
   "Finnish AI Region": {
     "file": "finnish_ai_region.json",
-    "count": 20,
+    "count": 21,
     "category": "(Open) Data + Technology",
     "description": "FAIR",
-    "lang": "en",
+    "lang": "fi",
     "scope": "Finland"
   },
   "SPARC": {
@@ -722,13 +722,13 @@
     "lang": "en",
     "scope": "World"
   },
-  "Aalto-yliopisto": {
-    "file": "aalto_yliopisto.json",
-    "count": 25,
-    "category": "(Open) Science + Research",
-    "description": "Uusimmat tiedotteet",
-    "lang": "fi",
-    "scope": "Finland"
+  "xkcd": {
+    "file": "xkcd.json",
+    "count": 4,
+    "category": "(Open) Data + Technology",
+    "description": "xkcd.com: A webcomic of romance and math humor.",
+    "lang": "en",
+    "scope": "World"
   },
   "OATP primary": {
     "file": "oatp_primary.json",
@@ -737,6 +737,30 @@
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
     "scope": "World"
+  },
+  "Pedaali": {
+    "file": "pedaali.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Museopedagoginen yhdistys",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "UN News - Global perspective Human stories": {
+    "file": "un_news___global_perspective_human_stories.json",
+    "count": 29,
+    "category": "Global policy",
+    "description": "UN News - Global perspective Human stories | Global",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Aalto-yliopisto": {
+    "file": "aalto_yliopisto.json",
+    "count": 25,
+    "category": "(Open) Science + Research",
+    "description": "Uusimmat tiedotteet",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Frame Contemporary Art Finland": {
     "file": "frame_contemporary_art_finland.json",
@@ -882,14 +906,6 @@
     "lang": "fi",
     "scope": "World"
   },
-  "UN News - Global perspective Human stories": {
-    "file": "un_news___global_perspective_human_stories.json",
-    "count": 55,
-    "category": "Global policy",
-    "description": "UN News - Global perspective Human stories | Global",
-    "lang": "en",
-    "scope": "World"
-  },
   "Amnesty International": {
     "file": "amnesty_international.json",
     "count": 12,
@@ -932,7 +948,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 3,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1057,14 +1073,6 @@
     "description": "Suomen avoimien tietojärjestelmien keskus - COSS ry",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "xkcd": {
-    "file": "xkcd.json",
-    "count": 4,
-    "category": "(Open) Data + Technology",
-    "description": "xkcd.com: A webcomic of romance and math humor.",
-    "lang": "en",
-    "scope": "World"
   },
   "Elinkeinoelämän tutkimuslaitos (Etla)": {
     "file": "elinkeinoel_m_n_tutkimuslaitos__etla_.json",
@@ -1276,7 +1284,7 @@
   },
   "UN News - Global perspective Human stories | Culture and Education": {
     "file": "un_news___global_perspective_human_stories___culture_and_education.json",
-    "count": 30,
+    "count": 2,
     "category": "Culture + Education",
     "description": "UN News - Global perspective Human stories | Culture and Education",
     "lang": "en",
@@ -1372,7 +1380,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1380,7 +1388,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -1412,7 +1420,7 @@
   },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
@@ -1484,7 +1492,7 @@
   },
   "UN News - Global perspective Human stories | Human Rights": {
     "file": "un_news___global_perspective_human_stories___human_rights.json",
-    "count": 24,
+    "count": 25,
     "category": "Human Rights + Democracy",
     "description": "UN News - Global perspective Human stories | Human Rights",
     "lang": "en",
@@ -1574,22 +1582,6 @@
     "file": "civicus_news.json",
     "count": 50,
     "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 1,
-    "category": "Investigations + Conflict",
-    "description": "Julkisen sanan neuvosto",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "UN Maps": {
-    "file": "un_maps.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
     "scope": "World"
@@ -1922,6 +1914,14 @@
     "lang": "en",
     "scope": "Germany"
   },
+  "FNG Research": {
+    "file": "fng_research.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "UNESCO | Intangible Cultural Heritage": {
     "file": "unesco___intangible_cultural_heritage.json",
     "count": 621,
@@ -1937,6 +1937,14 @@
     "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Heritage Research Hub": {
+    "file": "heritage_research_hub.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "A platform on and for cultural heritage research",
+    "lang": "en",
+    "scope": "Europe"
   },
   "ICOM Finland": {
     "file": "icom_finland.json",
@@ -2026,14 +2034,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Pedaali": {
-    "file": "pedaali.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Museopedagoginen yhdistys",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Rakennustaiteen Seura ry": {
     "file": "rakennustaiteen_seura_ry.json",
     "count": 5,
@@ -2106,14 +2106,6 @@
     "lang": "sv",
     "scope": "Sweden"
   },
-  "Taide- ja kulttuurivirasto": {
-    "file": "taide__ja_kulttuurivirasto.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Suomen Kotiseutuliitto | Tiedotteet": {
     "file": "suomen_kotiseutuliitto___tiedotteet.json",
     "count": 8,
@@ -2169,14 +2161,6 @@
     "description": "Heritage Hub for Central and Eastern Europe",
     "lang": "en",
     "scope": "Poland"
-  },
-  "European Heritage Hub": {
-    "file": "european_heritage_hub.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Where cultural heritage connects",
-    "lang": "en",
-    "scope": "Europe"
   },
   "EUscreen": {
     "file": "euscreen.json",
@@ -2402,14 +2386,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "OpenForum Europe": {
-    "file": "openforum_europe.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Open Technologies for a Competitive and Sovereign Europe",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Tietopoliitiikan yhteistyöryhmä": {
     "file": "tietopoliitiikan_yhteisty_ryhm_.json",
     "count": 10,
@@ -2417,14 +2393,6 @@
     "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Public Institutions": {
-    "file": "public_institutions.json",
-    "count": 9,
-    "category": "Global policy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "The Foreign Policy Centre": {
     "file": "the_foreign_policy_centre.json",
@@ -2569,6 +2537,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Julkisen sanan neuvosto",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "NORDIS": {
     "file": "nordis.json",
