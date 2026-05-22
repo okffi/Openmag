@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "23.5.2026 klo 0.19.27"
+    "last_updated": "23.5.2026 klo 2.09.45"
   },
   "Technology – POLITICO": {
     "file": "technology___politico.json",
@@ -164,7 +164,7 @@
   },
   "Global Network of Internet and Society Centers NoC": {
     "file": "global_network_of_internet_and_society_centers_noc.json",
-    "count": 14,
+    "count": 13,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -284,7 +284,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 22,
+    "count": 23,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -364,7 +364,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -372,7 +372,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3573,
+    "count": 3574,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -628,7 +628,7 @@
   },
   "Avate Audiovisuaalisen alan tekijät ry": {
     "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
+    "count": 1,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -748,11 +748,19 @@
   },
   "UN News - Global perspective Human stories": {
     "file": "un_news___global_perspective_human_stories.json",
-    "count": 29,
+    "count": 55,
     "category": "Global policy",
     "description": "UN News - Global perspective Human stories | Global",
     "lang": "en",
     "scope": "World"
+  },
+  "Soome Instituut Eestis": {
+    "file": "soome_instituut_eestis.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Soome Eesti Instituudi Sihtasutus",
+    "lang": "et",
+    "scope": "Estonia"
   },
   "Aalto-yliopisto": {
     "file": "aalto_yliopisto.json",
@@ -1220,7 +1228,7 @@
   },
   "Ministry for Foreign Affairs of Finland | News": {
     "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 24,
+    "count": 20,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -1284,7 +1292,7 @@
   },
   "UN News - Global perspective Human stories | Culture and Education": {
     "file": "un_news___global_perspective_human_stories___culture_and_education.json",
-    "count": 2,
+    "count": 30,
     "category": "Culture + Education",
     "description": "UN News - Global perspective Human stories | Culture and Education",
     "lang": "en",
@@ -1380,7 +1388,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1388,7 +1396,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -1492,7 +1500,7 @@
   },
   "UN News - Global perspective Human stories | Human Rights": {
     "file": "un_news___global_perspective_human_stories___human_rights.json",
-    "count": 25,
+    "count": 24,
     "category": "Human Rights + Democracy",
     "description": "UN News - Global perspective Human stories | Human Rights",
     "lang": "en",
@@ -1570,22 +1578,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Ihmisoikeusliitto": {
-    "file": "ihmisoikeusliitto.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "CIVICUS News": {
-    "file": "civicus_news.json",
-    "count": 50,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "CC Sweden": {
     "file": "cc_sweden.json",
     "count": 10,
@@ -1641,14 +1633,6 @@
     "description": "Finnish Center for Artificial Intelligence",
     "lang": "en",
     "scope": "Finland"
-  },
-  "Open By Default": {
-    "file": "open_by_default.json",
-    "count": 8,
-    "category": "(Open) Data + Technology",
-    "description": "",
-    "lang": "en",
-    "scope": "Netherlands"
   },
   "Open Regulatory Compliance Working Group": {
     "file": "open_regulatory_compliance_working_group.json",
@@ -2042,14 +2026,6 @@
     "lang": "fi",
     "scope": "World"
   },
-  "Soome Instituut Eestis": {
-    "file": "soome_instituut_eestis.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Soome Eesti Instituudi Sihtasutus",
-    "lang": "et",
-    "scope": "Estonia"
-  },
   "Suomen kulttuuri- ja tiedeinstituutit": {
     "file": "suomen_kulttuuri__ja_tiedeinstituutit.json",
     "count": 10,
@@ -2105,6 +2081,14 @@
     "description": "Vi tar tillvara och driver den svenska museisektorns gemensamma intressen.",
     "lang": "sv",
     "scope": "Sweden"
+  },
+  "Taide- ja kulttuurivirasto": {
+    "file": "taide__ja_kulttuurivirasto.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Suomen Kotiseutuliitto | Tiedotteet": {
     "file": "suomen_kotiseutuliitto___tiedotteet.json",
@@ -2231,14 +2215,6 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Step into Tomorrow",
-    "lang": "en",
-    "scope": "World"
-  },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
     "scope": "World"
   },
@@ -2386,6 +2362,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "OpenForum Europe": {
+    "file": "openforum_europe.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Open Technologies for a Competitive and Sovereign Europe",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Tietopoliitiikan yhteistyöryhmä": {
     "file": "tietopoliitiikan_yhteisty_ryhm_.json",
     "count": 10,
@@ -2393,6 +2377,14 @@
     "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Public Institutions": {
+    "file": "public_institutions.json",
+    "count": 9,
+    "category": "Global policy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "The Foreign Policy Centre": {
     "file": "the_foreign_policy_centre.json",
@@ -2450,6 +2442,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Ihmisoikeusliitto": {
+    "file": "ihmisoikeusliitto.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Kansalliset dialogit": {
     "file": "kansalliset_dialogit.json",
     "count": 9,
@@ -2457,6 +2457,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "CIVICUS News": {
+    "file": "civicus_news.json",
+    "count": 50,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "CIVICUS Op-Eds": {
     "file": "civicus_op_eds.json",
@@ -2546,14 +2554,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "NORDIS": {
-    "file": "nordis.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "The Nordic Observatory for Digital Media and Information Disorder",
-    "lang": "en",
-    "scope": "Nordic + Baltic countries"
-  },
   "OCCRP Announcements": {
     "file": "occrp_announcements.json",
     "count": 10,
@@ -2616,6 +2616,14 @@
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "fi",
+    "scope": "World"
+  },
+  "UN Maps": {
+    "file": "un_maps.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "en",
     "scope": "World"
   },
   "UN Peacemaker": {
