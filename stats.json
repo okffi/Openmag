@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "23.5.2026 klo 22.21.03"
+    "last_updated": "24.5.2026 klo 0.01.41"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
@@ -100,7 +100,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 50,
+    "count": 34,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -348,7 +348,7 @@
   },
   "Center for Internet and Society": {
     "file": "center_for_internet_and_society.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "The CIS is a CNRS research center",
     "lang": "en",
@@ -492,7 +492,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 20,
+    "count": 19,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -767,6 +767,14 @@
     "count": 30,
     "category": "Global policy",
     "description": "UN News - Global perspective Human stories | Europe",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Global Investigative Journalism Network": {
+    "file": "global_investigative_journalism_network.json",
+    "count": 6,
+    "category": "Investigations + Conflict",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -1260,7 +1268,7 @@
   },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Culture + Heritage",
     "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
@@ -1268,7 +1276,7 @@
   },
   "Ministry for Foreign Affairs of Finland | News": {
     "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 24,
+    "count": 20,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -1380,7 +1388,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1594,14 +1602,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "UN Maps": {
-    "file": "un_maps.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "CC Sweden": {
     "file": "cc_sweden.json",
     "count": 10,
@@ -1657,14 +1657,6 @@
     "description": "Finnish Center for Artificial Intelligence",
     "lang": "en",
     "scope": "Finland"
-  },
-  "Open By Default": {
-    "file": "open_by_default.json",
-    "count": 8,
-    "category": "(Open) Data + Technology",
-    "description": "",
-    "lang": "en",
-    "scope": "Netherlands"
   },
   "Open Regulatory Compliance Working Group": {
     "file": "open_regulatory_compliance_working_group.json",
@@ -1833,14 +1825,6 @@
     "description": "Uusimmat tiedotteet",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Zooniverse": {
-    "file": "zooniverse.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
-    "lang": "en",
-    "scope": "World"
   },
   "American Library Association": {
     "file": "american_library_association.json",
@@ -2178,14 +2162,6 @@
     "lang": "en",
     "scope": "Poland"
   },
-  "European Heritage Hub": {
-    "file": "european_heritage_hub.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Where cultural heritage connects",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "EUscreen": {
     "file": "euscreen.json",
     "count": 10,
@@ -2332,7 +2308,7 @@
   },
   "Creative Commons": {
     "file": "creative_commons.json",
-    "count": 9,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -2546,14 +2522,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Global Investigative Journalism Network": {
-    "file": "global_investigative_journalism_network.json",
-    "count": 20,
-    "category": "Investigations + Conflict",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Guides - bellingcat": {
     "file": "guides___bellingcat.json",
     "count": 8,
@@ -2578,13 +2546,13 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "NORDIS": {
-    "file": "nordis.json",
+  "JSN": {
+    "file": "jsn.json",
     "count": 10,
     "category": "Investigations + Conflict",
-    "description": "The Nordic Observatory for Digital Media and Information Disorder",
-    "lang": "en",
-    "scope": "Nordic + Baltic countries"
+    "description": "Julkisen sanan neuvosto",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "OCCRP Announcements": {
     "file": "occrp_announcements.json",
@@ -2640,6 +2608,14 @@
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "fi",
+    "scope": "World"
+  },
+  "UN Maps": {
+    "file": "un_maps.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "en",
     "scope": "World"
   },
   "UN Peacemaker": {
