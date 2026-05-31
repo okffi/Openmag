@@ -453,7 +453,8 @@
         h2.textContent = item.title || '';
 
         const p = document.createElement('p');
-        const clean = normalizeText((item.content || "").replace(/<[^>]*>/g, '')).substring(0, CONTENT_PREVIEW_LENGTH);
+        const previewSource = item.snippet || (item.content || "").replace(/<[^>]*>/g, '');
+        const clean = normalizeText(previewSource).substring(0, CONTENT_PREVIEW_LENGTH);
         p.textContent = clean + (clean.length ? '...' : '');
 
         const meta = document.createElement('div');

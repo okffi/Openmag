@@ -20,7 +20,12 @@ module.exports = {
         author = author.replace(/Kirjoittanut:\s*/i, ''); 
 
         // Kuvaus
-        const description = $(el).find('.excerpt p, p').first().text().trim();
+        const excerptParagraphs = $(el).find('.excerpt p');
+        const description = (excerptParagraphs.length ? excerptParagraphs : $(el).find('p'))
+            .map((_, node) => $(node).text().replace(/\s+/g, ' ').trim())
+            .get()
+            .filter(Boolean)
+            .join('\n\n');
         
         let isoDate = new Date().toISOString();
         if (dateRaw) {
