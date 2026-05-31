@@ -2,7 +2,11 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 const cheerio = require('cheerio');
 
-const { extractArticleContent } = require('./fetch_news');
+const {
+    extractArticleContent,
+    cleanupSnippet,
+    cleanupSourceDescription
+} = require('./fetch_news');
 const coeScraper = require('./scrapers/coe.int');
 const oecdScraper = require('./scrapers/oecd.org');
 const puistokatuScraper = require('./scrapers/puistokatu4.fi');
@@ -87,4 +91,37 @@ test('custom scrapers keep multiple description paragraphs when available', () =
         assert.equal(item.content, 'First excerpt paragraph.\n\nSecond excerpt paragraph.');
         assert.equal(item.creator, 'Testaaja');
     }
+});
+
+test('cleanupSnippet removes boilerplate and keeps meaningful excerpt text', () => {
+    const result = cleanupSnippet(
+        'Meaningful opening paragraph.\n\nThe post Example article appeared first on Example Source.',
+        { title: 'Example article', maxLength: 200 }
+    );
+
+    assert.equal(result, 'Meaningful opening paragraph.');
+});
+
+test('cleanupSnippet drops title-like metadata fragments', () => {
+    const result = cleanupSnippet(
+        'UNPSF Banner admin Tue, 11/29/2022 - 04:28 UNPSF Banner',
+        { title: 'UNPSF Banner', maxLength: 200 }
+    );
+
+    assert.equal(result, '');
+});
+
+test('cleanupSourceDescription suppresses generic and duplicated source descriptions', () => {
+    assert.equal(
+        cleanupSourceDescription('Latest news from Example Source', { sourceTitle: 'Example Source' }),
+        ''
+    );
+    assert.equal(
+        cleanupSourceDescription('Example Source', { sourceTitle: 'Example Source' }),
+        ''
+    );
+    assert.equal(
+        cleanupSourceDescription('Independent journalism from around the world', { sourceTitle: 'Example Source' }),
+        'Independent journalism from around the world'
+    );
 });

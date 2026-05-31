@@ -40,9 +40,112 @@
         text = text.replace(/&#160;/g, ' ');
         text = text.replace(/[\u200B-\u200D\uFEFF\u2060\u061C\u200E\u200F\u180E]/g, '');
         text = text.replace(/\u00A0/g, ' ');
+        text = text.replace(/\r\n/g, '\n');
+        text = text.replace(/[ \t]+\n/g, '\n');
+        text = text.replace(/\n{3,}/g, '\n\n');
         text = text.replace(/ {2,}/g, ' ');
         text = text.replace(/&amp;/gi, '&');
+        text = text.replace(/&quot;/gi, '"');
+        text = text.replace(/&#39;/g, "'");
+        text = text.replace(/&lt;/gi, '<');
+        text = text.replace(/&gt;/gi, '>');
         return text.trim();
+    }
+
+    function escapeRegExp(text) {
+        return String(text || "").replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    function stripMarkupToText(text) {
+        if (!text) return "";
+        const withBreaks = String(text)
+            .replace(/<br\s*\/?>/gi, '\n')
+            .replace(/<\/(p|li|blockquote|pre|div|section|article|h[1-6])>/gi, '\n\n')
+            .replace(/<[^>]*>/g, ' ');
+
+        return normalizeText(decodeHtml(withBreaks));
+    }
+
+    function comparableText(text) {
+        return stripMarkupToText(text)
+            .toLowerCase()
+            .normalize('NFKD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .replace(/[^a-z0-9]+/g, '');
+    }
+
+    function isCallToActionOnly(text) {
+        return /^(?:read|lue)\b.{0,50}$/i.test(text);
+    }
+
+    function stripKnownBoilerplate(text, title = "") {
+        let cleaned = stripMarkupToText(text);
+        const normalizedTitle = stripMarkupToText(title);
+
+        cleaned = cleaned.replace(/\bThe post .+? appeared first on .+?(?=(?:[.!?](?:\s|$))|$)/gi, ' ');
+        cleaned = cleaned.replace(/\b(?:admin|editor|staff)\b[^.!?\n]*\b(?:mon|tue|wed|thu|fri|sat|sun)\b[^.!?\n]*/gi, ' ');
+
+        if (normalizedTitle) {
+            const titlePrefix = new RegExp(`^${escapeRegExp(normalizedTitle)}(?:\\s*[|:–—-]\\s*|\\s+)`, 'i');
+            cleaned = cleaned.replace(titlePrefix, '');
+        }
+
+        return normalizeText(cleaned);
+    }
+
+    function isMetadataOnly(text) {
+        if (!text) return true;
+        const normalized = normalizeText(text);
+
+        return /^the post .+ appeared first on .+\.?$/i.test(normalized)
+            || /^(?:admin|editor|staff|kirjoittanut|posted by|by)\b.*(?:\d{1,2}[./-]\d{1,2}[./-]\d{2,4}|\b(?:mon|tue|wed|thu|fri|sat|sun)\b|\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\b)/i.test(normalized)
+            || /^\d{1,2}[./-]\d{1,2}[./-]\d{2,4}(?:\s+(?:klo|at)\s+\d{1,2}[:.]\d{2}(?:[:.]\d{2})?)?$/i.test(normalized);
+    }
+
+    function isTitleLike(text, title = "") {
+        const candidateComparable = comparableText(text);
+        return Boolean(candidateComparable && title && candidateComparable === comparableText(title));
+    }
+
+    function cleanupPreviewText(text, title = "") {
+        const normalized = stripMarkupToText(text);
+        if (!normalized) return "";
+
+        const cleaned = normalized
+            .split(/\n{2,}/)
+            .map(segment => stripKnownBoilerplate(segment, title))
+            .filter(segment => comparableText(segment) && !isCallToActionOnly(segment) && !isMetadataOnly(segment) && !isTitleLike(segment, title))
+            .join('\n\n');
+
+        const result = normalizeText(cleaned);
+        if (!result || isMetadataOnly(result) || isTitleLike(result, title)) return "";
+        return result;
+    }
+
+    function isGenericSourceDescription(text, sourceTitle = "") {
+        if (!text) return true;
+        const normalized = stripMarkupToText(text);
+
+        return comparableText(normalized) === comparableText(sourceTitle)
+            || /^(?:latest|recent)\s+(?:news|updates|posts|articles|stories|press releases?)(?:\s+from\s+.+)?$/i.test(normalized)
+            || /^(?:news|updates|posts|articles|stories|press releases?|blog|blogi|homepage|home)$/i.test(normalized)
+            || /^uusimmat\s+(?:uutiset|tiedotteet|artikkelit)$/i.test(normalized)
+            || /^tiedotteiden\s+tehokas\s+julkaisukanava$/i.test(normalized);
+    }
+
+    function getPreviewText(item) {
+        const candidates = [item.snippet, item.content];
+        for (const candidate of candidates) {
+            const cleaned = cleanupPreviewText(candidate, item.title);
+            if (cleaned) return cleaned;
+        }
+        return "";
+    }
+
+    function getSourceDescriptionText(item) {
+        const cleaned = cleanupPreviewText(item && item.sourceDescription, "");
+        if (!cleaned || isGenericSourceDescription(cleaned, item && item.sourceTitle)) return "";
+        return cleaned;
     }
 
     function getTranslation(group, value) {
@@ -453,8 +556,7 @@
         h2.textContent = item.title || '';
 
         const p = document.createElement('p');
-        const previewSource = item.snippet || (item.content || "").replace(/<[^>]*>/g, '');
-        const clean = normalizeText(previewSource).substring(0, CONTENT_PREVIEW_LENGTH);
+        const clean = getPreviewText(item).substring(0, CONTENT_PREVIEW_LENGTH);
         p.textContent = clean + (clean.length ? '...' : '');
 
         const meta = document.createElement('div');
@@ -890,7 +992,7 @@
 
                         viewDesc.innerText = `${t('ui.a_collection_of_the_latest_news_from_followed_sources')} ${lastUpdate ? t('ui.updated_') + lastUpdate + ')' : ''}`;
                     } else {
-                        viewDesc.innerText = first.sourceDescription || "";
+                        viewDesc.innerText = getSourceDescriptionText(first);
                     }
                 }
             }
