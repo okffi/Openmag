@@ -28,10 +28,18 @@ function normalizeContent(text) {
     // Decode common HTML entities for non-breaking spaces
     text = text.replace(/&nbsp;/gi, ' ');
     text = text.replace(/&#160;/g, ' ');
+    text = text.replace(/&amp;/gi, '&');
+    text = text.replace(/&quot;/gi, '"');
+    text = text.replace(/&#39;/g, "'");
+    text = text.replace(/&lt;/gi, '<');
+    text = text.replace(/&gt;/gi, '>');
     // Remove invisible/zero-width Unicode characters and directional marks
     text = text.replace(/[\u200B-\u200D\uFEFF\u2060\u061C\u200E\u200F\u180E]/g, '');
     // Normalize non-breaking spaces to regular spaces
     text = text.replace(/\u00A0/g, ' ');
+    text = text.replace(/\r\n/g, '\n');
+    text = text.replace(/[ \t]+\n/g, '\n');
+    text = text.replace(/\n{3,}/g, '\n\n');
     // Collapse multiple consecutive spaces to a single space
     text = text.replace(/ {2,}/g, ' ');
     return text.trim();
@@ -59,6 +67,91 @@ function truncateTextAtBoundary(text, maxLength) {
     }
 
     return normalized.substring(0, maxLength).trim();
+}
+
+function escapeRegExp(text) {
+    return String(text || "").replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function stripMarkupToText(text) {
+    if (!text) return "";
+    return normalizeContent(String(text)
+        .replace(/<br\s*\/?>/gi, '\n')
+        .replace(/<\/(p|li|blockquote|pre|div|section|article|h[1-6])>/gi, '\n\n')
+        .replace(/<[^>]*>/g, ' '));
+}
+
+function comparableText(text) {
+    return stripMarkupToText(text)
+        .toLowerCase()
+        .normalize('NFKD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '');
+}
+
+function isCallToActionOnly(text) {
+    return /^(?:read|lue)\b.{0,50}$/i.test(text);
+}
+
+function stripKnownBoilerplate(text, title = "") {
+    let cleaned = stripMarkupToText(text);
+    const normalizedTitle = stripMarkupToText(title);
+
+    cleaned = cleaned.replace(/\bThe post .+? appeared first on .+?(?=(?:[.!?](?:\s|$))|$)/gi, ' ');
+    cleaned = cleaned.replace(/\b(?:admin|editor|staff)\b[^.!?\n]*\b(?:mon|tue|wed|thu|fri|sat|sun)\b[^.!?\n]*/gi, ' ');
+
+    if (normalizedTitle) {
+        const titlePrefix = new RegExp(`^${escapeRegExp(normalizedTitle)}(?:\\s*[|:–—-]\\s*|\\s+)`, 'i');
+        cleaned = cleaned.replace(titlePrefix, '');
+    }
+
+    return normalizeContent(cleaned);
+}
+
+function isMetadataOnly(text) {
+    if (!text) return true;
+    const normalized = normalizeContent(text);
+
+    return /^the post .+ appeared first on .+\.?$/i.test(normalized)
+        || /^(?:admin|editor|staff|kirjoittanut|posted by|by)\b.*(?:\d{1,2}[./-]\d{1,2}[./-]\d{2,4}|\b(?:mon|tue|wed|thu|fri|sat|sun)\b|\b(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)\b)/i.test(normalized)
+        || /^\d{1,2}[./-]\d{1,2}[./-]\d{2,4}(?:\s+(?:klo|at)\s+\d{1,2}[:.]\d{2}(?:[:.]\d{2})?)?$/i.test(normalized);
+}
+
+function isTitleLike(text, title = "") {
+    const candidateComparable = comparableText(text);
+    return Boolean(candidateComparable && title && candidateComparable === comparableText(title));
+}
+
+function cleanupSnippet(text, { title = "", maxLength = SNIPPET_TEXT_LIMIT } = {}) {
+    const normalized = stripMarkupToText(text);
+    if (!normalized) return "";
+
+    const cleaned = normalized
+        .split(/\n{2,}/)
+        .map(segment => stripKnownBoilerplate(segment, title))
+        .filter(segment => comparableText(segment) && !isCallToActionOnly(segment) && !isMetadataOnly(segment) && !isTitleLike(segment, title));
+
+    const joined = normalizeContent(cleaned.join('\n\n'));
+    if (!joined || isTitleLike(joined, title) || isMetadataOnly(joined)) return "";
+
+    return truncateTextAtBoundary(joined, maxLength);
+}
+
+function isGenericSourceDescription(text, sourceTitle = "") {
+    if (!text) return true;
+    const normalized = stripMarkupToText(text);
+
+    return comparableText(normalized) === comparableText(sourceTitle)
+        || /^(?:latest|recent)\s+(?:news|updates|posts|articles|stories|press releases?)(?:\s+from\s+.+)?$/i.test(normalized)
+        || /^(?:news|updates|posts|articles|stories|press releases?|blog|blogi|homepage|home)$/i.test(normalized)
+        || /^uusimmat\s+(?:uutiset|tiedotteet|artikkelit)$/i.test(normalized)
+        || /^tiedotteiden\s+tehokas\s+julkaisukanava$/i.test(normalized);
+}
+
+function cleanupSourceDescription(text, { sourceTitle = "" } = {}) {
+    const cleaned = stripKnownBoilerplate(text);
+    if (!cleaned || isMetadataOnly(cleaned) || isGenericSourceDescription(cleaned, sourceTitle)) return "";
+    return cleaned;
 }
 
 function extractContentBlocks($c) {
@@ -436,7 +529,9 @@ async function processRSS(feed, allArticles) {
     }
 
     // 1. Poimitaan syötteen kuvaus
-    const sourceDescription = feed.sheetDesc || (feedContent.description ? feedContent.description.trim() : "");
+    const sourceDescription = cleanupSourceDescription(feed.sheetDesc || (feedContent.description || ""), {
+        sourceTitle: feed.nameChecked
+    });
 
     // 2. Poimitaan logo (monitasoinen varajärjestelmä)
     let sourceLogo = null;
@@ -572,14 +667,16 @@ async function processRSS(feed, allArticles) {
             const { content: htmlContent, snippet: baseSnippet } = extractArticleContentFromCheerio($c);
 
             // H) Safe plaintext snippet for list views
-            let textSnippet = baseSnippet;
-            if (textSnippet.length < 10) textSnippet = item.title || "";
+            let textSnippet = cleanupSnippet(baseSnippet, { title: item.title });
+            if (!textSnippet) {
+                textSnippet = cleanupSnippet(htmlContent, { title: item.title });
+            }
 
             // I) Final image URL cleaning
             let finalImg = img && typeof img === "string" ? img.replace(/&amp;/g, '&') : null;
 
             // J) Description fallback
-            const finalDescription = normalizeContent(feed.sheetDesc || (feedContent.description || ""));
+            const finalDescription = sourceDescription;
 
             return {
                 title: normalizeContent(item.title),
@@ -632,7 +729,9 @@ async function processScraper(feed, allArticles, now) {
 
         const selector = scraperRule.listSelector || 'article';
         const elements = $(selector).get().slice(0, 10);
-        const sourceDescription = feed.sheetDesc || "";
+        const sourceDescription = cleanupSourceDescription(feed.sheetDesc || "", {
+            sourceTitle: feed.nameChecked || domain
+        });
 
         for (const el of elements) {
             let item = await scraperRule.parse($, el, axios, cheerio);
@@ -686,5 +785,7 @@ module.exports = {
     extractArticleContent,
     extractArticleContentFromCheerio,
     normalizeContent,
-    truncateTextAtBoundary
+    truncateTextAtBoundary,
+    cleanupSnippet,
+    cleanupSourceDescription
 };
