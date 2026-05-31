@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "31.5.2026 klo 14.04.04"
+    "last_updated": "31.5.2026 klo 17.00.56"
   },
   "Helsingin kaupunki, kulttuurin ja vapaa-ajan toimiala": {
     "file": "helsingin_kaupunki__kulttuurin_ja_vapaa_ajan_toimiala.json",
@@ -12,7 +12,7 @@
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
-    "count": 34,
+    "count": 35,
     "category": "Perspectives",
     "description": "",
     "lang": "fi",
@@ -132,9 +132,17 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 49,
+    "count": 28,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I \r\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "United Nations Sustainable Development": {
+    "file": "united_nations_sustainable_development.json",
+    "count": 12,
+    "category": "Sustainability + Foresight",
+    "description": "17 Goals to Transform Our World",
     "lang": "en",
     "scope": "World"
   },
@@ -308,7 +316,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 4,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -340,7 +348,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3593,
+    "count": 3595,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -412,7 +420,7 @@
   },
   "Eastflank": {
     "file": "eastflank.json",
-    "count": 10,
+    "count": 12,
     "category": "Investigations + Conflict",
     "description": "Reporting",
     "lang": "en",
@@ -650,14 +658,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "United Nations Sustainable Development": {
-    "file": "united_nations_sustainable_development.json",
-    "count": 12,
-    "category": "Sustainability + Foresight",
-    "description": "17 Goals to Transform Our World",
-    "lang": "en",
-    "scope": "World"
-  },
   "CSC": {
     "file": "csc.json",
     "count": 10,
@@ -732,7 +732,7 @@
   },
   "International Council on Archives (ICA)": {
     "file": "international_council_on_archives__ica_.json",
-    "count": 10,
+    "count": 4,
     "category": "Culture + Education",
     "description": "",
     "lang": "en",
@@ -956,7 +956,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 5,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -1116,7 +1116,7 @@
   },
   "CIVICUS News": {
     "file": "civicus_news.json",
-    "count": 50,
+    "count": 2,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -1220,7 +1220,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -1468,7 +1468,7 @@
   },
   "Suomen YK-liitto": {
     "file": "suomen_yk_liitto.json",
-    "count": 3,
+    "count": 10,
     "category": "Global policy",
     "description": "",
     "lang": "fi",
@@ -1492,7 +1492,7 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 1,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
@@ -2258,6 +2258,14 @@
     "lang": "en",
     "scope": "Americas"
   },
+  "Copyright Literacy": {
+    "file": "copyright_literacy.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Decoding copyright and bringing you enlightenment",
+    "lang": "en",
+    "scope": "World"
+  },
   "Creative Commons": {
     "file": "creative_commons.json",
     "count": 10,
@@ -2303,14 +2311,6 @@
     "count": 60,
     "category": "Digital Policy + Rights",
     "description": "- Hosted by the American University Program on Information Justice and Intellectual Property",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Local Contexts": {
-    "file": "local_contexts.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Grounding Indigenous Rights",
     "lang": "en",
     "scope": "World"
   },
@@ -2367,6 +2367,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Tietopoliitiikan yhteistyöryhmä": {
+    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
     "lang": "fi",
     "scope": "Finland"
   },
