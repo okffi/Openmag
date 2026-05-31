@@ -13,7 +13,15 @@ module.exports = {
         let img = $(el).find('img').first().attr('src');
         
         // Tekstikuvaus (abstract)
-        const description = $(el).find('.abstract, .description, p').first().text().trim();
+        const descriptionContainers = $(el).find('.abstract, .description');
+        const descriptionNodes = descriptionContainers.find('p').length
+            ? descriptionContainers.find('p')
+            : (descriptionContainers.length ? descriptionContainers : $(el).find('p'));
+        const descriptionParts = descriptionNodes
+            .map((_, node) => $(node).text().replace(/\s+/g, ' ').trim())
+            .get()
+            .filter(Boolean);
+        const description = descriptionParts.join('\n\n');
         
         // Päivämäärä: CoE käyttää usein muotoa "Strasbourg, France - 21/01/2026"
         const metaText = $(el).find('.news-date, .date, .metadata').text().trim();

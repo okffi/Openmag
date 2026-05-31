@@ -31,7 +31,11 @@ module.exports = {
         const pubDate = parseOecdDate(rawDate);
 
         // Description — JSON: p
-        const content = $(el).find('p').first().text().trim();
+        const content = $(el).find('p')
+            .map((_, node) => $(node).text().replace(/\s+/g, ' ').trim())
+            .get()
+            .filter(Boolean)
+            .join('\n\n');
 
         return {
             title,

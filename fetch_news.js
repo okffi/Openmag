@@ -7,6 +7,9 @@ const https = require('https');
 const http = require('http');
 const httpsAgent = new https.Agent({ rejectUnauthorized: false });
 const httpAgent = new http.Agent();
+const CONTENT_HTML_LIMIT = 1200;
+const SNIPPET_TEXT_LIMIT = 200;
+const CONTENT_BLOCK_SELECTOR = 'p, li, blockquote, pre';
 
 const USER_AGENTS = [
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
@@ -32,6 +35,104 @@ function normalizeContent(text) {
     // Collapse multiple consecutive spaces to a single space
     text = text.replace(/ {2,}/g, ' ');
     return text.trim();
+}
+
+function escapeHtml(text) {
+    if (!text) return "";
+    return text
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function truncateTextAtBoundary(text, maxLength) {
+    const normalized = normalizeContent(text);
+    if (!normalized || normalized.length <= maxLength) return normalized;
+
+    const truncated = normalized.substring(0, maxLength + 1);
+    const boundary = truncated.lastIndexOf(' ');
+
+    if (boundary > Math.floor(maxLength * 0.6)) {
+        return truncated.substring(0, boundary).trim();
+    }
+
+    return normalized.substring(0, maxLength).trim();
+}
+
+function extractContentBlocks($c) {
+    return $c(CONTENT_BLOCK_SELECTOR)
+        .map((_, el) => {
+            const text = normalizeContent($c(el).text().replace(/\s+/g, ' '));
+            if (!text) return null;
+            return {
+                html: $c.html(el) || "",
+                text
+            };
+        })
+        .get()
+        .filter(Boolean);
+}
+
+function buildHtmlContent($c, blocks, maxLength = CONTENT_HTML_LIMIT) {
+    if (blocks.length) {
+        const htmlParts = [];
+        let textLength = 0;
+
+        for (const block of blocks) {
+            if (htmlParts.length && textLength + block.text.length > maxLength) break;
+            htmlParts.push(block.html);
+            textLength += block.text.length;
+        }
+
+        return htmlParts.join('\n') || blocks[0].html;
+    }
+
+    const htmlContent = $c('body').html() || $c.html() || "";
+    if (htmlContent.length <= maxLength) return htmlContent;
+
+    const fallbackText = truncateTextAtBoundary($c.text().replace(/\s+/g, ' '), maxLength);
+    return fallbackText ? `<p>${escapeHtml(fallbackText)}</p>` : htmlContent;
+}
+
+function buildTextSnippet($c, blocks, htmlContent, maxLength = SNIPPET_TEXT_LIMIT) {
+    if (blocks.length) {
+        const snippetParts = [];
+        let snippetLength = 0;
+
+        for (const block of blocks) {
+            if (snippetParts.length && snippetLength + block.text.length > maxLength) break;
+            if (!snippetParts.length && block.text.length > maxLength) {
+                return truncateTextAtBoundary(block.text, maxLength);
+            }
+            snippetParts.push(block.text);
+            snippetLength += block.text.length;
+        }
+
+        if (snippetParts.length) return snippetParts.join('\n\n');
+    }
+
+    return truncateTextAtBoundary((htmlContent || $c.text() || "").replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' '), maxLength);
+}
+
+function extractArticleContentFromCheerio($c, options = {}) {
+    const maxHtmlLength = options.maxHtmlLength || CONTENT_HTML_LIMIT;
+    const maxSnippetLength = options.maxSnippetLength || SNIPPET_TEXT_LIMIT;
+
+    const blocks = extractContentBlocks($c);
+    const content = buildHtmlContent($c, blocks, maxHtmlLength);
+    const snippet = buildTextSnippet($c, blocks, content, maxSnippetLength);
+
+    return { content, snippet };
+}
+
+function extractArticleContent(rawContent, options = {}) {
+    const $c = cheerio.load(rawContent || "", { decodeEntities: true });
+    $c('script, style, iframe, form, figure, figcaption, video, audio').remove();
+    $c('*').removeAttr('style').removeAttr('srcset').removeAttr('sizes')
+        .removeAttr('fetchpriority').removeAttr('decoding');
+    return extractArticleContentFromCheerio($c, options);
 }
 
 function createParser() {
@@ -467,16 +568,11 @@ async function processRSS(feed, allArticles) {
             $c('script, style, iframe, form, figure, figcaption, video, audio').remove();
             $c('*').removeAttr('style').removeAttr('srcset').removeAttr('sizes')
                 .removeAttr('fetchpriority').removeAttr('decoding');
-
             // G) Safe HTML for detail view
-            let htmlContent = $c('body').html() || $c.html() || "";
-            if (htmlContent.length > 1200) {
-                htmlContent = htmlContent.substring(0, 1200);
-                htmlContent = cheerio.load(htmlContent).html(); // Ensure valid HTML tags
-            }
+            const { content: htmlContent, snippet: baseSnippet } = extractArticleContentFromCheerio($c);
 
             // H) Safe plaintext snippet for list views
-            let textSnippet = normalizeContent(htmlContent.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ')).substring(0, 200);
+            let textSnippet = baseSnippet;
             if (textSnippet.length < 10) textSnippet = item.title || "";
 
             // I) Final image URL cleaning
@@ -576,10 +672,19 @@ async function processScraper(feed, allArticles, now) {
     }
 }
 
-run().then(() => {
-    console.log("Ajo suoritettu loppuun.");
-    process.exit(0);
-}).catch(err => {
-    console.error("Ajo epäonnistui:", err);
-    process.exit(1);
-});
+if (require.main === module) {
+    run().then(() => {
+        console.log("Ajo suoritettu loppuun.");
+        process.exit(0);
+    }).catch(err => {
+        console.error("Ajo epäonnistui:", err);
+        process.exit(1);
+    });
+}
+
+module.exports = {
+    extractArticleContent,
+    extractArticleContentFromCheerio,
+    normalizeContent,
+    truncateTextAtBoundary
+};
