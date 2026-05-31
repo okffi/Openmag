@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "31.5.2026 klo 19.17.03"
+    "last_updated": "31.5.2026 klo 21.08.04"
   },
   "Helsingin kaupunki, kulttuurin ja vapaa-ajan toimiala": {
     "file": "helsingin_kaupunki__kulttuurin_ja_vapaa_ajan_toimiala.json",
@@ -44,7 +44,7 @@
   },
   "Wikimedia Techblog": {
     "file": "wikimedia_techblog.json",
-    "count": 13,
+    "count": 14,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -103,6 +103,14 @@
     "count": 50,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Hrana": {
+    "file": "hrana.json",
+    "count": 11,
+    "category": "Human Rights + Democracy",
+    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
     "scope": "World"
   },
@@ -340,7 +348,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 4,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -364,7 +372,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 4,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -407,14 +415,6 @@
     "count": 12,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Hrana": {
-    "file": "hrana.json",
-    "count": 11,
-    "category": "Human Rights + Democracy",
-    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
     "scope": "World"
   },
@@ -900,7 +900,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 2,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1076,7 +1076,7 @@
   },
   "Taide- ja kulttuurivirasto": {
     "file": "taide__ja_kulttuurivirasto.json",
-    "count": 1,
+    "count": 10,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -1540,7 +1540,7 @@
   },
   "Center for Internet and Society": {
     "file": "center_for_internet_and_society.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "The CIS is a CNRS research center",
     "lang": "en",
@@ -2146,6 +2146,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "This Month in GLAM": {
+    "file": "this_month_in_glam.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
+    "lang": "en",
+    "scope": "World"
+  },
   "Time Machine Europe": {
     "file": "time_machine_europe.json",
     "count": 12,
@@ -2250,14 +2258,6 @@
     "lang": "en",
     "scope": "Americas"
   },
-  "Copyright Literacy": {
-    "file": "copyright_literacy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Decoding copyright and bringing you enlightenment",
-    "lang": "en",
-    "scope": "World"
-  },
   "Creative Commons": {
     "file": "creative_commons.json",
     "count": 10,
@@ -2322,6 +2322,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Next Generation Internet": {
     "file": "next_generation_internet.json",
     "count": 10,
@@ -2353,6 +2361,22 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "OpenForum Europe": {
+    "file": "openforum_europe.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Open Technologies for a Competitive and Sovereign Europe",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Tietopoliitiikan yhteistyöryhmä": {
     "file": "tietopoliitiikan_yhteisty_ryhm_.json",
@@ -2530,14 +2554,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Investigations – ACDC": {
-    "file": "investigations___acdc.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Journalism Science Alliance": {
     "file": "journalism_science_alliance.json",
     "count": 10,
@@ -2545,6 +2561,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Julkisen sanan neuvosto",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "NORDIS": {
     "file": "nordis.json",
