@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "6.6.2026 klo 13.12.14"
+    "last_updated": "6.6.2026 klo 15.09.56"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -12,7 +12,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 21,
+    "count": 22,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -20,7 +20,7 @@
   },
   "Wikimedia Techblog": {
     "file": "wikimedia_techblog.json",
-    "count": 11,
+    "count": 12,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -63,6 +63,22 @@
     "count": 100,
     "category": "Politics + Public sector",
     "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Kulttuuri ja taide - ePressi": {
+    "file": "kulttuuri_ja_taide___epressi.json",
+    "count": 18,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Demokraatti": {
+    "file": "demokraatti.json",
+    "count": 30,
+    "category": "Politics + Public sector",
+    "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -258,14 +274,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Kulttuuri ja taide - ePressi": {
-    "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 18,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Nordic Culture Point": {
     "file": "nordic_culture_point.json",
     "count": 12,
@@ -356,7 +364,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 10,
+    "count": 4,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -562,14 +570,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Demokraatti": {
-    "file": "demokraatti.json",
-    "count": 30,
-    "category": "Politics + Public sector",
-    "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Digi- ja väestötietovirasto": {
     "file": "digi__ja_v_est_tietovirasto.json",
     "count": 25,
@@ -660,7 +660,7 @@
   },
   "Global Investigative Journalism Network": {
     "file": "global_investigative_journalism_network.json",
-    "count": 20,
+    "count": 9,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -668,11 +668,27 @@
   },
   "Ministry for Foreign Affairs of Finland | News": {
     "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 24,
+    "count": 27,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "World Heritage Centre News": {
+    "file": "world_heritage_centre_news.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "All the World Heritage News",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Direkt36": {
+    "file": "direkt36.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Direkt36 is a non-profit investigative journalism center with the mission to hold powerful people and institutions accountable.",
+    "lang": "en",
+    "scope": "Hungary"
   },
   "Aalto-yliopisto": {
     "file": "aalto_yliopisto.json",
@@ -940,7 +956,7 @@
   },
   "Kuvasto": {
     "file": "kuvasto.json",
-    "count": 10,
+    "count": 1,
     "category": "IP + Creative Industry",
     "description": "Arvoa taiteelle",
     "lang": "fi",
@@ -1108,7 +1124,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -1148,7 +1164,7 @@
   },
   "Open Knowledge Foundation Blog": {
     "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "Content for a fair, sustainable and open future",
     "lang": "en",
@@ -1156,7 +1172,7 @@
   },
   "OpenForum Europe": {
     "file": "openforum_europe.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "Open Technologies for a Competitive and Sovereign Europe",
     "lang": "en",
@@ -1260,7 +1276,7 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
@@ -1364,7 +1380,7 @@
   },
   "Avate Audiovisuaalisen alan tekijät ry": {
     "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
+    "count": 1,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1428,7 +1444,7 @@
   },
   "Finnish Cultural Institute for the Benelux": {
     "file": "finnish_cultural_institute_for_the_benelux.json",
-    "count": 10,
+    "count": 1,
     "category": "Culture + Education",
     "description": "",
     "lang": "en",
@@ -1436,7 +1452,7 @@
   },
   "Suomen Benelux-instituutti": {
     "file": "suomen_benelux_instituutti.json",
-    "count": 10,
+    "count": 1,
     "category": "Culture + Education",
     "description": "Finnish Cultural Institute for the Benelux",
     "lang": "fi",
@@ -1644,7 +1660,7 @@
   },
   "MuseumNext": {
     "file": "museumnext.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "Defining the Future of Museums",
     "lang": "en",
@@ -1858,14 +1874,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Zooniverse": {
-    "file": "zooniverse.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
-    "lang": "en",
-    "scope": "World"
-  },
   "American Library Association": {
     "file": "american_library_association.json",
     "count": 10,
@@ -2042,14 +2050,6 @@
     "lang": "fi",
     "scope": "World"
   },
-  "Suomen kulttuuri- ja tiedeinstituutit": {
-    "file": "suomen_kulttuuri__ja_tiedeinstituutit.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Finnish Institute in the Middle East": {
     "file": "finnish_institute_in_the_middle_east.json",
     "count": 10,
@@ -2082,14 +2082,6 @@
     "lang": "sv",
     "scope": "Finland"
   },
-  "Taide- ja kulttuurivirasto": {
-    "file": "taide__ja_kulttuurivirasto.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Suomen Kotiseutuliitto | Tiedotteet": {
     "file": "suomen_kotiseutuliitto___tiedotteet.json",
     "count": 9,
@@ -2104,14 +2096,6 @@
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
-    "scope": "World"
-  },
-  "World Heritage Centre News": {
-    "file": "world_heritage_centre_news.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "All the World Heritage News",
-    "lang": "en",
     "scope": "World"
   },
   "Ars Electronica Center": {
@@ -2145,14 +2129,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Digital Scholarship Leiden": {
-    "file": "digital_scholarship_leiden.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "en",
-    "scope": "Belgium"
   },
   "EUscreen": {
     "file": "euscreen.json",
@@ -2298,14 +2274,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Forum Information & Democracy": {
-    "file": "forum_information___democracy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "ICANN New and Noteworthy": {
     "file": "icann_new_and_noteworthy.json",
     "count": 7,
@@ -2434,14 +2402,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "CoP CC on Participatory and Deliberative Democracy": {
-    "file": "cop_cc_on_participatory_and_deliberative_democracy.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Front Line Defenders": {
     "file": "front_line_defenders.json",
     "count": 10,
@@ -2513,14 +2473,6 @@
     "description": "Recherchen für die Gesellschaft",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Direkt36": {
-    "file": "direkt36.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Direkt36 is a non-profit investigative journalism center with the mission to hold powerful people and institutions accountable.",
-    "lang": "en",
-    "scope": "Hungary"
   },
   "Forbidden Stories": {
     "file": "forbidden_stories.json",
@@ -2679,14 +2631,6 @@
     "count": 9,
     "category": "IP + Creative Industry",
     "description": "Kopiosto on tekijöiden, esittäjien ja kustantajien yhteinen tekijänoikeusjärjestö.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Luovat ry": {
-    "file": "luovat_ry.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "Luovan työn tekijät ja yrittäjät, Luovat ry",
     "lang": "fi",
     "scope": "Finland"
   },
