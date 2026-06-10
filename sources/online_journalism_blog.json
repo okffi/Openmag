@@ -1,23 +1,6 @@
 [
   {
     "title": "How to: generate hundreds of maps by combining QGIS with Python (code included!)",
-    "link": "http://onlinejournalismblog.com/2026/06/08/how-to-generate-hundreds-of-maps-by-combining-qgis-with-python-code-included/",
-    "pubDate": "2026-06-08T10:44:37.000Z",
-    "content": "<p class=\"wp-block-paragraph\"><strong><em>At this year’s Dataharvest I delivered a workshop on using Python in QGIS to automate the process of exporting maps for multiple locations. Here’s how to do it (you can <a href=\"https://github.com/paulbradshaw/QGIS_param/tree/main\">find a GitHub repository with materials and links here</a>).</em></strong></p>\n<p class=\"wp-block-paragraph\">Making a map for a story is cool —&nbsp;but what if you could make a map for every reader? Or if you’re working on a project involving teams in different regions or countries, what if you could give each one of those teams a map centred on their own patch?</p>\n<p class=\"wp-block-paragraph\">Normally you would have to manually move the map to centre it on a key city, and then export an image. Then do it again and again and again for every area. </p>\n<p class=\"wp-block-paragraph\">Luckily, QGIS has the ability to run code. And this is a great excuse to start using it.</p>\n<p class=\"wp-block-paragraph\">Before getting into the code, however, you need a map for the code to move around</p>\n<p class=\"wp-block-paragraph\">Create a new project in QGIS and import any shape file(s) that you want to show on your map, along with a base map underneath that. I’ve <a href=\"https://github.com/paulbradshaw/QGIS_param/blob/main/01_make_a_map.md\">created a tutorial here</a> which imports flood defences and then adds an OpenStreetMap base layer underneath those.</p>",
-    "snippet": "At this year’s Dataharvest I delivered a workshop on using Python in QGIS to automate the process of exporting maps for multiple locations. Here’s how to do it (you can find a GitHub repository with",
-    "creator": "Paul Bradshaw",
-    "sourceTitle": "Online Journalism Blog",
-    "sheetCategory": "Investigations + Conflict",
-    "enforcedImage": "https://onlinejournalismblog.com/wp-content/uploads/2026/06/wolverhampton_175000.png?w=625",
-    "sourceDescription": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
-    "sourceLogo": "https://s2.wp.com/i/webclip.png",
-    "lang": "en",
-    "scope": "World",
-    "isDarkLogo": false,
-    "originalRssUrl": "https://onlinejournalismblog.com/feed/"
-  },
-  {
-    "title": "How to: generate hundreds of maps by combining QGIS with Python (code included!)",
     "link": "https://onlinejournalismblog.com/2026/06/08/how-to-generate-hundreds-of-maps-by-combining-qgis-with-python-code-included/",
     "pubDate": "2026-06-08T10:44:37.000Z",
     "content": "<p class=\"wp-block-paragraph\"><strong><em>At this year’s Dataharvest I delivered a workshop on using Python in QGIS to automate the process of exporting maps for multiple locations. Here’s how to do it (you can <a href=\"https://github.com/paulbradshaw/QGIS_param/tree/main\">find a GitHub repository with materials and links here</a>).</em></strong></p>\n<p class=\"wp-block-paragraph\">Making a map for a story is cool —&nbsp;but what if you could make a map for every reader? Or if you’re working on a project involving teams in different regions or countries, what if you could give each one of those teams a map centred on their own patch?</p>\n<p class=\"wp-block-paragraph\">Normally you would have to manually move the map to centre it on a key city, and then export an image. Then do it again and again and again for every area. </p>\n<p class=\"wp-block-paragraph\">Luckily, QGIS has the ability to run code. And this is a great excuse to start using it.</p>\n<p class=\"wp-block-paragraph\">Before getting into the code, however, you need a map for the code to move around</p>\n<p class=\"wp-block-paragraph\">Create a new project in QGIS and import any shape file(s) that you want to show on your map, along with a base map underneath that. I’ve <a href=\"https://github.com/paulbradshaw/QGIS_param/blob/main/01_make_a_map.md\">created a tutorial here</a> which imports flood defences and then adds an OpenStreetMap base layer underneath those.</p>",
