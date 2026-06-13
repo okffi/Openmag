@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "13.6.2026 klo 23.21.23"
+    "last_updated": "14.6.2026 klo 1.11.58"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
@@ -12,7 +12,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 14,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -98,6 +98,30 @@
     "lang": "en",
     "scope": "World"
   },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 50,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Tech Policy Press": {
+    "file": "tech_policy_press.json",
+    "count": 3644,
+    "category": "Digital Policy + Rights",
+    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "404 Media": {
+    "file": "404_media.json",
+    "count": 16,
+    "category": "Investigations + Conflict",
+    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
+    "lang": "en",
+    "scope": "World"
+  },
   "CSC": {
     "file": "csc.json",
     "count": 10,
@@ -129,14 +153,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 50,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
-    "lang": "en",
-    "scope": "World"
   },
   "The Scholarly Kitchen": {
     "file": "the_scholarly_kitchen.json",
@@ -330,14 +346,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Tech Policy Press": {
-    "file": "tech_policy_press.json",
-    "count": 3644,
-    "category": "Digital Policy + Rights",
-    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
-    "lang": "en",
-    "scope": "World"
-  },
   "TIEKE": {
     "file": "tieke.json",
     "count": 10,
@@ -375,14 +383,6 @@
     "count": 20,
     "category": "Global policy",
     "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
-    "lang": "en",
-    "scope": "World"
-  },
-  "404 Media": {
-    "file": "404_media.json",
-    "count": 16,
-    "category": "Investigations + Conflict",
-    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
     "scope": "World"
   },
@@ -948,7 +948,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 10,
+    "count": 2,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -972,7 +972,7 @@
   },
   "Europa Nostra": {
     "file": "europa_nostra.json",
-    "count": 10,
+    "count": 2,
     "category": "Culture + Education",
     "description": "The Voice of Cultural Heritage in Europe",
     "lang": "en",
@@ -1324,7 +1324,7 @@
   },
   "Forbidden Stories": {
     "file": "forbidden_stories.json",
-    "count": 10,
+    "count": 2,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -1770,6 +1770,14 @@
     "lang": "en",
     "scope": "Germany"
   },
+  "FNG Research": {
+    "file": "fng_research.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Hanasaari": {
     "file": "hanasaari.json",
     "count": 25,
@@ -2042,14 +2050,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Digital Scholarship Leiden": {
-    "file": "digital_scholarship_leiden.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "en",
-    "scope": "Belgium"
-  },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
     "count": 10,
@@ -2065,6 +2065,14 @@
     "description": "Heritage Hub for Central and Eastern Europe",
     "lang": "en",
     "scope": "Poland"
+  },
+  "European Heritage Hub": {
+    "file": "european_heritage_hub.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Where cultural heritage connects",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Extreme Citizen Science blog": {
     "file": "extreme_citizen_science_blog.json",
@@ -2202,6 +2210,14 @@
     "lang": "de",
     "scope": "Germany"
   },
+  "Center for Internet and Society": {
+    "file": "center_for_internet_and_society.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "The CIS is a CNRS research center",
+    "lang": "en",
+    "scope": "France"
+  },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
     "count": 10,
@@ -2233,14 +2249,6 @@
     "description": "Electronic Frontier Finland - Effi ry:n kotisivut",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Forum Information & Democracy": {
-    "file": "forum_information___democracy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "ICANN New and Noteworthy": {
     "file": "icann_new_and_noteworthy.json",
@@ -2274,6 +2282,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Next Generation Internet": {
     "file": "next_generation_internet.json",
     "count": 10,
@@ -2306,6 +2322,22 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Tietopoliitiikan yhteistyöryhmä": {
+    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "The Finnish Institute of International Affairs (FIIA)": {
     "file": "the_finnish_institute_of_international_affairs__fiia_.json",
     "count": 10,
@@ -2329,14 +2361,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Le Monde diplomatique - English edition": {
-    "file": "le_monde_diplomatique___english_edition.json",
-    "count": 10,
-    "category": "Global policy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "Public Institutions": {
     "file": "public_institutions.json",
@@ -2396,14 +2420,6 @@
   },
   "Open Government Partnership Newsletter": {
     "file": "open_government_partnership_newsletter.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "CoP CC on Participatory and Deliberative Democracy": {
-    "file": "cop_cc_on_participatory_and_deliberative_democracy.json",
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
@@ -2522,14 +2538,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Julkisen sanan neuvosto",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "OCCRP Announcements": {
     "file": "occrp_announcements.json",
     "count": 9,
@@ -2609,14 +2617,6 @@
     "description": "Human Rights Video",
     "lang": "en",
     "scope": "World"
-  },
-  "Avate Audiovisuaalisen alan tekijät ry": {
-    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "AVEK": {
     "file": "avek.json",
