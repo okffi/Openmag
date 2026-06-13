@@ -1,10 +1,10 @@
 {
   "__meta": {
-    "last_updated": "13.6.2026 klo 14.21.04"
+    "last_updated": "13.6.2026 klo 17.15.24"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 38,
+    "count": 39,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -28,7 +28,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 21,
+    "count": 22,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -76,9 +76,25 @@
   },
   "Wikimedia Techblog": {
     "file": "wikimedia_techblog.json",
-    "count": 11,
+    "count": 12,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Finlandsinstitutet i Stockholm": {
+    "file": "finlandsinstitutet_i_stockholm.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Vi presenterar finländskt kultur- och samhällsliv i Sverige.",
+    "lang": "sv",
+    "scope": "Sweden"
+  },
+  "Technology – POLITICO": {
+    "file": "technology___politico.json",
+    "count": 31,
+    "category": "Digital Policy + Rights",
+    "description": "European Politics, Policy, Government News",
     "lang": "en",
     "scope": "World"
   },
@@ -161,14 +177,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Finlandsinstitutet i Stockholm": {
-    "file": "finlandsinstitutet_i_stockholm.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Vi presenterar finländskt kultur- och samhällsliv i Sverige.",
-    "lang": "sv",
-    "scope": "Sweden"
   },
   "Suomalaisen Kirjallisuuden Seura (SKS)": {
     "file": "suomalaisen_kirjallisuuden_seura__sks_.json",
@@ -276,7 +284,7 @@
   },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
@@ -300,7 +308,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -327,14 +335,6 @@
     "count": 3643,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Technology – POLITICO": {
-    "file": "technology___politico.json",
-    "count": 31,
-    "category": "Digital Policy + Rights",
-    "description": "European Politics, Policy, Government News",
     "lang": "en",
     "scope": "World"
   },
@@ -748,7 +748,7 @@
   },
   "MuseumNext": {
     "file": "museumnext.json",
-    "count": 10,
+    "count": 4,
     "category": "Digital Culture + Heritage",
     "description": "Defining the Future of Museums",
     "lang": "en",
@@ -820,7 +820,7 @@
   },
   "OpenForum Europe": {
     "file": "openforum_europe.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "Open Technologies for a Competitive and Sovereign Europe",
     "lang": "en",
@@ -860,7 +860,7 @@
   },
   "Investigations – ACDC": {
     "file": "investigations___acdc.json",
-    "count": 1,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
     "lang": "en",
@@ -1292,7 +1292,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -1420,7 +1420,7 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 10,
+    "count": 1,
     "category": "Investigations + Conflict",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
@@ -1513,6 +1513,14 @@
     "description": "Direkt36 is a non-profit investigative journalism center with the mission to hold powerful people and institutions accountable.",
     "lang": "en",
     "scope": "Hungary"
+  },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 1,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
+    "lang": "en",
+    "scope": "Europe"
   },
   "CC Sweden": {
     "file": "cc_sweden.json",
@@ -1689,14 +1697,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Zooniverse": {
-    "file": "zooniverse.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
-    "lang": "en",
-    "scope": "World"
   },
   "American Library Association": {
     "file": "american_library_association.json",
@@ -1986,14 +1986,6 @@
     "lang": "sv",
     "scope": "Sweden"
   },
-  "Taide- ja kulttuurivirasto": {
-    "file": "taide__ja_kulttuurivirasto.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "The Heritage Management Organization": {
     "file": "the_heritage_management_organization.json",
     "count": 10,
@@ -2242,14 +2234,6 @@
     "lang": "en",
     "scope": "France"
   },
-  "Copyright Literacy": {
-    "file": "copyright_literacy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Decoding copyright and bringing you enlightenment",
-    "lang": "en",
-    "scope": "World"
-  },
   "Creative Commons": {
     "file": "creative_commons.json",
     "count": 10,
@@ -2313,14 +2297,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Next Generation Internet": {
     "file": "next_generation_internet.json",
