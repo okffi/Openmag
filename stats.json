@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "18.6.2026 klo 14.12.06"
+    "last_updated": "18.6.2026 klo 18.41.49"
   },
   "CSC": {
     "file": "csc.json",
@@ -28,7 +28,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 21,
+    "count": 22,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -52,7 +52,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 52,
+    "count": 55,
     "category": "Global policy",
     "description": "",
     "lang": "en",
@@ -100,7 +100,7 @@
   },
   "Valtioneuvoston tiedotteet": {
     "file": "valtioneuvoston_tiedotteet.json",
-    "count": 100,
+    "count": 101,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -116,11 +116,371 @@
   },
   "Wikimedia Techblog": {
     "file": "wikimedia_techblog.json",
-    "count": 12,
+    "count": 14,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
     "lang": "en",
     "scope": "World"
+  },
+  "Technology | Guardian": {
+    "file": "technology___guardian.json",
+    "count": 42,
+    "category": "(Open) Data + Technology",
+    "description": "Technology news, comment and analysis | guardian.co.uk",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Tietotekniikka | ePressi": {
+    "file": "tietotekniikka___epressi.json",
+    "count": 20,
+    "category": "(Open) Data + Technology",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "COST": {
+    "file": "cost.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "The Scholarly Kitchen": {
+    "file": "the_scholarly_kitchen.json",
+    "count": 14,
+    "category": "(Open) Science + Research",
+    "description": "What’s Hot and Cooking In Scholarly Publishing",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Tiede ja tutkimus - ePressi": {
+    "file": "tiede_ja_tutkimus___epressi.json",
+    "count": 19,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "University of Helsinki": {
+    "file": "university_of_helsinki.json",
+    "count": 12,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Kulta ry": {
+    "file": "kulta_ry.json",
+    "count": 12,
+    "category": "Culture + Education",
+    "description": "Kulttuuri- ja taidealan keskusjärjestö",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Maaseudun sivistysliitto": {
+    "file": "maaseudun_sivistysliitto.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Museolehti": {
+    "file": "museolehti.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Museoalan ihmisten, ilmiöiden ja puheenaiheiden media.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Oulu2026": {
+    "file": "oulu2026.json",
+    "count": 100,
+    "category": "Culture + Education",
+    "description": "Oulu on Euroopan kulttuuripääkaupunki 2026",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Pohjoismainen kulttuuripiste": {
+    "file": "pohjoismainen_kulttuuripiste.json",
+    "count": 12,
+    "category": "Culture + Education",
+    "description": "Vi stärker det nordiska samarbetet genom kultur",
+    "lang": "fi",
+    "scope": "Nordic + Baltic countries"
+  },
+  "Suomen kirjastoseura": {
+    "file": "suomen_kirjastoseura.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Finnish Institute in the Middle East": {
+    "file": "finnish_institute_in_the_middle_east.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Suomen Lähi-idän instituutti": {
+    "file": "suomen_l_hi_id_n_instituutti.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "World"
+  },
+  "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
+    "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "en",
+    "scope": "Poland"
+  },
+  "Open Culture": {
+    "file": "open_culture.json",
+    "count": 15,
+    "category": "Digital Culture + Heritage",
+    "description": "The best free cultural & educational media on the web",
+    "lang": "en",
+    "scope": "Netherlands"
+  },
+  "MySociety Newsletter": {
+    "file": "mysociety_newsletter.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "AlgorithmWatch": {
+    "file": "algorithmwatch.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Germany"
+  },
+  "European Digital Rights (EDRi)": {
+    "file": "european_digital_rights__edri_.json",
+    "count": 20,
+    "category": "Digital Policy + Rights",
+    "description": "Protecting digital rights in Europe.",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Open Knowledge Sweden": {
+    "file": "open_knowledge_sweden.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "En rättvis, fri och öppen framtid.",
+    "lang": "sv",
+    "scope": "Nordic + Baltic countries"
+  },
+  "Technology – POLITICO": {
+    "file": "technology___politico.json",
+    "count": 31,
+    "category": "Digital Policy + Rights",
+    "description": "European Politics, Policy, Government News",
+    "lang": "en",
+    "scope": "World"
+  },
+  "TIEKE": {
+    "file": "tieke.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Ulkopoliittinen instituutti (UPI)": {
+    "file": "ulkopoliittinen_instituutti__upi_.json",
+    "count": 10,
+    "category": "Global policy",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Hrana": {
+    "file": "hrana.json",
+    "count": 12,
+    "category": "Human Rights + Democracy",
+    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
+    "lang": "en",
+    "scope": "World"
+  },
+  "CIVICUS News": {
+    "file": "civicus_news.json",
+    "count": 50,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "bellingcat": {
+    "file": "bellingcat.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "the home of online investigations",
+    "lang": "en",
+    "scope": "World"
+  },
+  "CMI": {
+    "file": "cmi.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Peace broker",
+    "lang": "en",
+    "scope": "Finland"
+  },
+  "Forbidden Stories": {
+    "file": "forbidden_stories.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Julkisen sanan neuvosto",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "OCCRP": {
+    "file": "occrp.json",
+    "count": 60,
+    "category": "Investigations + Conflict",
+    "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "ProPublica": {
+    "file": "propublica.json",
+    "count": 20,
+    "category": "Investigations + Conflict",
+    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Sanasto": {
+    "file": "sanasto.json",
+    "count": 9,
+    "category": "IP + Creative Industry",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Foundation for European Progressive Studies": {
+    "file": "foundation_for_european_progressive_studies.json",
+    "count": 12,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Long Play": {
+    "file": "long_play.json",
+    "count": 749,
+    "category": "Perspectives",
+    "description": "Ei klikkiotsikoita, ei typeryyksiä. Vain juttuja, joilla on väliä.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Project Syndicate": {
+    "file": "project_syndicate.json",
+    "count": 20,
+    "category": "Perspectives",
+    "description": "Project Syndicate - The World’s Opinion Page",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Verde": {
+    "file": "verde.json",
+    "count": 18,
+    "category": "Politics + Public sector",
+    "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Euroopan parlamentti – Suomen-toimisto": {
+    "file": "euroopan_parlamentti___suomen_toimisto.json",
+    "count": 25,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Eurooppalainen Suomi": {
+    "file": "eurooppalainen_suomi.json",
+    "count": 10,
+    "category": "Politics + Public sector",
+    "description": "Parempaa Eurooppaa rakentamassa",
+    "lang": "fi",
+    "scope": "Europe"
+  },
+  "Helsinki-Uusimaa Region": {
+    "file": "helsinki_uusimaa_region.json",
+    "count": 10,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Yle | Kansainvälinen politiikka": {
+    "file": "yle___kansainv_linen_politiikka.json",
+    "count": 21,
+    "category": "Politics + Public sector",
+    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
+    "lang": "fi",
+    "scope": "World"
+  },
+  "Ympäristöministeriön uutiset ja tiedotteet": {
+    "file": "ymp_rist_ministeri_n_uutiset_ja_tiedotteet.json",
+    "count": 100,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Arctic Centre at the University of Lapland": {
+    "file": "arctic_centre_at_the_university_of_lapland.json",
+    "count": 10,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "en",
+    "scope": "Finland"
+  },
+  "Arktinen keskus": {
+    "file": "arktinen_keskus.json",
+    "count": 10,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Carbon Brief": {
+    "file": "carbon_brief.json",
+    "count": 10,
+    "category": "Sustainability + Foresight",
+    "description": "Clear on climate",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Sitra": {
+    "file": "sitra.json",
+    "count": 12,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
@@ -138,22 +498,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Technology | Guardian": {
-    "file": "technology___guardian.json",
-    "count": 41,
-    "category": "(Open) Data + Technology",
-    "description": "Technology news, comment and analysis | guardian.co.uk",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Tietotekniikka | ePressi": {
-    "file": "tietotekniikka___epressi.json",
-    "count": 20,
-    "category": "(Open) Data + Technology",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "xkcd": {
     "file": "xkcd.json",
     "count": 4,
@@ -164,7 +508,7 @@
   },
   "CLARIN ERIC": {
     "file": "clarin_eric.json",
-    "count": 10,
+    "count": 3,
     "category": "(Open) Science + Research",
     "description": "Common Language Resources and Technology Infrastructure",
     "lang": "en",
@@ -185,22 +529,6 @@
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
     "scope": "World"
-  },
-  "The Scholarly Kitchen": {
-    "file": "the_scholarly_kitchen.json",
-    "count": 14,
-    "category": "(Open) Science + Research",
-    "description": "What’s Hot and Cooking In Scholarly Publishing",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Tiede ja tutkimus - ePressi": {
-    "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 19,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
@@ -236,7 +564,7 @@
   },
   "FNG Research": {
     "file": "fng_research.json",
-    "count": 5,
+    "count": 10,
     "category": "Culture + Education",
     "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
     "lang": "fi",
@@ -257,14 +585,6 @@
     "description": "Vi stärker det nordiska samarbetet genom kultur",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
-  },
-  "Oulu2026": {
-    "file": "oulu2026.json",
-    "count": 100,
-    "category": "Culture + Education",
-    "description": "Oulu on Euroopan kulttuuripääkaupunki 2026",
-    "lang": "en",
-    "scope": "Finland"
   },
   "Svenska litteratursällskapet i Finland": {
     "file": "svenska_litteraturs_llskapet_i_finland.json",
@@ -311,14 +631,6 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Bringing Collections to Life",
-    "lang": "en",
-    "scope": "Netherlands"
-  },
-  "Open Culture": {
-    "file": "open_culture.json",
-    "count": 15,
-    "category": "Digital Culture + Heritage",
-    "description": "The best free cultural & educational media on the web",
     "lang": "en",
     "scope": "Netherlands"
   },
@@ -372,43 +684,19 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
     "scope": "Europe"
   },
-  "Open Knowledge Sweden": {
-    "file": "open_knowledge_sweden.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "En rättvis, fri och öppen framtid.",
-    "lang": "sv",
-    "scope": "Nordic + Baltic countries"
-  },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3659,
+    "count": 3663,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
     "scope": "World"
-  },
-  "Technology – POLITICO": {
-    "file": "technology___politico.json",
-    "count": 31,
-    "category": "Digital Policy + Rights",
-    "description": "European Politics, Policy, Government News",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Ulkopoliittinen instituutti (UPI)": {
-    "file": "ulkopoliittinen_instituutti__upi_.json",
-    "count": 10,
-    "category": "Global policy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Le Monde diplomatique - English edition": {
     "file": "le_monde_diplomatique___english_edition.json",
@@ -420,7 +708,7 @@
   },
   "UN News - Global perspective Human stories": {
     "file": "un_news___global_perspective_human_stories.json",
-    "count": 57,
+    "count": 56,
     "category": "Global policy",
     "description": "UN News - Global perspective Human stories | Global",
     "lang": "en",
@@ -436,17 +724,9 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 13,
+    "count": 15,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Hrana": {
-    "file": "hrana.json",
-    "count": 12,
-    "category": "Human Rights + Democracy",
-    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
     "scope": "World"
   },
@@ -506,14 +786,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "OCCRP": {
-    "file": "occrp.json",
-    "count": 60,
-    "category": "Investigations + Conflict",
-    "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
-    "lang": "en",
-    "scope": "World"
-  },
   "OCHA": {
     "file": "ocha.json",
     "count": 10,
@@ -522,17 +794,9 @@
     "lang": "en",
     "scope": "World"
   },
-  "ProPublica": {
-    "file": "propublica.json",
-    "count": 20,
-    "category": "Investigations + Conflict",
-    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
-    "lang": "en",
-    "scope": "World"
-  },
   "UN News - Global perspective Human stories | Middle East": {
     "file": "un_news___global_perspective_human_stories___middle_east.json",
-    "count": 23,
+    "count": 24,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -562,14 +826,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Long Play": {
-    "file": "long_play.json",
-    "count": 749,
-    "category": "Perspectives",
-    "description": "Ei klikkiotsikoita, ei typeryyksiä. Vain juttuja, joilla on väliä.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "MustRead": {
     "file": "mustread.json",
     "count": 10,
@@ -583,14 +839,6 @@
     "count": 10,
     "category": "Perspectives",
     "description": "Noema Magazine",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Project Syndicate": {
-    "file": "project_syndicate.json",
-    "count": 20,
-    "category": "Perspectives",
-    "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
     "scope": "World"
   },
@@ -618,14 +866,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Verde": {
-    "file": "verde.json",
-    "count": 17,
-    "category": "Politics + Public sector",
-    "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Liikenne- ja viestintäministeriö | News": {
     "file": "liikenne__ja_viestint_ministeri____news.json",
     "count": 20,
@@ -642,25 +882,9 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Euroopan parlamentti – Suomen-toimisto": {
-    "file": "euroopan_parlamentti___suomen_toimisto.json",
-    "count": 25,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Eurooppalainen Suomi": {
-    "file": "eurooppalainen_suomi.json",
-    "count": 10,
-    "category": "Politics + Public sector",
-    "description": "Parempaa Eurooppaa rakentamassa",
-    "lang": "fi",
-    "scope": "Europe"
-  },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 15,
+    "count": 35,
     "category": "Politics + Public sector",
     "description": "European Commission | News",
     "lang": "en",
@@ -698,14 +922,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Helsinki-Uusimaa Region": {
-    "file": "helsinki_uusimaa_region.json",
-    "count": 10,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
     "count": 16,
@@ -714,53 +930,13 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Yle | Kansainvälinen politiikka": {
-    "file": "yle___kansainv_linen_politiikka.json",
-    "count": 20,
-    "category": "Politics + Public sector",
-    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
-    "lang": "fi",
-    "scope": "World"
-  },
-  "Ympäristöministeriön uutiset ja tiedotteet": {
-    "file": "ymp_rist_ministeri_n_uutiset_ja_tiedotteet.json",
-    "count": 100,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Arktinen keskus": {
-    "file": "arktinen_keskus.json",
-    "count": 10,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Carbon Brief": {
-    "file": "carbon_brief.json",
-    "count": 10,
-    "category": "Sustainability + Foresight",
-    "description": "Clear on climate",
-    "lang": "en",
-    "scope": "World"
-  },
   "PreventionWeb": {
     "file": "preventionweb.json",
-    "count": 44,
+    "count": 49,
     "category": "Sustainability + Foresight",
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Sitra": {
-    "file": "sitra.json",
-    "count": 12,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Sámiráđđi": {
     "file": "s_mir___i.json",
@@ -780,11 +956,27 @@
   },
   "information labs": {
     "file": "information_labs.json",
-    "count": 3,
+    "count": 20,
     "category": "Digital Policy + Rights",
     "description": "Facts | Ideas | Discussions",
     "lang": "en",
     "scope": "Europe"
+  },
+  "European Heritage Hub": {
+    "file": "european_heritage_hub.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Where cultural heritage connects",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "UN News - Global perspective Human stories | Peace and Security": {
+    "file": "un_news___global_perspective_human_stories___peace_and_security.json",
+    "count": 9,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -815,14 +1007,6 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "Tervetuloa uudelle verkkosivustolle",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "University of Helsinki": {
-    "file": "university_of_helsinki.json",
-    "count": 11,
-    "category": "(Open) Science + Research",
-    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -906,14 +1090,6 @@
     "lang": "sv",
     "scope": "Finland"
   },
-  "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
-    "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "en",
-    "scope": "Poland"
-  },
   "ATRIUM": {
     "file": "atrium.json",
     "count": 106,
@@ -946,22 +1122,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "CIVICUS News": {
-    "file": "civicus_news.json",
-    "count": 50,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "CMI": {
-    "file": "cmi.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Peace broker",
-    "lang": "en",
-    "scope": "Finland"
-  },
   "Eastflank": {
     "file": "eastflank.json",
     "count": 10,
@@ -972,17 +1132,9 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 10,
+    "count": 1,
     "category": "Investigations + Conflict",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "UN News - Global perspective Human stories | Peace and Security": {
-    "file": "un_news___global_perspective_human_stories___peace_and_security.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -1052,7 +1204,7 @@
   },
   "Taide- ja kulttuurivirasto": {
     "file": "taide__ja_kulttuurivirasto.json",
-    "count": 1,
+    "count": 10,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -1060,11 +1212,19 @@
   },
   "Open Knowledge Foundation Blog": {
     "file": "open_knowledge_foundation_blog.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Content for a fair, sustainable and open future",
     "lang": "en",
     "scope": "World"
+  },
+  "Finnish AI Region": {
+    "file": "finnish_ai_region.json",
+    "count": 20,
+    "category": "(Open) Data + Technology",
+    "description": "FAIR",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Koodia Suomesta": {
     "file": "koodia_suomesta.json",
@@ -1106,22 +1266,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Museolehti": {
-    "file": "museolehti.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Museoalan ihmisten, ilmiöiden ja puheenaiheiden media.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Pohjoismainen kulttuuripiste": {
-    "file": "pohjoismainen_kulttuuripiste.json",
-    "count": 12,
-    "category": "Culture + Education",
-    "description": "Vi stärker det nordiska samarbetet genom kultur",
-    "lang": "fi",
-    "scope": "Nordic + Baltic countries"
-  },
   "UN News - Global perspective Human stories | Culture and Education": {
     "file": "un_news___global_perspective_human_stories___culture_and_education.json",
     "count": 30,
@@ -1140,7 +1284,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -1220,17 +1364,9 @@
   },
   "Kuvasto": {
     "file": "kuvasto.json",
-    "count": 9,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "Arvoa taiteelle",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Sanasto": {
-    "file": "sanasto.json",
-    "count": 9,
-    "category": "IP + Creative Industry",
-    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1248,14 +1384,6 @@
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
-    "scope": "Finland"
-  },
-  "Arctic Centre at the University of Lapland": {
-    "file": "arctic_centre_at_the_university_of_lapland.json",
-    "count": 10,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "en",
     "scope": "Finland"
   },
   "Copernicus Institute": {
@@ -1276,7 +1404,7 @@
   },
   "United Nations Sustainable Development": {
     "file": "united_nations_sustainable_development.json",
-    "count": 6,
+    "count": 7,
     "category": "Sustainability + Foresight",
     "description": "17 Goals to Transform Our World",
     "lang": "en",
@@ -1284,7 +1412,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 1,
+    "count": 9,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -1332,19 +1460,11 @@
   },
   "MuseumNext": {
     "file": "museumnext.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Defining the Future of Museums",
     "lang": "en",
     "scope": "World"
-  },
-  "COST": {
-    "file": "cost.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Culture and Creativity": {
     "file": "culture_and_creativity.json",
@@ -1354,17 +1474,9 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Kulta ry": {
-    "file": "kulta_ry.json",
-    "count": 12,
-    "category": "Culture + Education",
-    "description": "Kulttuuri- ja taidealan keskusjärjestö",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
@@ -1378,27 +1490,11 @@
     "lang": "en",
     "scope": "Sweden"
   },
-  "TIEKE": {
-    "file": "tieke.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "UN News - Global perspective Human stories | Europe": {
     "file": "un_news___global_perspective_human_stories___europe.json",
     "count": 29,
     "category": "Global policy",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "bellingcat": {
-    "file": "bellingcat.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "the home of online investigations",
     "lang": "en",
     "scope": "World"
   },
@@ -1449,14 +1545,6 @@
     "description": "Instituto Iberoamericano de Finlandia - Suomen Madridin-instituutti",
     "lang": "fi",
     "scope": "Europe"
-  },
-  "Maaseudun sivistysliitto": {
-    "file": "maaseudun_sivistysliitto.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Museoliitto": {
     "file": "museoliitto.json",
@@ -1522,14 +1610,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "European Digital Rights (EDRi)": {
-    "file": "european_digital_rights__edri_.json",
-    "count": 20,
-    "category": "Digital Policy + Rights",
-    "description": "Protecting digital rights in Europe.",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Internet Society": {
     "file": "internet_society.json",
     "count": 20,
@@ -1578,102 +1658,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "CCC Event Blog": {
-    "file": "ccc_event_blog.json",
-    "count": 15,
-    "category": "(Open) Data + Technology",
-    "description": "Recent content on CCC Event Blog",
-    "lang": "de",
-    "scope": "Germany"
-  },
-  "Ateneumin taidemuseo / Konstmuseet Ateneum / Ateneum Art Museum": {
-    "file": "ateneumin_taidemuseo___konstmuseet_ateneum___ateneum_art_museum.json",
-    "count": 25,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Europa Nostra": {
-    "file": "europa_nostra.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "The Voice of Cultural Heritage in Europe",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Kansallisarkiston tiedotteet": {
-    "file": "kansallisarkiston_tiedotteet.json",
-    "count": 20,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Kirjastolehti": {
-    "file": "kirjastolehti.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Suomen kirjastoseura": {
-    "file": "suomen_kirjastoseura.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "EUscreen": {
-    "file": "euscreen.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "MySociety Newsletter": {
-    "file": "mysociety_newsletter.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Berkman Klein Center for Internet & Society at Harvard University Community": {
-    "file": "berkman_klein_center_for_internet___society_at_harvard_university_community.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "Americas"
-  },
-  "Avoin hallinto": {
-    "file": "avoin_hallinto.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Freedom House": {
-    "file": "freedom_house.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Ihmisoikeuskeskus": {
-    "file": "ihmisoikeuskeskus.json",
-    "count": 50,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "CC Sweden": {
     "file": "cc_sweden.json",
     "count": 10,
@@ -1682,13 +1666,13 @@
     "lang": "sv",
     "scope": "Sweden"
   },
-  "Finnish AI Region": {
-    "file": "finnish_ai_region.json",
-    "count": 20,
+  "CCC Event Blog": {
+    "file": "ccc_event_blog.json",
+    "count": 15,
     "category": "(Open) Data + Technology",
-    "description": "FAIR",
-    "lang": "en",
-    "scope": "Finland"
+    "description": "Recent content on CCC Event Blog",
+    "lang": "de",
+    "scope": "Germany"
   },
   "FOSDEM 2026": {
     "file": "fosdem_2026.json",
@@ -1898,6 +1882,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Ateneumin taidemuseo / Konstmuseet Ateneum / Ateneum Art Museum": {
+    "file": "ateneumin_taidemuseo___konstmuseet_ateneum___ateneum_art_museum.json",
+    "count": 25,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "European Parliament | Culture and education": {
     "file": "european_parliament___culture_and_education.json",
     "count": 25,
@@ -1913,6 +1905,14 @@
     "description": "",
     "lang": "fi",
     "scope": "World"
+  },
+  "Europa Nostra": {
+    "file": "europa_nostra.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "The Voice of Cultural Heritage in Europe",
+    "lang": "en",
+    "scope": "Europe"
   },
   "European Cultural Parliament": {
     "file": "european_cultural_parliament.json",
@@ -2002,6 +2002,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Kansallisarkiston tiedotteet": {
+    "file": "kansallisarkiston_tiedotteet.json",
+    "count": 20,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Kaospilot": {
     "file": "kaospilot.json",
     "count": 10,
@@ -2009,6 +2017,14 @@
     "description": "School for Creative Leadership & Meaningful Entrepreneurship",
     "lang": "en",
     "scope": "Denmark"
+  },
+  "Kirjastolehti": {
+    "file": "kirjastolehti.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Kulttilehdet": {
     "file": "kulttilehdet.json",
@@ -2057,22 +2073,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Finnish Institute in the Middle East": {
-    "file": "finnish_institute_in_the_middle_east.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Suomen Lähi-idän instituutti": {
-    "file": "suomen_l_hi_id_n_instituutti.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "World"
   },
   "Suomen Saksan-instituutti": {
     "file": "suomen_saksan_instituutti.json",
@@ -2162,11 +2162,11 @@
     "lang": "en",
     "scope": "Poland"
   },
-  "European Heritage Hub": {
-    "file": "european_heritage_hub.json",
+  "EUscreen": {
+    "file": "euscreen.json",
     "count": 10,
     "category": "Digital Culture + Heritage",
-    "description": "Where cultural heritage connects",
+    "description": "",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2193,14 +2193,6 @@
     "description": "Kulturarv och digitalisering",
     "lang": "sv",
     "scope": "Sweden"
-  },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
   },
   "News – Wikimedia Foundation": {
     "file": "news___wikimedia_foundation.json",
@@ -2274,14 +2266,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "AlgorithmWatch": {
-    "file": "algorithmwatch.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "Germany"
-  },
   "Bündnis F5": {
     "file": "b_ndnis_f5.json",
     "count": 10,
@@ -2297,6 +2281,14 @@
     "description": "The CIS is a CNRS research center",
     "lang": "en",
     "scope": "France"
+  },
+  "Berkman Klein Center for Internet & Society at Harvard University Community": {
+    "file": "berkman_klein_center_for_internet___society_at_harvard_university_community.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Americas"
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
@@ -2329,6 +2321,14 @@
     "description": "Electronic Frontier Finland - Effi ry:n kotisivut",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Forum Information & Democracy": {
+    "file": "forum_information___democracy.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "ICANN New and Noteworthy": {
     "file": "icann_new_and_noteworthy.json",
@@ -2490,8 +2490,24 @@
     "lang": "en",
     "scope": "World"
   },
+  "Avoin hallinto": {
+    "file": "avoin_hallinto.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "CoP CC on Participatory and Deliberative Democracy": {
     "file": "cop_cc_on_participatory_and_deliberative_democracy.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Freedom House": {
+    "file": "freedom_house.json",
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
@@ -2538,6 +2554,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Ihmisoikeuskeskus": {
+    "file": "ihmisoikeuskeskus.json",
+    "count": 50,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Hacks/Hackers": {
     "file": "hacks_hackers.json",
     "count": 15,
@@ -2578,9 +2602,9 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Forbidden Stories": {
-    "file": "forbidden_stories.json",
-    "count": 10,
+  "Global Investigative Journalism Network": {
+    "file": "global_investigative_journalism_network.json",
+    "count": 20,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -2601,14 +2625,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Julkisen sanan neuvosto",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "NORDIS": {
     "file": "nordis.json",
@@ -2636,7 +2652,7 @@
   },
   "OCCRP Investigations": {
     "file": "occrp_investigations.json",
-    "count": 5,
+    "count": 6,
     "category": "Investigations + Conflict",
     "description": "OCCRP stories about Investigations delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
@@ -2644,7 +2660,7 @@
   },
   "OCCRP Scoops": {
     "file": "occrp_scoops.json",
-    "count": 9,
+    "count": 8,
     "category": "Investigations + Conflict",
     "description": "OCCRP stories about Scoops delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
@@ -2698,6 +2714,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Avate Audiovisuaalisen alan tekijät ry": {
+    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "AVEK": {
     "file": "avek.json",
     "count": 24,
@@ -2729,14 +2753,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Foundation for European Progressive Studies": {
-    "file": "foundation_for_european_progressive_studies.json",
-    "count": 12,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Project Syndicate economists": {
     "file": "project_syndicate_economists.json",
@@ -2833,6 +2849,14 @@
     "description": "A globally operating, independent think tank",
     "lang": "en",
     "scope": "Finland"
+  },
+  "Konzeptwerk Neue Ökonomie": {
+    "file": "konzeptwerk_neue__konomie.json",
+    "count": 10,
+    "category": "Sustainability + Foresight",
+    "description": "Weil Wirtschaft auch gerecht geht",
+    "lang": "de",
+    "scope": "Germany"
   },
   "Tulevaisuuden tutkimuksen seura ry": {
     "file": "tulevaisuuden_tutkimuksen_seura_ry.json",
