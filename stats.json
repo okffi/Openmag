@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "19.6.2026 klo 22.56.58"
+    "last_updated": "20.6.2026 klo 0.16.08"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
@@ -140,7 +140,7 @@
   },
   "Verde": {
     "file": "verde.json",
-    "count": 16,
+    "count": 15,
     "category": "Politics + Public sector",
     "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
     "lang": "fi",
@@ -212,7 +212,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 3,
+    "count": 9,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -252,7 +252,7 @@
   },
   "Politiikasta": {
     "file": "politiikasta.json",
-    "count": 3,
+    "count": 10,
     "category": "Politics + Public sector",
     "description": "Ajankohtaista analyysia yhteiskunnasta",
     "lang": "fi",
@@ -284,7 +284,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 14,
+    "count": 15,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -292,7 +292,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 17,
+    "count": 21,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -346,6 +346,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "UN News - Global perspective Human stories": {
+    "file": "un_news___global_perspective_human_stories.json",
+    "count": 57,
+    "category": "Global policy",
+    "description": "UN News - Global perspective Human stories | Global",
+    "lang": "en",
+    "scope": "World"
+  },
   "CSC": {
     "file": "csc.json",
     "count": 10,
@@ -356,7 +364,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 2,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -634,14 +642,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "UN News - Global perspective Human stories": {
-    "file": "un_news___global_perspective_human_stories.json",
-    "count": 57,
-    "category": "Global policy",
-    "description": "UN News - Global perspective Human stories | Global",
-    "lang": "en",
-    "scope": "World"
-  },
   "CIVICUS News": {
     "file": "civicus_news.json",
     "count": 50,
@@ -916,7 +916,7 @@
   },
   "FNG Research": {
     "file": "fng_research.json",
-    "count": 5,
+    "count": 10,
     "category": "Culture + Education",
     "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
     "lang": "fi",
@@ -1028,7 +1028,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 2,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1124,7 +1124,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -1132,7 +1132,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 3,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -1140,7 +1140,7 @@
   },
   "information labs": {
     "file": "information_labs.json",
-    "count": 3,
+    "count": 20,
     "category": "Digital Policy + Rights",
     "description": "Facts | Ideas | Discussions",
     "lang": "en",
@@ -1332,7 +1332,7 @@
   },
   "Taide- ja kulttuurivirasto": {
     "file": "taide__ja_kulttuurivirasto.json",
-    "count": 1,
+    "count": 10,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -1348,7 +1348,7 @@
   },
   "Open Science | Federation of Finnish Learned Societies": {
     "file": "open_science___federation_of_finnish_learned_societies.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "en",
@@ -1396,7 +1396,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -1548,7 +1548,7 @@
   },
   "MuseumNext": {
     "file": "museumnext.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Defining the Future of Museums",
     "lang": "en",
@@ -1690,6 +1690,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Avoin tiede": {
+    "file": "avoin_tiede.json",
+    "count": 9,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Datafied Life Collaboratory": {
     "file": "datafied_life_collaboratory.json",
     "count": 10,
@@ -1762,6 +1770,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "TSV": {
+    "file": "tsv.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "University of Oulu": {
     "file": "university_of_oulu.json",
     "count": 11,
@@ -1769,6 +1785,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Zooniverse": {
+    "file": "zooniverse.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
+    "lang": "en",
+    "scope": "World"
   },
   "Frame Contemporary Art Finland": {
     "file": "frame_contemporary_art_finland.json",
@@ -2074,6 +2098,14 @@
     "lang": "de",
     "scope": "Europe"
   },
+  "Wikimedia Sverige": {
+    "file": "wikimedia_sverige.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Vi arbetar för fri kunskap",
+    "lang": "sv",
+    "scope": "Sweden"
+  },
   "DHNB": {
     "file": "dhnb.json",
     "count": 10,
@@ -2153,14 +2185,6 @@
     "description": "Kulturarv och digitalisering",
     "lang": "sv",
     "scope": "Sweden"
-  },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
   },
   "News – Wikimedia Foundation": {
     "file": "news___wikimedia_foundation.json",
@@ -2362,19 +2386,19 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "OpenForum Europe": {
+    "file": "openforum_europe.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Open Technologies for a Competitive and Sovereign Europe",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Rajapinta": {
     "file": "rajapinta.json",
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Tietopoliitiikan yhteistyöryhmä": {
-    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2513,6 +2537,14 @@
     "description": "Investigative and movement-focused journalism at the nexus of gender, geopolitics, migration, technology and rights.",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
+  },
+  "Rising Voices": {
+    "file": "rising_voices.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "Helping the global population join the global conversation",
+    "lang": "en",
+    "scope": "World"
   },
   "Ihmisoikeuskeskus": {
     "file": "ihmisoikeuskeskus.json",
