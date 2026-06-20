@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "20.6.2026 klo 23.20.12"
+    "last_updated": "21.6.2026 klo 1.15.44"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -68,7 +68,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 47,
+    "count": 29,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -364,7 +364,7 @@
   },
   "Politiikasta": {
     "file": "politiikasta.json",
-    "count": 10,
+    "count": 3,
     "category": "Politics + Public sector",
     "description": "Ajankohtaista analyysia yhteiskunnasta",
     "lang": "fi",
@@ -508,7 +508,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 34,
+    "count": 24,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -900,7 +900,7 @@
   },
   "JSN": {
     "file": "jsn.json",
-    "count": 10,
+    "count": 1,
     "category": "Investigations + Conflict",
     "description": "Julkisen sanan neuvosto",
     "lang": "fi",
@@ -1036,7 +1036,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 2,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1380,7 +1380,7 @@
   },
   "Open Science | Federation of Finnish Learned Societies": {
     "file": "open_science___federation_of_finnish_learned_societies.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "en",
@@ -1572,7 +1572,7 @@
   },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
@@ -2274,6 +2274,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
+  },
   "YK:n alueellinen tiedotuskeskus – Suomi": {
     "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
     "count": 15,
@@ -2353,14 +2361,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Avoin tiede": {
-    "file": "avoin_tiede.json",
-    "count": 9,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Guides - bellingcat": {
     "file": "guides___bellingcat.json",
@@ -2745,14 +2745,6 @@
     "description": "Join us on a journey through time",
     "lang": "en",
     "scope": "Europe"
-  },
-  "TSV": {
-    "file": "tsv.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Tutkivan journalismin yhdistys –tutkiva.fi": {
     "file": "tutkivan_journalismin_yhdistys__tutkiva_fi.json",
