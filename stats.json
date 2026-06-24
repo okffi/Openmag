@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "25.6.2026 klo 0.37.54"
+    "last_updated": "25.6.2026 klo 2.13.16"
   },
   "Oulu2026": {
     "file": "oulu2026.json",
@@ -76,7 +76,7 @@
   },
   "AlgorithmWatch": {
     "file": "algorithmwatch.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -100,7 +100,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 44,
+    "count": 43,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -116,7 +116,7 @@
   },
   "Taide- ja kulttuurivirasto": {
     "file": "taide__ja_kulttuurivirasto.json",
-    "count": 10,
+    "count": 1,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -292,7 +292,7 @@
   },
   "information labs": {
     "file": "information_labs.json",
-    "count": 20,
+    "count": 3,
     "category": "Digital Policy + Rights",
     "description": "Facts | Ideas | Discussions",
     "lang": "en",
@@ -308,7 +308,7 @@
   },
   "JSN": {
     "file": "jsn.json",
-    "count": 2,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "Julkisen sanan neuvosto",
     "lang": "fi",
@@ -348,7 +348,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -634,19 +634,19 @@
     "lang": "en",
     "scope": "World"
   },
-  "Global Voices Advox": {
-    "file": "global_voices_advox.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Defending Free Speech Online",
-    "lang": "en",
-    "scope": "World"
-  },
   "Internet Archive Blogs": {
     "file": "internet_archive_blogs.json",
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Updates from the Internet Archive",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Global Voices Advox": {
+    "file": "global_voices_advox.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Defending Free Speech Online",
     "lang": "en",
     "scope": "World"
   },
@@ -788,7 +788,7 @@
   },
   "OpenForum Europe": {
     "file": "openforum_europe.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "Open Technologies for a Competitive and Sovereign Europe",
     "lang": "en",
@@ -884,7 +884,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 10,
+    "count": 4,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -892,7 +892,7 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 2,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
@@ -964,7 +964,7 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 10,
+    "count": 2,
     "category": "Investigations + Conflict",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
@@ -1116,7 +1116,7 @@
   },
   "Elinkeinoelämän tutkimuslaitos (Etla)": {
     "file": "elinkeinoel_m_n_tutkimuslaitos__etla_.json",
-    "count": 50,
+    "count": 4,
     "category": "(Open) Science + Research",
     "description": "Elinkeinoelämän tutkimuslaitos",
     "lang": "fi",
@@ -1476,7 +1476,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1508,7 +1508,7 @@
   },
   "FNG Research": {
     "file": "fng_research.json",
-    "count": 10,
+    "count": 4,
     "category": "Culture + Education",
     "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
     "lang": "fi",
@@ -1778,6 +1778,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "European Research Council (ERC)": {
     "file": "european_research_council__erc_.json",
     "count": 10,
@@ -1871,14 +1879,6 @@
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
     "scope": "World"
   },
@@ -2202,6 +2202,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Rakennustaiteen Seura ry": {
     "file": "rakennustaiteen_seura_ry.json",
     "count": 5,
@@ -2247,6 +2255,22 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Step into Tomorrow",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Tietopoliitiikan yhteistyöryhmä": {
+    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
     "scope": "World"
   },
@@ -2377,14 +2401,6 @@
     "description": "Electronic Frontier Finland - Effi ry:n kotisivut",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Euronews | The Europe Conversation": {
-    "file": "euronews___the_europe_conversation.json",
-    "count": 50,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "European Parliament | Culture and education": {
     "file": "european_parliament___culture_and_education.json",
@@ -2530,14 +2546,6 @@
     "lang": "en",
     "scope": "Finland"
   },
-  "MuseumNext": {
-    "file": "museumnext.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Defining the Future of Museums",
-    "lang": "en",
-    "scope": "World"
-  },
   "Nordisk kulturkontakt": {
     "file": "nordisk_kulturkontakt.json",
     "count": 12,
@@ -2569,6 +2577,22 @@
     "description": "OCCRP stories about Scoops delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
     "scope": "World"
+  },
+  "Open By Default": {
+    "file": "open_by_default.json",
+    "count": 8,
+    "category": "(Open) Data + Technology",
+    "description": "",
+    "lang": "en",
+    "scope": "Netherlands"
+  },
+  "openDemocracy": {
+    "file": "opendemocracy.json",
+    "count": 15,
+    "category": "Human Rights + Democracy",
+    "description": "Investigative and movement-focused journalism at the nexus of gender, geopolitics, migration, technology and rights.",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
   },
   "Vereniging Open Nederland": {
     "file": "vereniging_open_nederland.json",
