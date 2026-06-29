@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "29.6.2026 klo 21.18.27"
+    "last_updated": "29.6.2026 klo 23.51.53"
   },
   "Kulta ry": {
     "file": "kulta_ry.json",
@@ -460,7 +460,7 @@
   },
   "Rajapinta": {
     "file": "rajapinta.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
@@ -468,7 +468,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 47,
+    "count": 48,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -484,7 +484,7 @@
   },
   "Ministry for Foreign Affairs of Finland | News": {
     "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 20,
+    "count": 24,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -492,7 +492,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 15,
+    "count": 16,
     "category": "Investigations + Conflict",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -556,7 +556,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 23,
+    "count": 22,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -564,7 +564,7 @@
   },
   "resilience": {
     "file": "resilience.json",
-    "count": 17,
+    "count": 16,
     "category": "Perspectives",
     "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
@@ -593,6 +593,30 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Timeless": {
+    "file": "timeless.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Stories from the Library of Congress",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Electronic Frontier Foundation": {
+    "file": "electronic_frontier_foundation.json",
+    "count": 11,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "xkcd": {
+    "file": "xkcd.json",
+    "count": 4,
+    "category": "(Open) Data + Technology",
+    "description": "xkcd.com: A webcomic of romance and math humor.",
+    "lang": "en",
+    "scope": "World"
   },
   "Weekly OSM": {
     "file": "weekly_osm.json",
@@ -716,7 +740,7 @@
   },
   "UN News - Global perspective Human stories": {
     "file": "un_news___global_perspective_human_stories.json",
-    "count": 55,
+    "count": 54,
     "category": "Global policy",
     "description": "UN News - Global perspective Human stories | Global",
     "lang": "en",
@@ -724,7 +748,7 @@
   },
   "UN News - Global perspective Human stories | Human Rights": {
     "file": "un_news___global_perspective_human_stories___human_rights.json",
-    "count": 19,
+    "count": 18,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -834,14 +858,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Electronic Frontier Foundation": {
-    "file": "electronic_frontier_foundation.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Epressi - Ulkomaat": {
     "file": "epressi___ulkomaat.json",
     "count": 19,
@@ -922,17 +938,9 @@
     "lang": "en",
     "scope": "World"
   },
-  "xkcd": {
-    "file": "xkcd.json",
-    "count": 4,
-    "category": "(Open) Data + Technology",
-    "description": "xkcd.com: A webcomic of romance and math humor.",
-    "lang": "en",
-    "scope": "World"
-  },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -977,14 +985,6 @@
     "description": "Neues aus dem Wikimedia-Universum",
     "lang": "de",
     "scope": "Germany"
-  },
-  "Timeless": {
-    "file": "timeless.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Stories from the Library of Congress",
-    "lang": "en",
-    "scope": "World"
   },
   "European Union": {
     "file": "european_union.json",
@@ -1602,6 +1602,14 @@
     "lang": "de",
     "scope": "Europe"
   },
+  "Avate Audiovisuaalisen alan tekijät ry": {
+    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Avoin hallinto": {
     "file": "avoin_hallinto.json",
     "count": 10,
@@ -1617,14 +1625,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Zooniverse": {
-    "file": "zooniverse.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
-    "lang": "en",
-    "scope": "World"
   },
   "Lastuja Suomen historiasta": {
     "file": "lastuja_suomen_historiasta.json",
@@ -1841,14 +1841,6 @@
     "description": "Soome Eesti Instituudi Sihtasutus",
     "lang": "en",
     "scope": "Estonia"
-  },
-  "FNG Research": {
-    "file": "fng_research.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Forbidden Stories": {
     "file": "forbidden_stories.json",
@@ -2434,6 +2426,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Euronews | The Europe Conversation": {
+    "file": "euronews___the_europe_conversation.json",
+    "count": 50,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "European Parliament | Culture and education": {
     "file": "european_parliament___culture_and_education.json",
     "count": 25,
@@ -2593,14 +2593,6 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
-  },
-  "MuseumNext": {
-    "file": "museumnext.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Defining the Future of Museums",
-    "lang": "en",
-    "scope": "World"
   },
   "Nordic Culture Point": {
     "file": "nordic_culture_point.json",
