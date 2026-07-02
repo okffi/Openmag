@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "2.7.2026 klo 21.40.29"
+    "last_updated": "2.7.2026 klo 23.23.15"
   },
   "The Foreign Policy Centre": {
     "file": "the_foreign_policy_centre.json",
@@ -20,7 +20,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 23,
+    "count": 24,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -60,7 +60,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 16,
+    "count": 15,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -324,7 +324,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3712,
+    "count": 3713,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -538,6 +538,30 @@
     "lang": "en",
     "scope": "World"
   },
+  "Disconnect": {
+    "file": "disconnect.json",
+    "count": 15,
+    "category": "Digital Policy + Rights",
+    "description": "Tech analysis without the boosterism",
+    "lang": "en",
+    "scope": "Sweden"
+  },
+  "UN News - Global perspective Human stories | Human Rights": {
+    "file": "un_news___global_perspective_human_stories___human_rights.json",
+    "count": 22,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "OCHA": {
+    "file": "ocha.json",
+    "count": 11,
+    "category": "Investigations + Conflict",
+    "description": "United Nations Office for the Coordination of Humanitarian Affairs",
+    "lang": "en",
+    "scope": "World"
+  },
   "Internet Archive Blogs": {
     "file": "internet_archive_blogs.json",
     "count": 10,
@@ -738,14 +762,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "OCHA": {
-    "file": "ocha.json",
-    "count": 11,
-    "category": "Investigations + Conflict",
-    "description": "United Nations Office for the Coordination of Humanitarian Affairs",
-    "lang": "en",
-    "scope": "World"
-  },
   "xkcd": {
     "file": "xkcd.json",
     "count": 4,
@@ -764,7 +780,7 @@
   },
   "information labs": {
     "file": "information_labs.json",
-    "count": 1,
+    "count": 20,
     "category": "Digital Policy + Rights",
     "description": "Facts | Ideas | Discussions",
     "lang": "en",
@@ -772,7 +788,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 3,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -1314,14 +1330,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "UN News - Global perspective Human stories | Human Rights": {
-    "file": "un_news___global_perspective_human_stories___human_rights.json",
-    "count": 21,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Open Knowledge Sweden": {
     "file": "open_knowledge_sweden.json",
     "count": 10,
@@ -1506,22 +1514,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Kansanvalistusseura": {
-    "file": "kansanvalistusseura.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Tervetuloa uudelle verkkosivustolle",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Reuters Institute for the Study of Journalism": {
-    "file": "reuters_institute_for_the_study_of_journalism.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Investigations – ACDC": {
     "file": "investigations___acdc.json",
     "count": 10,
@@ -1634,6 +1626,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Copyright Literacy": {
+    "file": "copyright_literacy.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Decoding copyright and bringing you enlightenment",
+    "lang": "en",
+    "scope": "World"
+  },
   "correctiv.org": {
     "file": "correctiv_org.json",
     "count": 100,
@@ -1689,14 +1689,6 @@
     "description": "Digital Humanities in the Nordic and Baltic Countries",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
-  },
-  "Disconnect": {
-    "file": "disconnect.json",
-    "count": 15,
-    "category": "Digital Policy + Rights",
-    "description": "Tech analysis without the boosterism",
-    "lang": "en",
-    "scope": "Sweden"
   },
   "Docomomo Suomi Finland ry": {
     "file": "docomomo_suomi_finland_ry.json",
@@ -1954,6 +1946,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Kansanvalistusseura": {
+    "file": "kansanvalistusseura.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Tervetuloa uudelle verkkosivustolle",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Konzeptwerk Neue Ökonomie": {
     "file": "konzeptwerk_neue__konomie.json",
     "count": 10,
@@ -2010,6 +2010,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Taide- ja kulttuurivirasto": {
+    "file": "taide__ja_kulttuurivirasto.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "LIBER Europe": {
     "file": "liber_europe.json",
     "count": 1,
@@ -2041,6 +2049,14 @@
     "description": "",
     "lang": "en",
     "scope": "World"
+  },
+  "Michael Culture Association": {
+    "file": "michael_culture_association.json",
+    "count": 1,
+    "category": "Digital Culture + Heritage",
+    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Maaseudun sivistysliitto": {
     "file": "maaseudun_sivistysliitto.json",
@@ -2122,6 +2138,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "OpenForum Europe": {
+    "file": "openforum_europe.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "Open Technologies for a Competitive and Sovereign Europe",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Open Search Foundation": {
     "file": "open_search_foundation.json",
     "count": 10,
@@ -2135,6 +2159,14 @@
     "count": 10,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Open Technology Research": {
+    "file": "open_technology_research.json",
+    "count": 8,
+    "category": "(Open) Data + Technology",
+    "description": "Building Evidence, Connecting Researchers, Informing Policy",
     "lang": "en",
     "scope": "World"
   },
@@ -2210,6 +2242,14 @@
     "lang": "fi",
     "scope": "World"
   },
+  "Reuters Institute for the Study of Journalism": {
+    "file": "reuters_institute_for_the_study_of_journalism.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Rising Voices": {
     "file": "rising_voices.json",
     "count": 10,
@@ -2273,6 +2313,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
   },
   "YK:n alueellinen tiedotuskeskus – Suomi": {
     "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
@@ -2345,6 +2393,14 @@
     "description": "Kulttuuripolitiikan tutkimuskeskus Cupore",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "DARIAH-EU": {
+    "file": "dariah_eu.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Digital Research Infrastructure for the Arts and Humanities",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Digime": {
     "file": "digime.json",
@@ -2466,6 +2522,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Knowledge Rights 21": {
+    "file": "knowledge_rights_21.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "We advocate for your right to access and share knowledge!",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Kulttilehdet": {
     "file": "kulttilehdet.json",
     "count": 10,
@@ -2514,20 +2578,20 @@
     "lang": "en",
     "scope": "Finland"
   },
+  "MuseumNext": {
+    "file": "museumnext.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Defining the Future of Museums",
+    "lang": "en",
+    "scope": "World"
+  },
   "Norden | Pohjoismainen yhteistyö": {
     "file": "norden___pohjoismainen_yhteisty_.json",
     "count": 10,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
-    "scope": "Nordic + Baltic countries"
-  },
-  "NORDIS": {
-    "file": "nordis.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "The Nordic Observatory for Digital Media and Information Disorder",
-    "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
   "OCCRP Announcements": {
@@ -2561,14 +2625,6 @@
     "description": "OCCRP stories about Scoops delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
     "scope": "World"
-  },
-  "Open By Default": {
-    "file": "open_by_default.json",
-    "count": 8,
-    "category": "(Open) Data + Technology",
-    "description": "",
-    "lang": "en",
-    "scope": "Netherlands"
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
