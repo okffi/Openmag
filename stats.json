@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "5.7.2026 klo 20.19.12"
+    "last_updated": "5.7.2026 klo 22.34.13"
   },
   "Freedom House": {
     "file": "freedom_house.json",
@@ -66,6 +66,30 @@
     "lang": "en",
     "scope": "World"
   },
+  "IJ4EU": {
+    "file": "ij4eu.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Supporting cross-border investigative journalism in Europe",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 49,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "United Nations | The Guardian": {
+    "file": "united_nations___the_guardian.json",
+    "count": 20,
+    "category": "Global policy",
+    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
+    "lang": "en",
+    "scope": "World"
+  },
   "Diff": {
     "file": "diff.json",
     "count": 10,
@@ -103,14 +127,6 @@
     "count": 10,
     "category": "Sustainability + Foresight",
     "description": "17 Goals to Transform Our World",
-    "lang": "en",
-    "scope": "World"
-  },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 49,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
     "scope": "World"
   },
@@ -244,7 +260,7 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 10,
+    "count": 2,
     "category": "Investigations + Conflict",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
@@ -348,7 +364,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 5,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -490,14 +506,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "United Nations | The Guardian": {
-    "file": "united_nations___the_guardian.json",
-    "count": 20,
-    "category": "Global policy",
-    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
-    "lang": "en",
-    "scope": "World"
-  },
   "UN Global Pulse": {
     "file": "un_global_pulse.json",
     "count": 10,
@@ -532,7 +540,7 @@
   },
   "Global Investigative Journalism Network": {
     "file": "global_investigative_journalism_network.json",
-    "count": 12,
+    "count": 11,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -553,6 +561,14 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
+  },
+  "Internet Governance Forum (IGF)": {
+    "file": "internet_governance_forum__igf_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "Timeless": {
     "file": "timeless.json",
@@ -772,7 +788,7 @@
   },
   "Svenska litteratursällskapet i Finland": {
     "file": "svenska_litteraturs_llskapet_i_finland.json",
-    "count": 2,
+    "count": 10,
     "category": "Culture + Education",
     "description": "",
     "lang": "sv",
@@ -836,7 +852,7 @@
   },
   "Internet Archive Blogs": {
     "file": "internet_archive_blogs.json",
-    "count": 4,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Updates from the Internet Archive",
     "lang": "en",
@@ -876,7 +892,7 @@
   },
   "Voima": {
     "file": "voima.json",
-    "count": 4,
+    "count": 10,
     "category": "Perspectives",
     "description": "",
     "lang": "fi",
@@ -908,7 +924,7 @@
   },
   "Dittmar & Indrenius Attorneys Ltd.": {
     "file": "dittmar___indrenius_attorneys_ltd_.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "fi",
@@ -1060,7 +1076,7 @@
   },
   "Forum Information & Democracy": {
     "file": "forum_information___democracy.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -1074,17 +1090,9 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "IJ4EU": {
-    "file": "ij4eu.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Supporting cross-border investigative journalism in Europe",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Le Monde diplomatique - English edition": {
     "file": "le_monde_diplomatique___english_edition.json",
-    "count": 5,
+    "count": 10,
     "category": "Global policy",
     "description": "",
     "lang": "en",
@@ -1132,7 +1140,7 @@
   },
   "Ministry for Foreign Affairs of Finland | News": {
     "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 20,
+    "count": 22,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -1324,7 +1332,7 @@
   },
   "UN Women": {
     "file": "un_women.json",
-    "count": 1,
+    "count": 12,
     "category": "Global policy",
     "description": "",
     "lang": "fi",
@@ -1468,7 +1476,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -1575,6 +1583,14 @@
     "count": 10,
     "category": "Investigations + Conflict",
     "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Investigations – ACDC": {
+    "file": "investigations___acdc.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
     "lang": "en",
     "scope": "World"
   },
@@ -1825,6 +1841,14 @@
     "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Forbidden Stories": {
+    "file": "forbidden_stories.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "FOSDEM 2026": {
     "file": "fosdem_2026.json",
@@ -2178,6 +2202,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Open Regulatory Compliance Working Group": {
+    "file": "open_regulatory_compliance_working_group.json",
+    "count": 74,
+    "category": "(Open) Data + Technology",
+    "description": "Recent content on Open Regulatory Compliance Working Group",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Oulun museo- ja tiedekeskus": {
     "file": "oulun_museo__ja_tiedekeskus.json",
     "count": 10,
@@ -2466,14 +2498,6 @@
     "lang": "fr",
     "scope": "Europe"
   },
-  "Internet Governance Forum (IGF)": {
-    "file": "internet_governance_forum__igf_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "JOKES": {
     "file": "jokes.json",
     "count": 10,
@@ -2752,6 +2776,14 @@
     "category": "Perspectives",
     "description": "Project Syndicate produces and delivers original commentaries by prominent economists, political leaders, scholars, business leaders, and civic activists to a global audience, including nearly 500 media outlets in more than 150 countries",
     "lang": "en",
+    "scope": "World"
+  },
+  "Tutkivan journalismin yhdistys –tutkiva.fi": {
+    "file": "tutkivan_journalismin_yhdistys__tutkiva_fi.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "fi",
     "scope": "World"
   },
   "Tulevaisuuden tutkimuksen seura ry": {
