@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "9.7.2026 klo 21.03.19"
+    "last_updated": "9.7.2026 klo 23.51.45"
   },
   "Institute of Network Cultures": {
     "file": "institute_of_network_cultures.json",
@@ -124,7 +124,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 38,
+    "count": 39,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -364,7 +364,7 @@
   },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
-    "count": 11,
+    "count": 13,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -404,7 +404,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 51,
+    "count": 53,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -508,7 +508,7 @@
   },
   "OCHA": {
     "file": "ocha.json",
-    "count": 12,
+    "count": 14,
     "category": "Investigations + Conflict",
     "description": "United Nations Office for the Coordination of Humanitarian Affairs",
     "lang": "en",
@@ -519,6 +519,22 @@
     "count": 20,
     "category": "Investigations + Conflict",
     "description": "We don't just build maps, we build mappers!",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News - Global perspective Human stories | Middle East": {
+    "file": "un_news___global_perspective_human_stories___middle_east.json",
+    "count": 30,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News - Global perspective Human stories | Human Rights": {
+    "file": "un_news___global_perspective_human_stories___human_rights.json",
+    "count": 21,
+    "category": "Human Rights + Democracy",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -559,14 +575,6 @@
     "count": 56,
     "category": "Global policy",
     "description": "UN News - Global perspective Human stories | Global",
-    "lang": "en",
-    "scope": "World"
-  },
-  "UN News - Global perspective Human stories | Middle East": {
-    "file": "un_news___global_perspective_human_stories___middle_east.json",
-    "count": 30,
-    "category": "Investigations + Conflict",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -714,14 +722,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "UN News - Global perspective Human stories | Human Rights": {
-    "file": "un_news___global_perspective_human_stories___human_rights.json",
-    "count": 21,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "International Council on Archives (ICA)": {
     "file": "international_council_on_archives__ica_.json",
     "count": 10,
@@ -764,7 +764,7 @@
   },
   "EUvsDisinfo": {
     "file": "euvsdisinfo.json",
-    "count": 10,
+    "count": 2,
     "category": "Investigations + Conflict",
     "description": "DON'T BE DECEIVED, QUESTION EVEN MORE",
     "lang": "en",
@@ -1092,7 +1092,7 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 2,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
@@ -1164,7 +1164,7 @@
   },
   "Internet Governance Forum (IGF)": {
     "file": "internet_governance_forum__igf_.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -1466,30 +1466,6 @@
     "lang": "sv",
     "scope": "Sweden"
   },
-  "The Signals Network": {
-    "file": "the_signals_network.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Holding power accountable one whistleblower at a time.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "The Ulkopolitist": {
-    "file": "the_ulkopolitist.json",
-    "count": 10,
-    "category": "Global policy",
-    "description": "Parempaa ulkopoliittista keskustelua.",
-    "lang": "fi",
-    "scope": "World"
-  },
-  "Helsinki-Uusimaa Region": {
-    "file": "helsinki_uusimaa_region.json",
-    "count": 10,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Global Voices Advox": {
     "file": "global_voices_advox.json",
     "count": 10,
@@ -1695,6 +1671,14 @@
     "count": 10,
     "category": "Culture + Education",
     "description": "Suomen elinkeinoelämän keskusarkisto",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2194,6 +2178,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Pedaali": {
+    "file": "pedaali.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Museopedagoginen yhdistys",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Pelitutkimuksen vuosikirja": {
     "file": "pelitutkimuksen_vuosikirja.json",
     "count": 12,
@@ -2217,14 +2209,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Rajapinta": {
-    "file": "rajapinta.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "researcher community focused on digital social sciences",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Rakennustaiteen Seura ry": {
     "file": "rakennustaiteen_seura_ry.json",
@@ -2298,6 +2282,22 @@
     "lang": "en",
     "scope": "World"
   },
+  "The Signals Network": {
+    "file": "the_signals_network.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Holding power accountable one whistleblower at a time.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Tietopoliitiikan yhteistyöryhmä": {
+    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Tekijänoikeuden tiedotus- ja valvontakeskus ry": {
     "file": "tekij_noikeuden_tiedotus__ja_valvontakeskus_ry.json",
     "count": 10,
@@ -2312,6 +2312,14 @@
     "category": "Digital Culture + Heritage",
     "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
+    "scope": "World"
+  },
+  "The Ulkopolitist": {
+    "file": "the_ulkopolitist.json",
+    "count": 10,
+    "category": "Global policy",
+    "description": "Parempaa ulkopoliittista keskustelua.",
+    "lang": "fi",
     "scope": "World"
   },
   "YK:n alueellinen tiedotuskeskus – Suomi": {
@@ -2329,6 +2337,14 @@
     "description": "",
     "lang": "en",
     "scope": "World"
+  },
+  "Helsinki-Uusimaa Region": {
+    "file": "helsinki_uusimaa_region.json",
+    "count": 10,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Villa Karo": {
     "file": "villa_karo.json",
@@ -2410,6 +2426,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "DARIAH-EU": {
+    "file": "dariah_eu.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Digital Research Infrastructure for the Arts and Humanities",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Digime": {
     "file": "digime.json",
     "count": 10,
@@ -2425,6 +2449,14 @@
     "description": "Direkt36 is a non-profit investigative journalism center with the mission to hold powerful people and institutions accountable.",
     "lang": "en",
     "scope": "Hungary"
+  },
+  "Euronews | The Europe Conversation": {
+    "file": "euronews___the_europe_conversation.json",
+    "count": 49,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "European Parliament | Culture and education": {
     "file": "european_parliament___culture_and_education.json",
