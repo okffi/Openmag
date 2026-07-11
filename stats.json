@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "11.7.2026 klo 20.04.25"
+    "last_updated": "11.7.2026 klo 22.13.52"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -28,7 +28,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 15,
+    "count": 16,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -71,6 +71,38 @@
     "count": 60,
     "category": "Investigations + Conflict",
     "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Disconnect": {
+    "file": "disconnect.json",
+    "count": 15,
+    "category": "Digital Policy + Rights",
+    "description": "Tech analysis without the boosterism",
+    "lang": "en",
+    "scope": "Sweden"
+  },
+  "Global Investigative Journalism Network": {
+    "file": "global_investigative_journalism_network.json",
+    "count": 14,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News - Global perspective Human stories | Middle East": {
+    "file": "un_news___global_perspective_human_stories___middle_east.json",
+    "count": 29,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Technology – POLITICO": {
+    "file": "technology___politico.json",
+    "count": 31,
+    "category": "Digital Policy + Rights",
+    "description": "European Politics, Policy, Government News",
     "lang": "en",
     "scope": "World"
   },
@@ -298,14 +330,6 @@
     "lang": "en",
     "scope": "Netherlands"
   },
-  "Technology – POLITICO": {
-    "file": "technology___politico.json",
-    "count": 31,
-    "category": "Digital Policy + Rights",
-    "description": "European Politics, Policy, Government News",
-    "lang": "en",
-    "scope": "World"
-  },
   "PreventionWeb": {
     "file": "preventionweb.json",
     "count": 43,
@@ -486,14 +510,6 @@
     "file": "un_news___global_perspective_human_stories___europe.json",
     "count": 30,
     "category": "Global policy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "UN News - Global perspective Human stories | Middle East": {
-    "file": "un_news___global_perspective_human_stories___middle_east.json",
-    "count": 29,
-    "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
     "scope": "World"
@@ -841,14 +857,6 @@
     "description": "We take care of the cultural ecosystem.",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Disconnect": {
-    "file": "disconnect.json",
-    "count": 15,
-    "category": "Digital Policy + Rights",
-    "description": "Tech analysis without the boosterism",
-    "lang": "en",
-    "scope": "Sweden"
   },
   "The Foreign Policy Centre": {
     "file": "the_foreign_policy_centre.json",
@@ -1418,62 +1426,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Finnish Cultural Institute for the Benelux": {
-    "file": "finnish_cultural_institute_for_the_benelux.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "en",
-    "scope": "Belgium"
-  },
-  "Suomen Benelux-instituutti": {
-    "file": "suomen_benelux_instituutti.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Finnish Cultural Institute for the Benelux",
-    "lang": "fi",
-    "scope": "Europe"
-  },
-  "The Heritage Management Organization": {
-    "file": "the_heritage_management_organization.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Training Heritage Leaders",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Forum Information & Democracy": {
-    "file": "forum_information___democracy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Suomen kulttuuri- ja tiedeinstituutit": {
-    "file": "suomen_kulttuuri__ja_tiedeinstituutit.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Le Monde diplomatique - English edition": {
-    "file": "le_monde_diplomatique___english_edition.json",
-    "count": 10,
-    "category": "Global policy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Oikeusblogi": {
-    "file": "oikeusblogi.json",
-    "count": 20,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Global Voices Advox": {
     "file": "global_voices_advox.json",
     "count": 10,
@@ -1537,6 +1489,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Zooniverse": {
+    "file": "zooniverse.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
+    "lang": "en",
+    "scope": "World"
   },
   "Lastuja Suomen historiasta": {
     "file": "lastuja_suomen_historiasta.json",
@@ -1666,14 +1626,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "European Research Council (ERC)": {
     "file": "european_research_council__erc_.json",
     "count": 10,
@@ -1729,6 +1681,22 @@
     "description": "Vi presenterar finländskt kultur- och samhällsliv i Sverige.",
     "lang": "fi",
     "scope": "Sweden"
+  },
+  "Finnish Cultural Institute for the Benelux": {
+    "file": "finnish_cultural_institute_for_the_benelux.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "en",
+    "scope": "Belgium"
+  },
+  "Suomen Benelux-instituutti": {
+    "file": "suomen_benelux_instituutti.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Finnish Cultural Institute for the Benelux",
+    "lang": "fi",
+    "scope": "Europe"
   },
   "The Finnland-Institut": {
     "file": "the_finnland_institut.json",
@@ -1802,14 +1770,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Global Investigative Journalism Network": {
-    "file": "global_investigative_journalism_network.json",
-    "count": 20,
-    "category": "Investigations + Conflict",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
     "count": 10,
@@ -1825,6 +1785,14 @@
     "description": "Heritage Hub for Central and Eastern Europe",
     "lang": "en",
     "scope": "Poland"
+  },
+  "The Heritage Management Organization": {
+    "file": "the_heritage_management_organization.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Training Heritage Leaders",
+    "lang": "en",
+    "scope": "Europe"
   },
   "ICOM Finland": {
     "file": "icom_finland.json",
@@ -1857,6 +1825,22 @@
     "description": "- Hosted by the American University Program on Information Justice and Intellectual Property",
     "lang": "en",
     "scope": "World"
+  },
+  "Forum Information & Democracy": {
+    "file": "forum_information___democracy.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Suomen kulttuuri- ja tiedeinstituutit": {
+    "file": "suomen_kulttuuri__ja_tiedeinstituutit.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Suomen Rooman-instituutti": {
     "file": "suomen_rooman_instituutti.json",
@@ -2050,6 +2034,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Le Monde diplomatique - English edition": {
+    "file": "le_monde_diplomatique___english_edition.json",
+    "count": 10,
+    "category": "Global policy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Maaseudun sivistysliitto": {
     "file": "maaseudun_sivistysliitto.json",
     "count": 10,
@@ -2104,6 +2096,14 @@
     "category": "Politics + Public sector",
     "description": "",
     "lang": "en",
+    "scope": "Finland"
+  },
+  "Oikeusblogi": {
+    "file": "oikeusblogi.json",
+    "count": 20,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
     "scope": "Finland"
   },
   "Open Knowledge Foundation DE": {
@@ -2298,14 +2298,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Tietopoliitiikan yhteistyöryhmä": {
-    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Tekijänoikeuden tiedotus- ja valvontakeskus ry": {
     "file": "tekij_noikeuden_tiedotus__ja_valvontakeskus_ry.json",
     "count": 10,
@@ -2369,6 +2361,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Wikimedia Sverige": {
+    "file": "wikimedia_sverige.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Vi arbetar för fri kunskap",
+    "lang": "sv",
+    "scope": "Sweden"
   },
   "American Library Association": {
     "file": "american_library_association.json",
@@ -2601,14 +2601,6 @@
     "description": "Ei klikkiotsikoita, ei typeryyksiä. Vain juttuja, joilla on väliä.",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "MuseumNext": {
-    "file": "museumnext.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Defining the Future of Museums",
-    "lang": "en",
-    "scope": "World"
   },
   "MustRead": {
     "file": "mustread.json",
