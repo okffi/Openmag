@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "12.7.2026 klo 16.42.04"
+    "last_updated": "12.7.2026 klo 18.03.48"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -20,7 +20,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 16,
+    "count": 17,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -36,7 +36,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 13,
+    "count": 14,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -52,9 +52,25 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 41,
+    "count": 42,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Weekly OSM": {
+    "file": "weekly_osm.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "weekly &#8211; semanario &#8211; hebdo &#8211; 週刊 &#8211; týdeník &#8211; Wochennotiz &#8211; 주간 &#8211; tygodnik",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Tech Policy Press": {
+    "file": "tech_policy_press.json",
+    "count": 3741,
+    "category": "Digital Policy + Rights",
+    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
     "scope": "World"
   },
@@ -378,14 +394,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Tech Policy Press": {
-    "file": "tech_policy_press.json",
-    "count": 3741,
-    "category": "Digital Policy + Rights",
-    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
-    "lang": "en",
-    "scope": "World"
-  },
   "United Nations | The Guardian": {
     "file": "united_nations___the_guardian.json",
     "count": 20,
@@ -436,7 +444,7 @@
   },
   "Ministry for Foreign Affairs of Finland | News": {
     "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 20,
+    "count": 23,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -732,7 +740,7 @@
   },
   "information labs": {
     "file": "information_labs.json",
-    "count": 2,
+    "count": 20,
     "category": "Digital Policy + Rights",
     "description": "Facts | Ideas | Discussions",
     "lang": "en",
@@ -748,7 +756,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -1074,14 +1082,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Weekly OSM": {
-    "file": "weekly_osm.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "weekly &#8211; semanario &#8211; hebdo &#8211; 週刊 &#8211; týdeník &#8211; Wochennotiz &#8211; 주간 &#8211; tygodnik",
-    "lang": "en",
-    "scope": "World"
-  },
   "Open Science | Federation of Finnish Learned Societies": {
     "file": "open_science___federation_of_finnish_learned_societies.json",
     "count": 10,
@@ -1388,7 +1388,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1412,7 +1412,7 @@
   },
   "Open Knowledge Foundation Blog": {
     "file": "open_knowledge_foundation_blog.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Content for a fair, sustainable and open future",
     "lang": "en",
@@ -1473,22 +1473,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Suomen kirjastoseura": {
-    "file": "suomen_kirjastoseura.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Sveriges Museer": {
-    "file": "sveriges_museer.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Vi tar tillvara och driver den svenska museisektorns gemensamma intressen.",
-    "lang": "sv",
-    "scope": "Sweden"
   },
   "Global Voices Advox": {
     "file": "global_voices_advox.json",
@@ -1922,14 +1906,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Julkisen sanan neuvosto",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Kansalaisfoorumi": {
     "file": "kansalaisfoorumi.json",
     "count": 10,
@@ -2138,6 +2114,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Open Technology Research": {
+    "file": "open_technology_research.json",
+    "count": 8,
+    "category": "(Open) Data + Technology",
+    "description": "Building Evidence, Connecting Researchers, Informing Policy",
+    "lang": "en",
+    "scope": "World"
+  },
   "OpenWebSearch.eu": {
     "file": "openwebsearch_eu.json",
     "count": 10,
@@ -2210,14 +2194,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Rising Voices": {
-    "file": "rising_voices.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "Helping the global population join the global conversation",
-    "lang": "en",
-    "scope": "World"
-  },
   "CC Sweden": {
     "file": "cc_sweden.json",
     "count": 10,
@@ -2242,6 +2218,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Suomen kirjastoseura": {
+    "file": "suomen_kirjastoseura.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Kirjastolehti": {
     "file": "kirjastolehti.json",
     "count": 10,
@@ -2249,6 +2233,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Sveriges Museer": {
+    "file": "sveriges_museer.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Vi tar tillvara och driver den svenska museisektorns gemensamma intressen.",
+    "lang": "sv",
+    "scope": "Sweden"
   },
   "Blue Shield International": {
     "file": "blue_shield_international.json",
@@ -2345,14 +2337,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Wikimedia Sverige": {
-    "file": "wikimedia_sverige.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Vi arbetar för fri kunskap",
-    "lang": "sv",
-    "scope": "Sweden"
   },
   "American Library Association": {
     "file": "american_library_association.json",
