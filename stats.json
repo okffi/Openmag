@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "12.7.2026 klo 9.40.34"
+    "last_updated": "12.7.2026 klo 12.07.44"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -18,9 +18,25 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Global Voices": {
+    "file": "global_voices.json",
+    "count": 16,
+    "category": "Human Rights + Democracy",
+    "description": "Citizen media stories from around the world",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Yle | Kansainvälinen politiikka": {
+    "file": "yle___kansainv_linen_politiikka.json",
+    "count": 22,
+    "category": "Politics + Public sector",
+    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
+    "lang": "fi",
+    "scope": "World"
+  },
   "Diff": {
     "file": "diff.json",
-    "count": 10,
+    "count": 11,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -50,14 +66,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Global Voices": {
-    "file": "global_voices.json",
-    "count": 16,
-    "category": "Human Rights + Democracy",
-    "description": "Citizen media stories from around the world",
-    "lang": "en",
-    "scope": "World"
-  },
   "UN News - Global perspective Human stories | Middle East": {
     "file": "un_news___global_perspective_human_stories___middle_east.json",
     "count": 30,
@@ -76,7 +84,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 50,
+    "count": 48,
     "category": "Global policy",
     "description": "",
     "lang": "en",
@@ -100,7 +108,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 36,
+    "count": 37,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -260,7 +268,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 10,
+    "count": 6,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -418,13 +426,21 @@
     "lang": "en",
     "scope": "World"
   },
-  "Yle | Kansainvälinen politiikka": {
-    "file": "yle___kansainv_linen_politiikka.json",
-    "count": 21,
-    "category": "Politics + Public sector",
-    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
-    "lang": "fi",
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 47,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
     "scope": "World"
+  },
+  "Ministry for Foreign Affairs of Finland | News": {
+    "file": "ministry_for_foreign_affairs_of_finland___news.json",
+    "count": 23,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Investigations – ACDC": {
     "file": "investigations___acdc.json",
@@ -908,7 +924,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -921,6 +937,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "EUvsDisinfo": {
+    "file": "euvsdisinfo.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "DON'T BE DECEIVED, QUESTION EVEN MORE",
+    "lang": "en",
+    "scope": "Europe"
   },
   "European Civil Protection and Humanitarian Aid Operations": {
     "file": "european_civil_protection_and_humanitarian_aid_operations.json",
@@ -984,14 +1008,6 @@
     "category": "Politics + Public sector",
     "description": "",
     "lang": "en",
-    "scope": "Finland"
-  },
-  "Ministry for Foreign Affairs of Finland | News": {
-    "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 20,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
     "scope": "Finland"
   },
   "MySociety Newsletter": {
@@ -1116,7 +1132,7 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 10,
+    "count": 2,
     "category": "Investigations + Conflict",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
@@ -1356,7 +1372,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1489,14 +1505,6 @@
     "description": "Direkt36 is a non-profit investigative journalism center with the mission to hold powerful people and institutions accountable.",
     "lang": "en",
     "scope": "Hungary"
-  },
-  "Long Play": {
-    "file": "long_play.json",
-    "count": 751,
-    "category": "Perspectives",
-    "description": "Ei klikkiotsikoita, ei typeryyksiä. Vain juttuja, joilla on väliä.",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Global Voices Advox": {
     "file": "global_voices_advox.json",
@@ -1698,14 +1706,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "European Research Council (ERC)": {
     "file": "european_research_council__erc_.json",
     "count": 10,
@@ -1727,14 +1727,6 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "EUvsDisinfo": {
-    "file": "euvsdisinfo.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "DON'T BE DECEIVED, QUESTION EVEN MORE",
     "lang": "en",
     "scope": "Europe"
   },
@@ -1946,6 +1938,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Julkisen sanan neuvosto",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Kansalaisfoorumi": {
     "file": "kansalaisfoorumi.json",
     "count": 10,
@@ -2031,14 +2031,6 @@
     "count": 10,
     "category": "IP + Creative Industry",
     "description": "Arvoa taiteelle",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Taide- ja kulttuurivirasto": {
-    "file": "taide__ja_kulttuurivirasto.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2162,14 +2154,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Technology Research": {
-    "file": "open_technology_research.json",
-    "count": 8,
-    "category": "(Open) Data + Technology",
-    "description": "Building Evidence, Connecting Researchers, Informing Policy",
-    "lang": "en",
-    "scope": "World"
-  },
   "OpenWebSearch.eu": {
     "file": "openwebsearch_eu.json",
     "count": 10,
@@ -2281,14 +2265,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 47,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
-    "lang": "en",
-    "scope": "World"
   },
   "Blue Shield International": {
     "file": "blue_shield_international.json",
@@ -2426,14 +2402,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Digime": {
     "file": "digime.json",
     "count": 10,
@@ -2441,6 +2409,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Euronews | The Europe Conversation": {
+    "file": "euronews___the_europe_conversation.json",
+    "count": 50,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "European Parliament | Culture and education": {
     "file": "european_parliament___culture_and_education.json",
@@ -2586,13 +2562,13 @@
     "lang": "en",
     "scope": "Finland"
   },
-  "MuseumNext": {
-    "file": "museumnext.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Defining the Future of Museums",
-    "lang": "en",
-    "scope": "World"
+  "Long Play": {
+    "file": "long_play.json",
+    "count": 751,
+    "category": "Perspectives",
+    "description": "Ei klikkiotsikoita, ei typeryyksiä. Vain juttuja, joilla on väliä.",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "MustRead": {
     "file": "mustread.json",
