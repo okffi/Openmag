@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "13.7.2026 klo 20.59.54"
+    "last_updated": "13.7.2026 klo 22.42.18"
   },
   "The Foreign Policy Centre": {
     "file": "the_foreign_policy_centre.json",
@@ -28,7 +28,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 23,
+    "count": 24,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -100,7 +100,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 51,
+    "count": 33,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -108,7 +108,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 14,
+    "count": 15,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -148,7 +148,7 @@
   },
   "European Cultural Foundation": {
     "file": "european_cultural_foundation.json",
-    "count": 11,
+    "count": 10,
     "category": "Culture + Education",
     "description": "",
     "lang": "en",
@@ -228,7 +228,7 @@
   },
   "Finnish AI Region": {
     "file": "finnish_ai_region.json",
-    "count": 27,
+    "count": 28,
     "category": "(Open) Data + Technology",
     "description": "FAIR",
     "lang": "en",
@@ -340,7 +340,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 18,
+    "count": 19,
     "category": "Investigations + Conflict",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -375,6 +375,38 @@
     "count": 12,
     "category": "Investigations + Conflict",
     "description": "United Nations Office for the Coordination of Humanitarian Affairs",
+    "lang": "en",
+    "scope": "World"
+  },
+  "IDN-InDepthNews": {
+    "file": "idn_indepthnews.json",
+    "count": 11,
+    "category": "Investigations + Conflict",
+    "description": "News for a Sustainable World, Peace and Security",
+    "lang": "en",
+    "scope": "World"
+  },
+  "The Conversation – Articles (GLOBAL)": {
+    "file": "the_conversation___articles__global_.json",
+    "count": 53,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "World Heritage Centre News": {
+    "file": "world_heritage_centre_news.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "All the World Heritage News",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Amnesty International": {
+    "file": "amnesty_international.json",
+    "count": 14,
+    "category": "Human Rights + Democracy",
+    "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
     "scope": "World"
   },
@@ -452,7 +484,7 @@
   },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -471,14 +503,6 @@
     "count": 14,
     "category": "Sustainability + Foresight",
     "description": "The Centre for Research on Energy and Clean Air (CREA) is an independent research organisation that reveals the trends, causes, health impacts as well as solutions to air pollution.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "IDN-InDepthNews": {
-    "file": "idn_indepthnews.json",
-    "count": 11,
-    "category": "Investigations + Conflict",
-    "description": "News for a Sustainable World, Peace and Security",
     "lang": "en",
     "scope": "World"
   },
@@ -538,14 +562,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Amnesty International": {
-    "file": "amnesty_international.json",
-    "count": 14,
-    "category": "Human Rights + Democracy",
-    "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Carbon Brief": {
     "file": "carbon_brief.json",
     "count": 10,
@@ -556,7 +572,7 @@
   },
   "Electronic Frontier Foundation": {
     "file": "electronic_frontier_foundation.json",
-    "count": 10,
+    "count": 12,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -713,14 +729,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "The Conversation – Articles (GLOBAL)": {
-    "file": "the_conversation___articles__global_.json",
-    "count": 53,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "Waag": {
     "file": "waag.json",
@@ -964,7 +972,7 @@
   },
   "EUvsDisinfo": {
     "file": "euvsdisinfo.json",
-    "count": 1,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "DON'T BE DECEIVED, QUESTION EVEN MORE",
     "lang": "en",
@@ -1426,6 +1434,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Avate Audiovisuaalisen alan tekijät ry": {
+    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Avoin hallinto": {
     "file": "avoin_hallinto.json",
     "count": 10,
@@ -1575,14 +1591,6 @@
     "count": 10,
     "category": "Culture + Education",
     "description": "Suomen elinkeinoelämän keskusarkisto",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1737,6 +1745,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Global Investigative Journalism Network": {
+    "file": "global_investigative_journalism_network.json",
+    "count": 20,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "Heritage Hub Kraków": {
     "file": "heritage_hub_krak_w.json",
@@ -2178,14 +2194,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
-    "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Suomen kirjastoseura": {
     "file": "suomen_kirjastoseura.json",
     "count": 10,
@@ -2250,6 +2258,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
+  },
   "The Ulkopolitist": {
     "file": "the_ulkopolitist.json",
     "count": 10,
@@ -2297,14 +2313,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "World Heritage Centre News": {
-    "file": "world_heritage_centre_news.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "All the World Heritage News",
-    "lang": "en",
-    "scope": "World"
   },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
@@ -2594,28 +2602,12 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Norden | Pohjoismainen yhteistyö": {
     "file": "norden___pohjoismainen_yhteisty_.json",
     "count": 10,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
-    "scope": "Nordic + Baltic countries"
-  },
-  "NORDIS": {
-    "file": "nordis.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "The Nordic Observatory for Digital Media and Information Disorder",
-    "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
   "OCCRP Announcements": {
@@ -2649,14 +2641,6 @@
     "description": "OCCRP stories about Scoops delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
     "scope": "World"
-  },
-  "Open By Default": {
-    "file": "open_by_default.json",
-    "count": 8,
-    "category": "(Open) Data + Technology",
-    "description": "",
-    "lang": "en",
-    "scope": "Netherlands"
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
