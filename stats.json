@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "17.7.2026 klo 18.19.34"
+    "last_updated": "17.7.2026 klo 20.18.02"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -44,7 +44,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 16,
+    "count": 17,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -68,7 +68,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 53,
+    "count": 54,
     "category": "Global policy",
     "description": "",
     "lang": "en",
@@ -108,7 +108,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 16,
+    "count": 17,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -140,7 +140,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 25,
+    "count": 26,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -148,7 +148,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 39,
+    "count": 41,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -204,7 +204,7 @@
   },
   "Carbon Brief": {
     "file": "carbon_brief.json",
-    "count": 11,
+    "count": 10,
     "category": "Sustainability + Foresight",
     "description": "Clear on climate",
     "lang": "en",
@@ -340,7 +340,7 @@
   },
   "PreventionWeb": {
     "file": "preventionweb.json",
-    "count": 43,
+    "count": 45,
     "category": "Sustainability + Foresight",
     "description": "",
     "lang": "en",
@@ -369,6 +369,22 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Culture and Creativity": {
+    "file": "culture_and_creativity.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "OpenWebSearch.eu": {
+    "file": "openwebsearch_eu.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "Promoting Europe‘s Independence in Web Search",
+    "lang": "en",
+    "scope": "Europe"
   },
   "ATRIUM": {
     "file": "atrium.json",
@@ -524,7 +540,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 15,
+    "count": 18,
     "category": "Investigations + Conflict",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -548,7 +564,7 @@
   },
   "Electronic Frontier Foundation": {
     "file": "electronic_frontier_foundation.json",
-    "count": 10,
+    "count": 11,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -604,7 +620,7 @@
   },
   "OCHA": {
     "file": "ocha.json",
-    "count": 10,
+    "count": 11,
     "category": "Investigations + Conflict",
     "description": "United Nations Office for the Coordination of Humanitarian Affairs",
     "lang": "en",
@@ -994,14 +1010,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Culture and Creativity": {
-    "file": "culture_and_creativity.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "European Union": {
     "file": "european_union.json",
     "count": 25,
@@ -1025,14 +1033,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "OpenWebSearch.eu": {
-    "file": "openwebsearch_eu.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "Promoting Europe‘s Independence in Web Search",
-    "lang": "en",
-    "scope": "Europe"
   },
   "World Heritage Centre News": {
     "file": "world_heritage_centre_news.json",
@@ -1084,7 +1084,7 @@
   },
   "Ministry for Foreign Affairs of Finland | News": {
     "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 22,
+    "count": 20,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -1554,6 +1554,14 @@
     "lang": "fi",
     "scope": "World"
   },
+  "Effekt": {
+    "file": "effekt.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Ratkaisurahasto",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "EFFI.org:n uusimmat artikkelit": {
     "file": "effi_org_n_uusimmat_artikkelit.json",
     "count": 10,
@@ -1567,14 +1575,6 @@
     "count": 10,
     "category": "Culture + Education",
     "description": "Suomen elinkeinoelämän keskusarkisto",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1815,14 +1815,6 @@
     "count": 30,
     "category": "Digital Policy + Rights",
     "description": "Poliittinen talous (ISSN 2341-7862) julkaisee talouden instituutioiden, talouspolitiikan, talousdiskurssien ja taloustieteen poliittisia analyyseja sekä toimii poliittisen talouden tutkimuksen ja opetuksen edistämisen suomalaisena keskustelufoorumina. Lehteä julkaisee Poliittisen talouden tutkimuksen seura ry.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2098,6 +2090,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Rakennustaiteen Seura ry": {
     "file": "rakennustaiteen_seura_ry.json",
     "count": 5,
@@ -2193,6 +2193,14 @@
     "description": "Holding power accountable one whistleblower at a time.",
     "lang": "en",
     "scope": "World"
+  },
+  "Tietopoliitiikan yhteistyöryhmä": {
+    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Tekijänoikeuden tiedotus- ja valvontakeskus ry": {
     "file": "tekij_noikeuden_tiedotus__ja_valvontakeskus_ry.json",
@@ -2314,6 +2322,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "DARIAH-EU": {
+    "file": "dariah_eu.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Digital Research Infrastructure for the Arts and Humanities",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Digime": {
     "file": "digime.json",
     "count": 10,
@@ -2375,14 +2391,6 @@
     "count": 25,
     "category": "Culture + Education",
     "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "European Heritage Hub": {
-    "file": "european_heritage_hub.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Where cultural heritage connects",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2561,6 +2569,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Nordisk kulturkontakt": {
     "file": "nordisk_kulturkontakt.json",
