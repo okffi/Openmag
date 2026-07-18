@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "18.7.2026 klo 11.52.36"
+    "last_updated": "18.7.2026 klo 13.23.09"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -33,6 +33,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Diff": {
+    "file": "diff.json",
+    "count": 11,
+    "category": "(Open) Data + Technology",
+    "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
   },
   "Internet Archive Blogs": {
     "file": "internet_archive_blogs.json",
@@ -81,14 +89,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Diff": {
-    "file": "diff.json",
-    "count": 11,
-    "category": "(Open) Data + Technology",
-    "description": "News from the Wikimedia movement",
-    "lang": "en",
-    "scope": "World"
   },
   "Eastflank": {
     "file": "eastflank.json",
@@ -196,7 +196,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 47,
+    "count": 33,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -236,7 +236,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 15,
+    "count": 16,
     "category": "Investigations + Conflict",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -478,6 +478,14 @@
     "file": "international_council_on_archives__ica_.json",
     "count": 10,
     "category": "Culture + Education",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Global Investigative Journalism Network": {
+    "file": "global_investigative_journalism_network.json",
+    "count": 13,
+    "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
     "scope": "World"
@@ -956,7 +964,7 @@
   },
   "resilience": {
     "file": "resilience.json",
-    "count": 11,
+    "count": 20,
     "category": "Perspectives",
     "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
@@ -1378,6 +1386,14 @@
     "lang": "de",
     "scope": "Europe"
   },
+  "Avate Audiovisuaalisen alan tekijät ry": {
+    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Avoin hallinto": {
     "file": "avoin_hallinto.json",
     "count": 10,
@@ -1673,14 +1689,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Global Investigative Journalism Network": {
-    "file": "global_investigative_journalism_network.json",
-    "count": 20,
-    "category": "Investigations + Conflict",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "Heritage Hub Kraków": {
     "file": "heritage_hub_krak_w.json",
@@ -2023,6 +2031,14 @@
     "count": 10,
     "category": "(Open) Data + Technology",
     "description": "Together, for a better net.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Open Technology Research": {
+    "file": "open_technology_research.json",
+    "count": 8,
+    "category": "(Open) Data + Technology",
+    "description": "Building Evidence, Connecting Researchers, Informing Policy",
     "lang": "en",
     "scope": "World"
   },
@@ -2370,14 +2386,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "European Heritage Hub": {
-    "file": "european_heritage_hub.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Where cultural heritage connects",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Suomen Lähi-idän instituutti": {
     "file": "suomen_l_hi_id_n_instituutti.json",
     "count": 10,
@@ -2586,14 +2594,6 @@
     "lang": "fi",
     "scope": "Nordic + Baltic countries"
   },
-  "NORDIS": {
-    "file": "nordis.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "The Nordic Observatory for Digital Media and Information Disorder",
-    "lang": "en",
-    "scope": "Nordic + Baltic countries"
-  },
   "OCCRP Announcements": {
     "file": "occrp_announcements.json",
     "count": 10,
@@ -2625,14 +2625,6 @@
     "description": "OCCRP stories about Scoops delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
     "scope": "World"
-  },
-  "Open By Default": {
-    "file": "open_by_default.json",
-    "count": 8,
-    "category": "(Open) Data + Technology",
-    "description": "",
-    "lang": "en",
-    "scope": "Netherlands"
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
