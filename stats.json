@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "18.7.2026 klo 16.40.33"
+    "last_updated": "18.7.2026 klo 18.02.23"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -52,7 +52,7 @@
   },
   "IDN-InDepthNews": {
     "file": "idn_indepthnews.json",
-    "count": 13,
+    "count": 14,
     "category": "Investigations + Conflict",
     "description": "News for a Sustainable World, Peace and Security",
     "lang": "en",
@@ -63,6 +63,30 @@
     "count": 1,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
+  },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 34,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Hrana": {
+    "file": "hrana.json",
+    "count": 11,
+    "category": "Human Rights + Democracy",
+    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Technology | Guardian": {
+    "file": "technology___guardian.json",
+    "count": 38,
+    "category": "(Open) Data + Technology",
+    "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
     "scope": "World"
   },
@@ -148,7 +172,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 15,
+    "count": 16,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -215,14 +239,6 @@
     "count": 15,
     "category": "(Open) Science + Research",
     "description": "What’s Hot and Cooking In Scholarly Publishing",
-    "lang": "en",
-    "scope": "World"
-  },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 47,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
     "scope": "World"
   },
@@ -298,17 +314,9 @@
     "lang": "en",
     "scope": "World"
   },
-  "Hrana": {
-    "file": "hrana.json",
-    "count": 11,
-    "category": "Human Rights + Democracy",
-    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
-    "lang": "en",
-    "scope": "World"
-  },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 20,
+    "count": 22,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -332,7 +340,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 20,
+    "count": 18,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -434,14 +442,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Technology | Guardian": {
-    "file": "technology___guardian.json",
-    "count": 37,
-    "category": "(Open) Data + Technology",
-    "description": "Technology news, comment and analysis | guardian.co.uk",
-    "lang": "en",
-    "scope": "World"
-  },
   "Time Machine Europe": {
     "file": "time_machine_europe.json",
     "count": 12,
@@ -500,7 +500,7 @@
   },
   "Global Investigative Journalism Network": {
     "file": "global_investigative_journalism_network.json",
-    "count": 12,
+    "count": 20,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -1084,7 +1084,7 @@
   },
   "HIIG": {
     "file": "hiig.json",
-    "count": 20,
+    "count": 11,
     "category": "(Open) Science + Research",
     "description": "Alexander von Humboldt Institute for Internet and Society",
     "lang": "de",
@@ -1666,6 +1666,14 @@
     "lang": "fi",
     "scope": "Estonia"
   },
+  "FNG Research": {
+    "file": "fng_research.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
     "count": 40,
@@ -1799,6 +1807,14 @@
     "count": 30,
     "category": "Digital Policy + Rights",
     "description": "Poliittinen talous (ISSN 2341-7862) julkaisee talouden instituutioiden, talouspolitiikan, talousdiskurssien ja taloustieteen poliittisia analyyseja sekä toimii poliittisen talouden tutkimuksen ja opetuksen edistämisen suomalaisena keskustelufoorumina. Lehteä julkaisee Poliittisen talouden tutkimuksen seura ry.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2074,14 +2090,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Rajapinta": {
-    "file": "rajapinta.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "researcher community focused on digital social sciences",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Rakennustaiteen Seura ry": {
     "file": "rakennustaiteen_seura_ry.json",
     "count": 5,
@@ -2194,14 +2202,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Extreme Citizen Science blog": {
-    "file": "extreme_citizen_science_blog.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
-    "lang": "en",
-    "scope": "World"
-  },
   "The Ulkopolitist": {
     "file": "the_ulkopolitist.json",
     "count": 10,
@@ -2297,14 +2297,6 @@
     "description": "Kulttuuripolitiikan tutkimuskeskus Cupore",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Digime": {
     "file": "digime.json",
@@ -2457,14 +2449,6 @@
     "description": "",
     "lang": "fr",
     "scope": "Europe"
-  },
-  "Internet Governance Forum (IGF)": {
-    "file": "internet_governance_forum__igf_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "JOKES": {
     "file": "jokes.json",
