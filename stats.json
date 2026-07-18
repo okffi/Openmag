@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "18.7.2026 klo 13.23.09"
+    "last_updated": "18.7.2026 klo 14.57.28"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -36,9 +36,17 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 11,
+    "count": 12,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
+  },
+  "404 Media": {
+    "file": "404_media.json",
+    "count": 16,
+    "category": "Investigations + Conflict",
+    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
     "scope": "World"
   },
@@ -234,14 +242,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "404 Media": {
-    "file": "404_media.json",
-    "count": 16,
-    "category": "Investigations + Conflict",
-    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Access Now": {
     "file": "access_now.json",
     "count": 15,
@@ -268,7 +268,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 10,
+    "count": 6,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -340,7 +340,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 10,
+    "count": 5,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -484,9 +484,17 @@
   },
   "Global Investigative Journalism Network": {
     "file": "global_investigative_journalism_network.json",
-    "count": 13,
+    "count": 12,
     "category": "Investigations + Conflict",
     "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "resilience": {
+    "file": "resilience.json",
+    "count": 20,
+    "category": "Perspectives",
+    "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
     "scope": "World"
   },
@@ -572,7 +580,7 @@
   },
   "IDN-InDepthNews": {
     "file": "idn_indepthnews.json",
-    "count": 10,
+    "count": 12,
     "category": "Investigations + Conflict",
     "description": "News for a Sustainable World, Peace and Security",
     "lang": "en",
@@ -689,6 +697,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Nordic + Baltic countries"
+  },
+  "Ministry for Foreign Affairs of Finland | News": {
+    "file": "ministry_for_foreign_affairs_of_finland___news.json",
+    "count": 20,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "European Civil Protection and Humanitarian Aid Operations": {
     "file": "european_civil_protection_and_humanitarian_aid_operations.json",
@@ -876,7 +892,7 @@
   },
   "Taide- ja kulttuurivirasto": {
     "file": "taide__ja_kulttuurivirasto.json",
-    "count": 10,
+    "count": 1,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -962,14 +978,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "resilience": {
-    "file": "resilience.json",
-    "count": 20,
-    "category": "Perspectives",
-    "description": "Insight and inspiration in turbulent times.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Helsingin yliopisto": {
     "file": "helsingin_yliopisto.json",
     "count": 25,
@@ -1042,14 +1050,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Ministry for Foreign Affairs of Finland | News": {
-    "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 20,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "World Heritage Centre News": {
     "file": "world_heritage_centre_news.json",
     "count": 10,
@@ -1108,7 +1108,7 @@
   },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
@@ -1148,7 +1148,7 @@
   },
   "Euronews | The Europe Conversation": {
     "file": "euronews___the_europe_conversation.json",
-    "count": 50,
+    "count": 2,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -1196,7 +1196,7 @@
   },
   "OpenForum Europe": {
     "file": "openforum_europe.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Data + Technology",
     "description": "Open Technologies for a Competitive and Sovereign Europe",
     "lang": "en",
@@ -1308,7 +1308,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -1802,6 +1802,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Julkisen sanan neuvosto",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "K-blogg - Riksantikvarieämbetets blogg": {
     "file": "k_blogg___riksantikvarie_mbetets_blogg.json",
     "count": 100,
@@ -2034,14 +2042,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Technology Research": {
-    "file": "open_technology_research.json",
-    "count": 8,
-    "category": "(Open) Data + Technology",
-    "description": "Building Evidence, Connecting Researchers, Informing Policy",
-    "lang": "en",
-    "scope": "World"
-  },
   "Open Regulatory Compliance Working Group": {
     "file": "open_regulatory_compliance_working_group.json",
     "count": 74,
@@ -2162,6 +2162,14 @@
     "lang": "sv",
     "scope": "Sweden"
   },
+  "Wikimedia Techblog": {
+    "file": "wikimedia_techblog.json",
+    "count": 1,
+    "category": "(Open) Data + Technology",
+    "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
+  },
   "Blue Shield International": {
     "file": "blue_shield_international.json",
     "count": 10,
@@ -2249,14 +2257,6 @@
     "description": "",
     "lang": "fi",
     "scope": "World"
-  },
-  "Wikimedia Sverige": {
-    "file": "wikimedia_sverige.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Vi arbetar för fri kunskap",
-    "lang": "sv",
-    "scope": "Sweden"
   },
   "American Library Association": {
     "file": "american_library_association.json",
@@ -2546,14 +2546,6 @@
     "lang": "en",
     "scope": "Finland"
   },
-  "MuseumNext": {
-    "file": "museumnext.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Defining the Future of Museums",
-    "lang": "en",
-    "scope": "World"
-  },
   "MustRead": {
     "file": "mustread.json",
     "count": 10,
@@ -2594,6 +2586,14 @@
     "lang": "fi",
     "scope": "Nordic + Baltic countries"
   },
+  "NORDIS": {
+    "file": "nordis.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "The Nordic Observatory for Digital Media and Information Disorder",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
+  },
   "OCCRP Announcements": {
     "file": "occrp_announcements.json",
     "count": 10,
@@ -2625,6 +2625,14 @@
     "description": "OCCRP stories about Scoops delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
     "scope": "World"
+  },
+  "Open By Default": {
+    "file": "open_by_default.json",
+    "count": 8,
+    "category": "(Open) Data + Technology",
+    "description": "",
+    "lang": "en",
+    "scope": "Netherlands"
   },
   "openDemocracy": {
     "file": "opendemocracy.json",
