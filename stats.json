@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "19.7.2026 klo 14.13.36"
+    "last_updated": "19.7.2026 klo 16.38.48"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -20,7 +20,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 12,
+    "count": 13,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -44,7 +44,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 40,
+    "count": 41,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -57,6 +57,14 @@
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
     "scope": "World"
+  },
+  "Euronews | Europe": {
+    "file": "euronews___europe.json",
+    "count": 50,
+    "category": "Global policy",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Freedom House": {
     "file": "freedom_house.json",
@@ -76,7 +84,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 34,
+    "count": 51,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -105,14 +113,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Euronews | Europe": {
-    "file": "euronews___europe.json",
-    "count": 50,
-    "category": "Global policy",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "ProPublica": {
     "file": "propublica.json",
@@ -468,7 +468,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3765,
+    "count": 3767,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -900,7 +900,7 @@
   },
   "Taide- ja kulttuurivirasto": {
     "file": "taide__ja_kulttuurivirasto.json",
-    "count": 1,
+    "count": 10,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -1108,7 +1108,7 @@
   },
   "UN News - Global perspective Human stories | Culture and Education": {
     "file": "un_news___global_perspective_human_stories___culture_and_education.json",
-    "count": 22,
+    "count": 23,
     "category": "Culture + Education",
     "description": "",
     "lang": "en",
@@ -1378,14 +1378,6 @@
     "lang": "de",
     "scope": "Europe"
   },
-  "Avate Audiovisuaalisen alan tekijät ry": {
-    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Avoin hallinto": {
     "file": "avoin_hallinto.json",
     "count": 10,
@@ -1554,14 +1546,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "European Research Council (ERC)": {
     "file": "european_research_council__erc_.json",
     "count": 10,
@@ -1657,14 +1641,6 @@
     "description": "Soome Eesti Instituudi Sihtasutus",
     "lang": "fi",
     "scope": "Estonia"
-  },
-  "FNG Research": {
-    "file": "fng_research.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
@@ -2258,6 +2234,14 @@
     "lang": "fi",
     "scope": "World"
   },
+  "Wikimedia Sverige": {
+    "file": "wikimedia_sverige.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Vi arbetar för fri kunskap",
+    "lang": "sv",
+    "scope": "Sweden"
+  },
   "American Library Association": {
     "file": "american_library_association.json",
     "count": 10,
@@ -2313,14 +2297,6 @@
     "description": "Kulttuuripolitiikan tutkimuskeskus Cupore",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Digime": {
     "file": "digime.json",
@@ -2383,6 +2359,14 @@
     "count": 25,
     "category": "Culture + Education",
     "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "European Heritage Hub": {
+    "file": "european_heritage_hub.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Where cultural heritage connects",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2473,6 +2457,14 @@
     "description": "",
     "lang": "fr",
     "scope": "Europe"
+  },
+  "Internet Governance Forum (IGF)": {
+    "file": "internet_governance_forum__igf_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "JOKES": {
     "file": "jokes.json",
