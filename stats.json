@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "22.7.2026 klo 9.35.51"
+    "last_updated": "22.7.2026 klo 12.31.31"
   },
   "The Foreign Policy Centre": {
     "file": "the_foreign_policy_centre.json",
@@ -20,7 +20,7 @@
   },
   "News – Wikimedia Foundation": {
     "file": "news___wikimedia_foundation.json",
-    "count": 11,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "en",
@@ -28,7 +28,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 20,
+    "count": 23,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -49,6 +49,62 @@
     "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
     "lang": "en",
     "scope": "World"
+  },
+  "Wikimedia Deutschland Blog": {
+    "file": "wikimedia_deutschland_blog.json",
+    "count": 16,
+    "category": "(Open) Data + Technology",
+    "description": "Neues aus dem Wikimedia-Universum",
+    "lang": "de",
+    "scope": "Germany"
+  },
+  "European Commission": {
+    "file": "european_commission.json",
+    "count": 36,
+    "category": "Politics + Public sector",
+    "description": "European Commission | News",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Demokraatti": {
+    "file": "demokraatti.json",
+    "count": 30,
+    "category": "Politics + Public sector",
+    "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Diff": {
+    "file": "diff.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Oulu2026": {
+    "file": "oulu2026.json",
+    "count": 100,
+    "category": "Culture + Education",
+    "description": "Oulu on Euroopan kulttuuripääkaupunki 2026",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Voima": {
+    "file": "voima.json",
+    "count": 10,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Euronews | Europe": {
+    "file": "euronews___europe.json",
+    "count": 57,
+    "category": "Global policy",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "AlgorithmWatch": {
     "file": "algorithmwatch.json",
@@ -82,14 +138,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Demokraatti": {
-    "file": "demokraatti.json",
-    "count": 30,
-    "category": "Politics + Public sector",
-    "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Demos Helsinki": {
     "file": "demos_helsinki.json",
     "count": 12,
@@ -97,14 +145,6 @@
     "description": "A globally operating, independent think tank",
     "lang": "en",
     "scope": "Finland"
-  },
-  "Diff": {
-    "file": "diff.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "News from the Wikimedia movement",
-    "lang": "en",
-    "scope": "World"
   },
   "Eastflank": {
     "file": "eastflank.json",
@@ -188,7 +228,7 @@
   },
   "The Conversation – Articles (EUROPE)": {
     "file": "the_conversation___articles__europe_.json",
-    "count": 50,
+    "count": 51,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -244,7 +284,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 10,
+    "count": 6,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -274,14 +314,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Euronews | Europe": {
-    "file": "euronews___europe.json",
-    "count": 51,
-    "category": "Global policy",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Eurozine": {
     "file": "eurozine.json",
     "count": 100,
@@ -292,7 +324,7 @@
   },
   "International Council on Archives (ICA)": {
     "file": "international_council_on_archives__ica_.json",
-    "count": 10,
+    "count": 11,
     "category": "Culture + Education",
     "description": "",
     "lang": "en",
@@ -324,7 +356,7 @@
   },
   "Open Culture": {
     "file": "open_culture.json",
-    "count": 15,
+    "count": 16,
     "category": "Digital Culture + Heritage",
     "description": "The best free cultural & educational media on the web",
     "lang": "en",
@@ -348,7 +380,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 20,
+    "count": 21,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -356,7 +388,7 @@
   },
   "ProPublica": {
     "file": "propublica.json",
-    "count": 20,
+    "count": 21,
     "category": "Investigations + Conflict",
     "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
     "lang": "en",
@@ -372,7 +404,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 36,
+    "count": 39,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -418,14 +450,6 @@
     "lang": "fi",
     "scope": "World"
   },
-  "Wikimedia Deutschland Blog": {
-    "file": "wikimedia_deutschland_blog.json",
-    "count": 16,
-    "category": "(Open) Data + Technology",
-    "description": "Neues aus dem Wikimedia-Universum",
-    "lang": "de",
-    "scope": "Germany"
-  },
   "Timeless": {
     "file": "timeless.json",
     "count": 10,
@@ -433,14 +457,6 @@
     "description": "Stories from the Library of Congress",
     "lang": "en",
     "scope": "World"
-  },
-  "European Commission": {
-    "file": "european_commission.json",
-    "count": 31,
-    "category": "Politics + Public sector",
-    "description": "European Commission | News",
-    "lang": "en",
-    "scope": "Europe"
   },
   "NGI Commons": {
     "file": "ngi_commons.json",
@@ -495,14 +511,6 @@
     "count": 20,
     "category": "Politics + Public sector",
     "description": "",
-    "lang": "en",
-    "scope": "Finland"
-  },
-  "Oulu2026": {
-    "file": "oulu2026.json",
-    "count": 100,
-    "category": "Culture + Education",
-    "description": "Oulu on Euroopan kulttuuripääkaupunki 2026",
     "lang": "en",
     "scope": "Finland"
   },
@@ -583,6 +591,14 @@
     "count": 4,
     "category": "(Open) Data + Technology",
     "description": "xkcd.com: A webcomic of romance and math humor.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "resilience": {
+    "file": "resilience.json",
+    "count": 14,
+    "category": "Perspectives",
+    "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
     "scope": "World"
   },
@@ -740,19 +756,11 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 10,
+    "count": 4,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
     "scope": "Europe"
-  },
-  "resilience": {
-    "file": "resilience.json",
-    "count": 14,
-    "category": "Perspectives",
-    "description": "Insight and inspiration in turbulent times.",
-    "lang": "en",
-    "scope": "World"
   },
   "Euroopan parlamentti – Suomen-toimisto": {
     "file": "euroopan_parlamentti___suomen_toimisto.json",
@@ -938,14 +946,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Voima": {
-    "file": "voima.json",
-    "count": 10,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Valtiontalouden tarkastusvirasto": {
     "file": "valtiontalouden_tarkastusvirasto.json",
     "count": 10,
@@ -1130,6 +1130,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Open Knowledge Foundation Blog": {
+    "file": "open_knowledge_foundation_blog.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Content for a fair, sustainable and open future",
+    "lang": "en",
+    "scope": "World"
+  },
   "European Cultural Foundation": {
     "file": "european_cultural_foundation.json",
     "count": 10,
@@ -1140,7 +1148,7 @@
   },
   "European Union": {
     "file": "european_union.json",
-    "count": 25,
+    "count": 26,
     "category": "Politics + Public sector",
     "description": "European Union | Featured news",
     "lang": "en",
@@ -1186,6 +1194,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "This Month in GLAM": {
+    "file": "this_month_in_glam.json",
+    "count": 1,
+    "category": "Digital Culture + Heritage",
+    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
+    "lang": "en",
+    "scope": "World"
+  },
   "UN News - Global perspective Human stories | Culture and Education": {
     "file": "un_news___global_perspective_human_stories___culture_and_education.json",
     "count": 23,
@@ -1226,6 +1242,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Euronews | The Europe Conversation": {
+    "file": "euronews___the_europe_conversation.json",
+    "count": 2,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Investigations – ACDC": {
     "file": "investigations___acdc.json",
     "count": 10,
@@ -1236,7 +1260,7 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
@@ -1260,7 +1284,7 @@
   },
   "OpenForum Europe": {
     "file": "openforum_europe.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Data + Technology",
     "description": "Open Technologies for a Competitive and Sovereign Europe",
     "lang": "en",
@@ -1289,22 +1313,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "information labs": {
-    "file": "information_labs.json",
-    "count": 1,
-    "category": "Digital Policy + Rights",
-    "description": "Facts | Ideas | Discussions",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Wikimedia Suomi": {
-    "file": "wikimedia_suomi.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Global Voices Advox": {
     "file": "global_voices_advox.json",
@@ -1361,22 +1369,6 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
-  },
-  "Open Knowledge Foundation Blog": {
-    "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Content for a fair, sustainable and open future",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Zooniverse": {
-    "file": "zooniverse.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
-    "lang": "en",
-    "scope": "World"
   },
   "Lastuja Suomen historiasta": {
     "file": "lastuja_suomen_historiasta.json",
@@ -1618,6 +1610,14 @@
     "lang": "fi",
     "scope": "Estonia"
   },
+  "FNG Research": {
+    "file": "fng_research.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
     "count": 40,
@@ -1641,14 +1641,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
-    "lang": "en",
-    "scope": "World"
   },
   "Heritage Hub Kraków": {
     "file": "heritage_hub_krak_w.json",
@@ -1697,6 +1689,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Internet Governance Forum (IGF)": {
+    "file": "internet_governance_forum__igf_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "Suomen Rooman-instituutti": {
     "file": "suomen_rooman_instituutti.json",
@@ -2026,14 +2026,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Technology Research": {
-    "file": "open_technology_research.json",
-    "count": 8,
-    "category": "(Open) Data + Technology",
-    "description": "Building Evidence, Connecting Researchers, Informing Policy",
-    "lang": "en",
-    "scope": "World"
-  },
   "Open Regulatory Compliance Working Group": {
     "file": "open_regulatory_compliance_working_group.json",
     "count": 74,
@@ -2121,14 +2113,6 @@
     "description": "Vi främjar Sverige i världen",
     "lang": "sv",
     "scope": "Sweden"
-  },
-  "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
-    "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Suomen kirjastoseura": {
     "file": "suomen_kirjastoseura.json",
@@ -2226,6 +2210,14 @@
     "lang": "fi",
     "scope": "World"
   },
+  "Wikimedia Suomi": {
+    "file": "wikimedia_suomi.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
     "count": 10,
@@ -2282,14 +2274,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Digime": {
     "file": "digime.json",
     "count": 10,
@@ -2329,14 +2313,6 @@
     "description": "Elinkeinoelämän tutkimuslaitos",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Euronews | The Europe Conversation": {
-    "file": "euronews___the_europe_conversation.json",
-    "count": 50,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Eurooppalainen Suomi": {
     "file": "eurooppalainen_suomi.json",
@@ -2529,14 +2505,6 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
-  },
-  "MuseumNext": {
-    "file": "museumnext.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Defining the Future of Museums",
-    "lang": "en",
-    "scope": "World"
   },
   "MustRead": {
     "file": "mustread.json",
@@ -2833,6 +2801,14 @@
     "description": "Project Syndicate produces and delivers original commentaries by prominent economists, political leaders, scholars, business leaders, and civic activists to a global audience, including nearly 500 media outlets in more than 150 countries",
     "lang": "en",
     "scope": "World"
+  },
+  "Tieteellisten seurain valtuuskunta TSV": {
+    "file": "tieteellisten_seurain_valtuuskunta_tsv.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Tutkivan journalismin yhdistys –tutkiva.fi": {
     "file": "tutkivan_journalismin_yhdistys__tutkiva_fi.json",
