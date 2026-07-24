@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "24.7.2026 klo 22.39.09"
+    "last_updated": "25.7.2026 klo 0.11.52"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -12,7 +12,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 24,
+    "count": 25,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -292,7 +292,7 @@
   },
   "Eastflank": {
     "file": "eastflank.json",
-    "count": 12,
+    "count": 11,
     "category": "Investigations + Conflict",
     "description": "Reporting",
     "lang": "en",
@@ -324,7 +324,7 @@
   },
   "UN News - Global perspective Human stories | Peace and Security": {
     "file": "un_news___global_perspective_human_stories___peace_and_security.json",
-    "count": 10,
+    "count": 11,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -359,6 +359,30 @@
     "count": 12,
     "category": "Investigations + Conflict",
     "description": "United Nations Office for the Coordination of Humanitarian Affairs",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Open Source Initiative": {
+    "file": "open_source_initiative.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News - Global perspective Human stories | Europe": {
+    "file": "un_news___global_perspective_human_stories___europe.json",
+    "count": 29,
+    "category": "Global policy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "404 Media": {
+    "file": "404_media.json",
+    "count": 16,
+    "category": "Investigations + Conflict",
+    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
     "scope": "World"
   },
@@ -404,7 +428,7 @@
   },
   "European Union": {
     "file": "european_union.json",
-    "count": 25,
+    "count": 24,
     "category": "Politics + Public sector",
     "description": "European Union | Featured news",
     "lang": "en",
@@ -492,19 +516,11 @@
   },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
     "scope": "Sweden"
-  },
-  "404 Media": {
-    "file": "404_media.json",
-    "count": 16,
-    "category": "Investigations + Conflict",
-    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
-    "lang": "en",
-    "scope": "World"
   },
   "Access Now": {
     "file": "access_now.json",
@@ -588,7 +604,7 @@
   },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
-    "count": 10,
+    "count": 12,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -660,7 +676,7 @@
   },
   "Public Policy Archives — Association of Research Libraries": {
     "file": "public_policy_archives___association_of_research_libraries.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "en",
@@ -865,14 +881,6 @@
     "description": "Protecting digital rights in Europe.",
     "lang": "en",
     "scope": "Europe"
-  },
-  "UN News - Global perspective Human stories | Europe": {
-    "file": "un_news___global_perspective_human_stories___europe.json",
-    "count": 29,
-    "category": "Global policy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "Opetusministeriö | Ajankohtaista": {
     "file": "opetusministeri____ajankohtaista.json",
@@ -1266,14 +1274,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Kulttuuriperintökasvatuksen seura": {
-    "file": "kulttuuriperint_kasvatuksen_seura.json",
-    "count": 9,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "CHAOSS": {
     "file": "chaoss.json",
     "count": 10,
@@ -1321,14 +1321,6 @@
     "description": "Suomessa tehdään huippuluokan koodia.",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Open Source Initiative": {
-    "file": "open_source_initiative.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
-    "lang": "en",
-    "scope": "World"
   },
   "Open Technology Research": {
     "file": "open_technology_research.json",
@@ -1610,6 +1602,14 @@
     "lang": "fi",
     "scope": "Estonia"
   },
+  "FNG Research": {
+    "file": "fng_research.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Frame Contemporary Art Finland": {
     "file": "frame_contemporary_art_finland.json",
     "count": 10,
@@ -1711,6 +1711,14 @@
     "count": 10,
     "category": "Culture + Education",
     "description": "Kotimaisten kielten keskus",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Kulttuuriperintökasvatuksen seura": {
+    "file": "kulttuuriperint_kasvatuksen_seura.json",
+    "count": 9,
+    "category": "Culture + Education",
+    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2010,6 +2018,14 @@
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "EUscreen": {
     "file": "euscreen.json",
     "count": 10,
@@ -2057,14 +2073,6 @@
     "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
     "scope": "World"
-  },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Digime": {
     "file": "digime.json",
@@ -2617,6 +2625,14 @@
     "description": "",
     "lang": "fi",
     "scope": "World"
+  },
+  "Avate Audiovisuaalisen alan tekijät ry": {
+    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Kopiosto": {
     "file": "kopiosto.json",
