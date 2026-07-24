@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "24.7.2026 klo 16.58.57"
+    "last_updated": "24.7.2026 klo 18.37.57"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -12,7 +12,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 21,
+    "count": 22,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -84,7 +84,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 21,
+    "count": 20,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -92,7 +92,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 12,
+    "count": 13,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -148,7 +148,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 16,
+    "count": 17,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -180,7 +180,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 24,
+    "count": 25,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -204,7 +204,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 41,
+    "count": 42,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -244,7 +244,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3789,
+    "count": 3790,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -265,6 +265,54 @@
     "description": "",
     "lang": "en",
     "scope": "World"
+  },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 54,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "CREATe": {
+    "file": "create.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Centre for Regulation of the Creative Economy",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Knowledge Rights 21": {
+    "file": "knowledge_rights_21.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "We advocate for your right to access and share knowledge!",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Eastflank": {
+    "file": "eastflank.json",
+    "count": 12,
+    "category": "Investigations + Conflict",
+    "description": "Reporting",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "NOEMA": {
+    "file": "noema.json",
+    "count": 10,
+    "category": "Perspectives",
+    "description": "Noema Magazine",
+    "lang": "en",
+    "scope": "World"
+  },
+  "PreventionWeb": {
+    "file": "preventionweb.json",
+    "count": 44,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Open Knowledge Foundation Blog": {
     "file": "open_knowledge_foundation_blog.json",
@@ -305,14 +353,6 @@
     "description": "ICT Solutions for Brilliant Minds",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Eastflank": {
-    "file": "eastflank.json",
-    "count": 12,
-    "category": "Investigations + Conflict",
-    "description": "Reporting",
-    "lang": "en",
-    "scope": "Europe"
   },
   "European Union": {
     "file": "european_union.json",
@@ -372,7 +412,7 @@
   },
   "UN News - Global perspective Human stories | Peace and Security": {
     "file": "un_news___global_perspective_human_stories___peace_and_security.json",
-    "count": 8,
+    "count": 9,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -458,22 +498,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "NOEMA": {
-    "file": "noema.json",
-    "count": 10,
-    "category": "Perspectives",
-    "description": "Noema Magazine",
-    "lang": "en",
-    "scope": "World"
-  },
-  "PreventionWeb": {
-    "file": "preventionweb.json",
-    "count": 44,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "OCHA": {
     "file": "ocha.json",
     "count": 10,
@@ -540,7 +564,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 4,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -681,14 +705,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "CREATe": {
-    "file": "create.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Centre for Regulation of the Creative Economy",
-    "lang": "en",
-    "scope": "Europe"
   },
   "EUvsDisinfo": {
     "file": "euvsdisinfo.json",
@@ -850,14 +866,6 @@
     "lang": "en",
     "scope": "Finland"
   },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 48,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
-    "lang": "en",
-    "scope": "World"
-  },
   "resilience": {
     "file": "resilience.json",
     "count": 11,
@@ -969,14 +977,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Knowledge Rights 21": {
-    "file": "knowledge_rights_21.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "We advocate for your right to access and share knowledge!",
-    "lang": "en",
-    "scope": "Europe"
   },
   "ATRIUM": {
     "file": "atrium.json",
@@ -1274,22 +1274,6 @@
     "lang": "de",
     "scope": "Germany"
   },
-  "Aalto-yliopisto": {
-    "file": "aalto_yliopisto.json",
-    "count": 25,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Sovereign Tech Agency": {
-    "file": "sovereign_tech_agency.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "CHAOSS": {
     "file": "chaoss.json",
     "count": 10,
@@ -1501,6 +1485,14 @@
   "REPAIR Tiedotteet": {
     "file": "repair_tiedotteet.json",
     "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Aalto-yliopisto": {
+    "file": "aalto_yliopisto.json",
+    "count": 25,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -2010,6 +2002,14 @@
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "EUscreen": {
     "file": "euscreen.json",
     "count": 10,
@@ -2218,6 +2218,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Internet Governance Forum (IGF)": {
+    "file": "internet_governance_forum__igf_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Poliittinen talous": {
     "file": "poliittinen_talous.json",
     "count": 30,
@@ -2257,6 +2265,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Tietopoliitiikan yhteistyöryhmä": {
     "file": "tietopoliitiikan_yhteisty_ryhm_.json",
@@ -2313,6 +2329,14 @@
     "description": "News listing",
     "lang": "en",
     "scope": "Finland"
+  },
+  "Sovereign Tech Agency": {
+    "file": "sovereign_tech_agency.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "Ulkopoliittinen instituutti (UPI)": {
     "file": "ulkopoliittinen_instituutti__upi_.json",
@@ -2506,6 +2530,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Online Journalism Blog": {
+    "file": "online_journalism_blog.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
+    "lang": "en",
+    "scope": "World"
+  },
   "UN Peacemaker": {
     "file": "un_peacemaker.json",
     "count": 10,
@@ -2631,14 +2663,6 @@
     "count": 10,
     "category": "IP + Creative Industry",
     "description": "Luovan työn tekijät ja yrittäjät, Luovat ry",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
-    "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
