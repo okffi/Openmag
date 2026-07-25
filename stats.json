@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "25.7.2026 klo 12.04.31"
+    "last_updated": "25.7.2026 klo 14.17.09"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -20,7 +20,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 50,
+    "count": 51,
     "category": "Global policy",
     "description": "",
     "lang": "en",
@@ -44,10 +44,34 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 11,
+    "count": 12,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
     "lang": "en",
+    "scope": "World"
+  },
+  "Institute of Network Cultures": {
+    "file": "institute_of_network_cultures.json",
+    "count": 15,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "IDN-InDepthNews": {
+    "file": "idn_indepthnews.json",
+    "count": 11,
+    "category": "Investigations + Conflict",
+    "description": "News for a Sustainable World, Peace and Security",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Yle | Kansainvälinen politiikka": {
+    "file": "yle___kansainv_linen_politiikka.json",
+    "count": 21,
+    "category": "Politics + Public sector",
+    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
+    "lang": "fi",
     "scope": "World"
   },
   "CCC Event Blog": {
@@ -92,7 +116,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 50,
+    "count": 26,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -130,14 +154,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Institute of Network Cultures": {
-    "file": "institute_of_network_cultures.json",
-    "count": 15,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Digital meets Culture": {
     "file": "digital_meets_culture.json",
     "count": 10,
@@ -172,7 +188,7 @@
   },
   "Creative Commons": {
     "file": "creative_commons.json",
-    "count": 9,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -180,7 +196,7 @@
   },
   "Internet Governance Forum (IGF)": {
     "file": "internet_governance_forum__igf_.json",
-    "count": 11,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -196,7 +212,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 6,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -204,7 +220,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 5,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -284,7 +300,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 15,
+    "count": 16,
     "category": "Investigations + Conflict",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -378,14 +394,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Yle | Kansainvälinen politiikka": {
-    "file": "yle___kansainv_linen_politiikka.json",
-    "count": 21,
-    "category": "Politics + Public sector",
-    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
-    "lang": "fi",
-    "scope": "World"
-  },
   "Centre for Research on Energy and Clean Air": {
     "file": "centre_for_research_on_energy_and_clean_air.json",
     "count": 4,
@@ -418,6 +426,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Helsingin kaupunki | Uutiset": {
+    "file": "helsingin_kaupunki___uutiset.json",
+    "count": 15,
+    "category": "Politics + Public sector",
+    "description": "feed",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "CSC": {
     "file": "csc.json",
     "count": 10,
@@ -428,7 +444,7 @@
   },
   "OpenForum Europe": {
     "file": "openforum_europe.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "Open Technologies for a Competitive and Sovereign Europe",
     "lang": "en",
@@ -436,7 +452,7 @@
   },
   "Kulta ry": {
     "file": "kulta_ry.json",
-    "count": 2,
+    "count": 12,
     "category": "Culture + Education",
     "description": "Kulttuuri- ja taidealan keskusjärjestö",
     "lang": "fi",
@@ -500,7 +516,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -548,7 +564,7 @@
   },
   "The Foreign Policy Centre": {
     "file": "the_foreign_policy_centre.json",
-    "count": 9,
+    "count": 8,
     "category": "Global policy",
     "description": "The Foreign Policy Centre (FPC) is an outward-looking, non-partisan international affairs think tank based in the UK.",
     "lang": "en",
@@ -577,14 +593,6 @@
     "description": "European Civil Protection and Humanitarian Aid Operations | News",
     "lang": "en",
     "scope": "Europe"
-  },
-  "IDN-InDepthNews": {
-    "file": "idn_indepthnews.json",
-    "count": 11,
-    "category": "Investigations + Conflict",
-    "description": "News for a Sustainable World, Peace and Security",
-    "lang": "en",
-    "scope": "World"
   },
   "UN News - Global perspective Human stories | Middle East": {
     "file": "un_news___global_perspective_human_stories___middle_east.json",
@@ -676,7 +684,7 @@
   },
   "European Cultural Foundation": {
     "file": "european_cultural_foundation.json",
-    "count": 3,
+    "count": 2,
     "category": "Culture + Education",
     "description": "",
     "lang": "en",
@@ -762,14 +770,6 @@
     "lang": "fi",
     "scope": "Europe"
   },
-  "Helsingin kaupunki | Uutiset": {
-    "file": "helsingin_kaupunki___uutiset.json",
-    "count": 15,
-    "category": "Politics + Public sector",
-    "description": "feed",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Ympäristöministeriön uutiset ja tiedotteet": {
     "file": "ymp_rist_ministeri_n_uutiset_ja_tiedotteet.json",
     "count": 100,
@@ -844,7 +844,7 @@
   },
   "Kalevi Sorsa -säätiö": {
     "file": "kalevi_sorsa__s__ti_.json",
-    "count": 3,
+    "count": 10,
     "category": "Global policy",
     "description": "",
     "lang": "fi",
@@ -1212,7 +1212,7 @@
   },
   "Taide- ja kulttuurivirasto": {
     "file": "taide__ja_kulttuurivirasto.json",
-    "count": 1,
+    "count": 10,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -1377,6 +1377,14 @@
     "description": "Suomessa tehdään huippuluokan koodia.",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Open Technology Research": {
+    "file": "open_technology_research.json",
+    "count": 8,
+    "category": "(Open) Data + Technology",
+    "description": "Building Evidence, Connecting Researchers, Informing Policy",
+    "lang": "en",
+    "scope": "World"
   },
   "Open Regulatory Compliance Working Group": {
     "file": "open_regulatory_compliance_working_group.json",
@@ -1610,6 +1618,14 @@
     "lang": "fi",
     "scope": "Estonia"
   },
+  "FNG Research": {
+    "file": "fng_research.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Frame Contemporary Art Finland": {
     "file": "frame_contemporary_art_finland.json",
     "count": 10,
@@ -1754,22 +1770,6 @@
     "lang": "fi",
     "scope": "World"
   },
-  "Suomen kirjastoseura": {
-    "file": "suomen_kirjastoseura.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Kirjastolehti": {
-    "file": "kirjastolehti.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "American Library Association": {
     "file": "american_library_association.json",
     "count": 10,
@@ -1815,6 +1815,14 @@
     "count": 10,
     "category": "Culture + Education",
     "description": "LIBRARY CHANNEL — Library WebTV",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Kulttilehdet": {
+    "file": "kulttilehdet.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1946,14 +1954,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
-    "lang": "en",
-    "scope": "World"
-  },
   "Heritage Hub Kraków": {
     "file": "heritage_hub_krak_w.json",
     "count": 10,
@@ -1994,6 +1994,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "DARIAH-EU": {
+    "file": "dariah_eu.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Digital Research Infrastructure for the Arts and Humanities",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Digital Scholarship Leiden": {
     "file": "digital_scholarship_leiden.json",
     "count": 10,
@@ -2009,6 +2017,14 @@
     "description": "Kulturarv och digitalisering",
     "lang": "sv",
     "scope": "Sweden"
+  },
+  "MuseumNext": {
+    "file": "museumnext.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Defining the Future of Museums",
+    "lang": "en",
+    "scope": "World"
   },
   "Open Objects": {
     "file": "open_objects.json",
@@ -2114,6 +2130,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "information labs": {
+    "file": "information_labs.json",
+    "count": 20,
+    "category": "Digital Policy + Rights",
+    "description": "Facts | Ideas | Discussions",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Poliittinen talous": {
     "file": "poliittinen_talous.json",
     "count": 30,
@@ -2151,6 +2175,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Tietopoliitiikan yhteistyöryhmä": {
+    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2217,6 +2249,14 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
+  },
+  "Public Institutions": {
+    "file": "public_institutions.json",
+    "count": 9,
+    "category": "Global policy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "The Ulkopolitist": {
     "file": "the_ulkopolitist.json",
@@ -2319,6 +2359,14 @@
     "count": 4,
     "category": "Human Rights + Democracy",
     "description": "International",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Investigations – ACDC": {
+    "file": "investigations___acdc.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
     "lang": "en",
     "scope": "World"
   },
