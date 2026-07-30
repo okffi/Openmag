@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "30.7.2026 klo 19.40.58"
+    "last_updated": "30.7.2026 klo 21.22.04"
   },
   "Epressi - Ulkomaat": {
     "file": "epressi___ulkomaat.json",
@@ -36,7 +36,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 53,
+    "count": 55,
     "category": "Global policy",
     "description": "",
     "lang": "en",
@@ -52,7 +52,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 17,
+    "count": 18,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -196,7 +196,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 25,
+    "count": 26,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -212,7 +212,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 24,
+    "count": 50,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -305,6 +305,38 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Open Knowledge Foundation Blog": {
+    "file": "open_knowledge_foundation_blog.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Content for a fair, sustainable and open future",
+    "lang": "en",
+    "scope": "World"
+  },
+  "United Nations | The Guardian": {
+    "file": "united_nations___the_guardian.json",
+    "count": 20,
+    "category": "Global policy",
+    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
+    "lang": "en",
+    "scope": "World"
+  },
+  "404 Media": {
+    "file": "404_media.json",
+    "count": 17,
+    "category": "Investigations + Conflict",
+    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Carbon Brief": {
+    "file": "carbon_brief.json",
+    "count": 12,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "Finnish AI Region": {
     "file": "finnish_ai_region.json",
@@ -418,14 +450,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "United Nations | The Guardian": {
-    "file": "united_nations___the_guardian.json",
-    "count": 20,
-    "category": "Global policy",
-    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
-    "lang": "en",
-    "scope": "World"
-  },
   "Amnesty International": {
     "file": "amnesty_international.json",
     "count": 14,
@@ -458,14 +482,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "404 Media": {
-    "file": "404_media.json",
-    "count": 17,
-    "category": "Investigations + Conflict",
-    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Eurozine": {
     "file": "eurozine.json",
     "count": 100,
@@ -476,7 +492,7 @@
   },
   "OCHA": {
     "file": "ocha.json",
-    "count": 10,
+    "count": 11,
     "category": "Investigations + Conflict",
     "description": "United Nations Office for the Coordination of Humanitarian Affairs",
     "lang": "en",
@@ -524,18 +540,10 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 20,
+    "count": 21,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
-    "scope": "World"
-  },
-  "Carbon Brief": {
-    "file": "carbon_brief.json",
-    "count": 12,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "en",
     "scope": "World"
   },
   "United Nations Sustainable Development": {
@@ -852,7 +860,7 @@
   },
   "Creative Commons": {
     "file": "creative_commons.json",
-    "count": 10,
+    "count": 9,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -932,19 +940,11 @@
   },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
     "scope": "Sweden"
-  },
-  "Open Knowledge Foundation Blog": {
-    "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Content for a fair, sustainable and open future",
-    "lang": "en",
-    "scope": "World"
   },
   "Access Now": {
     "file": "access_now.json",
@@ -996,7 +996,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -1594,6 +1594,14 @@
     "lang": "fi",
     "scope": "Estonia"
   },
+  "FNG Research": {
+    "file": "fng_research.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Frame Contemporary Art Finland": {
     "file": "frame_contemporary_art_finland.json",
     "count": 10,
@@ -2050,14 +2058,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Digime": {
     "file": "digime.json",
     "count": 10,
@@ -2487,6 +2487,14 @@
     "count": 30,
     "category": "Investigations + Conflict",
     "description": "Kosmopolis on Suomen rauhantutkimusyhdistyksen julkaisema monitieteinen rauhan-, konfliktin- ja maailmanpolitiikan tutkimuksen aikakauslehti. Neljä kertaa vuodessa ilmestyvä Kosmopolis on erinomainen ikkuna alan tuoreimpaan tutkimukseen. Kosmopolis ilmestyi ensimmäisen kerran vuonna 1993, mutta sitä voidaan pitää perillisenä Rauhaan tutkien -tiedotteelle (1971-1984) ja Rauhantutkimus-lehdelle (1985-1992).",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "JSN": {
+    "file": "jsn.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
   },
