@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "31.7.2026 klo 19.03.40"
+    "last_updated": "31.7.2026 klo 21.24.15"
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
@@ -12,7 +12,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 17,
+    "count": 18,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -20,7 +20,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 19,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -44,7 +44,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 39,
+    "count": 40,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -84,7 +84,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 33,
+    "count": 35,
     "category": "Politics + Public sector",
     "description": "European Commission | News",
     "lang": "en",
@@ -92,7 +92,7 @@
   },
   "Demokraatti": {
     "file": "demokraatti.json",
-    "count": 37,
+    "count": 38,
     "category": "Politics + Public sector",
     "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
     "lang": "fi",
@@ -148,7 +148,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 10,
+    "count": 6,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -188,7 +188,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 23,
+    "count": 24,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -236,7 +236,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 18,
+    "count": 19,
     "category": "Investigations + Conflict",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -273,6 +273,78 @@
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
     "scope": "World"
+  },
+  "xkcd": {
+    "file": "xkcd.json",
+    "count": 5,
+    "category": "(Open) Data + Technology",
+    "description": "xkcd.com: A webcomic of romance and math humor.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "European Heritage Hub": {
+    "file": "european_heritage_hub.json",
+    "count": 5,
+    "category": "Digital Culture + Heritage",
+    "description": "Where cultural heritage connects",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Center for European Policy Analysis": {
+    "file": "center_for_european_policy_analysis.json",
+    "count": 11,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Local Contexts": {
+    "file": "local_contexts.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Grounding Indigenous Rights",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Electronic Frontier Foundation": {
+    "file": "electronic_frontier_foundation.json",
+    "count": 11,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Amnesty International": {
+    "file": "amnesty_international.json",
+    "count": 13,
+    "category": "Human Rights + Democracy",
+    "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "CIVICUS Op-Eds": {
+    "file": "civicus_op_eds.json",
+    "count": 50,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Hrana": {
+    "file": "hrana.json",
+    "count": 12,
+    "category": "Human Rights + Democracy",
+    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
+    "lang": "en",
+    "scope": "World"
+  },
+  "PreventionWeb": {
+    "file": "preventionweb.json",
+    "count": 43,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Oulu2026": {
     "file": "oulu2026.json",
@@ -313,14 +385,6 @@
     "description": "Content for a fair, sustainable and open future",
     "lang": "en",
     "scope": "World"
-  },
-  "Center for European Policy Analysis": {
-    "file": "center_for_european_policy_analysis.json",
-    "count": 11,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "MySociety Newsletter": {
     "file": "mysociety_newsletter.json",
@@ -364,7 +428,7 @@
   },
   "UN News - Global perspective Human stories": {
     "file": "un_news___global_perspective_human_stories.json",
-    "count": 53,
+    "count": 54,
     "category": "Global policy",
     "description": "UN News - Global perspective Human stories | Global",
     "lang": "en",
@@ -391,14 +455,6 @@
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Amnesty International": {
-    "file": "amnesty_international.json",
-    "count": 13,
-    "category": "Human Rights + Democracy",
-    "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
     "lang": "en",
     "scope": "World"
   },
@@ -444,7 +500,7 @@
   },
   "OCHA": {
     "file": "ocha.json",
-    "count": 10,
+    "count": 11,
     "category": "Investigations + Conflict",
     "description": "United Nations Office for the Coordination of Humanitarian Affairs",
     "lang": "en",
@@ -474,14 +530,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "PreventionWeb": {
-    "file": "preventionweb.json",
-    "count": 43,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
     "count": 15,
@@ -492,7 +540,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 24,
+    "count": 50,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -505,14 +553,6 @@
     "description": "FAIR",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "xkcd": {
-    "file": "xkcd.json",
-    "count": 5,
-    "category": "(Open) Data + Technology",
-    "description": "xkcd.com: A webcomic of romance and math humor.",
-    "lang": "en",
-    "scope": "World"
   },
   "World Heritage Centre News": {
     "file": "world_heritage_centre_news.json",
@@ -550,14 +590,6 @@
     "file": "the_public_domain_review.json",
     "count": 100,
     "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Electronic Frontier Foundation": {
-    "file": "electronic_frontier_foundation.json",
-    "count": 11,
-    "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
     "scope": "World"
@@ -916,7 +948,7 @@
   },
   "Creative Commons": {
     "file": "creative_commons.json",
-    "count": 10,
+    "count": 9,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -924,7 +956,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -964,7 +996,7 @@
   },
   "OpenForum Europe": {
     "file": "openforum_europe.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Data + Technology",
     "description": "Open Technologies for a Competitive and Sovereign Europe",
     "lang": "en",
@@ -1033,14 +1065,6 @@
     "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
     "scope": "Sweden"
-  },
-  "European Heritage Hub": {
-    "file": "european_heritage_hub.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Where cultural heritage connects",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Wikimedia Deutschland Blog": {
     "file": "wikimedia_deutschland_blog.json",
@@ -1146,14 +1170,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "CIVICUS Op-Eds": {
-    "file": "civicus_op_eds.json",
-    "count": 50,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Journalism Science Alliance": {
     "file": "journalism_science_alliance.json",
     "count": 10,
@@ -1201,30 +1217,6 @@
     "description": "Protecting digital rights in Europe.",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Internet Archive Europe": {
-    "file": "internet_archive_europe.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Bringing Collections to Life",
-    "lang": "en",
-    "scope": "Netherlands"
-  },
-  "Mozilla Open Policy & Advocacy": {
-    "file": "mozilla_open_policy___advocacy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Mozilla's official blog on open Internet policy initiatives and developments",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Local Contexts": {
-    "file": "local_contexts.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Grounding Indigenous Rights",
-    "lang": "en",
-    "scope": "World"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -1314,6 +1306,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Open By Default": {
+    "file": "open_by_default.json",
+    "count": 8,
+    "category": "(Open) Data + Technology",
+    "description": "",
+    "lang": "en",
+    "scope": "Netherlands"
+  },
   "Vereniging Open Nederland": {
     "file": "vereniging_open_nederland.json",
     "count": 38,
@@ -1330,22 +1330,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Science | Federation of Finnish Learned Societies": {
-    "file": "open_science___federation_of_finnish_learned_societies.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "en",
-    "scope": "Finland"
-  },
-  "Zooniverse": {
-    "file": "zooniverse.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Think Open": {
     "file": "think_open.json",
     "count": 10,
@@ -1354,29 +1338,13 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Confederation of Open Access Repositories": {
-    "file": "confederation_of_open_access_repositories.json",
-    "count": 10,
+  "Open Access and Digital Scholarship Blog": {
+    "file": "open_access_and_digital_scholarship_blog.json",
+    "count": 15,
     "category": "(Open) Science + Research",
-    "description": "Building a sustainable, global knowledge commons",
+    "description": "Open Access and Digital Scholarship at Imperial College London",
     "lang": "en",
     "scope": "World"
-  },
-  "Tiedepolitiikka": {
-    "file": "tiedepolitiikka.json",
-    "count": 30,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Informaatiotutkimus": {
-    "file": "informaatiotutkimus.json",
-    "count": 8,
-    "category": "(Open) Science + Research",
-    "description": "Informaatiotutkimus (vuoteen 1995 Kirjastotiede ja informatiikka) on Informaatiotutkimuksen yhdistyksen kustantama tieteellinen aikakausjulkaisu, joka on ilmestynyt vuodesta 1981 lähtien. Lehti julkaisee tieteenalaansa ja siihen läheisesti liittyvien tieteenalojen kirjoituksia kuten artikkeleita, katsauksia, kirjallisuusesittelyitä ja -arviointeja sekä tiivistelmiä opinnäytteistä. Informaatiotutkimus on alan ainoa suomalainen vertaisarvioitu tieteellinen aikakausjulkaisu. Lehti ei peri kirjoittajamaksuja.\n\n Vuodesta 2008 lähtien Informaatiotutkimus on ilmestynyt sekä avoimena verkkojulkaisuna että painettuna vuosikirjana. Vuodesta 2018 lähtien lehti ilmestyy yksinomaan verkkojulkaisuna. Lehden koko aineisto vuodesta 1981 lähtien on avoimesti saatavissa verkkojulkaisussa.\n\n ISSN 1797-9129 (Verkkojulkaisu)\n\n ISSN 1797-9137 (Painettu julkaisu)\n\n Lehden toiminnan mahdollistavat Informaatiotutkimuksen yhdistyksen jäsen- ja kannatusmaksut sekä Tieteellisten seurain valtuuskunnan (TSV) kautta ohjautuva opetus- ja kulttuuriministeriön tuki. Em. tahojen taloudellisen tuen ja palveluiden (ml. seminaaritoiminta) lisäksi lehti hyötyy Suomen tiedekustantajien liitto ry:n tarjoamista ohjeistuksista ja koulutuksista.\n\n Lehti on rekisteröity luetettavien tieteellisten open access -lehtien DOAJ-hakemistoon .",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Kansanvalistusseura": {
     "file": "kansanvalistusseura.json",
@@ -1410,14 +1378,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Avoin tiede": {
-    "file": "avoin_tiede.json",
-    "count": 8,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "HIIG": {
     "file": "hiig.json",
     "count": 20,
@@ -1447,14 +1407,6 @@
     "count": 11,
     "category": "(Open) Science + Research",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Tieteellisten seurain valtuuskunta TSV": {
-    "file": "tieteellisten_seurain_valtuuskunta_tsv.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1562,14 +1514,6 @@
     "lang": "fi",
     "scope": "Estonia"
   },
-  "FNG Research": {
-    "file": "fng_research.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Frame Contemporary Art Finland": {
     "file": "frame_contemporary_art_finland.json",
     "count": 10,
@@ -1634,22 +1578,6 @@
     "lang": "en",
     "scope": "Italy"
   },
-  "Kulttuuripolitiikan tutkimuksen vuosikirja": {
-    "file": "kulttuuripolitiikan_tutkimuksen_vuosikirja.json",
-    "count": 30,
-    "category": "Culture + Education",
-    "description": "Kulttuuripolitiikan tutkimuksen vuosikirjaa julkaisee Kulttuuripolitiikan tutkimuksen seura. Kyse on kerran vuodessa ilmestyvästä vertaisarvioidusta julkaisusta. Vuosikirja on muodoltaan sähköinen open access -julkaisu. Sen sisältö koostuu artikkeleiden lisäksi muun muassa lyhyemmistä katsausteksteistä, kirja-arvosteluista, kolumneista ja haastatteluista.\n\n Kulttuuripolitiikan tutkimuksen vuosikirja on saanut Tieteellisten seurain valtuuskunnan (TSV) kautta tieteellisen julkaisutoiminnan avustusta, jota opetus- ja kulttuuriministeriö myöntää Veikkauksen tuotoista. Vuosikirja on saanut tukea myös Suomen tiedekustantajien liitolta .",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Kulttuurintutkimus": {
-    "file": "kulttuurintutkimus.json",
-    "count": 30,
-    "category": "Culture + Education",
-    "description": "Kulttuurintutkimus on monitieteinen aikakauslehti, joka käsittelee ja esittelee kulttuuriin kohdistuvaa tutkimusta.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "K-blogg - Riksantikvarieämbetets blogg": {
     "file": "k_blogg___riksantikvarie_mbetets_blogg.json",
     "count": 100,
@@ -1685,14 +1613,6 @@
   "Kulttuuriperintökasvatuksen seura": {
     "file": "kulttuuriperint_kasvatuksen_seura.json",
     "count": 9,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Taide- ja kulttuurivirasto": {
-    "file": "taide__ja_kulttuurivirasto.json",
-    "count": 10,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -2010,14 +1930,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Pelitutkimuksen vuosikirja": {
-    "file": "pelitutkimuksen_vuosikirja.json",
-    "count": 12,
-    "category": "Digital Culture + Heritage",
-    "description": "Pelitutkimuksen vuosikirja on vertaisarvioitu, avoin tiedejulkaisu. Pelitutkimus on sekä monitieteinen tutkimusala että nuori akateeminen oppiaine, jonka parissa toimivien tutkijoiden huomion keskiössä on digitaalisten pelien erityisluonne. Pelien ja pelaamisen moniulotteisuus tulee esiin tarkasteltaessa niitä esimerkiksi taiteellisina, teknisinä, sosiaalisina, kulttuurisina tai taloudellisina ilmiöinä, mitkä ovat myös esimerkkejä pelitutkimuksen vuosikirjan sisältämistä näkökulmista.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "The Museum Of The Future": {
     "file": "the_museum_of_the_future.json",
     "count": 10,
@@ -2058,6 +1970,14 @@
     "lang": "en",
     "scope": "Belgium"
   },
+  "Internet Archive Europe": {
+    "file": "internet_archive_europe.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Bringing Collections to Life",
+    "lang": "en",
+    "scope": "Netherlands"
+  },
   "Kielipankki": {
     "file": "kielipankki.json",
     "count": 99,
@@ -2073,14 +1993,6 @@
     "description": "Kulturarv och digitalisering",
     "lang": "sv",
     "scope": "Sweden"
-  },
-  "MuseumNext": {
-    "file": "museumnext.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Defining the Future of Museums",
-    "lang": "en",
-    "scope": "World"
   },
   "Open Objects": {
     "file": "open_objects.json",
@@ -2111,6 +2023,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Defending Free Speech Online",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Mozilla Open Policy & Advocacy": {
+    "file": "mozilla_open_policy___advocacy.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Mozilla's official blog on open Internet policy initiatives and developments",
     "lang": "en",
     "scope": "World"
   },
@@ -2194,22 +2114,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "information labs": {
-    "file": "information_labs.json",
-    "count": 20,
-    "category": "Digital Policy + Rights",
-    "description": "Facts | Ideas | Discussions",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Poliittinen talous": {
-    "file": "poliittinen_talous.json",
-    "count": 30,
-    "category": "Digital Policy + Rights",
-    "description": "Poliittinen talous (ISSN 2341-7862) julkaisee talouden instituutioiden, talouspolitiikan, talousdiskurssien ja taloustieteen poliittisia analyyseja sekä toimii poliittisen talouden tutkimuksen ja opetuksen edistämisen suomalaisena keskustelufoorumina. Lehteä julkaisee Poliittisen talouden tutkimuksen seura ry.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "MyData": {
     "file": "mydata.json",
     "count": 10,
@@ -2242,27 +2146,11 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Rajapinta": {
-    "file": "rajapinta.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "researcher community focused on digital social sciences",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "TIEKE": {
     "file": "tieke.json",
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Tietopoliitiikan yhteistyöryhmä": {
-    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2354,14 +2242,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Global Solutions Initiative": {
-    "file": "global_solutions_initiative.json",
-    "count": 10,
-    "category": "Global policy",
-    "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
-    "lang": "en",
-    "scope": "World"
-  },
   "UN Global Pulse": {
     "file": "un_global_pulse.json",
     "count": 10,
@@ -2394,14 +2274,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "CoP CC on Participatory and Deliberative Democracy": {
-    "file": "cop_cc_on_participatory_and_deliberative_democracy.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Ihmisoikeusliitto": {
     "file": "ihmisoikeusliitto.json",
     "count": 10,
@@ -2417,14 +2289,6 @@
     "description": "Koulutusta, kulttuuria ja kansalaistoimintaa",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Hrana": {
-    "file": "hrana.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
-    "lang": "en",
-    "scope": "World"
   },
   "Front Line Defenders": {
     "file": "front_line_defenders.json",
@@ -2466,14 +2330,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Investigations – ACDC": {
-    "file": "investigations___acdc.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
-    "lang": "en",
-    "scope": "World"
-  },
   "correctiv.org": {
     "file": "correctiv_org.json",
     "count": 100,
@@ -2490,13 +2346,13 @@
     "lang": "en",
     "scope": "World"
   },
-  "Kosmopolis": {
-    "file": "kosmopolis.json",
-    "count": 30,
+  "Global Investigative Journalism Network": {
+    "file": "global_investigative_journalism_network.json",
+    "count": 20,
     "category": "Investigations + Conflict",
-    "description": "Kosmopolis on Suomen rauhantutkimusyhdistyksen julkaisema monitieteinen rauhan-, konfliktin- ja maailmanpolitiikan tutkimuksen aikakauslehti. Neljä kertaa vuodessa ilmestyvä Kosmopolis on erinomainen ikkuna alan tuoreimpaan tutkimukseen. Kosmopolis ilmestyi ensimmäisen kerran vuonna 1993, mutta sitä voidaan pitää perillisenä Rauhaan tutkien -tiedotteelle (1971-1984) ja Rauhantutkimus-lehdelle (1985-1992).",
-    "lang": "fi",
-    "scope": "Finland"
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "UN Maps": {
     "file": "un_maps.json",
@@ -2546,6 +2402,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "NORDIS": {
+    "file": "nordis.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "The Nordic Observatory for Digital Media and Information Disorder",
+    "lang": "en",
+    "scope": "Nordic + Baltic countries"
+  },
   "OCCRP Announcements": {
     "file": "occrp_announcements.json",
     "count": 10,
@@ -2556,7 +2420,7 @@
   },
   "OCCRP Features": {
     "file": "occrp_features.json",
-    "count": 9,
+    "count": 8,
     "category": "Investigations + Conflict",
     "description": "OCCRP stories about Features delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
@@ -2564,7 +2428,7 @@
   },
   "OCCRP Investigations": {
     "file": "occrp_investigations.json",
-    "count": 2,
+    "count": 3,
     "category": "Investigations + Conflict",
     "description": "OCCRP stories about Investigations delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
@@ -2623,6 +2487,14 @@
     "count": 10,
     "category": "IP + Creative Industry",
     "description": "Luovan työn tekijät ja yrittäjät, Luovat ry",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
+    "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2791,14 +2663,6 @@
     "count": 20,
     "category": "Politics + Public sector",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Politiikasta": {
-    "file": "politiikasta.json",
-    "count": 10,
-    "category": "Politics + Public sector",
-    "description": "Ajankohtaista analyysia yhteiskunnasta",
     "lang": "fi",
     "scope": "Finland"
   },
