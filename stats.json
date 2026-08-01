@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "1.8.2026 klo 21.03.40"
+    "last_updated": "1.8.2026 klo 23.11.53"
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
@@ -84,7 +84,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 38,
+    "count": 40,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -95,6 +95,14 @@
     "count": 17,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Hrana": {
+    "file": "hrana.json",
+    "count": 11,
+    "category": "Human Rights + Democracy",
+    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
     "scope": "World"
   },
@@ -274,14 +282,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Hrana": {
-    "file": "hrana.json",
-    "count": 11,
-    "category": "Human Rights + Democracy",
-    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
-    "lang": "en",
-    "scope": "World"
-  },
   "Eastflank": {
     "file": "eastflank.json",
     "count": 10,
@@ -412,7 +412,7 @@
   },
   "PreventionWeb": {
     "file": "preventionweb.json",
-    "count": 40,
+    "count": 45,
     "category": "Sustainability + Foresight",
     "description": "",
     "lang": "en",
@@ -564,7 +564,7 @@
   },
   "UN News - Global perspective Human stories | Peace and Security": {
     "file": "un_news___global_perspective_human_stories___peace_and_security.json",
-    "count": 5,
+    "count": 6,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -796,7 +796,7 @@
   },
   "Internet Governance Forum (IGF)": {
     "file": "internet_governance_forum__igf_.json",
-    "count": 13,
+    "count": 20,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -1329,14 +1329,6 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
-  },
-  "Zooniverse": {
-    "file": "zooniverse.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
-    "lang": "en",
-    "scope": "World"
   },
   "Think Open": {
     "file": "think_open.json",
@@ -2002,13 +1994,13 @@
     "lang": "en",
     "scope": "World"
   },
-  "Extreme Citizen Science blog": {
-    "file": "extreme_citizen_science_blog.json",
+  "DARIAH-EU": {
+    "file": "dariah_eu.json",
     "count": 10,
     "category": "Digital Culture + Heritage",
-    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "description": "Digital Research Infrastructure for the Arts and Humanities",
     "lang": "en",
-    "scope": "World"
+    "scope": "Europe"
   },
   "Digime": {
     "file": "digime.json",
@@ -2025,6 +2017,14 @@
     "description": "",
     "lang": "en",
     "scope": "Belgium"
+  },
+  "European Heritage Hub": {
+    "file": "european_heritage_hub.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Where cultural heritage connects",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Internet Archive Europe": {
     "file": "internet_archive_europe.json",
@@ -2201,6 +2201,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "TIEKE": {
     "file": "tieke.json",
@@ -2426,11 +2434,19 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Online Journalism Blog": {
-    "file": "online_journalism_blog.json",
+  "JSN": {
+    "file": "jsn.json",
     "count": 10,
     "category": "Investigations + Conflict",
-    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
+    "description": "Julkisen sanan neuvosto",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "UN Maps": {
+    "file": "un_maps.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
