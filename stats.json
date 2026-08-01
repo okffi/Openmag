@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "1.8.2026 klo 23.11.53"
+    "last_updated": "2.8.2026 klo 1.03.07"
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
@@ -103,6 +103,14 @@
     "count": 11,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News - Global perspective Human stories | Peace and Security": {
+    "file": "un_news___global_perspective_human_stories___peace_and_security.json",
+    "count": 6,
+    "category": "Investigations + Conflict",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -420,7 +428,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 26,
+    "count": 25,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -441,6 +449,14 @@
     "description": "feed",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "European Heritage Hub": {
+    "file": "european_heritage_hub.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Where cultural heritage connects",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Oulu2026": {
     "file": "oulu2026.json",
@@ -516,7 +532,7 @@
   },
   "UN News - Global perspective Human stories | Europe": {
     "file": "un_news___global_perspective_human_stories___europe.json",
-    "count": 29,
+    "count": 28,
     "category": "Global policy",
     "description": "",
     "lang": "en",
@@ -561,14 +577,6 @@
     "description": "Supporting cross-border investigative journalism in Europe",
     "lang": "en",
     "scope": "Europe"
-  },
-  "UN News - Global perspective Human stories | Peace and Security": {
-    "file": "un_news___global_perspective_human_stories___peace_and_security.json",
-    "count": 6,
-    "category": "Investigations + Conflict",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "YouthMappers": {
     "file": "youthmappers.json",
@@ -796,7 +804,7 @@
   },
   "Internet Governance Forum (IGF)": {
     "file": "internet_governance_forum__igf_.json",
-    "count": 20,
+    "count": 13,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -948,7 +956,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -1020,7 +1028,7 @@
   },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
@@ -1329,6 +1337,14 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
+  },
+  "Zooniverse": {
+    "file": "zooniverse.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
+    "lang": "en",
+    "scope": "World"
   },
   "Think Open": {
     "file": "think_open.json",
@@ -1762,6 +1778,14 @@
     "lang": "sv",
     "scope": "Sweden"
   },
+  "Villa Karo": {
+    "file": "villa_karo.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "World"
+  },
   "American Library Association": {
     "file": "american_library_association.json",
     "count": 10,
@@ -1994,6 +2018,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
+  },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
     "count": 10,
@@ -2017,14 +2049,6 @@
     "description": "",
     "lang": "en",
     "scope": "Belgium"
-  },
-  "European Heritage Hub": {
-    "file": "european_heritage_hub.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Where cultural heritage connects",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Internet Archive Europe": {
     "file": "internet_archive_europe.json",
@@ -2434,19 +2458,19 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "JSN": {
-    "file": "jsn.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Julkisen sanan neuvosto",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "UN Maps": {
     "file": "un_maps.json",
     "count": 10,
     "category": "Investigations + Conflict",
     "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Online Journalism Blog": {
+    "file": "online_journalism_blog.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
     "scope": "World"
   },
@@ -2777,6 +2801,14 @@
     "description": "Parempaa Eurooppaa rakentamassa",
     "lang": "fi",
     "scope": "Europe"
+  },
+  "Kuntaliitto": {
+    "file": "kuntaliitto.json",
+    "count": 10,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Association of Finnish Cities and Municipalities": {
     "file": "association_of_finnish_cities_and_municipalities.json",
