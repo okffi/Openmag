@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "7.8.2026 klo 22.05.34"
+    "last_updated": "7.8.2026 klo 23.49.11"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
@@ -60,7 +60,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 23,
+    "count": 24,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -236,7 +236,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3843,
+    "count": 3844,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -308,11 +308,19 @@
   },
   "OCHA": {
     "file": "ocha.json",
-    "count": 11,
+    "count": 12,
     "category": "Investigations + Conflict",
     "description": "United Nations Office for the Coordination of Humanitarian Affairs",
     "lang": "en",
     "scope": "World"
+  },
+  "Disconnect": {
+    "file": "disconnect.json",
+    "count": 15,
+    "category": "Digital Policy + Rights",
+    "description": "Tech analysis without the boosterism",
+    "lang": "en",
+    "scope": "Sweden"
   },
   "Wikimedia Deutschland Blog": {
     "file": "wikimedia_deutschland_blog.json",
@@ -604,7 +612,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -665,14 +673,6 @@
     "description": "Content for a fair, sustainable and open future",
     "lang": "en",
     "scope": "World"
-  },
-  "Disconnect": {
-    "file": "disconnect.json",
-    "count": 15,
-    "category": "Digital Policy + Rights",
-    "description": "Tech analysis without the boosterism",
-    "lang": "en",
-    "scope": "Sweden"
   },
   "Access Now": {
     "file": "access_now.json",
@@ -1180,7 +1180,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 3,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -2178,6 +2178,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Copyright Literacy": {
+    "file": "copyright_literacy.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Decoding copyright and bringing you enlightenment",
+    "lang": "en",
+    "scope": "World"
+  },
   "Creative Commons": {
     "file": "creative_commons.json",
     "count": 10,
@@ -2225,14 +2233,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "information labs": {
-    "file": "information_labs.json",
-    "count": 20,
-    "category": "Digital Policy + Rights",
-    "description": "Facts | Ideas | Discussions",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Poliittinen talous": {
     "file": "poliittinen_talous.json",
@@ -2689,14 +2689,6 @@
     "description": "",
     "lang": "fi",
     "scope": "World"
-  },
-  "Avate Audiovisuaalisen alan tekijät ry": {
-    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Kopiosto": {
     "file": "kopiosto.json",
