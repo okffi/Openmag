@@ -1,6 +1,14 @@
 {
   "__meta": {
-    "last_updated": "8.8.2026 klo 7.14.58"
+    "last_updated": "8.8.2026 klo 8.46.28"
+  },
+  "Suomen Kuvalehti": {
+    "file": "suomen_kuvalehti.json",
+    "count": 34,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Diff": {
     "file": "diff.json",
@@ -234,14 +242,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Suomen Kuvalehti": {
-    "file": "suomen_kuvalehti.json",
-    "count": 34,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
     "count": 48,
@@ -311,6 +311,14 @@
     "count": 7,
     "category": "Sustainability + Foresight",
     "description": "17 Goals to Transform Our World",
+    "lang": "en",
+    "scope": "World"
+  },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 49,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
     "scope": "World"
   },
@@ -500,7 +508,7 @@
   },
   "The Conversation – Articles (EUROPE)": {
     "file": "the_conversation___articles__europe_.json",
-    "count": 46,
+    "count": 47,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -612,7 +620,7 @@
   },
   "Open Technology Research": {
     "file": "open_technology_research.json",
-    "count": 1,
+    "count": 9,
     "category": "(Open) Data + Technology",
     "description": "Building Evidence, Connecting Researchers, Informing Policy",
     "lang": "en",
@@ -684,7 +692,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 5,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -1090,6 +1098,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "European Heritage Hub": {
+    "file": "european_heritage_hub.json",
+    "count": 3,
+    "category": "Digital Culture + Heritage",
+    "description": "Where cultural heritage connects",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Berkman Klein Center for Internet & Society at Harvard University Community": {
     "file": "berkman_klein_center_for_internet___society_at_harvard_university_community.json",
     "count": 10,
@@ -1308,7 +1324,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -1321,38 +1337,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "CSC": {
-    "file": "csc.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "ICT Solutions for Brilliant Minds",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "OpenForum Europe": {
-    "file": "openforum_europe.json",
-    "count": 1,
-    "category": "(Open) Data + Technology",
-    "description": "Open Technologies for a Competitive and Sovereign Europe",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Svenska institutet": {
-    "file": "svenska_institutet.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Vi främjar Sverige i världen",
-    "lang": "sv",
-    "scope": "Sweden"
-  },
-  "Rising Voices": {
-    "file": "rising_voices.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "Helping the global population join the global conversation",
-    "lang": "en",
-    "scope": "World"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -1367,6 +1351,14 @@
     "count": 15,
     "category": "(Open) Data + Technology",
     "description": "Suomen avoimien tietojärjestelmien keskus - COSS ry",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "CSC": {
+    "file": "csc.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "ICT Solutions for Brilliant Minds",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1393,6 +1385,14 @@
     "description": "Suomessa tehdään huippuluokan koodia.",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "OpenForum Europe": {
+    "file": "openforum_europe.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "Open Technologies for a Competitive and Sovereign Europe",
+    "lang": "en",
+    "scope": "Europe"
   },
   "CC Sweden": {
     "file": "cc_sweden.json",
@@ -1527,14 +1527,6 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "Scholarly Publishing and Academic Resources Coalition",
-    "lang": "en",
-    "scope": "World"
-  },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 49,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
     "scope": "World"
   },
@@ -1810,6 +1802,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Taide- ja kulttuurivirasto": {
+    "file": "taide__ja_kulttuurivirasto.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Suomen Madridin-instituutti": {
     "file": "suomen_madridin_instituutti.json",
     "count": 10,
@@ -1857,6 +1857,14 @@
     "description": "Samfundet för byggnadskonst - Architechtural Society",
     "lang": "fi",
     "scope": "World"
+  },
+  "Svenska institutet": {
+    "file": "svenska_institutet.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Vi främjar Sverige i världen",
+    "lang": "sv",
+    "scope": "Sweden"
   },
   "Suomen kirjastoseura": {
     "file": "suomen_kirjastoseura.json",
@@ -2034,14 +2042,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
-    "lang": "en",
-    "scope": "World"
-  },
   "Pelitutkimuksen vuosikirja": {
     "file": "pelitutkimuksen_vuosikirja.json",
     "count": 12,
@@ -2082,14 +2082,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "European Heritage Hub": {
-    "file": "european_heritage_hub.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Where cultural heritage connects",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Kielipankki": {
     "file": "kielipankki.json",
     "count": 99,
@@ -2097,6 +2089,22 @@
     "description": "The Language Bank of Finland",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Nätverket KOD": {
+    "file": "n_tverket_kod.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Kulturarv och digitalisering",
+    "lang": "sv",
+    "scope": "Sweden"
+  },
+  "MuseumNext": {
+    "file": "museumnext.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Defining the Future of Museums",
+    "lang": "en",
+    "scope": "World"
   },
   "Open Objects": {
     "file": "open_objects.json",
@@ -2162,14 +2170,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Copyright Literacy": {
-    "file": "copyright_literacy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Decoding copyright and bringing you enlightenment",
-    "lang": "en",
-    "scope": "World"
-  },
   "Stanford CIS": {
     "file": "stanford_cis.json",
     "count": 15,
@@ -2209,6 +2209,14 @@
     "description": "",
     "lang": "en",
     "scope": "World"
+  },
+  "information labs": {
+    "file": "information_labs.json",
+    "count": 20,
+    "category": "Digital Policy + Rights",
+    "description": "Facts | Ideas | Discussions",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Poliittinen talous": {
     "file": "poliittinen_talous.json",
@@ -2362,6 +2370,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Global Solutions Initiative": {
+    "file": "global_solutions_initiative.json",
+    "count": 10,
+    "category": "Global policy",
+    "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
+    "lang": "en",
+    "scope": "World"
+  },
   "UN Global Pulse": {
     "file": "un_global_pulse.json",
     "count": 10,
@@ -2425,6 +2441,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Rising Voices": {
+    "file": "rising_voices.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "Helping the global population join the global conversation",
+    "lang": "en",
+    "scope": "World"
   },
   "Open Government Partnership Newsletter": {
     "file": "open_government_partnership_newsletter.json",
@@ -2501,6 +2525,14 @@
   "Forbidden Stories": {
     "file": "forbidden_stories.json",
     "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Global Investigative Journalism Network": {
+    "file": "global_investigative_journalism_network.json",
+    "count": 20,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
