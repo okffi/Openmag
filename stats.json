@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "8.8.2026 klo 14.34.50"
+    "last_updated": "8.8.2026 klo 16.01.31"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -58,19 +58,19 @@
     "lang": "fi",
     "scope": "World"
   },
-  "Diff": {
-    "file": "diff.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "News from the Wikimedia movement",
-    "lang": "en",
-    "scope": "World"
-  },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
     "count": 39,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Diff": {
+    "file": "diff.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "News from the Wikimedia movement",
     "lang": "en",
     "scope": "World"
   },
@@ -354,6 +354,30 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "UN News - Global perspective Human stories | Middle East": {
+    "file": "un_news___global_perspective_human_stories___middle_east.json",
+    "count": 24,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News - Global perspective Human stories | Peace and Security": {
+    "file": "un_news___global_perspective_human_stories___peace_and_security.json",
+    "count": 7,
+    "category": "Investigations + Conflict",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "PreventionWeb": {
+    "file": "preventionweb.json",
+    "count": 50,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Wikimedia Deutschland Blog": {
     "file": "wikimedia_deutschland_blog.json",
     "count": 16,
@@ -506,22 +530,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "UN News - Global perspective Human stories | Middle East": {
-    "file": "un_news___global_perspective_human_stories___middle_east.json",
-    "count": 24,
-    "category": "Investigations + Conflict",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "UN News - Global perspective Human stories | Peace and Security": {
-    "file": "un_news___global_perspective_human_stories___peace_and_security.json",
-    "count": 7,
-    "category": "Investigations + Conflict",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "YouthMappers": {
     "file": "youthmappers.json",
     "count": 20,
@@ -594,14 +602,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "PreventionWeb": {
-    "file": "preventionweb.json",
-    "count": 50,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Centrum Balticum": {
     "file": "centrum_balticum.json",
     "count": 7,
@@ -628,7 +628,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -636,7 +636,7 @@
   },
   "Open Technology Research": {
     "file": "open_technology_research.json",
-    "count": 1,
+    "count": 9,
     "category": "(Open) Data + Technology",
     "description": "Building Evidence, Connecting Researchers, Informing Policy",
     "lang": "en",
@@ -708,7 +708,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 4,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -1268,7 +1268,7 @@
   },
   "Internet Governance Forum (IGF)": {
     "file": "internet_governance_forum__igf_.json",
-    "count": 20,
+    "count": 12,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -1377,6 +1377,14 @@
     "description": "Suomessa tehdään huippuluokan koodia.",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "OpenForum Europe": {
+    "file": "openforum_europe.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "Open Technologies for a Competitive and Sovereign Europe",
+    "lang": "en",
+    "scope": "Europe"
   },
   "CC Sweden": {
     "file": "cc_sweden.json",
@@ -1786,6 +1794,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Taide- ja kulttuurivirasto": {
+    "file": "taide__ja_kulttuurivirasto.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Suomen Madridin-instituutti": {
     "file": "suomen_madridin_instituutti.json",
     "count": 10,
@@ -2042,6 +2058,22 @@
     "lang": "en",
     "scope": "World"
   },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
+  },
+  "DARIAH-EU": {
+    "file": "dariah_eu.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Digital Research Infrastructure for the Arts and Humanities",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Digime": {
     "file": "digime.json",
     "count": 10,
@@ -2065,6 +2097,14 @@
     "description": "Kulturarv och digitalisering",
     "lang": "sv",
     "scope": "Sweden"
+  },
+  "MuseumNext": {
+    "file": "museumnext.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Defining the Future of Museums",
+    "lang": "en",
+    "scope": "World"
   },
   "Open Objects": {
     "file": "open_objects.json",
@@ -2194,6 +2234,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "information labs": {
+    "file": "information_labs.json",
+    "count": 20,
+    "category": "Digital Policy + Rights",
+    "description": "Facts | Ideas | Discussions",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Poliittinen talous": {
     "file": "poliittinen_talous.json",
     "count": 30,
@@ -2271,6 +2319,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Universiteit van Amsterdam",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Knowledge Rights 21": {
+    "file": "knowledge_rights_21.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2521,14 +2577,6 @@
     "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Online Journalism Blog": {
-    "file": "online_journalism_blog.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
-    "lang": "en",
-    "scope": "World"
   },
   "UN Peacemaker": {
     "file": "un_peacemaker.json",
