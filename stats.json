@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "10.8.2026 klo 0.38.57"
+    "last_updated": "10.8.2026 klo 1.38.11"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -84,7 +84,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 58,
+    "count": 57,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -106,13 +106,21 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Kulttuuri ja taide - ePressi": {
-    "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 19,
-    "category": "Culture + Education",
+  "Hrana": {
+    "file": "hrana.json",
+    "count": 11,
+    "category": "Human Rights + Democracy",
+    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Human Rights Watch News": {
+    "file": "human_rights_watch_news.json",
+    "count": 20,
+    "category": "Human Rights + Democracy",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
+    "lang": "en",
+    "scope": "World"
   },
   "IDN-InDepthNews": {
     "file": "idn_indepthnews.json",
@@ -121,6 +129,14 @@
     "description": "News for a Sustainable World, Peace and Security",
     "lang": "en",
     "scope": "World"
+  },
+  "Kulttuuri ja taide - ePressi": {
+    "file": "kulttuuri_ja_taide___epressi.json",
+    "count": 19,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "404 Media": {
     "file": "404_media.json",
@@ -204,7 +220,7 @@
   },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
@@ -247,22 +263,6 @@
     "count": 12,
     "category": "Human Rights + Democracy",
     "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Hrana": {
-    "file": "hrana.json",
-    "count": 11,
-    "category": "Human Rights + Democracy",
-    "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Human Rights Watch News": {
-    "file": "human_rights_watch_news.json",
-    "count": 20,
-    "category": "Human Rights + Democracy",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -1362,6 +1362,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "OpenForum Europe": {
+    "file": "openforum_europe.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "Open Technologies for a Competitive and Sovereign Europe",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "CC Sweden": {
     "file": "cc_sweden.json",
     "count": 10,
@@ -1377,14 +1385,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Open By Default": {
-    "file": "open_by_default.json",
-    "count": 8,
-    "category": "(Open) Data + Technology",
-    "description": "",
-    "lang": "en",
-    "scope": "Netherlands"
   },
   "Vereniging Open Nederland": {
     "file": "vereniging_open_nederland.json",
@@ -1439,6 +1439,14 @@
     "count": 15,
     "category": "(Open) Science + Research",
     "description": "Open Access and Digital Scholarship at Imperial College London",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Confederation of Open Access Repositories": {
+    "file": "confederation_of_open_access_repositories.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Building a sustainable, global knowledge commons",
     "lang": "en",
     "scope": "World"
   },
@@ -2010,14 +2018,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Extreme Citizen Science blog": {
-    "file": "extreme_citizen_science_blog.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
-    "lang": "en",
-    "scope": "World"
-  },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
     "count": 10,
@@ -2450,14 +2450,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Investigations – ACDC": {
-    "file": "investigations___acdc.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
-    "lang": "en",
-    "scope": "World"
-  },
   "correctiv.org": {
     "file": "correctiv_org.json",
     "count": 100,
@@ -2561,14 +2553,6 @@
     "description": "Direkt36 is a non-profit investigative journalism center with the mission to hold powerful people and institutions accountable.",
     "lang": "en",
     "scope": "Hungary"
-  },
-  "NORDIS": {
-    "file": "nordis.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "The Nordic Observatory for Digital Media and Information Disorder",
-    "lang": "en",
-    "scope": "Nordic + Baltic countries"
   },
   "OCCRP Announcements": {
     "file": "occrp_announcements.json",
