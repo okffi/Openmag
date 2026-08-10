@@ -168,5 +168,22 @@
     "scope": "World",
     "isDarkLogo": false,
     "originalRssUrl": "https://blog.wikimedia.org/feed/"
+  },
+  {
+    "title": "Tech News 2026 – Issue 33",
+    "link": "https://diff.wikimedia.org/2026/08/10/tech-news-2026-issue-33/",
+    "pubDate": "2026-08-10T20:26:33.000Z",
+    "content": "<p><strong>Updates for editors</strong></p>\n<li><img width=\"12\" height=\"12\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Maki-gift-15.svg/20px-Maki-gift-15.svg.png?utm_source=meta.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" alt=\"Wishlist item\">&nbsp;A new ChartWizard is&nbsp;<a href=\"https://commons.wikimedia.org/wiki/Special:ChartWizard/Data:Example.Pie.chart\">now available on Wikimedia Commons</a>&nbsp;for users interested in creating charts from their own data. The wizard makes the&nbsp;<a href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Chart\">Chart extension</a>&nbsp;more beginner-friendly by allowing editors to create charts, such as bar and pie charts, without needing to use JSON. Users can still switch to the JSON editor if they prefer. Feedback on the new tool is welcome on the&nbsp;<a href=\"https://meta.wikimedia.org/wiki/Talk:Community_Wishlist/W414\">wish talk page</a>.</li>\n<li><img width=\"12\" height=\"12\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Reload_icon_with_two_arrows.svg/20px-Reload_icon_with_two_arrows.svg.png?utm_source=meta.wikimedia.org&amp;utm_campaign=parser&amp;utm_content=thumbnail\" alt=\"Recurrent item\">&nbsp;View all 19 community-submitted tasks that were&nbsp;<a href=\"https://meta.wikimedia.org/wiki/Special:MyLanguage/Tech/News/Recently_resolved_community_tasks\">resolved last week</a>. For example, an issue where the Wikipedia iOS app’s Picture of the Day widget displayed the same image every day instead of updating daily, has now been fixed.&nbsp;<a href=\"https://phabricator.wikimedia.org/T430692\" target=\"_blank\" rel=\"noreferrer noopener\">[1]</a></li>\n<p><strong>Updates for technical contributors</strong></p>\n<li><a href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/Extension:Math\">Math formula</a>&nbsp;SVG images will soon be generated in the browser instead of on the server. MathML continues to be generated on the server and renders in the browser without JavaScript. Wikibooks will see this change on 12 August, Wikisource on 19 August and Wikipedia from 20-27 August. You can try this by selecting “Client side MathJax rendering (for browsers with limited MathML support)” in your preferences. This change is part of&nbsp;<a href=\"https://www.mediawiki.org/wiki/Special:MyLanguage/RESTBase/deprecation\">deprecating RESTBase</a>&nbsp;and&nbsp;<a href=\"https://phabricator.wikimedia.org/T431372\">deprecating Mathoid</a>.&nbsp;<a href=\"https://phabricator.wikimedia.org/T271001\" target=\"_blank\" rel=\"noreferrer noopener\">[2]</a></li>",
+    "snippet": "Updates for editors",
+    "creator": "Sandister Tei (WMF)",
+    "sourceTitle": "Diff",
+    "sheetCategory": "(Open) Data + Technology",
+    "enforcedImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Maki-gift-15.svg/20px-Maki-gift-15.svg.png?utm_source=meta.wikimedia.org&utm_campaign=parser&utm_content=thumbnail",
+    "sourceDescription": "News from the Wikimedia movement",
+    "sourceLogo": "https://diff.wikimedia.org/wp-content/uploads/2020/07/cropped-1024px-Wikimedia-logo.svg_.png?fit=32%2C32",
+    "lang": "en",
+    "scope": "World",
+    "isDarkLogo": false,
+    "originalRssUrl": "https://blog.wikimedia.org/feed/"
   }
 ]
