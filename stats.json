@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "10.8.2026 klo 13.23.12"
+    "last_updated": "10.8.2026 klo 14.53.10"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
@@ -20,7 +20,7 @@
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
-    "count": 34,
+    "count": 35,
     "category": "Perspectives",
     "description": "",
     "lang": "fi",
@@ -55,7 +55,7 @@
     "count": 100,
     "category": "Culture + Education",
     "description": "Oulu on Euroopan kulttuuripääkaupunki 2026",
-    "lang": "fi",
+    "lang": "en",
     "scope": "Finland"
   },
   "Euronews | Europe": {
@@ -116,7 +116,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 21,
+    "count": 22,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -194,6 +194,70 @@
     "lang": "en",
     "scope": "World"
   },
+  "The Scholarly Kitchen": {
+    "file": "the_scholarly_kitchen.json",
+    "count": 15,
+    "category": "(Open) Science + Research",
+    "description": "What’s Hot and Cooking In Scholarly Publishing",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Tiede ja tutkimus - ePressi": {
+    "file": "tiede_ja_tutkimus___epressi.json",
+    "count": 20,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Aalto-yliopisto": {
+    "file": "aalto_yliopisto.json",
+    "count": 25,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Forum Information & Democracy": {
+    "file": "forum_information___democracy.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "IDN-InDepthNews": {
+    "file": "idn_indepthnews.json",
+    "count": 11,
+    "category": "Investigations + Conflict",
+    "description": "News for a Sustainable World, Peace and Security",
+    "lang": "en",
+    "scope": "World"
+  },
+  "ProPublica": {
+    "file": "propublica.json",
+    "count": 20,
+    "category": "Investigations + Conflict",
+    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "European Commission": {
+    "file": "european_commission.json",
+    "count": 34,
+    "category": "Politics + Public sector",
+    "description": "European Commission | News",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "PreventionWeb": {
+    "file": "preventionweb.json",
+    "count": 40,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Weekly OSM": {
     "file": "weekly_osm.json",
     "count": 10,
@@ -266,22 +330,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "IDN-InDepthNews": {
-    "file": "idn_indepthnews.json",
-    "count": 11,
-    "category": "Investigations + Conflict",
-    "description": "News for a Sustainable World, Peace and Security",
-    "lang": "en",
-    "scope": "World"
-  },
-  "European Commission": {
-    "file": "european_commission.json",
-    "count": 34,
-    "category": "Politics + Public sector",
-    "description": "European Commission | News",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "404 Media": {
     "file": "404_media.json",
     "count": 15,
@@ -300,27 +348,11 @@
   },
   "xkcd": {
     "file": "xkcd.json",
-    "count": 4,
+    "count": 5,
     "category": "(Open) Data + Technology",
     "description": "xkcd.com: A webcomic of romance and math humor.",
     "lang": "en",
     "scope": "World"
-  },
-  "The Scholarly Kitchen": {
-    "file": "the_scholarly_kitchen.json",
-    "count": 15,
-    "category": "(Open) Science + Research",
-    "description": "What’s Hot and Cooking In Scholarly Publishing",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Tiede ja tutkimus - ePressi": {
-    "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 20,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Kirjastolehti": {
     "file": "kirjastolehti.json",
@@ -386,14 +418,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "ProPublica": {
-    "file": "propublica.json",
-    "count": 20,
-    "category": "Investigations + Conflict",
-    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
-    "lang": "en",
-    "scope": "World"
-  },
   "OCHA": {
     "file": "ocha.json",
     "count": 10,
@@ -428,7 +452,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 20,
+    "count": 21,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -441,14 +465,6 @@
     "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
     "scope": "World"
-  },
-  "PreventionWeb": {
-    "file": "preventionweb.json",
-    "count": 40,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "United Nations Sustainable Development": {
     "file": "united_nations_sustainable_development.json",
@@ -700,7 +716,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -1148,7 +1164,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 3,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1313,14 +1329,6 @@
     "description": "Blog on OKF DE",
     "lang": "de",
     "scope": "Germany"
-  },
-  "Euroopan parlamentti – Suomen-toimisto": {
-    "file": "euroopan_parlamentti___suomen_toimisto.json",
-    "count": 25,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -1525,14 +1533,6 @@
   "REPAIR Tiedotteet": {
     "file": "repair_tiedotteet.json",
     "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Aalto-yliopisto": {
-    "file": "aalto_yliopisto.json",
-    "count": 25,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -2202,14 +2202,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Forum Information & Democracy": {
-    "file": "forum_information___democracy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Poliittinen talous": {
     "file": "poliittinen_talous.json",
     "count": 30,
@@ -2532,7 +2524,7 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 10,
+    "count": 9,
     "category": "Investigations + Conflict",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
@@ -2828,6 +2820,14 @@
   },
   "Digi- ja väestötietovirasto": {
     "file": "digi__ja_v_est_tietovirasto.json",
+    "count": 25,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Euroopan parlamentti – Suomen-toimisto": {
+    "file": "euroopan_parlamentti___suomen_toimisto.json",
     "count": 25,
     "category": "Politics + Public sector",
     "description": "",
