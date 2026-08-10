@@ -1,10 +1,10 @@
 {
   "__meta": {
-    "last_updated": "10.8.2026 klo 14.53.10"
+    "last_updated": "10.8.2026 klo 16.23.03"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 37,
+    "count": 38,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -55,7 +55,7 @@
     "count": 100,
     "category": "Culture + Education",
     "description": "Oulu on Euroopan kulttuuripääkaupunki 2026",
-    "lang": "en",
+    "lang": "fi",
     "scope": "Finland"
   },
   "Euronews | Europe": {
@@ -100,7 +100,7 @@
   },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
-    "count": 11,
+    "count": 12,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -258,6 +258,30 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "xkcd": {
+    "file": "xkcd.json",
+    "count": 5,
+    "category": "(Open) Data + Technology",
+    "description": "xkcd.com: A webcomic of romance and math humor.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Eurozine": {
+    "file": "eurozine.json",
+    "count": 100,
+    "category": "Investigations + Conflict",
+    "description": "Eurozine: Europe's leading cultural journals at your fingertips",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Project Syndicate": {
+    "file": "project_syndicate.json",
+    "count": 23,
+    "category": "Perspectives",
+    "description": "Project Syndicate - The World’s Opinion Page",
+    "lang": "en",
+    "scope": "World"
+  },
   "Weekly OSM": {
     "file": "weekly_osm.json",
     "count": 10,
@@ -292,7 +316,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3845,
+    "count": 3847,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -332,7 +356,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 15,
+    "count": 16,
     "category": "Investigations + Conflict",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -343,14 +367,6 @@
     "count": 10,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
-    "lang": "en",
-    "scope": "World"
-  },
-  "xkcd": {
-    "file": "xkcd.json",
-    "count": 5,
-    "category": "(Open) Data + Technology",
-    "description": "xkcd.com: A webcomic of romance and math humor.",
     "lang": "en",
     "scope": "World"
   },
@@ -447,14 +463,6 @@
     "count": 10,
     "category": "Perspectives",
     "description": "Noema Magazine",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Project Syndicate": {
-    "file": "project_syndicate.json",
-    "count": 21,
-    "category": "Perspectives",
-    "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
     "scope": "World"
   },
@@ -796,7 +804,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 4,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -825,14 +833,6 @@
     "description": "Preserving public data",
     "lang": "en",
     "scope": "World"
-  },
-  "Eurozine": {
-    "file": "eurozine.json",
-    "count": 100,
-    "category": "Investigations + Conflict",
-    "description": "Eurozine: Europe's leading cultural journals at your fingertips",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Voima": {
     "file": "voima.json",
@@ -1164,7 +1164,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1313,22 +1313,6 @@
     "description": "We take care of the cultural ecosystem.",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Michael Culture Association": {
-    "file": "michael_culture_association.json",
-    "count": 1,
-    "category": "Digital Culture + Heritage",
-    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Open Knowledge Foundation DE": {
-    "file": "open_knowledge_foundation_de.json",
-    "count": 689,
-    "category": "Digital Policy + Rights",
-    "description": "Blog on OKF DE",
-    "lang": "de",
-    "scope": "Germany"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -1658,14 +1642,6 @@
     "lang": "fi",
     "scope": "Estonia"
   },
-  "FNG Research": {
-    "file": "fng_research.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Frame Contemporary Art Finland": {
     "file": "frame_contemporary_art_finland.json",
     "count": 10,
@@ -1773,6 +1749,14 @@
   "Kulttuuriperintökasvatuksen seura": {
     "file": "kulttuuriperint_kasvatuksen_seura.json",
     "count": 9,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Taide- ja kulttuurivirasto": {
+    "file": "taide__ja_kulttuurivirasto.json",
+    "count": 10,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -2002,14 +1986,6 @@
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "EUscreen": {
     "file": "euscreen.json",
     "count": 10,
@@ -2018,13 +1994,13 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
+  "Michael Culture Association": {
+    "file": "michael_culture_association.json",
+    "count": 1,
     "category": "Digital Culture + Heritage",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
+    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
     "lang": "en",
-    "scope": "World"
+    "scope": "Europe"
   },
   "Pelitutkimuksen vuosikirja": {
     "file": "pelitutkimuksen_vuosikirja.json",
@@ -2081,6 +2057,14 @@
     "description": "Kulturarv och digitalisering",
     "lang": "sv",
     "scope": "Sweden"
+  },
+  "MuseumNext": {
+    "file": "museumnext.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Defining the Future of Museums",
+    "lang": "en",
+    "scope": "World"
   },
   "Open Objects": {
     "file": "open_objects.json",
@@ -2154,14 +2138,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Copyright Literacy": {
-    "file": "copyright_literacy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Decoding copyright and bringing you enlightenment",
-    "lang": "en",
-    "scope": "World"
-  },
   "Creative Commons": {
     "file": "creative_commons.json",
     "count": 10,
@@ -2202,6 +2178,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "information labs": {
+    "file": "information_labs.json",
+    "count": 20,
+    "category": "Digital Policy + Rights",
+    "description": "Facts | Ideas | Discussions",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Poliittinen talous": {
     "file": "poliittinen_talous.json",
     "count": 30,
@@ -2226,6 +2210,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Open Knowledge Foundation DE": {
+    "file": "open_knowledge_foundation_de.json",
+    "count": 689,
+    "category": "Digital Policy + Rights",
+    "description": "Blog on OKF DE",
+    "lang": "de",
+    "scope": "Germany"
+  },
   "Open Knowledge Sweden": {
     "file": "open_knowledge_sweden.json",
     "count": 10,
@@ -2241,14 +2233,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Rajapinta": {
-    "file": "rajapinta.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "researcher community focused on digital social sciences",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Tietopoliitiikan yhteistyöryhmä": {
     "file": "tietopoliitiikan_yhteisty_ryhm_.json",
@@ -2271,6 +2255,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Universiteit van Amsterdam",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Knowledge Rights 21": {
+    "file": "knowledge_rights_21.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2506,14 +2498,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Journalism Science Alliance": {
-    "file": "journalism_science_alliance.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "JSN": {
     "file": "jsn.json",
     "count": 10,
@@ -2524,7 +2508,7 @@
   },
   "Online Journalism Blog": {
     "file": "online_journalism_blog.json",
-    "count": 9,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
     "lang": "en",
