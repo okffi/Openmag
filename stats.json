@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "11.8.2026 klo 0.49.39"
+    "last_updated": "11.8.2026 klo 1.45.30"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
@@ -116,7 +116,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 38,
+    "count": 29,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -348,7 +348,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 53,
+    "count": 42,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -431,6 +431,14 @@
     "count": 11,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News - Global perspective Human stories | Peace and Security": {
+    "file": "un_news___global_perspective_human_stories___peace_and_security.json",
+    "count": 8,
+    "category": "Investigations + Conflict",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -612,7 +620,7 @@
   },
   "Europa Nostra": {
     "file": "europa_nostra.json",
-    "count": 2,
+    "count": 10,
     "category": "Culture + Education",
     "description": "The Voice of Cultural Heritage in Europe",
     "lang": "en",
@@ -652,7 +660,7 @@
   },
   "Kalevi Sorsa -säätiö": {
     "file": "kalevi_sorsa__s__ti_.json",
-    "count": 1,
+    "count": 10,
     "category": "Global policy",
     "description": "",
     "lang": "fi",
@@ -700,15 +708,7 @@
   },
   "UN News - Global perspective Human stories | Middle East": {
     "file": "un_news___global_perspective_human_stories___middle_east.json",
-    "count": 23,
-    "category": "Investigations + Conflict",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "UN News - Global perspective Human stories | Peace and Security": {
-    "file": "un_news___global_perspective_human_stories___peace_and_security.json",
-    "count": 7,
+    "count": 22,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -916,7 +916,7 @@
   },
   "Kulta ry": {
     "file": "kulta_ry.json",
-    "count": 1,
+    "count": 12,
     "category": "Culture + Education",
     "description": "Kulttuuri- ja taidealan keskusjärjestö",
     "lang": "fi",
@@ -932,7 +932,7 @@
   },
   "The Harvard Library Innovation Lab": {
     "file": "the_harvard_library_innovation_lab.json",
-    "count": 428,
+    "count": 429,
     "category": "Digital Culture + Heritage",
     "description": "The Library Innovation Lab is growing knowledge and community by bringing library principles to technological frontiers.",
     "lang": "en",
@@ -1196,7 +1196,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 3,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1418,6 +1418,14 @@
     "lang": "en",
     "scope": "Finland"
   },
+  "Zooniverse": {
+    "file": "zooniverse.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
+    "lang": "en",
+    "scope": "World"
+  },
   "Think Open": {
     "file": "think_open.json",
     "count": 10,
@@ -1495,6 +1503,14 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "Scholarly Publishing and Academic Resources Coalition",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Public Policy Archives — Association of Research Libraries": {
+    "file": "public_policy_archives___association_of_research_libraries.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -1642,6 +1658,14 @@
     "lang": "fi",
     "scope": "Estonia"
   },
+  "FNG Research": {
+    "file": "fng_research.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Frame Contemporary Art Finland": {
     "file": "frame_contemporary_art_finland.json",
     "count": 10,
@@ -1749,14 +1773,6 @@
   "Kulttuuriperintökasvatuksen seura": {
     "file": "kulttuuriperint_kasvatuksen_seura.json",
     "count": 9,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Taide- ja kulttuurivirasto": {
-    "file": "taide__ja_kulttuurivirasto.json",
-    "count": 10,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -1898,6 +1914,14 @@
     "lang": "en",
     "scope": "Denmark"
   },
+  "Kulttilehdet": {
+    "file": "kulttilehdet.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Svenska kulturfonden": {
     "file": "svenska_kulturfonden.json",
     "count": 100,
@@ -1978,6 +2002,14 @@
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "EUscreen": {
     "file": "euscreen.json",
     "count": 10,
@@ -1985,14 +2017,6 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
-    "lang": "en",
-    "scope": "World"
   },
   "Michael Culture Association": {
     "file": "michael_culture_association.json",
@@ -2049,6 +2073,14 @@
     "description": "The Language Bank of Finland",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Nätverket KOD": {
+    "file": "n_tverket_kod.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Kulturarv och digitalisering",
+    "lang": "sv",
+    "scope": "Sweden"
   },
   "Open Objects": {
     "file": "open_objects.json",
@@ -2121,6 +2153,14 @@
     "description": "Website of the COMMUNIA Association for the Public Domain",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Copyright Literacy": {
+    "file": "copyright_literacy.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Decoding copyright and bringing you enlightenment",
+    "lang": "en",
+    "scope": "World"
   },
   "Stanford CIS": {
     "file": "stanford_cis.json",
@@ -2426,6 +2466,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Investigations – ACDC": {
+    "file": "investigations___acdc.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
+    "lang": "en",
+    "scope": "World"
+  },
   "correctiv.org": {
     "file": "correctiv_org.json",
     "count": 100,
@@ -2593,6 +2641,14 @@
     "description": "",
     "lang": "fi",
     "scope": "World"
+  },
+  "Avate Audiovisuaalisen alan tekijät ry": {
+    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Kopiosto": {
     "file": "kopiosto.json",
