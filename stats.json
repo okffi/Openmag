@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "13.8.2026 klo 22.10.29"
+    "last_updated": "13.8.2026 klo 23.51.12"
   },
   "Diff": {
     "file": "diff.json",
@@ -60,7 +60,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 20,
+    "count": 21,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -396,7 +396,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 10,
+    "count": 4,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -535,6 +535,14 @@
     "count": 60,
     "category": "Investigations + Conflict",
     "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "United Nations | The Guardian": {
+    "file": "united_nations___the_guardian.json",
+    "count": 20,
+    "category": "Global policy",
+    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
     "lang": "en",
     "scope": "World"
   },
@@ -970,14 +978,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "United Nations | The Guardian": {
-    "file": "united_nations___the_guardian.json",
-    "count": 20,
-    "category": "Global policy",
-    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
-    "lang": "en",
-    "scope": "World"
-  },
   "CIVICUS News": {
     "file": "civicus_news.json",
     "count": 50,
@@ -1386,22 +1386,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "WITNESS": {
-    "file": "witness.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Human Rights Video",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Teosto": {
-    "file": "teosto.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "CHAOSS": {
     "file": "chaoss.json",
     "count": 10,
@@ -1487,6 +1471,14 @@
     "count": 7,
     "category": "(Open) Data + Technology",
     "description": "Recent content on FediForum",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Zooniverse": {
+    "file": "zooniverse.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
     "scope": "World"
   },
@@ -1697,6 +1689,14 @@
     "description": "Soome Eesti Instituudi Sihtasutus",
     "lang": "fi",
     "scope": "Estonia"
+  },
+  "FNG Research": {
+    "file": "fng_research.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Frame Contemporary Art Finland": {
     "file": "frame_contemporary_art_finland.json",
@@ -2018,6 +2018,14 @@
     "lang": "en",
     "scope": "Poland"
   },
+  "Michael Culture Association": {
+    "file": "michael_culture_association.json",
+    "count": 1,
+    "category": "Digital Culture + Heritage",
+    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Pelitutkimuksen vuosikirja": {
     "file": "pelitutkimuksen_vuosikirja.json",
     "count": 12,
@@ -2071,6 +2079,14 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "European Cloud for Heritage OpEn Science",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "European Heritage Hub": {
+    "file": "european_heritage_hub.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Where cultural heritage connects",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2241,6 +2257,14 @@
     "description": "Open Future Foundation",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Tietopoliitiikan yhteistyöryhmä": {
     "file": "tietopoliitiikan_yhteisty_ryhm_.json",
@@ -2634,6 +2658,14 @@
     "lang": "fi",
     "scope": "World"
   },
+  "WITNESS": {
+    "file": "witness.json",
+    "count": 10,
+    "category": "Investigations + Conflict",
+    "description": "Human Rights Video",
+    "lang": "en",
+    "scope": "World"
+  },
   "Avate Audiovisuaalisen alan tekijät ry": {
     "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
     "count": 10,
@@ -2669,6 +2701,14 @@
   "AVEK": {
     "file": "avek.json",
     "count": 24,
+    "category": "IP + Creative Industry",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Teosto": {
+    "file": "teosto.json",
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
