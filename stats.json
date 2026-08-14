@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "14.8.2026 klo 17.57.58"
+    "last_updated": "14.8.2026 klo 18.59.35"
   },
   "Technology – POLITICO": {
     "file": "technology___politico.json",
@@ -20,7 +20,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 16,
+    "count": 17,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -116,7 +116,7 @@
   },
   "Maailman Kuvalehti": {
     "file": "maailman_kuvalehti.json",
-    "count": 11,
+    "count": 10,
     "category": "Perspectives",
     "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta.",
     "lang": "fi",
@@ -252,7 +252,7 @@
   },
   "Global Investigative Journalism Network": {
     "file": "global_investigative_journalism_network.json",
-    "count": 10,
+    "count": 20,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -340,7 +340,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 38,
+    "count": 41,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -348,7 +348,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 48,
+    "count": 47,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -396,7 +396,7 @@
   },
   "European Union": {
     "file": "european_union.json",
-    "count": 23,
+    "count": 24,
     "category": "Politics + Public sector",
     "description": "European Union | Featured news",
     "lang": "en",
@@ -417,6 +417,46 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Open Culture": {
+    "file": "open_culture.json",
+    "count": 16,
+    "category": "Digital Culture + Heritage",
+    "description": "The best free cultural & educational media on the web",
+    "lang": "en",
+    "scope": "Netherlands"
+  },
+  "Center for European Policy Analysis": {
+    "file": "center_for_european_policy_analysis.json",
+    "count": 13,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Amnesty International": {
+    "file": "amnesty_international.json",
+    "count": 13,
+    "category": "Human Rights + Democracy",
+    "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Carbon Brief": {
+    "file": "carbon_brief.json",
+    "count": 12,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "PreventionWeb": {
+    "file": "preventionweb.json",
+    "count": 46,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "COSS ry": {
     "file": "coss_ry.json",
@@ -482,14 +522,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Open Culture": {
-    "file": "open_culture.json",
-    "count": 16,
-    "category": "Digital Culture + Heritage",
-    "description": "The best free cultural & educational media on the web",
-    "lang": "en",
-    "scope": "Netherlands"
-  },
   "Software Heritage": {
     "file": "software_heritage.json",
     "count": 100,
@@ -497,14 +529,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Center for European Policy Analysis": {
-    "file": "center_for_european_policy_analysis.json",
-    "count": 12,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
@@ -722,14 +746,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "PreventionWeb": {
-    "file": "preventionweb.json",
-    "count": 46,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Centrum Balticum": {
     "file": "centrum_balticum.json",
     "count": 7,
@@ -740,7 +756,7 @@
   },
   "Global Solutions Initiative": {
     "file": "global_solutions_initiative.json",
-    "count": 10,
+    "count": 1,
     "category": "Global policy",
     "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
     "lang": "en",
@@ -753,6 +769,14 @@
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
+  },
+  "UN News - Global perspective Human stories | Culture and Education": {
+    "file": "un_news___global_perspective_human_stories___culture_and_education.json",
+    "count": 30,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "xkcd": {
     "file": "xkcd.json",
@@ -810,14 +834,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "UN News - Global perspective Human stories | Culture and Education": {
-    "file": "un_news___global_perspective_human_stories___culture_and_education.json",
-    "count": 30,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Timeless": {
     "file": "timeless.json",
     "count": 10,
@@ -828,7 +844,7 @@
   },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
@@ -858,14 +874,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Amnesty International": {
-    "file": "amnesty_international.json",
-    "count": 13,
-    "category": "Human Rights + Democracy",
-    "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
-    "lang": "en",
-    "scope": "World"
-  },
   "CIVICUS Op-Eds": {
     "file": "civicus_op_eds.json",
     "count": 50,
@@ -876,7 +884,7 @@
   },
   "UN News - Global perspective Human stories | Peace and Security": {
     "file": "un_news___global_perspective_human_stories___peace_and_security.json",
-    "count": 7,
+    "count": 8,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -922,14 +930,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Carbon Brief": {
-    "file": "carbon_brief.json",
-    "count": 12,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "United Nations Sustainable Development": {
     "file": "united_nations_sustainable_development.json",
     "count": 12,
@@ -937,6 +937,14 @@
     "description": "17 Goals to Transform Our World",
     "lang": "en",
     "scope": "World"
+  },
+  "The Conversation – Articles (EUROPE)": {
+    "file": "the_conversation___articles__europe_.json",
+    "count": 50,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Wikimedia Deutschland Blog": {
     "file": "wikimedia_deutschland_blog.json",
@@ -1042,14 +1050,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "The Conversation – Articles (EUROPE)": {
-    "file": "the_conversation___articles__europe_.json",
-    "count": 50,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Ykspilkkuviis.fi": {
     "file": "ykspilkkuviis_fi.json",
     "count": 10,
@@ -1148,7 +1148,7 @@
   },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
@@ -1372,7 +1372,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 2,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1425,38 +1425,6 @@
     "description": "Bringing Collections to Life",
     "lang": "en",
     "scope": "Netherlands"
-  },
-  "The Foreign Policy Centre": {
-    "file": "the_foreign_policy_centre.json",
-    "count": 10,
-    "category": "Global policy",
-    "description": "The Foreign Policy Centre (FPC) is an outward-looking, non-partisan international affairs think tank based in the UK.",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "JOKES": {
-    "file": "jokes.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "Journalistisen kulttuurin edistämissäätiö",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Project Syndicate economists": {
-    "file": "project_syndicate_economists.json",
-    "count": 20,
-    "category": "Perspectives",
-    "description": "Project Syndicate produces and delivers original commentaries by prominent economists, political leaders, scholars, business leaders, and civic activists to a global audience, including nearly 500 media outlets in more than 150 countries",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Arctic Centre at the University of Lapland": {
-    "file": "arctic_centre_at_the_university_of_lapland.json",
-    "count": 10,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "en",
-    "scope": "Finland"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -1514,6 +1482,14 @@
     "lang": "sv",
     "scope": "Sweden"
   },
+  "Wikimedia Techblog": {
+    "file": "wikimedia_techblog.json",
+    "count": 1,
+    "category": "(Open) Data + Technology",
+    "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
+  },
   "Wikimedia Suomi": {
     "file": "wikimedia_suomi.json",
     "count": 10,
@@ -1551,14 +1527,6 @@
     "count": 7,
     "category": "(Open) Data + Technology",
     "description": "Recent content on FediForum",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Zooniverse": {
-    "file": "zooniverse.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
     "scope": "World"
   },
@@ -2082,14 +2050,6 @@
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "EUscreen": {
     "file": "euscreen.json",
     "count": 10,
@@ -2354,6 +2314,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Tietopoliitiikan yhteistyöryhmä": {
+    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "ICANN New and Noteworthy": {
     "file": "icann_new_and_noteworthy.json",
     "count": 7,
@@ -2375,14 +2343,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2433,6 +2393,14 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
+  },
+  "The Foreign Policy Centre": {
+    "file": "the_foreign_policy_centre.json",
+    "count": 10,
+    "category": "Global policy",
+    "description": "The Foreign Policy Centre (FPC) is an outward-looking, non-partisan international affairs think tank based in the UK.",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Le Monde diplomatique - English edition": {
     "file": "le_monde_diplomatique___english_edition.json",
@@ -2559,14 +2527,6 @@
     "count": 4,
     "category": "Human Rights + Democracy",
     "description": "International",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Investigations – ACDC": {
-    "file": "investigations___acdc.json",
-    "count": 10,
-    "category": "Investigations + Conflict",
-    "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
     "lang": "en",
     "scope": "World"
   },
@@ -2762,6 +2722,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "JOKES": {
+    "file": "jokes.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "Journalistisen kulttuurin edistämissäätiö",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "AVEK": {
     "file": "avek.json",
     "count": 24,
@@ -2793,6 +2761,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Project Syndicate economists": {
+    "file": "project_syndicate_economists.json",
+    "count": 20,
+    "category": "Perspectives",
+    "description": "Project Syndicate produces and delivers original commentaries by prominent economists, political leaders, scholars, business leaders, and civic activists to a global audience, including nearly 500 media outlets in more than 150 countries",
+    "lang": "en",
+    "scope": "World"
   },
   "Ylioppilaslehti": {
     "file": "ylioppilaslehti.json",
@@ -2896,6 +2872,14 @@
     "category": "Politics + Public sector",
     "description": "Ilmasto- ja energiapoliittinen ministerityöryhmä - ajankohtaista",
     "lang": "fi",
+    "scope": "Finland"
+  },
+  "Arctic Centre at the University of Lapland": {
+    "file": "arctic_centre_at_the_university_of_lapland.json",
+    "count": 10,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "en",
     "scope": "Finland"
   },
   "Demos Helsinki": {
