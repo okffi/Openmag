@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "14.8.2026 klo 7.53.44"
+    "last_updated": "14.8.2026 klo 9.19.18"
   },
   "Technology – POLITICO": {
     "file": "technology___politico.json",
@@ -15,6 +15,38 @@
     "count": 19,
     "category": "Global policy",
     "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Global Voices": {
+    "file": "global_voices.json",
+    "count": 16,
+    "category": "Human Rights + Democracy",
+    "description": "Citizen media stories from around the world",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Suomen Kuvalehti": {
+    "file": "suomen_kuvalehti.json",
+    "count": 33,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "The Conversation – Articles (GLOBAL)": {
+    "file": "the_conversation___articles__global_.json",
+    "count": 51,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Demokraatti": {
+    "file": "demokraatti.json",
+    "count": 30,
+    "category": "Politics + Public sector",
+    "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -260,7 +292,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 50,
+    "count": 51,
     "category": "Global policy",
     "description": "",
     "lang": "en",
@@ -281,14 +313,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Global Voices": {
-    "file": "global_voices.json",
-    "count": 16,
-    "category": "Human Rights + Democracy",
-    "description": "Citizen media stories from around the world",
-    "lang": "en",
-    "scope": "World"
   },
   "UN News - Global perspective Human stories | Human Rights": {
     "file": "un_news___global_perspective_human_stories___human_rights.json",
@@ -404,27 +428,11 @@
   },
   "Maailman Kuvalehti": {
     "file": "maailman_kuvalehti.json",
-    "count": 10,
+    "count": 11,
     "category": "Perspectives",
     "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta.",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Suomen Kuvalehti": {
-    "file": "suomen_kuvalehti.json",
-    "count": 33,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "The Conversation – Articles (GLOBAL)": {
-    "file": "the_conversation___articles__global_.json",
-    "count": 51,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "MustRead": {
     "file": "mustread.json",
@@ -457,14 +465,6 @@
     "description": "European Commission | News",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Demokraatti": {
-    "file": "demokraatti.json",
-    "count": 30,
-    "category": "Politics + Public sector",
-    "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "EUSBSR": {
     "file": "eusbsr.json",
@@ -524,7 +524,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 20,
+    "count": 21,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -572,7 +572,7 @@
   },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
-    "count": 10,
+    "count": 12,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -652,7 +652,7 @@
   },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
@@ -1146,6 +1146,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "CREATe": {
+    "file": "create.json",
+    "count": 2,
+    "category": "Digital Policy + Rights",
+    "description": "Centre for Regulation of the Creative Economy",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
     "count": 15,
@@ -1225,6 +1233,14 @@
     "description": "The WIPO RSS newsfeed provides access to the digital versions of our publications, studies and information products.",
     "lang": "en",
     "scope": "World"
+  },
+  "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
+    "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Kansallisarkiston tiedotteet": {
     "file": "kansallisarkiston_tiedotteet.json",
@@ -1370,45 +1386,13 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Berkman Klein Center for Internet & Society at Harvard University Community": {
-    "file": "berkman_klein_center_for_internet___society_at_harvard_university_community.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "Americas"
-  },
-  "Open Future": {
-    "file": "open_future.json",
-    "count": 16,
-    "category": "Digital Policy + Rights",
-    "description": "Open Future Foundation",
+  "European Heritage Hub": {
+    "file": "european_heritage_hub.json",
+    "count": 3,
+    "category": "Digital Culture + Heritage",
+    "description": "Where cultural heritage connects",
     "lang": "en",
     "scope": "Europe"
-  },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 1,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Sovereign Tech Agency": {
-    "file": "sovereign_tech_agency.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Le Monde diplomatique - English edition": {
-    "file": "le_monde_diplomatique___english_edition.json",
-    "count": 10,
-    "category": "Global policy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "CHAOSS": {
     "file": "chaoss.json",
@@ -2058,14 +2042,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Extreme Citizen Science blog": {
-    "file": "extreme_citizen_science_blog.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
-    "lang": "en",
-    "scope": "World"
-  },
   "DARIAH-EU": {
     "file": "dariah_eu.json",
     "count": 10,
@@ -2087,14 +2063,6 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "European Cloud for Heritage OpEn Science",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "European Heritage Hub": {
-    "file": "european_heritage_hub.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Where cultural heritage connects",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2178,6 +2146,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Berkman Klein Center for Internet & Society at Harvard University Community": {
+    "file": "berkman_klein_center_for_internet___society_at_harvard_university_community.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Americas"
+  },
   "Stanford CIS": {
     "file": "stanford_cis.json",
     "count": 15,
@@ -2250,6 +2226,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Open Future": {
+    "file": "open_future.json",
+    "count": 16,
+    "category": "Digital Policy + Rights",
+    "description": "Open Future Foundation",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Rajapinta": {
     "file": "rajapinta.json",
     "count": 10,
@@ -2257,22 +2241,6 @@
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Tietopoliitiikan yhteistyöryhmä": {
-    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "CREATe": {
-    "file": "create.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Centre for Regulation of the Creative Economy",
-    "lang": "en",
-    "scope": "Europe"
   },
   "ICANN New and Noteworthy": {
     "file": "icann_new_and_noteworthy.json",
@@ -2287,6 +2255,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Universiteit van Amsterdam",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2322,6 +2298,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Sovereign Tech Agency": {
+    "file": "sovereign_tech_agency.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Ulkopoliittinen instituutti (UPI)": {
     "file": "ulkopoliittinen_instituutti__upi_.json",
     "count": 10,
@@ -2337,6 +2321,14 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
+  },
+  "Le Monde diplomatique - English edition": {
+    "file": "le_monde_diplomatique___english_edition.json",
+    "count": 10,
+    "category": "Global policy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "Public Institutions": {
     "file": "public_institutions.json",
@@ -2361,6 +2353,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Global Solutions Initiative": {
+    "file": "global_solutions_initiative.json",
+    "count": 10,
+    "category": "Global policy",
+    "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
+    "lang": "en",
+    "scope": "World"
   },
   "UN Global Pulse": {
     "file": "un_global_pulse.json",
@@ -2663,14 +2663,6 @@
     "count": 10,
     "category": "IP + Creative Industry",
     "description": "Luovan työn tekijät ja yrittäjät, Luovat ry",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
-    "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
