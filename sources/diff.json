@@ -202,5 +202,22 @@
     "scope": "World",
     "isDarkLogo": false,
     "originalRssUrl": "https://blog.wikimedia.org/feed/"
+  },
+  {
+    "title": "Working with the Visual Editor within Outreachy",
+    "link": "https://diff.wikimedia.org/2026/08/15/working-with-the-visual-editor-within-outreachy/",
+    "pubDate": "2026-08-15T16:00:00.000Z",
+    "content": "<p>Continuing our work in the <a href=\"https://meta.wikimedia.org/wiki/Lista_de_desejos_tecnol%C3%B3gicos_da_lusofonia/2025/Propostas/Verificar_automaticamente_uma_refer%C3%AAncia_duplicada\">wish #3</a> of the Lusophone Technological Wishlist within the 32nd round of Outreachy…</p>\n<p>Over the past weeks, development focused on MediaWiki, Visual Editor and their core extension ecosystem. While the validation logic itself was initially expected to be straightforward, configuring the local ecosystem presented the first major complexity. Setting up VisualEditor, Citoid, and Cite locally required carefully identifying and setting up the exact suite of dependencies needed to replicate Wikipedia’s production environment.</p>\n<p>Following mentor recommendations, the setup was built using a <a href=\"https://gitlab.wikimedia.org/repos/wmde/docker-dev\">Wikimedia dockerized environment</a>. To ensure accurate citation formatting and parsing, the following extensions were required to integrate:</p>\n<li>Cite, Citoid which are required to search, retrieve, and translate inputs (ISBN, DOI, or URL) into reference nodes.</li>\n<li>TemplateData, Scribunto, TemplateStyles to support structured citation template rendering.</li>",
+    "snippet": "Continuing our work in the wish #3 of the Lusophone Technological Wishlist within the 32nd round of Outreachy…",
+    "creator": "ACorrea WMB",
+    "sourceTitle": "Diff",
+    "sheetCategory": "(Open) Data + Technology",
+    "enforcedImage": "https://diff.wikimedia.org/wp-content/uploads/2026/08/image_36056f.png?resize=817%2C497",
+    "sourceDescription": "News from the Wikimedia movement",
+    "sourceLogo": "https://diff.wikimedia.org/wp-content/uploads/2020/07/cropped-1024px-Wikimedia-logo.svg_.png?fit=32%2C32",
+    "lang": "en",
+    "scope": "World",
+    "isDarkLogo": false,
+    "originalRssUrl": "https://blog.wikimedia.org/feed/"
   }
 ]
