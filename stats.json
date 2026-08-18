@@ -1,10 +1,10 @@
 {
   "__meta": {
-    "last_updated": "18.8.2026 klo 17.39.53"
+    "last_updated": "18.8.2026 klo 18.37.59"
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 20,
+    "count": 18,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -60,7 +60,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 31,
+    "count": 30,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -124,7 +124,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 55,
+    "count": 58,
     "category": "Global policy",
     "description": "",
     "lang": "en",
@@ -212,7 +212,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 14,
+    "count": 15,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -388,7 +388,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3871,
+    "count": 3872,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -412,7 +412,7 @@
   },
   "Global Investigative Journalism Network": {
     "file": "global_investigative_journalism_network.json",
-    "count": 10,
+    "count": 20,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -426,6 +426,70 @@
     "lang": "en",
     "scope": "World"
   },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 48,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "European Cultural Foundation": {
+    "file": "european_cultural_foundation.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Center for European Policy Analysis": {
+    "file": "center_for_european_policy_analysis.json",
+    "count": 12,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "OCCRP": {
+    "file": "occrp.json",
+    "count": 60,
+    "category": "Investigations + Conflict",
+    "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "OCHA": {
+    "file": "ocha.json",
+    "count": 11,
+    "category": "Investigations + Conflict",
+    "description": "United Nations Office for the Coordination of Humanitarian Affairs",
+    "lang": "en",
+    "scope": "World"
+  },
+  "The Conversation – Articles (EUROPE)": {
+    "file": "the_conversation___articles__europe_.json",
+    "count": 50,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Project Syndicate": {
+    "file": "project_syndicate.json",
+    "count": 22,
+    "category": "Perspectives",
+    "description": "Project Syndicate - The World’s Opinion Page",
+    "lang": "en",
+    "scope": "World"
+  },
+  "European Commission": {
+    "file": "european_commission.json",
+    "count": 25,
+    "category": "Politics + Public sector",
+    "description": "European Commission | News",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
     "count": 40,
@@ -436,7 +500,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 4,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -572,7 +636,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -626,22 +690,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "OCCRP": {
-    "file": "occrp.json",
-    "count": 60,
-    "category": "Investigations + Conflict",
-    "description": "Feed, delivered straight to you. Well, your RSS reader anyway.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "OCHA": {
-    "file": "ocha.json",
-    "count": 11,
-    "category": "Investigations + Conflict",
-    "description": "United Nations Office for the Coordination of Humanitarian Affairs",
-    "lang": "en",
-    "scope": "World"
-  },
   "JOKES": {
     "file": "jokes.json",
     "count": 10,
@@ -649,14 +697,6 @@
     "description": "Journalistisen kulttuurin edistämissäätiö",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "The Conversation – Articles (EUROPE)": {
-    "file": "the_conversation___articles__europe_.json",
-    "count": 50,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
@@ -681,14 +721,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Project Syndicate": {
-    "file": "project_syndicate.json",
-    "count": 22,
-    "category": "Perspectives",
-    "description": "Project Syndicate - The World’s Opinion Page",
-    "lang": "en",
-    "scope": "World"
   },
   "Euroopan unioni": {
     "file": "euroopan_unioni.json",
@@ -740,35 +772,19 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
-  "Center for European Policy Analysis": {
-    "file": "center_for_european_policy_analysis.json",
-    "count": 12,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "PreventionWeb": {
     "file": "preventionweb.json",
-    "count": 40,
+    "count": 46,
     "category": "Sustainability + Foresight",
     "description": "",
     "lang": "en",
     "scope": "Europe"
-  },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 48,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
-    "lang": "en",
-    "scope": "World"
   },
   "United Nations Sustainable Development": {
     "file": "united_nations_sustainable_development.json",
@@ -860,7 +876,7 @@
   },
   "Rajapinta": {
     "file": "rajapinta.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
@@ -970,14 +986,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "European Commission": {
-    "file": "european_commission.json",
-    "count": 25,
-    "category": "Politics + Public sector",
-    "description": "European Commission | News",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "European Union": {
     "file": "european_union.json",
     "count": 23,
@@ -1004,7 +1012,7 @@
   },
   "Open Science | Federation of Finnish Learned Societies": {
     "file": "open_science___federation_of_finnish_learned_societies.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "en",
@@ -1084,7 +1092,7 @@
   },
   "UN News - Global perspective Human stories | Human Rights": {
     "file": "un_news___global_perspective_human_stories___human_rights.json",
-    "count": 20,
+    "count": 21,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -1140,7 +1148,7 @@
   },
   "Global Solutions Initiative": {
     "file": "global_solutions_initiative.json",
-    "count": 1,
+    "count": 10,
     "category": "Global policy",
     "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
     "lang": "en",
@@ -1148,7 +1156,7 @@
   },
   "Tieteellisten seurain valtuuskunta TSV": {
     "file": "tieteellisten_seurain_valtuuskunta_tsv.json",
-    "count": 10,
+    "count": 2,
     "category": "(Open) Science + Research",
     "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
     "lang": "fi",
@@ -1268,7 +1276,7 @@
   },
   "Data Rescue Project": {
     "file": "data_rescue_project.json",
-    "count": 15,
+    "count": 14,
     "category": "Investigations + Conflict",
     "description": "Preserving public data",
     "lang": "en",
@@ -1340,7 +1348,7 @@
   },
   "Politiikasta": {
     "file": "politiikasta.json",
-    "count": 10,
+    "count": 1,
     "category": "Politics + Public sector",
     "description": "Ajankohtaista analyysia yhteiskunnasta",
     "lang": "fi",
@@ -1586,22 +1594,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Tiedepolitiikka": {
-    "file": "tiedepolitiikka.json",
-    "count": 30,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Informaatiotutkimus": {
-    "file": "informaatiotutkimus.json",
-    "count": 8,
-    "category": "(Open) Science + Research",
-    "description": "Informaatiotutkimus (vuoteen 1995 Kirjastotiede ja informatiikka) on Informaatiotutkimuksen yhdistyksen kustantama tieteellinen aikakausjulkaisu, joka on ilmestynyt vuodesta 1981 lähtien. Lehti julkaisee tieteenalaansa ja siihen läheisesti liittyvien tieteenalojen kirjoituksia kuten artikkeleita, katsauksia, kirjallisuusesittelyitä ja -arviointeja sekä tiivistelmiä opinnäytteistä. Informaatiotutkimus on alan ainoa suomalainen vertaisarvioitu tieteellinen aikakausjulkaisu. Lehti ei peri kirjoittajamaksuja.\n\n Vuodesta 2008 lähtien Informaatiotutkimus on ilmestynyt sekä avoimena verkkojulkaisuna että painettuna vuosikirjana. Vuodesta 2018 lähtien lehti ilmestyy yksinomaan verkkojulkaisuna. Lehden koko aineisto vuodesta 1981 lähtien on avoimesti saatavissa verkkojulkaisussa.\n\n ISSN 1797-9129 (Verkkojulkaisu)\n\n ISSN 1797-9137 (Painettu julkaisu)\n\n Lehden toiminnan mahdollistavat Informaatiotutkimuksen yhdistyksen jäsen- ja kannatusmaksut sekä Tieteellisten seurain valtuuskunnan (TSV) kautta ohjautuva opetus- ja kulttuuriministeriön tuki. Em. tahojen taloudellisen tuen ja palveluiden (ml. seminaaritoiminta) lisäksi lehti hyötyy Suomen tiedekustantajien liitto ry:n tarjoamista ohjeistuksista ja koulutuksista.\n\n Lehti on rekisteröity luetettavien tieteellisten open access -lehtien DOAJ-hakemistoon .",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "LIBER Europe": {
     "file": "liber_europe.json",
     "count": 1,
@@ -1625,14 +1617,6 @@
     "description": "Scholarly Publishing and Academic Resources Coalition",
     "lang": "en",
     "scope": "World"
-  },
-  "Avoin tiede": {
-    "file": "avoin_tiede.json",
-    "count": 7,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "HIIG": {
     "file": "hiig.json",
@@ -1665,14 +1649,6 @@
     "description": "Turun yliopiston Suomen historian oppiaineen blogi",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "European Cultural Foundation": {
-    "file": "european_cultural_foundation.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Culture and Creativity": {
     "file": "culture_and_creativity.json",
@@ -1799,22 +1775,6 @@
     "count": 10,
     "category": "Culture + Education",
     "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Kulttuuripolitiikan tutkimuksen vuosikirja": {
-    "file": "kulttuuripolitiikan_tutkimuksen_vuosikirja.json",
-    "count": 30,
-    "category": "Culture + Education",
-    "description": "Kulttuuripolitiikan tutkimuksen vuosikirjaa julkaisee Kulttuuripolitiikan tutkimuksen seura. Kyse on kerran vuodessa ilmestyvästä vertaisarvioidusta julkaisusta. Vuosikirja on muodoltaan sähköinen open access -julkaisu. Sen sisältö koostuu artikkeleiden lisäksi muun muassa lyhyemmistä katsausteksteistä, kirja-arvosteluista, kolumneista ja haastatteluista.\n\n Kulttuuripolitiikan tutkimuksen vuosikirja on saanut Tieteellisten seurain valtuuskunnan (TSV) kautta tieteellisen julkaisutoiminnan avustusta, jota opetus- ja kulttuuriministeriö myöntää Veikkauksen tuotoista. Vuosikirja on saanut tukea myös Suomen tiedekustantajien liitolta .",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Kulttuurintutkimus": {
-    "file": "kulttuurintutkimus.json",
-    "count": 30,
-    "category": "Culture + Education",
-    "description": "Kulttuurintutkimus on monitieteinen aikakauslehti, joka käsittelee ja esittelee kulttuuriin kohdistuvaa tutkimusta.",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2090,14 +2050,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Pelitutkimuksen vuosikirja": {
-    "file": "pelitutkimuksen_vuosikirja.json",
-    "count": 12,
-    "category": "Digital Culture + Heritage",
-    "description": "Pelitutkimuksen vuosikirja on vertaisarvioitu, avoin tiedejulkaisu. Pelitutkimus on sekä monitieteinen tutkimusala että nuori akateeminen oppiaine, jonka parissa toimivien tutkijoiden huomion keskiössä on digitaalisten pelien erityisluonne. Pelien ja pelaamisen moniulotteisuus tulee esiin tarkasteltaessa niitä esimerkiksi taiteellisina, teknisinä, sosiaalisina, kulttuurisina tai taloudellisina ilmiöinä, mitkä ovat myös esimerkkejä pelitutkimuksen vuosikirjan sisältämistä näkökulmista.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "The Public Domain Review": {
     "file": "the_public_domain_review.json",
     "count": 100,
@@ -2111,14 +2063,6 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Step into Tomorrow",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Extreme Citizen Science blog": {
-    "file": "extreme_citizen_science_blog.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
     "scope": "World"
   },
@@ -2298,13 +2242,13 @@
     "lang": "en",
     "scope": "World"
   },
-  "Poliittinen talous": {
-    "file": "poliittinen_talous.json",
-    "count": 30,
+  "information labs": {
+    "file": "information_labs.json",
+    "count": 20,
     "category": "Digital Policy + Rights",
-    "description": "Poliittinen talous (ISSN 2341-7862) julkaisee talouden instituutioiden, talouspolitiikan, talousdiskurssien ja taloustieteen poliittisia analyyseja sekä toimii poliittisen talouden tutkimuksen ja opetuksen edistämisen suomalaisena keskustelufoorumina. Lehteä julkaisee Poliittisen talouden tutkimuksen seura ry.",
-    "lang": "fi",
-    "scope": "Finland"
+    "description": "Facts | Ideas | Discussions",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Local Contexts": {
     "file": "local_contexts.json",
@@ -2594,13 +2538,13 @@
     "lang": "en",
     "scope": "World"
   },
-  "Kosmopolis": {
-    "file": "kosmopolis.json",
-    "count": 30,
+  "Journalism Science Alliance": {
+    "file": "journalism_science_alliance.json",
+    "count": 10,
     "category": "Investigations + Conflict",
-    "description": "Kosmopolis on Suomen rauhantutkimusyhdistyksen julkaisema monitieteinen rauhan-, konfliktin- ja maailmanpolitiikan tutkimuksen aikakauslehti. Neljä kertaa vuodessa ilmestyvä Kosmopolis on erinomainen ikkuna alan tuoreimpaan tutkimukseen. Kosmopolis ilmestyi ensimmäisen kerran vuonna 1993, mutta sitä voidaan pitää perillisenä Rauhaan tutkien -tiedotteelle (1971-1984) ja Rauhantutkimus-lehdelle (1985-1992).",
-    "lang": "fi",
-    "scope": "Finland"
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "JSN": {
     "file": "jsn.json",
@@ -2668,7 +2612,7 @@
   },
   "OCCRP Features": {
     "file": "occrp_features.json",
-    "count": 4,
+    "count": 3,
     "category": "Investigations + Conflict",
     "description": "OCCRP stories about Features delivered straight to you. Well, your RSS reader anyway.",
     "lang": "en",
