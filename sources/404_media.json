@@ -287,5 +287,22 @@
     "scope": "World",
     "isDarkLogo": false,
     "originalRssUrl": "https://www.404media.co/rss/"
+  },
+  {
+    "title": "Anthropic’s Text Watermarking Proves AI Companies Do Not Care at All About Writing",
+    "link": "https://www.404media.co/anthropics-text-watermarking-proves-ai-companies-do-not-care-at-all-about-writing/",
+    "pubDate": "2026-08-18T15:54:15.000Z",
+    "content": "<p>Earlier this month, Anthropic announced that future versions of Claude will generate text that includes watermarks showing it was AI-generated. At the time, Anthropic did not explain how this would work, leaving us to speculate on the podcast: Would it somehow encode this into the text? Include invisible characters? Do something with the metadata? We now know, thanks to a blog post over the weekend, that Anthropic will do this by changing how its AI writes altogether.&nbsp;</p>\n<p>“Nothing is added to the text and there are no hidden characters,” Anthropic wrote <a href=\"https://www.anthropic.com/news/claude-text-watermark?ref=404media.co\"><u>in that company blog post</u></a>. “The difference between watermarked and un-watermarked text will not be distinguishable to readers.” The way it will work, the post explained, is that Anthropic will subtly alter the word choices in AI-generated text in a way that is only known to Anthropic and its algorithms. Anthropic will know the watermarking algorithm, which will change “the source of the randomness used to pick among words” and thus can write a tool to detect whether something has been AI-generated.</p>",
+    "snippet": "Earlier this month, Anthropic announced that future versions of Claude will generate text that includes watermarks showing it was AI-generated. At the time, Anthropic did not explain how this would",
+    "creator": "Jason Koebler",
+    "sourceTitle": "404 Media",
+    "sheetCategory": "Investigations + Conflict",
+    "enforcedImage": "https://storage.ghost.io/c/0f/76/0f76b548-bc58-4f25-abc3-3f5ebca07da4/content/images/2026/08/CleanShot-2026-08-18-at-08.38.52@2x.png",
+    "sourceDescription": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
+    "sourceLogo": "https://www.404media.co/favicon.png",
+    "lang": "en",
+    "scope": "World",
+    "isDarkLogo": false,
+    "originalRssUrl": "https://www.404media.co/rss/"
   }
 ]
