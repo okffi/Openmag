@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "20.8.2026 klo 23.35.32"
+    "last_updated": "21.8.2026 klo 0.33.53"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
@@ -356,7 +356,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -484,7 +484,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 48,
+    "count": 24,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -583,6 +583,14 @@
     "count": 15,
     "category": "Investigations + Conflict",
     "description": "Preserving public data",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Internet Archive Blogs": {
+    "file": "internet_archive_blogs.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Updates from the Internet Archive",
     "lang": "en",
     "scope": "World"
   },
@@ -876,7 +884,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -1028,7 +1036,7 @@
   },
   "Taide- ja kulttuurivirasto": {
     "file": "taide__ja_kulttuurivirasto.json",
-    "count": 10,
+    "count": 1,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -1097,14 +1105,6 @@
     "description": "Vi stärker det nordiska samarbetet genom kultur",
     "lang": "fi",
     "scope": "Nordic + Baltic countries"
-  },
-  "Internet Archive Blogs": {
-    "file": "internet_archive_blogs.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Updates from the Internet Archive",
-    "lang": "en",
-    "scope": "World"
   },
   "Kielipankki": {
     "file": "kielipankki.json",
@@ -1316,7 +1316,7 @@
   },
   "OpenForum Europe": {
     "file": "openforum_europe.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Data + Technology",
     "description": "Open Technologies for a Competitive and Sovereign Europe",
     "lang": "en",
@@ -1324,7 +1324,7 @@
   },
   "Global Voices Advox": {
     "file": "global_voices_advox.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Defending Free Speech Online",
     "lang": "en",
@@ -1420,7 +1420,7 @@
   },
   "Global Solutions Initiative": {
     "file": "global_solutions_initiative.json",
-    "count": 1,
+    "count": 10,
     "category": "Global policy",
     "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
     "lang": "en",
@@ -1562,14 +1562,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Technology Research": {
-    "file": "open_technology_research.json",
-    "count": 9,
-    "category": "(Open) Data + Technology",
-    "description": "Building Evidence, Connecting Researchers, Informing Policy",
-    "lang": "en",
-    "scope": "World"
-  },
   "OpenWebSearch.eu": {
     "file": "openwebsearch_eu.json",
     "count": 10,
@@ -1580,7 +1572,7 @@
   },
   "Open Regulatory Compliance Working Group": {
     "file": "open_regulatory_compliance_working_group.json",
-    "count": 76,
+    "count": 77,
     "category": "(Open) Data + Technology",
     "description": "Recent content on Open Regulatory Compliance Working Group",
     "lang": "en",
@@ -1639,6 +1631,14 @@
     "count": 15,
     "category": "(Open) Science + Research",
     "description": "Open Access and Digital Scholarship at Imperial College London",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Confederation of Open Access Repositories": {
+    "file": "confederation_of_open_access_repositories.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Building a sustainable, global knowledge commons",
     "lang": "en",
     "scope": "World"
   },
@@ -1809,6 +1809,14 @@
     "description": "Soome Eesti Instituudi Sihtasutus",
     "lang": "fi",
     "scope": "Estonia"
+  },
+  "FNG Research": {
+    "file": "fng_research.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "The Heritage Management Organization": {
     "file": "the_heritage_management_organization.json",
@@ -2106,6 +2114,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Michael Culture Association": {
+    "file": "michael_culture_association.json",
+    "count": 1,
+    "category": "Digital Culture + Heritage",
+    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Institute of Network Cultures": {
     "file": "institute_of_network_cultures.json",
     "count": 15,
@@ -2194,6 +2210,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "European Heritage Hub": {
+    "file": "european_heritage_hub.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Where cultural heritage connects",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Internet Archive Europe": {
     "file": "internet_archive_europe.json",
     "count": 10,
@@ -2209,14 +2233,6 @@
     "description": "Kulturarv och digitalisering",
     "lang": "sv",
     "scope": "Sweden"
-  },
-  "MuseumNext": {
-    "file": "museumnext.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Defining the Future of Museums",
-    "lang": "en",
-    "scope": "World"
   },
   "Open Objects": {
     "file": "open_objects.json",
@@ -2322,14 +2338,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "information labs": {
-    "file": "information_labs.json",
-    "count": 20,
-    "category": "Digital Policy + Rights",
-    "description": "Facts | Ideas | Discussions",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Poliittinen talous": {
     "file": "poliittinen_talous.json",
     "count": 30,
@@ -2410,14 +2418,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "CREATe": {
-    "file": "create.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Centre for Regulation of the Creative Economy",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "ICANN New and Noteworthy": {
     "file": "icann_new_and_noteworthy.json",
     "count": 7,
@@ -2425,14 +2425,6 @@
     "description": "ICANN Announcements - 2006",
     "lang": "en",
     "scope": "World"
-  },
-  "Knowledge Rights 21": {
-    "file": "knowledge_rights_21.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "We advocate for your right to access and share knowledge!",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Sciences Po Technology and global affairs innovation hub": {
     "file": "sciences_po_technology_and_global_affairs_innovation_hub.json",
@@ -2545,6 +2537,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Rising Voices": {
+    "file": "rising_voices.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "Helping the global population join the global conversation",
+    "lang": "en",
+    "scope": "World"
   },
   "Open Government Partnership Newsletter": {
     "file": "open_government_partnership_newsletter.json",
