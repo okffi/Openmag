@@ -202,5 +202,22 @@
     "scope": "World",
     "isDarkLogo": false,
     "originalRssUrl": "https://blog.wikimedia.org/feed/"
+  },
+  {
+    "title": "Finishing Outreachy with Wikidata support for Wikiscore",
+    "link": "https://diff.wikimedia.org/2026/08/20/finishing-outreachy-with-wikidata-support-for-wikiscore/",
+    "pubDate": "2026-08-20T11:00:00.000Z",
+    "content": "<p>And we finished our 32nd round of Outreachy! In this final part, we worked in the <a href=\"https://meta.wikimedia.org/wiki/Lista_de_desejos_tecnol%C3%B3gicos_da_lusofonia/2025/Propostas/Ferramenta_de_pontua%C3%A7%C3%A3o_para_edi%C3%A7%C3%B5es_no_Wikidata\">wish #8</a> of the Lusophone Technological Wishlist.</p>\n<p>These last weeks we worked on an MVP to support Wikidata contests in <a href=\"https://wikiscore.toolforge.org/\">WikiScore</a>, Wikimedia Brasil’s content management tool. The first step was to understand how WikiScore works. After that, the first obstacle was to realize that PetScan queries can only retrieve data from Wikidata and not Test Wikidata, which would be useful for testing. It limited the capacity to simulate contests and create/modify or delete data in a test environment. Nonetheless, we still could develop this MVP based on reading data directly from Wikidata.</p>\n<p>From there we started changing the commands to simulate the cron behavior and load all edits coming from Wikidata and compare them based on hash snaks values. This change requires adapting the Counter page to support a Wikidata contest; this first version just counts the total number of statements, references, and qualifiers modified/created by a user, and the total points are the sum of these values.</p>",
+    "snippet": "And we finished our 32nd round of Outreachy! In this final part, we worked in the wish #8 of the Lusophone Technological Wishlist.",
+    "creator": "ACorrea WMB",
+    "sourceTitle": "Diff",
+    "sheetCategory": "(Open) Data + Technology",
+    "enforcedImage": "https://diff.wikimedia.org/wp-content/uploads/2026/08/fungi.jpg?w=960&resize=960%2C640",
+    "sourceDescription": "News from the Wikimedia movement",
+    "sourceLogo": "https://diff.wikimedia.org/wp-content/uploads/2020/07/cropped-1024px-Wikimedia-logo.svg_.png?fit=32%2C32",
+    "lang": "en",
+    "scope": "World",
+    "isDarkLogo": false,
+    "originalRssUrl": "https://blog.wikimedia.org/feed/"
   }
 ]
