@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "21.8.2026 klo 19.41.05"
+    "last_updated": "21.8.2026 klo 20.35.02"
   },
   "Diff": {
     "file": "diff.json",
@@ -36,7 +36,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 55,
+    "count": 56,
     "category": "Global policy",
     "description": "",
     "lang": "en",
@@ -220,7 +220,7 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
@@ -308,7 +308,7 @@
   },
   "Global Investigative Journalism Network": {
     "file": "global_investigative_journalism_network.json",
-    "count": 9,
+    "count": 8,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -364,7 +364,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 22,
+    "count": 23,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -417,6 +417,22 @@
     "description": "",
     "lang": "fi",
     "scope": "Nordic + Baltic countries"
+  },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 24,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Center for European Policy Analysis": {
+    "file": "center_for_european_policy_analysis.json",
+    "count": 11,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Wikimedia Deutschland Blog": {
     "file": "wikimedia_deutschland_blog.json",
@@ -748,7 +764,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -764,19 +780,11 @@
   },
   "Ministry for Foreign Affairs of Finland | News": {
     "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 23,
+    "count": 20,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 48,
-    "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
-    "lang": "en",
-    "scope": "World"
   },
   "UN News - Global perspective Human stories | Europe": {
     "file": "un_news___global_perspective_human_stories___europe.json",
@@ -857,14 +865,6 @@
     "description": "",
     "lang": "sv",
     "scope": "Finland"
-  },
-  "Center for European Policy Analysis": {
-    "file": "center_for_european_policy_analysis.json",
-    "count": 11,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Creative Commons": {
     "file": "creative_commons.json",
@@ -1044,7 +1044,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -1436,7 +1436,7 @@
   },
   "Global Solutions Initiative": {
     "file": "global_solutions_initiative.json",
-    "count": 1,
+    "count": 10,
     "category": "Global policy",
     "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
     "lang": "en",
@@ -2247,6 +2247,14 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Open Knowledge Foundation Blog": {
+    "file": "open_knowledge_foundation_blog.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Content for a fair, sustainable and open future",
     "lang": "en",
     "scope": "World"
   },
