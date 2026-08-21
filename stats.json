@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "21.8.2026 klo 22.30.00"
+    "last_updated": "21.8.2026 klo 23.31.58"
   },
   "Diff": {
     "file": "diff.json",
@@ -36,7 +36,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 56,
+    "count": 57,
     "category": "Global policy",
     "description": "",
     "lang": "en",
@@ -68,7 +68,7 @@
   },
   "Tietotekniikka | ePressi": {
     "file": "tietotekniikka___epressi.json",
-    "count": 34,
+    "count": 28,
     "category": "(Open) Data + Technology",
     "description": "",
     "lang": "fi",
@@ -420,7 +420,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 48,
+    "count": 47,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -447,6 +447,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "United Nations | The Guardian": {
+    "file": "united_nations___the_guardian.json",
+    "count": 20,
+    "category": "Global policy",
+    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
     "lang": "en",
     "scope": "World"
   },
@@ -623,14 +631,6 @@
     "count": 3878,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "United Nations | The Guardian": {
-    "file": "united_nations___the_guardian.json",
-    "count": 20,
-    "category": "Global policy",
-    "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
     "lang": "en",
     "scope": "World"
   },
@@ -812,7 +812,7 @@
   },
   "xkcd": {
     "file": "xkcd.json",
-    "count": 4,
+    "count": 6,
     "category": "(Open) Data + Technology",
     "description": "xkcd.com: A webcomic of romance and math humor.",
     "lang": "en",
@@ -884,7 +884,7 @@
   },
   "UN News - Global perspective Human stories": {
     "file": "un_news___global_perspective_human_stories.json",
-    "count": 51,
+    "count": 52,
     "category": "Global policy",
     "description": "UN News - Global perspective Human stories | Global",
     "lang": "en",
@@ -900,7 +900,7 @@
   },
   "UN News - Global perspective Human stories | Peace and Security": {
     "file": "un_news___global_perspective_human_stories___peace_and_security.json",
-    "count": 8,
+    "count": 9,
     "category": "Investigations + Conflict",
     "description": "",
     "lang": "en",
@@ -916,7 +916,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 1,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1516,7 +1516,7 @@
   },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
@@ -2169,6 +2169,14 @@
     "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
     "scope": "World"
+  },
+  "Wikimedia Sverige": {
+    "file": "wikimedia_sverige.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Vi arbetar för fri kunskap",
+    "lang": "sv",
+    "scope": "Sweden"
   },
   "News – Wikimedia Foundation": {
     "file": "news___wikimedia_foundation.json",
