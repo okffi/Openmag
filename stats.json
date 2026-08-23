@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "23.8.2026 klo 9.51.46"
+    "last_updated": "23.8.2026 klo 10.38.31"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -29,6 +29,22 @@
   "Presidentti": {
     "file": "presidentti.json",
     "count": 10,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Euronews | Europe": {
+    "file": "euronews___europe.json",
+    "count": 50,
+    "category": "Global policy",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Tasavallan presidentin kanslia": {
+    "file": "tasavallan_presidentin_kanslia.json",
+    "count": 25,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -74,14 +90,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Euronews | Europe": {
-    "file": "euronews___europe.json",
-    "count": 50,
-    "category": "Global policy",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "IDN-InDepthNews": {
     "file": "idn_indepthnews.json",
     "count": 10,
@@ -116,7 +124,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 47,
+    "count": 31,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -836,11 +844,19 @@
   },
   "NORDIS": {
     "file": "nordis.json",
-    "count": 3,
+    "count": 10,
     "category": "Investigations + Conflict",
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
+  },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Aalto-yliopisto": {
     "file": "aalto_yliopisto.json",
@@ -1444,7 +1460,7 @@
   },
   "Global Solutions Initiative": {
     "file": "global_solutions_initiative.json",
-    "count": 1,
+    "count": 10,
     "category": "Global policy",
     "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
     "lang": "en",
@@ -1585,6 +1601,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Open By Default": {
+    "file": "open_by_default.json",
+    "count": 8,
+    "category": "(Open) Data + Technology",
+    "description": "",
+    "lang": "en",
+    "scope": "Netherlands"
   },
   "Vereniging Open Nederland": {
     "file": "vereniging_open_nederland.json",
@@ -2170,6 +2194,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "European Heritage Hub": {
+    "file": "european_heritage_hub.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Where cultural heritage connects",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Internet Archive Europe": {
     "file": "internet_archive_europe.json",
     "count": 10,
@@ -2399,14 +2431,6 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
     "scope": "Europe"
   },
@@ -2865,14 +2889,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Nordic + Baltic countries"
-  },
-  "Tasavallan presidentin kanslia": {
-    "file": "tasavallan_presidentin_kanslia.json",
-    "count": 25,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Ilmasto- ja energiapoliittinen ministerityöryhmä": {
     "file": "ilmasto__ja_energiapoliittinen_ministerity_ryhm_.json",
