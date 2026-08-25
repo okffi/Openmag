@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "25.8.2026 klo 12.41.38"
+    "last_updated": "25.8.2026 klo 13.38.56"
   },
   "Epressi - Ulkomaat": {
     "file": "epressi___ulkomaat.json",
@@ -44,7 +44,7 @@
   },
   "Demokraatti": {
     "file": "demokraatti.json",
-    "count": 29,
+    "count": 30,
     "category": "Politics + Public sector",
     "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
     "lang": "fi",
@@ -60,7 +60,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 21,
+    "count": 22,
     "category": "Politics + Public sector",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -68,7 +68,7 @@
   },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 20,
+    "count": 19,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -92,10 +92,10 @@
   },
   "Oulu2026": {
     "file": "oulu2026.json",
-    "count": 101,
+    "count": 100,
     "category": "Culture + Education",
     "description": "Oulu on Euroopan kulttuuripääkaupunki 2026",
-    "lang": "fi",
+    "lang": "en",
     "scope": "Finland"
   },
   "Suomalaisen Kirjallisuuden Seura (SKS)": {
@@ -124,7 +124,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 51,
+    "count": 52,
     "category": "International Affairs + Policy",
     "description": "",
     "lang": "en",
@@ -156,7 +156,7 @@
   },
   "University of Helsinki": {
     "file": "university_of_helsinki.json",
-    "count": 11,
+    "count": 14,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "fi",
@@ -164,7 +164,7 @@
   },
   "Kulttuuri ja taide - ePressi": {
     "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 24,
+    "count": 25,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -252,7 +252,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 11,
+    "count": 12,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -348,7 +348,7 @@
   },
   "Presidentti": {
     "file": "presidentti.json",
-    "count": 9,
+    "count": 10,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -364,11 +364,51 @@
   },
   "Verde": {
     "file": "verde.json",
-    "count": 16,
+    "count": 15,
     "category": "Politics + Public sector",
     "description": "Itsenäinen verkkomedia vihreästi ajatteleville. Faktat ja kestävä kehitys edellä, ilman klikkiotsikoita tai maksumuureja.",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "The Scholarly Kitchen": {
+    "file": "the_scholarly_kitchen.json",
+    "count": 15,
+    "category": "(Open) Science + Research",
+    "description": "What’s Hot and Cooking In Scholarly Publishing",
+    "lang": "en",
+    "scope": "World"
+  },
+  "DARIAH-EU": {
+    "file": "dariah_eu.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Digital Research Infrastructure for the Arts and Humanities",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Digital meets Culture": {
+    "file": "digital_meets_culture.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Art, heritage & technologies",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "MuseumNext": {
+    "file": "museumnext.json",
+    "count": 11,
+    "category": "Digital Culture + Heritage",
+    "description": "Defining the Future of Museums",
+    "lang": "en",
+    "scope": "World"
+  },
+  "ProPublica": {
+    "file": "propublica.json",
+    "count": 20,
+    "category": "Investigations + Journalism",
+    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "lang": "en",
+    "scope": "World"
   },
   "OpenWebSearch.eu": {
     "file": "openwebsearch_eu.json",
@@ -386,17 +426,9 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "The Scholarly Kitchen": {
-    "file": "the_scholarly_kitchen.json",
-    "count": 15,
-    "category": "(Open) Science + Research",
-    "description": "What’s Hot and Cooking In Scholarly Publishing",
-    "lang": "en",
-    "scope": "World"
-  },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 49,
+    "count": 30,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -514,22 +546,6 @@
     "lang": "de",
     "scope": "Europe"
   },
-  "DARIAH-EU": {
-    "file": "dariah_eu.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Digital Research Infrastructure for the Arts and Humanities",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Digital meets Culture": {
-    "file": "digital_meets_culture.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Art, heritage & technologies",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
     "count": 10,
@@ -602,14 +618,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "ProPublica": {
-    "file": "propublica.json",
-    "count": 20,
-    "category": "Investigations + Journalism",
-    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Kuvasto": {
     "file": "kuvasto.json",
     "count": 10,
@@ -660,7 +668,7 @@
   },
   "Project Syndicate": {
     "file": "project_syndicate.json",
-    "count": 20,
+    "count": 23,
     "category": "Perspectives",
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
@@ -676,7 +684,7 @@
   },
   "Euroopan unioni": {
     "file": "euroopan_unioni.json",
-    "count": 27,
+    "count": 28,
     "category": "Politics + Public sector",
     "description": "European Union | Featured news",
     "lang": "fi",
@@ -721,6 +729,22 @@
     "description": "UN News - Global perspective Human stories | Middle East",
     "lang": "en",
     "scope": "Middle East & Arab world"
+  },
+  "UN News | Peace and Security": {
+    "file": "un_news___peace_and_security.json",
+    "count": 4,
+    "category": "Peace + Conflict + Humanitarian",
+    "description": "UN News - Global perspective Human stories | Peace and Security",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Copernicus Institute": {
+    "file": "copernicus_institute.json",
+    "count": 20,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Weekly OSM": {
     "file": "weekly_osm.json",
@@ -828,7 +852,7 @@
   },
   "CIVICUS News": {
     "file": "civicus_news.json",
-    "count": 1,
+    "count": 50,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -892,7 +916,7 @@
   },
   "United Nations Sustainable Development": {
     "file": "united_nations_sustainable_development.json",
-    "count": 12,
+    "count": 13,
     "category": "Sustainability + Foresight",
     "description": "17 Goals to Transform Our World",
     "lang": "en",
@@ -1212,7 +1236,7 @@
   },
   "International Council on Archives (ICA)": {
     "file": "international_council_on_archives__ica_.json",
-    "count": 1,
+    "count": 10,
     "category": "Culture + Education",
     "description": "",
     "lang": "en",
@@ -1228,7 +1252,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -1313,14 +1337,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Copernicus Institute": {
-    "file": "copernicus_institute.json",
-    "count": 20,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
@@ -1484,7 +1500,7 @@
   },
   "European Union": {
     "file": "european_union.json",
-    "count": 9,
+    "count": 8,
     "category": "Politics + Public sector",
     "description": "European Union | Featured news",
     "lang": "en",
@@ -1497,14 +1513,6 @@
     "description": "Open Technologies for a Competitive and Sovereign Europe",
     "lang": "en",
     "scope": "Europe"
-  },
-  "COSS ry": {
-    "file": "coss_ry.json",
-    "count": 15,
-    "category": "(Open) Data + Technology",
-    "description": "Suomen avoimien tietojärjestelmien keskus - COSS ry",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "FOSDEM 2026": {
     "file": "fosdem_2026.json",
@@ -1521,6 +1529,14 @@
     "description": "Bevorderen van toegang tot informatie, kennis en cultuur",
     "lang": "nl",
     "scope": "Europe"
+  },
+  "COSS ry": {
+    "file": "coss_ry.json",
+    "count": 15,
+    "category": "(Open) Data + Technology",
+    "description": "Suomen avoimien tietojärjestelmien keskus - COSS ry",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "FCAI | News": {
     "file": "fcai___news.json",
@@ -2185,14 +2201,6 @@
     "description": "'Every age has its orthodoxy and no orthodoxy is ever right.'",
     "lang": "en",
     "scope": "UK"
-  },
-  "MuseumNext": {
-    "file": "museumnext.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Defining the Future of Museums",
-    "lang": "en",
-    "scope": "World"
   },
   "Source Code Exhibition": {
     "file": "source_code_exhibition.json",
@@ -2863,14 +2871,6 @@
     "count": 10,
     "category": "Peace + Conflict + Humanitarian",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "UN News | Peace and Security": {
-    "file": "un_news___peace_and_security.json",
-    "count": 4,
-    "category": "Peace + Conflict + Humanitarian",
-    "description": "UN News - Global perspective Human stories | Peace and Security",
     "lang": "en",
     "scope": "World"
   },
