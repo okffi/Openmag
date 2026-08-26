@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "26.8.2026 klo 7.46.41"
+    "last_updated": "26.8.2026 klo 8.39.38"
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
@@ -20,9 +20,25 @@
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
-    "count": 34,
+    "count": 35,
     "category": "Perspectives",
     "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Tiede ja tutkimus - ePressi": {
+    "file": "tiede_ja_tutkimus___epressi.json",
+    "count": 19,
+    "category": "(Open) Science + Research",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Demokraatti": {
+    "file": "demokraatti.json",
+    "count": 33,
+    "category": "Politics + Public sector",
+    "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -66,14 +82,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Tiede ja tutkimus - ePressi": {
-    "file": "tiede_ja_tutkimus___epressi.json",
-    "count": 19,
-    "category": "(Open) Science + Research",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
     "count": 13,
@@ -92,7 +100,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 36,
+    "count": 50,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -292,7 +300,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 50,
+    "count": 51,
     "category": "International Affairs + Policy",
     "description": "",
     "lang": "en",
@@ -428,7 +436,7 @@
   },
   "Maailman Kuvalehti": {
     "file": "maailman_kuvalehti.json",
-    "count": 10,
+    "count": 11,
     "category": "Perspectives",
     "description": "Maailman Kuvalehti kertoo rohkeudella ja rakkaudella muuttuvasta maailmasta.",
     "lang": "fi",
@@ -473,14 +481,6 @@
     "description": "European Commission | News",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Demokraatti": {
-    "file": "demokraatti.json",
-    "count": 33,
-    "category": "Politics + Public sector",
-    "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
@@ -569,6 +569,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Human Rights Watch News": {
+    "file": "human_rights_watch_news.json",
+    "count": 20,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "OpenWebSearch.eu": {
     "file": "openwebsearch_eu.json",
@@ -868,7 +876,7 @@
   },
   "University of Copenhagen": {
     "file": "university_of_copenhagen.json",
-    "count": 473,
+    "count": 474,
     "category": "(Open) Science + Research",
     "description": "",
     "lang": "en",
@@ -948,7 +956,7 @@
   },
   "Long Play": {
     "file": "long_play.json",
-    "count": 756,
+    "count": 757,
     "category": "Perspectives",
     "description": "Ei klikkiotsikoita, ei typeryyksiä. Vain juttuja, joilla on väliä.",
     "lang": "fi",
@@ -969,6 +977,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Nordic + Baltic countries"
+  },
+  "Copyright Literacy": {
+    "file": "copyright_literacy.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Decoding copyright and bringing you enlightenment",
+    "lang": "en",
+    "scope": "World"
   },
   "Open Regulatory Compliance Working Group": {
     "file": "open_regulatory_compliance_working_group.json",
@@ -1324,7 +1340,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 10,
+    "count": 2,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -1487,62 +1503,6 @@
     "count": 15,
     "category": "(Open) Data + Technology",
     "description": "Suomen avoimien tietojärjestelmien keskus - COSS ry",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Museovirasto - uusimmat tiedotteet": {
-    "file": "museovirasto___uusimmat_tiedotteet.json",
-    "count": 25,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Access Now": {
-    "file": "access_now.json",
-    "count": 15,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Internet Society": {
-    "file": "internet_society.json",
-    "count": 20,
-    "category": "Digital Policy + Rights",
-    "description": "We are a global charitable organization empowering people to keep the Internet a force for good: open, globally connected, secure, and trustworthy.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "MyData": {
-    "file": "mydata.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Arts Law Centre of Australia": {
-    "file": "arts_law_centre_of_australia.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "The national community legal centre for the arts",
-    "lang": "en",
-    "scope": "Asia & Australia"
-  },
-  "Avoin hallinto": {
-    "file": "avoin_hallinto.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Sanasto": {
-    "file": "sanasto.json",
-    "count": 9,
-    "category": "IP + Creative Industry",
-    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1962,6 +1922,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Museovirasto - uusimmat tiedotteet": {
+    "file": "museovirasto___uusimmat_tiedotteet.json",
+    "count": 25,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Oulun museo- ja tiedekeskus": {
     "file": "oulun_museo__ja_tiedekeskus.json",
     "count": 10,
@@ -2132,6 +2100,14 @@
   },
   "Digime": {
     "file": "digime.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
@@ -2386,11 +2362,11 @@
     "lang": "en",
     "scope": "Sweden"
   },
-  "Copyright Literacy": {
-    "file": "copyright_literacy.json",
-    "count": 10,
+  "Access Now": {
+    "file": "access_now.json",
+    "count": 15,
     "category": "Digital Policy + Rights",
-    "description": "Decoding copyright and bringing you enlightenment",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -2426,6 +2402,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Internet Society": {
+    "file": "internet_society.json",
+    "count": 20,
+    "category": "Digital Policy + Rights",
+    "description": "We are a global charitable organization empowering people to keep the Internet a force for good: open, globally connected, secure, and trustworthy.",
+    "lang": "en",
+    "scope": "World"
+  },
   "Knowledge Rights 21 Archive Feed": {
     "file": "knowledge_rights_21_archive_feed.json",
     "count": 10,
@@ -2439,6 +2423,14 @@
     "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Grounding Indigenous Rights",
+    "lang": "en",
+    "scope": "World"
+  },
+  "MyData": {
+    "file": "mydata.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -2458,6 +2450,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Arts Law Centre of Australia": {
+    "file": "arts_law_centre_of_australia.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "The national community legal centre for the arts",
+    "lang": "en",
+    "scope": "Asia & Australia"
+  },
   "Defend Democracy": {
     "file": "defend_democracy.json",
     "count": 10,
@@ -2465,6 +2465,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Avoin hallinto": {
+    "file": "avoin_hallinto.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Kansalaisfoorumi": {
     "file": "kansalaisfoorumi.json",
@@ -2503,14 +2511,6 @@
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "Front Line Defenders supports the protection and security of human rights defenders at risk around the world.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Human Rights Watch News": {
-    "file": "human_rights_watch_news.json",
-    "count": 20,
-    "category": "Human Rights + Democracy",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -2610,19 +2610,19 @@
     "lang": "en",
     "scope": "World"
   },
+  "Global Investigative Journalism Network": {
+    "file": "global_investigative_journalism_network.json",
+    "count": 20,
+    "category": "Investigations + Journalism",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Guides - bellingcat": {
     "file": "guides___bellingcat.json",
     "count": 9,
     "category": "Investigations + Journalism",
     "description": "the home of online investigations",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Investigations – ACDC": {
-    "file": "investigations___acdc.json",
-    "count": 10,
-    "category": "Investigations + Journalism",
-    "description": "Bringing together journalists, data analysts, academics and policy advocates to expose and undermine corruption.",
     "lang": "en",
     "scope": "World"
   },
@@ -2714,6 +2714,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Sanasto": {
+    "file": "sanasto.json",
+    "count": 9,
+    "category": "IP + Creative Industry",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Suomen Taiteilijaseura": {
     "file": "suomen_taiteilijaseura.json",
     "count": 4,
@@ -2768,7 +2776,7 @@
     "category": "Knowledge Rescue",
     "description": "",
     "lang": "en",
-    "scope": "World"
+    "scope": "United States"
   },
   "Oxfam International": {
     "file": "oxfam_international.json",
@@ -2961,6 +2969,14 @@
     "description": "The Mozilla Foundation Blog",
     "lang": "en",
     "scope": "World"
+  },
+  "Luonnonperintösäätiö": {
+    "file": "luonnonperint_s__ti_.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Suojelemme suomalaista metsäluontoa",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Puistokatu 4": {
     "file": "puistokatu_4.json",
