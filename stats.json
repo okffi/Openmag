@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "29.8.2026 klo 17.20.41"
+    "last_updated": "29.8.2026 klo 21.17.28"
   },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
@@ -12,7 +12,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 14,
+    "count": 15,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -44,7 +44,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 22,
+    "count": 23,
     "category": "International Affairs + Policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -52,7 +52,7 @@
   },
   "OCHA": {
     "file": "ocha.json",
-    "count": 11,
+    "count": 12,
     "category": "Peace + Conflict + Humanitarian",
     "description": "United Nations Office for the Coordination of Humanitarian Affairs",
     "lang": "en",
@@ -81,6 +81,38 @@
     "description": "Suojelemme suomalaista metsäluontoa",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Kansalliset dialogit": {
+    "file": "kansalliset_dialogit.json",
+    "count": 9,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Global Voices": {
+    "file": "global_voices.json",
+    "count": 17,
+    "category": "Human Rights + Democracy",
+    "description": "Citizen media stories from around the world",
+    "lang": "en",
+    "scope": "World"
+  },
+  "The Ulkopolitist": {
+    "file": "the_ulkopolitist.json",
+    "count": 10,
+    "category": "International Affairs + Policy",
+    "description": "Parempaa ulkopoliittista keskustelua.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "404 Media": {
+    "file": "404_media.json",
+    "count": 16,
+    "category": "Investigations + Journalism",
+    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
+    "lang": "en",
+    "scope": "World"
   },
   "CSC": {
     "file": "csc.json",
@@ -298,22 +330,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Kansalliset dialogit": {
-    "file": "kansalliset_dialogit.json",
-    "count": 9,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Global Voices": {
-    "file": "global_voices.json",
-    "count": 16,
-    "category": "Human Rights + Democracy",
-    "description": "Citizen media stories from around the world",
-    "lang": "en",
-    "scope": "World"
-  },
   "Hrana": {
     "file": "hrana.json",
     "count": 10,
@@ -332,7 +348,7 @@
   },
   "IDN-InDepthNews": {
     "file": "idn_indepthnews.json",
-    "count": 12,
+    "count": 11,
     "category": "Human Rights + Democracy",
     "description": "News for a Sustainable World, Peace and Security",
     "lang": "en",
@@ -377,14 +393,6 @@
     "description": "The Nordic Observatory for Digital Media and Information Disorder",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
-  },
-  "404 Media": {
-    "file": "404_media.json",
-    "count": 16,
-    "category": "Investigations + Journalism",
-    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
-    "lang": "en",
-    "scope": "World"
   },
   "OCCRP": {
     "file": "occrp.json",
@@ -572,7 +580,7 @@
   },
   "Rajapinta": {
     "file": "rajapinta.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
@@ -588,7 +596,7 @@
   },
   "Ministry for Foreign Affairs of Finland | News": {
     "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 22,
+    "count": 20,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -602,9 +610,25 @@
     "lang": "en",
     "scope": "World"
   },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 48,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 1,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Wikimedia Deutschland Blog": {
     "file": "wikimedia_deutschland_blog.json",
-    "count": 16,
+    "count": 17,
     "category": "(Open) Data + Technology",
     "description": "Neues aus dem Wikimedia-Universum",
     "lang": "de",
@@ -844,7 +868,7 @@
   },
   "Oikeusministeriö | Tiedotteet ja uutiset": {
     "file": "oikeusministeri____tiedotteet_ja_uutiset.json",
-    "count": 4,
+    "count": 20,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -1140,7 +1164,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 1,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1308,7 +1332,7 @@
   },
   "Copyright Literacy": {
     "file": "copyright_literacy.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
@@ -1409,54 +1433,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Maaseudun sivistysliitto": {
-    "file": "maaseudun_sivistysliitto.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Open Knowledge Foundation DE": {
-    "file": "open_knowledge_foundation_de.json",
-    "count": 690,
-    "category": "Digital Policy + Rights",
-    "description": "Blog on OKF DE",
-    "lang": "de",
-    "scope": "Germany"
-  },
-  "Creative Commons": {
-    "file": "creative_commons.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Direkt36": {
-    "file": "direkt36.json",
-    "count": 10,
-    "category": "Investigations + Journalism",
-    "description": "Direkt36 is a non-profit investigative journalism center with the mission to hold powerful people and institutions accountable.",
-    "lang": "en",
-    "scope": "Hungary"
-  },
-  "European Union": {
-    "file": "european_union.json",
-    "count": 7,
-    "category": "Politics + Public sector",
-    "description": "European Union | Featured news",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Sitra tiedotteet": {
-    "file": "sitra_tiedotteet.json",
-    "count": 25,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "FOSDEM 2026": {
     "file": "fosdem_2026.json",
@@ -1658,11 +1634,11 @@
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
-  "OATP primary": {
-    "file": "oatp_primary.json",
-    "count": 47,
+  "Confederation of Open Access Repositories": {
+    "file": "confederation_of_open_access_repositories.json",
+    "count": 10,
     "category": "(Open) Science + Research",
-    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
+    "description": "Building a sustainable, global knowledge commons",
     "lang": "en",
     "scope": "World"
   },
@@ -1679,6 +1655,14 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "Scholarly Publishing and Academic Resources Coalition",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Zooniverse": {
+    "file": "zooniverse.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
     "scope": "World"
   },
@@ -1858,6 +1842,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Maaseudun sivistysliitto": {
+    "file": "maaseudun_sivistysliitto.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Museolehti": {
     "file": "museolehti.json",
     "count": 10,
@@ -1970,6 +1962,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Villa Karo": {
+    "file": "villa_karo.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Africa"
+  },
   "World Heritage Centre News": {
     "file": "world_heritage_centre_news.json",
     "count": 10,
@@ -2028,14 +2028,6 @@
   },
   "Digime": {
     "file": "digime.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
@@ -2194,6 +2186,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Opendata.ch": {
+    "file": "opendata_ch.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Sciences Po Technology and global affairs innovation hub": {
     "file": "sciences_po_technology_and_global_affairs_innovation_hub.json",
     "count": 22,
@@ -2242,6 +2242,14 @@
     "lang": "de",
     "scope": "Germany"
   },
+  "Open Knowledge Foundation DE": {
+    "file": "open_knowledge_foundation_de.json",
+    "count": 690,
+    "category": "Digital Policy + Rights",
+    "description": "Blog on OKF DE",
+    "lang": "de",
+    "scope": "Germany"
+  },
   "Open Knowledge Sweden": {
     "file": "open_knowledge_sweden.json",
     "count": 10,
@@ -2257,6 +2265,14 @@
     "description": "Tech analysis without the boosterism",
     "lang": "en",
     "scope": "Sweden"
+  },
+  "Creative Commons": {
+    "file": "creative_commons.json",
+    "count": 9,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
   },
   "DataEthics": {
     "file": "dataethics.json",
@@ -2474,14 +2490,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "The Ulkopolitist": {
-    "file": "the_ulkopolitist.json",
-    "count": 10,
-    "category": "International Affairs + Policy",
-    "description": "Parempaa ulkopoliittista keskustelua.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "UN Global Pulse": {
     "file": "un_global_pulse.json",
     "count": 10,
@@ -2513,6 +2521,14 @@
     "description": "Kosmopolis on Suomen rauhantutkimusyhdistyksen julkaisema monitieteinen rauhan-, konfliktin- ja maailmanpolitiikan tutkimuksen aikakauslehti. Neljä kertaa vuodessa ilmestyvä Kosmopolis on erinomainen ikkuna alan tuoreimpaan tutkimukseen. Kosmopolis ilmestyi ensimmäisen kerran vuonna 1993, mutta sitä voidaan pitää perillisenä Rauhaan tutkien -tiedotteelle (1971-1984) ja Rauhantutkimus-lehdelle (1985-1992).",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Direkt36": {
+    "file": "direkt36.json",
+    "count": 10,
+    "category": "Investigations + Journalism",
+    "description": "Direkt36 is a non-profit investigative journalism center with the mission to hold powerful people and institutions accountable.",
+    "lang": "en",
+    "scope": "Hungary"
   },
   "Forbidden Stories": {
     "file": "forbidden_stories.json",
@@ -2762,6 +2778,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "European Union": {
+    "file": "european_union.json",
+    "count": 7,
+    "category": "Politics + Public sector",
+    "description": "European Union | Featured news",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Association of Finnish Cities and Municipalities": {
     "file": "association_of_finnish_cities_and_municipalities.json",
     "count": 10,
@@ -2860,6 +2884,14 @@
   },
   "Ilmastopaneeli": {
     "file": "ilmastopaneeli.json",
+    "count": 25,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Sitra tiedotteet": {
+    "file": "sitra_tiedotteet.json",
     "count": 25,
     "category": "Sustainability + Foresight",
     "description": "",
