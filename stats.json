@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "13.9.2026 klo 14.33.01"
+    "last_updated": "13.9.2026 klo 19.01.22"
   },
   "The Ulkopolitist": {
     "file": "the_ulkopolitist.json",
@@ -26,6 +26,62 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Diff": {
+    "file": "diff.json",
+    "count": 13,
+    "category": "(Open) Data + Technology",
+    "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Technology | Guardian": {
+    "file": "technology___guardian.json",
+    "count": 40,
+    "category": "(Open) Data + Technology",
+    "description": "Technology news, comment and analysis | guardian.co.uk",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Weekly OSM": {
+    "file": "weekly_osm.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "weekly &#8211; semanario &#8211; hebdo &#8211; 週刊 &#8211; týdeník &#8211; Wochennotiz &#8211; 주간 &#8211; tygodnik",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Kulttuuri ja taide - ePressi": {
+    "file": "kulttuuri_ja_taide___epressi.json",
+    "count": 19,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Euronews | Europe": {
+    "file": "euronews___europe.json",
+    "count": 51,
+    "category": "International Affairs + Policy",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Yle | Kansainvälinen politiikka": {
+    "file": "yle___kansainv_linen_politiikka.json",
+    "count": 22,
+    "category": "International Affairs + Policy",
+    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
+    "lang": "fi",
+    "scope": "World"
+  },
+  "Radio Free Europe / Radio Liberty": {
+    "file": "radio_free_europe___radio_liberty.json",
+    "count": 24,
+    "category": "Investigations + Journalism",
+    "description": "Radio Free Europe / Radio Liberty is an international news organization serving Central and Eastern Europe, the Caucasus, Central Asia, Russia, the Middle East and Balkan countries",
+    "lang": "fi",
+    "scope": "World"
+  },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
     "count": 15,
@@ -34,25 +90,9 @@
     "lang": "de",
     "scope": "Germany"
   },
-  "Diff": {
-    "file": "diff.json",
-    "count": 12,
-    "category": "(Open) Data + Technology",
-    "description": "News from the Wikimedia movement",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Technology | Guardian": {
-    "file": "technology___guardian.json",
-    "count": 39,
-    "category": "(Open) Data + Technology",
-    "description": "Technology news, comment and analysis | guardian.co.uk",
-    "lang": "en",
-    "scope": "World"
-  },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 50,
+    "count": 29,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -66,28 +106,12 @@
     "lang": "en",
     "scope": "World"
   },
-  "Euronews | Europe": {
-    "file": "euronews___europe.json",
-    "count": 50,
-    "category": "International Affairs + Policy",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "United Nations | The Guardian": {
     "file": "united_nations___the_guardian.json",
     "count": 20,
     "category": "International Affairs + Policy",
     "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
     "lang": "en",
-    "scope": "World"
-  },
-  "Yle | Kansainvälinen politiikka": {
-    "file": "yle___kansainv_linen_politiikka.json",
-    "count": 21,
-    "category": "International Affairs + Policy",
-    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
-    "lang": "fi",
     "scope": "World"
   },
   "404 Media": {
@@ -120,14 +144,6 @@
     "category": "(Open) Data + Technology",
     "description": "Online Changemaker Library",
     "lang": "en",
-    "scope": "World"
-  },
-  "Radio Free Europe / Radio Liberty": {
-    "file": "radio_free_europe___radio_liberty.json",
-    "count": 23,
-    "category": "Investigations + Journalism",
-    "description": "Radio Free Europe / Radio Liberty is an international news organization serving Central and Eastern Europe, the Caucasus, Central Asia, Russia, the Middle East and Balkan countries",
-    "lang": "fi",
     "scope": "World"
   },
   "Open Search Foundation": {
@@ -250,14 +266,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Kulttuuri ja taide - ePressi": {
-    "file": "kulttuuri_ja_taide___epressi.json",
-    "count": 19,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Oulu2026": {
     "file": "oulu2026.json",
     "count": 100,
@@ -340,7 +348,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3935,
+    "count": 3937,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -428,7 +436,7 @@
   },
   "Avate Audiovisuaalisen alan tekijät ry": {
     "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
+    "count": 1,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -602,6 +610,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Copernicus Institute": {
+    "file": "copernicus_institute.json",
+    "count": 20,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "CSC": {
     "file": "csc.json",
     "count": 10,
@@ -628,7 +644,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -684,7 +700,7 @@
   },
   "The Finnish Institute in Rome": {
     "file": "the_finnish_institute_in_rome.json",
-    "count": 10,
+    "count": 2,
     "category": "Culture + Education",
     "description": "Suomen Rooman instituutti",
     "lang": "en",
@@ -764,7 +780,7 @@
   },
   "information labs": {
     "file": "information_labs.json",
-    "count": 3,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "Facts | Ideas | Discussions",
     "lang": "en",
@@ -1132,7 +1148,7 @@
   },
   "Suomen Rooman-instituutti": {
     "file": "suomen_rooman_instituutti.json",
-    "count": 10,
+    "count": 2,
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
@@ -1276,7 +1292,7 @@
   },
   "resilience": {
     "file": "resilience.json",
-    "count": 11,
+    "count": 17,
     "category": "Perspectives",
     "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
@@ -1340,7 +1356,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -1388,7 +1404,7 @@
   },
   "MuseumNext": {
     "file": "museumnext.json",
-    "count": 3,
+    "count": 2,
     "category": "Digital Culture + Heritage",
     "description": "Defining the Future of Museums",
     "lang": "en",
@@ -1554,14 +1570,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Weekly OSM": {
-    "file": "weekly_osm.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "weekly &#8211; semanario &#8211; hebdo &#8211; 週刊 &#8211; týdeník &#8211; Wochennotiz &#8211; 주간 &#8211; tygodnik",
-    "lang": "en",
-    "scope": "World"
-  },
   "European Cultural Parliament": {
     "file": "european_cultural_parliament.json",
     "count": 10,
@@ -1628,7 +1636,7 @@
   },
   "Creative Commons": {
     "file": "creative_commons.json",
-    "count": 9,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -1689,38 +1697,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Time Machine Europe": {
-    "file": "time_machine_europe.json",
-    "count": 12,
-    "category": "Digital Culture + Heritage",
-    "description": "Join us on a journey through time",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Sovereign Tech Agency": {
-    "file": "sovereign_tech_agency.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Kalevi Sorsa -säätiö": {
-    "file": "kalevi_sorsa__s__ti_.json",
-    "count": 10,
-    "category": "International Affairs + Policy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "The Signals Network": {
-    "file": "the_signals_network.json",
-    "count": 10,
-    "category": "Investigations + Journalism",
-    "description": "Holding power accountable one whistleblower at a time.",
-    "lang": "en",
-    "scope": "World"
   },
   "FOSDEM 2026": {
     "file": "fosdem_2026.json",
@@ -1823,14 +1799,6 @@
     "count": 7,
     "category": "(Open) Data + Technology",
     "description": "Recent content on FediForum",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Extreme Citizen Science blog": {
-    "file": "extreme_citizen_science_blog.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
     "scope": "World"
   },
@@ -2242,6 +2210,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Time Machine Europe": {
+    "file": "time_machine_europe.json",
+    "count": 12,
+    "category": "Digital Culture + Heritage",
+    "description": "Join us on a journey through time",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Digime": {
     "file": "digime.json",
     "count": 10,
@@ -2322,6 +2298,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Berkman Klein Center for Internet & Society at Harvard University Community": {
+    "file": "berkman_klein_center_for_internet___society_at_harvard_university_community.json",
+    "count": 9,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Americas"
+  },
   "Stanford CIS": {
     "file": "stanford_cis.json",
     "count": 15,
@@ -2329,6 +2313,14 @@
     "description": "The Center for Internet and Society at Stanford Law School is a leader in the study of the law and policy around the Internet and other emerging technologies.",
     "lang": "en",
     "scope": "Americas"
+  },
+  "Center for European Policy Analysis": {
+    "file": "center_for_european_policy_analysis.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
   },
   "IVIR": {
     "file": "ivir.json",
@@ -2530,6 +2522,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Sovereign Tech Agency": {
+    "file": "sovereign_tech_agency.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Arts Law Centre of Australia": {
     "file": "arts_law_centre_of_australia.json",
     "count": 10,
@@ -2610,6 +2610,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Kalevi Sorsa -säätiö": {
+    "file": "kalevi_sorsa__s__ti_.json",
+    "count": 10,
+    "category": "International Affairs + Policy",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "The Finnish Institute of International Affairs (FIIA)": {
     "file": "the_finnish_institute_of_international_affairs__fiia_.json",
     "count": 10,
@@ -2641,6 +2649,14 @@
     "description": "Yhdistyneiden kansakuntien alueellinen tiedotuskeskus",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Global Solutions Initiative": {
+    "file": "global_solutions_initiative.json",
+    "count": 10,
+    "category": "International Affairs + Policy",
+    "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
+    "lang": "en",
+    "scope": "World"
   },
   "correctiv.org": {
     "file": "correctiv_org.json",
@@ -2759,6 +2775,14 @@
     "count": 10,
     "category": "Investigations + Journalism",
     "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "The Signals Network": {
+    "file": "the_signals_network.json",
+    "count": 10,
+    "category": "Investigations + Journalism",
+    "description": "Holding power accountable one whistleblower at a time.",
     "lang": "en",
     "scope": "World"
   },
@@ -2953,14 +2977,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Nordic + Baltic countries"
-  },
-  "Copernicus Institute": {
-    "file": "copernicus_institute.json",
-    "count": 20,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Demos Helsinki": {
     "file": "demos_helsinki.json",
