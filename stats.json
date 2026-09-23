@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "23.9.2026 klo 23.07.06"
+    "last_updated": "24.9.2026 klo 2.32.30"
   },
   "Demokraatti": {
     "file": "demokraatti.json",
@@ -12,7 +12,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 15,
+    "count": 57,
     "category": "International Affairs + Policy",
     "description": "",
     "lang": "en",
@@ -20,7 +20,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 21,
+    "count": 22,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -92,7 +92,7 @@
   },
   "United Nations | The Guardian": {
     "file": "united_nations___the_guardian.json",
-    "count": 27,
+    "count": 28,
     "category": "International Affairs + Policy",
     "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
     "lang": "en",
@@ -108,7 +108,7 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 17,
+    "count": 18,
     "category": "Investigations + Journalism",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
@@ -308,7 +308,7 @@
   },
   "PreventionWeb": {
     "file": "preventionweb.json",
-    "count": 45,
+    "count": 50,
     "category": "Sustainability + Foresight",
     "description": "",
     "lang": "en",
@@ -372,7 +372,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 3,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -380,7 +380,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3977,
+    "count": 3978,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -532,7 +532,7 @@
   },
   "OATP primary": {
     "file": "oatp_primary.json",
-    "count": 8,
+    "count": 50,
     "category": "(Open) Science + Research",
     "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
     "lang": "en",
@@ -572,7 +572,7 @@
   },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
-    "count": 45,
+    "count": 46,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -628,7 +628,7 @@
   },
   "UN News | Peace and Security": {
     "file": "un_news___peace_and_security.json",
-    "count": 11,
+    "count": 12,
     "category": "Peace + Conflict + Humanitarian",
     "description": "UN News - Global perspective Human stories | Peace and Security",
     "lang": "en",
@@ -636,7 +636,7 @@
   },
   "United Nations Sustainable Development": {
     "file": "united_nations_sustainable_development.json",
-    "count": 14,
+    "count": 9,
     "category": "Sustainability + Foresight",
     "description": "17 Goals to Transform Our World",
     "lang": "en",
@@ -649,6 +649,30 @@
     "description": "",
     "lang": "en",
     "scope": "Netherlands"
+  },
+  "Euronews | The Europe Conversation": {
+    "file": "euronews___the_europe_conversation.json",
+    "count": 50,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Internet Society": {
+    "file": "internet_society.json",
+    "count": 20,
+    "category": "Digital Policy + Rights",
+    "description": "We are a global charitable organization empowering people to keep the Internet a force for good: open, globally connected, secure, and trustworthy.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
+    "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "en",
+    "scope": "Poland"
   },
   "AlgorithmWatch": {
     "file": "algorithmwatch.json",
@@ -836,7 +860,7 @@
   },
   "OCHA": {
     "file": "ocha.json",
-    "count": 10,
+    "count": 12,
     "category": "Peace + Conflict + Humanitarian",
     "description": "United Nations Office for the Coordination of Humanitarian Affairs",
     "lang": "en",
@@ -1002,6 +1026,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Freedom House": {
+    "file": "freedom_house.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "Access Now": {
     "file": "access_now.json",
     "count": 14,
@@ -1122,17 +1154,9 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Internet Society": {
-    "file": "internet_society.json",
-    "count": 20,
-    "category": "Digital Policy + Rights",
-    "description": "We are a global charitable organization empowering people to keep the Internet a force for good: open, globally connected, secure, and trustworthy.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -1276,7 +1300,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -1332,7 +1356,7 @@
   },
   "Oikeusministeriö | Tiedotteet ja uutiset": {
     "file": "oikeusministeri____tiedotteet_ja_uutiset.json",
-    "count": 2,
+    "count": 20,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -1377,14 +1401,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
-    "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "en",
-    "scope": "Poland"
   },
   "Valtiontalouden tarkastusvirasto": {
     "file": "valtiontalouden_tarkastusvirasto.json",
@@ -1524,7 +1540,7 @@
   },
   "UN News | Human Rights": {
     "file": "un_news___human_rights.json",
-    "count": 25,
+    "count": 26,
     "category": "Human Rights + Democracy",
     "description": "UN News - Global perspective Human stories | Human Rights",
     "lang": "en",
@@ -1578,14 +1594,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Freedom House": {
-    "file": "freedom_house.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Kalevi Sorsa -säätiö": {
     "file": "kalevi_sorsa__s__ti_.json",
     "count": 10,
@@ -1601,38 +1609,6 @@
     "description": "Weil Wirtschaft auch gerecht geht",
     "lang": "de",
     "scope": "Germany"
-  },
-  "Open Source Initiative": {
-    "file": "open_source_initiative.json",
-    "count": 9,
-    "category": "(Open) Data + Technology",
-    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Peacemakers Network": {
-    "file": "peacemakers_network.json",
-    "count": 10,
-    "category": "Peace + Conflict + Humanitarian",
-    "description": "Grassroots efforts for sustainable peace.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Pedaali": {
-    "file": "pedaali.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Museopedagoginen yhdistys",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Svenska institutet": {
-    "file": "svenska_institutet.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Vi främjar Sverige i världen",
-    "lang": "sv",
-    "scope": "Sweden"
   },
   "AI Finland -verkosto": {
     "file": "ai_finland__verkosto.json",
@@ -1898,14 +1874,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Euronews | The Europe Conversation": {
-    "file": "euronews___the_europe_conversation.json",
-    "count": 50,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "European Cultural Parliament": {
     "file": "european_cultural_parliament.json",
     "count": 10,
@@ -1999,14 +1967,6 @@
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "Front Line Defenders supports the protection and security of human rights defenders at risk around the world.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Global Solutions Initiative": {
-    "file": "global_solutions_initiative.json",
-    "count": 10,
-    "category": "International Affairs + Policy",
-    "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
     "lang": "en",
     "scope": "World"
   },
@@ -2137,6 +2097,14 @@
     "description": "Informaatiotutkimus (vuoteen 1995 Kirjastotiede ja informatiikka) on Informaatiotutkimuksen yhdistyksen kustantama tieteellinen aikakausjulkaisu, joka on ilmestynyt vuodesta 1981 lähtien. Lehti julkaisee tieteenalaansa ja siihen läheisesti liittyvien tieteenalojen kirjoituksia kuten artikkeleita, katsauksia, kirjallisuusesittelyitä ja -arviointeja sekä tiivistelmiä opinnäytteistä. Informaatiotutkimus on alan ainoa suomalainen vertaisarvioitu tieteellinen aikakausjulkaisu. Lehti ei peri kirjoittajamaksuja.\n\n Vuodesta 2008 lähtien Informaatiotutkimus on ilmestynyt sekä avoimena verkkojulkaisuna että painettuna vuosikirjana. Vuodesta 2018 lähtien lehti ilmestyy yksinomaan verkkojulkaisuna. Lehden koko aineisto vuodesta 1981 lähtien on avoimesti saatavissa verkkojulkaisussa.\n\n ISSN 1797-9129 (Verkkojulkaisu)\n\n ISSN 1797-9137 (Painettu julkaisu)\n\n Lehden toiminnan mahdollistavat Informaatiotutkimuksen yhdistyksen jäsen- ja kannatusmaksut sekä Tieteellisten seurain valtuuskunnan (TSV) kautta ohjautuva opetus- ja kulttuuriministeriön tuki. Em. tahojen taloudellisen tuen ja palveluiden (ml. seminaaritoiminta) lisäksi lehti hyötyy Suomen tiedekustantajien liitto ry:n tarjoamista ohjeistuksista ja koulutuksista.\n\n Lehti on rekisteröity luetettavien tieteellisten open access -lehtien DOAJ-hakemistoon .",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "information labs": {
+    "file": "information_labs.json",
+    "count": 20,
+    "category": "Digital Policy + Rights",
+    "description": "Facts | Ideas | Discussions",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Institut Européen de Coopération et de Développement (IECD)": {
     "file": "institut_europ_en_de_coop_ration_et_de_d_veloppement__iecd_.json",
@@ -2386,6 +2354,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "MuseumNext": {
+    "file": "museumnext.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Defining the Future of Museums",
+    "lang": "en",
+    "scope": "World"
+  },
   "MyData": {
     "file": "mydata.json",
     "count": 10,
@@ -2393,14 +2369,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Nätverket KOD": {
     "file": "n_tverket_kod.json",
@@ -2440,14 +2408,6 @@
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
-    "scope": "Nordic + Baltic countries"
-  },
-  "NORDIS": {
-    "file": "nordis.json",
-    "count": 10,
-    "category": "Investigations + Journalism",
-    "description": "The Nordic Observatory for Digital Media and Information Disorder",
-    "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
   "Nordregio": {
@@ -2498,14 +2458,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Online Journalism Blog": {
-    "file": "online_journalism_blog.json",
-    "count": 10,
-    "category": "Investigations + Journalism",
-    "description": "Comment, analysis and links covering online journalism and online news, citizen journalism, blogging, vlogging, photoblogging, podcasts, vodcasts, interactive storytelling, publishing, Computer Assisted Reporting, User Generated Content, searching and all things internet.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Open Access and Digital Scholarship Blog": {
     "file": "open_access_and_digital_scholarship_blog.json",
     "count": 15,
@@ -2513,14 +2465,6 @@
     "description": "Open Access and Digital Scholarship at Imperial College London",
     "lang": "en",
     "scope": "World"
-  },
-  "Open By Default": {
-    "file": "open_by_default.json",
-    "count": 8,
-    "category": "(Open) Data + Technology",
-    "description": "",
-    "lang": "en",
-    "scope": "Netherlands"
   },
   "Open Future": {
     "file": "open_future.json",
@@ -2586,6 +2530,22 @@
     "lang": "en",
     "scope": "World"
   },
+  "Open Source Initiative": {
+    "file": "open_source_initiative.json",
+    "count": 9,
+    "category": "(Open) Data + Technology",
+    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Open Technology Research": {
+    "file": "open_technology_research.json",
+    "count": 9,
+    "category": "(Open) Data + Technology",
+    "description": "Building Evidence, Connecting Researchers, Informing Policy",
+    "lang": "en",
+    "scope": "World"
+  },
   "Opendata.ch": {
     "file": "opendata_ch.json",
     "count": 10,
@@ -2602,6 +2562,14 @@
     "lang": "en",
     "scope": "Nordic + Baltic countries"
   },
+  "OpenForum Europe": {
+    "file": "openforum_europe.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "Open Technologies for a Competitive and Sovereign Europe",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "OpenWebSearch.eu": {
     "file": "openwebsearch_eu.json",
     "count": 10,
@@ -2615,6 +2583,22 @@
     "count": 10,
     "category": "Culture + Education",
     "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Peacemakers Network": {
+    "file": "peacemakers_network.json",
+    "count": 10,
+    "category": "Peace + Conflict + Humanitarian",
+    "description": "Grassroots efforts for sustainable peace.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Pedaali": {
+    "file": "pedaali.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Museopedagoginen yhdistys",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2639,14 +2623,6 @@
     "count": 20,
     "category": "Perspectives",
     "description": "Project Syndicate produces and delivers original commentaries by prominent economists, political leaders, scholars, business leaders, and civic activists to a global audience, including nearly 500 media outlets in more than 150 countries",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Public Institutions": {
-    "file": "public_institutions.json",
-    "count": 9,
-    "category": "International Affairs + Policy",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -2793,6 +2769,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Svenska institutet": {
+    "file": "svenska_institutet.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Vi främjar Sverige i världen",
+    "lang": "sv",
+    "scope": "Sweden"
   },
   "Svenska kulturfonden": {
     "file": "svenska_kulturfonden.json",
