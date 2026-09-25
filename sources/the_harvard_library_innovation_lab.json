@@ -17,6 +17,23 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
+    "title": "Who Will Steward Humanity’s Public Data? Collective Global Stewardship for the Long Horizon",
+    "link": "https://lil.law.harvard.edu/blog/2026/09/24/who-will-steward-humanity-s-public-data/",
+    "pubDate": "2026-09-24T16:00:00.000Z",
+    "content": "<p><em>On September 10, 2026, Jacqueline J. Dearborn, Library Innovation Lab Fellow, gave a <a href=\"https://lil.law.harvard.edu/events/who-will-steward-humanity-s-public-data-collective-global-stewardship-for-the-long-horizon/\">virtual talk</a> about the <a href=\"https://lil.law.harvard.edu/our-work/public-data-project/\">Public Data Project</a>’s International Data Infrastructure Research and Development effort. The transcript below has been lightly edited for clarity.</em></p>\n<p>Hello everyone, before I get started, I want to give a shout-out to <a href=\"/about/#molly-hardy\">Molly Hardy</a> and <a href=\"/about/#jack-cushman\">Jack Cushman</a> at the Harvard Library Innovation Lab for giving me this opportunity to reflect on some of the most pressing challenges of our time.</p>\n<p>With <a href=\"/about/#jennifer-chapman\">Jennifer Chapman</a> as my counterpart, we’ve spearheaded the Public Data Infrastructure Research and Development project and through this work, we’ve gotten the chance to zoom way, way, <em>way</em> out and take a look at the global public data landscape.</p>\n<p>Obviously this is a very huge, thorny, and complex topic. Much larger than any one talk could possibly resolve. So today, I share some preliminary insights that I hope will help us think together about public data infrastructure, long-term stewardship, and collective responsibility. In this spirit, I hope this talk is less of an ending and more of a beginning for all of us that spurs many future conversations to come.</p>",
+    "snippet": "On September 10, 2026, Jacqueline J. Dearborn, Library Innovation Lab Fellow, gave a virtual talk about the Public Data Project’s International Data Infrastructure Research and Development effort. The",
+    "creator": "Jacqueline J. Dearborn",
+    "sourceTitle": "The Harvard Library Innovation Lab",
+    "sheetCategory": "Digital Culture + Heritage",
+    "enforcedImage": null,
+    "sourceDescription": "The Library Innovation Lab is growing knowledge and community by bringing library principles to technological frontiers.",
+    "sourceLogo": "https://www.google.com/s2/favicons?sz=128&domain=lil.law.harvard.edu",
+    "lang": "en",
+    "scope": "World",
+    "isDarkLogo": false,
+    "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
+  },
+  {
     "title": "Global Stewardship of Public Data: A Research & Development Initiative for Resilient Public Data Infrastructure",
     "link": "https://lil.law.harvard.edu/blog/2026/09/01/global-data-stewardship-of-public-data/",
     "pubDate": "2026-09-01T13:00:00.000Z",
@@ -697,7 +714,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "\"Did ChatGPT really say that?\": Provenance in the age of Generative AI.",
+    "title": "“Did ChatGPT really say that?”: Provenance in the age of Generative AI.",
     "link": "https://lil.law.harvard.edu/blog/2023/05/22/provenance-in-the-age-of-generative-ai/",
     "pubDate": "2023-05-22T00:00:00.000Z",
     "content": "<blockquote>\n<p><strong>Prompt</strong>:\n“Write a single sentence summarizing why cryptographically-signed provenance information matters in the context of AI-generated content.”</p>\n</blockquote>\n<p><strong>Prompt</strong>:\n“Write a single sentence summarizing why cryptographically-signed provenance information matters in the context of AI-generated content.”</p>\n<blockquote>\n<p><strong>ChatGPT</strong>:\n“Cryptographically-signed provenance information matters in the context of AI-generated content to establish trust, transparency, and authenticity by providing a verifiable record of the content’s origin, authorship, and creation process.”</p>\n</blockquote>\n<p><strong>ChatGPT</strong>:\n“Cryptographically-signed provenance information matters in the context of AI-generated content to establish trust, transparency, and authenticity by providing a verifiable record of the content’s origin, authorship, and creation process.”</p>\n<p>That’s a great point, but did ChatGPT really say that, or did I make that up to trick you into reading this article? I could show you a screenshot of that exchange to try to convince you …</p>\n<p>… but what good would it do, when it’s so easy to produce convincing fakes?</p>",
@@ -765,7 +782,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "Towards \"deep fake\" web archives? Trying to forge WARC files using ChatGPT.",
+    "title": "Towards “deep fake” web archives? Trying to forge WARC files using ChatGPT.",
     "link": "https://lil.law.harvard.edu/blog/2023/01/13/chatgpt-web-archives/",
     "pubDate": "2023-01-13T00:00:00.000Z",
     "content": "<p>Chatbots such as <a href=\"https://openai.com/blog/chatgpt/\">OpenAI’s ChatGPT</a> are becoming impressively\ngood at understanding complex requests in “natural” language and generating convincing blocks of\ntext in response, using the vast quantity of information the models they run were trained on.<br>\nGarnering massive amounts of mainstream attention and rapidly making its way through the second\nphase of the <a href=\"https://en.wikipedia.org/wiki/Gartner_hype_cycle\">Gartner Hype Cycle</a>, ChatGPT and its\npotential amazes and fascinates as much as it bewilders and worries.\nIn particular, more and more people seem concerned by its propensity to <a href=\"https://www.theatlantic.com/technology/archive/2022/12/openai-chatgpt-writing-high-school-english-essay/672412/\">make “cheating” both easier to do and harder to detect</a>.</p>",
@@ -1683,7 +1700,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "Improving pip-compile --generate-hashes",
+    "title": "Improving pip-compile —generate-hashes",
     "link": "https://lil.law.harvard.edu/blog/2019/05/20/improving-pip-compile-generate-hashes/",
     "pubDate": "2019-05-20T00:00:00.000Z",
     "content": "<p>Recently I landed a series of contributions to the Python package <code>pip-tools</code>:</p>\n<li><a href=\"https://github.com/jazzband/pip-tools/pull/807\">Support URLs as packages #807</a></li>\n<li><a href=\"https://github.com/jazzband/pip-tools/pull/812\">Fix --generate-hashes with bare VCS URLs #812</a></li>\n<li><a href=\"https://github.com/jazzband/pip-tools/pull/813\">Fix pip-compile output for unsafe requirements #813</a></li>\n<li><a href=\"https://github.com/jazzband/pip-tools/pull/814\">Warn when --generate-hashes output is uninstallable #814</a></li>\n<p><a href=\"https://github.com/jazzband/pip-tools\">pip-tools</a> is a “set of command line tools to help you keep your pip-based [Python] packages fresh, even when you’ve pinned them.” My changes help the <code>pip-compile --generate-hashes</code> command work for more people.</p>\n<p>This isn’t a lot of code in the grand scheme of things, but it’s the largest set of contributions I’ve made to a mainstream open source project, so this blog post is a celebration of me! 🎁💥🎉 yay. But it’s also a chance to talk about package manager security and open source contributions and stuff like that.</p>\n<p>I’ll start high-level with “what are package managers” and work my way into the weeds, so feel free to jump in wherever you want.</p>\n<p>Package managers help us install software libraries and keep them up to date. If I want to load a URL and print the contents, I can add a dependency on a package like <code>requests</code> …</p>",
@@ -2635,7 +2652,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "How We're Freeing the Law, Part 1: Books",
+    "title": "How We’re Freeing the Law, Part 1: Books",
     "link": "https://lil.law.harvard.edu/blog/2016/04/04/how-were-freeing-the-law-part-1-books/",
     "pubDate": "2016-04-04T18:29:06.000Z",
     "content": "<p><span class=\"name\">Adi Kamdar</span> is a 1L at Harvard Law School and our embedded reporter on the Free the Law project. In this first post, he tracks the progress of a casebook through our scanning process from start to finish.</p>\n<p>Harvard Law Library is one of the few collections with nearly every law reporter—roughly 40,000 books in total. The Free the Law project’s goal is to put the court decisions inside these volumes online, so anyone can access the precedents that shape the American legal system. Right now, the project is about halfway through, and within the next couple years they’ll have completed this monumental task.</p>\n<p>But how exactly does a book become a byte? And what happens to these physical texts after they’ve been digitized?</p>\n<p>The project begins each week with a book order—a 600 book order, to be exact, for law reporters that chronicle U.S. legal history since the country’s inception.</p>",
@@ -3723,7 +3740,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "Dan Cohen on the DPLA's proposal to the FCC",
+    "title": "Dan Cohen on the DPLA’s proposal to the FCC",
     "link": "https://lil.law.harvard.edu/blog/2014/03/06/dan-cohen-on-the-dplas-proposal-to-the-fcc/",
     "pubDate": "2014-03-06T20:03:02.000Z",
     "content": "<p>I’ve posted a <a href=\"https://lil-blog-media.s3.amazonaws.com/DanCohenFCC.mp3\">podcast interview with Dan Cohen</a>, the executive director of the <a href=\"http://dp.la\">Digital Public Library of America</a> about <a href=\"http://dp.la/info/2013/09/26/dpla-fcc-erate-upgrade/\">their proposal to the FCC</a>.</p>\n<p>The FCC is looking for ways to modernize the <a href=\"http://en.wikipedia.org/wiki/E-Rate\">E-Rate</a> program that has brought the Internet to libraries and schools. The DPLA is proposing <em>DPLA Local</em>, which will enable libraries to create online digital collections using the DPLA’s platform.</p>\n<p>I’m excited about this for two reasons beyond the service it would provide.</p>\n<p>First, it could be a first step toward providing cloud-based library services, instead of the  proprietary, closed, expensive systems libraries typically use to manage their data. (<a href=\"https://evergreen-ils.org/\">Evergreen</a>, I’m not talking about you, you open source scamp!)</p>\n<p>Second, as libraries build their collections using DPLA Local, their metadata is likely to assume normalized forms, which means that we should get cross-collection discovery and semantic riches.</p>\n<p>Here’s the <a href=\"http://dp.la/info/wp-content/uploads/2013/09/E-rate_Comment_DPLA.pdf\">proposal itself</a>. And here’s where <a href=\"http://apps.fcc.gov/ecfs/\">you can comment to the FCC</a> about it.</p>",
@@ -3978,7 +3995,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "Library Machines & SXSW: Gettin' out the Vote!",
+    "title": "Library Machines & SXSW: Gettin’ out the Vote!",
     "link": "https://lil.law.harvard.edu/blog/2013/08/30/library-machines-sxsw-gettin-out-the-vote/",
     "pubDate": "2013-08-30T14:21:29.000Z",
     "content": "<p>This March, Sidsel Bech-Petersen a Library Transformer at <a href=\"https://www.aakb.dk/in-english\">Aarhus Public Libraries</a> and I have proposed a session at South By Southwest Interactive.  It’s called <a href=\"http://panelpicker.sxsw.com/vote/19336\">Library Machines</a>, and essentially, it’s a discussion/workshop to explore new ideas and directions for libraries.  It will be the spiritual sibling of last year’s <a href=\"http://panelpicker.sxsw.com/vote/2696\">Libraries: the Ultimate Playground</a>.</p>\n<p>During the Library Machines session, we’ll all go through a quick, <a href=\"http://librarytestkitchen.org/assets/Librarian-Created-Machines.pdf\">“mad libs” style design exercise</a>, and use that as a jumping off point for a larger discussion through the rest of the session.</p>\n<li>\n<p>If you’re going to be at SXSW, join us! this will be a discussion and making session, not a presentation</p>\n</li>\n<p>If you’re going to be at SXSW, join us! this will be a discussion and making session, not a presentation</p>\n<li>\n<p>If all goes according to plan, outside this session we should be facilitating a bunch of library “innovation”-y fun stuff so reach out if you’re interested in helping!  (jgoldenson AT law.harvard.edu)</p>\n</li>\n<p>If all goes according to plan, outside this session we should be facilitating a bunch of library “innovation”-y fun stuff so reach out if you’re interested in helping!  (jgoldenson AT law.harvard.edu)</p>",
@@ -4335,7 +4352,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "Hathi Trust's copyright victory",
+    "title": "Hathi Trust’s copyright victory",
     "link": "https://lil.law.harvard.edu/blog/2012/10/13/hathi-trusts-copyright-victory/",
     "pubDate": "2012-10-13T00:47:06.000Z",
     "content": "<p><a href=\"http://www-personal.umich.edu/~pnc/\">Paul Courant</a>, one of the founders of the <a href=\"http://www.hathitrust.org\">Hathi Trust</a>, explains this week’s ruling <a href=\"http://www.ur.umich.edu/update/archives/121012/hathi\">throwing out</a> a <a href=\"http://www.hathitrust.org/authors_guild_lawsuit_information\">lawsuit</a> by the Authors Guild claiming that Hathi’s scan-and-index program violated copyright.</p>",
@@ -4505,7 +4522,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "The Setup -- Jeff Goldenson",
+    "title": "The Setup — Jeff Goldenson",
     "link": "https://lil.law.harvard.edu/blog/2012/07/02/the-setup-jeff-goldenson/",
     "pubDate": "2012-07-02T16:35:52.000Z",
     "content": "<p><a href=\"http://vimeo.com/45073647\">office</a> from <a href=\"http://vimeo.com/user7144664\">Harvard Library Innovation Lab</a> on <a href=\"http://vimeo.com\">Vimeo</a>.</p>\n<p><strong>Who are you, and what do you do?</strong></p>\n<p>Hi, my name’s Jeff.  I do design and new ideas here at the Lab.  The Lab ROCKS! It’s a great job.  Sometimes I help make websites (like this one), sometimes I do <a href=\"http://www.librarytestkitchen.org/\">classes</a> and right now, even working on some <a href=\"http://librarylicense.org/\">policy-ish stuff</a> with folks from here and the <a href=\"http://cyber.law.harvard.edu/\">Berkman Center</a>.</p>\n<p><strong>What hardware do you use?</strong></p>\n<p>I have a mac tower that is cool.  I have 2 monitors, that’s good.  I also have a Mac Mighty Mouse</p>\n<p>I like the wheel, but gunk does get stuck in it so it requires maintenance.  I’d say the hardware I’m passionate about is the <a href=\"http://www.gradolabs.com/page_headphones.php?item=f4ba8830232696b5f580bd531134b668\">Grado SR60 Headphones</a>.</p>\n<p>Now those things actually rock. For those with immediate officemates or a quiet atmosphere they are quite acoustically transparent. The other piece of noise control technology I like is earplugs.</p>\n<p>Both of these tools allow me to better get lost in thought…  I’ve been using earplugs since college, so at this point it’s practically associative:  Ear Plugs in = (More) Focus</p>\n<p>I also drink coffee out of a jar because I can put it in my bag, SEAL IT, and confidently ride to work without it spilling.</p>\n<p>And that brings me to that ruler in the background.  I like the ruler, it has so many uses.</p>",
@@ -4590,7 +4607,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "\"Extra - Extra\"",
+    "title": "“Extra - Extra”",
     "link": "https://lil.law.harvard.edu/blog/2012/06/01/extra-extra/",
     "pubDate": "2012-06-01T20:08:21.000Z",
     "content": "<p>Read all about it! <a href=\"http://www.librarytestkitchen.org/\">Library Test Kitchen</a> made the news!  Well, more accurately, we made the newsPAPER.</p>\n<p>Yes Ma’am that’s right, you counted correctly.  We have 16 full beautiful pages, 8 double-wides, of broadside in grayscale with a spot color of cyan.  These pages describe in words and pictures the awesome projects of the students.  Head on over to the <a href=\"http://www.librarytestkitchen.org/\">website</a> if you wanna watch the recorded magic.</p>\n<p><a href=\"http://lincoprinting.com/\">Linco Printing</a> out of Long Island City NY provided the printing services.  Getting assets encoded and laid out appropriately for a two-color job (black and cyan) in photoshop and indesign isn’t trivially quick.  But now that I’ve done it once…</p>\n<p>Next time (it was too much fun for there not to be a next time), I’m thinking about using Nelson Bernard over at <a href=\"http://www.berkshireeagle.com/contactus\">Eagle Printing</a>.  They’re prices are good and they’re closer by.  Heading out to the Berkshires is always nice.</p>\n<p>I feel like newspapers are the anti-code.  anti-software.</p>\n<p>Most importantly, if you would like one for yourself, please send me an email with your address, and eventually, you’ll get one! jgoldenson(AT)law(DOT)harvard(DOT)edu</p>\n<p>Jeff</p>",
@@ -4862,7 +4879,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "Michael Jensen on NAP's decision to publish for free",
+    "title": "Michael Jensen on NAP’s decision to publish for free",
     "link": "https://lil.law.harvard.edu/blog/2011/11/09/michael-jensen-on-naps-decision-to-publish-for-free/",
     "pubDate": "2011-11-09T13:23:08.000Z",
     "content": "<p>Michael Jensen explains why the National Academies Press decided to make its material openly available.</p>",
@@ -5083,7 +5100,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "Dan Brickley's Taxonomy of Everything",
+    "title": "Dan Brickley’s Taxonomy of Everything",
     "link": "https://lil.law.harvard.edu/blog/2011/10/11/dan-brickleys-taxonomy-of-everything/",
     "pubDate": "2011-10-11T22:06:57.000Z",
     "content": "<p>We’ve been working with the brilliant <a href=\"http://danbri.org\">Dan Brickley</a> all summer (he’s very modest, so now I’ve embarrassed him) trying to figure out how to use all available metadata to slot Web content into library categorization schemes automagically. For example, if we include in our collection—or, more to the point, if the <a href=\"http://cyber.law.harvard.edu/dpla/Main_Page\">DPLA</a> includes in its collection—library-worthy material such as <a href=\"http://www.ted.com\">TED talks</a>, is there a way in which we could automatically categorize those talks within the general mix of library items? We’d like to be able to do this at scale, even if roughly.</p>\n<p>No one knows linked open data better than Dan (there, I’ve embarrassed him again!), and he’s been experimenting with all sorts of metadata and connections. Today he <a href=\"http://danbri.org/words/2011/10/11/720\">posted</a> about what he’s been up to. It’s pretty damn fascinating, and our team has learned a ton working with him on this all summer. We’re looking forward to more!</p>",
@@ -5287,7 +5304,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "Why don't more academics do Open Access publishing?",
+    "title": "Why don’t more academics do Open Access publishing?",
     "link": "https://lil.law.harvard.edu/blog/2011/07/11/why-dont-more-academics-do-open-access-publishing/",
     "pubDate": "2011-07-11T20:16:56.000Z",
     "content": "<p>A <a href=\"http://crc.nottingham.ac.uk/projects/rcs/Chemists&amp;EconomistsViews_on_OA.pdf\">report</a> on a survey of 350 chemists and 350 economists in  UK universities leads to the following conclusion about open access publishing:</p>\n<blockquote>\n<p>…our work with researchers on the ground indicates to us that whatever the enthusiasm and optimism within the OA community, it has not spilled into academia to a large extent and has had only a small effect on the publishing habits and perceptions of ordinary researchers, whatever their seniority and whether in Chemistry or Economics.</p>\n</blockquote>\n<p>…our work with researchers on the ground indicates to us that whatever the enthusiasm and optimism within the OA community, it has not spilled into academia to a large extent and has had only a small effect on the publishing habits and perceptions of ordinary researchers, whatever their seniority and whether in Chemistry or Economics.</p>\n<p>The report finds that faculty members want to publish in high “impact factor” journals unless they have some specific reason why they should go the Open Access route, e.g., they need to get something out quickly. The subscriptions their libraries buy mask from them the extent to which their work becomes inaccessible to those who are not a university.</p>",
@@ -5338,7 +5355,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "We're in the Digital Public Library of America beta sprint!",
+    "title": "We’re in the Digital Public Library of America beta sprint!",
     "link": "https://lil.law.harvard.edu/blog/2011/06/20/were-in-the-digital-public-library-of-america-beta-sprint/",
     "pubDate": "2011-06-20T16:11:37.000Z",
     "content": "<p>We’ve entered the <a href=\"http://cyber.law.harvard.edu/research/dpla\">DPLA</a>’s “<a href=\"http://blogs.law.harvard.edu/dpla/\">beta sprint</a>,” along with <a href=\"https://web.archive.org/web/20160413203820/http://librarylab.law.harvard.edu/dpla/#partners\">thirteen fantastic partners</a> (so far)!</p>\n<p>The idea behind the beta sprint is that anyone with an idea about what the DPLA should be, how it should work, what it can do, or what it should look like should embody that idea in code or documentation, and submit it by September 1.</p>\n<p>We’re proposing a version of <a href=\"https://lil.law.harvard.edu/our-work#shelflife-io\">ShelfLife</a> re-thought for a  potentially massive set of users whose interests and computer skills range all over the lot. And we’re proposing <a href=\"https://lil.law.harvard.edu/our-work#library-cloud\">LibraryCloud</a> as a middleware metadata server both to support ShelfLife and to make DPLA’s metadata available through open APIs and as Linked Open Data.</p>\n<p>We’ve put up a <a href=\"https://web.archive.org/web/20160413203820/http://librarylab.law.harvard.edu/dpla/\">page about our collaborative project</a>, including our 400-word proposal to the DPLA. We’d love to hear from you.</p>",
@@ -5610,7 +5627,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "DPLA announces \"beta sprint\"",
+    "title": "DPLA announces “beta sprint”",
     "link": "https://lil.law.harvard.edu/blog/2011/05/20/dpla-announces-beta-sprint/",
     "pubDate": "2011-05-20T11:59:18.000Z",
     "content": "<p>The Digital Public Library of America has <a href=\"http://cyber.law.harvard.edu/newsroom/Digital_Public_Library_America_Beta_Sprint\">announced</a> a “beta sprint” for envisioning in software (or a sketch of software) what the DPLA could be.</p>\n<p>Woohoo!</p>",
@@ -5763,7 +5780,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "OCLC's world library stats",
+    "title": "OCLC’s world library stats",
     "link": "https://lil.law.harvard.edu/blog/2011/03/28/oclcs-world-library-stats/",
     "pubDate": "2011-03-28T05:28:20.000Z",
     "content": "<p>OCLC has posted a <a href=\"http://www.oclc.org/globallibrarystats/default.htm\">page</a> that lets you drill down by geographic area to see stats about libraries. For example, Massachusetts has 3,181 librarians (1,440 of which are in academic libraries) and 81,877,061 volumes in libraries. (Hat tip to <a href=\"http://infodocket.com/2011/03/25/new-from-oclc-libraryoclc-researcha-global-library-statistics-web-page/\">Infodocket</a>.)</p>",
@@ -5916,7 +5933,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "Why do you, or don't you, edit Wikipedia?",
+    "title": "Why do you, or don’t you, edit Wikipedia?",
     "link": "https://lil.law.harvard.edu/blog/2011/02/14/why-do-you-or-dont-you-edit-wikipedia/",
     "pubDate": "2011-02-14T19:41:45.000Z",
     "content": "<p>Wikipedia is looking for volunteers to answer some questions as they try to understand why researchers and experts do and do not contribute to Wikipedia.<!--more--> From the email they’ve sent around:</p>",
@@ -6120,7 +6137,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "Adam's leaves: New desktop metaphor",
+    "title": "Adam’s leaves: New desktop metaphor",
     "link": "https://lil.law.harvard.edu/blog/2011/01/05/adams-leaves-new-desktop-metaphor/",
     "pubDate": "2011-01-05T15:34:40.000Z",
     "content": "<p><a href=\"http://www.notionink.com\">NotionInk</a> [<a href=\"http://notionink.wordpress.com/\">blog</a>] is showing this at CES:</p>\n<p>They are not accepting any more pre-orders :(</p>",
@@ -6205,7 +6222,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "At least they're warning us",
+    "title": "At least they’re warning us",
     "link": "https://lil.law.harvard.edu/blog/2010/12/11/at-least-theyre-warning-us/",
     "pubDate": "2010-12-11T00:56:22.000Z",
     "content": "<p>A friend of my son at Brown showed him a note tucked inside a book on the history of Russian anarchism:\n<img src=\"https://lil-blog-media.s3.amazonaws.com/2010/12/dhs-unsafe-book.jpg\" alt=\"Department of Homeland Security warning - an activist hoax\"></p>\n<p>It turns out to be a <a href=\"http://ultraviolet.in/2009/06/30/the-fear-of-feminism/\">hoax</a> played by some activists—all too believably.</p>",
@@ -6222,7 +6239,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "Peter Suber's top Open Access biblio developments of 2010",
+    "title": "Peter Suber’s top Open Access biblio developments of 2010",
     "link": "https://lil.law.harvard.edu/blog/2010/12/09/peter-subers-top-open-access-developments-of-2010/",
     "pubDate": "2010-12-09T22:48:14.000Z",
     "content": "<p><a href=\"http://www.earlham.edu/~peters/hometoc.htm\">Peter Suber</a> (twitter: <a href=\"http://www.twitter.com/oatp\">oatp</a>), who is one of the central nodes of the network of those who work on <a href=\"http://www.earlham.edu/~peters/fos/overview.htm\">open access</a> issues, has given us a peek at his list of the top developments in open access [added later that day:] to bibliographic data this year, in chronological order:</p>\n<li>\n<p>JISC released a toolkit to helps librarians share their catalog records.\n<a href=\"http://www.jisc.ac.uk/news/stories/2010/02/podcast98librarycatalogue.aspx\">http://www.jisc.ac.uk/news/stories/2010/02/podcast98librarycatalogue.aspx</a></p>\n</li>\n<p>JISC released a toolkit to helps librarians share their catalog records.\n<a href=\"http://www.jisc.ac.uk/news/stories/2010/02/podcast98librarycatalogue.aspx\">http://www.jisc.ac.uk/news/stories/2010/02/podcast98librarycatalogue.aspx</a></p>\n<li>\n<p>Six libraries in Cologne became the first German libraries to commit to OA for their bibliographic data.  The libraries used CC0 to assign more than 5.4 million records to the public domain.\n<a href=\"http://www.hbz-nrw.de/projekte/linked_open_data/english_version/\">http://www.hbz-nrw.de/projekte/linked_open_data/english_version/</a>\n<a href=\"http://www.hbz-nrw.de/dokumentencenter/presse/pm/datenfreigabe_engl\">http://www.hbz-nrw.de/dokumentencenter/presse/pm/datenfreigabe_engl</a></p>\n</li>",
@@ -6273,7 +6290,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "Why you shouldn't become an archivist",
+    "title": "Why you shouldn’t become an archivist",
     "link": "https://lil.law.harvard.edu/blog/2010/11/22/458/",
     "pubDate": "2010-11-22T23:34:58.000Z",
     "content": "<p>That’s the title of this text-to-video clip:</p>\n<p>Savagely cynical. By <a href=\"http://derangementanddescription.wordpress.com/2010/11/19/why-you-shouldnt-become-an-archivist-the-video/\">Derangement and Description</a>, Rebecca Goldman and Amy Schindler.</p>",
@@ -6460,7 +6477,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "Who isn't a book publisher these days?",
+    "title": "Who isn’t a book publisher these days?",
     "link": "https://lil.law.harvard.edu/blog/2010/10/06/who-isnt-a-book-publisher-these-days/",
     "pubDate": "2010-10-06T15:19:55.000Z",
     "content": "<p>Barnes &amp; Noble has launched <a href=\"http://pubit.barnesandnoble.com/pubit_app/bn?t=pi_reg_home\">PubIt</a>, a service for authors who want to publish directly to readers—well, directly through B&amp;N. Create a B&amp;N user account and upload some files, and PubIt will convert them to ePub, list your book on its site, collect money from sales, and about 60 days later will send you your money.</p>\n<p>Some miscellaneous <a href=\"http://pubit.barnesandnoble.com/pubit_app/bn?t=support#pricing_payment_terms\">points</a> about PubIt: You can optionally add DRM to your books, but you don’t have to. You don’t need an ISBN number. You set the list price, but B&amp;N can set the sale price. You have to charge at least $0.99. You have to guarantee that you won’t list it for less elsewhere.</p>\n<p>How much does an author make per copy? B&amp;N <a href=\"http://pubit.barnesandnoble.com/pubit_app/bn?t=support#pricing_payment_terms\">says</a>: 65% of the list price for books priced at $2.99-$9.99, and 40% for books outside of that range. But a warning: I think I got that right, but B&amp;N refers to the money paid to “the Publisher,” leaving us to figure out whether the publisher is the author or B&amp;N  It’s getting so hard to tell!</p>\n<p>(BTW, you can still buy <a href=\"http://search.barnesandnoble.com/My-Hundred-Million-Dollar-Secret/David-Weinberger/e/9781847288004/?itm=1&amp;USRI=my+hundred+million+dollar+secret\">books</a> published at <a href=\"http://www.lulu.com\">LuLu.com</a> at B&amp;N.)</p>",
@@ -6477,7 +6494,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "What we're reading",
+    "title": "What we’re reading",
     "link": "https://lil.law.harvard.edu/blog/2010/10/04/what-were-reading/",
     "pubDate": "2010-10-04T17:06:05.000Z",
     "content": "<p>On our <a href=\"/\">home page</a> and on the main blog page we run a list on the right of “Stuff we’re looking at.” These are various postings on the Web that one of us has founding interesting enough to share. We tag 'em and run the feed.</p>\n<p>At some point, we’ll start tweeting as well, and will probably automatically tweet what we’re tagging. Unless you think that’s a bad idea, in which case just forget we ever brought it up. So, WDYT?</p>",
@@ -6596,7 +6613,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "\"If these walls could talk\"",
+    "title": "“If these walls could talk”",
     "link": "https://lil.law.harvard.edu/blog/2010/09/17/if-these-walls-could-talk/",
     "pubDate": "2010-09-17T13:44:35.000Z",
     "content": "<p>We’ve spoken a lot about books friending books, people friending books, books updating their status, etc.  We’ve even had library circulation events fire a tweet.</p>\n<p>Here’s an interesting version of that idea, but for trees:\n<a href=\"http://talking-tree.com/\">http://talking-tree.com/</a></p>\n<p>A good thought experiment, swapping out book for tree, what would all these fields look like?</p>",
@@ -6766,7 +6783,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "Holy cow, I'm a co-director!",
+    "title": "Holy cow, I’m a co-director!",
     "link": "https://lil.law.harvard.edu/blog/2010/08/20/holy-cow-im-a-co-director/",
     "pubDate": "2010-08-20T19:00:53.000Z",
     "content": "<p>Hi, this is David Weinberger, and I’m thrilled to be able to post that on Monday I’ll be the Lab’s new co-director, along with the fabulous Kim Dulin who has over the past year hired an amazing group of people and guided them toward a set of awesome projects.</p>\n<p>I’ve posted a bit about this new job over at <a href=\"http://www.hyperorg.com/blogger/2010/08/20/my-new-job/\">my personal blog</a>.</p>\n<p>I’ve been working with the Lab as a consultant for quite a while now, and with Kim and the team, for whom I have the highest regard, so this is not a big change for the Lab. But it is a very happy change for me.</p>",
@@ -6936,7 +6953,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "Summarized 10 Golden Principles of Web App Success, by Fred Wilson's",
+    "title": "Summarized 10 Golden Principles of Web App Success, by Fred Wilson’s",
     "link": "https://lil.law.harvard.edu/blog/2010/03/30/summarized-10-golden-principles-of-web-app-success-by-fred-wilsons/",
     "pubDate": "2010-03-30T17:45:49.000Z",
     "content": "<p>Fred Wilson’s <a href=\"http://carsonified.com/blog/business/fred-wilsons-10-golden-principles-of-successful-web-apps/\">10 Golden Principles of Successful Web Apps</a>\n(He’s at <a href=\"http://www.unionsquareventures.com/index.php\">Union Square Ventures</a> and has a blog)  This is a summary of the talk he gave at <a href=\"http://futureofwebapps.com/\">Future of Web Apps</a> Conference</p>\n<p><strong>Speed</strong> — it just has to work <em>fast</em></p>\n<p><strong>Instant Utility</strong> —</p>\n<p><strong>Voice</strong> — attitude, style, personality, you should feel like your consuming media (CNN, Fox News) when you’re interacting</p>\n<p><strong>Less Is More</strong> — Great services are simple.  Example: delicious (which drives our “what we’re reading” section).  You can do very little but still be powerful.</p>\n<p><strong>Programmable</strong> — APIs, read/write APIs, Absolutely essential to let others contribute functionality to your application.</p>\n<p><strong>Personal</strong> — Avatars, Backgrounds, UGC, so people can feel ownership</p>\n<p><strong>“RESTful”</strong> — Everything in the application has a url.  And the url has clean and understandable path.   This way the web can access your app in deep ways.  Build on an open architecture.</p>\n<p><strong>Discoverable</strong> — Build from the ground up to be discoverable through google, but also through Social Media.  Build from the ground up to be viral.  So it can push itself.</p>",
@@ -7191,7 +7208,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "The Library Of Congress' Experience",
+    "title": "The Library Of Congress’ Experience",
     "link": "https://lil.law.harvard.edu/blog/2009/11/11/some-interesting-stuff-from-the-library-of-congress/",
     "pubDate": "2009-11-11T23:25:44.000Z",
     "content": "<p>The LOC’s Experience is the recent re-design/overhaul of the main building’s exhibits.  It includes a number of technology innovations (digital wall, kiosk, large scale page turning and cross-referencing of key US documents, etc.) to enhance the experience of the LOC’s visitors.  This project also includes a connection to an on-line experience to extend the visit beyond the time spent at the LOC.  The on-line experience is known as myLOC.</p>\n<li>\n<p><a href=\"http://myloc.gov/demos/lce.aspx\">The video of the myLOC Experience</a></p>\n</li>\n<p><a href=\"http://myloc.gov/demos/lce.aspx\">The video of the myLOC Experience</a></p>\n<li>\n<p><a href=\"http://myloc.gov/Pages/Default.aspx\">The myLOC homepage</a></p>\n</li>\n<p><a href=\"http://myloc.gov/Pages/Default.aspx\">The myLOC homepage</a></p>",
@@ -7208,7 +7225,7 @@
     "originalRssUrl": "https://librarylab.law.harvard.edu/blog/feed/"
   },
   {
-    "title": "Shake That Brain: How to Create Winning Solutions and Have Fun While You're At It",
+    "title": "Shake That Brain: How to Create Winning Solutions and Have Fun While You’re At It",
     "link": "https://lil.law.harvard.edu/blog/2009/11/11/shake-that-brain-how-to-create-winning-solutions-and-have-fun-while-youre-at-it/",
     "pubDate": "2009-11-11T15:35:01.000Z",
     "content": "<p>A great book to kick-start breakthrough thinking.</p>",
