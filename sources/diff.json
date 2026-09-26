@@ -168,5 +168,22 @@
     "scope": "World",
     "isDarkLogo": false,
     "originalRssUrl": "https://blog.wikimedia.org/feed/"
+  },
+  {
+    "title": "Wikimedia Brasil’s Development Best Practices Framework: technical sustainability as an organizational responsibility",
+    "link": "https://diff.wikimedia.org/2026/09/26/wikimedia-brasils-development-best-practices-framework-technical-sustainability-as-an-organizational-responsibility/",
+    "pubDate": "2026-09-26T07:00:00.000Z",
+    "content": "<p>In 2025, the <a href=\"https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/WDQS_graph_split\">Wikidata Query Service went through a split of its graph</a>. The service runs on Blazegraph and had grown past 16 billion triples, adding roughly 1 billion per year. The change was meant to ensure the service’s scalability and stability in the medium term. As an emergency measure to prevent a catastrophic failure, the SPARQL endpoint was split in two: one containing <a href=\"https://query-scholarly.wikidata.org/\">only scholarly articles</a> and <a href=\"https://query.wikidata.org/\">another with the rest of Wikidata</a>. The split took effect in May 2025, and queries that need to cross both graphs now require SPARQL federation.</p>\n<p>As a result, many queries and tools broke, and many are still not working today. <a href=\"https://scholia.toolforge.org/\">Scholia </a>is <a href=\"http://The Wikidata Query Service split and its impact on the scholarly graph\">the most visible example</a>. The impact was so significant that its maintainers ended up migrating the <a href=\"https://qlever.scholia.wiki/\">full graph to a QLever engine</a>, outside Wikimedia infrastructure.</p>",
+    "snippet": "In 2025, the Wikidata Query Service went through a split of its graph. The service runs on Blazegraph and had grown past 16 billion triples, adding roughly 1 billion per year. The change was meant to",
+    "creator": "Éder Porto",
+    "sourceTitle": "Diff",
+    "sheetCategory": "(Open) Data + Technology",
+    "enforcedImage": "https://diff.wikimedia.org/wp-content/uploads/2026/09/arcabouco.png?w=1024&resize=1024%2C417",
+    "sourceDescription": "News from the Wikimedia movement",
+    "sourceLogo": "https://diff.wikimedia.org/wp-content/uploads/2020/07/cropped-1024px-Wikimedia-logo.svg_.png?fit=32%2C32",
+    "lang": "en",
+    "scope": "World",
+    "isDarkLogo": false,
+    "originalRssUrl": "https://blog.wikimedia.org/feed/"
   }
 ]
