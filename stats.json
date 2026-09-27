@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "27.9.2026 klo 13.28.14"
+    "last_updated": "27.9.2026 klo 18.35.14"
   },
   "European Civil Protection and Humanitarian Aid Operations": {
     "file": "european_civil_protection_and_humanitarian_aid_operations.json",
@@ -28,7 +28,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 38,
+    "count": 40,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -50,14 +50,6 @@
     "lang": "fi",
     "scope": "World"
   },
-  "404 Media": {
-    "file": "404_media.json",
-    "count": 15,
-    "category": "Investigations + Journalism",
-    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Demokraatti": {
     "file": "demokraatti.json",
     "count": 30,
@@ -65,6 +57,38 @@
     "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Euronews | Europe": {
+    "file": "euronews___europe.json",
+    "count": 50,
+    "category": "International Affairs + Policy",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Global Voices": {
+    "file": "global_voices.json",
+    "count": 17,
+    "category": "Human Rights + Democracy",
+    "description": "Citizen media stories from around the world",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Radio Free Europe / Radio Liberty": {
+    "file": "radio_free_europe___radio_liberty.json",
+    "count": 22,
+    "category": "Investigations + Journalism",
+    "description": "Radio Free Europe / Radio Liberty is an international news organization serving Central and Eastern Europe, the Caucasus, Central Asia, Russia, the Middle East and Balkan countries",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "404 Media": {
+    "file": "404_media.json",
+    "count": 15,
+    "category": "Investigations + Journalism",
+    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
+    "lang": "en",
+    "scope": "World"
   },
   "Diff": {
     "file": "diff.json",
@@ -81,14 +105,6 @@
     "description": "European Union | Featured news",
     "lang": "fi",
     "scope": "Europe"
-  },
-  "Global Voices": {
-    "file": "global_voices.json",
-    "count": 16,
-    "category": "Human Rights + Democracy",
-    "description": "Citizen media stories from around the world",
-    "lang": "en",
-    "scope": "World"
   },
   "Greenpeace Suomi": {
     "file": "greenpeace_suomi.json",
@@ -122,14 +138,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Radio Free Europe / Radio Liberty": {
-    "file": "radio_free_europe___radio_liberty.json",
-    "count": 21,
-    "category": "Investigations + Journalism",
-    "description": "Radio Free Europe / Radio Liberty is an international news organization serving Central and Eastern Europe, the Caucasus, Central Asia, Russia, the Middle East and Balkan countries",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "The Conversation – Articles (EUROPE)": {
     "file": "the_conversation___articles__europe_.json",
     "count": 50,
@@ -140,7 +148,7 @@
   },
   "UN News - Global perspective Human stories": {
     "file": "un_news___global_perspective_human_stories.json",
-    "count": 58,
+    "count": 59,
     "category": "International Affairs + Policy",
     "description": "UN News - Global perspective Human stories | Global",
     "lang": "en",
@@ -153,6 +161,22 @@
     "description": "",
     "lang": "en",
     "scope": "Denmark"
+  },
+  "MuseumNext": {
+    "file": "museumnext.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Defining the Future of Museums",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News | Middle East": {
+    "file": "un_news___middle_east.json",
+    "count": 24,
+    "category": "Peace + Conflict + Humanitarian",
+    "description": "UN News - Global perspective Human stories | Middle East",
+    "lang": "en",
+    "scope": "Middle East & Arab world"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
@@ -516,7 +540,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3987,
+    "count": 3989,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -540,7 +564,7 @@
   },
   "The Finnish Institute in Rome": {
     "file": "the_finnish_institute_in_rome.json",
-    "count": 2,
+    "count": 10,
     "category": "Culture + Education",
     "description": "Suomen Rooman instituutti",
     "lang": "en",
@@ -588,7 +612,7 @@
   },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
-    "count": 14,
+    "count": 7,
     "category": "(Open) Science + Research",
     "description": "Turun yliopiston etusivun uutisten lyhennelmät",
     "lang": "fi",
@@ -601,14 +625,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "UN News | Middle East": {
-    "file": "un_news___middle_east.json",
-    "count": 24,
-    "category": "Peace + Conflict + Humanitarian",
-    "description": "UN News - Global perspective Human stories | Middle East",
-    "lang": "en",
-    "scope": "Middle East & Arab world"
   },
   "UN News | Peace and Security": {
     "file": "un_news___peace_and_security.json",
@@ -658,6 +674,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Knowledge Rights 21": {
+    "file": "knowledge_rights_21.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "We advocate for your right to access and share knowledge!",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Alfred Kordelinin säätiö": {
     "file": "alfred_kordelinin_s__ti_.json",
     "count": 15,
@@ -684,7 +708,7 @@
   },
   "Center for Internet and Society": {
     "file": "center_for_internet_and_society.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Policy + Rights",
     "description": "The CIS is a CNRS research center",
     "lang": "en",
@@ -938,6 +962,22 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "CREATe": {
+    "file": "create.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Centre for Regulation of the Creative Economy",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Kulta ry": {
+    "file": "kulta_ry.json",
+    "count": 12,
+    "category": "Culture + Education",
+    "description": "Kulttuuri- ja taidealan keskusjärjestö",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "ATRIUM": {
     "file": "atrium.json",
     "count": 119,
@@ -956,7 +996,7 @@
   },
   "Euronews | The Europe Conversation": {
     "file": "euronews___the_europe_conversation.json",
-    "count": 50,
+    "count": 1,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -1084,7 +1124,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
+    "count": 2,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1164,7 +1204,7 @@
   },
   "Avate Audiovisuaalisen alan tekijät ry": {
     "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 1,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1204,7 +1244,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -1500,7 +1540,7 @@
   },
   "United Nations Sustainable Development": {
     "file": "united_nations_sustainable_development.json",
-    "count": 7,
+    "count": 6,
     "category": "Sustainability + Foresight",
     "description": "17 Goals to Transform Our World",
     "lang": "en",
@@ -1778,6 +1818,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Confederation of Open Access Repositories": {
+    "file": "confederation_of_open_access_repositories.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Building a sustainable, global knowledge commons",
+    "lang": "en",
+    "scope": "World"
+  },
   "CoP CC on Participatory and Deliberative Democracy": {
     "file": "cop_cc_on_participatory_and_deliberative_democracy.json",
     "count": 10,
@@ -1817,14 +1865,6 @@
     "description": "Suomen avoimien tietojärjestelmien keskus - COSS ry",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "CREATe": {
-    "file": "create.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Centre for Regulation of the Creative Economy",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Culture Action Europe News": {
     "file": "culture_action_europe_news.json",
@@ -1922,14 +1962,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Euronews | Europe": {
-    "file": "euronews___europe.json",
-    "count": 50,
-    "category": "International Affairs + Policy",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "European Cultural Parliament": {
     "file": "european_cultural_parliament.json",
     "count": 10,
@@ -1945,6 +1977,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
   },
   "FCAI | News": {
     "file": "fcai___news.json",
@@ -2234,14 +2274,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Knowledge Rights 21": {
-    "file": "knowledge_rights_21.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "We advocate for your right to access and share knowledge!",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Knowledge Rights 21 Archive Feed": {
     "file": "knowledge_rights_21_archive_feed.json",
     "count": 10,
@@ -2274,14 +2306,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Kulta ry": {
-    "file": "kulta_ry.json",
-    "count": 12,
-    "category": "Culture + Education",
-    "description": "Kulttuuri- ja taidealan keskusjärjestö",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Kulttilehdet": {
     "file": "kulttilehdet.json",
     "count": 10,
@@ -2311,14 +2335,6 @@
     "count": 30,
     "category": "Culture + Education",
     "description": "Kulttuuripolitiikan tutkimuksen vuosikirjaa julkaisee Kulttuuripolitiikan tutkimuksen seura. Kyse on kerran vuodessa ilmestyvästä vertaisarvioidusta julkaisusta. Vuosikirja on muodoltaan sähköinen open access -julkaisu. Sen sisältö koostuu artikkeleiden lisäksi muun muassa lyhyemmistä katsausteksteistä, kirja-arvosteluista, kolumneista ja haastatteluista.\n\n Kulttuuripolitiikan tutkimuksen vuosikirja on saanut Tieteellisten seurain valtuuskunnan (TSV) kautta tieteellisen julkaisutoiminnan avustusta, jota opetus- ja kulttuuriministeriö myöntää Veikkauksen tuotoista. Vuosikirja on saanut tukea myös Suomen tiedekustantajien liitolta .",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Lastuja Suomen historiasta": {
-    "file": "lastuja_suomen_historiasta.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Turun yliopiston Suomen historian oppiaineen blogi",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2394,14 +2410,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "MuseumNext": {
-    "file": "museumnext.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Defining the Future of Museums",
-    "lang": "en",
-    "scope": "World"
-  },
   "MyData": {
     "file": "mydata.json",
     "count": 10,
@@ -2409,14 +2417,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "mySociety": {
-    "file": "mysociety.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Nätverket KOD": {
     "file": "n_tverket_kod.json",
@@ -2465,6 +2465,14 @@
     "description": "Nordic research institute for regional development and planning",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
+  },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 50,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
   },
   "OCCRP Announcements": {
     "file": "occrp_announcements.json",
@@ -2588,9 +2596,17 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 10,
+    "count": 9,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Open Technology Research": {
+    "file": "open_technology_research.json",
+    "count": 9,
+    "category": "(Open) Data + Technology",
+    "description": "Building Evidence, Connecting Researchers, Informing Policy",
     "lang": "en",
     "scope": "World"
   },
@@ -2655,14 +2671,6 @@
     "count": 20,
     "category": "Perspectives",
     "description": "Project Syndicate produces and delivers original commentaries by prominent economists, political leaders, scholars, business leaders, and civic activists to a global audience, including nearly 500 media outlets in more than 150 countries",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Public Institutions": {
-    "file": "public_institutions.json",
-    "count": 9,
-    "category": "International Affairs + Policy",
-    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -3031,14 +3039,6 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Airwars": {
-    "file": "airwars.json",
-    "count": 20,
-    "category": "Peace + Conflict + Humanitarian",
-    "description": "Investigations, research and policy work from Airwars, the civilian harm watchdog.",
     "lang": "en",
     "scope": "World"
   },
