@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "29.9.2026 klo 21.32.23"
+    "last_updated": "30.9.2026 klo 1.54.09"
   },
   "Amnesty International": {
     "file": "amnesty_international.json",
@@ -100,7 +100,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 42,
+    "count": 43,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -140,7 +140,7 @@
   },
   "Eastflank": {
     "file": "eastflank.json",
-    "count": 13,
+    "count": 12,
     "category": "Investigations + Journalism",
     "description": "Reporting",
     "lang": "en",
@@ -220,7 +220,7 @@
   },
   "Helsingin kaupunki | Uutiset": {
     "file": "helsingin_kaupunki___uutiset.json",
-    "count": 19,
+    "count": 25,
     "category": "Politics + Public sector",
     "description": "feed",
     "lang": "fi",
@@ -236,7 +236,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 15,
+    "count": 16,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -380,7 +380,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 3998,
+    "count": 3999,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -460,9 +460,121 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 19,
+    "count": 18,
     "category": "Investigations + Journalism",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Center for European Policy Analysis": {
+    "file": "center_for_european_policy_analysis.json",
+    "count": 11,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Electronic Frontier Foundation": {
+    "file": "electronic_frontier_foundation.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Euroopan unioni": {
+    "file": "euroopan_unioni.json",
+    "count": 29,
+    "category": "Politics + Public sector",
+    "description": "European Union | Featured news",
+    "lang": "fi",
+    "scope": "Europe"
+  },
+  "Museolehti": {
+    "file": "museolehti.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Museoalan ihmisten, ilmiöiden ja puheenaiheiden media.",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "NOEMA": {
+    "file": "noema.json",
+    "count": 10,
+    "category": "Perspectives",
+    "description": "Noema Magazine",
+    "lang": "en",
+    "scope": "World"
+  },
+  "OCHA": {
+    "file": "ocha.json",
+    "count": 13,
+    "category": "Peace + Conflict + Humanitarian",
+    "description": "United Nations Office for the Coordination of Humanitarian Affairs",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Oikeusministeriö | Tiedotteet ja uutiset": {
+    "file": "oikeusministeri____tiedotteet_ja_uutiset.json",
+    "count": 20,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Open Government Partnership Newsletter": {
+    "file": "open_government_partnership_newsletter.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "PreventionWeb": {
+    "file": "preventionweb.json",
+    "count": 40,
+    "category": "Sustainability + Foresight",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "The Conversation – Articles (EUROPE)": {
+    "file": "the_conversation___articles__europe_.json",
+    "count": 50,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "The Public Domain Review": {
+    "file": "the_public_domain_review.json",
+    "count": 100,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News - Global perspective Human stories": {
+    "file": "un_news___global_perspective_human_stories.json",
+    "count": 59,
+    "category": "International Affairs + Policy",
+    "description": "UN News - Global perspective Human stories | Global",
+    "lang": "en",
+    "scope": "World"
+  },
+  "UN News | Middle East": {
+    "file": "un_news___middle_east.json",
+    "count": 24,
+    "category": "Peace + Conflict + Humanitarian",
+    "description": "UN News - Global perspective Human stories | Middle East",
+    "lang": "en",
+    "scope": "Middle East & Arab world"
+  },
+  "UN News | Peace and Security": {
+    "file": "un_news___peace_and_security.json",
+    "count": 12,
+    "category": "Peace + Conflict + Humanitarian",
+    "description": "UN News - Global perspective Human stories | Peace and Security",
     "lang": "en",
     "scope": "World"
   },
@@ -497,14 +609,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Center for European Policy Analysis": {
-    "file": "center_for_european_policy_analysis.json",
-    "count": 11,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "CIVICUS News": {
     "file": "civicus_news.json",
@@ -556,35 +660,19 @@
   },
   "Democracy Now!": {
     "file": "democracy_now_.json",
-    "count": 21,
+    "count": 43,
     "category": "Human Rights + Democracy",
     "description": "Democracy Now! is an independent daily TV & radio news program, hosted by award-winning journalists Amy Goodman and Juan González. We provide daily global news headlines, in-depth interviews and investigative reports without any advertisements or government funding. Our programming shines a spotlight on corporate and government abuses of power and lifts up the stories of ordinary people working to make change in extraordinary times. Democracy Now! is live weekdays at 8am ET and available 24/7 through our website and podcasts.",
     "lang": "en",
     "scope": "United States"
   },
-  "Electronic Frontier Foundation": {
-    "file": "electronic_frontier_foundation.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 3,
+    "count": 2,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Euroopan unioni": {
-    "file": "euroopan_unioni.json",
-    "count": 29,
-    "category": "Politics + Public sector",
-    "description": "European Union | Featured news",
-    "lang": "fi",
-    "scope": "Europe"
   },
   "Europa Nostra": {
     "file": "europa_nostra.json",
@@ -668,7 +756,7 @@
   },
   "mySociety": {
     "file": "mysociety.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
     "lang": "en",
@@ -682,14 +770,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "OCHA": {
-    "file": "ocha.json",
-    "count": 13,
-    "category": "Peace + Conflict + Humanitarian",
-    "description": "United Nations Office for the Coordination of Humanitarian Affairs",
-    "lang": "en",
-    "scope": "World"
-  },
   "Politiikasta": {
     "file": "politiikasta.json",
     "count": 10,
@@ -697,14 +777,6 @@
     "description": "Ajankohtaista analyysia yhteiskunnasta",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "PreventionWeb": {
-    "file": "preventionweb.json",
-    "count": 40,
-    "category": "Sustainability + Foresight",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
   },
   "resilience": {
     "file": "resilience.json",
@@ -738,17 +810,9 @@
     "lang": "fi",
     "scope": "Sweden"
   },
-  "The Conversation – Articles (EUROPE)": {
-    "file": "the_conversation___articles__europe_.json",
-    "count": 50,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
-    "count": 42,
+    "count": 47,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -794,30 +858,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "UN News - Global perspective Human stories": {
-    "file": "un_news___global_perspective_human_stories.json",
-    "count": 61,
-    "category": "International Affairs + Policy",
-    "description": "UN News - Global perspective Human stories | Global",
-    "lang": "en",
-    "scope": "World"
-  },
-  "UN News | Middle East": {
-    "file": "un_news___middle_east.json",
-    "count": 24,
-    "category": "Peace + Conflict + Humanitarian",
-    "description": "UN News - Global perspective Human stories | Middle East",
-    "lang": "en",
-    "scope": "Middle East & Arab world"
-  },
-  "UN News | Peace and Security": {
-    "file": "un_news___peace_and_security.json",
-    "count": 12,
-    "category": "Peace + Conflict + Humanitarian",
-    "description": "UN News - Global perspective Human stories | Peace and Security",
-    "lang": "en",
-    "scope": "World"
-  },
   "xkcd": {
     "file": "xkcd.json",
     "count": 4,
@@ -825,14 +865,6 @@
     "description": "xkcd.com: A webcomic of romance and math humor.",
     "lang": "en",
     "scope": "World"
-  },
-  "Oikeusministeriö | Tiedotteet ja uutiset": {
-    "file": "oikeusministeri____tiedotteet_ja_uutiset.json",
-    "count": 20,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Sovereign Tech Agency": {
     "file": "sovereign_tech_agency.json",
@@ -964,7 +996,7 @@
   },
   "International Council on Archives (ICA)": {
     "file": "international_council_on_archives__ica_.json",
-    "count": 7,
+    "count": 6,
     "category": "Culture + Education",
     "description": "",
     "lang": "en",
@@ -980,7 +1012,7 @@
   },
   "Presidentti": {
     "file": "presidentti.json",
-    "count": 9,
+    "count": 10,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -1073,6 +1105,14 @@
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Waag": {
+    "file": "waag.json",
+    "count": 20,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "en",
+    "scope": "Netherlands"
   },
   "Alfred Kordelinin säätiö": {
     "file": "alfred_kordelinin_s__ti_.json",
@@ -1185,22 +1225,6 @@
     "description": "Luovan työn tekijät ja yrittäjät, Luovat ry",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Museolehti": {
-    "file": "museolehti.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Museoalan ihmisten, ilmiöiden ja puheenaiheiden media.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "NOEMA": {
-    "file": "noema.json",
-    "count": 10,
-    "category": "Perspectives",
-    "description": "Noema Magazine",
-    "lang": "en",
-    "scope": "World"
   },
   "Nordic Culture Point": {
     "file": "nordic_culture_point.json",
@@ -1394,14 +1418,6 @@
     "lang": "fi",
     "scope": "Europe"
   },
-  "The Public Domain Review": {
-    "file": "the_public_domain_review.json",
-    "count": 100,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "The Ulkopolitist": {
     "file": "the_ulkopolitist.json",
     "count": 10,
@@ -1434,14 +1450,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Waag": {
-    "file": "waag.json",
-    "count": 20,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "en",
-    "scope": "Netherlands"
-  },
   "YK:n alueellinen tiedotuskeskus – Suomi": {
     "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
     "count": 15,
@@ -1452,11 +1460,27 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 2,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Euronews | The Europe Conversation": {
+    "file": "euronews___the_europe_conversation.json",
+    "count": 1,
+    "category": "Perspectives",
+    "description": "",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "United Nations Sustainable Development": {
+    "file": "united_nations_sustainable_development.json",
+    "count": 5,
+    "category": "Sustainability + Foresight",
+    "description": "17 Goals to Transform Our World",
+    "lang": "en",
+    "scope": "World"
   },
   "Avate Audiovisuaalisen alan tekijät ry": {
     "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
@@ -1537,70 +1561,6 @@
     "description": "Kosmopolis on Suomen rauhantutkimusyhdistyksen julkaisema monitieteinen rauhan-, konfliktin- ja maailmanpolitiikan tutkimuksen aikakauslehti. Neljä kertaa vuodessa ilmestyvä Kosmopolis on erinomainen ikkuna alan tuoreimpaan tutkimukseen. Kosmopolis ilmestyi ensimmäisen kerran vuonna 1993, mutta sitä voidaan pitää perillisenä Rauhaan tutkien -tiedotteelle (1971-1984) ja Rauhantutkimus-lehdelle (1985-1992).",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Stanford CIS": {
-    "file": "stanford_cis.json",
-    "count": 15,
-    "category": "Digital Policy + Rights",
-    "description": "The Center for Internet and Society at Stanford Law School is a leader in the study of the law and policy around the Internet and other emerging technologies.",
-    "lang": "en",
-    "scope": "Americas"
-  },
-  "Suomen kulttuuri- ja tiedeinstituutit": {
-    "file": "suomen_kulttuuri__ja_tiedeinstituutit.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Suomen Viron-instituutti": {
-    "file": "suomen_viron_instituutti.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Soome Eesti Instituudi Sihtasutus",
-    "lang": "fi",
-    "scope": "Estonia"
-  },
-  "TIEKE": {
-    "file": "tieke.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "UN News | Human Rights": {
-    "file": "un_news___human_rights.json",
-    "count": 26,
-    "category": "Human Rights + Democracy",
-    "description": "UN News - Global perspective Human stories | Human Rights",
-    "lang": "en",
-    "scope": "World"
-  },
-  "UNESCO | Intangible Cultural Heritage": {
-    "file": "unesco___intangible_cultural_heritage.json",
-    "count": 634,
-    "category": "Culture + Education",
-    "description": "UNESCO is publishing once a week news on its activities regarding the safeguarding of intangible cultural heritage",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Ykspilkkuviis.fi": {
-    "file": "ykspilkkuviis_fi.json",
-    "count": 10,
-    "category": "Sustainability + Foresight",
-    "description": "Kestävän elämän media",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "AI Now Institute": {
-    "file": "ai_now_institute.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "An independent research institute providing expert analysis on AI in the public interest.",
-    "lang": "en",
-    "scope": "World"
   },
   "Access Now": {
     "file": "access_now.json",
@@ -1762,19 +1722,19 @@
     "lang": "en",
     "scope": "Finland"
   },
+  "Commons Library": {
+    "file": "commons_library.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "Online Changemaker Library",
+    "lang": "en",
+    "scope": "World"
+  },
   "CoP CC on Participatory and Deliberative Democracy": {
     "file": "cop_cc_on_participatory_and_deliberative_democracy.json",
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Copyright Literacy": {
-    "file": "copyright_literacy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
     "scope": "World"
   },
@@ -1906,14 +1866,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Euronews | The Europe Conversation": {
-    "file": "euronews___the_europe_conversation.json",
-    "count": 50,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Euroopan komission Suomen-edustusto": {
     "file": "euroopan_komission_suomen_edustusto.json",
     "count": 25,
@@ -1935,14 +1887,6 @@
     "count": 10,
     "category": "Culture + Education",
     "description": "Strengthening the role of culture and arts in Europe",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "European Heritage Hub": {
-    "file": "european_heritage_hub.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Where cultural heritage connects",
     "lang": "en",
     "scope": "Europe"
   },
@@ -1969,14 +1913,6 @@
     "description": "DON'T BE DECEIVED, QUESTION EVEN MORE",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Extreme Citizen Science blog": {
-    "file": "extreme_citizen_science_blog.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
-    "lang": "en",
-    "scope": "World"
   },
   "FCAI | News": {
     "file": "fcai___news.json",
@@ -2009,6 +1945,14 @@
     "description": "",
     "lang": "en",
     "scope": "World"
+  },
+  "FNG Research": {
+    "file": "fng_research.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "FNG Research is the online magazine of the Finnish National Gallery. This online publication aims to promote the research activities of the Gallery, research being a part of its core functions. The Finnish National Gallery consists of three museums – the Ateneum Art Museum, the Museum of Contemporary Art Kiasma, the Sinebrychoff Art Museum – and the Department for Collections Management. FNG Research is a magazine for art-museum and art-history professionals internationally. The site is updated bi-monthly with new developments and content.",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "FOSDEM 2026": {
     "file": "fosdem_2026.json",
@@ -2254,7 +2198,7 @@
     "file": "kulttuurintutkimus.json",
     "count": 30,
     "category": "Culture + Education",
-    "description": "Kulttuurintutkimus on monitieteinen aikakauslehti, joka käsittelee ja esittelee kulttuuriin kohdistuvaa tutkimusta.",
+    "description": "Kulttuurintutkimus kysyy, mitä on meneillään. Lehti julkaisee vertaisarvioitua tutkimusta ja muita tekstejä kulttuurin muutoksista ja merkityksistä. Lehden kriittisissä, tieteenalojen välisiä rajoja ylittävissä analyyseissä kulttuurin ja taiteen ajankohtaiset kysymykset yhdistyvät esimerkiksi yhteiskunnallisiin, taloudellisiin, jälkihumanistisiin ja jokapäiväisiin konteksteihin.",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2378,6 +2322,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Next Generation Internet": {
+    "file": "next_generation_internet.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Internet of humans",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "NGI Commons": {
     "file": "ngi_commons.json",
     "count": 10,
@@ -2481,22 +2433,6 @@
     "description": "Open Future Foundation",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Open Government Partnership Newsletter": {
-    "file": "open_government_partnership_newsletter.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Open Knowledge Foundation Blog": {
-    "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Content for a fair, sustainable and open future",
-    "lang": "en",
-    "scope": "World"
   },
   "Open Knowledge Foundation DE": {
     "file": "open_knowledge_foundation_de.json",
@@ -2722,8 +2658,24 @@
     "lang": "en",
     "scope": "World"
   },
+  "Stanford CIS": {
+    "file": "stanford_cis.json",
+    "count": 15,
+    "category": "Digital Policy + Rights",
+    "description": "The Center for Internet and Society at Stanford Law School is a leader in the study of the law and policy around the Internet and other emerging technologies.",
+    "lang": "en",
+    "scope": "Americas"
+  },
   "Suomen Kotiseutuliitto | Tiedotteet": {
     "file": "suomen_kotiseutuliitto___tiedotteet.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Suomen kulttuuri- ja tiedeinstituutit": {
+    "file": "suomen_kulttuuri__ja_tiedeinstituutit.json",
     "count": 10,
     "category": "Culture + Education",
     "description": "",
@@ -2770,6 +2722,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Suomen Viron-instituutti": {
+    "file": "suomen_viron_instituutti.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Soome Eesti Instituudi Sihtasutus",
+    "lang": "fi",
+    "scope": "Estonia"
+  },
   "Svenska kulturfonden": {
     "file": "svenska_kulturfonden.json",
     "count": 100,
@@ -2785,14 +2745,6 @@
     "description": "Vi tar tillvara och driver den svenska museisektorns gemensamma intressen.",
     "lang": "sv",
     "scope": "Sweden"
-  },
-  "Taide- ja kulttuurivirasto": {
-    "file": "taide__ja_kulttuurivirasto.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "Tekijänoikeuden tiedotus- ja valvontakeskus ry": {
     "file": "tekij_noikeuden_tiedotus__ja_valvontakeskus_ry.json",
@@ -2858,6 +2810,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "TIEKE": {
+    "file": "tieke.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Tieteellisten seurain valtuuskunta TSV": {
     "file": "tieteellisten_seurain_valtuuskunta_tsv.json",
     "count": 10,
@@ -2906,6 +2866,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "UN News | Human Rights": {
+    "file": "un_news___human_rights.json",
+    "count": 26,
+    "category": "Human Rights + Democracy",
+    "description": "UN News - Global perspective Human stories | Human Rights",
+    "lang": "en",
+    "scope": "World"
+  },
   "UN Peacemaker": {
     "file": "un_peacemaker.json",
     "count": 10,
@@ -2922,11 +2890,11 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "United Nations Sustainable Development": {
-    "file": "united_nations_sustainable_development.json",
-    "count": 5,
-    "category": "Sustainability + Foresight",
-    "description": "17 Goals to Transform Our World",
+  "UNESCO | Intangible Cultural Heritage": {
+    "file": "unesco___intangible_cultural_heritage.json",
+    "count": 634,
+    "category": "Culture + Education",
+    "description": "UNESCO is publishing once a week news on its activities regarding the safeguarding of intangible cultural heritage",
     "lang": "en",
     "scope": "World"
   },
@@ -3018,6 +2986,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Ykspilkkuviis.fi": {
+    "file": "ykspilkkuviis_fi.json",
+    "count": 10,
+    "category": "Sustainability + Foresight",
+    "description": "Kestävän elämän media",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Ylioppilaslehti": {
     "file": "ylioppilaslehti.json",
     "count": 10,
@@ -3042,11 +3018,11 @@
     "lang": "en",
     "scope": "World"
   },
-  "Airwars": {
-    "file": "airwars.json",
-    "count": 20,
-    "category": "Peace + Conflict + Humanitarian",
-    "description": "Investigations, research and policy work from Airwars, the civilian harm watchdog.",
+  "AI Now Institute": {
+    "file": "ai_now_institute.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "An independent research institute providing expert analysis on AI in the public interest.",
     "lang": "en",
     "scope": "World"
   },
