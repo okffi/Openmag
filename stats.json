@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "2.10.2026 klo 22.06.51"
+    "last_updated": "3.10.2026 klo 2.40.02"
   },
   "Demokraatti": {
     "file": "demokraatti.json",
@@ -52,7 +52,7 @@
   },
   "Human Rights Watch News": {
     "file": "human_rights_watch_news.json",
-    "count": 19,
+    "count": 20,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -284,7 +284,7 @@
   },
   "European Commission": {
     "file": "european_commission.json",
-    "count": 37,
+    "count": 36,
     "category": "Politics + Public sector",
     "description": "European Commission | News",
     "lang": "en",
@@ -404,7 +404,7 @@
   },
   "OCHA": {
     "file": "ocha.json",
-    "count": 12,
+    "count": 11,
     "category": "Peace + Conflict + Humanitarian",
     "description": "United Nations Office for the Coordination of Humanitarian Affairs",
     "lang": "en",
@@ -492,7 +492,7 @@
   },
   "The Conversation – Articles (GLOBAL)": {
     "file": "the_conversation___articles__global_.json",
-    "count": 48,
+    "count": 47,
     "category": "Perspectives",
     "description": "",
     "lang": "en",
@@ -540,7 +540,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 23,
+    "count": 24,
     "category": "International Affairs + Policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -548,11 +548,91 @@
   },
   "404 Media": {
     "file": "404_media.json",
-    "count": 17,
+    "count": 18,
     "category": "Investigations + Journalism",
     "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
     "scope": "World"
+  },
+  "Center for Internet and Society": {
+    "file": "center_for_internet_and_society.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "The CIS is a CNRS research center",
+    "lang": "en",
+    "scope": "France"
+  },
+  "Creative Commons": {
+    "file": "creative_commons.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Democracy Now!": {
+    "file": "democracy_now_.json",
+    "count": 42,
+    "category": "Human Rights + Democracy",
+    "description": "Democracy Now! is an independent daily TV & radio news program, hosted by award-winning journalists Amy Goodman and Juan González. We provide daily global news headlines, in-depth interviews and investigative reports without any advertisements or government funding. Our programming shines a spotlight on corporate and government abuses of power and lifts up the stories of ordinary people working to make change in extraordinary times. Democracy Now! is live weekdays at 8am ET and available 24/7 through our website and podcasts.",
+    "lang": "en",
+    "scope": "United States"
+  },
+  "Diff": {
+    "file": "diff.json",
+    "count": 13,
+    "category": "(Open) Data + Technology",
+    "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Electronic Frontier Foundation": {
+    "file": "electronic_frontier_foundation.json",
+    "count": 14,
+    "category": "Digital Policy + Rights",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "European Civil Protection and Humanitarian Aid Operations": {
+    "file": "european_civil_protection_and_humanitarian_aid_operations.json",
+    "count": 30,
+    "category": "Peace + Conflict + Humanitarian",
+    "description": "European Civil Protection and Humanitarian Aid Operations | News",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "NOEMA": {
+    "file": "noema.json",
+    "count": 10,
+    "category": "Perspectives",
+    "description": "Noema Magazine",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
+    "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "The Heritage Management Organization": {
+    "file": "the_heritage_management_organization.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "Training Heritage Leaders",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "UN News | Middle East": {
+    "file": "un_news___middle_east.json",
+    "count": 27,
+    "category": "Peace + Conflict + Humanitarian",
+    "description": "UN News - Global perspective Human stories | Middle East",
+    "lang": "en",
+    "scope": "Middle East & Arab world"
   },
   "Access Now": {
     "file": "access_now.json",
@@ -596,7 +676,7 @@
   },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
-    "count": 10,
+    "count": 12,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -626,35 +706,11 @@
     "lang": "en",
     "scope": "World"
   },
-  "Creative Commons": {
-    "file": "creative_commons.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Data Rescue Project": {
     "file": "data_rescue_project.json",
     "count": 15,
     "category": "Knowledge Rescue",
     "description": "Preserving public data",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Democracy Now!": {
-    "file": "democracy_now_.json",
-    "count": 42,
-    "category": "Human Rights + Democracy",
-    "description": "Democracy Now! is an independent daily TV & radio news program, hosted by award-winning journalists Amy Goodman and Juan González. We provide daily global news headlines, in-depth interviews and investigative reports without any advertisements or government funding. Our programming shines a spotlight on corporate and government abuses of power and lifts up the stories of ordinary people working to make change in extraordinary times. Democracy Now! is live weekdays at 8am ET and available 24/7 through our website and podcasts.",
-    "lang": "en",
-    "scope": "United States"
-  },
-  "Diff": {
-    "file": "diff.json",
-    "count": 12,
-    "category": "(Open) Data + Technology",
-    "description": "News from the Wikimedia movement",
     "lang": "en",
     "scope": "World"
   },
@@ -673,14 +729,6 @@
     "description": "Art, heritage & technologies",
     "lang": "en",
     "scope": "Europe"
-  },
-  "Electronic Frontier Foundation": {
-    "file": "electronic_frontier_foundation.json",
-    "count": 13,
-    "category": "Digital Policy + Rights",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "Euroopan komission Suomen-edustusto": {
     "file": "euroopan_komission_suomen_edustusto.json",
@@ -780,7 +828,7 @@
   },
   "IDN-InDepthNews": {
     "file": "idn_indepthnews.json",
-    "count": 12,
+    "count": 11,
     "category": "Human Rights + Democracy",
     "description": "News for a Sustainable World, Peace and Security",
     "lang": "en",
@@ -828,7 +876,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 3,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -865,14 +913,6 @@
     "description": "Suojelemme suomalaista metsäluontoa",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "NOEMA": {
-    "file": "noema.json",
-    "count": 10,
-    "category": "Perspectives",
-    "description": "Noema Magazine",
-    "lang": "en",
-    "scope": "World"
   },
   "Oikeusministeriö | Tiedotteet ja uutiset": {
     "file": "oikeusministeri____tiedotteet_ja_uutiset.json",
@@ -1058,6 +1098,14 @@
     "lang": "en",
     "scope": "Netherlands"
   },
+  "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
+    "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "en",
+    "scope": "Poland"
+  },
   "Aalto-yliopisto": {
     "file": "aalto_yliopisto.json",
     "count": 25,
@@ -1140,7 +1188,7 @@
   },
   "European Heritage Hub": {
     "file": "european_heritage_hub.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Where cultural heritage connects",
     "lang": "en",
@@ -1252,7 +1300,7 @@
   },
   "Ministry for Foreign Affairs of Finland | News": {
     "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 21,
+    "count": 20,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -1386,14 +1434,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "UN News | Middle East": {
-    "file": "un_news___middle_east.json",
-    "count": 27,
-    "category": "Peace + Conflict + Humanitarian",
-    "description": "UN News - Global perspective Human stories | Middle East",
-    "lang": "en",
-    "scope": "Middle East & Arab world"
-  },
   "UNESCO | Intangible Cultural Heritage": {
     "file": "unesco___intangible_cultural_heritage.json",
     "count": 635,
@@ -1466,14 +1506,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "European Civil Protection and Humanitarian Aid Operations": {
-    "file": "european_civil_protection_and_humanitarian_aid_operations.json",
-    "count": 30,
-    "category": "Peace + Conflict + Humanitarian",
-    "description": "European Civil Protection and Humanitarian Aid Operations | News",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Finnish Ministry of Education and Culture | Current issues": {
     "file": "finnish_ministry_of_education_and_culture___current_issues.json",
     "count": 20,
@@ -1538,6 +1570,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 2,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Amos Rex": {
     "file": "amos_rex.json",
     "count": 25,
@@ -1596,7 +1636,7 @@
   },
   "resilience": {
     "file": "resilience.json",
-    "count": 11,
+    "count": 14,
     "category": "Perspectives",
     "description": "Insight and inspiration in turbulent times.",
     "lang": "en",
@@ -1673,46 +1713,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Heritage Hub Kraków": {
-    "file": "heritage_hub_krak_w.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "Heritage Hub for Central and Eastern Europe",
-    "lang": "en",
-    "scope": "Poland"
-  },
-  "HIIG": {
-    "file": "hiig.json",
-    "count": 20,
-    "category": "(Open) Science + Research",
-    "description": "Alexander von Humboldt Institute for Internet and Society",
-    "lang": "de",
-    "scope": "Germany"
-  },
-  "Ihmisoikeusliitto": {
-    "file": "ihmisoikeusliitto.json",
-    "count": 10,
-    "category": "Human Rights + Democracy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "International Council on Archives (ICA)": {
-    "file": "international_council_on_archives__ica_.json",
-    "count": 1,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Tasavallan presidentin kanslia": {
-    "file": "tasavallan_presidentin_kanslia.json",
-    "count": 25,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "AI Finland -verkosto": {
     "file": "ai_finland__verkosto.json",
@@ -1809,14 +1809,6 @@
     "description": "Den svenska sidan om Creative Commons",
     "lang": "sv",
     "scope": "Sweden"
-  },
-  "Center for Internet and Society": {
-    "file": "center_for_internet_and_society.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "The CIS is a CNRS research center",
-    "lang": "en",
-    "scope": "France"
   },
   "Centre for Research on Energy and Clean Air": {
     "file": "centre_for_research_on_energy_and_clean_air.json",
@@ -1946,14 +1938,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Euronews | The Europe Conversation": {
     "file": "euronews___the_europe_conversation.json",
     "count": 47,
@@ -2001,6 +1985,14 @@
     "description": "DON'T BE DECEIVED, QUESTION EVEN MORE",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
   },
   "FCAI | News": {
     "file": "fcai___news.json",
@@ -2066,6 +2058,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Heritage Hub Kraków": {
+    "file": "heritage_hub_krak_w.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Heritage Hub for Central and Eastern Europe",
+    "lang": "en",
+    "scope": "Poland"
+  },
   "Heritage Research Hub": {
     "file": "heritage_research_hub.json",
     "count": 10,
@@ -2073,6 +2073,14 @@
     "description": "A platform on and for cultural heritage research",
     "lang": "en",
     "scope": "Europe"
+  },
+  "HIIG": {
+    "file": "hiig.json",
+    "count": 20,
+    "category": "(Open) Science + Research",
+    "description": "Alexander von Humboldt Institute for Internet and Society",
+    "lang": "en",
+    "scope": "Germany"
   },
   "ICANN New and Noteworthy": {
     "file": "icann_new_and_noteworthy.json",
@@ -2114,6 +2122,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Ihmisoikeusliitto": {
+    "file": "ihmisoikeusliitto.json",
+    "count": 10,
+    "category": "Human Rights + Democracy",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Ilmasto- ja energiapoliittinen ministerityöryhmä": {
     "file": "ilmasto__ja_energiapoliittinen_ministerity_ryhm_.json",
     "count": 20,
@@ -2145,6 +2161,14 @@
     "description": "Informaatiotutkimus (vuoteen 1995 Kirjastotiede ja informatiikka) on Informaatiotutkimuksen yhdistyksen kustantama tieteellinen aikakausjulkaisu, joka on ilmestynyt vuodesta 1981 lähtien. Lehti julkaisee tieteenalaansa ja siihen läheisesti liittyvien tieteenalojen kirjoituksia kuten artikkeleita, katsauksia, kirjallisuusesittelyitä ja -arviointeja sekä tiivistelmiä opinnäytteistä. Informaatiotutkimus on alan ainoa suomalainen vertaisarvioitu tieteellinen aikakausjulkaisu. Lehti ei peri kirjoittajamaksuja.\n\n Vuodesta 2008 lähtien Informaatiotutkimus on ilmestynyt sekä avoimena verkkojulkaisuna että painettuna vuosikirjana. Vuodesta 2018 lähtien lehti ilmestyy yksinomaan verkkojulkaisuna. Lehden koko aineisto vuodesta 1981 lähtien on avoimesti saatavissa verkkojulkaisussa.\n\n ISSN 1797-9129 (Verkkojulkaisu)\n\n ISSN 1797-9137 (Painettu julkaisu)\n\n Lehden toiminnan mahdollistavat Informaatiotutkimuksen yhdistyksen jäsen- ja kannatusmaksut sekä Tieteellisten seurain valtuuskunnan (TSV) kautta ohjautuva opetus- ja kulttuuriministeriön tuki. Em. tahojen taloudellisen tuen ja palveluiden (ml. seminaaritoiminta) lisäksi lehti hyötyy Suomen tiedekustantajien liitto ry:n tarjoamista ohjeistuksista ja koulutuksista.\n\n Lehti on rekisteröity luetettavien tieteellisten open access -lehtien DOAJ-hakemistoon .",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "information labs": {
+    "file": "information_labs.json",
+    "count": 20,
+    "category": "Digital Policy + Rights",
+    "description": "Facts | Ideas | Discussions",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Internet Archive Europe": {
     "file": "internet_archive_europe.json",
@@ -2482,6 +2506,22 @@
     "lang": "en",
     "scope": "Finland"
   },
+  "Open Source Initiative": {
+    "file": "open_source_initiative.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Open Technology Research": {
+    "file": "open_technology_research.json",
+    "count": 9,
+    "category": "(Open) Data + Technology",
+    "description": "Building Evidence, Connecting Researchers, Informing Policy",
+    "lang": "en",
+    "scope": "World"
+  },
   "Opendata.ch": {
     "file": "opendata_ch.json",
     "count": 10,
@@ -2551,6 +2591,14 @@
     "count": 20,
     "category": "Perspectives",
     "description": "Project Syndicate produces and delivers original commentaries by prominent economists, political leaders, scholars, business leaders, and civic activists to a global audience, including nearly 500 media outlets in more than 150 countries",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Public Institutions": {
+    "file": "public_institutions.json",
+    "count": 9,
+    "category": "International Affairs + Policy",
+    "description": "",
     "lang": "en",
     "scope": "World"
   },
@@ -2682,14 +2730,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
-    "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Suomen Saksan-instituutti": {
     "file": "suomen_saksan_instituutti.json",
     "count": 10,
@@ -2730,6 +2770,22 @@
     "lang": "sv",
     "scope": "Sweden"
   },
+  "Taide- ja kulttuurivirasto": {
+    "file": "taide__ja_kulttuurivirasto.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Tasavallan presidentin kanslia": {
+    "file": "tasavallan_presidentin_kanslia.json",
+    "count": 25,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Tekijänoikeuden tiedotus- ja valvontakeskus ry": {
     "file": "tekij_noikeuden_tiedotus__ja_valvontakeskus_ry.json",
     "count": 10,
@@ -2761,14 +2817,6 @@
     "description": "The Library Innovation Lab is growing knowledge and community by bringing library principles to technological frontiers.",
     "lang": "en",
     "scope": "World"
-  },
-  "The Heritage Management Organization": {
-    "file": "the_heritage_management_organization.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "Training Heritage Leaders",
-    "lang": "en",
-    "scope": "Europe"
   },
   "The Museum Of The Future": {
     "file": "the_museum_of_the_future.json",
@@ -2865,14 +2913,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
-    "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "en",
-    "scope": "Poland"
   },
   "University of Oulu": {
     "file": "university_of_oulu.json",
