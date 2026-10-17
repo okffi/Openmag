@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "17.10.2026 klo 11.29.31"
+    "last_updated": "17.10.2026 klo 15.52.14"
   },
   "Suomen Kuvalehti": {
     "file": "suomen_kuvalehti.json",
@@ -20,11 +20,51 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 20,
+    "count": 21,
     "category": "International Affairs + Policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
     "scope": "World"
+  },
+  "Demokraatti": {
+    "file": "demokraatti.json",
+    "count": 30,
+    "category": "Politics + Public sector",
+    "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Global Voices": {
+    "file": "global_voices.json",
+    "count": 15,
+    "category": "Human Rights + Democracy",
+    "description": "Citizen media stories from around the world",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Radio Free Europe / Radio Liberty": {
+    "file": "radio_free_europe___radio_liberty.json",
+    "count": 22,
+    "category": "Investigations + Journalism",
+    "description": "Radio Free Europe / Radio Liberty is an international news organization serving Central and Eastern Europe, the Caucasus, Central Asia, Russia, the Middle East and Balkan countries",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Technology | Guardian": {
+    "file": "technology___guardian.json",
+    "count": 43,
+    "category": "(Open) Data + Technology",
+    "description": "Technology news, comment and analysis | guardian.co.uk",
+    "lang": "en",
+    "scope": "World"
+  },
+  "The Ulkopolitist": {
+    "file": "the_ulkopolitist.json",
+    "count": 10,
+    "category": "International Affairs + Policy",
+    "description": "Parempaa ulkopoliittista keskustelua.",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "404 Media": {
     "file": "404_media.json",
@@ -68,7 +108,7 @@
   },
   "Center for European Policy Analysis": {
     "file": "center_for_european_policy_analysis.json",
-    "count": 10,
+    "count": 8,
     "category": "Digital Policy + Rights",
     "description": "",
     "lang": "en",
@@ -114,17 +154,9 @@
     "lang": "en",
     "scope": "United States"
   },
-  "Demokraatti": {
-    "file": "demokraatti.json",
-    "count": 30,
-    "category": "Politics + Public sector",
-    "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Diff": {
     "file": "diff.json",
-    "count": 10,
+    "count": 12,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -156,7 +188,7 @@
   },
   "Euronews | Europe": {
     "file": "euronews___europe.json",
-    "count": 10,
+    "count": 50,
     "category": "International Affairs + Policy",
     "description": "",
     "lang": "en",
@@ -201,14 +233,6 @@
     "description": "",
     "lang": "en",
     "scope": "Finland"
-  },
-  "Global Voices": {
-    "file": "global_voices.json",
-    "count": 15,
-    "category": "Human Rights + Democracy",
-    "description": "Citizen media stories from around the world",
-    "lang": "en",
-    "scope": "World"
   },
   "Global Voices Advox": {
     "file": "global_voices_advox.json",
@@ -380,7 +404,7 @@
   },
   "Oikeusministeriö | Tiedotteet ja uutiset": {
     "file": "oikeusministeri____tiedotteet_ja_uutiset.json",
-    "count": 3,
+    "count": 20,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -442,14 +466,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Radio Free Europe / Radio Liberty": {
-    "file": "radio_free_europe___radio_liberty.json",
-    "count": 22,
-    "category": "Investigations + Journalism",
-    "description": "Radio Free Europe / Radio Liberty is an international news organization serving Central and Eastern Europe, the Caucasus, Central Asia, Russia, the Middle East and Balkan countries",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Suomen Arkkitehtiliitto SAFA": {
     "file": "suomen_arkkitehtiliitto_safa.json",
     "count": 10,
@@ -506,14 +522,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Technology | Guardian": {
-    "file": "technology___guardian.json",
-    "count": 43,
-    "category": "(Open) Data + Technology",
-    "description": "Technology news, comment and analysis | guardian.co.uk",
-    "lang": "en",
-    "scope": "World"
-  },
   "The Conversation – Articles (EUROPE)": {
     "file": "the_conversation___articles__europe_.json",
     "count": 50,
@@ -538,14 +546,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "The Ulkopolitist": {
-    "file": "the_ulkopolitist.json",
-    "count": 10,
-    "category": "International Affairs + Policy",
-    "description": "Parempaa ulkopoliittista keskustelua.",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Tiede ja tutkimus - ePressi": {
     "file": "tiede_ja_tutkimus___epressi.json",
     "count": 20,
@@ -556,7 +556,7 @@
   },
   "Tietotekniikka | ePressi": {
     "file": "tietotekniikka___epressi.json",
-    "count": 17,
+    "count": 28,
     "category": "(Open) Data + Technology",
     "description": "",
     "lang": "fi",
@@ -604,7 +604,7 @@
   },
   "UNDRR": {
     "file": "undrr.json",
-    "count": 40,
+    "count": 42,
     "category": "Knowledge Rescue",
     "description": "",
     "lang": "en",
@@ -668,11 +668,27 @@
   },
   "WIRED": {
     "file": "wired.json",
-    "count": 50,
+    "count": 51,
     "category": "(Open) Data + Technology",
     "description": "The latest from www.wired.com",
     "lang": "en",
     "scope": "United States"
+  },
+  "Avate Audiovisuaalisen alan tekijät ry": {
+    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
+    "count": 3,
+    "category": "IP + Creative Industry",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Knowledge Rights 21": {
+    "file": "knowledge_rights_21.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "We advocate for your right to access and share knowledge!",
+    "lang": "en",
+    "scope": "Europe"
   },
   "AlgorithmWatch": {
     "file": "algorithmwatch.json",
@@ -820,7 +836,7 @@
   },
   "Kuntaliitto": {
     "file": "kuntaliitto.json",
-    "count": 10,
+    "count": 1,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -962,6 +978,22 @@
     "lang": "en",
     "scope": "World"
   },
+  "CREATe": {
+    "file": "create.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Centre for Regulation of the Creative Economy",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "American Library Association": {
     "file": "american_library_association.json",
     "count": 10,
@@ -972,7 +1004,7 @@
   },
   "CIVICUS News": {
     "file": "civicus_news.json",
-    "count": 50,
+    "count": 2,
     "category": "Human Rights + Democracy",
     "description": "",
     "lang": "en",
@@ -1380,7 +1412,7 @@
   },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
@@ -1546,6 +1578,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Open Knowledge Foundation Blog": {
+    "file": "open_knowledge_foundation_blog.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Content for a fair, sustainable and open future",
+    "lang": "en",
+    "scope": "World"
+  },
   "This Month in GLAM": {
     "file": "this_month_in_glam.json",
     "count": 10,
@@ -1636,7 +1676,7 @@
   },
   "UNESCO | Intangible Cultural Heritage": {
     "file": "unesco___intangible_cultural_heritage.json",
-    "count": 636,
+    "count": 637,
     "category": "Culture + Education",
     "description": "UNESCO is publishing once a week news on its activities regarding the safeguarding of intangible cultural heritage",
     "lang": "en",
@@ -1710,14 +1750,6 @@
     "file": "ateneumin_taidemuseo___konstmuseet_ateneum___ateneum_art_museum.json",
     "count": 25,
     "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Avate Audiovisuaalisen alan tekijät ry": {
-    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
     "scope": "Finland"
@@ -1826,14 +1858,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "CREATe": {
-    "file": "create.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Centre for Regulation of the Creative Economy",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Creative Commons": {
     "file": "creative_commons.json",
     "count": 10,
@@ -1922,14 +1946,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Euronews | The Europe Conversation": {
-    "file": "euronews___the_europe_conversation.json",
-    "count": 50,
-    "category": "Perspectives",
-    "description": "",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "European Cultural Parliament": {
     "file": "european_cultural_parliament.json",
     "count": 10,
@@ -1961,6 +1977,14 @@
     "description": "",
     "lang": "en",
     "scope": "Europe"
+  },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
   },
   "FCAI | News": {
     "file": "fcai___news.json",
@@ -2210,14 +2234,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Knowledge Rights 21": {
-    "file": "knowledge_rights_21.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "We advocate for your right to access and share knowledge!",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Knowledge Rights 21 Archive Feed": {
     "file": "knowledge_rights_21_archive_feed.json",
     "count": 10,
@@ -2322,14 +2338,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Michael Culture Association": {
-    "file": "michael_culture_association.json",
-    "count": 1,
-    "category": "Digital Culture + Heritage",
-    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Ministry of Justice | Finland | News": {
     "file": "ministry_of_justice___finland___news.json",
     "count": 20,
@@ -2369,6 +2377,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "MuseumNext": {
+    "file": "museumnext.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Defining the Future of Museums",
+    "lang": "en",
+    "scope": "World"
   },
   "MyData": {
     "file": "mydata.json",
@@ -2522,14 +2538,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Knowledge Foundation Blog": {
-    "file": "open_knowledge_foundation_blog.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Content for a fair, sustainable and open future",
-    "lang": "en",
-    "scope": "World"
-  },
   "Open Knowledge Foundation DE": {
     "file": "open_knowledge_foundation_de.json",
     "count": 691,
@@ -2650,14 +2658,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Rajapinta": {
-    "file": "rajapinta.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "researcher community focused on digital social sciences",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "Rakennustaiteen Seura ry": {
     "file": "rakennustaiteen_seura_ry.json",
     "count": 5,
@@ -2777,6 +2777,14 @@
     "description": "Soome Eesti Instituudi Sihtasutus",
     "lang": "fi",
     "scope": "Estonia"
+  },
+  "Taide- ja kulttuurivirasto": {
+    "file": "taide__ja_kulttuurivirasto.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Tekijänoikeuden tiedotus- ja valvontakeskus ry": {
     "file": "tekij_noikeuden_tiedotus__ja_valvontakeskus_ry.json",
