@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "24.10.2026 klo 22.21.55"
+    "last_updated": "25.10.2026 klo 1.22.18"
   },
   "Demokraatti": {
     "file": "demokraatti.json",
@@ -12,7 +12,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 13,
+    "count": 14,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -100,7 +100,7 @@
   },
   "Radio Free Europe / Radio Liberty": {
     "file": "radio_free_europe___radio_liberty.json",
-    "count": 21,
+    "count": 22,
     "category": "Investigations + Journalism",
     "description": "Radio Free Europe / Radio Liberty is an international news organization serving Central and Eastern Europe, the Caucasus, Central Asia, Russia, the Middle East and Balkan countries",
     "lang": "en",
@@ -164,7 +164,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -180,7 +180,7 @@
   },
   "Democracy Now!": {
     "file": "democracy_now_.json",
-    "count": 19,
+    "count": 36,
     "category": "Human Rights + Democracy",
     "description": "Democracy Now! is an independent daily TV & radio news program, hosted by award-winning journalists Amy Goodman and Juan González. We provide daily global news headlines, in-depth interviews and investigative reports without any advertisements or government funding. Our programming shines a spotlight on corporate and government abuses of power and lifts up the stories of ordinary people working to make change in extraordinary times. Democracy Now! is live weekdays at 8am ET and available 24/7 through our website and podcasts.",
     "lang": "en",
@@ -652,7 +652,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 3,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -660,7 +660,7 @@
   },
   "Oikeusministeriö | Tiedotteet ja uutiset": {
     "file": "oikeusministeri____tiedotteet_ja_uutiset.json",
-    "count": 4,
+    "count": 20,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -668,7 +668,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 10,
+    "count": 1,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -948,7 +948,7 @@
   },
   "The Signals Network": {
     "file": "the_signals_network.json",
-    "count": 10,
+    "count": 1,
     "category": "Investigations + Journalism",
     "description": "Holding power accountable one whistleblower at a time.",
     "lang": "en",
@@ -1012,7 +1012,7 @@
   },
   "Ministry for Foreign Affairs of Finland | News": {
     "file": "ministry_for_foreign_affairs_of_finland___news.json",
-    "count": 21,
+    "count": 20,
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
@@ -1556,7 +1556,7 @@
   },
   "Open Technology Research": {
     "file": "open_technology_research.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Data + Technology",
     "description": "Building Evidence, Connecting Researchers, Informing Policy",
     "lang": "en",
@@ -1897,14 +1897,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Digital Scholarship Leiden": {
-    "file": "digital_scholarship_leiden.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "en",
-    "scope": "Belgium"
   },
   "Direkt36": {
     "file": "direkt36.json",
@@ -2386,6 +2378,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "MuseumNext": {
+    "file": "museumnext.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Defining the Future of Museums",
+    "lang": "en",
+    "scope": "World"
+  },
   "MyData": {
     "file": "mydata.json",
     "count": 10,
@@ -2393,6 +2393,14 @@
     "description": "",
     "lang": "en",
     "scope": "World"
+  },
+  "mySociety": {
+    "file": "mysociety.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "mySociety provides technology, research and data to help people be active citizens, in more than 40 countries around the world.",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Nätverket KOD": {
     "file": "n_tverket_kod.json",
@@ -2642,14 +2650,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Public Institutions": {
-    "file": "public_institutions.json",
-    "count": 9,
-    "category": "International Affairs + Policy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "PublicSpaces International": {
     "file": "publicspaces_international.json",
     "count": 5,
@@ -2786,6 +2786,14 @@
     "lang": "sv",
     "scope": "Sweden"
   },
+  "Taide- ja kulttuurivirasto": {
+    "file": "taide__ja_kulttuurivirasto.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "The Finnland-Institut": {
     "file": "the_finnland_institut.json",
     "count": 10,
@@ -2810,6 +2818,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "This Month in GLAM": {
+    "file": "this_month_in_glam.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
+    "lang": "en",
+    "scope": "World"
+  },
   "Tiedepolitiikka": {
     "file": "tiedepolitiikka.json",
     "count": 30,
@@ -2823,14 +2839,6 @@
     "count": 10,
     "category": "(Open) Science + Research",
     "description": "Uusimmat uutiset Tieteellisten seurain valtuuskunnalta",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Tietopoliitiikan yhteistyöryhmä": {
-    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
     "lang": "fi",
     "scope": "Finland"
   },
