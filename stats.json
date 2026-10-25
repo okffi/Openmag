@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "25.10.2026 klo 17.55.47"
+    "last_updated": "25.10.2026 klo 20.51.34"
   },
   "OCCRP": {
     "file": "occrp.json",
@@ -44,7 +44,7 @@
   },
   "Global Voices": {
     "file": "global_voices.json",
-    "count": 16,
+    "count": 17,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
     "lang": "en",
@@ -68,7 +68,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 38,
+    "count": 39,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -84,7 +84,7 @@
   },
   "Yle | Kansainvälinen politiikka": {
     "file": "yle___kansainv_linen_politiikka.json",
-    "count": 22,
+    "count": 23,
     "category": "International Affairs + Policy",
     "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
     "lang": "fi",
@@ -97,6 +97,30 @@
     "description": "The latest from www.wired.com",
     "lang": "en",
     "scope": "United States"
+  },
+  "Tech Policy Press": {
+    "file": "tech_policy_press.json",
+    "count": 4076,
+    "category": "Digital Policy + Rights",
+    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Weekly OSM": {
+    "file": "weekly_osm.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "weekly &#8211; semanario &#8211; hebdo &#8211; 週刊 &#8211; týdeník &#8211; Wochennotiz &#8211; 주간 &#8211; tygodnik",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Wikimedia Techblog": {
+    "file": "wikimedia_techblog.json",
+    "count": 1,
+    "category": "(Open) Data + Technology",
+    "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
   },
   "404 Media": {
     "file": "404_media.json",
@@ -348,7 +372,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 3,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -481,14 +505,6 @@
     "description": "",
     "lang": "sv",
     "scope": "Finland"
-  },
-  "Tech Policy Press": {
-    "file": "tech_policy_press.json",
-    "count": 4075,
-    "category": "Digital Policy + Rights",
-    "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
-    "lang": "en",
-    "scope": "World"
   },
   "The Conversation – Articles (EUROPE)": {
     "file": "the_conversation___articles__europe_.json",
@@ -692,7 +708,7 @@
   },
   "CREATe": {
     "file": "create.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "Centre for Regulation of the Creative Economy",
     "lang": "en",
@@ -700,7 +716,7 @@
   },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "fi",
@@ -1060,7 +1076,7 @@
   },
   "Commons Library": {
     "file": "commons_library.json",
-    "count": 10,
+    "count": 2,
     "category": "(Open) Data + Technology",
     "description": "Online Changemaker Library",
     "lang": "en",
@@ -1548,7 +1564,7 @@
   },
   "Open Technology Research": {
     "file": "open_technology_research.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Data + Technology",
     "description": "Building Evidence, Connecting Researchers, Informing Policy",
     "lang": "en",
@@ -1594,14 +1610,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Weekly OSM": {
-    "file": "weekly_osm.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "weekly &#8211; semanario &#8211; hebdo &#8211; 週刊 &#8211; týdeník &#8211; Wochennotiz &#8211; 주간 &#8211; tygodnik",
-    "lang": "en",
-    "scope": "World"
-  },
   "UNESCO | Intangible Cultural Heritage": {
     "file": "unesco___intangible_cultural_heritage.json",
     "count": 640,
@@ -1631,22 +1639,6 @@
     "count": 15,
     "category": "(Open) Data + Technology",
     "description": "Suomen avoimien tietojärjestelmien keskus - COSS ry",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Hacks/Hackers": {
-    "file": "hacks_hackers.json",
-    "count": 15,
-    "category": "Investigations + Journalism",
-    "description": "Advancing media innovation to foster public trust",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Kielipankki": {
-    "file": "kielipankki.json",
-    "count": 99,
-    "category": "Digital Culture + Heritage",
-    "description": "The Language Bank of Finland",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -1810,6 +1802,14 @@
     "lang": "en",
     "scope": "Finland"
   },
+  "Confederation of Open Access Repositories": {
+    "file": "confederation_of_open_access_repositories.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "Building a sustainable, global knowledge commons",
+    "lang": "en",
+    "scope": "World"
+  },
   "CoP CC on Participatory and Deliberative Democracy": {
     "file": "cop_cc_on_participatory_and_deliberative_democracy.json",
     "count": 10,
@@ -1962,6 +1962,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
+  },
   "FCAI | News": {
     "file": "fcai___news.json",
     "count": 20,
@@ -2010,6 +2018,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "Global Solutions Initiative": {
+    "file": "global_solutions_initiative.json",
+    "count": 10,
+    "category": "International Affairs + Policy",
+    "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
+    "lang": "en",
+    "scope": "World"
+  },
   "Greenpeace Suomi": {
     "file": "greenpeace_suomi.json",
     "count": 25,
@@ -2023,6 +2039,14 @@
     "count": 9,
     "category": "Investigations + Journalism",
     "description": "the home of online investigations",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Hacks/Hackers": {
+    "file": "hacks_hackers.json",
+    "count": 15,
+    "category": "Investigations + Journalism",
+    "description": "Advancing media innovation to foster public trust",
     "lang": "en",
     "scope": "World"
   },
@@ -2217,6 +2241,14 @@
     "description": "School for Creative Leadership & Meaningful Entrepreneurship",
     "lang": "en",
     "scope": "Denmark"
+  },
+  "Kielipankki": {
+    "file": "kielipankki.json",
+    "count": 99,
+    "category": "Digital Culture + Heritage",
+    "description": "The Language Bank of Finland",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Kirjastolehti": {
     "file": "kirjastolehti.json",
@@ -2441,6 +2473,14 @@
     "description": "Nordic research institute for regional development and planning",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
+  },
+  "OATP primary": {
+    "file": "oatp_primary.json",
+    "count": 50,
+    "category": "(Open) Science + Research",
+    "description": "This is the \"oa.new\" feed published by the OATP hub. It's a remix feed so that, over time, I can modify it without modifying the URL. For example, I\ncan filter out spam or make other modifications later on without changing the URL.",
+    "lang": "en",
+    "scope": "World"
   },
   "OCCRP Announcements": {
     "file": "occrp_announcements.json",
@@ -2794,6 +2834,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "This Month in GLAM": {
+    "file": "this_month_in_glam.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
+    "lang": "en",
+    "scope": "World"
+  },
   "Tiedepolitiikka": {
     "file": "tiedepolitiikka.json",
     "count": 30,
@@ -2929,14 +2977,6 @@
     "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
     "scope": "Sweden"
-  },
-  "Wikimedia Techblog": {
-    "file": "wikimedia_techblog.json",
-    "count": 1,
-    "category": "(Open) Data + Technology",
-    "description": "News from the Wikimedia movement",
-    "lang": "en",
-    "scope": "World"
   },
   "WIPO Press Releases": {
     "file": "wipo_press_releases.json",
