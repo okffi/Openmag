@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "25.10.2026 klo 13.11.13"
+    "last_updated": "25.10.2026 klo 17.55.47"
   },
   "OCCRP": {
     "file": "occrp.json",
@@ -26,14 +26,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "404 Media": {
-    "file": "404_media.json",
-    "count": 15,
-    "category": "Investigations + Journalism",
-    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Demokraatti": {
     "file": "demokraatti.json",
     "count": 30,
@@ -44,7 +36,7 @@
   },
   "Diff": {
     "file": "diff.json",
-    "count": 13,
+    "count": 14,
     "category": "(Open) Data + Technology",
     "description": "News from the Wikimedia movement",
     "lang": "en",
@@ -55,6 +47,62 @@
     "count": 16,
     "category": "Human Rights + Democracy",
     "description": "Citizen media stories from around the world",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Le Monde diplomatique - English edition": {
+    "file": "le_monde_diplomatique___english_edition.json",
+    "count": 11,
+    "category": "International Affairs + Policy",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Radio Free Europe / Radio Liberty": {
+    "file": "radio_free_europe___radio_liberty.json",
+    "count": 24,
+    "category": "Investigations + Journalism",
+    "description": "Radio Free Europe / Radio Liberty is an international news organization serving Central and Eastern Europe, the Caucasus, Central Asia, Russia, the Middle East and Balkan countries",
+    "lang": "en",
+    "scope": "Europe"
+  },
+  "Technology | Guardian": {
+    "file": "technology___guardian.json",
+    "count": 38,
+    "category": "(Open) Data + Technology",
+    "description": "Technology news, comment and analysis | guardian.co.uk",
+    "lang": "en",
+    "scope": "World"
+  },
+  "The Ulkopolitist": {
+    "file": "the_ulkopolitist.json",
+    "count": 10,
+    "category": "International Affairs + Policy",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Yle | Kansainvälinen politiikka": {
+    "file": "yle___kansainv_linen_politiikka.json",
+    "count": 22,
+    "category": "International Affairs + Policy",
+    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
+    "lang": "fi",
+    "scope": "World"
+  },
+  "WIRED": {
+    "file": "wired.json",
+    "count": 55,
+    "category": "(Open) Data + Technology",
+    "description": "The latest from www.wired.com",
+    "lang": "en",
+    "scope": "United States"
+  },
+  "404 Media": {
+    "file": "404_media.json",
+    "count": 15,
+    "category": "Investigations + Journalism",
+    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
     "lang": "en",
     "scope": "World"
   },
@@ -84,19 +132,11 @@
   },
   "MuseumNext": {
     "file": "museumnext.json",
-    "count": 10,
+    "count": 5,
     "category": "Digital Culture + Heritage",
     "description": "Defining the Future of Museums",
     "lang": "en",
     "scope": "World"
-  },
-  "Radio Free Europe / Radio Liberty": {
-    "file": "radio_free_europe___radio_liberty.json",
-    "count": 24,
-    "category": "Investigations + Journalism",
-    "description": "Radio Free Europe / Radio Liberty is an international news organization serving Central and Eastern Europe, the Caucasus, Central Asia, Russia, the Middle East and Balkan countries",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Technology – POLITICO": {
     "file": "technology___politico.json",
@@ -106,22 +146,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Technology | Guardian": {
-    "file": "technology___guardian.json",
-    "count": 37,
-    "category": "(Open) Data + Technology",
-    "description": "Technology news, comment and analysis | guardian.co.uk",
-    "lang": "en",
-    "scope": "World"
-  },
-  "The Ulkopolitist": {
-    "file": "the_ulkopolitist.json",
-    "count": 10,
-    "category": "International Affairs + Policy",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "United Nations | The Guardian": {
     "file": "united_nations___the_guardian.json",
     "count": 20,
@@ -129,22 +153,6 @@
     "description": "Latest news and features from theguardian.com, the world's leading liberal voice",
     "lang": "en",
     "scope": "World"
-  },
-  "Yle | Kansainvälinen politiikka": {
-    "file": "yle___kansainv_linen_politiikka.json",
-    "count": 21,
-    "category": "International Affairs + Policy",
-    "description": "Ylen uutiset aiheesta ”Kansainvälinen politiikka” nopeasti ja luotettavasti.",
-    "lang": "fi",
-    "scope": "World"
-  },
-  "WIRED": {
-    "file": "wired.json",
-    "count": 54,
-    "category": "(Open) Data + Technology",
-    "description": "The latest from www.wired.com",
-    "lang": "en",
-    "scope": "United States"
   },
   "IDN-InDepthNews": {
     "file": "idn_indepthnews.json",
@@ -340,7 +348,7 @@
   },
   "Knowledge Rights 21": {
     "file": "knowledge_rights_21.json",
-    "count": 10,
+    "count": 3,
     "category": "Digital Policy + Rights",
     "description": "We advocate for your right to access and share knowledge!",
     "lang": "en",
@@ -476,7 +484,7 @@
   },
   "Tech Policy Press": {
     "file": "tech_policy_press.json",
-    "count": 4074,
+    "count": 4075,
     "category": "Digital Policy + Rights",
     "description": "We publish opinion and analysis. At a time of great challenge to democracies globally, we seek to advance a pro-democracy movement in tech and tech policy.",
     "lang": "en",
@@ -1444,7 +1452,7 @@
   },
   "Rajapinta": {
     "file": "rajapinta.json",
-    "count": 1,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
@@ -1532,7 +1540,7 @@
   },
   "Open Source Initiative": {
     "file": "open_source_initiative.json",
-    "count": 3,
+    "count": 2,
     "category": "(Open) Data + Technology",
     "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
@@ -1540,7 +1548,7 @@
   },
   "Open Technology Research": {
     "file": "open_technology_research.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "Building Evidence, Connecting Researchers, Informing Policy",
     "lang": "en",
@@ -1642,22 +1650,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Kirjastolehti": {
-    "file": "kirjastolehti.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Kulttuuriperintökasvatuksen seura": {
-    "file": "kulttuuriperint_kasvatuksen_seura.json",
-    "count": 9,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "AI Finland -verkosto": {
     "file": "ai_finland__verkosto.json",
     "count": 8,
@@ -1742,14 +1734,6 @@
     "file": "ateneumin_taidemuseo___konstmuseet_ateneum___ateneum_art_museum.json",
     "count": 25,
     "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "Avate Audiovisuaalisen alan tekijät ry": {
-    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
-    "count": 10,
-    "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
     "scope": "Finland"
@@ -2234,6 +2218,14 @@
     "lang": "en",
     "scope": "Denmark"
   },
+  "Kirjastolehti": {
+    "file": "kirjastolehti.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Knowledge Rights 21 Archive Feed": {
     "file": "knowledge_rights_21_archive_feed.json",
     "count": 10,
@@ -2282,6 +2274,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Kulttuuriperintökasvatuksen seura": {
+    "file": "kulttuuriperint_kasvatuksen_seura.json",
+    "count": 9,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Kulttuuripolitiikan tutkimuksen vuosikirja": {
     "file": "kulttuuripolitiikan_tutkimuksen_vuosikirja.json",
     "count": 30,
@@ -2297,14 +2297,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Le Monde diplomatique - English edition": {
-    "file": "le_monde_diplomatique___english_edition.json",
-    "count": 10,
-    "category": "International Affairs + Policy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "LIBER Europe": {
     "file": "liber_europe.json",
@@ -2778,14 +2770,6 @@
     "lang": "sv",
     "scope": "Sweden"
   },
-  "Taide- ja kulttuurivirasto": {
-    "file": "taide__ja_kulttuurivirasto.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "The Finnland-Institut": {
     "file": "the_finnland_institut.json",
     "count": 10,
@@ -2807,14 +2791,6 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Step into Tomorrow",
-    "lang": "en",
-    "scope": "World"
-  },
-  "This Month in GLAM": {
-    "file": "this_month_in_glam.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "The Monthly newsletter for the Wikimedia-GLAM community",
     "lang": "en",
     "scope": "World"
   },
@@ -2954,6 +2930,14 @@
     "lang": "sv",
     "scope": "Sweden"
   },
+  "Wikimedia Techblog": {
+    "file": "wikimedia_techblog.json",
+    "count": 1,
+    "category": "(Open) Data + Technology",
+    "description": "News from the Wikimedia movement",
+    "lang": "en",
+    "scope": "World"
+  },
   "WIPO Press Releases": {
     "file": "wipo_press_releases.json",
     "count": 10,
@@ -2993,6 +2977,14 @@
     "description": "Kestävän elämän media",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Zooniverse": {
+    "file": "zooniverse.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
+    "lang": "en",
+    "scope": "World"
   },
   "Airwars": {
     "file": "airwars.json",
