@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "7.11.2026 klo 18.14.38"
+    "last_updated": "7.11.2026 klo 22.45.15"
   },
   "Diff": {
     "file": "diff.json",
@@ -97,6 +97,22 @@
     "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "404 Media": {
+    "file": "404_media.json",
+    "count": 16,
+    "category": "Investigations + Journalism",
+    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "ProPublica": {
+    "file": "propublica.json",
+    "count": 20,
+    "category": "Investigations + Journalism",
+    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "lang": "en",
+    "scope": "World"
   },
   "CCC Event Blog": {
     "file": "ccc_event_blog.json",
@@ -380,7 +396,7 @@
   },
   "Hrana": {
     "file": "hrana.json",
-    "count": 10,
+    "count": 12,
     "category": "Human Rights + Democracy",
     "description": "Human Rights Activists News Agency Hrana – News Agency | Human Rights Activists News Agency",
     "lang": "en",
@@ -434,14 +450,6 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "404 Media": {
-    "file": "404_media.json",
-    "count": 16,
-    "category": "Investigations + Journalism",
-    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Eurozine": {
     "file": "eurozine.json",
     "count": 100,
@@ -457,14 +465,6 @@
     "description": "Julkisen sanan neuvosto",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "ProPublica": {
-    "file": "propublica.json",
-    "count": 20,
-    "category": "Investigations + Journalism",
-    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
-    "lang": "en",
-    "scope": "World"
   },
   "The Latest – Freedom of the Press Foundation": {
     "file": "the_latest___freedom_of_the_press_foundation.json",
@@ -676,7 +676,7 @@
   },
   "Europa Nostra | News": {
     "file": "europa_nostra___news.json",
-    "count": 1,
+    "count": 10,
     "category": "Culture + Education",
     "description": "The Voice of Cultural Heritage in Europe",
     "lang": "en",
@@ -689,6 +689,14 @@
     "description": "News for a Sustainable World, Peace and Security",
     "lang": "en",
     "scope": "World"
+  },
+  "eOppimiskeskus": {
+    "file": "eoppimiskeskus.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "COSS ry": {
     "file": "coss_ry.json",
@@ -980,7 +988,7 @@
   },
   "Suomen Näytelmäkirjailijat ja Käsikirjoittajat ry": {
     "file": "suomen_n_ytelm_kirjailijat_ja_k_sikirjoittajat_ry.json",
-    "count": 1,
+    "count": 10,
     "category": "IP + Creative Industry",
     "description": "",
     "lang": "fi",
@@ -1081,6 +1089,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "information labs": {
+    "file": "information_labs.json",
+    "count": 20,
+    "category": "Digital Policy + Rights",
+    "description": "Facts | Ideas | Discussions",
+    "lang": "en",
+    "scope": "Europe"
   },
   "CSC": {
     "file": "csc.json",
@@ -1324,7 +1340,7 @@
   },
   "Extreme Citizen Science blog": {
     "file": "extreme_citizen_science_blog.json",
-    "count": 2,
+    "count": 10,
     "category": "(Open) Data + Technology",
     "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
     "lang": "en",
@@ -1538,6 +1554,14 @@
     "lang": "fi",
     "scope": "Finland"
   },
+  "Confederation of Open Access Repositories": {
+    "file": "confederation_of_open_access_repositories.json",
+    "count": 1,
+    "category": "(Open) Science + Research",
+    "description": "Building a sustainable, global knowledge commons",
+    "lang": "en",
+    "scope": "World"
+  },
   "COST": {
     "file": "cost.json",
     "count": 10,
@@ -1722,14 +1746,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Taide- ja kulttuurivirasto": {
-    "file": "taide__ja_kulttuurivirasto.json",
-    "count": 10,
-    "category": "Culture + Education",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
   "CC Sweden": {
     "file": "cc_sweden.json",
     "count": 10,
@@ -1802,14 +1818,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Open Technology Research": {
-    "file": "open_technology_research.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "Building Evidence, Connecting Researchers, Informing Policy",
-    "lang": "en",
-    "scope": "World"
-  },
   "OpenWebSearch.eu": {
     "file": "openwebsearch_eu.json",
     "count": 10,
@@ -1841,14 +1849,6 @@
     "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
     "scope": "Sweden"
-  },
-  "Confederation of Open Access Repositories": {
-    "file": "confederation_of_open_access_repositories.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Building a sustainable, global knowledge commons",
-    "lang": "en",
-    "scope": "World"
   },
   "Datafied Life Collaboratory": {
     "file": "datafied_life_collaboratory.json",
@@ -1913,6 +1913,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Zooniverse": {
+    "file": "zooniverse.json",
+    "count": 10,
+    "category": "(Open) Science + Research",
+    "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
+    "lang": "en",
+    "scope": "World"
   },
   "Alfred Kordelinin säätiö": {
     "file": "alfred_kordelinin_s__ti_.json",
@@ -2082,6 +2090,14 @@
     "lang": "sv",
     "scope": "Sweden"
   },
+  "Taide- ja kulttuurivirasto": {
+    "file": "taide__ja_kulttuurivirasto.json",
+    "count": 10,
+    "category": "Culture + Education",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "The Finnland-Institut": {
     "file": "the_finnland_institut.json",
     "count": 10,
@@ -2113,14 +2129,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Europa Nostra": {
-    "file": "europa_nostra.json",
-    "count": 9,
-    "category": "Digital Culture + Heritage",
-    "description": "The Voice of Cultural Heritage in Europe",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Varsinais-Suomen kulttuuriperintöblogi": {
     "file": "varsinais_suomen_kulttuuriperint_blogi.json",
@@ -2215,14 +2223,6 @@
     "count": 10,
     "category": "Digital Culture + Heritage",
     "description": "Suomen elinkeinoelämän keskusarkisto",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "eOppimiskeskus": {
-    "file": "eoppimiskeskus.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
     "lang": "fi",
     "scope": "Finland"
   },
@@ -2442,14 +2442,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "information labs": {
-    "file": "information_labs.json",
-    "count": 20,
-    "category": "Digital Policy + Rights",
-    "description": "Facts | Ideas | Discussions",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "International Communia Associati...": {
     "file": "international_communia_associati___.json",
     "count": 10,
@@ -2522,6 +2514,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Rajapinta": {
+    "file": "rajapinta.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "researcher community focused on digital social sciences",
+    "lang": "fi",
+    "scope": "Finland"
+  },
   "Sciences Po Technology and global affairs innovation hub": {
     "file": "sciences_po_technology_and_global_affairs_innovation_hub.json",
     "count": 22,
@@ -2537,6 +2537,14 @@
     "description": "The Center for Internet and Society at Stanford Law School is a leader in the study of the law and policy around the Internet and other emerging technologies.",
     "lang": "en",
     "scope": "Americas"
+  },
+  "Tietopoliitiikan yhteistyöryhmä": {
+    "file": "tietopoliitiikan_yhteisty_ryhm_.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Kaikkien eduskuntapuolueiden tietopolitiikan toimijoiden yhteistyöryhmä",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "Future Law Lab": {
     "file": "future_law_lab.json",
@@ -2625,6 +2633,14 @@
     "description": "Investigative and movement-focused journalism at the nexus of gender, geopolitics, migration, technology and rights.",
     "lang": "en",
     "scope": "Nordic + Baltic countries"
+  },
+  "Global Solutions Initiative": {
+    "file": "global_solutions_initiative.json",
+    "count": 10,
+    "category": "International Affairs + Policy",
+    "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
+    "lang": "en",
+    "scope": "World"
   },
   "Public Institutions": {
     "file": "public_institutions.json",
@@ -2761,6 +2777,14 @@
     "description": "Human Rights Video",
     "lang": "en",
     "scope": "World"
+  },
+  "Avate Audiovisuaalisen alan tekijät ry": {
+    "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
+    "count": 10,
+    "category": "IP + Creative Industry",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
   },
   "AVEK": {
     "file": "avek.json",
