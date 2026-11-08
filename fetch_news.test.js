@@ -1,16 +1,85 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const cheerio = require('cheerio');
+const axios = require('axios');
 
 const {
     extractArticleContent,
     cleanupSnippet,
-    cleanupSourceDescription
+    cleanupSourceDescription,
+    selectScraperFeeds,
+    processScraper
 } = require('./fetch_news');
 const coeScraper = require('./scrapers/coe.int');
 const oecdScraper = require('./scrapers/oecd.org');
 const puistokatuScraper = require('./scrapers/puistokatu4.fi');
 const ahmScraper = require('./scrapers/ahm.uva.nl');
+
+test('scraper sources are selected even when an RSS URL is also configured', () => {
+    const feeds = [
+        { rssUrl: 'https://example.com/feed', scrapeUrl: 'https://example.com/news' },
+        { rssUrl: '', scrapeUrl: 'https://example.org/news' },
+        { rssUrl: 'https://example.net/feed', scrapeUrl: '' }
+    ];
+    assert.deepEqual(selectScraperFeeds(feeds), feeds.slice(0, 2));
+});
+
+test('processScraper publishes parsed articles with source metadata', async t => {
+    const get = t.mock.method(axios, 'get', async () => ({ data: { items: [
+        {
+            title: 'Story', url: '/news/story.html', publicationDate: '2026-10-31 17:00:00',
+            lead: 'An excerpt.', image: { jpg_1024x700: { url: 'https://www.uva.nl/story.jpg' } }
+        },
+        { title: 'Second story', url: '/news/second.html', publicationDate: '2026-10-30 00:00:00' },
+        { title: 'No date', url: '/news/no-date.html' }
+    ] } }));
+    const head = t.mock.method(axios, 'head', async () => ({}));
+    const feed = {
+        scrapeUrl: 'https://ahm.uva.nl/news-and-events/news/news.html',
+        rssUrl: 'https://ahm.uva.nl/feed',
+        nameChecked: 'AHM', category: 'Culture', sheetDesc: 'Heritage research',
+        lang: 'en', scope: 'Europe', isDarkLogo: false
+    };
+    const articles = [];
+    await processScraper(feed, articles);
+    assert.equal(articles.length, 2);
+    assert.equal(articles[0].title, 'Story');
+    assert.equal(articles[0].link, 'https://ahm.uva.nl/news/story.html');
+    assert.equal(articles[0].pubDate, '2026-10-31T00:00:00.000Z');
+    assert.equal(articles[0].content, 'An excerpt.');
+    assert.equal(articles[0].enforcedImage, 'https://www.uva.nl/story.jpg');
+    assert.equal(articles[0].sourceTitle, 'AHM');
+    assert.equal(articles[0].sheetCategory, 'Culture');
+    assert.equal(articles[0].originalRssUrl, feed.rssUrl);
+    assert.equal(articles[0].sourceDescription, 'Heritage research');
+    assert.equal(articles[0].lang, 'en');
+    assert.equal(articles[0].scope, 'Europe');
+    assert.equal(head.mock.callCount(), 1);
+    assert.match(get.mock.calls[0].arguments[0], /^https:\/\/www\.uva\.nl\/_restapi\/list-json\?/);
+});
+
+test('processScraper reports missing rules, empty listings and request failures', async t => {
+    await assert.rejects(processScraper({ scrapeUrl: 'https://example.invalid/news' }, []), /No custom scraper/);
+    t.mock.method(axios, 'get', async () => ({ data: '<main>No articles</main>' }));
+    const feed = { scrapeUrl: 'https://puistokatu4.fi/news', nameChecked: 'Puistokatu' };
+    await assert.rejects(processScraper(feed, []), /No valid articles found \(0 elements matched/);
+    axios.get.mock.mockImplementation(async () => { throw new Error('HTTP 403'); });
+    await assert.rejects(processScraper(feed, []), /HTTP 403/);
+});
+
+test('AHM API scraper validates responses, dates and image fallbacks', async () => {
+    await assert.rejects(ahmScraper.fetchItems({ get: async () => ({ data: {} }) }, {}), /invalid response/);
+    const items = await ahmScraper.fetchItems({ get: async () => ({ data: { items: [
+        { title: 'Invalid date', url: '/story', publicationDate: '2026-02-30 12:00:00', image: { imageUrl: 'https://www.uva.nl/original.jpg' } },
+        { title: 'Missing image', url: '/story', publicationDate: '2026-11-01 09:00:00' },
+        null
+    ] } }) }, {});
+    assert.equal(items[0].pubDate, '');
+    assert.equal(items[0].enforcedImage, 'https://www.uva.nl/original.jpg');
+    assert.equal(items[1].pubDate, '2026-11-01T00:00:00.000Z');
+    assert.equal(items[1].enforcedImage, null);
+    assert.equal(items[2], null);
+});
 
 test('AHM scraper extracts news listing fields and resolves relative URLs', () => {
     const $ = cheerio.load(`

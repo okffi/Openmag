@@ -249,6 +249,10 @@ function createParser() {
 const SHEET_TSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=0&single=true&output=tsv";
 const TRANSLATIONS_TSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=204734258&single=true&output=tsv";
 
+function selectScraperFeeds(feeds) {
+    return feeds.filter(feed => feed.scrapeUrl);
+}
+
 async function getSourceLogo(feedContent, domain, sourceName) {
     // 1. Check multiple RSS feed image metadata fields
     if (feedContent) {
@@ -387,10 +391,10 @@ async function run() {
         }
 
         // 3.2 SCRAPERIT
-        for (const feed of feeds.filter(f => f.scrapeUrl && !f.rssUrl)) {
+        for (const feed of selectScraperFeeds(feeds)) {
             try {
                 console.log(`[SCRAPE] ${feed.nameChecked}: ${feed.scrapeUrl}`);
-                await processScraper(feed, allArticles, now);
+                await processScraper(feed, allArticles);
                 await new Promise(r => setTimeout(r, 1000));
             } catch (e) {
                 console.error(`Scraper-virhe kohteessa ${feed.nameChecked}: ${e.message}`);
@@ -482,7 +486,7 @@ async function run() {
         fs.writeFileSync('data.json', JSON.stringify(finalSorted.slice(0, 1000), null, 2));
         fs.writeFileSync('stats.json', JSON.stringify(sourceStats, null, 2));
 
-        if (failedFeeds.length > 0) fs.writeFileSync('failed_feeds.txt', failedFeeds.join('\n'));
+        fs.writeFileSync('failed_feeds.txt', failedFeeds.join('\n'));
         console.log(`Success! data.json, stats.json ja translations.json päivitetty.`);
     } catch (error) {
         console.error("Kriittinen virhe:", error);
@@ -700,75 +704,89 @@ async function processRSS(feed, allArticles) {
     allArticles.push(...items);
 }
 
-async function processScraper(feed, allArticles, now) {
+async function processScraper(feed, allArticles) {
     const urlObj = new URL(feed.scrapeUrl);
-    const domain = urlObj.hostname.replace('www.', '');
+    if (!['http:', 'https:'].includes(urlObj.protocol)) {
+        throw new Error(`Unsupported scraper URL protocol: ${urlObj.protocol}`);
+    }
+    const domain = urlObj.hostname.replace(/^www\./, '');
     const scraperPath = path.join(__dirname, 'scrapers', `${domain}.js`);
 
-    try {
-        // Tarkistetaan löytyykö sääntöä ennen kuin edes ladataan sivua
-        if (!fs.existsSync(scraperPath)) {
-            console.log(`[SCRAPE] No custom script: ${domain}.`);
-            return;
-        }
+    if (!fs.existsSync(scraperPath)) {
+        throw new Error(`No custom scraper for ${domain}`);
+    }
 
-        const scraperRule = require(scraperPath);
-        const { data } = await axios.get(feed.scrapeUrl, {
-            headers: {
-                'User-Agent': getRandomUserAgent(),
-                'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-                'Accept-Language': 'en-US,en;q=0.9',
-                'Referer': 'https://www.google.com/',
-                'Cache-Control': 'no-cache',
-            },
-            timeout: 15000
-        });
-
+    const scraperRule = require(scraperPath);
+    const requestConfig = {
+        headers: {
+            'User-Agent': getRandomUserAgent(),
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.9',
+            'Referer': 'https://www.google.com/',
+            'Cache-Control': 'no-cache',
+        },
+        timeout: 15000
+    };
+    let scrapedItems;
+    let matchDescription;
+    if (scraperRule.fetchItems) {
+        scrapedItems = await scraperRule.fetchItems(axios, requestConfig);
+        if (!Array.isArray(scrapedItems)) throw new Error('Scraper did not return an array of articles');
+        scrapedItems = scrapedItems.slice(0, 10);
+        matchDescription = `${scrapedItems.length} items returned`;
+    } else {
+        const { data } = await axios.get(feed.scrapeUrl, requestConfig);
         const $ = cheerio.load(data);
         $('script, style, iframe, form').remove();
-
         const selector = scraperRule.listSelector || 'article';
         const elements = $(selector).get().slice(0, 10);
-        const sourceDescription = cleanupSourceDescription(feed.sheetDesc || "", {
-            sourceTitle: feed.nameChecked || domain
-        });
-
+        scrapedItems = [];
         for (const el of elements) {
-            let item = await scraperRule.parse($, el, axios, cheerio);
-
-            if (item && item.title && item.link) {
-                const fullLink = item.link.startsWith('http') ? item.link : new URL(item.link, feed.scrapeUrl).href;
-                let finalImg = item.enforcedImage;
-                if (finalImg && !finalImg.startsWith('http')) {
-                    finalImg = new URL(finalImg, fullLink).href;
-                }
-
-                if (!item.pubDate) {
-                    console.warn(`Skipping scraped article with missing pubDate in source: ${feed.nameChecked || domain}`);
-                    continue;
-                }
-
-                allArticles.push({
-                    title: item.title,
-                    link: fullLink,
-                    pubDate: item.pubDate,
-                    content: item.content || "",
-                    creator: item.creator || "",
-                    sourceTitle: feed.nameChecked || domain,
-                    sheetCategory: feed.category,
-                    enforcedImage: finalImg,
-                    sourceDescription: sourceDescription,
-                    sourceLogo: await getSourceLogo(null, domain, feed.nameChecked || domain),
-                    lang: feed.lang,
-                    scope: feed.scope,
-                    isDarkLogo: feed.isDarkLogo,
-                    originalRssUrl: feed.rssUrl || ""
-                });
-            }
+            scrapedItems.push(await scraperRule.parse($, el, axios, cheerio));
         }
-    } catch (err) {
-        console.error(`Scraper epäonnistui kohteelle ${domain}: ${err.message}`);
+        matchDescription = `${elements.length} elements matched ${selector}`;
     }
+    const sourceDescription = cleanupSourceDescription(feed.sheetDesc || "", {
+        sourceTitle: feed.nameChecked || domain
+    });
+    const items = [];
+
+    for (const item of scrapedItems) {
+        if (item && item.title && item.link) {
+            const fullLink = item.link.startsWith('http') ? item.link : new URL(item.link, feed.scrapeUrl).href;
+            let finalImg = item.enforcedImage;
+            if (finalImg && !finalImg.startsWith('http')) {
+                finalImg = new URL(finalImg, fullLink).href;
+            }
+
+            if (!item.pubDate || isNaN(new Date(item.pubDate).getTime())) {
+                console.warn(`Skipping scraped article with missing or invalid pubDate in source: ${feed.nameChecked || domain}`);
+                continue;
+            }
+
+            items.push({
+                title: item.title,
+                link: fullLink,
+                pubDate: item.pubDate,
+                content: item.content || "",
+                creator: item.creator || "",
+                sourceTitle: feed.nameChecked || domain,
+                sheetCategory: feed.category,
+                enforcedImage: finalImg,
+                sourceDescription: sourceDescription,
+                lang: feed.lang,
+                scope: feed.scope,
+                isDarkLogo: feed.isDarkLogo,
+                originalRssUrl: feed.rssUrl || ""
+            });
+        }
+    }
+    if (!items.length) {
+        throw new Error(`No valid articles found (${matchDescription})`);
+    }
+    const sourceLogo = await getSourceLogo(null, domain, feed.nameChecked || domain);
+    allArticles.push(...items.map(item => ({ ...item, sourceLogo })));
+    console.log(`[SCRAPE] ${feed.nameChecked || domain}: ${items.length} articles found`);
 }
 
 if (require.main === module) {
@@ -787,5 +805,7 @@ module.exports = {
     normalizeContent,
     truncateTextAtBoundary,
     cleanupSnippet,
-    cleanupSourceDescription
+    cleanupSourceDescription,
+    selectScraperFeeds,
+    processScraper
 };
