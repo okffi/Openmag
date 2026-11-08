@@ -16,7 +16,7 @@
  *   link           {string}  – Article URL (absolute or relative). REQUIRED.
  *   enforcedImage  {string|null} – Image URL. null = no image card.
  *   content        {string}  – Short excerpt / description.
- *   pubDate        {string}  – ISO 8601 date string. Falls back to now if missing.
+ *   pubDate        {string}  – Valid publication date, preferably ISO 8601. REQUIRED.
  *   creator        {string}  – Author name (optional).
  *
  * Return null to skip a broken/empty item.
