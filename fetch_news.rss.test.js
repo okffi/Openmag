@@ -53,3 +53,39 @@ test('RSS article images are not replaced by later author images', async t => {
         'https://rajapinta.co/enclosure.jpg'
     ]);
 });
+
+test('RSS article images are extracted from lazy-loaded content images', async t => {
+    const xml = `<?xml version="1.0"?>
+        <rss version="2.0">
+          <channel>
+            <title>Nordic Culture Point</title><link>https://www.nkk.org/fi/</link>
+            <item>
+              <title>Lazy-loaded article image</title>
+              <link>https://www.nkk.org/fi/article/</link>
+              <pubDate>Fri, 06 Nov 2026 10:16:19 +0000</pubDate>
+              <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[
+                <section class="images-slider">
+                  <img class="img lazyload"
+                    data-src="https://www.nkk.org/wp-content/uploads/article-image.jpg"
+                    data-srcset="https://www.nkk.org/wp-content/uploads/article-image-360x360.jpg 360w, https://www.nkk.org/wp-content/uploads/article-image.jpg 1280w">
+                </section>
+              ]]></content:encoded>
+            </item>
+            <item>
+              <title>Lazy-loaded srcset</title>
+              <link>https://www.nkk.org/fi/another-article/</link>
+              <pubDate>Fri, 06 Nov 2026 10:16:19 +0000</pubDate>
+              <content:encoded xmlns:content="http://purl.org/rss/1.0/modules/content/"><![CDATA[
+                <img data-srcset="https://www.nkk.org/wp-content/uploads/another-image.jpg 800w">
+              ]]></content:encoded>
+            </item>
+          </channel>
+        </rss>`;
+    t.mock.method(Parser.prototype, 'parseURL', function () { return this.parseString(xml); });
+    const articles = [];
+    await processRSS({ rssUrl: 'https://www.nkk.org/fi/feed/', nameChecked: 'Nordic Culture Point' }, articles);
+    assert.deepEqual(articles.map(article => article.enforcedImage), [
+        'https://www.nkk.org/wp-content/uploads/article-image.jpg',
+        'https://www.nkk.org/wp-content/uploads/another-image.jpg'
+    ]);
+});

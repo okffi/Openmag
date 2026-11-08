@@ -621,9 +621,9 @@ async function processRSS(feed, allArticles) {
                 // Try <picture>
                 const firstPicture = $c('picture').first();
                 if (firstPicture.length) {
-                    const source = firstPicture.find('source[srcset]').first();
+                    const source = firstPicture.find('source[data-srcset], source[srcset]').first();
                     if (source.length) {
-                        const srcset = source.attr('srcset');
+                        const srcset = source.attr('data-srcset') || source.attr('srcset');
                         if (srcset) {
                             const firstCandidate = srcset.trim().split(',')[0].trim();
                             img = firstCandidate.split(/\s+/)[0] || null;
@@ -631,10 +631,12 @@ async function processRSS(feed, allArticles) {
                     }
                     if (!img) {
                         const picImg = firstPicture.find('img').first();
-                        if (picImg.length) img = picImg.attr('src');
+                        if (picImg.length) {
+                            img = picImg.attr('data-src') || picImg.attr('data-lazy-src') || picImg.attr('src');
+                        }
                     }
                 }
-                // Fallback: any <img> (ignore pixels)
+                // Fallback: any <img>, including common lazy-loading attributes (ignore pixels)
                 if (!img) {
                     $c('img').each((_, el) => {
                         const w = $c(el).attr('width');
@@ -642,8 +644,13 @@ async function processRSS(feed, allArticles) {
                         if (w !== undefined && h !== undefined && parseInt(w) <= 1 && parseInt(h) <= 1) {
                             return true;
                         }
-                        img = $c(el).attr('src');
-                        return false;
+                        const image = $c(el);
+                        const srcset = image.attr('data-srcset') || image.attr('srcset');
+                        img = image.attr('data-src') || image.attr('data-lazy-src') || image.attr('src');
+                        if (!img && srcset) {
+                            img = srcset.trim().split(',')[0].trim().split(/\s+/)[0] || null;
+                        }
+                        return !img;
                     });
                 }
             }
