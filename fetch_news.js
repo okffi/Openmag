@@ -585,22 +585,27 @@ async function processRSS(feed, allArticles) {
             // --- 3. Image Extraction ---
             let img = null;
             // A) Try standard media fields
-            let mContent = item.mediaContent || item['media:content'];
+            const thumbnailUrl = item.mediaThumbnail?.$?.url || item.mediaThumbnail?.url;
+            const mContent = item.mediaContent || item['media:content'];
             if (mContent) {
                 const mediaArray = Array.isArray(mContent) ? mContent : [mContent];
                 let maxW = 0;
                 mediaArray.forEach(m => {
                     const currentUrl = m.url || m.$?.url;
                     const currentWidth = parseInt(m.width || m.$?.width || 0);
-                    if (currentUrl && (currentWidth >= maxW || !img)) {
+                    if (currentUrl && (currentWidth > maxW || !img)) {
                         maxW = currentWidth;
                         img = currentUrl;
                     }
                 });
+                // A thumbnail that also appears as media content identifies the article image.
+                if (thumbnailUrl && mediaArray.some(m => (m.url || m.$?.url) === thumbnailUrl)) {
+                    img = thumbnailUrl;
+                }
             }
             // B) Try mediaThumbnail
-            if (!img && item.mediaThumbnail) {
-                img = item.mediaThumbnail.$?.url || item.mediaThumbnail.url;
+            if (!img && thumbnailUrl) {
+                img = thumbnailUrl;
             }
             // C) Try enclosure
             if (!img && item.enclosure && item.enclosure.url) {
@@ -807,5 +812,6 @@ module.exports = {
     cleanupSnippet,
     cleanupSourceDescription,
     selectScraperFeeds,
+    processRSS,
     processScraper
 };
