@@ -10,6 +10,81 @@ const {
 const coeScraper = require('./scrapers/coe.int');
 const oecdScraper = require('./scrapers/oecd.org');
 const puistokatuScraper = require('./scrapers/puistokatu4.fi');
+const ahmScraper = require('./scrapers/ahm.uva.nl');
+
+test('AHM scraper extracts news listing fields and resolves relative URLs', () => {
+    const $ = cheerio.load(`
+        <article>
+            <a href="../article/story.html"><span>Collection in Focus: Practical Magic</span></a>
+            <div class="c-listitem__date">31 October 2026</div>
+            <div class="c-listitem__content">A remarkable
+                digitised heritage item.</div>
+            <img class="cc" src="/images/story.jpg">
+        </article>
+    `);
+    const item = ahmScraper.parse($, $(ahmScraper.listSelector).get(0));
+    assert.deepEqual(item, {
+        title: 'Collection in Focus: Practical Magic',
+        link: 'https://ahm.uva.nl/news-and-events/article/story.html',
+        enforcedImage: 'https://ahm.uva.nl/images/story.jpg',
+        content: 'A remarkable digitised heritage item.',
+        pubDate: '2026-10-31T00:00:00.000Z',
+        creator: ''
+    });
+});
+
+test('AHM scraper handles missing fields and lazy-loaded images', () => {
+    const $ = cheerio.load(`
+        <article>
+            <a href="/news/story.html"><span>Story</span></a>
+            <div class="c-listitem__date">Not a date</div>
+            <img class="cc" src="data:image/gif;base64,abc" data-src="images/story.jpg">
+        </article>
+        <article><a href="/news/no-title.html"></a></article>
+        <article><span>No link</span></article>
+        <article><a href="/news/no-date.html"><span>No date</span></a></article>
+    `);
+    const articles = $(ahmScraper.listSelector).get();
+    const item = ahmScraper.parse($, articles[0]);
+    assert.equal(item.enforcedImage, 'https://ahm.uva.nl/news-and-events/news/images/story.jpg');
+    assert.equal(item.content, '');
+    assert.equal(item.pubDate, '');
+    assert.equal(ahmScraper.parse($, articles[1]), null);
+    assert.equal(ahmScraper.parse($, articles[2]), null);
+    const noDate = ahmScraper.parse($, articles[3]);
+    assert.equal(noDate.pubDate, '');
+    assert.equal(noDate.enforcedImage, null);
+});
+
+test('AHM scraper upgrades UvA binary thumbnails without changing other image URLs', () => {
+    const $ = cheerio.load(`
+        <article>
+            <a href="/news/story.html"><span>Story</span></a>
+            <img class="cc" src="https://www.uva.nl/binaries/_ht_1793364882740/150x150-jpg/content/gallery/subsites/bibliotheek/nieuwsberichten/2026/collectie-in-beeld/10-esoterie/nl-asduva_ph_355-155.jpeg?version=1">
+        </article>
+        <article>
+            <a href="/news/story.html"><span>Story</span></a>
+            <img class="cc" data-src="/binaries/_ht_123/150x150-jpg/content/image.jpg">
+        </article>
+        <article>
+            <a href="/news/story.html"><span>Story</span></a>
+            <img class="cc" src="https://example.com/binaries/_ht_123/150x150-jpg/content/image.jpg">
+        </article>
+    `);
+    const articles = $(ahmScraper.listSelector).get();
+    assert.equal(
+        ahmScraper.parse($, articles[0]).enforcedImage,
+        'https://www.uva.nl/binaries/_ht_1793364882740/1024x700-jpg/content/gallery/subsites/bibliotheek/nieuwsberichten/2026/collectie-in-beeld/10-esoterie/nl-asduva_ph_355-155.jpeg?version=1'
+    );
+    assert.equal(
+        ahmScraper.parse($, articles[1]).enforcedImage,
+        'https://ahm.uva.nl/binaries/_ht_123/1024x700-jpg/content/image.jpg'
+    );
+    assert.equal(
+        ahmScraper.parse($, articles[2]).enforcedImage,
+        'https://example.com/binaries/_ht_123/150x150-jpg/content/image.jpg'
+    );
+});
 
 test('extractArticleContent keeps whole paragraphs when truncating HTML and snippets', () => {
     const html = [
