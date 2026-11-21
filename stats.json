@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "21.11.2026 klo 19.16.25"
+    "last_updated": "22.11.2026 klo 0.58.51"
   },
   "Wikimedia Techblog": {
     "file": "wikimedia_techblog.json",
@@ -36,7 +36,7 @@
   },
   "Technology | Guardian": {
     "file": "technology___guardian.json",
-    "count": 41,
+    "count": 40,
     "category": "(Open) Data + Technology",
     "description": "Technology news, comment and analysis | guardian.co.uk",
     "lang": "en",
@@ -76,7 +76,7 @@
   },
   "Demokraatti": {
     "file": "demokraatti.json",
-    "count": 32,
+    "count": 33,
     "category": "Politics + Public sector",
     "description": "Uutiset, kulttuuri, politiikka, talous ja työmarkkinat",
     "lang": "fi",
@@ -113,6 +113,78 @@
     "description": "Suomen suurin kehitysyhteistyöjärjestö",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
+    "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "en",
+    "scope": "Poland"
+  },
+  "ProPublica": {
+    "file": "propublica.json",
+    "count": 20,
+    "category": "Investigations + Journalism",
+    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Liikenne- ja viestintäministeriö | News": {
+    "file": "liikenne__ja_viestint_ministeri____news.json",
+    "count": 20,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "Valtioneuvoston tiedotteet": {
+    "file": "valtioneuvoston_tiedotteet.json",
+    "count": 100,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "fi",
+    "scope": "Finland"
+  },
+  "404 Media": {
+    "file": "404_media.json",
+    "count": 16,
+    "category": "Investigations + Journalism",
+    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Amnesty International": {
+    "file": "amnesty_international.json",
+    "count": 12,
+    "category": "Human Rights + Democracy",
+    "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Equator": {
+    "file": "equator.json",
+    "count": 20,
+    "category": "Perspectives",
+    "description": "Equator is a magazine of politics, culture and art.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Technology – POLITICO": {
+    "file": "technology___politico.json",
+    "count": 31,
+    "category": "Digital Policy + Rights",
+    "description": "European Politics, Policy, Government News",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Radio Free Europe / Radio Liberty": {
+    "file": "radio_free_europe___radio_liberty.json",
+    "count": 23,
+    "category": "Investigations + Journalism",
+    "description": "Radio Free Europe / Radio Liberty is an international news organization serving Central and Eastern Europe, the Caucasus, Central Asia, Russia, the Middle East and Balkan countries",
+    "lang": "en",
+    "scope": "Europe"
   },
   "Publishing in the Archives Profession": {
     "file": "publishing_in_the_archives_profession.json",
@@ -164,7 +236,7 @@
   },
   "Zooniverse": {
     "file": "zooniverse.json",
-    "count": 1,
+    "count": 10,
     "category": "(Open) Science + Research",
     "description": "The world's largest and most popular platform for people-powered research. This research is made possible by volunteers—millions of people around the world who come together to assist professional researchers.",
     "lang": "en",
@@ -226,14 +298,6 @@
     "lang": "en",
     "scope": "Finland"
   },
-  "ProPublica": {
-    "file": "propublica.json",
-    "count": 20,
-    "category": "Investigations + Journalism",
-    "description": "Latest Articles and Investigations from ProPublica, an independent, non-profit newsroom that produces investigative journalism in the public interest.",
-    "lang": "en",
-    "scope": "World"
-  },
   "The Finnish Institute of International Affairs (FIIA)": {
     "file": "the_finnish_institute_of_international_affairs__fiia_.json",
     "count": 10,
@@ -292,7 +356,7 @@
   },
   "UN News | Peace and Security": {
     "file": "un_news___peace_and_security.json",
-    "count": 10,
+    "count": 9,
     "category": "Peace + Conflict + Humanitarian",
     "description": "UN News - Global perspective Human stories | Peace and Security",
     "lang": "en",
@@ -362,30 +426,6 @@
     "lang": "en",
     "scope": "World"
   },
-  "Valtioneuvoston tiedotteet": {
-    "file": "valtioneuvoston_tiedotteet.json",
-    "count": 100,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
-  },
-  "404 Media": {
-    "file": "404_media.json",
-    "count": 16,
-    "category": "Investigations + Journalism",
-    "description": "404 Media is an independent media company founded by technology journalists Jason Koebler, Emanuel Maiberg, Samantha Cole, and Joseph Cox.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Amnesty International": {
-    "file": "amnesty_international.json",
-    "count": 12,
-    "category": "Human Rights + Democracy",
-    "description": "Inspiring people against injustice to bring the world closer to human rights & dignity enjoyed by all.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Arts Law Centre of Australia": {
     "file": "arts_law_centre_of_australia.json",
     "count": 10,
@@ -433,14 +473,6 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Equator": {
-    "file": "equator.json",
-    "count": 20,
-    "category": "Perspectives",
-    "description": "Equator is a magazine of politics, culture and art.",
-    "lang": "en",
-    "scope": "World"
   },
   "Eurozine": {
     "file": "eurozine.json",
@@ -530,14 +562,6 @@
     "lang": "en",
     "scope": "Netherlands"
   },
-  "Technology – POLITICO": {
-    "file": "technology___politico.json",
-    "count": 31,
-    "category": "Digital Policy + Rights",
-    "description": "European Politics, Policy, Government News",
-    "lang": "en",
-    "scope": "World"
-  },
   "Presidentti": {
     "file": "presidentti.json",
     "count": 10,
@@ -561,14 +585,6 @@
     "description": "Project Syndicate - The World’s Opinion Page",
     "lang": "en",
     "scope": "World"
-  },
-  "Radio Free Europe / Radio Liberty": {
-    "file": "radio_free_europe___radio_liberty.json",
-    "count": 23,
-    "category": "Investigations + Journalism",
-    "description": "Radio Free Europe / Radio Liberty is an international news organization serving Central and Eastern Europe, the Caucasus, Central Asia, Russia, the Middle East and Balkan countries",
-    "lang": "en",
-    "scope": "Europe"
   },
   "Suomen Arkkitehtiliitto SAFA": {
     "file": "suomen_arkkitehtiliitto_safa.json",
@@ -690,6 +706,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "European Commission": {
+    "file": "european_commission.json",
+    "count": 30,
+    "category": "Politics + Public sector",
+    "description": "European Commission | News",
+    "lang": "en",
+    "scope": "Europe"
+  },
   "Think Open": {
     "file": "think_open.json",
     "count": 7,
@@ -794,14 +818,6 @@
     "lang": "de",
     "scope": "Germany"
   },
-  "European Commission": {
-    "file": "european_commission.json",
-    "count": 30,
-    "category": "Politics + Public sector",
-    "description": "European Commission | News",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "CSC": {
     "file": "csc.json",
     "count": 10,
@@ -868,7 +884,7 @@
   },
   "Forum Virium Helsinki": {
     "file": "forum_virium_helsinki.json",
-    "count": 20,
+    "count": 40,
     "category": "(Open) Data + Technology",
     "description": "",
     "lang": "fi",
@@ -1098,9 +1114,17 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "AI Now Institute": {
+    "file": "ai_now_institute.json",
+    "count": 5,
+    "category": "Digital Policy + Rights",
+    "description": "An independent research institute providing expert analysis on AI in the public interest.",
+    "lang": "en",
+    "scope": "World"
+  },
   "information labs": {
     "file": "information_labs.json",
-    "count": 1,
+    "count": 20,
     "category": "Digital Policy + Rights",
     "description": "Facts | Ideas | Discussions",
     "lang": "en",
@@ -1140,7 +1164,7 @@
   },
   "Commons Library": {
     "file": "commons_library.json",
-    "count": 3,
+    "count": 2,
     "category": "(Open) Data + Technology",
     "description": "Online Changemaker Library",
     "lang": "en",
@@ -1212,7 +1236,7 @@
   },
   "UN News | Middle East": {
     "file": "un_news___middle_east.json",
-    "count": 30,
+    "count": 29,
     "category": "Peace + Conflict + Humanitarian",
     "description": "UN News - Global perspective Human stories | Middle East",
     "lang": "en",
@@ -1348,7 +1372,7 @@
   },
   "Martel Innovate": {
     "file": "martel_innovate.json",
-    "count": 3,
+    "count": 50,
     "category": "Digital Policy + Rights",
     "description": "Advice and expertise in R&D project funding and management",
     "lang": "en",
@@ -1409,14 +1433,6 @@
     "description": "",
     "lang": "en",
     "scope": "World"
-  },
-  "Liikenne- ja viestintäministeriö | News": {
-    "file": "liikenne__ja_viestint_ministeri____news.json",
-    "count": 20,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "fi",
-    "scope": "Finland"
   },
   "UN Maps": {
     "file": "un_maps.json",
@@ -1578,6 +1594,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Confederation of Open Access Repositories": {
+    "file": "confederation_of_open_access_repositories.json",
+    "count": 1,
+    "category": "(Open) Science + Research",
+    "description": "Building a sustainable, global knowledge commons",
+    "lang": "en",
+    "scope": "World"
+  },
   "Taide- ja kulttuurivirasto": {
     "file": "taide__ja_kulttuurivirasto.json",
     "count": 10,
@@ -1690,14 +1714,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "AI Now Institute": {
-    "file": "ai_now_institute.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "An independent research institute providing expert analysis on AI in the public interest.",
-    "lang": "en",
-    "scope": "World"
-  },
   "Avate Audiovisuaalisen alan tekijät ry": {
     "file": "avate_audiovisuaalisen_alan_tekij_t_ry.json",
     "count": 10,
@@ -1713,14 +1729,6 @@
     "description": "Digitaalisista tutkimuspalveluista ja avoimesta tieteestä / About digital research services and open science",
     "lang": "en",
     "scope": "Finland"
-  },
-  "Confederation of Open Access Repositories": {
-    "file": "confederation_of_open_access_repositories.json",
-    "count": 10,
-    "category": "(Open) Science + Research",
-    "description": "Building a sustainable, global knowledge commons",
-    "lang": "en",
-    "scope": "World"
   },
   "Cultural Protection Fund | British Council": {
     "file": "cultural_protection_fund___british_council.json",
@@ -1794,11 +1802,11 @@
     "lang": "en",
     "scope": "Europe"
   },
-  "Open Technology Research": {
-    "file": "open_technology_research.json",
+  "Open Source Initiative": {
+    "file": "open_source_initiative.json",
     "count": 10,
     "category": "(Open) Data + Technology",
-    "description": "Building Evidence, Connecting Researchers, Informing Policy",
+    "description": "The steward of the Open Source Definition, setting the foundation for the Open Source Software ecosystem.",
     "lang": "en",
     "scope": "World"
   },
@@ -1873,14 +1881,6 @@
     "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
     "lang": "en",
     "scope": "World"
-  },
-  "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
-    "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "en",
-    "scope": "Poland"
   },
   "Internet Archive Europe": {
     "file": "internet_archive_europe.json",
@@ -2039,14 +2039,6 @@
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Copyright Literacy": {
-    "file": "copyright_literacy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
     "scope": "World"
   },
@@ -2705,14 +2697,6 @@
     "description": "Pelitutkimuksen vuosikirja on vertaisarvioitu, avoin tiedejulkaisu. Pelitutkimus on sekä monitieteinen tutkimusala että nuori akateeminen oppiaine, jonka parissa toimivien tutkijoiden huomion keskiössä on digitaalisten pelien erityisluonne. Pelien ja pelaamisen moniulotteisuus tulee esiin tarkasteltaessa niitä esimerkiksi taiteellisina, teknisinä, sosiaalisina, kulttuurisina tai taloudellisina ilmiöinä, mitkä ovat myös esimerkkejä pelitutkimuksen vuosikirjan sisältämistä näkökulmista.",
     "lang": "fi",
     "scope": "Finland"
-  },
-  "Division for Public Institutions and Digital Government (DPIDG) of the United Nations Department of Economic and Social Affairs (DESA)": {
-    "file": "division_for_public_institutions_and_digital_government__dpidg__of_the_united_nations_department_of_economic_and_social_affairs__desa_.json",
-    "count": 9,
-    "category": "International Affairs + Policy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
   },
   "Rakennustaiteen Seura ry": {
     "file": "rakennustaiteen_seura_ry.json",
