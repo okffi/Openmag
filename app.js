@@ -19,6 +19,80 @@
     let currentSourceFile = 'data.json';
     let scrollObserver = null;
     let pendingOperation = false;
+    let sourcePreferences = null;
+    let currentSourceName = null;
+
+    function topicSources(category) {
+        return Object.keys(statsData || {}).filter(name =>
+            name !== '__meta' && (statsData[name].category || 'General') === category
+        );
+    }
+
+    function syncSourceControls() {
+        document.querySelectorAll('[data-preference-source]').forEach(input => {
+            input.checked = !sourcePreferences || sourcePreferences.isEnabled(input.dataset.preferenceSource);
+            input.disabled = !sourcePreferences;
+            input.setAttribute('aria-label', `${t('ui.follow_source')}: ${input.dataset.preferenceSource}`);
+        });
+        document.querySelectorAll('[data-preference-topic]').forEach(input => {
+            const names = topicSources(input.dataset.preferenceTopic);
+            const enabled = names.filter(name => !sourcePreferences || sourcePreferences.isEnabled(name)).length;
+            input.checked = enabled === names.length;
+            input.indeterminate = enabled > 0 && enabled < names.length;
+            input.disabled = !sourcePreferences || names.length === 0;
+            input.setAttribute('aria-label', `${t('ui.follow_topic')}: ${getTranslation('cat', input.dataset.preferenceTopic)}`);
+        });
+        document.querySelectorAll('.preference-text').forEach(text => {
+            text.textContent = t('ui.follow_source');
+        });
+    }
+
+    function refreshSourceSelection() {
+        syncSourceControls();
+        if (!isBookmarksView && currentSourceFile === 'data.json') {
+            displayedCount = 0;
+            clearGrid();
+            displayArticles();
+        }
+    }
+
+    function createPreferenceControl(name, isTopic = false) {
+        const label = document.createElement('label');
+        label.className = 'preference-switch';
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        if (isTopic) input.dataset.preferenceTopic = name;
+        else input.dataset.preferenceSource = name;
+        label.appendChild(input);
+        label.addEventListener('click', event => event.stopPropagation());
+        input.addEventListener('change', () => {
+            const names = isTopic ? topicSources(name) : [name];
+            try {
+                sourcePreferences.setEnabled(names, input.checked);
+            } catch (error) {
+                console.error('Error saving source preferences:', error);
+                syncSourceControls();
+                window.alert(t('msg.source_preferences_save_error'));
+                return;
+            }
+            refreshSourceSelection();
+        });
+        return label;
+    }
+
+    function renderSourceHeaderControl() {
+        const container = document.getElementById('source-preference-control');
+        container.replaceChildren();
+        if (currentSourceName && !isBookmarksView) {
+            const label = createPreferenceControl(currentSourceName);
+            const text = document.createElement('span');
+            text.className = 'preference-text';
+            text.textContent = t('ui.follow_source');
+            label.appendChild(text);
+            container.appendChild(label);
+        }
+        syncSourceControls();
+    }
 
     // --- HELPERS ---
     function t(key, originalValue = null) {
@@ -356,6 +430,7 @@
                 viewTitle.textContent = getTranslation('cat', currentCategory);
             }
         }
+        renderSourceHeaderControl();
     }
 
     async function init() {
@@ -370,6 +445,26 @@
         const uiLangFilter = document.getElementById('uiLangFilter');
         let uiLang = uiLangFilter.value || 'en';
         populateContentLangSelect(uiLang);
+
+        try {
+            sourcePreferences = window.createSourcePreferences(window.localStorage);
+            sourcePreferences.reload();
+        } catch (error) {
+            sourcePreferences = null;
+            console.error('Error reading source preferences:', error);
+            window.alert(t('msg.source_preferences_load_error'));
+        }
+        window.addEventListener('storage', event => {
+            if (!sourcePreferences || (event.key !== sourcePreferences.storageKey && event.key !== null)) return;
+            try {
+                sourcePreferences.reload();
+            } catch (error) {
+                console.error('Error reading source preferences:', error);
+                window.alert(t('msg.source_preferences_load_error'));
+                return;
+            }
+            refreshSourceSelection();
+        });
 
         // Masonry init
         const container = document.querySelector('#magazine-grid');
@@ -625,6 +720,20 @@
         card.appendChild(bookmarkBtn);
         // --- END BOOKMARK BUTTON ---
 
+        if (item.sourceTitle) {
+            const control = createPreferenceControl(item.sourceTitle);
+            control.classList.add('card-source-switch');
+            const text = document.createElement('span');
+            text.className = 'preference-text';
+            text.textContent = t('ui.follow_source');
+            control.appendChild(text);
+            card.appendChild(control);
+            const input = control.querySelector('input');
+            input.checked = !sourcePreferences || sourcePreferences.isEnabled(item.sourceTitle);
+            input.disabled = !sourcePreferences;
+            input.setAttribute('aria-label', `${t('ui.follow_source')}: ${item.sourceTitle}`);
+        }
+
         return card;
     }
 
@@ -686,7 +795,8 @@
             const langMatch = (selectedLang === 'all') || (art.lang === selectedLang);
             const scopeMatch = (selectedScope === 'all') || (art.scope === selectedScope);
             const catMatch = (currentCategory === 'All') || (art.sheetCategory === currentCategory);
-            return langMatch && scopeMatch && catMatch;
+            const sourceMatch = currentSourceFile !== 'data.json' || !sourcePreferences || sourcePreferences.isEnabled(art.sourceTitle);
+            return langMatch && scopeMatch && catMatch && sourceMatch;
         });
 
         filtered.sort((a, b) => {
@@ -702,7 +812,14 @@
                                document.getElementById('scopeFilter').value !== 'all';
 
             while (sentinel.firstChild) { sentinel.removeChild(sentinel.firstChild); }
-            if (isFiltered) {
+            const hiddenBySource = currentSourceFile === 'data.json' && sourcePreferences &&
+                allArticles.some(art => !sourcePreferences.isEnabled(art.sourceTitle) &&
+                    (selectedLang === 'all' || art.lang === selectedLang) &&
+                    (selectedScope === 'all' || art.scope === selectedScope) &&
+                    (currentCategory === 'All' || art.sheetCategory === currentCategory));
+            if (hiddenBySource) {
+                sentinel.textContent = t('msg.no_enabled_source_news');
+            } else if (isFiltered) {
                 const msgDiv = document.createElement('div');
                 msgDiv.style.padding = '20px';
                 const msgP = document.createElement('p');
@@ -807,6 +924,7 @@
             header.className = 'category-header';
             // KÄÄNNÖS
             header.textContent = getTranslation('cat', catName);
+            header.appendChild(createPreferenceControl(catName, true));
 
             const submenu = document.createElement('div');
             submenu.className = 'source-submenu';
@@ -826,6 +944,7 @@
                 const countSpan = document.createElement('span');
                 countSpan.textContent = src.count;
                 item.appendChild(countSpan);
+                item.appendChild(createPreferenceControl(src.name));
 
                 item.onclick = (e) => {
                     e.stopPropagation();
@@ -878,6 +997,7 @@
             countSpan.textContent = info.count;
 
             item.appendChild(countSpan);
+            item.appendChild(createPreferenceControl(sourceName));
             item.onclick = () => changeSource(`sources/${info.file}`, sourceName, item);
 
             list.appendChild(item);
@@ -904,10 +1024,12 @@
             btnAz.classList.remove('active');
             renderCategoryView(list);
         }
+        syncSourceControls();
 
         // If we were in bookmarks view, reload articles for the current source
         if (wasBookmarksView) {
             currentSourceFile = 'data.json';
+            currentSourceName = null;
             currentCategory = 'All';
             const viewTitle = document.getElementById('current-view-title');
             const viewDesc = document.getElementById('current-view-description');
@@ -915,9 +1037,8 @@
             if (viewTitle) viewTitle.textContent = t('ui.latest_news');
             if (viewDesc) viewDesc.innerText = t('ui.a_collection_of_the_latest_news_from_followed_sources');
             if (logoCont) { logoCont.innerHTML = ''; logoCont.style.display = 'none'; }
-            displayedCount = 0;
-            clearGrid();
-            displayArticles();
+            renderSourceHeaderControl();
+            loadData('data.json');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
@@ -934,6 +1055,8 @@
             const displayTitle = isMainFeed ? t('ui.latest_news') : title;
 
             currentSourceFile = file;
+            currentSourceName = isMainFeed ? null : title;
+            renderSourceHeaderControl();
 
             if (viewTitle) viewTitle.textContent = displayTitle;
             if (viewDesc) viewDesc.innerText = t('msg.loading_news');
@@ -1018,6 +1141,9 @@
         if (bookmarksBtn) bookmarksBtn.classList.remove('active');
 
         currentCategory = catName;
+        currentSourceFile = 'data.json';
+        currentSourceName = null;
+        renderSourceHeaderControl();
         const viewTitle = document.getElementById('current-view-title');
         const viewDesc = document.getElementById('current-view-description');
         const logoCont = document.getElementById('feed-logo-container');
@@ -1073,6 +1199,7 @@
 
     function showBookmarksView() {
         isBookmarksView = true;
+        renderSourceHeaderControl();
 
         const btn = document.getElementById('btn-bookmarks');
         const btnCategories = document.getElementById('btn-categories');
