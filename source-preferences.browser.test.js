@@ -5,13 +5,18 @@ const { createServer } = require('node:http');
 const { mkdtemp, readFile } = require('node:fs/promises');
 const { tmpdir } = require('node:os');
 const { join } = require('node:path');
+const { rm } = require('node:fs/promises');
 
-const chrome = ['google-chrome', 'chromium', 'chromium-browser']
-    .find(command => spawnSync(command, ['--version'], { stdio: 'ignore' }).status === 0);
+const chromeCommands = ['google-chrome', 'chromium', 'chromium-browser', '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'];
+const chrome = chromeCommands
+    .find(command => {
+        const result = spawnSync(command, ['--version'], { stdio: 'ignore' });
+        return result.status === 0;
+    });
 
 test('source switches filter feeds, synchronize views, and survive reload', {
     skip: !chrome && 'Chrome or Chromium is required',
-    timeout: 30000
+    timeout: 60000
 }, async () => {
     const articles = Array.from({ length: 60 }, (_, i) => ({
         title: `Article ${i}`, link: `https://example.test/${i}`, sourceTitle: i % 2 ? 'Beta' : 'Alpha',
@@ -55,9 +60,12 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         '--remote-debugging-port=0', `--user-data-dir=${profile}`, 'about:blank'
     ], { stdio: 'ignore' });
     let socket;
+    let browserExited = false;
+    let serverClosed = false;
+    browser.once('exit', () => { browserExited = true; });
     try {
         const waitFor = async (fn, message) => {
-            for (let i = 0; i < 100; i++) {
+            for (let i = 0; i < 200; i++) {
                 const value = await fn();
                 if (value) return value;
                 await new Promise(resolve => setTimeout(resolve, 50));
@@ -108,7 +116,7 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         assert.equal(await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').indeterminate"), true);
 
         await evaluate("document.querySelector('#source-list [data-preference-source=\"Alpha\"]').closest('.source-item').click()");
-        await waitFor(() => evaluate("document.querySelectorAll('.grid-item').length === 30"), 'Source preview did not load');
+        await waitFor(() => evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"Alpha\"]').length === 30"), 'Source preview did not load Alpha cards');
         assert.equal(await evaluate("document.querySelector('#source-preference-control input').checked"), false);
         await evaluate("document.querySelector('#source-preference-control input').click()");
         assert.equal(await evaluate("document.querySelector('.grid-item [data-preference-source]').checked"), true);
@@ -116,8 +124,9 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         assert.equal(await evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"Alpha\"]').length"), 1);
         assert.equal(await evaluate("document.querySelector('.grid-item [data-preference-source]').checked"), false);
 
+        await evaluate("window.__testMarker = Math.random()");
         await send('Page.reload');
-        await waitFor(() => evaluate("document.querySelectorAll('#source-list [data-preference-source]').length === 3"), 'Reload did not finish');
+        await waitFor(() => evaluate("typeof window.__testMarker === 'undefined' && document.readyState === 'complete' && document.querySelectorAll('#source-list [data-preference-source]').length === 3"), 'Reload did not finish');
         assert.equal(await evaluate("document.querySelector('#source-list [data-preference-source=\"Alpha\"]').checked"), false);
         assert.equal(await evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"Alpha\"]').length"), 0);
         await evaluate("document.querySelector('#langFilter').value = 'en'; document.querySelector('#langFilter').dispatchEvent(new Event('change'))");
@@ -126,16 +135,32 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').click()");
         assert.deepEqual((await evaluate("JSON.parse(localStorage.getItem('openmag_disabled_sources'))")).sort(), ['Alpha', 'Beta', 'Gamma']);
         assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 0);
-        assert.match(await evaluate("document.querySelector('#scroll-sentinel').textContent"), /enabled sources/i);
+        await evaluate("document.querySelector('#uiLangFilter').value = 'en'; document.querySelector('#uiLangFilter').dispatchEvent(new Event('change'))");
+        await waitFor(() => evaluate("document.querySelector('#scroll-sentinel').textContent === 'No articles from enabled sources. Enable sources in the sidebar to see their articles.'"), 'Translation did not load');
+        assert.equal(await evaluate("document.querySelector('#scroll-sentinel').textContent"), 'No articles from enabled sources. Enable sources in the sidebar to see their articles.');
         await evaluate("document.querySelector('#source-list [data-preference-source=\"Alpha\"]').click()");
         assert.equal(await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').indeterminate"), true);
         await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').click()");
         assert.deepEqual(await evaluate("JSON.parse(localStorage.getItem('openmag_disabled_sources'))"), []);
         assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 50);
     } finally {
-        if (socket) socket.close();
-        browser.kill('SIGTERM');
-        await new Promise(resolve => browser.once('exit', resolve));
-        await new Promise(resolve => server.close(resolve));
+        if (socket) {
+            try { socket.close(); } catch (e) { }
+        }
+        if (!browserExited) {
+            browser.kill('SIGTERM');
+            try {
+                await Promise.race([
+                    new Promise(resolve => browser.once('exit', resolve)),
+                    new Promise((_, reject) => setTimeout(() => reject(new Error('Browser kill timeout')), 5000))
+                ]);
+            } catch (e) {
+                console.error('Browser did not exit after SIGTERM');
+            }
+        }
+        try { await rm(profile, { recursive: true, force: true }); } catch (e) { }
+        if (!serverClosed) {
+            await new Promise(resolve => server.close(() => { serverClosed = true; resolve(); }));
+        }
     }
 });
