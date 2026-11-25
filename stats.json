@@ -1,6 +1,6 @@
 {
   "__meta": {
-    "last_updated": "25.11.2026 klo 9.25.40"
+    "last_updated": "25.11.2026 klo 9.50.45"
   },
   "The European Correspondent": {
     "file": "the_european_correspondent.json",
@@ -116,7 +116,7 @@
   },
   "Rajapinta": {
     "file": "rajapinta.json",
-    "count": 2,
+    "count": 10,
     "category": "Digital Policy + Rights",
     "description": "researcher community focused on digital social sciences",
     "lang": "fi",
@@ -140,10 +140,26 @@
   },
   "Turun yliopisto": {
     "file": "turun_yliopisto.json",
-    "count": 15,
+    "count": 19,
     "category": "(Open) Science + Research",
     "description": "Turun yliopiston etusivun uutisten lyhennelmät",
     "lang": "fi",
+    "scope": "Finland"
+  },
+  "Global Voices Advox": {
+    "file": "global_voices_advox.json",
+    "count": 10,
+    "category": "Digital Policy + Rights",
+    "description": "Defending Free Speech Online",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Ministry of Justice | Finland | News": {
+    "file": "ministry_of_justice___finland___news.json",
+    "count": 20,
+    "category": "Politics + Public sector",
+    "description": "",
+    "lang": "en",
     "scope": "Finland"
   },
   "Publishing in the Archives Profession": {
@@ -191,14 +207,6 @@
     "count": 10,
     "category": "Investigations + Journalism",
     "description": "OCCRP stories about News delivered straight to you. Well, your RSS reader anyway.",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Global Voices Advox": {
-    "file": "global_voices_advox.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Defending Free Speech Online",
     "lang": "en",
     "scope": "World"
   },
@@ -396,7 +404,7 @@
   },
   "UN Women": {
     "file": "un_women.json",
-    "count": 12,
+    "count": 22,
     "category": "International Affairs + Policy",
     "description": "",
     "lang": "fi",
@@ -658,6 +666,14 @@
     "lang": "en",
     "scope": "World"
   },
+  "International Council on Archives (ICA)": {
+    "file": "international_council_on_archives__ica_.json",
+    "count": 6,
+    "category": "Digital Culture + Heritage",
+    "description": "",
+    "lang": "en",
+    "scope": "World"
+  },
   "CODATA": {
     "file": "codata.json",
     "count": 10,
@@ -714,17 +730,9 @@
     "lang": "fi",
     "scope": "Europe"
   },
-  "International Council on Archives (ICA)": {
-    "file": "international_council_on_archives__ica_.json",
-    "count": 10,
-    "category": "Digital Culture + Heritage",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "UNESCO Chair on Intangible Cultural Heritage (ICH) in Public and Global Governance": {
     "file": "unesco_chair_on_intangible_cultural_heritage__ich__in_public_and_global_governance.json",
-    "count": 10,
+    "count": 2,
     "category": "Digital Culture + Heritage",
     "description": "",
     "lang": "en",
@@ -1132,7 +1140,7 @@
   },
   "EUvsDisinfo": {
     "file": "euvsdisinfo.json",
-    "count": 10,
+    "count": 1,
     "category": "Investigations + Journalism",
     "description": "DON'T BE DECEIVED, QUESTION EVEN MORE",
     "lang": "en",
@@ -1666,6 +1674,14 @@
     "lang": "en",
     "scope": "Europe"
   },
+  "Martel Innovate": {
+    "file": "martel_innovate.json",
+    "count": 50,
+    "category": "Digital Policy + Rights",
+    "description": "Advice and expertise in R&D project funding and management",
+    "lang": "en",
+    "scope": "Switzerland"
+  },
   "eOppimiskeskus": {
     "file": "eoppimiskeskus.json",
     "count": 1,
@@ -1676,7 +1692,7 @@
   },
   "Wikimedia Sverige": {
     "file": "wikimedia_sverige.json",
-    "count": 10,
+    "count": 1,
     "category": "(Open) Data + Technology",
     "description": "Vi arbetar för fri kunskap",
     "lang": "sv",
@@ -1697,6 +1713,30 @@
     "description": "Digitaalisista tutkimuspalveluista ja avoimesta tieteestä / About digital research services and open science",
     "lang": "en",
     "scope": "Finland"
+  },
+  "The Signal: Digital Preservation": {
+    "file": "the_signal__digital_preservation.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Digital Happenings at the Library of Congress",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Timeless": {
+    "file": "timeless.json",
+    "count": 10,
+    "category": "Digital Culture + Heritage",
+    "description": "Stories from the Library of Congress",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Cultural Protection Fund | British Council": {
+    "file": "cultural_protection_fund___british_council.json",
+    "count": 26,
+    "category": "Knowledge Rescue",
+    "description": "British Council",
+    "lang": "en",
+    "scope": "UK"
   },
   "European Cultural Foundation": {
     "file": "european_cultural_foundation.json",
@@ -1738,13 +1778,29 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Martel Innovate": {
-    "file": "martel_innovate.json",
-    "count": 50,
+  "EU AI Industrial Policy Monitor": {
+    "file": "eu_ai_industrial_policy_monitor.json",
+    "count": 20,
     "category": "Digital Policy + Rights",
-    "description": "Advice and expertise in R&D project funding and management",
+    "description": "A newsletter that tracks European debates on competitiveness, sovereignty, and AI.",
     "lang": "en",
-    "scope": "Switzerland"
+    "scope": "Europe"
+  },
+  "Growing the Commons": {
+    "file": "growing_the_commons.json",
+    "count": 20,
+    "category": "Perspectives",
+    "description": "Growing the Commons is a collaborative blog sharing stories, practices, and tools to help build a world of thriving commons.",
+    "lang": "en",
+    "scope": "World"
+  },
+  "Mission Economics by Mariana Mazzucato": {
+    "file": "mission_economics_by_mariana_mazzucato.json",
+    "count": 20,
+    "category": "Perspectives",
+    "description": "Reflections on the theory and practice of an economy that delivers for people and planet.",
+    "lang": "en",
+    "scope": "World"
   },
   "Museoliitto": {
     "file": "museoliitto.json",
@@ -1770,22 +1826,6 @@
     "lang": "da",
     "scope": "Denmark"
   },
-  "OpenForum Europe": {
-    "file": "openforum_europe.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "Open Technologies for a Competitive and Sovereign Europe",
-    "lang": "en",
-    "scope": "Europe"
-  },
-  "Open Technology Research": {
-    "file": "open_technology_research.json",
-    "count": 10,
-    "category": "(Open) Data + Technology",
-    "description": "Building Evidence, Connecting Researchers, Informing Policy",
-    "lang": "en",
-    "scope": "World"
-  },
   "Pedaali": {
     "file": "pedaali.json",
     "count": 10,
@@ -1809,6 +1849,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Tech and Social Cohesion": {
+    "file": "tech_and_social_cohesion.json",
+    "count": 20,
+    "category": "Peace + Conflict + Humanitarian",
+    "description": "How can we design and deploy tech to build social cohesion, rather than polarization and violence? This space elevates perspectives and shares initiatives underway to incentivize tech which builds trust and collaboration. Contributors welcome!",
+    "lang": "en",
+    "scope": "World"
   },
   "Villa Karo": {
     "file": "villa_karo.json",
@@ -1848,6 +1896,14 @@
     "category": "Culture + Education",
     "description": "",
     "lang": "fi",
+    "scope": "World"
+  },
+  "Global Solutions Initiative": {
+    "file": "global_solutions_initiative.json",
+    "count": 10,
+    "category": "International Affairs + Policy",
+    "description": "The Global Solutions Initiative facilitates international problem-solving. Our world-renowned network provides insights for better global governance.",
+    "lang": "en",
     "scope": "World"
   },
   "Internet Archive Europe": {
@@ -1999,14 +2055,6 @@
     "count": 10,
     "category": "Human Rights + Democracy",
     "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
-  "Copyright Literacy": {
-    "file": "copyright_literacy.json",
-    "count": 10,
-    "category": "Digital Policy + Rights",
-    "description": "Decoding copyright and bringing you enlightenment",
     "lang": "en",
     "scope": "World"
   },
@@ -2434,14 +2482,6 @@
     "lang": "en",
     "scope": "Finland"
   },
-  "Michael Culture Association": {
-    "file": "michael_culture_association.json",
-    "count": 1,
-    "category": "Digital Culture + Heritage",
-    "description": "EUROPEAN TRANS-DOMAIN NETWORK FOR DIGITAL CULTURAL HERITAGE AND RELATED COMMUNITIES",
-    "lang": "en",
-    "scope": "Europe"
-  },
   "Maaseudun sivistysliitto": {
     "file": "maaseudun_sivistysliitto.json",
     "count": 10,
@@ -2512,14 +2552,6 @@
     "category": "Politics + Public sector",
     "description": "",
     "lang": "fi",
-    "scope": "Finland"
-  },
-  "Ministry of Justice | Finland | News": {
-    "file": "ministry_of_justice___finland___news.json",
-    "count": 20,
-    "category": "Politics + Public sector",
-    "description": "",
-    "lang": "en",
     "scope": "Finland"
   },
   "Open Knowledge Austria Blog": {
@@ -2642,14 +2674,6 @@
     "lang": "fi",
     "scope": "Finland"
   },
-  "Division for Public Institutions and Digital Government (DPIDG) of the United Nations Department of Economic and Social Affairs (DESA)": {
-    "file": "division_for_public_institutions_and_digital_government__dpidg__of_the_united_nations_department_of_economic_and_social_affairs__desa_.json",
-    "count": 9,
-    "category": "International Affairs + Policy",
-    "description": "",
-    "lang": "en",
-    "scope": "World"
-  },
   "Rakennustaiteen Seura ry": {
     "file": "rakennustaiteen_seura_ry.json",
     "count": 5,
@@ -2729,6 +2753,14 @@
     "description": "",
     "lang": "fi",
     "scope": "Finland"
+  },
+  "Extreme Citizen Science blog": {
+    "file": "extreme_citizen_science_blog.json",
+    "count": 10,
+    "category": "(Open) Data + Technology",
+    "description": "UCL's interdisciplinary research group on Extreme Citizen Science",
+    "lang": "en",
+    "scope": "World"
   },
   "YK:n alueellinen tiedotuskeskus – Suomi": {
     "file": "yk_n_alueellinen_tiedotuskeskus___suomi.json",
