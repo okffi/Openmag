@@ -248,6 +248,22 @@
         return label;
     }
 
+        function renderSourceHeaderControl() {
+        const container = document.getElementById('source-preference-control');
+        container.replaceChildren();
+        if (currentSourceName && !isBookmarksView) {
+            const toggle = createVisibilityToggle(currentSourceName);
+            const text = document.createElement('span');
+            text.className = 'preference-text';
+            text.textContent = t('ui.follow_source');
+            toggle.appendChild(text);
+            toggle.style.display = 'inline-flex';
+            toggle.style.gap = '8px';
+            container.appendChild(toggle);
+        }
+        syncSourceControls();
+    }
+
     // --- HELPERS ---
     function t(key, originalValue = null) {
         const lang = document.getElementById('uiLangFilter').value || 'en';
