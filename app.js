@@ -968,16 +968,37 @@
             viewTitleEl.textContent = displayTitle;
             return;
         } else {
-            // Lähdenäkymässä luodaan linkki
+            // Add title link
             const a = document.createElement('a');
             a.href = siteUrl || '#';
             a.target = '_blank';
             a.rel = 'noopener';
             a.className = 'title-link';
-            a.textContent = displayTitle; // Turvallinen tekstin asetus
+            a.textContent = displayTitle;
             viewTitleEl.appendChild(a);
 
-            // Add visibility toggle icon (before RSS icon)
+            // Lisätään RSS-ikoni VAIN, jos ollaan lähdenäkymässä
+            if (rssLink && rssLink !== 'data.json') {
+                const rssA = document.createElement('a');
+                rssA.href = rssLink;
+                rssA.target = '_blank';
+                rssA.rel = 'noopener';
+                rssA.className = 'rss-link';
+                rssA.title = 'RSS';
+
+                // SVG-ikoni luodaan DOM-metodeilla innerHTML:n sijaan
+                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                svg.setAttribute('viewBox', '0 0 24 24');
+                svg.setAttribute('fill', 'currentColor');
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                path.setAttribute('d', 'M6.18,15.64A2.18,2.18,0,0,1,8.36,17.82c0,1.21-.98,2.18-2.18,2.18A2.18,2.18,0,0,1,4,17.82,2.18,2.18,0,0,1,6.18,15.64M4,4.44A15.56,15.56,0,0,1,19.56,20h-2.83A12.73,12.73,0,0,0,4,7.27Zm0,5.66a9.9,9.9,0,0,1,9.9,9.9H11.07A7.07,7.07,0,0,0,4,12.93Z');
+                svg.appendChild(path);
+                rssA.appendChild(svg);
+
+                viewTitleEl.appendChild(rssA);
+            }
+
+            // Add visibility toggle icon (after RSS icon)
             if (currentSourceName && !isMainFeed) {
                 const visButton = document.createElement('button');
                 visButton.className = 'source-page-visibility-toggle';
@@ -1037,27 +1058,6 @@
                 });
                 
                 viewTitleEl.appendChild(visButton);
-            }
-
-            // Lisätään RSS-ikoni VAIN, jos ollaan lähdenäkymässä
-            if (rssLink && rssLink !== 'data.json') {
-                const rssA = document.createElement('a');
-                rssA.href = rssLink;
-                rssA.target = '_blank';
-                rssA.rel = 'noopener';
-                rssA.className = 'rss-link';
-                rssA.title = 'RSS';
-
-                // SVG-ikoni luodaan DOM-metodeilla innerHTML:n sijaan
-                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-                svg.setAttribute('viewBox', '0 0 24 24');
-                svg.setAttribute('fill', 'currentColor');
-                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-                path.setAttribute('d', 'M6.18,15.64A2.18,2.18,0,0,1,8.36,17.82c0,1.21-.98,2.18-2.18,2.18A2.18,2.18,0,0,1,4,17.82,2.18,2.18,0,0,1,6.18,15.64M4,4.44A15.56,15.56,0,0,1,19.56,20h-2.83A12.73,12.73,0,0,0,4,7.27Zm0,5.66a9.9,9.9,0,0,1,9.9,9.9H11.07A7.07,7.07,0,0,0,4,12.93Z');
-                svg.appendChild(path);
-                rssA.appendChild(svg);
-
-                viewTitleEl.appendChild(rssA);
             }
         }
     }
