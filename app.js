@@ -248,22 +248,6 @@
         return label;
     }
 
-        function renderSourceHeaderControl() {
-        const container = document.getElementById('source-preference-control');
-        container.replaceChildren();
-        if (currentSourceName && !isBookmarksView) {
-            const toggle = createVisibilityToggle(currentSourceName);
-            const text = document.createElement('span');
-            text.className = 'preference-text';
-            text.textContent = t('ui.follow_source');
-            toggle.appendChild(text);
-            toggle.style.display = 'inline-flex';
-            toggle.style.gap = '8px';
-            container.appendChild(toggle);
-        }
-        syncSourceControls();
-    }
-
     // --- HELPERS ---
     function t(key, originalValue = null) {
         const lang = document.getElementById('uiLangFilter').value || 'en';
@@ -600,7 +584,7 @@
                 viewTitle.textContent = getTranslation('cat', currentCategory);
             }
         }
-        renderSourceHeaderControl();
+        syncSourceControls();
     }
 
     async function init() {
@@ -1320,7 +1304,6 @@
             if (viewTitle) viewTitle.textContent = t('ui.latest_news');
             if (viewDesc) viewDesc.innerText = t('ui.a_collection_of_the_latest_news_from_followed_sources');
             if (logoCont) { logoCont.innerHTML = ''; logoCont.style.display = 'none'; }
-            renderSourceHeaderControl();
             loadData('data.json');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -1339,8 +1322,6 @@
 
             currentSourceFile = file;
             currentSourceName = isMainFeed ? null : title;
-            renderSourceHeaderControl();
-
             if (viewTitle) viewTitle.textContent = displayTitle;
             if (viewDesc) viewDesc.innerText = t('msg.loading_news');
 
@@ -1426,7 +1407,6 @@
         currentCategory = catName;
         currentSourceFile = 'data.json';
         currentSourceName = null;
-        renderSourceHeaderControl();
         const viewTitle = document.getElementById('current-view-title');
         const viewDesc = document.getElementById('current-view-description');
         const logoCont = document.getElementById('feed-logo-container');
@@ -1482,8 +1462,6 @@
 
     function showBookmarksView() {
         isBookmarksView = true;
-        renderSourceHeaderControl();
-
         const btn = document.getElementById('btn-bookmarks');
         const btnCategories = document.getElementById('btn-categories');
         const btnAz = document.getElementById('btn-az');

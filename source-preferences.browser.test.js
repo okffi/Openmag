@@ -117,10 +117,13 @@ test('source switches filter feeds, synchronize views, and survive reload', {
 
         await evaluate("document.querySelector('#source-list [data-preference-source=\"Alpha\"]').closest('.source-item').click()");
         await waitFor(() => evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"Alpha\"]').length === 30"), 'Source preview did not load Alpha cards');
-        assert.equal(await evaluate("document.querySelector('#source-preference-control button').getAttribute('data-visible')"), 'false');
-        await evaluate("document.querySelector('#source-preference-control button').click()");
+        assert.equal(await evaluate("document.querySelector('#current-view-title .source-page-visibility-toggle').getAttribute('data-visible')"), 'false');
+        await evaluate("document.querySelector('#current-view-title .source-page-visibility-toggle').click()");
+        assert.equal(await evaluate("document.querySelector('#current-view-title .source-page-visibility-toggle').getAttribute('data-visible')"), 'true');
         assert.equal(await evaluate("document.querySelector('.grid-item [data-preference-source]').getAttribute('data-visible')"), 'true');
-        await evaluate("document.querySelector('.bookmark-btn').click(); document.querySelector('#source-preference-control button').click(); showBookmarksView()");
+        await evaluate("document.querySelector('.bookmark-btn').click(); document.querySelector('#current-view-title .source-page-visibility-toggle').click()");
+        assert.equal(await evaluate("document.querySelector('#current-view-title .source-page-visibility-toggle').getAttribute('data-visible')"), 'false');
+        await evaluate("showBookmarksView()");
         assert.equal(await evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"Alpha\"]').length"), 1);
         assert.equal(await evaluate("document.querySelector('.grid-item [data-preference-source]').getAttribute('data-visible')"), 'false');
 
