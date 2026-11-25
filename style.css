@@ -566,11 +566,46 @@ main { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; }
 }
 
 .meta-info .source-trigger {
-    flex: 1;
+    flex: 0 1 auto;
     min-width: 0;
     word-break: break-word;
     white-space: normal;
     padding-top: 2px;
+    text-align: left;
+}
+
+.meta-info-right-block {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.meta-info-right-block span {
+    min-width: 0;
+    word-break: break-word;
+    white-space: normal;
+}
+
+/* On narrow displays: reorganize meta-info layout */
+@media (max-width: 650px) {
+    .meta-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+    
+    .meta-info .source-trigger {
+        order: 2;
+        width: 100%;
+        text-align: left;
+    }
+    
+    .meta-info-right-block {
+        order: 1;
+        justify-content: flex-start;
+        width: 100%;
+    }
 }
 
 /* Card-level visibility dot, positioned in meta-info */

@@ -831,9 +831,11 @@
             dateSpan.title = d.toLocaleString(locale);
         }
 
-        meta.appendChild(src);
+        // Create wrapper div for toggle and date (right side on normal display, row 1 on narrow)
+        const metaRightBlock = document.createElement('div');
+        metaRightBlock.className = 'meta-info-right-block';
         
-        // Add visibility toggle dot between source and date
+        // Add visibility toggle dot
         if (item.sourceTitle) {
             const visToggle = document.createElement('button');
             visToggle.className = 'card-visibility-toggle';
@@ -888,10 +890,13 @@
             visToggle.setAttribute('aria-label', label);
             visToggle.setAttribute('data-visible', isEnabled ? 'true' : 'false');
             
-            meta.appendChild(visToggle);
+            metaRightBlock.appendChild(visToggle);
         }
         
-        meta.appendChild(dateSpan);
+        metaRightBlock.appendChild(dateSpan);
+        
+        meta.appendChild(src);
+        meta.appendChild(metaRightBlock);
 
         content.appendChild(category);
         content.appendChild(h2);
