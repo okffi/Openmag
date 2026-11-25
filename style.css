@@ -519,7 +519,7 @@ main { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; }
     container: card / inline-size;
     background: var(--card-bg); 
     border: 1px solid var(--border-color);
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     transition: border-color 0.3s ease;
 }
 .grid-item:hover { border-color: var(--primary-color); }
