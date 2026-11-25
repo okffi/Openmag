@@ -21,6 +21,10 @@
     let pendingOperation = false;
     let sourcePreferences = null;
     let currentSourceName = null;
+    let isTouchDevice = () => {
+        return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
+    };
+    let activeConfirmationRow = null;
 
     function topicSources(category) {
         return Object.keys(statsData || {}).filter(name =>
@@ -29,22 +33,126 @@
     }
 
     function syncSourceControls() {
-        document.querySelectorAll('[data-preference-source]').forEach(input => {
-            input.checked = !sourcePreferences || sourcePreferences.isEnabled(input.dataset.preferenceSource);
-            input.disabled = !sourcePreferences;
-            input.setAttribute('aria-label', `${t('ui.follow_source')}: ${input.dataset.preferenceSource}`);
+        // Update all source visibility toggles (sidebar and cards)
+        document.querySelectorAll('[data-preference-source]').forEach(toggle => {
+            const sourceName = toggle.dataset.preferenceSource;
+            const isEnabled = !sourcePreferences || sourcePreferences.isEnabled(sourceName);
+            updateVisibilityToggle(toggle, isEnabled);
+            if (toggle.disabled !== undefined) toggle.disabled = !sourcePreferences;
+            const label = isEnabled ? t('ui.display_source') : t('ui.hide_source');
+            toggle.setAttribute('aria-label', label);
         });
-        document.querySelectorAll('[data-preference-topic]').forEach(input => {
-            const names = topicSources(input.dataset.preferenceTopic);
+        
+        // Update topic toggles
+        document.querySelectorAll('[data-preference-topic]').forEach(toggle => {
+            const topic = toggle.dataset.preferenceTopic;
+            const names = topicSources(topic);
             const enabled = names.filter(name => !sourcePreferences || sourcePreferences.isEnabled(name)).length;
-            input.checked = enabled === names.length;
-            input.indeterminate = enabled > 0 && enabled < names.length;
-            input.disabled = !sourcePreferences || names.length === 0;
-            input.setAttribute('aria-label', `${t('ui.follow_topic')}: ${getTranslation('cat', input.dataset.preferenceTopic)}`);
+            const isAllEnabled = enabled === names.length;
+            const isSomeEnabled = enabled > 0;
+            const isMixed = isSomeEnabled && !isAllEnabled;
+            
+            if (isMixed) {
+                updateVisibilityToggle(toggle, 'mixed');
+            } else {
+                updateVisibilityToggle(toggle, isAllEnabled);
+            }
+            
+            if (toggle.disabled !== undefined) toggle.disabled = !sourcePreferences || names.length === 0;
+            const label = isAllEnabled ? t('ui.display_topic') : t('ui.hide_topic');
+            toggle.setAttribute('aria-label', label);
         });
-        document.querySelectorAll('.preference-text').forEach(text => {
-            text.textContent = t('ui.follow_source');
+        
+        // Update sidebar source items visibility state
+        document.querySelectorAll('.source-item').forEach(item => {
+            const toggle = item.querySelector('[data-preference-source]');
+            if (toggle) {
+                const isEnabled = !sourcePreferences || sourcePreferences.isEnabled(toggle.dataset.preferenceSource);
+                updateVisibilityToggle(toggle, isEnabled);
+                item.setAttribute('data-visible', isEnabled ? 'true' : 'false');
+            }
         });
+    }
+
+    function updateVisibilityToggle(toggle, state) {
+        const dot = toggle.querySelector('.visibility-dot');
+        
+        if (state === 'mixed') {
+            toggle.setAttribute('data-visible', 'mixed');
+        } else if (state) {
+            toggle.setAttribute('data-visible', 'true');
+            if (dot) dot.style.background = 'var(--primary-color)';
+        } else {
+            toggle.setAttribute('data-visible', 'false');
+            if (dot) dot.style.background = '#ccc';
+        }
+        return state;
+    }
+
+    function showTouchConfirmation(button, sourceName, isTopic, onConfirm) {
+        // Hide any existing confirmation row
+        if (activeConfirmationRow && activeConfirmationRow !== button) {
+            const existingRow = document.getElementById(activeConfirmationRow);
+            if (existingRow) existingRow.classList.remove('active');
+        }
+        
+        // Find or create confirmation row
+        let confirmationId = `confirm-${sourceName.replace(/[^a-z0-9]/gi, '-')}`;
+        let confirmationRow = document.getElementById(confirmationId);
+        
+        if (!confirmationRow) {
+            confirmationRow = document.createElement('div');
+            confirmationRow.id = confirmationId;
+            confirmationRow.className = 'visibility-confirmation-row';
+            
+            const text = document.createElement('span');
+            text.className = 'visibility-confirmation-text';
+            text.textContent = isTopic 
+                ? t('ui.hide_topic') 
+                : t('ui.hide_source');
+            confirmationRow.appendChild(text);
+            
+            const buttonContainer = document.createElement('div');
+            buttonContainer.className = 'visibility-confirmation-buttons';
+            
+            const confirmBtn = document.createElement('button');
+            confirmBtn.className = 'visibility-confirm-btn';
+            confirmBtn.textContent = t('ui.apply');
+            confirmBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                confirmationRow.classList.remove('active');
+                activeConfirmationRow = null;
+                onConfirm();
+            });
+            
+            const cancelBtn = document.createElement('button');
+            cancelBtn.className = 'visibility-cancel-btn';
+            cancelBtn.textContent = t('ui.reset_filters');
+            cancelBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                confirmationRow.classList.remove('active');
+                activeConfirmationRow = null;
+            });
+            
+            buttonContainer.appendChild(confirmBtn);
+            buttonContainer.appendChild(cancelBtn);
+            confirmationRow.appendChild(buttonContainer);
+            
+            // Insert after the button's parent item
+            const parentItem = button.closest('.source-item, .category-header, .meta-info');
+            if (parentItem && parentItem.nextSibling) {
+                parentItem.parentNode.insertBefore(confirmationRow, parentItem.nextSibling);
+            } else if (parentItem) {
+                parentItem.parentNode.appendChild(confirmationRow);
+            } else {
+                document.body.appendChild(confirmationRow);
+            }
+        }
+        
+        confirmationRow.classList.add('active');
+        activeConfirmationRow = confirmationId;
     }
 
     function refreshSourceSelection() {
@@ -54,6 +162,66 @@
             clearGrid();
             displayArticles();
         }
+    }
+
+    function createVisibilityToggle(name, isTopic = false) {
+        const button = document.createElement('button');
+        button.className = 'visibility-toggle';
+        button.type = 'button';
+        
+        const dot = document.createElement('div');
+        dot.className = 'visibility-dot';
+        button.appendChild(dot);
+        
+        if (isTopic) {
+            button.dataset.preferenceTopic = name;
+        } else {
+            button.dataset.preferenceSource = name;
+        }
+        
+        const handleToggle = () => {
+            const names = isTopic ? topicSources(name) : [name];
+            if (!sourcePreferences || names.length === 0) return;
+            
+            try {
+                // For mixed state topic, enable all; otherwise toggle
+                const isMixed = button.getAttribute('data-visible') === 'mixed';
+                if (isTopic && isMixed) {
+                    sourcePreferences.setEnabled(names, true);
+                } else {
+                    const isCurrentlyEnabled = names.every(n => sourcePreferences.isEnabled(n));
+                    sourcePreferences.setEnabled(names, !isCurrentlyEnabled);
+                }
+            } catch (error) {
+                console.error('Error saving source preferences:', error);
+                syncSourceControls();
+                window.alert(t('msg.source_preferences_save_error'));
+                return;
+            }
+            refreshSourceSelection();
+        };
+        
+        button.addEventListener('click', (event) => {
+            event.stopPropagation();
+            
+            // On touch devices, show confirmation instead of immediately toggling
+            if (isTouchDevice()) {
+                showTouchConfirmation(button, name, isTopic, handleToggle);
+            } else {
+                handleToggle();
+            }
+        });
+        
+        // Keyboard accessibility: Enter and Space (always immediate, no confirmation)
+        button.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                event.stopPropagation();
+                handleToggle();
+            }
+        });
+        
+        return button;
     }
 
     function createPreferenceControl(name, isTopic = false) {
@@ -84,12 +252,14 @@
         const container = document.getElementById('source-preference-control');
         container.replaceChildren();
         if (currentSourceName && !isBookmarksView) {
-            const label = createPreferenceControl(currentSourceName);
+            const toggle = createVisibilityToggle(currentSourceName);
             const text = document.createElement('span');
             text.className = 'preference-text';
             text.textContent = t('ui.follow_source');
-            label.appendChild(text);
-            container.appendChild(label);
+            toggle.appendChild(text);
+            toggle.style.display = 'inline-flex';
+            toggle.style.gap = '8px';
+            container.appendChild(toggle);
         }
         syncSourceControls();
     }
@@ -678,6 +848,65 @@
         }
 
         meta.appendChild(src);
+        
+        // Add visibility toggle dot between source and date
+        if (item.sourceTitle) {
+            const visToggle = document.createElement('button');
+            visToggle.className = 'card-visibility-toggle';
+            visToggle.dataset.preferenceSource = item.sourceTitle;
+            visToggle.dataset.source = item.sourceTitle;
+            visToggle.type = 'button';
+            
+            const dot = document.createElement('div');
+            dot.className = 'visibility-dot';
+            visToggle.appendChild(dot);
+            
+            const handleToggle = () => {
+                if (!sourcePreferences) return;
+                
+                const isEnabled = sourcePreferences.isEnabled(item.sourceTitle);
+                try {
+                    sourcePreferences.setEnabled([item.sourceTitle], !isEnabled);
+                } catch (error) {
+                    console.error('Error saving source preferences:', error);
+                    syncSourceControls();
+                    window.alert(t('msg.source_preferences_save_error'));
+                    return;
+                }
+                refreshSourceSelection();
+            };
+            
+            visToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                // On touch devices, show confirmation instead of immediately toggling
+                if (isTouchDevice()) {
+                    showTouchConfirmation(visToggle, item.sourceTitle, false, handleToggle);
+                } else {
+                    handleToggle();
+                }
+            });
+            
+            // Keyboard accessibility: Enter and Space (always immediate, no confirmation)
+            visToggle.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    handleToggle();
+                }
+            });
+            
+            const isEnabled = sourcePreferences && sourcePreferences.isEnabled(item.sourceTitle);
+            const label = isEnabled 
+                ? t('ui.display_source') 
+                : t('ui.hide_source');
+            visToggle.setAttribute('aria-label', label);
+            visToggle.setAttribute('data-visible', isEnabled ? 'true' : 'false');
+            
+            meta.appendChild(visToggle);
+        }
+        
         meta.appendChild(dateSpan);
 
         content.appendChild(category);
@@ -720,20 +949,6 @@
         card.appendChild(bookmarkBtn);
         // --- END BOOKMARK BUTTON ---
 
-        if (item.sourceTitle) {
-            const control = createPreferenceControl(item.sourceTitle);
-            control.classList.add('card-source-switch');
-            const text = document.createElement('span');
-            text.className = 'preference-text';
-            text.textContent = t('ui.follow_source');
-            control.appendChild(text);
-            card.appendChild(control);
-            const input = control.querySelector('input');
-            input.checked = !sourcePreferences || sourcePreferences.isEnabled(item.sourceTitle);
-            input.disabled = !sourcePreferences;
-            input.setAttribute('aria-label', `${t('ui.follow_source')}: ${item.sourceTitle}`);
-        }
-
         return card;
     }
 
@@ -761,6 +976,68 @@
             a.className = 'title-link';
             a.textContent = displayTitle; // Turvallinen tekstin asetus
             viewTitleEl.appendChild(a);
+
+            // Add visibility toggle icon (before RSS icon)
+            if (currentSourceName && !isMainFeed) {
+                const visButton = document.createElement('button');
+                visButton.className = 'source-page-visibility-toggle';
+                visButton.type = 'button';
+                visButton.dataset.preferenceSource = currentSourceName;
+                
+                const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                svg.setAttribute('viewBox', '0 0 24 24');
+                svg.setAttribute('fill', 'currentColor');
+                
+                const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                // Eye icon (open/visible state)
+                path.setAttribute('d', 'M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z');
+                svg.appendChild(path);
+                visButton.appendChild(svg);
+                
+                const isEnabled = !sourcePreferences || sourcePreferences.isEnabled(currentSourceName);
+                const label = isEnabled ? t('ui.display_source') : t('ui.hide_source');
+                visButton.setAttribute('aria-label', label);
+                visButton.setAttribute('title', label);
+                visButton.setAttribute('data-visible', isEnabled ? 'true' : 'false');
+                
+                const handleVisibilityToggle = () => {
+                    if (!sourcePreferences || !currentSourceName) return;
+                    
+                    const isCurrentlyEnabled = sourcePreferences.isEnabled(currentSourceName);
+                    try {
+                        sourcePreferences.setEnabled([currentSourceName], !isCurrentlyEnabled);
+                    } catch (error) {
+                        console.error('Error saving source preferences:', error);
+                        syncSourceControls();
+                        window.alert(t('msg.source_preferences_save_error'));
+                        return;
+                    }
+                    refreshSourceSelection();
+                };
+                
+                visButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // On touch devices, show confirmation instead of immediately toggling
+                    if (isTouchDevice()) {
+                        showTouchConfirmation(visButton, currentSourceName, false, handleVisibilityToggle);
+                    } else {
+                        handleVisibilityToggle();
+                    }
+                });
+                
+                // Keyboard accessibility (always immediate, no confirmation)
+                visButton.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleVisibilityToggle();
+                    }
+                });
+                
+                viewTitleEl.appendChild(visButton);
+            }
 
             // Lisätään RSS-ikoni VAIN, jos ollaan lähdenäkymässä
             if (rssLink && rssLink !== 'data.json') {
@@ -922,14 +1199,17 @@
 
             const header = document.createElement('div');
             header.className = 'category-header';
-            // KÄÄNNÖS
-            header.textContent = getTranslation('cat', catName);
-            header.appendChild(createPreferenceControl(catName, true));
+            
+            const headerTitle = document.createElement('div');
+            headerTitle.textContent = getTranslation('cat', catName);
+            header.appendChild(headerTitle);
+            header.appendChild(createVisibilityToggle(catName, true));
 
             const submenu = document.createElement('div');
             submenu.className = 'source-submenu';
 
-            header.onclick = () => {
+            header.onclick = (e) => {
+                if (e.target.closest('.visibility-toggle')) return;
                 const wasOpen = group.classList.contains('open');
                 document.querySelectorAll('.category-group').forEach(g => g.classList.remove('open'));
                 if (!wasOpen) group.classList.add('open');
@@ -940,13 +1220,15 @@
                 const item = document.createElement('div');
                 item.className = 'source-item';
 
-                item.textContent = src.name + ' ';
-                const countSpan = document.createElement('span');
-                countSpan.textContent = src.count;
-                item.appendChild(countSpan);
-                item.appendChild(createPreferenceControl(src.name));
+                const nameDiv = document.createElement('div');
+                nameDiv.className = 'source-item-name';
+                nameDiv.textContent = src.name;
+                item.appendChild(nameDiv);
+                
+                item.appendChild(createVisibilityToggle(src.name));
 
                 item.onclick = (e) => {
+                    if (e.target.closest('.visibility-toggle')) return;
                     e.stopPropagation();
                     changeSource(`sources/${src.file}`, src.name, item);
                 };
@@ -990,15 +1272,16 @@
             const item = document.createElement('div');
             item.className = 'source-item';
 
-            item.textContent = sourceName + ' ';
+            const nameDiv = document.createElement('div');
+            nameDiv.className = 'source-item-name';
+            nameDiv.textContent = sourceName;
+            item.appendChild(nameDiv);
 
-            const countSpan = document.createElement('span');
-            countSpan.className = 'count-badge';
-            countSpan.textContent = info.count;
-
-            item.appendChild(countSpan);
-            item.appendChild(createPreferenceControl(sourceName));
-            item.onclick = () => changeSource(`sources/${info.file}`, sourceName, item);
+            item.appendChild(createVisibilityToggle(sourceName));
+            item.onclick = (e) => {
+                if (e.target.closest('.visibility-toggle')) return;
+                changeSource(`sources/${info.file}`, sourceName, item);
+            };
 
             list.appendChild(item);
         });

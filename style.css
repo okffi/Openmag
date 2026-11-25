@@ -308,6 +308,28 @@ header.main-header {
 .rss-link:hover { opacity: 1; transform: scale(1.1); }
 .rss-link svg { width: 22px; height: 22px; display: block; fill: currentColor; }
 
+.source-page-visibility-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    color: var(--primary-color);
+    opacity: 0.6;
+    transition: all 0.2s ease;
+    vertical-align: middle;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.source-page-visibility-toggle:hover { opacity: 1; transform: scale(1.1); }
+.source-page-visibility-toggle:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+.source-page-visibility-toggle svg { width: 22px; height: 22px; display: block; fill: currentColor; }
+
 .title-link { cursor: pointer; transition: color 0.2s; }
 .title-link:hover { color: var(--primary-color); }
 
@@ -391,6 +413,52 @@ header.main-header {
 .category-header::after { content: '+'; font-size: 1rem; color: #ccc; transition: transform 0.3s; }
 .category-group.open .category-header::after { content: '−'; color: var(--primary-color); }
 
+/* Visibility dot indicator */
+.visibility-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.visibility-toggle:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.visibility-toggle:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.visibility-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    transition: background 0.2s ease;
+}
+
+.visibility-toggle[data-visible="false"] .visibility-dot {
+    background: #ccc;
+}
+
+.visibility-toggle[data-visible="mixed"] .visibility-dot {
+    background: linear-gradient(135deg, var(--primary-color) 50%, #ccc 50%);
+}
+
+/* Hidden source name styling */
+.source-item[data-visible="false"] {
+    color: #b7b7b7;
+}
+
 .source-submenu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; background-color: #fff; }
 .category-group.open .source-submenu { max-height: 2000px; }
 
@@ -403,10 +471,20 @@ header.main-header {
     color: var(--text-muted); 
     padding: 10px 20px;
     transition: all 0.2s;
+    gap: 12px;
 }
 .source-item:hover, .source-item.active { color: var(--primary-color); background: #fcfcfc; }
 .source-item.active { font-weight: 700; border-left: 3px solid var(--primary-color); }
 .source-item span { font-size: 0.7rem; color: #b7b7b7; font-weight: 400; }
+
+.source-item-name {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .preference-switch { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; flex-shrink: 0; }
 .preference-switch input { width: 18px; height: 18px; margin: 0; accent-color: var(--primary-color); cursor: pointer; }
 .preference-switch input:disabled { cursor: not-allowed; }
@@ -479,6 +557,97 @@ main { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; }
     letter-spacing: 1px; 
     color: #999; 
     text-transform: uppercase;
+    gap: 8px;
+}
+
+.meta-info .source-trigger {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Card-level visibility dot, positioned in meta-info */
+.card-visibility-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: all 0.2s ease;
+}
+
+.card-visibility-toggle:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.card-visibility-toggle:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.card-visibility-toggle .visibility-dot {
+    width: 6px;
+    height: 6px;
+}
+
+/* Touch confirmation UI */
+.visibility-confirmation-row {
+    display: none;
+    padding: 8px 20px;
+    background: #f8f9fa;
+    border-top: 1px solid var(--border-color);
+    gap: 10px;
+    align-items: center;
+}
+
+.visibility-confirmation-row.active {
+    display: flex;
+}
+
+.visibility-confirmation-text {
+    flex: 1;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.visibility-confirmation-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.visibility-confirm-btn, .visibility-cancel-btn {
+    padding: 6px 12px;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+    background: white;
+    color: var(--text-dark);
+    cursor: pointer;
+    font-size: 0.7rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    text-transform: uppercase;
+}
+
+.visibility-confirm-btn {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.visibility-confirm-btn:hover {
+    opacity: 0.9;
+}
+
+.visibility-cancel-btn:hover {
+    background: #f0f0f0;
 }
 
 /* BOOKMARK BUTTON ON CARD */
