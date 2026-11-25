@@ -1,7 +1,7 @@
 // app.js - Encapsulated in IIFE to prevent global variable pollution
 (function () {
     // Constants
-    const CONTENT_PREVIEW_LENGTH = 150;
+    const CONTENT_PREVIEW_LINES = 5;
     const PAGE_SIZE = 50;
 
     // State variables
@@ -362,12 +362,42 @@
     }
 
     function getPreviewText(item) {
-        const candidates = [item.snippet, item.content];
-        for (const candidate of candidates) {
-            const cleaned = cleanupPreviewText(candidate, item.title);
-            if (cleaned) return cleaned;
+        const snippet = cleanupPreviewText(item.snippet, item.title);
+        const content = cleanupPreviewText(item.content, item.title);
+        return content && (!snippet || content.startsWith(snippet)) ? content : snippet;
+    }
+
+    function updateArticlePreviews(cards) {
+        const previews = Array.from(cards, card => card.querySelector('.article-preview'))
+            .filter(preview => preview && preview.dataset.previewText);
+
+        previews.forEach(preview => { preview.textContent = preview.dataset.previewText; });
+        const overflowing = previews.map(preview => {
+            const text = preview.dataset.previewText;
+            const maxHeight = parseFloat(getComputedStyle(preview).lineHeight) * CONTENT_PREVIEW_LINES;
+            const ends = Array.from(text.matchAll(/\S+/gu), match => match.index + match[0].length);
+            return { preview, text, maxHeight, ends, low: 0, high: ends.length };
+        }).filter(({ preview, maxHeight }) => preview.getBoundingClientRect().height > maxHeight + 0.5);
+
+        // Batch writes and measurements to avoid a separate page layout for each card.
+        while (overflowing.some(state => state.low < state.high)) {
+            const active = overflowing.filter(state => state.low < state.high);
+            active.forEach(state => {
+                state.middle = Math.ceil((state.low + state.high) / 2);
+                state.preview.textContent = state.text.slice(0, state.ends[state.middle - 1]) + '…';
+            });
+            active.forEach(state => {
+                if (state.preview.getBoundingClientRect().height <= state.maxHeight + 0.5) {
+                    state.low = state.middle;
+                } else {
+                    state.high = state.middle - 1;
+                }
+            });
         }
-        return "";
+
+        overflowing.forEach(({ preview, text, ends, low }) => {
+            preview.textContent = (low ? text.slice(0, ends[low - 1]) : '') + '…';
+        });
     }
 
     function getSourceDescriptionText(item) {
@@ -631,6 +661,26 @@
         });
         window.msnry = masonry;
 
+        let previewFrame;
+        const schedulePreviewLayout = () => {
+            cancelAnimationFrame(previewFrame);
+            previewFrame = requestAnimationFrame(() => {
+                updateArticlePreviews(container.querySelectorAll('.grid-item'));
+                masonry.layout();
+            });
+        };
+        let gridWidth;
+        const gridResizeObserver = new ResizeObserver(entries => {
+            const width = entries[0].contentRect.width;
+            if (width !== gridWidth) {
+                gridWidth = width;
+                schedulePreviewLayout();
+            }
+        });
+        gridResizeObserver.observe(container);
+        window.addEventListener('resize', schedulePreviewLayout);
+        document.fonts.addEventListener('loadingdone', schedulePreviewLayout);
+
         await loadData('data.json', true);
         initSidebar();
         updateUITranslations();
@@ -805,8 +855,9 @@
         h2.textContent = item.title || '';
 
         const p = document.createElement('p');
-        const clean = getPreviewText(item).substring(0, CONTENT_PREVIEW_LENGTH);
-        p.textContent = clean + (clean.length ? '...' : '');
+        p.className = 'article-preview';
+        p.dataset.previewText = getPreviewText(item);
+        p.textContent = p.dataset.previewText;
 
         const meta = document.createElement('div');
         meta.className = 'meta-info';
@@ -1124,6 +1175,7 @@
         displayedCount += slice.length;
 
         imagesLoaded(container, () => {
+            updateArticlePreviews(newElements);
             if (masonry && typeof masonry.appended === 'function') {
                 masonry.appended(newElements);
             }
@@ -1524,6 +1576,7 @@
         });
 
         imagesLoaded(container, () => {
+            updateArticlePreviews(newElements);
             if (masonry) {
                 masonry.appended(newElements);
                 masonry.layout();
@@ -1616,6 +1669,7 @@
         });
 
         imagesLoaded(container, () => {
+            updateArticlePreviews(newElements);
             if (masonry) {
                 masonry.appended(newElements);
                 masonry.layout();
@@ -1642,6 +1696,7 @@
         });
 
         imagesLoaded(container, () => {
+            updateArticlePreviews(newElements);
             if (masonry) {
                 masonry.appended(newElements);
                 masonry.layout();

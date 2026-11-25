@@ -20,7 +20,9 @@ test('source switches filter feeds, synchronize views, and survive reload', {
 }, async () => {
     const articles = Array.from({ length: 60 }, (_, i) => ({
         title: `Article ${i}`, link: `https://example.test/${i}`, sourceTitle: i % 2 ? 'Beta' : 'Alpha',
-        sheetCategory: 'Topic', lang: 'en', scope: 'Europe', pubDate: new Date(2026, 0, 60 - i).toISOString()
+        sheetCategory: 'Topic', lang: 'en', scope: 'Europe', pubDate: new Date(2026, 0, 60 - i).toISOString(),
+        snippet: i === 0 ? 'A longer news preview' : i === 1 ? 'A short preview.' : i === 2 ? 'x'.repeat(1000) : '',
+        content: i === 0 ? `<p>A longer news preview ${'with meaningful words '.repeat(40)}ending.</p>` : ''
     }));
     const stats = {
         Alpha: { file: 'alpha.json', count: 30, category: 'Topic', lang: 'en', scope: 'Europe' },
@@ -108,6 +110,32 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         await send('Page.navigate', { url: `http://127.0.0.1:${server.address().port}/` });
         await waitFor(() => evaluate("document.querySelectorAll('#source-list [data-preference-source]').length === 3"), 'Application did not load');
         assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 50);
+
+        const previewLengths = [];
+        for (const viewportWidth of [1600, 500, 1600]) {
+            await send('Emulation.setDeviceMetricsOverride', { width: viewportWidth, height: 800, deviceScaleFactor: 1, mobile: false });
+            await evaluate('new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))');
+            const previews = await evaluate(`(() => Array.from(document.querySelectorAll('.grid-item')).slice(0, 3).map(card => {
+                const preview = card.querySelector('.article-preview');
+                return {
+                    text: preview.textContent,
+                    original: preview.dataset.previewText,
+                    height: preview.getBoundingClientRect().height,
+                    lineHeight: parseFloat(getComputedStyle(preview).lineHeight)
+                };
+            }))()`);
+            assert.ok(previews[0].text.endsWith('…'));
+            const prefix = previews[0].text.slice(0, -1);
+            assert.ok(previews[0].original.startsWith(prefix));
+            assert.match(previews[0].original.slice(prefix.length), /^\s/);
+            assert.ok(previews[0].height <= previews[0].lineHeight * 5 + 0.5);
+            assert.equal(Math.round(previews[0].height / previews[0].lineHeight), 5);
+            assert.equal(previews[1].text, 'A short preview.');
+            assert.equal(previews[2].text, '…');
+            previewLengths.push(previews[0].text.length);
+        }
+        assert.ok(previewLengths[0] > previewLengths[1]);
+        assert.equal(previewLengths[2], previewLengths[0]);
 
         for (const viewportWidth of [500, 1000]) {
             await send('Emulation.setDeviceMetricsOverride', { width: viewportWidth, height: 800, deviceScaleFactor: 1, mobile: false });
