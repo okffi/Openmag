@@ -112,22 +112,22 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         await evaluate("document.querySelector('.grid-item [data-preference-source=\"Alpha\"]').click()");
         assert.deepEqual(await evaluate("JSON.parse(localStorage.getItem('openmag_disabled_sources'))"), ['Alpha']);
         assert.equal(await evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"Alpha\"]').length"), 0);
-        assert.equal(await evaluate("document.querySelector('#source-list [data-preference-source=\"Alpha\"]').checked"), false);
-        assert.equal(await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').indeterminate"), true);
+        assert.equal(await evaluate("document.querySelector('#source-list [data-preference-source=\"Alpha\"]').getAttribute('data-visible')"), 'false');
+        assert.equal(await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').getAttribute('data-visible')"), 'mixed');
 
         await evaluate("document.querySelector('#source-list [data-preference-source=\"Alpha\"]').closest('.source-item').click()");
         await waitFor(() => evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"Alpha\"]').length === 30"), 'Source preview did not load Alpha cards');
-        assert.equal(await evaluate("document.querySelector('#source-preference-control input').checked"), false);
-        await evaluate("document.querySelector('#source-preference-control input').click()");
-        assert.equal(await evaluate("document.querySelector('.grid-item [data-preference-source]').checked"), true);
-        await evaluate("document.querySelector('.bookmark-btn').click(); document.querySelector('#source-preference-control input').click(); showBookmarksView()");
+        assert.equal(await evaluate("document.querySelector('#source-preference-control button').getAttribute('data-visible')"), 'false');
+        await evaluate("document.querySelector('#source-preference-control button').click()");
+        assert.equal(await evaluate("document.querySelector('.grid-item [data-preference-source]').getAttribute('data-visible')"), 'true');
+        await evaluate("document.querySelector('.bookmark-btn').click(); document.querySelector('#source-preference-control button').click(); showBookmarksView()");
         assert.equal(await evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"Alpha\"]').length"), 1);
-        assert.equal(await evaluate("document.querySelector('.grid-item [data-preference-source]').checked"), false);
+        assert.equal(await evaluate("document.querySelector('.grid-item [data-preference-source]').getAttribute('data-visible')"), 'false');
 
         await evaluate("window.__testMarker = Math.random()");
         await send('Page.reload');
         await waitFor(() => evaluate("typeof window.__testMarker === 'undefined' && document.readyState === 'complete' && document.querySelectorAll('#source-list [data-preference-source]').length === 3"), 'Reload did not finish');
-        assert.equal(await evaluate("document.querySelector('#source-list [data-preference-source=\"Alpha\"]').checked"), false);
+        assert.equal(await evaluate("document.querySelector('#source-list [data-preference-source=\"Alpha\"]').getAttribute('data-visible')"), 'false');
         assert.equal(await evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"Alpha\"]').length"), 0);
         await evaluate("document.querySelector('#langFilter').value = 'en'; document.querySelector('#langFilter').dispatchEvent(new Event('change'))");
         await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').click()");
@@ -139,7 +139,7 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         await waitFor(() => evaluate("document.querySelector('#scroll-sentinel').textContent === 'No articles from enabled sources. Enable sources in the sidebar to see their articles.'"), 'Translation did not load');
         assert.equal(await evaluate("document.querySelector('#scroll-sentinel').textContent"), 'No articles from enabled sources. Enable sources in the sidebar to see their articles.');
         await evaluate("document.querySelector('#source-list [data-preference-source=\"Alpha\"]').click()");
-        assert.equal(await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').indeterminate"), true);
+        assert.equal(await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').getAttribute('data-visible')"), 'mixed');
         await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').click()");
         assert.deepEqual(await evaluate("JSON.parse(localStorage.getItem('openmag_disabled_sources'))"), []);
         assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 50);
