@@ -515,6 +515,7 @@ main { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; }
 
 .grid-item {
     position: relative;
+    container: card / inline-size;
     margin-bottom: 25px; 
     background: var(--card-bg); 
     border: 1px solid var(--border-color);
@@ -586,8 +587,8 @@ main { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; }
     white-space: normal;
 }
 
-/* On narrow displays: reorganize meta-info layout */
-@media (max-width: 650px) {
+/* The card's 1px borders make its content box 2px narrower. */
+@container card (width < 298px) {
     .meta-info {
         flex-direction: column;
         align-items: flex-start;

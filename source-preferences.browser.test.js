@@ -109,6 +109,29 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         await waitFor(() => evaluate("document.querySelectorAll('#source-list [data-preference-source]').length === 3"), 'Application did not load');
         assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 50);
 
+        for (const viewportWidth of [500, 1000]) {
+            await send('Emulation.setDeviceMetricsOverride', { width: viewportWidth, height: 800, deviceScaleFactor: 1, mobile: false });
+            for (const [cardWidth, direction] of [[299, 'column'], [300, 'row'], [301, 'row']]) {
+                const layout = await evaluate(`(() => {
+                    const card = document.querySelector('.grid-item');
+                    card.style.width = '${cardWidth}px';
+                    const meta = card.querySelector('.meta-info');
+                    return {
+                        width: card.getBoundingClientRect().width,
+                        direction: getComputedStyle(meta).flexDirection,
+                        sourceOrder: getComputedStyle(meta.querySelector('.source-trigger')).order,
+                        detailsOrder: getComputedStyle(meta.querySelector('.meta-info-right-block')).order
+                    };
+                })()`);
+                assert.equal(layout.width, cardWidth);
+                assert.equal(layout.direction, direction);
+                assert.equal(layout.sourceOrder, direction === 'column' ? '2' : '0');
+                assert.equal(layout.detailsOrder, direction === 'column' ? '1' : '0');
+            }
+        }
+        await evaluate("document.querySelector('.grid-item').style.width = ''");
+        await send('Emulation.clearDeviceMetricsOverride');
+
         await evaluate("document.querySelector('.grid-item [data-preference-source=\"Alpha\"]').click()");
         assert.deepEqual(await evaluate("JSON.parse(localStorage.getItem('openmag_disabled_sources'))"), ['Alpha']);
         assert.equal(await evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"Alpha\"]').length"), 0);
