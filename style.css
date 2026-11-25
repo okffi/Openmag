@@ -472,10 +472,10 @@ header.main-header {
     cursor: pointer; 
     display: flex; 
     justify-content: space-between; 
-    align-items: flex-start; 
+    align-items: center;
     font-size: 0.85rem; 
-    color: var(--text-muted); 
-    padding: 10px 20px;
+    color: var(--text-muted);
+    padding: 10px 8px 10px 20px;
     transition: all 0.2s;
     gap: 12px;
 }
