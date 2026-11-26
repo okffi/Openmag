@@ -17,6 +17,7 @@
     let locationHierarchy = {};
     let selectedLocations = [];
     let currentLang = 'all';
+    let preferSelectedLanguage = false;
     let currentScope = 'all';
     let currentSourceFile = 'data.json';
     let scrollObserver = null;
@@ -465,6 +466,7 @@
 
         localStorage.setItem('selectedLocations', JSON.stringify(locations));
         selectedLocations = locations;
+        preferSelectedLanguage = document.getElementById('settings-language-mode').checked;
         
         if (selectedUiLang) {
             document.getElementById('uiLangFilter').value = selectedUiLang.value;
@@ -480,6 +482,7 @@
 
         const contentLangSelect = document.getElementById('settings-content-lang-select');
         if (contentLangSelect) contentLangSelect.value = langVal;
+        document.getElementById('settings-language-mode').checked = preferSelectedLanguage;
         
         document.querySelectorAll('.location-checkbox').forEach(cb => {
             cb.checked = selectedLocations.includes(cb.value);
@@ -592,6 +595,8 @@
         if (uiLangTitle) uiLangTitle.textContent = t('ui.interface_language').toUpperCase();
         const contentLangTitle = document.getElementById('settings-content-lang-title');
         if (contentLangTitle) contentLangTitle.textContent = t('ui.preferred_language').toUpperCase();
+        document.getElementById('language-mode-filter-label').textContent = t('ui.filter_by_language');
+        document.getElementById('language-mode-prefer-label').textContent = t('ui.prefer_selected_language');
         const regionTitle = document.getElementById('settings-region-title');
         if (regionTitle) regionTitle.textContent = t('ui.region').toUpperCase();
 

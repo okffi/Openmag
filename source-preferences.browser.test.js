@@ -254,6 +254,21 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         assert.equal(await evaluate("localStorage.getItem('selectedLocations')"), null);
         assert.equal(await evaluate("document.querySelectorAll('#source-list [data-preference-source]').length"), 3);
         assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 50);
+
+        await evaluate("document.querySelector('#settings-btn').click(); document.querySelector('#settings-ui-lang-select').value = 'en'; document.querySelector('#settings-ui-lang-select').dispatchEvent(new Event('change'))");
+        assert.equal(await evaluate("document.querySelector('#language-mode-filter-label').textContent"), 'Filter by language');
+        assert.equal(await evaluate("document.querySelector('#language-mode-prefer-label').textContent"), 'Prefer selected language');
+        assert.equal(await evaluate("document.querySelector('#settings-language-mode').checked"), false);
+        await evaluate("document.querySelector('#settings-content-lang-select').value = 'en'; document.querySelector('#settings-language-mode').click(); document.querySelector('#settings-apply-btn').click()");
+        assert.equal(await evaluate("document.querySelectorAll('#source-list [data-preference-source]').length"), 2);
+        assert.equal(await evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"Gamma\"]').length"), 0);
+        await evaluate("document.querySelector('#settings-btn').click()");
+        assert.equal(await evaluate("document.querySelector('#settings-language-mode').checked"), true);
+        await evaluate("document.querySelector('#settings-language-mode').click(); document.querySelector('#settings-close-btn').click(); document.querySelector('#settings-btn').click()");
+        assert.equal(await evaluate("document.querySelector('#settings-language-mode').checked"), true);
+        await evaluate("document.querySelector('#settings-ui-lang-select').value = 'fi'; document.querySelector('#settings-ui-lang-select').dispatchEvent(new Event('change'))");
+        assert.equal(await evaluate("document.querySelector('#language-mode-filter-label').textContent"), 'Suodata kielen mukaan');
+        assert.equal(await evaluate("document.querySelector('#language-mode-prefer-label').textContent"), 'Suosi valittua kieltä');
     } finally {
         if (socket) {
             try { socket.close(); } catch (e) { }

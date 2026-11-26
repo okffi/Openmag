@@ -22,6 +22,9 @@ can then be changed independently. A regional selection includes sources
 tagged with that region, not just its countries. With no locations selected,
 all locations are shown. Location selections are saved in this browser.
 
+The language-mode switch is currently a UI placeholder: filtering is unchanged,
+and the selected switch position is kept only until the page is reloaded.
+
 ## Scraper sources
 
 The news updater reads source metadata and URLs from the published Google Sheet

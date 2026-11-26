@@ -194,6 +194,55 @@ header.main-header {
     gap: 16px;
 }
 
+.language-mode-control {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 36px minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    font-size: 0.75rem;
+    line-height: 1.3;
+    cursor: pointer;
+    position: relative;
+}
+
+.language-mode-control input {
+    position: absolute;
+    opacity: 0;
+}
+
+.language-mode-track {
+    width: 36px;
+    height: 20px;
+    border-radius: 10px;
+    background: var(--text-muted);
+    padding: 2px;
+}
+
+.language-mode-thumb {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: white;
+    transition: transform 0.2s ease;
+}
+
+.language-mode-control input:checked ~ .language-mode-track {
+    background: var(--primary-color);
+}
+.language-mode-control input:checked ~ .language-mode-track .language-mode-thumb {
+    transform: translateX(16px);
+}
+.language-mode-control input:focus-visible ~ .language-mode-track {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+.language-mode-control input:not(:checked) ~ #language-mode-filter-label,
+.language-mode-control input:checked ~ #language-mode-prefer-label {
+    font-weight: 700;
+}
+
 .settings-section-title {
     font-size: 0.65rem;
     font-weight: 700;
