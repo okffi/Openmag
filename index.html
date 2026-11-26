@@ -59,17 +59,19 @@
                         <button id="settings-close-btn" class="settings-close-btn" onclick="closeSettingsPanel()" aria-label="Close settings">&#10005;</button>
                     </div>
                     <div class="settings-grid">
-                        <div class="settings-section">
-                            <div class="settings-section-title" id="settings-ui-lang-title">INTERFACE LANGUAGE</div>
-                            <select id="settings-ui-lang-select" class="settings-select" aria-label="Interface language">
-                                <!-- Populated by JS -->
-                            </select>
-                        </div>
-                        <div class="settings-section">
-                            <div class="settings-section-title" id="settings-content-lang-title">CONTENT LANGUAGE</div>
-                            <select id="settings-content-lang-select" class="settings-select" aria-label="Content language">
-                                <!-- Populated by JS -->
-                            </select>
+                        <div class="settings-language-sections">
+                            <div class="settings-section">
+                                <div class="settings-section-title" id="settings-ui-lang-title">INTERFACE LANGUAGE</div>
+                                <select id="settings-ui-lang-select" class="settings-select" aria-label="Interface language">
+                                    <!-- Populated by JS -->
+                                </select>
+                            </div>
+                            <div class="settings-section">
+                                <div class="settings-section-title" id="settings-content-lang-title">CONTENT LANGUAGE</div>
+                                <select id="settings-content-lang-select" class="settings-select" aria-label="Content language">
+                                    <!-- Populated by JS -->
+                                </select>
+                            </div>
                         </div>
                         <div class="settings-section">
                             <div class="settings-section-title" id="settings-locations-title">LOCATIONS</div>

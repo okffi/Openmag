@@ -184,8 +184,14 @@ header.main-header {
 
 .settings-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1.5fr;
+    grid-template-columns: 1fr 1.5fr;
     gap: 30px;
+}
+
+.settings-language-sections {
+    display: grid;
+    align-content: start;
+    gap: 16px;
 }
 
 .settings-section-title {

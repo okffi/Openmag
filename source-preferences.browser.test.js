@@ -111,6 +111,20 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         await waitFor(() => evaluate("document.querySelectorAll('#source-list [data-preference-source]').length === 3"), 'Application did not load');
         assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 50);
 
+        await evaluate("document.querySelector('#settings-btn').click()");
+        for (const viewportWidth of [1200, 800, 500]) {
+            await send('Emulation.setDeviceMetricsOverride', { width: viewportWidth, height: 800, deviceScaleFactor: 1, mobile: false });
+            const layout = await evaluate(`(() => {
+                const ui = document.querySelector('#settings-ui-lang-select').getBoundingClientRect();
+                const content = document.querySelector('#settings-content-lang-select').getBoundingClientRect();
+                return { uiLeft: ui.left, uiBottom: ui.bottom, contentLeft: content.left, contentTop: content.top };
+            })()`);
+            assert.equal(layout.uiLeft, layout.contentLeft);
+            assert.ok(layout.uiBottom < layout.contentTop);
+        }
+        await evaluate("document.querySelector('#settings-close-btn').click()");
+        await send('Emulation.clearDeviceMetricsOverride');
+
         const previewLengths = [];
         for (const viewportWidth of [1600, 500, 1600]) {
             await send('Emulation.setDeviceMetricsOverride', { width: viewportWidth, height: 800, deviceScaleFactor: 1, mobile: false });
