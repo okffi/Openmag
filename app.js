@@ -629,6 +629,12 @@
                 viewTitle.textContent = getTranslation('cat', currentCategory);
             }
         }
+        
+        // Rebuild location tree with new language
+        if (window.buildLocationTree) {
+            window.buildLocationTree();
+        }
+        
         syncSourceControls();
     }
 
@@ -645,7 +651,7 @@
             const res = await fetch('location-hierarchy.json?v=' + Date.now());
             locationHierarchy = await res.json();
         } catch (e) {
-            console.warn("Sijainnin hierarkia puuttuu.");
+            console.warn("Location hierarchy is missing.");
         }
 
         populateUiLangDropdown();
