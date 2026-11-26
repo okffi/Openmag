@@ -546,11 +546,13 @@
         const browserLang = (navigator.language || 'en').substring(0, 2);
         const defaultLang = languageCodes.includes(browserLang) ? browserLang : 'en';
 
-        // Populate hidden filter (used by t())
+        // Populate hidden filter (used by t()) with ALL available languages
         uiLangFilter.innerHTML = '';
-        const hiddenOpt = document.createElement('option');
-        hiddenOpt.value = defaultLang;
-        uiLangFilter.appendChild(hiddenOpt);
+        languageCodes.forEach(langCode => {
+            const opt = document.createElement('option');
+            opt.value = langCode;
+            uiLangFilter.appendChild(opt);
+        });
         uiLangFilter.value = defaultLang;
 
         // Populate settings panel dropdown with ALL available languages
