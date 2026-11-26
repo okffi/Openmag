@@ -14,6 +14,7 @@
     let statsData = null;
     let mainFeedCache = null;
     let translations = {};
+    let locationHierarchy = {};
     let currentLang = 'all';
     let currentScope = 'all';
     let currentSourceFile = 'data.json';
@@ -416,7 +417,14 @@
 
     function resetFilters() {
         document.getElementById('langFilter').value = 'all';
-        document.getElementById('scopeFilter').value = 'all';
+        
+        // Reset location selections - check only World
+        document.querySelectorAll('.location-checkbox').forEach(cb => {
+            cb.checked = cb.value === 'World';
+            cb.indeterminate = false;
+        });
+        
+        localStorage.removeItem('selectedLocations');
         syncSettingsPanelFromFilters();
         updateView();
     }
@@ -453,11 +461,14 @@
 
     function applySettingsPanel() {
         const selectedLang = document.getElementById('settings-content-lang-select');
-        const selectedScope = document.querySelector('input[name="settings-scope"]:checked');
         const selectedUiLang = document.getElementById('settings-ui-lang-select');
+        const selectedLocations = window.getSelectedLocations();
 
         if (selectedLang) document.getElementById('langFilter').value = selectedLang.value;
-        if (selectedScope) document.getElementById('scopeFilter').value = selectedScope.value;
+        
+        // Store selected locations
+        localStorage.setItem('selectedLocations', JSON.stringify(selectedLocations));
+        
         if (selectedUiLang) {
             document.getElementById('uiLangFilter').value = selectedUiLang.value;
             updateUITranslations();
@@ -468,13 +479,19 @@
 
     function syncSettingsPanelFromFilters() {
         const langVal = document.getElementById('langFilter').value;
-        const scopeVal = document.getElementById('scopeFilter').value;
         const uiLangVal = document.getElementById('uiLangFilter').value;
 
         const contentLangSelect = document.getElementById('settings-content-lang-select');
         if (contentLangSelect) contentLangSelect.value = langVal;
-        const scopeRadio = document.querySelector(`input[name="settings-scope"][value="${scopeVal}"]`);
-        if (scopeRadio) scopeRadio.checked = true;
+        
+        // Restore location selections from localStorage
+        const savedLocations = JSON.parse(localStorage.getItem('selectedLocations') || '[]');
+        if (savedLocations.length > 0 && window.getSelectedLocations) {
+            document.querySelectorAll('.location-checkbox').forEach(cb => {
+                cb.checked = savedLocations.includes(cb.value);
+            });
+        }
+        
         const uiLangSelect = document.getElementById('settings-ui-lang-select');
         if (uiLangSelect) uiLangSelect.value = uiLangVal;
     }
@@ -620,7 +637,15 @@
             const res = await fetch('translations.json?v=' + Date.now());
             translations = await res.json();
         } catch (e) {
-            console.warn("Käännökset puuttuvat.");
+            console.warn("Translations are missing.");
+        }
+
+        // Load location hierarchy from Geos tab
+        try {
+            const res = await fetch('location-hierarchy.json?v=' + Date.now());
+            locationHierarchy = await res.json();
+        } catch (e) {
+            console.warn("Sijainnin hierarkia puuttuu.");
         }
 
         populateUiLangDropdown();
@@ -681,6 +706,7 @@
 
         await loadData('data.json', true);
         initSidebar();
+        buildLocationTree();
         updateUITranslations();
         syncSettingsPanelFromFilters();
 
@@ -841,7 +867,7 @@
 
         const category = document.createElement('span');
         category.className = 'category-label';
-        // KÄÄNNÖS: Teksti käännetään, mutta logiikkaan lähetetään item.sheetCategory
+        // Translation: Text is translated, but logic uses item.sheetCategory
         category.textContent = getTranslation('cat', item.sheetCategory);
 
         category.onclick = (e) => {
@@ -993,16 +1019,16 @@
     function setViewTitleAndRss(viewTitleEl, title, rssLink, isMainFeed, siteUrl) {
         if (!viewTitleEl) return;
 
-        // 1. Tyhjennetään elementti turvallisesti ilman innerHTML:ää
+        // 1. Clear element safely without innerHTML
         while (viewTitleEl.firstChild) {
             viewTitleEl.removeChild(viewTitleEl.firstChild);
         }
 
-        // KÄÄNNÖS: Jos päänäkymä, käytetään käännettyä "Tuoreimmat uutiset"
+        // Translation: If main view, use translated "Latest news"
         const displayTitle = isMainFeed ? t('ui.latest_news') : decodeHtml(title);
 
         if (isMainFeed) {
-            // Päänäkymässä vain teksti. textContent on 100% immuuni XSS-hyökkäyksille.
+            // Main view only shows text. textContent is 100% immune to XSS attacks
             viewTitleEl.textContent = displayTitle;
             return;
         } else {
@@ -1015,7 +1041,7 @@
             a.textContent = displayTitle;
             viewTitleEl.appendChild(a);
 
-            // Lisätään RSS-ikoni VAIN, jos ollaan lähdenäkymässä
+            // Add RSS icon ONLY when in source view
             if (rssLink && rssLink !== 'data.json') {
                 const rssA = document.createElement('a');
                 rssA.href = rssLink;
@@ -1104,11 +1130,11 @@
         if (!Array.isArray(allArticles)) return;
 
         const selectedLang = currentLang;
-        const selectedScope = currentScope;
+        const selectedLocations = window.getSelectedLocations();
 
         const filtered = allArticles.filter(art => {
             const langMatch = (selectedLang === 'all') || (art.lang === selectedLang);
-            const scopeMatch = (selectedScope === 'all') || (art.scope === selectedScope);
+            const scopeMatch = (selectedLocations.length === 0) || selectedLocations.includes(art.scope);
             const catMatch = (currentCategory === 'All') || (art.sheetCategory === currentCategory);
             const sourceMatch = currentSourceFile !== 'data.json' || !sourcePreferences || sourcePreferences.isEnabled(art.sourceTitle);
             return langMatch && scopeMatch && catMatch && sourceMatch;
@@ -1123,14 +1149,15 @@
         const sentinel = document.querySelector('#scroll-sentinel');
 
         if (slice.length === 0 && displayedCount === 0) {
+            const selectedLocations = window.getSelectedLocations();
             const isFiltered = document.getElementById('langFilter').value !== 'all' ||
-                               document.getElementById('scopeFilter').value !== 'all';
+                               selectedLocations.length > 0;
 
             while (sentinel.firstChild) { sentinel.removeChild(sentinel.firstChild); }
             const hiddenBySource = currentSourceFile === 'data.json' && sourcePreferences &&
                 allArticles.some(art => !sourcePreferences.isEnabled(art.sourceTitle) &&
                     (selectedLang === 'all' || art.lang === selectedLang) &&
-                    (selectedScope === 'all' || art.scope === selectedScope) &&
+                    (selectedLocations.length === 0 || selectedLocations.includes(art.scope)) &&
                     (currentCategory === 'All' || art.sheetCategory === currentCategory));
             if (hiddenBySource) {
                 sentinel.textContent = t('msg.no_enabled_source_news');
@@ -1208,7 +1235,7 @@
         if (!statsData) return;
 
         const selectedLang = document.getElementById('langFilter').value;
-        const selectedScope = document.getElementById('scopeFilter').value;
+        const selectedLocations = window.getSelectedLocations();
 
         const mainItem = document.createElement('div');
         mainItem.className = 'source-item active';
@@ -1222,9 +1249,9 @@
 
             const info = statsData[name];
             const langMatch = (selectedLang === 'all') || (info.lang === selectedLang);
-            const scopeMatch = (selectedScope === 'all') || (info.scope === selectedScope);
+            const locationMatch = (selectedLocations.length === 0) || selectedLocations.includes(info.scope);
 
-            if (!langMatch || !scopeMatch) return;
+            if (!langMatch || !locationMatch) return;
 
             const cat = info.category || "General";
             if (!cats[cat]) cats[cat] = [];
@@ -1475,7 +1502,7 @@
         const viewDesc = document.getElementById('current-view-description');
         const logoCont = document.getElementById('feed-logo-container');
 
-        // KÄÄNNÖS: Näytetään käännetty nimi, mutta logiikka käyttää catNamea
+        // Translation: Show translated name, but logic uses catName
         if (viewTitle) viewTitle.innerText = getTranslation('cat', catName);
 
         if (viewDesc) viewDesc.innerText = `${t('ui.latest_news_from_the_category')} ${getTranslation('cat', catName)}`;
@@ -1716,7 +1743,169 @@
             container.classList.add('loaded');
         });
     }
+
+    // Helper function to map location names to translation keys
+    function getLocationTranslationKey(locationName) {
+        const keyMap = {
+            "World": "reg.world",
+            "Europe": "reg.europe",
+            "Finland": "reg.finland",
+            "Sweden": "reg.sweden",
+            "Denmark": "reg.denmark",
+            "Norway": "reg.norway",
+            "Estonia": "reg.estonia",
+            "Latvia": "reg.latvia",
+            "Lithuania": "reg.lithuania",
+            "Poland": "reg.poland",
+            "Nordic + Baltic countries": "reg.nordic_baltic_countries",
+            "Germany": "reg.germany",
+            "France": "reg.france",
+            "Italy": "reg.italy",
+            "Netherlands": "reg.netherlands",
+            "Belgium": "reg.belgium",
+            "Austria": "reg.austria",
+            "Czechia": "reg.czechia",
+            "Hungary": "reg.hungary",
+            "Switzerland": "reg.switzerland",
+            "UK": "reg.uk",
+            "United States": "reg.united_states",
+            "Americas": "reg.americas",
+            "Africa": "reg.africa",
+            "Asia & Australia": "reg.asia_australia",
+            "Middle East & Arab world": "reg.middle_east_arab_world"
+        };
+        return keyMap[locationName] || null;
+    }
+
+    // Get translated display name for a location
+    function getLocationDisplayName(locationName) {
+        const key = getLocationTranslationKey(locationName);
+        return key ? t(key) : locationName;
+    }
+
+    // Build the location tree UI from hierarchy
+    function buildLocationTree() {
+        const container = document.getElementById('location-tree');
+        if (!container || !locationHierarchy || Object.keys(locationHierarchy).length === 0) {
+            console.warn("Location hierarchy not available");
+            return;
+        }
+
+        // Find root nodes (no parent)
+        const roots = Object.entries(locationHierarchy)
+            .filter(([_, data]) => !data.parent)
+            .map(([name, _]) => name);
+
+        let html = '';
+        
+        function buildNode(locationName, level = 0) {
+            const node = locationHierarchy[locationName];
+            if (!node) return '';
+
+            const hasChildren = node.children && node.children.length > 0;
+            const displayName = getLocationDisplayName(locationName);
+            const nodeId = `loc-${locationName.replace(/\s+/g, '-').toLowerCase()}`;
+            
+            let nodeHtml = `
+                <div class="location-item location-level-${level}" data-location="${locationName}">
+                    <input type="checkbox" id="${nodeId}" class="location-checkbox" value="${locationName}">
+                    <label for="${nodeId}" class="location-label">
+                        <span class="location-name">${displayName}</span>
+                    </label>`;
+            
+            if (hasChildren) {
+                nodeHtml += `<span class="location-expand" data-parent="${nodeId}">▶</span>`;
+                nodeHtml += `</div>`;
+                
+                // Add children in a wrapper
+                nodeHtml += `<div class="location-children" data-parent="${nodeId}">`;
+                node.children.forEach(child => {
+                    nodeHtml += buildNode(child, level + 1);
+                });
+                nodeHtml += `</div>`;
+            } else {
+                nodeHtml += `</div>`;
+            }
+            
+            return nodeHtml;
+        }
+
+        roots.forEach(root => {
+            html += buildNode(root, 0);
+        });
+
+        container.innerHTML = html;
+        attachLocationTreeListeners();
+    }
+
+    // Attach event listeners to location tree
+    function attachLocationTreeListeners() {
+        // Expand/collapse arrows
+        document.querySelectorAll('.location-expand').forEach(arrow => {
+            arrow.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const childrenContainer = document.querySelector(`.location-children[data-parent="${arrow.dataset.parent}"]`);
+                if (childrenContainer) {
+                    childrenContainer.classList.toggle('hidden');
+                    arrow.classList.toggle('expanded');
+                    arrow.textContent = arrow.classList.contains('expanded') ? '▼' : '▶';
+                }
+            });
+        });
+
+        // Checkbox cascading
+        document.querySelectorAll('.location-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => {
+                const childrenContainer = document.querySelector(`.location-children[data-parent="loc-${e.target.value.replace(/\s+/g, '-').toLowerCase()}"]`);
+                if (childrenContainer) {
+                    childrenContainer.querySelectorAll('.location-checkbox').forEach(child => {
+                        child.checked = e.target.checked;
+                    });
+                }
+                updateParentCheckboxes(checkbox);
+            });
+        });
+    }
+
+    // Update parent checkboxes to show indeterminate state
+    function updateParentCheckboxes(checkbox) {
+        const item = checkbox.closest('.location-item');
+        const parentContainer = item.closest('.location-children');
+        if (!parentContainer) return;
+
+        const parentAttr = parentContainer.dataset.parent;
+        const parentCheckbox = document.getElementById(parentAttr);
+        if (!parentCheckbox) return;
+
+        const siblings = parentContainer.querySelectorAll('.location-checkbox');
+        const checkedCount = Array.from(siblings).filter(cb => cb.checked).length;
+
+        if (checkedCount === 0) {
+            parentCheckbox.checked = false;
+            parentCheckbox.indeterminate = false;
+        } else if (checkedCount === siblings.length) {
+            parentCheckbox.checked = true;
+            parentCheckbox.indeterminate = false;
+        } else {
+            parentCheckbox.checked = false;
+            parentCheckbox.indeterminate = true;
+        }
+
+        // Recursively update grandparents
+        const grandParentCheckbox = parentCheckbox.closest('.location-item')?.closest('.location-children')?.dataset.parent;
+        if (grandParentCheckbox) {
+            updateParentCheckboxes(parentCheckbox);
+        }
+    }
+
+    // Get all selected locations
+    function getSelectedLocations() {
+        const checked = document.querySelectorAll('.location-checkbox:checked');
+        return Array.from(checked).map(cb => cb.value);
+    }
+
     // Expose functions needed from HTML attributes
+
     window.toggleSidebar = toggleSidebar;
     window.showSidebarView = showSidebarView;
     window.showBookmarksView = showBookmarksView;
@@ -1725,6 +1914,8 @@
     window.closeSettingsPanel = closeSettingsPanel;
     window.applySettingsPanel = applySettingsPanel;
     window.resetFiltersFromPanel = resetFiltersFromPanel;
+    window.buildLocationTree = buildLocationTree;
+    window.getSelectedLocations = getSelectedLocations;
 
     init();
 })();

@@ -248,6 +248,7 @@ function createParser() {
 
 const SHEET_TSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=0&single=true&output=tsv";
 const TRANSLATIONS_TSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=204734258&single=true&output=tsv";
+const GEOS_TSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=1455134188&single=true&output=tsv";
 
 function selectScraperFeeds(feeds) {
     return feeds.filter(feed => feed.scrapeUrl);
@@ -305,14 +306,14 @@ async function run() {
     const sourcesDir = path.join(__dirname, 'sources');
 
     try {
-        // --- 1. PÄIVITTÄINEN PUHDISTUSLOGIIKKA ---
+        // --- 1. DAILY CLEANUP LOGIC ---
         let lastCleanDate = "";
         if (fs.existsSync(cleanLogFile)) {
             lastCleanDate = fs.readFileSync(cleanLogFile, 'utf8').trim();
         }
 
         if (lastCleanDate !== today) {
-            console.log(`--- PÄIVÄN ENSIMMÄINEN AJO: Puhdistetaan arkistot ja data.json (${today}) ---`);
+            console.log(`--- FIRST RUN OF THE DAY: Clearing archives and data.json (${today}) ---`);
             if (fs.existsSync(sourcesDir)) {
                 fs.readdirSync(sourcesDir).forEach(file => fs.unlinkSync(path.join(sourcesDir, file)));
             } else {
@@ -322,7 +323,7 @@ async function run() {
             if (fs.existsSync('data.json')) fs.unlinkSync('data.json');
             fs.writeFileSync(cleanLogFile, today);
         } else {
-            console.log(`--- Jatketaan päivää: ladataan olemassa oleva data ---`);
+            console.log(`--- Continuing day: loading existing data ---`);
             if (fs.existsSync('data.json')) {
                 allArticles = JSON.parse(fs.readFileSync('data.json', 'utf8'));
             }
@@ -330,8 +331,8 @@ async function run() {
 
         const cacheBuster = `&cb=${Date.now()}`;
 
-        // --- 2. KÄÄNNÖSTEN HAKU (RE-INSTATED) ---
-        console.log("Päivitetään käännökset Sheetsistä...");
+        // --- 2. TRANSLATIONS FETCH (RE-INSTATED) ---
+        console.log("Updating translations from Sheets...");
 
         const transRes = await axios.get(TRANSLATIONS_TSV_URL + cacheBuster);
         const transRows = transRes.data.split(/\r?\n/).filter(r => r.trim() !== '');
@@ -354,11 +355,43 @@ async function run() {
         });
 
         fs.writeFileSync('translations.json', JSON.stringify(transObj, null, 2));
-        console.log("translations.json päivitetty.");
+        console.log("translations.json updated.");
+
+        // --- 2.5 GEOS HIERARCHY FETCH ---
+        console.log("Fetching location hierarchy from Sheets...");
+        const geosRes = await axios.get(GEOS_TSV_URL + cacheBuster);
+        const geosRows = geosRes.data.split(/\r?\n/).filter(r => r.trim() !== '');
+        
+        const locationHierarchy = {};
+        const locationsByParent = {};
+        
+        // Parse Geos data: Location | Parent
+        geosRows.slice(1).forEach(row => {
+            const [location, parent] = row.split('\t').map(v => v ? v.trim() : '');
+            if (location) {
+                locationHierarchy[location] = {
+                    parent: parent || null,
+                    children: []
+                };
+                if (!locationsByParent[parent]) {
+                    locationsByParent[parent] = [];
+                }
+                locationsByParent[parent].push(location);
+            }
+        });
+        
+        // Build children arrays
+        Object.entries(locationsByParent).forEach(([parent, children]) => {
+            if (parent && locationHierarchy[parent]) {
+                locationHierarchy[parent].children = children;
+            }
+        });
+        
+        fs.writeFileSync('location-hierarchy.json', JSON.stringify(locationHierarchy, null, 2));
+        console.log("location-hierarchy.json updated.");
 
 
-        // --- 3. SYÖTTEIDEN HAKU ---
-        console.log("Haetaan syötelistaa Google Sheetsistä (TSV)...");
+        console.log("Fetching feed list from Google Sheets (TSV)...");
         const response = await axios.get(SHEET_TSV_URL + cacheBuster);
         const rows = response.data.split(/\r?\n/).slice(1).filter(row => row.trim() !== '');
 
@@ -366,11 +399,11 @@ async function run() {
             const c = row.split('\t').map(v => v ? v.trim() : '');
             if (!c[2] && !c[3]) return null;
             return {
-                category: c[0] || "Yleinen",
-                feedName: c[1] || "Nimetön",
+                category: c[0] || "General",
+                feedName: c[1] || "Unnamed",
                 rssUrl: c[2],
                 scrapeUrl: c[3] || "",
-                nameChecked: c[4] || c[1] || "Lähde",
+                nameChecked: c[4] || c[1] || "Source",
                 sheetDesc: c[5] || "",
                 lang: (c[6] || "fi").toLowerCase(),
                 scope: c[7] || "World",
@@ -447,7 +480,7 @@ async function run() {
             fs.writeFileSync(path.join(sourcesDir, `${key}.json`), JSON.stringify(articlesBySource[key], null, 2));
         });
 
-        // --- 6. ETUSIVUN JÄRJESTELY (ROUND ROBIN) ---
+        // --- 6. HOMEPAGE ARRANGEMENT (ROUND ROBIN) ---
         const days = {};
         allArticles.forEach(art => {
             const d = art.pubDate.split('T')[0];
@@ -487,16 +520,16 @@ async function run() {
         fs.writeFileSync('stats.json', JSON.stringify(sourceStats, null, 2));
 
         fs.writeFileSync('failed_feeds.txt', failedFeeds.join('\n'));
-        console.log(`Success! data.json, stats.json ja translations.json päivitetty.`);
+        console.log(`Success! data.json, stats.json, and translations.json updated.`);
     } catch (error) {
-        console.error("Kriittinen virhe:", error);
+        console.error("Critical error:", error);
         process.exit(1);
     }
 }
 async function processRSS(feed, allArticles) {
     let feedContent;
 
-    // Määritetään yhteiset asetukset axios-pyyntöjä varten
+    // Set common axios request configuration
     const axiosConfig = {
         timeout: 15000,
         headers: {
@@ -510,43 +543,43 @@ async function processRSS(feed, allArticles) {
     };
 
     try {
-        // Yritetään ensin normaalisti rss-parserilla
-        // Huom: rss-parser ei tue suoraan axios-headersseja, joten jos tämä epäonnistuu,
-        // mennään automaattisesti catch-lohkoon, jossa axios käyttää User-Agentia.
+        // Try first with rss-parser normally
+        // Note: rss-parser doesn't directly support axios headers, so if this fails,
+        // we automatically go to the catch block where axios uses the User-Agent.
         feedContent = await createParser().parseURL(feed.rssUrl);
     } catch (err) {
-        // Poikkeuslogiikka XML-virheille, sertifikaattivioille tai jos palvelin hylkää peruspyynnön
-        console.log(`[POIKKEUS] Vikasietoinen haku: ${feed.nameChecked}`);
+        // Exception handling for XML errors, certificate issues, or if server rejects basic request
+        console.log(`[EXCEPTION] Fallback fetch: ${feed.nameChecked}`);
 
         try {
-            // Käytetään axiosia yllä määritellyllä configilla (sisältää User-Agentin)
+            // Use axios with config defined above (includes User-Agent)
             const response = await axios.get(feed.rssUrl, axiosConfig);
 
             let xmlData = response.data;
-            // Puhdistetaan rikkonaiset XML-merkit
+            // Clean up broken XML characters
             xmlData = xmlData.replace(/&(?!(amp|lt|gt|quot|apos|#\d+|#x[a-f\d]+);)/gi, '&amp;');
 
             feedContent = await createParser().parseString(xmlData);
         } catch (retryErr) {
-            throw new Error(`Vikasietoinen haku epäonnistui: ${retryErr.message}`);
+            throw new Error(`Fallback fetch failed: ${retryErr.message}`);
         }
     }
 
-    // 1. Poimitaan syötteen kuvaus
+    // 1. Extract feed description
     const sourceDescription = cleanupSourceDescription(feed.sheetDesc || (feedContent.description || ""), {
         sourceTitle: feed.nameChecked
     });
 
-    // 2. Poimitaan logo (monitasoinen varajärjestelmä)
+    // 2. Extract logo (multi-level fallback system)
     let sourceLogo = null;
     try {
-        // Yritetään ensin syötteen ilmoittamaa linkkiä, sitten uutislinkkiä, ja lopuksi RSS-osoitetta
+        // Try feed-specified link first, then article link, then RSS URL
         const linkToParse = feedContent.link || (feedContent.items[0] && feedContent.items[0].link) || feed.rssUrl;
         const domain = linkToParse ? new URL(linkToParse).hostname : null;
         sourceLogo = await getSourceLogo(feedContent, domain, feed.nameChecked);
     } catch (e) {
-        // Jos URL on edelleen viallinen (esim. pelkkä polku), ei kaadeta ajoa
-        console.log(`[VAROITUS] Logon haku epäonnistui kohteelle ${feed.nameChecked}: ${e.message}`);
+        // If URL is invalid (e.g., just a path), don't crash the process
+        console.log(`[WARNING] Logo fetch failed for ${feed.nameChecked}: ${e.message}`);
     }
 
     const items = feedContent.items
@@ -577,7 +610,7 @@ async function processRSS(feed, allArticles) {
                     try {
                         articleLink = new URL(articleLink, feed.rssUrl).href;
                     } catch (e) {
-                        console.error("Linkin korjaus epäonnistui:", articleLink);
+                        console.error("Link correction failed:", articleLink);
                     }
                 }
             }
@@ -661,12 +694,12 @@ async function processRSS(feed, allArticles) {
                 try {
                     img = new URL(img, baseUrl).href;
                 } catch (e) {
-                    console.log(`[VAROITUS] ${feed.nameChecked}: kuva-URL:n korjaus epäonnistui: ${img}`);
+                    console.log(`[WARNING] ${feed.nameChecked}: image URL correction failed: ${img}`);
                     img = null;
                 }
             }
             // (optional: log images)
-            // if (img) console.log(`[KUVA] ${feed.nameChecked}: kuva valittu: ${img.substring(0, 80)}`);
+            // if (img) console.log(`[IMAGE] ${feed.nameChecked}: image selected: ${img.substring(0, 80)}`);
 
             // F) Clean up unwanted tags and attributes in HTML
             $c('img').each((_, el) => {
@@ -803,10 +836,10 @@ async function processScraper(feed, allArticles) {
 
 if (require.main === module) {
     run().then(() => {
-        console.log("Ajo suoritettu loppuun.");
+        console.log("Run completed successfully.");
         process.exit(0);
     }).catch(err => {
-        console.error("Ajo epäonnistui:", err);
+        console.error("Run failed:", err);
         process.exit(1);
     });
 }

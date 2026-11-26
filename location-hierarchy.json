@@ -1,0 +1,106 @@
+{
+  "World": {
+    "parent": null,
+    "children": ["Europe", "Americas", "Africa", "Asia & Australia", "Middle East & Arab world"]
+  },
+  "Europe": {
+    "parent": "World",
+    "children": ["Nordic + Baltic countries", "Germany", "France", "Italy", "Netherlands", "Belgium", "Austria", "Czechia", "Hungary", "Poland", "Switzerland", "UK"]
+  },
+  "Nordic + Baltic countries": {
+    "parent": "Europe",
+    "children": ["Finland", "Sweden", "Denmark", "Norway", "Estonia", "Latvia", "Lithuania", "Poland"]
+  },
+  "Finland": {
+    "parent": "Nordic + Baltic countries",
+    "children": []
+  },
+  "Sweden": {
+    "parent": "Nordic + Baltic countries",
+    "children": []
+  },
+  "Denmark": {
+    "parent": "Nordic + Baltic countries",
+    "children": []
+  },
+  "Norway": {
+    "parent": "Nordic + Baltic countries",
+    "children": []
+  },
+  "Estonia": {
+    "parent": "Nordic + Baltic countries",
+    "children": []
+  },
+  "Latvia": {
+    "parent": "Nordic + Baltic countries",
+    "children": []
+  },
+  "Lithuania": {
+    "parent": "Nordic + Baltic countries",
+    "children": []
+  },
+  "Poland": {
+    "parent": "Nordic + Baltic countries",
+    "children": []
+  },
+  "Germany": {
+    "parent": "Europe",
+    "children": []
+  },
+  "France": {
+    "parent": "Europe",
+    "children": []
+  },
+  "Italy": {
+    "parent": "Europe",
+    "children": []
+  },
+  "Netherlands": {
+    "parent": "Europe",
+    "children": []
+  },
+  "Belgium": {
+    "parent": "Europe",
+    "children": []
+  },
+  "Austria": {
+    "parent": "Europe",
+    "children": []
+  },
+  "Czechia": {
+    "parent": "Europe",
+    "children": []
+  },
+  "Hungary": {
+    "parent": "Europe",
+    "children": []
+  },
+  "Switzerland": {
+    "parent": "Europe",
+    "children": []
+  },
+  "UK": {
+    "parent": "Europe",
+    "children": []
+  },
+  "Americas": {
+    "parent": "World",
+    "children": ["United States"]
+  },
+  "United States": {
+    "parent": "Americas",
+    "children": []
+  },
+  "Africa": {
+    "parent": "World",
+    "children": []
+  },
+  "Asia & Australia": {
+    "parent": "World",
+    "children": []
+  },
+  "Middle East & Arab world": {
+    "parent": "World",
+    "children": []
+  }
+}
