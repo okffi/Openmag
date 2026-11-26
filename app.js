@@ -75,16 +75,12 @@
     }
 
     function updateVisibilityToggle(toggle, state) {
-        const dot = toggle.querySelector('.visibility-dot');
-        
         if (state === 'mixed') {
             toggle.setAttribute('data-visible', 'mixed');
         } else if (state) {
             toggle.setAttribute('data-visible', 'true');
-            if (dot) dot.style.background = 'var(--primary-color)';
         } else {
             toggle.setAttribute('data-visible', 'false');
-            if (dot) dot.style.background = '#ccc';
         }
         return state;
     }
