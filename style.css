@@ -754,6 +754,38 @@ main { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; }
 
 #scroll-sentinel { text-align: center; padding: 80px 0; color: #bbb; text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; }
 
+/* NO LOGO DISPLAY */
+.no-logo-display {
+    display: none !important;
+}
+
+.logo-display-flex {
+    display: flex !important;
+}
+
+/* FILTER MESSAGE STYLES */
+.filter-message {
+    padding: 20px;
+}
+
+.filter-message button {
+    background: var(--text-dark);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+    margin-top: 10px;
+}
+
+.filter-message button:hover {
+    background: #333;
+}
+
 /* --- RESPONSIVE --- */
 @media (max-width: 1100px) { 
     .grid-sizer, .grid-item { width: 48%; } 

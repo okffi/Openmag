@@ -1134,11 +1134,10 @@
                 sentinel.textContent = t('msg.no_enabled_source_news');
             } else if (isFiltered) {
                 const msgDiv = document.createElement('div');
-                msgDiv.style.padding = '20px';
+                msgDiv.className = 'filter-message';
                 const msgP = document.createElement('p');
                 msgP.textContent = t('msg.no_news_found_with_the_selected_filters');
                 const resetBtn = document.createElement('button');
-                resetBtn.style.cssText = 'background:var(--text-dark); color:white; border:none; padding:8px 15px; cursor:pointer; font-size:0.7rem; font-weight:700; text-transform:uppercase;';
                 resetBtn.textContent = t('ui.reset_filters');
                 resetBtn.onclick = resetFilters;
                 msgDiv.appendChild(msgP);
@@ -1356,7 +1355,11 @@
             const logoCont = document.getElementById('feed-logo-container');
             if (viewTitle) viewTitle.textContent = t('ui.latest_news');
             if (viewDesc) viewDesc.innerText = t('ui.a_collection_of_the_latest_news_from_followed_sources');
-            if (logoCont) { logoCont.innerHTML = ''; logoCont.style.display = 'none'; }
+            if (logoCont) { 
+                logoCont.innerHTML = '';
+                logoCont.classList.add('no-logo-display');
+                logoCont.classList.remove('logo-display-flex');
+            }
             loadData('data.json');
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -1379,7 +1382,13 @@
             if (viewDesc) viewDesc.innerText = t('msg.loading_news');
 
             if (logoCont) {
-                logoCont.style.display = isMainFeed ? 'none' : 'flex';
+                if (isMainFeed) {
+                    logoCont.classList.add('no-logo-display');
+                    logoCont.classList.remove('logo-display-flex');
+                } else {
+                    logoCont.classList.remove('no-logo-display');
+                    logoCont.classList.add('logo-display-flex');
+                }
                 logoCont.innerHTML = "";
                 logoCont.classList.remove('dark-bg');
             }
@@ -1470,7 +1479,8 @@
         if (viewDesc) viewDesc.innerText = `${t('ui.latest_news_from_the_category')} ${getTranslation('cat', catName)}`;
         if (logoCont) {
             logoCont.innerHTML = "";
-            logoCont.style.display = 'none';
+            logoCont.classList.add('no-logo-display');
+            logoCont.classList.remove('logo-display-flex');
         }
 
         displayedCount = 0;
@@ -1546,7 +1556,11 @@
             viewTitle.appendChild(csvA);
         }
         if (viewDesc) viewDesc.textContent = '';
-        if (logoCont) { logoCont.innerHTML = ''; logoCont.style.display = 'none'; }
+        if (logoCont) { 
+            logoCont.innerHTML = '';
+            logoCont.classList.add('no-logo-display');
+            logoCont.classList.remove('logo-display-flex');
+        }
 
         const bookmarks = window.BookmarkManager ? window.BookmarkManager.getAll() : [];
         const container = document.querySelector('#magazine-grid');
