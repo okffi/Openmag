@@ -642,6 +642,14 @@ main { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; }
     height: 6px;
 }
 
+.card-visibility-toggle[data-visible="false"] .visibility-dot {
+    background: #ccc;
+}
+
+.card-visibility-toggle[data-visible="mixed"] .visibility-dot {
+    background: linear-gradient(135deg, var(--primary-color) 50%, #ccc 50%);
+}
+
 /* Touch confirmation UI */
 .visibility-confirmation-row {
     display: none;
