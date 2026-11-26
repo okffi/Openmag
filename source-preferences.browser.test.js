@@ -24,6 +24,10 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         snippet: i === 0 ? 'A longer news preview' : i === 1 ? 'A short preview.' : i === 2 ? 'x'.repeat(1000) : '',
         content: i === 0 ? `<p>A longer news preview ${'with meaningful words '.repeat(40)}ending.</p>` : ''
     }));
+    articles.push({
+        title: 'Finnish article', link: 'https://example.test/finland', sourceTitle: 'Gamma',
+        sheetCategory: 'Topic', lang: 'fi', scope: 'Finland', pubDate: '2020-01-01T00:00:00.000Z'
+    });
     const stats = {
         Alpha: { file: 'alpha.json', count: 30, category: 'Topic', lang: 'en', scope: 'Europe' },
         Beta: { file: 'beta.json', count: 30, category: 'Topic', lang: 'en', scope: 'Europe' },
@@ -47,7 +51,7 @@ test('source switches filter feeds, synchronize views, and survive reload', {
             const source = path.split('/').pop().replace('.json', '');
             res.end(JSON.stringify(path === '/stats.json' ? stats :
                 path === '/data.json' ? articles : articles.filter(article => article.sourceTitle.toLowerCase() === source)));
-        } else if (['/app.js', '/bookmarks.js', '/source-preferences.js', '/translations.json', '/style.css'].includes(path)) {
+        } else if (['/app.js', '/bookmarks.js', '/source-preferences.js', '/translations.json', '/location-hierarchy.json', '/style.css'].includes(path)) {
             res.setHeader('content-type', path.endsWith('.js') ? 'text/javascript' :
                 path.endsWith('.json') ? 'application/json' : 'text/css');
             res.end(await readFile(join(__dirname, path.slice(1))));
@@ -210,6 +214,45 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         assert.equal(await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').getAttribute('data-visible')"), 'mixed');
         await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').click()");
         assert.deepEqual(await evaluate("JSON.parse(localStorage.getItem('openmag_disabled_sources'))"), []);
+        assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 50);
+
+        await evaluate("document.querySelector('#langFilter').value = 'all'; document.querySelector('#langFilter').dispatchEvent(new Event('change'))");
+        await evaluate("document.querySelector('#settings-btn').click(); document.querySelector('.location-checkbox[value=\"Finland\"]').click()");
+        assert.equal(await evaluate("document.querySelectorAll('.location-checkbox[value=\"Poland\"]').length"), 1);
+        await evaluate("document.querySelector('.location-expand[data-parent=\"loc-europe\"]').click()");
+        assert.equal(await evaluate("document.querySelector('.location-expand[data-parent=\"loc-europe\"]').getAttribute('aria-expanded')"), 'false');
+        assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 50);
+        await evaluate("document.querySelector('#settings-ui-lang-select').value = 'fi'; document.querySelector('#settings-ui-lang-select').dispatchEvent(new Event('change'))");
+        assert.equal(await evaluate("document.querySelector('.location-checkbox[value=\"Finland\"]').checked"), true);
+        assert.equal(await evaluate("document.querySelector('.location-expand[data-parent=\"loc-europe\"]').getAttribute('aria-expanded')"), 'false');
+        await evaluate("document.querySelector('#settings-apply-btn').click()");
+        assert.deepEqual(await evaluate("JSON.parse(localStorage.getItem('selectedLocations'))"), ['Finland']);
+        assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 1);
+        assert.equal(await evaluate("document.querySelector('.grid-item [data-preference-source]').dataset.preferenceSource"), 'Gamma');
+        assert.deepEqual(await evaluate("Array.from(document.querySelectorAll('#source-list [data-preference-source]'), e => e.dataset.preferenceSource)"), ['Gamma']);
+        await evaluate("document.querySelector('#btn-az').click()");
+        assert.deepEqual(await evaluate("Array.from(document.querySelectorAll('#source-list [data-preference-source]'), e => e.dataset.preferenceSource)"), ['Gamma']);
+
+        await evaluate("window.__locationReload = true");
+        await send('Page.reload');
+        await waitFor(() => evaluate("!window.__locationReload && document.querySelectorAll('#source-list [data-preference-source]').length === 1"), 'Location selection did not restore');
+        assert.equal(await evaluate("document.querySelector('.grid-item [data-preference-source]').dataset.preferenceSource"), 'Gamma');
+        await evaluate("document.querySelector('#settings-btn').click()");
+        assert.equal(await evaluate("document.querySelector('.location-checkbox[value=\"Finland\"]').checked"), true);
+        await evaluate("document.querySelector('.location-checkbox[value=\"Europe\"]').click(); document.querySelector('.location-checkbox[value=\"Finland\"]').click()");
+        assert.equal(await evaluate("document.querySelector('.location-checkbox[value=\"Europe\"]').checked"), true);
+        await evaluate("document.querySelector('#settings-apply-btn').click()");
+        assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 50);
+        assert.equal(await evaluate("JSON.parse(localStorage.getItem('selectedLocations')).includes('Europe')"), true);
+        assert.equal(await evaluate("JSON.parse(localStorage.getItem('selectedLocations')).includes('Finland')"), false);
+        assert.deepEqual((await evaluate("Array.from(document.querySelectorAll('#source-list [data-preference-source]'), e => e.dataset.preferenceSource)")).sort(), ['Alpha', 'Beta']);
+
+        await evaluate("document.querySelector('#settings-btn').click(); document.querySelector('.location-checkbox[value=\"Europe\"]').click(); document.querySelector('#settings-close-btn').click()");
+        await evaluate("document.querySelector('#settings-btn').click()");
+        assert.equal(await evaluate("document.querySelector('.location-checkbox[value=\"Europe\"]').checked"), true);
+        await evaluate("document.querySelector('#settings-reset-btn').click()");
+        assert.equal(await evaluate("localStorage.getItem('selectedLocations')"), null);
+        assert.equal(await evaluate("document.querySelectorAll('#source-list [data-preference-source]').length"), 3);
         assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 50);
     } finally {
         if (socket) {

@@ -885,10 +885,9 @@ main { flex-grow: 1; min-width: 0; display: flex; flex-direction: column; }
     font-size: 0.7rem;
     transition: transform 0.2s;
     flex-shrink: 0;
-}
-
-.location-expand.expanded {
-    transform: rotate(90deg);
+    border: 0;
+    padding: 0;
+    background: none;
 }
 
 .location-children.hidden {

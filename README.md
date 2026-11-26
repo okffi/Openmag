@@ -14,6 +14,14 @@ by default, including new sources; clearing site storage removes the selection.
 Source pages still preview articles from disabled sources, and bookmarks remain
 visible. Resetting language or region filters does not reset source selections.
 
+## Location selection
+
+Select locations in Settings and choose Apply to filter articles and sidebar
+sources. Selecting a region also selects its descendants; individual locations
+can then be changed independently. A regional selection includes sources
+tagged with that region, not just its countries. With no locations selected,
+all locations are shown. Location selections are saved in this browser.
+
 ## Scraper sources
 
 The news updater reads source metadata and URLs from the published Google Sheet

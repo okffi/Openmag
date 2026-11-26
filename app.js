@@ -15,6 +15,7 @@
     let mainFeedCache = null;
     let translations = {};
     let locationHierarchy = {};
+    let selectedLocations = [];
     let currentLang = 'all';
     let currentScope = 'all';
     let currentSourceFile = 'data.json';
@@ -417,14 +418,9 @@
 
     function resetFilters() {
         document.getElementById('langFilter').value = 'all';
-        
-        // Reset location selections - check only World
-        document.querySelectorAll('.location-checkbox').forEach(cb => {
-            cb.checked = cb.value === 'World';
-            cb.indeterminate = false;
-        });
-        
+
         localStorage.removeItem('selectedLocations');
+        selectedLocations = [];
         syncSettingsPanelFromFilters();
         updateView();
     }
@@ -441,6 +437,7 @@
         if (isOpen) {
             closeSettingsPanel();
         } else {
+            syncSettingsPanelFromFilters();
             panel.hidden = false;
             void panel.offsetHeight;
             panel.classList.add('open');
@@ -462,12 +459,12 @@
     function applySettingsPanel() {
         const selectedLang = document.getElementById('settings-content-lang-select');
         const selectedUiLang = document.getElementById('settings-ui-lang-select');
-        const selectedLocations = window.getSelectedLocations();
+        const locations = getSelectedLocations();
 
         if (selectedLang) document.getElementById('langFilter').value = selectedLang.value;
-        
-        // Store selected locations
-        localStorage.setItem('selectedLocations', JSON.stringify(selectedLocations));
+
+        localStorage.setItem('selectedLocations', JSON.stringify(locations));
+        selectedLocations = locations;
         
         if (selectedUiLang) {
             document.getElementById('uiLangFilter').value = selectedUiLang.value;
@@ -484,13 +481,9 @@
         const contentLangSelect = document.getElementById('settings-content-lang-select');
         if (contentLangSelect) contentLangSelect.value = langVal;
         
-        // Restore location selections from localStorage
-        const savedLocations = JSON.parse(localStorage.getItem('selectedLocations') || '[]');
-        if (savedLocations.length > 0 && window.getSelectedLocations) {
-            document.querySelectorAll('.location-checkbox').forEach(cb => {
-                cb.checked = savedLocations.includes(cb.value);
-            });
-        }
+        document.querySelectorAll('.location-checkbox').forEach(cb => {
+            cb.checked = selectedLocations.includes(cb.value);
+        });
         
         const uiLangSelect = document.getElementById('settings-ui-lang-select');
         if (uiLangSelect) uiLangSelect.value = uiLangVal;
@@ -508,9 +501,9 @@
 
     function updateView() {
         if (pendingOperation) return;
+        currentLang = document.getElementById('langFilter').value;
         if (isBookmarksView) return;
 
-        currentLang = document.getElementById('langFilter').value;
         currentScope = document.getElementById('scopeFilter').value;
         displayedCount = 0;
         clearGrid();
@@ -653,6 +646,12 @@
         } catch (e) {
             console.warn("Location hierarchy is missing.");
         }
+
+        const savedLocations = JSON.parse(localStorage.getItem('selectedLocations') || '[]');
+        if (!Array.isArray(savedLocations) || !savedLocations.every(location => typeof location === 'string')) {
+            throw new Error('Invalid saved location selection');
+        }
+        selectedLocations = savedLocations;
 
         populateUiLangDropdown();
         const uiLangFilter = document.getElementById('uiLangFilter');
@@ -1136,8 +1135,6 @@
         if (!Array.isArray(allArticles)) return;
 
         const selectedLang = currentLang;
-        const selectedLocations = window.getSelectedLocations();
-
         const filtered = allArticles.filter(art => {
             const langMatch = (selectedLang === 'all') || (art.lang === selectedLang);
             const scopeMatch = (selectedLocations.length === 0) || selectedLocations.includes(art.scope);
@@ -1155,7 +1152,6 @@
         const sentinel = document.querySelector('#scroll-sentinel');
 
         if (slice.length === 0 && displayedCount === 0) {
-            const selectedLocations = window.getSelectedLocations();
             const isFiltered = document.getElementById('langFilter').value !== 'all' ||
                                selectedLocations.length > 0;
 
@@ -1241,8 +1237,6 @@
         if (!statsData) return;
 
         const selectedLang = document.getElementById('langFilter').value;
-        const selectedLocations = window.getSelectedLocations();
-
         const mainItem = document.createElement('div');
         mainItem.className = 'source-item active';
         mainItem.textContent = t('ui.latest_news');
@@ -1318,8 +1312,6 @@
         if (!statsData) return;
 
         const selectedLang = document.getElementById('langFilter').value;
-        const selectedScope = document.getElementById('scopeFilter').value;
-
         const mainItem = document.createElement('div');
         mainItem.className = 'source-item';
         mainItem.textContent = t('ui.latest_news');
@@ -1332,7 +1324,7 @@
 
                 const info = statsData[key];
                 const langMatch = (selectedLang === 'all') || (info.lang === selectedLang);
-                const scopeMatch = (selectedScope === 'all') || (info.scope === selectedScope);
+                const scopeMatch = (selectedLocations.length === 0) || selectedLocations.includes(info.scope);
 
                 return langMatch && scopeMatch;
             })
@@ -1797,6 +1789,10 @@
             return;
         }
 
+        const checkedLocations = getSelectedLocations();
+        const collapsedLocations = Array.from(container.querySelectorAll('.location-children.hidden'))
+            .map(children => children.dataset.parent);
+
         // Find root nodes (no parent)
         const roots = Object.entries(locationHierarchy)
             .filter(([_, data]) => !data.parent)
@@ -1804,9 +1800,9 @@
 
         let html = '';
         
-        function buildNode(locationName, level = 0) {
+        function buildNode(locationName, level = 0, parentName = null) {
             const node = locationHierarchy[locationName];
-            if (!node) return '';
+            if (!node || node.parent !== parentName) return '';
 
             const hasChildren = node.children && node.children.length > 0;
             const displayName = getLocationDisplayName(locationName);
@@ -1820,13 +1816,13 @@
                     </label>`;
             
             if (hasChildren) {
-                nodeHtml += `<span class="location-expand" data-parent="${nodeId}">▶</span>`;
+                nodeHtml += `<button type="button" class="location-expand" data-parent="${nodeId}" aria-label="${displayName}" aria-expanded="true">▼</button>`;
                 nodeHtml += `</div>`;
                 
                 // Add children in a wrapper
                 nodeHtml += `<div class="location-children" data-parent="${nodeId}">`;
                 node.children.forEach(child => {
-                    nodeHtml += buildNode(child, level + 1);
+                    nodeHtml += buildNode(child, level + 1, locationName);
                 });
                 nodeHtml += `</div>`;
             } else {
@@ -1841,6 +1837,17 @@
         });
 
         container.innerHTML = html;
+        container.querySelectorAll('.location-checkbox').forEach(checkbox => {
+            checkbox.checked = checkedLocations.includes(checkbox.value);
+        });
+        container.querySelectorAll('.location-children').forEach(children => {
+            if (collapsedLocations.includes(children.dataset.parent)) {
+                children.classList.add('hidden');
+                const arrow = container.querySelector(`.location-expand[data-parent="${children.dataset.parent}"]`);
+                arrow.textContent = '▶';
+                arrow.setAttribute('aria-expanded', 'false');
+            }
+        });
         attachLocationTreeListeners();
     }
 
@@ -1852,9 +1859,9 @@
                 e.stopPropagation();
                 const childrenContainer = document.querySelector(`.location-children[data-parent="${arrow.dataset.parent}"]`);
                 if (childrenContainer) {
-                    childrenContainer.classList.toggle('hidden');
-                    arrow.classList.toggle('expanded');
-                    arrow.textContent = arrow.classList.contains('expanded') ? '▼' : '▶';
+                    const collapsed = childrenContainer.classList.toggle('hidden');
+                    arrow.textContent = collapsed ? '▶' : '▼';
+                    arrow.setAttribute('aria-expanded', String(!collapsed));
                 }
             });
         });
@@ -1868,40 +1875,8 @@
                         child.checked = e.target.checked;
                     });
                 }
-                updateParentCheckboxes(checkbox);
             });
         });
-    }
-
-    // Update parent checkboxes to show indeterminate state
-    function updateParentCheckboxes(checkbox) {
-        const item = checkbox.closest('.location-item');
-        const parentContainer = item.closest('.location-children');
-        if (!parentContainer) return;
-
-        const parentAttr = parentContainer.dataset.parent;
-        const parentCheckbox = document.getElementById(parentAttr);
-        if (!parentCheckbox) return;
-
-        const siblings = parentContainer.querySelectorAll('.location-checkbox');
-        const checkedCount = Array.from(siblings).filter(cb => cb.checked).length;
-
-        if (checkedCount === 0) {
-            parentCheckbox.checked = false;
-            parentCheckbox.indeterminate = false;
-        } else if (checkedCount === siblings.length) {
-            parentCheckbox.checked = true;
-            parentCheckbox.indeterminate = false;
-        } else {
-            parentCheckbox.checked = false;
-            parentCheckbox.indeterminate = true;
-        }
-
-        // Recursively update grandparents
-        const grandParentCheckbox = parentCheckbox.closest('.location-item')?.closest('.location-children')?.dataset.parent;
-        if (grandParentCheckbox) {
-            updateParentCheckboxes(parentCheckbox);
-        }
     }
 
     // Get all selected locations
