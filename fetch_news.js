@@ -358,8 +358,14 @@ async function run() {
         console.log("translations.json updated.");
 
         // --- 2.5 GEOS HIERARCHY FETCH ---
+        // A failure here (e.g. the Geos sheet is not published) must not stop the news update;
+        // the previously saved location-hierarchy.json stays in use.
+        try {
         console.log("Fetching location hierarchy from Sheets...");
         const geosRes = await axios.get(GEOS_TSV_URL + cacheBuster);
+        if (typeof geosRes.data !== 'string' || /^\s*<(!doctype|html)/i.test(geosRes.data)) {
+            throw new Error("Geos sheet did not return TSV data");
+        }
         const geosRows = geosRes.data.split(/\r?\n/).filter(r => r.trim() !== '');
         
         const locationHierarchy = {};
@@ -389,6 +395,9 @@ async function run() {
         
         fs.writeFileSync('location-hierarchy.json', JSON.stringify(locationHierarchy, null, 2));
         console.log("location-hierarchy.json updated.");
+        } catch (geosError) {
+            console.warn(`Location hierarchy not updated, keeping existing file: ${geosError.message}`);
+        }
 
 
         console.log("Fetching feed list from Google Sheets (TSV)...");
