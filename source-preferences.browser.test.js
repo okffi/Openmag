@@ -29,6 +29,7 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         sheetCategory: 'Topic', lang: 'fi', scope: 'Finland', pubDate: '2020-01-01T00:00:00.000Z'
     });
     const stats = {
+        __meta: { last_updated: '1.1.2026 klo 10.00.00' },
         Alpha: { file: 'alpha.json', count: 30, category: 'Topic', lang: 'en', scope: 'Europe' },
         Beta: { file: 'beta.json', count: 30, category: 'Topic', lang: 'en', scope: 'Europe' },
         Gamma: { file: 'gamma.json', count: 1, category: 'Topic', lang: 'fi', scope: 'Finland' }
@@ -114,6 +115,13 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         await send('Page.navigate', { url: `http://127.0.0.1:${server.address().port}/` });
         await waitFor(() => evaluate("document.querySelectorAll('#source-list [data-preference-source]').length === 3"), 'Application did not load');
         assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 50);
+
+        const latestDescription = 'A collection of the latest news from followed sources. Updated 1.1.2026 klo 10.00.00';
+        await evaluate("document.querySelector('#uiLangFilter').value = 'en'; document.querySelector('#uiLangFilter').dispatchEvent(new Event('change'))");
+        assert.equal(await evaluate("document.querySelector('#current-view-description').textContent"), latestDescription);
+        await evaluate("document.querySelector('#source-list > .source-item').click()");
+        await waitFor(() => evaluate("document.querySelectorAll('.grid-item').length === 50"), 'Latest news did not reload');
+        assert.equal(await evaluate("document.querySelector('#current-view-description').textContent"), latestDescription);
 
         await evaluate("document.querySelector('#settings-btn').click()");
         for (const viewportWidth of [1200, 800, 500]) {

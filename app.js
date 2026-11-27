@@ -255,6 +255,12 @@
         return originalValue || (key.includes('.') ? key.split('.')[1].replace(/_/g, ' ') : key);
     }
 
+    function getLatestNewsDescription() {
+        const lastUpdate = statsData && statsData.__meta && statsData.__meta.last_updated;
+        const description = t('ui.a_collection_of_the_latest_news_from_followed_sources');
+        return lastUpdate ? `${description} ${t('ui.updated_')} ${lastUpdate}` : description;
+    }
+
     function decodeHtml(html) {
         const txt = document.createElement("textarea");
         txt.innerHTML = html;
@@ -623,6 +629,8 @@
         if (viewTitle && currentSourceFile === 'data.json') {
             if (currentCategory === 'All') {
                 viewTitle.textContent = t('ui.latest_news');
+                const viewDesc = document.getElementById('current-view-description');
+                if (viewDesc && !isBookmarksView) viewDesc.innerText = getLatestNewsDescription();
             } else {
                 viewTitle.textContent = getTranslation('cat', currentCategory);
             }
@@ -715,7 +723,7 @@
         document.fonts.addEventListener('loadingdone', schedulePreviewLayout);
 
         await loadData('data.json', true);
-        initSidebar();
+        await initSidebar();
         buildLocationTree();
         updateUITranslations();
         syncSettingsPanelFromFilters();
@@ -1386,7 +1394,7 @@
             const viewDesc = document.getElementById('current-view-description');
             const logoCont = document.getElementById('feed-logo-container');
             if (viewTitle) viewTitle.textContent = t('ui.latest_news');
-            if (viewDesc) viewDesc.innerText = t('ui.a_collection_of_the_latest_news_from_followed_sources');
+            if (viewDesc) viewDesc.innerText = getLatestNewsDescription();
             if (logoCont) { 
                 logoCont.innerHTML = '';
                 logoCont.classList.add('no-logo-display');
@@ -1467,11 +1475,7 @@
 
                 if (viewDesc) {
                     if (isMainFeed) {
-                        const lastUpdate = (statsData && statsData.__meta)
-                            ? statsData.__meta.last_updated
-                            : "";
-
-                        viewDesc.innerText = `${t('ui.a_collection_of_the_latest_news_from_followed_sources')} ${lastUpdate ? t('ui.updated_') + lastUpdate + ')' : ''}`;
+                        viewDesc.innerText = getLatestNewsDescription();
                     } else {
                         viewDesc.innerText = getSourceDescriptionText(first);
                     }
