@@ -194,12 +194,12 @@ test('source switches filter feeds, synchronize views, and survive reload', {
 
         await evaluate("document.querySelector('#source-list [data-preference-source=\"Alpha\"]').closest('.source-item').click()");
         await waitFor(() => evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"Alpha\"]').length === 30"), 'Source preview did not load Alpha cards');
-        assert.equal(await evaluate("document.querySelector('#current-view-title .source-page-visibility-toggle').getAttribute('data-visible')"), 'false');
-        await evaluate("document.querySelector('#current-view-title .source-page-visibility-toggle').click()");
-        assert.equal(await evaluate("document.querySelector('#current-view-title .source-page-visibility-toggle').getAttribute('data-visible')"), 'true');
+        assert.equal(await evaluate("document.querySelector('#title-visibility-toggle').getAttribute('data-visible')"), 'false');
+        await evaluate("document.querySelector('#title-visibility-toggle').click()");
+        assert.equal(await evaluate("document.querySelector('#title-visibility-toggle').getAttribute('data-visible')"), 'true');
         assert.equal(await evaluate("document.querySelector('.grid-item [data-preference-source]').getAttribute('data-visible')"), 'true');
-        await evaluate("document.querySelector('.bookmark-btn').click(); document.querySelector('#current-view-title .source-page-visibility-toggle').click()");
-        assert.equal(await evaluate("document.querySelector('#current-view-title .source-page-visibility-toggle').getAttribute('data-visible')"), 'false');
+        await evaluate("document.querySelector('.bookmark-btn').click(); document.querySelector('#title-visibility-toggle').click()");
+        assert.equal(await evaluate("document.querySelector('#title-visibility-toggle').getAttribute('data-visible')"), 'false');
         await evaluate("showBookmarksView()");
         assert.equal(await evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"Alpha\"]').length"), 1);
         assert.equal(await evaluate("document.querySelector('.grid-item [data-preference-source]').getAttribute('data-visible')"), 'false');
@@ -297,16 +297,30 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         assert.equal(await evaluate("document.querySelectorAll('.location-checkbox:checked').length === document.querySelectorAll('.location-checkbox').length"), true);
         assert.equal(await evaluate("document.querySelectorAll('#source-list [data-preference-source]').length"), 3);
 
-        assert.equal(await evaluate("document.querySelector('#all-sources-toggle').hidden"), false);
-        assert.equal(await evaluate("document.querySelector('#all-sources-toggle').getAttribute('data-visible')"), 'true');
-        await evaluate("document.querySelector('#all-sources-toggle').click()");
-        assert.equal(await evaluate("document.querySelector('#all-sources-toggle').getAttribute('data-visible')"), 'false');
+        assert.equal(await evaluate("document.querySelector('#title-visibility-toggle').hidden"), false);
+        assert.equal(await evaluate("document.querySelector('#title-visibility-toggle').getAttribute('data-visible')"), 'true');
+        await evaluate("document.querySelector('#title-visibility-toggle').click()");
+        assert.equal(await evaluate("document.querySelector('#title-visibility-toggle').getAttribute('data-visible')"), 'false');
         assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 0);
         await evaluate("document.querySelector('#source-list [data-preference-source=\"Alpha\"]').click()");
-        assert.equal(await evaluate("document.querySelector('#all-sources-toggle').getAttribute('data-visible')"), 'mixed');
-        await evaluate("document.querySelector('#all-sources-toggle').click()");
-        assert.equal(await evaluate("document.querySelector('#all-sources-toggle').getAttribute('data-visible')"), 'true');
+        assert.equal(await evaluate("document.querySelector('#title-visibility-toggle').getAttribute('data-visible')"), 'mixed');
+        await evaluate("document.querySelector('#title-visibility-toggle').click()");
+        assert.equal(await evaluate("document.querySelector('#title-visibility-toggle').getAttribute('data-visible')"), 'true');
         assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 50);
+
+        assert.equal(await evaluate("document.querySelector('#source-list [data-preference-all]').getAttribute('data-visible')"), 'true');
+        await evaluate("document.querySelector('#source-list [data-preference-all]').click()");
+        assert.equal(await evaluate("document.querySelector('#title-visibility-toggle').getAttribute('data-visible')"), 'false');
+        assert.equal(await evaluate("document.querySelector('#source-list [data-preference-all]').getAttribute('data-visible')"), 'false');
+        await evaluate("document.querySelector('#source-list [data-preference-all]').click()");
+        assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 50);
+
+        await evaluate("document.querySelector('.category-header').click()");
+        assert.equal(await evaluate("document.querySelector('#title-visibility-toggle').hidden"), false);
+        await evaluate("document.querySelector('#title-visibility-toggle').click()");
+        assert.equal(await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').getAttribute('data-visible')"), 'false');
+        await evaluate("document.querySelector('#title-visibility-toggle').click()");
+        assert.equal(await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').getAttribute('data-visible')"), 'true');
     } finally {
         if (socket) {
             try { socket.close(); } catch (e) { }
