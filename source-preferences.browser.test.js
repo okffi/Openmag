@@ -296,6 +296,17 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         assert.equal(await evaluate("localStorage.getItem('selectedLocations')"), null);
         assert.equal(await evaluate("document.querySelectorAll('.location-checkbox:checked').length === document.querySelectorAll('.location-checkbox').length"), true);
         assert.equal(await evaluate("document.querySelectorAll('#source-list [data-preference-source]').length"), 3);
+
+        assert.equal(await evaluate("document.querySelector('#all-sources-toggle').hidden"), false);
+        assert.equal(await evaluate("document.querySelector('#all-sources-toggle').getAttribute('data-visible')"), 'true');
+        await evaluate("document.querySelector('#all-sources-toggle').click()");
+        assert.equal(await evaluate("document.querySelector('#all-sources-toggle').getAttribute('data-visible')"), 'false');
+        assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 0);
+        await evaluate("document.querySelector('#source-list [data-preference-source=\"Alpha\"]').click()");
+        assert.equal(await evaluate("document.querySelector('#all-sources-toggle').getAttribute('data-visible')"), 'mixed');
+        await evaluate("document.querySelector('#all-sources-toggle').click()");
+        assert.equal(await evaluate("document.querySelector('#all-sources-toggle').getAttribute('data-visible')"), 'true');
+        assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 50);
     } finally {
         if (socket) {
             try { socket.close(); } catch (e) { }

@@ -479,6 +479,9 @@ header.main-header {
     outline-offset: 2px;
 }
 
+.view-title-row { display: flex; align-items: center; gap: 12px; }
+.all-sources-toggle[hidden] { display: none; }
+
 .visibility-dot {
     width: 6px;
     height: 6px;

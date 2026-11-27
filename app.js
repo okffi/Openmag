@@ -35,7 +35,45 @@
         );
     }
 
+    function updateAllSourcesToggle() {
+        const toggle = document.getElementById('all-sources-toggle');
+        if (!toggle) return;
+        const names = Object.keys(statsData || {}).filter(name => name !== '__meta');
+        const isMainFeed = currentSourceFile === 'data.json' && currentCategory === 'All' && !isBookmarksView;
+        toggle.hidden = !isMainFeed;
+        const enabled = names.filter(name => !sourcePreferences || sourcePreferences.isEnabled(name)).length;
+        const state = enabled === names.length ? 'true' : enabled === 0 ? 'false' : 'mixed';
+        toggle.setAttribute('data-visible', state);
+        toggle.disabled = !sourcePreferences || names.length === 0;
+        const label = state === 'true' ? t('ui.hide_all_sources') : t('ui.show_all_sources');
+        toggle.setAttribute('aria-label', label);
+        toggle.title = label;
+    }
+
+    function setupAllSourcesToggle() {
+        const toggle = document.getElementById('all-sources-toggle');
+        const title = document.getElementById('current-view-title');
+        if (!toggle || !title) return;
+        toggle.addEventListener('click', () => {
+            const names = Object.keys(statsData || {}).filter(name => name !== '__meta');
+            if (!sourcePreferences || names.length === 0) return;
+            try {
+                const allEnabled = names.every(name => sourcePreferences.isEnabled(name));
+                sourcePreferences.setEnabled(names, !allEnabled);
+            } catch (error) {
+                console.error('Error saving source preferences:', error);
+                syncSourceControls();
+                window.alert(t('msg.source_preferences_save_error'));
+                return;
+            }
+            refreshSourceSelection();
+        });
+        // The title is rewritten by many view changes; follow it to show or hide the toggle
+        new MutationObserver(updateAllSourcesToggle).observe(title, { childList: true, characterData: true, subtree: true });
+    }
+
     function syncSourceControls() {
+        updateAllSourcesToggle();
         // Update all source visibility toggles (sidebar and cards)
         document.querySelectorAll('[data-preference-source]').forEach(toggle => {
             const sourceName = toggle.dataset.preferenceSource;
@@ -752,6 +790,7 @@
         document.fonts.addEventListener('loadingdone', schedulePreviewLayout);
 
         await loadData('data.json', true);
+        setupAllSourcesToggle();
         await initSidebar();
         buildLocationTree();
         updateUITranslations();
