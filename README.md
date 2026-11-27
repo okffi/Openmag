@@ -22,8 +22,12 @@ can then be changed independently. A regional selection includes sources
 tagged with that region, not just its countries. With no locations selected,
 all locations are shown. Location selections are saved in this browser.
 
-The language-mode switch is currently a UI placeholder: filtering is unchanged,
-and the selected switch position is kept only until the page is reloaded.
+## Language settings
+
+Primary language sets the interface language and defaults to the browser
+language. Content languages are checkboxes for filtering articles and sources;
+all are selected by default, and the primary language always stays selected.
+Selecting none is treated as selecting all. Choices are saved in this browser.
 
 ## Scraper sources
 

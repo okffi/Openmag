@@ -34,15 +34,6 @@
                 <select id="uiLangFilter" style="display:none">
                     <option value="en">English</option>
                 </select>
-                <select id="langFilter" style="display:none">
-                    <option value="all">Languages (All)</option>
-                    <option value="fi">Suomi</option>
-                    <option value="en">English</option>
-                    <option value="sv">Svenska</option>
-                    <option value="et">Eesti</option>
-                    <option value="de">Deutsch</option>
-                    <option value="fr">Français</option>
-                </select>
                 <select id="scopeFilter" style="display:none">
                     <option value="all">Regions (All)</option>
                     <option value="Finland">Finland</option>
@@ -61,22 +52,16 @@
                     <div class="settings-grid">
                         <div class="settings-language-sections">
                             <div class="settings-section">
-                                <div class="settings-section-title" id="settings-ui-lang-title">INTERFACE LANGUAGE</div>
-                                <select id="settings-ui-lang-select" class="settings-select" aria-label="Interface language">
+                                <div class="settings-section-title" id="settings-ui-lang-title">PRIMARY LANGUAGE</div>
+                                <select id="settings-ui-lang-select" class="settings-select" aria-label="Primary language">
                                     <!-- Populated by JS -->
                                 </select>
                             </div>
                             <div class="settings-section">
-                                <div class="settings-section-title" id="settings-content-lang-title">CONTENT LANGUAGE</div>
-                                <select id="settings-content-lang-select" class="settings-select" aria-label="Content language">
+                                <div class="settings-section-title" id="settings-content-lang-title">CONTENT LANGUAGES</div>
+                                <div class="content-language-list" id="content-language-list" role="group" aria-labelledby="settings-content-lang-title">
                                     <!-- Populated by JS -->
-                                </select>
-                                <label class="language-mode-control">
-                                    <input id="settings-language-mode" type="checkbox" role="switch" aria-labelledby="language-mode-filter-label language-mode-prefer-label">
-                                    <span id="language-mode-filter-label">Filter by language</span>
-                                    <span class="language-mode-track" aria-hidden="true"><span class="language-mode-thumb"></span></span>
-                                    <span id="language-mode-prefer-label">Prefer selected language</span>
-                                </label>
+                                </div>
                             </div>
                         </div>
                         <div class="settings-section">

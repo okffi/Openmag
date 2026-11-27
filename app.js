@@ -15,9 +15,9 @@
     let mainFeedCache = null;
     let translations = {};
     let locationHierarchy = {};
-    let selectedLocations = [];
-    let currentLang = 'all';
-    let preferSelectedLanguage = false;
+    // null means every location/language is selected, so no filtering applies
+    let selectedLocations = null;
+    let selectedLanguages = null;
     let currentScope = 'all';
     let currentSourceFile = 'data.json';
     let scrollObserver = null;
@@ -255,6 +255,40 @@
         return originalValue || (key.includes('.') ? key.split('.')[1].replace(/_/g, ' ') : key);
     }
 
+    function readStoredSelection(key) {
+        try {
+            const value = JSON.parse(localStorage.getItem(key));
+            if (Array.isArray(value) && value.length > 0 && value.every(item => typeof item === 'string')) return value;
+        } catch (error) {
+            console.warn(`Ignoring invalid saved ${key}`);
+        }
+        return null;
+    }
+
+    function writeStoredSelection(key, value) {
+        if (value) localStorage.setItem(key, JSON.stringify(value));
+        else localStorage.removeItem(key);
+    }
+
+    // Unchecking everything is treated as selecting everything
+    function readCheckedSelection(selector) {
+        const boxes = Array.from(document.querySelectorAll(selector));
+        const checked = boxes.filter(box => box.checked).map(box => box.value);
+        return checked.length === 0 || checked.length === boxes.length ? null : checked;
+    }
+
+    function getPrimaryLanguage() {
+        return document.getElementById('uiLangFilter').value || 'en';
+    }
+
+    function languageMatches(lang) {
+        return !selectedLanguages || lang === getPrimaryLanguage() || selectedLanguages.includes(lang);
+    }
+
+    function locationMatches(scope) {
+        return !selectedLocations || selectedLocations.includes(scope);
+    }
+
     function getLatestNewsDescription() {
         const lastUpdate = statsData && statsData.__meta && statsData.__meta.last_updated;
         const description = t('ui.a_collection_of_the_latest_news_from_followed_sources');
@@ -424,10 +458,10 @@
     }
 
     function resetFilters() {
-        document.getElementById('langFilter').value = 'all';
-
-        localStorage.removeItem('selectedLocations');
-        selectedLocations = [];
+        selectedLanguages = null;
+        selectedLocations = null;
+        writeStoredSelection('selectedLanguages', null);
+        writeStoredSelection('selectedLocations', null);
         syncSettingsPanelFromFilters();
         updateView();
     }
@@ -464,38 +498,41 @@
     }
 
     function applySettingsPanel() {
-        const selectedLang = document.getElementById('settings-content-lang-select');
         const selectedUiLang = document.getElementById('settings-ui-lang-select');
-        const locations = getSelectedLocations();
 
-        if (selectedLang) document.getElementById('langFilter').value = selectedLang.value;
+        selectedLanguages = readCheckedSelection('.content-language-checkbox');
+        selectedLocations = readCheckedSelection('.location-checkbox');
+        writeStoredSelection('selectedLanguages', selectedLanguages);
+        writeStoredSelection('selectedLocations', selectedLocations);
 
-        localStorage.setItem('selectedLocations', JSON.stringify(locations));
-        selectedLocations = locations;
-        preferSelectedLanguage = document.getElementById('settings-language-mode').checked;
-        
-        if (selectedUiLang) {
-            document.getElementById('uiLangFilter').value = selectedUiLang.value;
-            updateUITranslations();
-        }
+        if (selectedUiLang) document.getElementById('uiLangFilter').value = selectedUiLang.value;
+        updateUITranslations();
+        syncSettingsPanelFromFilters();
         closeSettingsPanel();
         updateView();
     }
 
     function syncSettingsPanelFromFilters() {
-        const langVal = document.getElementById('langFilter').value;
-        const uiLangVal = document.getElementById('uiLangFilter').value;
-
-        const contentLangSelect = document.getElementById('settings-content-lang-select');
-        if (contentLangSelect) contentLangSelect.value = langVal;
-        document.getElementById('settings-language-mode').checked = preferSelectedLanguage;
-        
-        document.querySelectorAll('.location-checkbox').forEach(cb => {
-            cb.checked = selectedLocations.includes(cb.value);
+        document.querySelectorAll('.content-language-checkbox').forEach(cb => {
+            cb.checked = !selectedLanguages || selectedLanguages.includes(cb.value);
         });
-        
+        document.querySelectorAll('.location-checkbox').forEach(cb => {
+            cb.checked = !selectedLocations || selectedLocations.includes(cb.value);
+        });
+
         const uiLangSelect = document.getElementById('settings-ui-lang-select');
-        if (uiLangSelect) uiLangSelect.value = uiLangVal;
+        if (uiLangSelect) uiLangSelect.value = getPrimaryLanguage();
+        syncPrimaryLanguageCheckbox();
+    }
+
+    // The primary language always stays checked
+    function syncPrimaryLanguageCheckbox() {
+        const primary = getPrimaryLanguage();
+        document.querySelectorAll('.content-language-checkbox').forEach(cb => {
+            const isPrimary = cb.value === primary;
+            if (isPrimary) cb.checked = true;
+            cb.disabled = isPrimary;
+        });
     }
 
     function clearGrid() {
@@ -510,7 +547,6 @@
 
     function updateView() {
         if (pendingOperation) return;
-        currentLang = document.getElementById('langFilter').value;
         if (isBookmarksView) return;
 
         currentScope = document.getElementById('scopeFilter').value;
@@ -525,36 +561,32 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    function populateContentLangSelect(uiLang) {
-        const select = document.getElementById('settings-content-lang-select');
-        if (!select) return;
-        const currentVal = select.value;
-        select.innerHTML = '';
+    function buildContentLanguageList() {
+        const container = document.getElementById('content-language-list');
+        if (!container) return;
+        const uiLang = getPrimaryLanguage();
+        const previousState = new Map(Array.from(container.querySelectorAll('input'), box => [box.value, box.checked]));
+        container.textContent = '';
 
-        // "All languages" option
-        const allOpt = document.createElement('option');
-        allOpt.value = 'all';
-        allOpt.textContent = t('ui.all_languages');
-        select.appendChild(allOpt);
-
-        // All language codes from translations
-        const languageCodes = Object.keys(translations);
-        languageCodes.forEach(langCode => {
-            const opt = document.createElement('option');
-            opt.value = langCode;
-            opt.textContent =
+        Object.keys(translations).forEach(langCode => {
+            const label = document.createElement('label');
+            label.className = 'content-language-item';
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.className = 'content-language-checkbox';
+            checkbox.value = langCode;
+            checkbox.checked = previousState.has(langCode)
+                ? previousState.get(langCode)
+                : !selectedLanguages || selectedLanguages.includes(langCode);
+            const name = document.createElement('span');
+            name.textContent =
                 (translations[uiLang] && translations[uiLang]['lang.' + langCode]) ||
                 (translations['en'] && translations['en']['lang.' + langCode]) ||
                 langCode;
-            select.appendChild(opt);
+            label.append(checkbox, name);
+            container.appendChild(label);
         });
-
-        // Restore previous selection if still valid
-        if (currentVal && Array.from(select.options).some(opt => opt.value === currentVal)) {
-            select.value = currentVal;
-        } else {
-            select.value = 'all';
-        }
+        syncPrimaryLanguageCheckbox();
     }
 
     function populateUiLangDropdown() {
@@ -563,7 +595,9 @@
 
         const languageCodes = Object.keys(translations);
         const browserLang = (navigator.language || 'en').substring(0, 2);
-        const defaultLang = languageCodes.includes(browserLang) ? browserLang : 'en';
+        const storedLang = localStorage.getItem('primaryLanguage');
+        const defaultLang = languageCodes.includes(storedLang) ? storedLang
+            : languageCodes.includes(browserLang) ? browserLang : 'en';
 
         // Populate hidden filter (used by t()) with ALL available languages
         uiLangFilter.innerHTML = '';
@@ -598,12 +632,12 @@
         const settingsBtnLabel = document.getElementById('settings-btn-label');
         if (settingsBtnLabel) settingsBtnLabel.textContent = t('ui.settings');
         const uiLangTitle = document.getElementById('settings-ui-lang-title');
-        if (uiLangTitle) uiLangTitle.textContent = t('ui.interface_language').toUpperCase();
+        if (uiLangTitle) uiLangTitle.textContent = t('ui.primary_language').toUpperCase();
+        const uiLangSelect = document.getElementById('settings-ui-lang-select');
+        if (uiLangSelect) uiLangSelect.setAttribute('aria-label', t('ui.primary_language'));
         const contentLangTitle = document.getElementById('settings-content-lang-title');
-        if (contentLangTitle) contentLangTitle.textContent = t('ui.preferred_language').toUpperCase();
-        document.getElementById('language-mode-filter-label').textContent = t('ui.filter_by_language');
-        document.getElementById('language-mode-prefer-label').textContent = t('ui.prefer_selected_language');
-        const regionTitle = document.getElementById('settings-region-title');
+        if (contentLangTitle) contentLangTitle.textContent = t('ui.content_languages').toUpperCase();
+        buildContentLanguageList();        const regionTitle = document.getElementById('settings-region-title');
         if (regionTitle) regionTitle.textContent = t('ui.region').toUpperCase();
 
         const scopeLabelMap = {
@@ -660,16 +694,11 @@
             console.warn("Location hierarchy is missing.");
         }
 
-        const savedLocations = JSON.parse(localStorage.getItem('selectedLocations') || '[]');
-        if (!Array.isArray(savedLocations) || !savedLocations.every(location => typeof location === 'string')) {
-            throw new Error('Invalid saved location selection');
-        }
-        selectedLocations = savedLocations;
+        selectedLocations = readStoredSelection('selectedLocations');
+        selectedLanguages = readStoredSelection('selectedLanguages');
 
         populateUiLangDropdown();
         const uiLangFilter = document.getElementById('uiLangFilter');
-        let uiLang = uiLangFilter.value || 'en';
-        populateContentLangSelect(uiLang);
 
         try {
             sourcePreferences = window.createSourcePreferences(window.localStorage);
@@ -729,29 +758,19 @@
         syncSettingsPanelFromFilters();
 
         // Event handlers
-        const langFilter = document.getElementById('langFilter');
         const scopeFilter = document.getElementById('scopeFilter');
-        langFilter.removeEventListener('change', updateView);
         scopeFilter.removeEventListener('change', updateView);
-        langFilter.addEventListener('change', updateView);
         scopeFilter.addEventListener('change', updateView);
 
         uiLangFilter.removeEventListener('change', updateUITranslations);
         uiLangFilter.addEventListener('change', updateUITranslations);
-
-        // Update content lang select and UI text on UI language change
-        uiLangFilter.addEventListener('change', () => {
-            const newUiLang = uiLangFilter.value;
-            populateContentLangSelect(newUiLang);
-            updateUITranslations();
-        });
 
         // Also sync uiLangFilter when the settings panel select changes
         const uiLangSelectEl = document.getElementById('settings-ui-lang-select');
         if (uiLangSelectEl) {
             uiLangSelectEl.addEventListener('change', () => {
                 uiLangFilter.value = uiLangSelectEl.value;
-                populateContentLangSelect(uiLangSelectEl.value);
+                localStorage.setItem('primaryLanguage', uiLangSelectEl.value);
                 updateUITranslations();
             });
         }
@@ -1147,10 +1166,9 @@
     function displayArticles() {
         if (!Array.isArray(allArticles)) return;
 
-        const selectedLang = currentLang;
         const filtered = allArticles.filter(art => {
-            const langMatch = (selectedLang === 'all') || (art.lang === selectedLang);
-            const scopeMatch = (selectedLocations.length === 0) || selectedLocations.includes(art.scope);
+            const langMatch = languageMatches(art.lang);
+            const scopeMatch = locationMatches(art.scope);
             const catMatch = (currentCategory === 'All') || (art.sheetCategory === currentCategory);
             const sourceMatch = currentSourceFile !== 'data.json' || !sourcePreferences || sourcePreferences.isEnabled(art.sourceTitle);
             return langMatch && scopeMatch && catMatch && sourceMatch;
@@ -1165,14 +1183,13 @@
         const sentinel = document.querySelector('#scroll-sentinel');
 
         if (slice.length === 0 && displayedCount === 0) {
-            const isFiltered = document.getElementById('langFilter').value !== 'all' ||
-                               selectedLocations.length > 0;
+            const isFiltered = selectedLanguages !== null || selectedLocations !== null;
 
             while (sentinel.firstChild) { sentinel.removeChild(sentinel.firstChild); }
             const hiddenBySource = currentSourceFile === 'data.json' && sourcePreferences &&
                 allArticles.some(art => !sourcePreferences.isEnabled(art.sourceTitle) &&
-                    (selectedLang === 'all' || art.lang === selectedLang) &&
-                    (selectedLocations.length === 0 || selectedLocations.includes(art.scope)) &&
+                    languageMatches(art.lang) &&
+                    locationMatches(art.scope) &&
                     (currentCategory === 'All' || art.sheetCategory === currentCategory));
             if (hiddenBySource) {
                 sentinel.textContent = t('msg.no_enabled_source_news');
@@ -1249,7 +1266,6 @@
 
         if (!statsData) return;
 
-        const selectedLang = document.getElementById('langFilter').value;
         const mainItem = document.createElement('div');
         mainItem.className = 'source-item active';
         mainItem.textContent = t('ui.latest_news');
@@ -1261,8 +1277,8 @@
             if (name === "__meta") return;
 
             const info = statsData[name];
-            const langMatch = (selectedLang === 'all') || (info.lang === selectedLang);
-            const locationMatch = (selectedLocations.length === 0) || selectedLocations.includes(info.scope);
+            const langMatch = languageMatches(info.lang);
+            const locationMatch = locationMatches(info.scope);
 
             if (!langMatch || !locationMatch) return;
 
@@ -1324,7 +1340,6 @@
 
         if (!statsData) return;
 
-        const selectedLang = document.getElementById('langFilter').value;
         const mainItem = document.createElement('div');
         mainItem.className = 'source-item';
         mainItem.textContent = t('ui.latest_news');
@@ -1336,8 +1351,8 @@
                 if (key === "__meta") return false;
 
                 const info = statsData[key];
-                const langMatch = (selectedLang === 'all') || (info.lang === selectedLang);
-                const scopeMatch = (selectedLocations.length === 0) || selectedLocations.includes(info.scope);
+                const langMatch = languageMatches(info.lang);
+                const scopeMatch = locationMatches(info.scope);
 
                 return langMatch && scopeMatch;
             })

@@ -128,7 +128,7 @@ test('source switches filter feeds, synchronize views, and survive reload', {
             await send('Emulation.setDeviceMetricsOverride', { width: viewportWidth, height: 800, deviceScaleFactor: 1, mobile: false });
             const layout = await evaluate(`(() => {
                 const ui = document.querySelector('#settings-ui-lang-select').getBoundingClientRect();
-                const content = document.querySelector('#settings-content-lang-select').getBoundingClientRect();
+                const content = document.querySelector('#content-language-list').getBoundingClientRect();
                 return { uiLeft: ui.left, uiBottom: ui.bottom, contentLeft: content.left, contentTop: content.top };
             })()`);
             assert.equal(layout.uiLeft, layout.contentLeft);
@@ -209,7 +209,7 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         await waitFor(() => evaluate("typeof window.__testMarker === 'undefined' && document.readyState === 'complete' && document.querySelectorAll('#source-list [data-preference-source]').length === 3"), 'Reload did not finish');
         assert.equal(await evaluate("document.querySelector('#source-list [data-preference-source=\"Alpha\"]').getAttribute('data-visible')"), 'false');
         assert.equal(await evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"Alpha\"]').length"), 0);
-        await evaluate("document.querySelector('#langFilter').value = 'en'; document.querySelector('#langFilter').dispatchEvent(new Event('change'))");
+        await evaluate("document.querySelector('#settings-btn').click(); document.querySelectorAll('.content-language-checkbox').forEach(cb => { cb.checked = cb.value === 'en'; }); document.querySelector('#settings-apply-btn').click()");
         await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').click()");
         assert.deepEqual(await evaluate("JSON.parse(localStorage.getItem('openmag_disabled_sources'))"), []);
         await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').click()");
@@ -224,8 +224,9 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         assert.deepEqual(await evaluate("JSON.parse(localStorage.getItem('openmag_disabled_sources'))"), []);
         assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 50);
 
-        await evaluate("document.querySelector('#langFilter').value = 'all'; document.querySelector('#langFilter').dispatchEvent(new Event('change'))");
-        await evaluate("document.querySelector('#settings-btn').click(); document.querySelector('.location-checkbox[value=\"Finland\"]').click()");
+        await evaluate("document.querySelector('#settings-btn').click(); document.querySelector('#settings-reset-btn').click()");
+        assert.equal(await evaluate("localStorage.getItem('selectedLanguages')"), null);
+        await evaluate("document.querySelector('#settings-btn').click(); document.querySelector('.location-checkbox[value=\"World\"]').click(); document.querySelector('.location-checkbox[value=\"Finland\"]').click()");
         assert.equal(await evaluate("document.querySelectorAll('.location-checkbox[value=\"Poland\"]').length"), 1);
         await evaluate("document.querySelector('.location-expand[data-parent=\"loc-europe\"]').click()");
         assert.equal(await evaluate("document.querySelector('.location-expand[data-parent=\"loc-europe\"]').getAttribute('aria-expanded')"), 'false');
@@ -264,19 +265,37 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         assert.equal(await evaluate("document.querySelectorAll('.grid-item').length"), 50);
 
         await evaluate("document.querySelector('#settings-btn').click(); document.querySelector('#settings-ui-lang-select').value = 'en'; document.querySelector('#settings-ui-lang-select').dispatchEvent(new Event('change'))");
-        assert.equal(await evaluate("document.querySelector('#language-mode-filter-label').textContent"), 'Filter by language');
-        assert.equal(await evaluate("document.querySelector('#language-mode-prefer-label').textContent"), 'Prefer selected language');
-        assert.equal(await evaluate("document.querySelector('#settings-language-mode').checked"), false);
-        await evaluate("document.querySelector('#settings-content-lang-select').value = 'en'; document.querySelector('#settings-language-mode').click(); document.querySelector('#settings-apply-btn').click()");
+        assert.equal(await evaluate("document.querySelector('#settings-content-lang-title').textContent"), 'CONTENT LANGUAGES');
+        assert.equal(await evaluate("document.querySelectorAll('.content-language-checkbox').length"), 10);
+        assert.equal(await evaluate("Array.from(document.querySelectorAll('.content-language-checkbox')).every(cb => cb.checked)"), true);
+        assert.equal(await evaluate("document.querySelector('.content-language-checkbox[value=\"en\"]').disabled"), true);
+        await evaluate("document.querySelector('.content-language-checkbox[value=\"en\"]').click()");
+        assert.equal(await evaluate("document.querySelector('.content-language-checkbox[value=\"en\"]').checked"), true);
+
+        await evaluate("document.querySelectorAll('.content-language-checkbox').forEach(cb => { cb.checked = cb.value === 'en'; }); document.querySelector('#settings-apply-btn').click()");
+        assert.deepEqual(await evaluate("JSON.parse(localStorage.getItem('selectedLanguages'))"), ['en']);
         assert.equal(await evaluate("document.querySelectorAll('#source-list [data-preference-source]').length"), 2);
-        assert.equal(await evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"Gamma\"]').length"), 0);
+
+        await evaluate("window.__languageReload = true");
+        await send('Page.reload');
+        await waitFor(() => evaluate("!window.__languageReload && document.querySelectorAll('#source-list [data-preference-source]').length === 2"), 'Language selection did not restore');
         await evaluate("document.querySelector('#settings-btn').click()");
-        assert.equal(await evaluate("document.querySelector('#settings-language-mode').checked"), true);
-        await evaluate("document.querySelector('#settings-language-mode').click(); document.querySelector('#settings-close-btn').click(); document.querySelector('#settings-btn').click()");
-        assert.equal(await evaluate("document.querySelector('#settings-language-mode').checked"), true);
+        assert.equal(await evaluate("document.querySelector('.content-language-checkbox[value=\"fi\"]').checked"), false);
+
         await evaluate("document.querySelector('#settings-ui-lang-select').value = 'fi'; document.querySelector('#settings-ui-lang-select').dispatchEvent(new Event('change'))");
-        assert.equal(await evaluate("document.querySelector('#language-mode-filter-label').textContent"), 'Suodata kielen mukaan');
-        assert.equal(await evaluate("document.querySelector('#language-mode-prefer-label').textContent"), 'Suosi valittua kieltä');
+        assert.equal(await evaluate("localStorage.getItem('primaryLanguage')"), 'fi');
+        assert.equal(await evaluate("document.querySelector('#settings-content-lang-title').textContent"), 'SISÄLLÖN KIELET');
+        assert.equal(await evaluate("(() => { const fi = document.querySelector('.content-language-checkbox[value=\"fi\"]'); const en = document.querySelector('.content-language-checkbox[value=\"en\"]'); return fi.checked && fi.disabled && en.checked && !en.disabled; })()"), true);
+        await evaluate("document.querySelector('#settings-apply-btn').click()");
+        assert.deepEqual(await evaluate("JSON.parse(localStorage.getItem('selectedLanguages'))"), ['en', 'fi']);
+        assert.equal(await evaluate("document.querySelectorAll('#source-list [data-preference-source]').length"), 3);
+
+        await evaluate("document.querySelector('#settings-btn').click(); document.querySelector('.location-checkbox[value=\"World\"]').click(); document.querySelector('.location-checkbox[value=\"World\"]').click(); document.querySelector('.location-checkbox[value=\"World\"]').click()");
+        assert.equal(await evaluate("document.querySelectorAll('.location-checkbox:checked').length"), 0);
+        await evaluate("document.querySelector('#settings-apply-btn').click()");
+        assert.equal(await evaluate("localStorage.getItem('selectedLocations')"), null);
+        assert.equal(await evaluate("document.querySelectorAll('.location-checkbox:checked').length === document.querySelectorAll('.location-checkbox').length"), true);
+        assert.equal(await evaluate("document.querySelectorAll('#source-list [data-preference-source]').length"), 3);
     } finally {
         if (socket) {
             try { socket.close(); } catch (e) { }
