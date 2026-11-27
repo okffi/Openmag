@@ -701,8 +701,9 @@
         if (uiLangSelect) uiLangSelect.setAttribute('aria-label', t('ui.primary_language'));
         const contentLangTitle = document.getElementById('settings-content-lang-title');
         if (contentLangTitle) contentLangTitle.textContent = t('ui.content_languages').toUpperCase();
-        buildContentLanguageList();        const regionTitle = document.getElementById('settings-region-title');
-        if (regionTitle) regionTitle.textContent = t('ui.region').toUpperCase();
+        buildContentLanguageList();
+        const locationsTitle = document.getElementById('settings-locations-title');
+        if (locationsTitle) locationsTitle.textContent = t('ui.locations').toUpperCase();
 
         const scopeLabelMap = {
             'settings-scope-all-label':     t('ui.all_regions'),

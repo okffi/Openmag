@@ -129,8 +129,18 @@ test('source switches filter feeds, synchronize views, and survive reload', {
             const layout = await evaluate(`(() => {
                 const ui = document.querySelector('#settings-ui-lang-select').getBoundingClientRect();
                 const content = document.querySelector('#content-language-list').getBoundingClientRect();
-                return { uiLeft: ui.left, uiBottom: ui.bottom, contentLeft: content.left, contentTop: content.top };
+                const boxes = Array.from(document.querySelectorAll('.content-language-item')).map(e => e.getBoundingClientRect());
+                const tree = document.querySelector('#location-tree').getBoundingClientRect();
+                const body = document.querySelector('.settings-panel-body').getBoundingClientRect();
+                return {
+                    uiLeft: ui.left, uiBottom: ui.bottom, contentLeft: content.left, contentTop: content.top,
+                    columns: new Set(boxes.map(b => Math.round(b.left))).size,
+                    treeFills: tree.height > 200 && body.bottom - tree.bottom < 120
+                };
             })()`);
+            assert.equal(layout.columns, 2);
+            assert.equal(layout.treeFills, true);
+            assert.equal(await evaluate("document.querySelector('#settings-locations-title').textContent"), 'LOCATIONS');
             assert.equal(layout.uiLeft, layout.contentLeft);
             assert.ok(layout.uiBottom < layout.contentTop);
         }
