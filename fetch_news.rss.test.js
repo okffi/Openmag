@@ -44,7 +44,12 @@ test('RSS article images are not replaced by later author images', async t => {
         </rss>`;
     t.mock.method(Parser.prototype, 'parseURL', function () { return this.parseString(xml); });
     const articles = [];
-    await processRSS({ rssUrl: 'https://rajapinta.co/feed/', nameChecked: 'Rajapinta' }, articles);
+    await processRSS({
+        rssUrl: 'https://rajapinta.co/feed/', nameChecked: 'Rajapinta',
+        feedId: 'rss-fi', bundleId: 'root'
+    }, articles);
+    assert.deepEqual(articles.map(article => [article.feedId, article.bundleId]),
+        Array(5).fill(['rss-fi', 'root']));
     assert.deepEqual(articles.map(article => article.enforcedImage), [
         'https://rajapinta.co/wp-content/uploads/2026/10/cassandrahymers_7209609068_2524d9c272_k.jpg',
         'https://rajapinta.co/second.jpg',

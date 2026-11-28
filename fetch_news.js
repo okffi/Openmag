@@ -250,8 +250,107 @@ const SHEET_TSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tP
 const TRANSLATIONS_TSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=204734258&single=true&output=tsv";
 const GEOS_TSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRUveH7tPtcCI0gLuCL7krtgpLPPo_nasbZqxioFhftwSrAykn3jOoJVwPzsJnnl5XzcO8HhP7jpk2_/pub?gid=1455134188&single=true&output=tsv";
 
-function selectScraperFeeds(feeds) {
-    return feeds.filter(feed => feed.scrapeUrl);
+function parseFeedRows(rows) {
+    return rows.map(row => {
+        const c = row.split('\t').map(v => v ? v.trim() : '');
+        if (!c[2] && !c[9]) return null;
+        return {
+            category: c[0] || "General",
+            feedName: c[1] || "Unnamed",
+            rssUrl: c[2] || "",
+            nameChecked: c[4] || c[1] || "Source",
+            sheetDesc: c[5] || "",
+            lang: (c[6] || "fi").toLowerCase(),
+            scope: c[7] || "World",
+            isDarkLogo: (c[8] || "").toUpperCase() === "TRUE" || c[8] === "1",
+            feedId: c[9] || "",
+            parentId: c[10] || ""
+        };
+    }).filter(f => f !== null);
+}
+
+function validateFeedBundles(feeds) {
+    const counts = new Map();
+    feeds.forEach(feed => {
+        if (feed.feedId) counts.set(feed.feedId, (counts.get(feed.feedId) || 0) + 1);
+    });
+    const roots = new Set(feeds.filter(feed => feed.feedId && !feed.parentId && counts.get(feed.feedId) === 1)
+        .map(feed => feed.feedId));
+    feeds.forEach(feed => {
+        if (!feed.feedId || counts.get(feed.feedId) !== 1) {
+            console.warn(`Invalid or duplicate feed ID for ${feed.nameChecked}: ${feed.feedId || '(missing)'}`);
+            feed.bundleId = '';
+        } else if (feed.parentId && !roots.has(feed.parentId)) {
+            console.warn(`Invalid original feed ID for ${feed.nameChecked}: ${feed.parentId}`);
+            feed.bundleId = feed.feedId;
+        } else {
+            feed.bundleId = feed.parentId || feed.feedId;
+        }
+    });
+}
+
+function attachFeedMetadata(articles, feeds) {
+    const feedsById = new Map(feeds.filter(feed => feed.feedId).map(feed => [feed.feedId, feed]));
+    articles.forEach(article => {
+        if (!article) return;
+        let feed = feedsById.get(article.feedId);
+        if (!feed && !article.feedId) {
+            const candidates = feeds.filter(candidate =>
+                candidate.nameChecked === article.sourceTitle && candidate.lang === article.lang &&
+                (!article.originalRssUrl || candidate.rssUrl === article.originalRssUrl)
+            );
+            if (candidates.length === 1) feed = candidates[0];
+            else console.warn(`Cannot uniquely identify retained article source: ${article.sourceTitle}`);
+        }
+        if (feed) {
+            article.feedId = feed.feedId;
+            article.bundleId = feed.bundleId;
+        }
+    });
+}
+
+function buildSourceData(articles, feeds, now) {
+    const feedsById = new Map(feeds.filter(feed => feed.feedId).map(feed => [feed.feedId, feed]));
+    const sourceStats = { __meta: { last_updated: now.toLocaleString('fi-FI', { timeZone: 'Europe/Helsinki' }) } };
+    const articlesBySource = {};
+    articles.forEach(art => {
+        const key = art.bundleId ? `bundle:${art.bundleId}` : art.sourceTitle;
+        const fileKey = art.bundleId
+            ? `bundle_${Buffer.from(art.bundleId).toString('hex')}`
+            : key.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+        if (!articlesBySource[fileKey]) articlesBySource[fileKey] = [];
+        articlesBySource[fileKey].push(art);
+        if (!sourceStats[key]) {
+            sourceStats[key] = {
+                file: `${fileKey}.json`, count: 0, category: art.sheetCategory || 'General',
+                description: art.sourceDescription || '', lang: art.lang || 'en',
+                scope: art.scope || 'World', name: art.sourceTitle, variants: []
+            };
+        }
+        sourceStats[key].count++;
+        const feed = feedsById.get(art.feedId);
+        if (feed && feed.bundleId) {
+            let variant = sourceStats[key].variants.find(item => item.id === feed.feedId);
+            if (!variant) {
+                variant = {
+                    id: feed.feedId, name: feed.nameChecked, lang: feed.lang, scope: feed.scope,
+                    category: feed.category, original: feed.feedId === feed.bundleId, count: 0
+                };
+                sourceStats[key].variants.push(variant);
+            }
+            variant.count++;
+        }
+    });
+    feeds.forEach(feed => {
+        const info = feed.bundleId && sourceStats[`bundle:${feed.bundleId}`];
+        if (info && !info.variants.some(variant => variant.id === feed.feedId)) {
+            info.variants.push({
+                id: feed.feedId, name: feed.nameChecked, lang: feed.lang, scope: feed.scope,
+                category: feed.category, original: feed.feedId === feed.bundleId, count: 0
+            });
+        }
+    });
+    return { sourceStats, articlesBySource };
 }
 
 async function getSourceLogo(feedContent, domain, sourceName) {
@@ -404,21 +503,8 @@ async function run() {
         const response = await axios.get(SHEET_TSV_URL + cacheBuster);
         const rows = response.data.split(/\r?\n/).slice(1).filter(row => row.trim() !== '');
 
-        const feeds = rows.map(row => {
-            const c = row.split('\t').map(v => v ? v.trim() : '');
-            if (!c[2] && !c[3]) return null;
-            return {
-                category: c[0] || "General",
-                feedName: c[1] || "Unnamed",
-                rssUrl: c[2],
-                scrapeUrl: c[3] || "",
-                nameChecked: c[4] || c[1] || "Source",
-                sheetDesc: c[5] || "",
-                lang: (c[6] || "fi").toLowerCase(),
-                scope: c[7] || "World",
-                isDarkLogo: (c[8] || "").toUpperCase() === "TRUE" || c[8] === "1"
-            };
-        }).filter(f => f !== null);
+        const feeds = parseFeedRows(rows);
+        validateFeedBundles(feeds);
 
         // 3.1 RSS-HAKU
         for (const feed of feeds.filter(f => f.rssUrl && f.rssUrl.length > 10)) {
@@ -432,57 +518,26 @@ async function run() {
             }
         }
 
-        // 3.2 SCRAPERIT
-        for (const feed of selectScraperFeeds(feeds)) {
-            try {
-                console.log(`[SCRAPE] ${feed.nameChecked}: ${feed.scrapeUrl}`);
-                await processScraper(feed, allArticles);
-                await new Promise(r => setTimeout(r, 1000));
-            } catch (e) {
-                console.error(`Scraper-virhe kohteessa ${feed.nameChecked}: ${e.message}`);
-                failedFeeds.push(`SCRAPE: ${feed.nameChecked}: ${e.message}`);
-            }
-        }
+        // Articles retained from earlier runs may predate feed identifiers.
+        attachFeedMetadata(allArticles, feeds);
 
         // --- 4. DUPLIKAATTIEN POISTO JA SUODATUS ---
-        const seenPostUrls = new Set();
+        const seenPostUrls = new Map();
         const maxFutureTime = now.getTime() + 10 * 60000;
         allArticles = allArticles.filter(art => {
             if (!art || !art.link || !art.pubDate) return false;
             const cleanUrl = art.link.split('?')[0].split('#')[0].trim().toLowerCase();
             const artTime = new Date(art.pubDate).getTime();
-            if (seenPostUrls.has(cleanUrl) || isNaN(artTime) || artTime > maxFutureTime) return false;
-            seenPostUrls.add(cleanUrl);
+            if (isNaN(artTime) || artTime > maxFutureTime) return false;
+            const seen = seenPostUrls.get(cleanUrl);
+            if (seen && (!art.bundleId || !art.feedId || seen.bundleId !== art.bundleId || seen.feedIds.has(art.feedId))) return false;
+            if (seen) seen.feedIds.add(art.feedId);
+            else seenPostUrls.set(cleanUrl, { bundleId: art.bundleId, feedIds: new Set([art.feedId]) });
             return true;
         });
 
         // --- 5. TALLENNUS ARKISTOIHIN JA TILASTOIHIN (METATIEDOILLA) ---
-        const sourceStats = {
-            "__meta": {
-                "last_updated": now.toLocaleString('fi-FI', { timeZone: 'Europe/Helsinki' })
-            }
-        };
-        const articlesBySource = {};
-
-        allArticles.forEach(art => {
-            const srcName = art.sourceTitle;
-            const fileKey = srcName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-
-            if (!articlesBySource[fileKey]) articlesBySource[fileKey] = [];
-            articlesBySource[fileKey].push(art);
-
-            if (!sourceStats[srcName]) {
-                sourceStats[srcName] = {
-                    file: `${fileKey}.json`,
-                    count: 0,
-                    category: art.sheetCategory || "General",
-                    description: art.sourceDescription || "",
-                    lang: art.lang || "en",
-                    scope: art.scope || "World"
-                };
-            }
-            sourceStats[srcName].count++;
-        });
+        const { sourceStats, articlesBySource } = buildSourceData(allArticles, feeds, now);
 
         if (!fs.existsSync(sourcesDir)) fs.mkdirSync(sourcesDir, { recursive: true });
         Object.keys(articlesBySource).forEach(key => {
@@ -744,6 +799,8 @@ async function processRSS(feed, allArticles) {
                 snippet: textSnippet,
                 creator: item.creator || item.author || "",
                 sourceTitle: feed.nameChecked,
+                feedId: feed.feedId,
+                bundleId: feed.bundleId,
                 sheetCategory: feed.category,
                 enforcedImage: finalImg,
                 sourceDescription: finalDescription,
@@ -756,91 +813,6 @@ async function processRSS(feed, allArticles) {
         })
         .filter(item => item && item.pubDate); // Only keep items with valid date
     allArticles.push(...items);
-}
-
-async function processScraper(feed, allArticles) {
-    const urlObj = new URL(feed.scrapeUrl);
-    if (!['http:', 'https:'].includes(urlObj.protocol)) {
-        throw new Error(`Unsupported scraper URL protocol: ${urlObj.protocol}`);
-    }
-    const domain = urlObj.hostname.replace(/^www\./, '');
-    const scraperPath = path.join(__dirname, 'scrapers', `${domain}.js`);
-
-    if (!fs.existsSync(scraperPath)) {
-        throw new Error(`No custom scraper for ${domain}`);
-    }
-
-    const scraperRule = require(scraperPath);
-    const requestConfig = {
-        headers: {
-            'User-Agent': getRandomUserAgent(),
-            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-            'Accept-Language': 'en-US,en;q=0.9',
-            'Referer': 'https://www.google.com/',
-            'Cache-Control': 'no-cache',
-        },
-        timeout: 15000
-    };
-    let scrapedItems;
-    let matchDescription;
-    if (scraperRule.fetchItems) {
-        scrapedItems = await scraperRule.fetchItems(axios, requestConfig);
-        if (!Array.isArray(scrapedItems)) throw new Error('Scraper did not return an array of articles');
-        scrapedItems = scrapedItems.slice(0, 10);
-        matchDescription = `${scrapedItems.length} items returned`;
-    } else {
-        const { data } = await axios.get(feed.scrapeUrl, requestConfig);
-        const $ = cheerio.load(data);
-        $('script, style, iframe, form').remove();
-        const selector = scraperRule.listSelector || 'article';
-        const elements = $(selector).get().slice(0, 10);
-        scrapedItems = [];
-        for (const el of elements) {
-            scrapedItems.push(await scraperRule.parse($, el, axios, cheerio));
-        }
-        matchDescription = `${elements.length} elements matched ${selector}`;
-    }
-    const sourceDescription = cleanupSourceDescription(feed.sheetDesc || "", {
-        sourceTitle: feed.nameChecked || domain
-    });
-    const items = [];
-
-    for (const item of scrapedItems) {
-        if (item && item.title && item.link) {
-            const fullLink = item.link.startsWith('http') ? item.link : new URL(item.link, feed.scrapeUrl).href;
-            let finalImg = item.enforcedImage;
-            if (finalImg && !finalImg.startsWith('http')) {
-                finalImg = new URL(finalImg, fullLink).href;
-            }
-
-            if (!item.pubDate || isNaN(new Date(item.pubDate).getTime())) {
-                console.warn(`Skipping scraped article with missing or invalid pubDate in source: ${feed.nameChecked || domain}`);
-                continue;
-            }
-
-            items.push({
-                title: item.title,
-                link: fullLink,
-                pubDate: item.pubDate,
-                content: item.content || "",
-                creator: item.creator || "",
-                sourceTitle: feed.nameChecked || domain,
-                sheetCategory: feed.category,
-                enforcedImage: finalImg,
-                sourceDescription: sourceDescription,
-                lang: feed.lang,
-                scope: feed.scope,
-                isDarkLogo: feed.isDarkLogo,
-                originalRssUrl: feed.rssUrl || ""
-            });
-        }
-    }
-    if (!items.length) {
-        throw new Error(`No valid articles found (${matchDescription})`);
-    }
-    const sourceLogo = await getSourceLogo(null, domain, feed.nameChecked || domain);
-    allArticles.push(...items.map(item => ({ ...item, sourceLogo })));
-    console.log(`[SCRAPE] ${feed.nameChecked || domain}: ${items.length} articles found`);
 }
 
 if (require.main === module) {
@@ -860,7 +832,9 @@ module.exports = {
     truncateTextAtBoundary,
     cleanupSnippet,
     cleanupSourceDescription,
-    selectScraperFeeds,
-    processRSS,
-    processScraper
+    parseFeedRows,
+    validateFeedBundles,
+    attachFeedMetadata,
+    buildSourceData,
+    processRSS
 };

@@ -3,8 +3,9 @@ Read the mag at https://okffi.github.io/Openmag/
 
 ## Source selection
 
-Use the checkboxes beside sources in the sidebar, on article cards, or on a
+Use the controls beside sources in the sidebar, on article cards, or on a
 source page to include or exclude sources from the latest-news and topic feeds.
+Language versions of a source share one sidebar row and one visibility choice.
 The checkbox beside a topic changes every source in that topic, including sources
 hidden by language or region filters. A mixed checkbox means some sources are
 enabled; selecting it enables all of them.
@@ -29,21 +30,27 @@ language. Content languages are checkboxes for filtering articles and sources;
 all are selected by default, and the primary language always stays selected.
 Selecting none is treated as selecting all. Choices are saved in this browser.
 
-## Scraper sources
+For a source with multiple language versions, OpenMag shows available articles
+from the primary language, or falls back to English, the original language,
+then another selected language. A random final fallback stays the same while
+its eligible languages remain unchanged. Multiple feeds in the chosen language
+are shown together; articles from other languages in the bundle are not shown.
+The existing main-feed size limit still applies.
 
-The news updater reads source metadata and URLs from the published Google Sheet
-configured in `fetch_news.js`. Adding a file to `scrapers/` alone does not add a
-source: the sheet must contain a row with a valid HTTP(S) listing URL in the
-scrape URL column (the fourth column). Its hostname, without a leading `www.`,
-must match the scraper filename, for example `example.com.js`. Include the
-source name, category, language and scope in the corresponding sheet columns.
+The source sheet's column J contains the permanent ID of each feed. Column K
+contains the original feed's ID for language versions and is empty for the
+original. Keep IDs stable; missing or invalid IDs are reported in the updater
+log. Existing hidden-source choices are migrated to bundle visibility: a bundle
+is hidden if any of its previous language versions was hidden.
 
-When both RSS and scrape URLs are provided, the updater processes both and
-deduplicates article URLs. Only sources with valid articles appear in the
-sidebar; the front page contains at most 1,000 recent articles. Scrapers must
-return a title, link and valid publication date. Check the update workflow's
-`Show failed feeds` step for invalid URLs, missing rules, request failures or
-selectors that return no valid articles. Some websites may block the updater;
-those failures require a source-specific solution or a working RSS feed.
-The AHM UvA scraper reads the listing's JSON API because its articles are
-rendered by JavaScript; keep the AHM listing URL in the sheet, not the API URL.
+## RSS sources
+
+The news updater reads source metadata and RSS URLs from the published Google
+Sheet configured in `fetch_news.js`. It fetches articles only from RSS feeds;
+website URLs in the fourth column are not used to retrieve articles. A source
+without an RSS URL cannot receive new articles. Only sources with available
+articles appear in the sidebar. Check the update workflow's `Show failed feeds`
+step for feed errors.
+
+Articles from previous runs may remain until the next daily data refresh,
+including articles previously collected from websites.

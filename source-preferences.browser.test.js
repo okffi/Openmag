@@ -50,9 +50,12 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         } else if (path === '/data.json' || path === '/stats.json' || path.startsWith('/sources/')) {
             res.setHeader('content-type', 'application/json');
             const source = path.split('/').pop().replace('.json', '');
+            const bundle = Object.entries(stats).find(([key, info]) => key.startsWith('bundle:') && info.file === `${source}.json`);
             res.end(JSON.stringify(path === '/stats.json' ? stats :
-                path === '/data.json' ? articles : articles.filter(article => article.sourceTitle.toLowerCase() === source)));
-        } else if (['/app.js', '/bookmarks.js', '/source-preferences.js', '/translations.json', '/location-hierarchy.json', '/style.css'].includes(path)) {
+                path === '/data.json' ? articles : bundle
+                    ? articles.filter(article => `bundle:${article.bundleId}` === bundle[0])
+                    : articles.filter(article => article.sourceTitle.toLowerCase() === source)));
+        } else if (['/app.js', '/bookmarks.js', '/source-preferences.js', '/language-bundles.js', '/translations.json', '/location-hierarchy.json', '/style.css'].includes(path)) {
             res.setHeader('content-type', path.endsWith('.js') ? 'text/javascript' :
                 path.endsWith('.json') ? 'application/json' : 'text/css');
             res.end(await readFile(join(__dirname, path.slice(1))));
@@ -331,6 +334,55 @@ test('source switches filter feeds, synchronize views, and survive reload', {
         assert.equal(await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').getAttribute('data-visible')"), 'false');
         await evaluate("document.querySelector('#title-visibility-toggle').click()");
         assert.equal(await evaluate("document.querySelector('[data-preference-topic=\"Topic\"]').getAttribute('data-visible')"), 'true');
+
+        const bundleArticles = [
+            { feedId: 'original', bundleId: 'original', sourceTitle: 'Original', lang: 'fi', title: 'Finnish one' },
+            { feedId: 'fi-second', bundleId: 'original', sourceTitle: 'Original', lang: 'fi', title: 'Finnish two' },
+            { feedId: 'en', bundleId: 'original', sourceTitle: 'English version', lang: 'en', title: 'English version' }
+        ].map((article, i) => ({
+            ...article, link: `https://example.test/bundle-${i}`, sheetCategory: 'Topic',
+            scope: 'Europe', pubDate: '2026-04-01T00:00:00.000Z'
+        }));
+        articles.push(...bundleArticles);
+        stats['bundle:original'] = {
+            file: 'bundle-original.json', category: 'Topic', lang: 'fi', scope: 'Europe',
+            variants: [
+                { id: 'original', name: 'Original', lang: 'fi', scope: 'Europe', category: 'Topic', original: true, count: 1 },
+                { id: 'fi-second', name: 'Original', lang: 'fi', scope: 'Europe', category: 'Topic', count: 1 },
+                { id: 'en', name: 'English version', lang: 'en', scope: 'Europe', category: 'Topic', count: 1 }
+            ]
+        };
+        await evaluate(`localStorage.setItem('primaryLanguage', 'fi');
+            localStorage.removeItem('selectedLanguages');
+            localStorage.setItem('openmag_disabled_sources', JSON.stringify(['English version']));
+            window.__bundleReload = true`);
+        await send('Page.reload');
+        await waitFor(() => evaluate("!window.__bundleReload && document.querySelector('[data-preference-source=\"bundle:original\"]')"), 'Bundle did not load');
+        assert.equal(await evaluate("document.querySelectorAll('#source-list [data-preference-source=\"bundle:original\"]').length"), 1);
+        assert.equal(await evaluate("document.querySelector('#source-list [data-preference-source=\"bundle:original\"]').getAttribute('data-visible')"), 'false');
+        assert.equal(await evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"bundle:original\"]').length"), 0);
+        await evaluate("document.querySelector('#source-list [data-preference-source=\"bundle:original\"]').click()");
+        assert.equal(await evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"bundle:original\"]').length"), 2);
+        assert.equal(await evaluate("document.querySelector('#source-list [data-preference-source=\"bundle:original\"]').parentElement.textContent.trim()"), 'Original');
+        await evaluate(`document.querySelector('#settings-btn').click();
+            document.querySelector('#settings-ui-lang-select').value = 'en';
+            document.querySelector('#settings-ui-lang-select').dispatchEvent(new Event('change'));
+            document.querySelector('#settings-apply-btn').click()`);
+        assert.equal(await evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"bundle:original\"]').length"), 1);
+        assert.equal(await evaluate("document.querySelector('#source-list [data-preference-source=\"bundle:original\"]').parentElement.textContent.trim()"), 'English version');
+        await evaluate("window.__bundleReload = true");
+        await send('Page.reload');
+        await waitFor(() => evaluate("!window.__bundleReload && document.querySelector('#source-list [data-preference-source=\"bundle:original\"]')"), 'Bundle did not restore');
+        assert.equal(await evaluate("document.querySelector('#source-list [data-preference-source=\"bundle:original\"]').getAttribute('data-visible')"), 'true');
+        await evaluate("document.querySelector('#source-list [data-preference-source=\"bundle:original\"]').parentElement.click()");
+        await waitFor(() => evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"bundle:original\"]').length === 1"), 'Bundle page did not open');
+        assert.equal(await evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"bundle:original\"]').length"), 1);
+        await evaluate(`document.querySelector('#settings-btn').click();
+            document.querySelector('#settings-ui-lang-select').value = 'fi';
+            document.querySelector('#settings-ui-lang-select').dispatchEvent(new Event('change'));
+            document.querySelector('#settings-apply-btn').click()`);
+        assert.equal(await evaluate("document.querySelector('#current-view-title').textContent"), 'Original');
+        assert.equal(await evaluate("document.querySelectorAll('.grid-item [data-preference-source=\"bundle:original\"]').length"), 2);
     } finally {
         if (socket) {
             try { socket.close(); } catch (e) { }

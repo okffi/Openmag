@@ -24,14 +24,54 @@
     let pendingOperation = false;
     let sourcePreferences = null;
     let currentSourceName = null;
+    let bundleLanguageChoices = {};
     let isTouchDevice = () => {
         return (('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0));
     };
     let activeConfirmationRow = null;
 
+    function sourceKey(article) {
+        if (article.bundleId) return `bundle:${article.bundleId}`;
+        if (statsData) {
+            const matches = Object.entries(statsData).filter(([key, info]) =>
+                key.startsWith('bundle:') && Array.isArray(info.variants) &&
+                info.variants.some(variant => variant.name === article.sourceTitle &&
+                    (!article.lang || variant.lang === article.lang))
+            );
+            if (matches.length === 1) return matches[0][0];
+        }
+        return article.sourceTitle;
+    }
+
+    function bundleSelection(key) {
+        const info = statsData && statsData[key];
+        if (!info || !Array.isArray(info.variants) || !info.variants.length) return null;
+        const result = window.chooseBundleLanguage(
+            info.variants, getPrimaryLanguage(), languageMatches, locationMatches, bundleLanguageChoices[key]
+        );
+        if (result.choice && result.choice !== bundleLanguageChoices[key]) {
+            bundleLanguageChoices[key] = result.choice;
+            try {
+                localStorage.setItem('openmag_bundle_languages', JSON.stringify(bundleLanguageChoices));
+            } catch (error) {
+                console.error('Error saving bundle language choices:', error);
+            }
+        }
+        return result.language;
+    }
+
+    function displaySourceInfo(key) {
+        const info = statsData[key];
+        if (!info.variants || !info.variants.length) return { ...info, name: info.name || key };
+        const language = bundleSelection(key);
+        const variant = info.variants.find(item => item.count > 0 && item.lang === language &&
+            languageMatches(item.lang) && locationMatches(item.scope));
+        return variant ? { ...info, ...variant } : null;
+    }
+
     function topicSources(category) {
         return Object.keys(statsData || {}).filter(name =>
-            name !== '__meta' && (statsData[name].category || 'General') === category
+            name !== '__meta' && ((displaySourceInfo(name) || statsData[name]).category || 'General') === category
         );
     }
 
@@ -618,6 +658,29 @@
         clearGrid();
 
         displayArticles();
+        if (currentSourceFile !== 'data.json' && currentSourceName && statsData && statsData[currentSourceName]) {
+            const info = displaySourceInfo(currentSourceName);
+            const first = info && allArticles.find(article =>
+                article.lang === info.lang && languageMatches(article.lang) && locationMatches(article.scope)
+            );
+            if (info && first) {
+                let siteUrl = '#';
+                try { siteUrl = new URL(first.link).origin; } catch (error) { console.warn('Invalid source URL:', error); }
+                setViewTitleAndRss(document.getElementById('current-view-title'), info.name, first.originalRssUrl, false, siteUrl);
+                document.getElementById('current-view-description').innerText = getSourceDescriptionText(first);
+                const logo = document.getElementById('feed-logo-container');
+                if (logo) {
+                    logo.replaceChildren();
+                    logo.classList.toggle('dark-bg', !!first.isDarkLogo);
+                    if (first.sourceLogo) {
+                        const img = document.createElement('img');
+                        img.src = first.sourceLogo;
+                        img.alt = info.name;
+                        logo.appendChild(img);
+                    }
+                }
+            }
+        }
         updateUITranslations();
 
         const activeView = document.getElementById('btn-az').classList.contains('active') ? 'az' : 'categories';
@@ -763,6 +826,13 @@
         selectedLanguages = readStoredSelection('selectedLanguages');
 
         populateUiLangDropdown();
+        try {
+            const stored = JSON.parse(localStorage.getItem('openmag_bundle_languages') || '{}');
+            if (!stored || typeof stored !== 'object' || Array.isArray(stored)) throw new Error('Invalid bundle choices');
+            bundleLanguageChoices = stored;
+        } catch (error) {
+            console.error('Error reading bundle language choices:', error);
+        }
         const uiLangFilter = document.getElementById('uiLangFilter');
 
         try {
@@ -816,9 +886,9 @@
         window.addEventListener('resize', schedulePreviewLayout);
         document.fonts.addEventListener('loadingdone', schedulePreviewLayout);
 
-        await loadData('data.json', true);
         setupTitleToggle();
         await initSidebar();
+        await loadData('data.json', true);
         buildLocationTree();
         updateUITranslations();
         syncSettingsPanelFromFilters();
@@ -992,7 +1062,7 @@
         const src = document.createElement('span');
         src.className = 'source-trigger';
         src.textContent = `${item.sourceTitle || t('ui.general')}${item.creator ? ' | ' + item.creator : ''}`;
-        src.onclick = (e) => { e.stopPropagation(); handleSourceClick(e, item.sourceTitle); };
+        src.onclick = (e) => { e.stopPropagation(); handleSourceClick(e, sourceKey(item)); };
 
         const dateSpan = document.createElement('span');
         if (item.pubDate) {
@@ -1015,9 +1085,10 @@
         
         // Add visibility toggle dot
         if (item.sourceTitle) {
+            const preferenceKey = sourceKey(item);
             const visToggle = document.createElement('button');
             visToggle.className = 'card-visibility-toggle';
-            visToggle.dataset.preferenceSource = item.sourceTitle;
+            visToggle.dataset.preferenceSource = preferenceKey;
             visToggle.dataset.source = item.sourceTitle;
             visToggle.type = 'button';
             
@@ -1028,9 +1099,9 @@
             const handleToggle = () => {
                 if (!sourcePreferences) return;
                 
-                const isEnabled = sourcePreferences.isEnabled(item.sourceTitle);
+                const isEnabled = sourcePreferences.isEnabled(preferenceKey);
                 try {
-                    sourcePreferences.setEnabled([item.sourceTitle], !isEnabled);
+                    sourcePreferences.setEnabled([preferenceKey], !isEnabled);
                 } catch (error) {
                     console.error('Error saving source preferences:', error);
                     syncSourceControls();
@@ -1061,7 +1132,7 @@
                 }
             });
             
-            const isEnabled = sourcePreferences && sourcePreferences.isEnabled(item.sourceTitle);
+            const isEnabled = sourcePreferences && sourcePreferences.isEnabled(preferenceKey);
             const label = isEnabled 
                 ? t('ui.display_source') 
                 : t('ui.hide_source');
@@ -1174,8 +1245,11 @@
             const langMatch = languageMatches(art.lang);
             const scopeMatch = locationMatches(art.scope);
             const catMatch = (currentCategory === 'All') || (art.sheetCategory === currentCategory);
-            const sourceMatch = currentSourceFile !== 'data.json' || !sourcePreferences || sourcePreferences.isEnabled(art.sourceTitle);
-            return langMatch && scopeMatch && catMatch && sourceMatch;
+            const key = sourceKey(art);
+            const sourceMatch = currentSourceFile !== 'data.json' || !sourcePreferences || sourcePreferences.isEnabled(key);
+            const info = statsData && statsData[key];
+            const bundleMatch = !info || !info.variants || !info.variants.length || art.lang === bundleSelection(key);
+            return langMatch && scopeMatch && catMatch && sourceMatch && bundleMatch;
         });
 
         filtered.sort((a, b) => {
@@ -1191,7 +1265,7 @@
 
             while (sentinel.firstChild) { sentinel.removeChild(sentinel.firstChild); }
             const hiddenBySource = currentSourceFile === 'data.json' && sourcePreferences &&
-                allArticles.some(art => !sourcePreferences.isEnabled(art.sourceTitle) &&
+                allArticles.some(art => !sourcePreferences.isEnabled(sourceKey(art)) &&
                     languageMatches(art.lang) &&
                     locationMatches(art.scope) &&
                     (currentCategory === 'All' || art.sheetCategory === currentCategory));
@@ -1256,6 +1330,21 @@
             try {
                 const response = await fetch('stats.json?v=' + Date.now(), { cache: 'no-store' });
                 statsData = await response.json();
+                if (sourcePreferences) {
+                    const migrated = JSON.parse(localStorage.getItem('openmag_bundle_preferences_migrated') || '[]');
+                    if (!Array.isArray(migrated) || migrated.some(key => typeof key !== 'string')) {
+                        throw new Error('Invalid migrated bundle preferences');
+                    }
+                    const bundles = Object.entries(statsData)
+                        .filter(([key, info]) => key.startsWith('bundle:') &&
+                            !migrated.includes(key) && Array.isArray(info.variants))
+                        .map(([key, info]) => ({ key, names: info.variants.map(variant => variant.name) }));
+                    if (bundles.length) {
+                        sourcePreferences.migrateBundles(bundles);
+                        localStorage.setItem('openmag_bundle_preferences_migrated',
+                            JSON.stringify([...migrated, ...bundles.map(bundle => bundle.key)]));
+                    }
+                }
             } catch (e) {
                 console.error("Sidebar failed", e);
                 return;
@@ -1287,7 +1376,8 @@
         Object.keys(statsData).forEach(name => {
             if (name === "__meta") return;
 
-            const info = statsData[name];
+            const info = displaySourceInfo(name);
+            if (!info) return;
             const langMatch = languageMatches(info.lang);
             const locationMatch = locationMatches(info.scope);
 
@@ -1295,7 +1385,7 @@
 
             const cat = info.category || "General";
             if (!cats[cat]) cats[cat] = [];
-            cats[cat].push({ name, ...info });
+            cats[cat].push({ ...info, key: name });
         });
 
         Object.keys(cats).sort().forEach(catName => {
@@ -1330,12 +1420,12 @@
                 nameDiv.textContent = src.name;
                 item.appendChild(nameDiv);
                 
-                item.appendChild(createVisibilityToggle(src.name));
+                item.appendChild(createVisibilityToggle(src.key));
 
                 item.onclick = (e) => {
                     if (e.target.closest('.visibility-toggle')) return;
                     e.stopPropagation();
-                    changeSource(`sources/${src.file}`, src.name, item);
+                    changeSource(`sources/${src.file}`, src.name, item, src.key);
                 };
                 submenu.appendChild(item);
             });
@@ -1368,28 +1458,29 @@
             .filter(key => {
                 if (key === "__meta") return false;
 
-                const info = statsData[key];
+                const info = displaySourceInfo(key);
+                if (!info) return false;
                 const langMatch = languageMatches(info.lang);
                 const scopeMatch = locationMatches(info.scope);
 
                 return langMatch && scopeMatch;
             })
-            .sort((a, b) => a.localeCompare(b, 'fi'));
+            .sort((a, b) => displaySourceInfo(a).name.localeCompare(displaySourceInfo(b).name, 'fi'));
 
         sortedSources.forEach(sourceName => {
-            const info = statsData[sourceName];
+            const info = displaySourceInfo(sourceName);
             const item = document.createElement('div');
             item.className = 'source-item';
 
             const nameDiv = document.createElement('div');
             nameDiv.className = 'source-item-name';
-            nameDiv.textContent = sourceName;
+            nameDiv.textContent = info.name;
             item.appendChild(nameDiv);
 
             item.appendChild(createVisibilityToggle(sourceName));
             item.onclick = (e) => {
                 if (e.target.closest('.visibility-toggle')) return;
-                changeSource(`sources/${info.file}`, sourceName, item);
+                changeSource(`sources/${info.file}`, info.name, item, sourceName);
             };
 
             list.appendChild(item);
@@ -1438,7 +1529,7 @@
         }
     }
 
-    async function changeSource(file, title, el) {
+    async function changeSource(file, title, el, sourceId = title) {
         if (pendingOperation) return;
         pendingOperation = true;
         try {
@@ -1450,7 +1541,7 @@
             const displayTitle = isMainFeed ? t('ui.latest_news') : title;
 
             currentSourceFile = file;
-            currentSourceName = isMainFeed ? null : title;
+            currentSourceName = isMainFeed ? null : sourceId;
             if (viewTitle) viewTitle.textContent = displayTitle;
             if (viewDesc) viewDesc.innerText = t('msg.loading_news');
 
@@ -1486,7 +1577,11 @@
             await loadData(file);
 
             if (Array.isArray(allArticles) && allArticles.length > 0) {
-                const first = allArticles[0];
+                const info = !isMainFeed && currentSourceName && statsData && statsData[currentSourceName]
+                    ? displaySourceInfo(currentSourceName) : null;
+                const first = info ? allArticles.find(article => article.lang === info.lang &&
+                    languageMatches(article.lang) && locationMatches(article.scope)) : allArticles[0];
+                if (!first) return;
                 const rssLink = first.originalRssUrl || (isMainFeed ? 'data.json' : file);
 
                 if (!isMainFeed && logoCont) {
@@ -1576,7 +1671,8 @@
         const bookmarksBtn = document.getElementById('btn-bookmarks');
         if (bookmarksBtn) bookmarksBtn.classList.remove('active');
         if (statsData && statsData[sourceName]) {
-            changeSource(`sources/${statsData[sourceName].file}`, sourceName, null);
+            const info = displaySourceInfo(sourceName);
+            if (info) changeSource(`sources/${info.file}`, info.name, null, sourceName);
         }
     }
 

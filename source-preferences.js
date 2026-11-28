@@ -20,9 +20,19 @@
             disabled = next;
         }
 
+        function migrateBundles(bundles) {
+            const next = new Set(disabled);
+            bundles.forEach(({ key, names }) => {
+                if (names.some(name => disabled.has(name))) next.add(key);
+            });
+            storage.setItem(STORAGE_KEY, JSON.stringify([...next]));
+            disabled = next;
+        }
+
         return {
             reload,
             setEnabled,
+            migrateBundles,
             isEnabled: name => !disabled.has(name),
             storageKey: STORAGE_KEY
         };
